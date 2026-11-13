@@ -1,0 +1,6 @@
+开始执行SQL...
+执行SQL查询：
+select `categories`.`name` as `category_name`, sum(`order_items`.`quantity` * `order_items`.`unit_price`) as `sales_amount`, count(distinct `order_items`.`order_id`) as `order_count` from `order_items` join `product_categories` on `order_items`.`product_id` = `product_categories`.`product_id` join `categories` on `product_categories`.`category_id` = `categories`.`id` group by `categories`.`name` order by `sales_amount` desc;
+执行SQL完成
+SQL查询结果：
+{"resultSet":{"column":["category_name","sales_amount","order_count"],"data":[{"category_name":"ç”µå­äº§å“","order_count":"3","sales_amount":"9196.00"},{"category_name":"æœè£…","order_count":"5","sales_amount":"1553.00"},{"category_name":"å®¶å±…ç”¨å“","order_count":"1","sales_amount":"1198.00"},{"category_name":"å›¾ä¹¦","order_count":"4","sales_amount":"448.00"},{"category_name":"é£Ÿå“","order_count":"4","sales_amount":"250.00"}],"errorMsg":null},"displayStyle":null}
