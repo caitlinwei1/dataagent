@@ -19,7 +19,7 @@
 1. **对话模型不走代理**：reactor-netty 忽略 JVM 代理参数，报 `Failed to resolve 'dashscope.aliyuncs.com'`。用 b297203 自带的 model_config 代理字段（proxy_enabled/host/port）解决；Embedding 调用不受影响。
 2. **本地 Python 执行器与 pandas 3.0 不兼容**：生成代码使用 `to_numeric(errors="ignore")`，在 pandas 3.0 下报错，第一次运行（threadId `step1-hitl-001`）因此失败重试。改用 Docker 执行器 + 自建镜像（`sandbox/Dockerfile`，pandas 2.2）后通过。默认镜像 continuumio/anaconda3 超过 3GB，不再使用。
 3. **容器输出中文乱码**：Docker 执行器读取 stdout 时把 UTF-8 按 Latin-1 解码（`python_output.txt` 中分类名乱码），报告节点仍从 SQL 结果拿到正确中文。第 6 步修。
-4. **向量库在内存**（`vectorstore.type: simple`）：后端重启后需重新 init。
+4. **向量库是 SimpleVectorStore**（`vectorstore.type: simple`，落盘到 `vectorstore/vectorstore.json`）：本次重启后重新 init 了一次，是否会自动加载尚未验证。
 5. 示例数据源写的是 docker 内主机名（mysql-data），后端跑在宿主机时需改为 127.0.0.1:13306 / 15432。
 
 ## 复现
