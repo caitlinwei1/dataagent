@@ -1,0 +1,1533 @@
+【DB_ID】 gbi_ecommerce
+【Schema】
+# Table: trd_order, 订单主表：一笔用户下单一行，金额字段口径见业务知识
+[
+(id:BIGINT, Primary Key, 订单ID),
+(order_no:VARCHAR, 订单编号),
+(member_id:BIGINT, 下单会员ID),
+(shop_id:BIGINT, 店铺ID),
+(source_id:INT, 订单来源ID),
+(order_status:VARCHAR, 订单状态：CREATED待支付/PAID已支付/SHIPPED已发货/COMPLETED已完成/CANCELLED已取消/CLOSED已关闭),
+(total_amount:DECIMAL, 商品总额（原价合计，不含运费，未扣优惠）),
+(discount_amount:DECIMAL, 优惠总额（券+活动+会员折扣）),
+(freight_amount:DECIMAL, 运费),
+(pay_amount:DECIMAL, 实付金额=商品总额-优惠总额+运费),
+(currency_code:VARCHAR, 币种),
+(created_at:DATETIME, 下单时间),
+(paid_at:DATETIME, 支付时间，未支付为空),
+(completed_at:DATETIME, 确认收货时间),
+(is_presale:TINYINT, 是否预售订单 1是0否),
+(pay_type:VARCHAR, 支付方式：ONLINE/COD/INSTALLMENT),
+(device_type:VARCHAR, 下单设备：IOS/ANDROID/PC/H5),
+(buyer_remark:VARCHAR, 买家备注),
+(seller_remark:VARCHAR, 卖家备注),
+(invoice_flag:TINYINT, 是否需要发票),
+(points_used:INT, 使用积分数),
+(points_amount:DECIMAL, 积分抵扣金额),
+(tax_amount:DECIMAL, 税费),
+(order_type:VARCHAR, 订单类型：NORMAL/PRESALE/GROUP_BUY/EXCHANGE),
+(is_first_order:TINYINT, 是否首单),
+(risk_level:VARCHAR, 风控等级：LOW/MEDIUM/HIGH),
+(close_reason:VARCHAR, 关闭原因：STOCKOUT/TIMEOUT/FRAUD/USER),
+(delivery_type:VARCHAR, 配送方式：EXPRESS/SAME_DAY/PICKUP),
+(expected_delivery_date:DATE, 预计送达日期),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_order_item, 订单明细：订单内每个SKU一行
+[
+(id:BIGINT, Primary Key, 明细ID),
+(order_id:BIGINT, 订单ID),
+(sku_id:BIGINT, SKU ID),
+(quantity:INT, 购买件数),
+(unit_price:DECIMAL, 成交单价（原价）),
+(item_amount:DECIMAL, 明细原价金额=单价*件数),
+(discount_share:DECIMAL, 分摊到该明细的优惠金额),
+(pay_share:DECIMAL, 分摊到该明细的实付金额（不含运费）),
+(sku_name:VARCHAR, 下单时商品名称快照),
+(category_id:BIGINT, 下单时末级类目ID),
+(brand_id:BIGINT, 下单时品牌ID),
+(is_gift:TINYINT, 是否赠品),
+(activity_price:DECIMAL, 活动价),
+(coupon_share:DECIMAL, 分摊的券优惠),
+(promotion_share:DECIMAL, 分摊的活动优惠),
+(member_share:DECIMAL, 分摊的会员折扣),
+(cost_price:DECIMAL, 下单时成本价),
+(item_status:VARCHAR, 明细状态：NORMAL/REFUNDED/PARTIAL_REFUNDED),
+(refunded_qty:INT, 已退件数),
+(weight_kg:DECIMAL, 重量（千克）),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_order_status_log
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(from_status:VARCHAR),
+(to_status:VARCHAR),
+(changed_at:DATETIME),
+(operator:VARCHAR),
+(remark:VARCHAR),
+(client_ip:VARCHAR),
+(source_system:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: trd_order_address, 订单收货地址快照
+[
+(id:BIGINT, Primary Key, 地址ID),
+(order_id:BIGINT, 订单ID),
+(province:VARCHAR, 收货省份),
+(city:VARCHAR, 收货城市),
+(region_id:BIGINT, 收货地所属区域ID),
+(receiver_name:VARCHAR, 收货人（脱敏）),
+(district:VARCHAR, 区县),
+(detail_address:VARCHAR, 详细地址（脱敏）),
+(postcode:VARCHAR, 邮编),
+(phone_masked:VARCHAR, 手机号（脱敏）),
+(address_type:VARCHAR, 地址类型：HOME/OFFICE/SCHOOL/OTHER),
+(longitude:DECIMAL, 经度),
+(latitude:DECIMAL, 纬度),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_order_promotion
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(promo_type:VARCHAR),
+(coupon_id:BIGINT),
+(activity_id:BIGINT),
+(promo_amount:DECIMAL),
+(promo_name:VARCHAR),
+(promo_level:VARCHAR),
+(funded_by:VARCHAR),
+(threshold_amount:DECIMAL),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_payment, 支付单：一笔订单可能多次支付尝试
+[
+(id:BIGINT, Primary Key, 支付单ID),
+(order_id:BIGINT, 订单ID),
+(pay_channel:VARCHAR, 支付渠道：ALIPAY/WECHAT/CARD/GIFT_CARD),
+(pay_status:VARCHAR, 支付状态：SUCCESS/FAILED/CLOSED),
+(amount:DECIMAL, 支付金额),
+(paid_at:DATETIME, 支付完成时间),
+(trade_no:VARCHAR, 第三方支付流水号),
+(pay_terminal:VARCHAR, 支付终端：APP/H5/PC/POS),
+(currency_code:VARCHAR, 币种),
+(fail_reason:VARCHAR, 失败原因：INSUFFICIENT_BALANCE/RISK_CONTROL/TIMEOUT/USER_CANCEL),
+(installment_num:TINYINT, 分期期数),
+(bank_name:VARCHAR, 银行名称),
+(is_refunded:TINYINT, 是否发生过退款),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_payment_channel_fee
+[
+(id:BIGINT, Primary Key),
+(payment_id:BIGINT),
+(fee_rate:DECIMAL),
+(fee_amount:DECIMAL),
+(settle_date:DATE),
+(fee_type:VARCHAR),
+(pay_channel:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_refund, 退款单：仅退款或退货退款
+[
+(id:BIGINT, Primary Key, 退款单ID),
+(order_id:BIGINT, 订单ID),
+(aftersale_id:BIGINT, 关联售后单ID),
+(refund_type:VARCHAR, 类型：REFUND_ONLY仅退款/RETURN_REFUND退货退款),
+(reason_code:VARCHAR, 退款原因编码),
+(refund_status:VARCHAR, 退款状态：APPLIED/APPROVED/REJECTED/SUCCESS),
+(refund_amount:DECIMAL, 退款金额),
+(applied_at:DATETIME, 申请时间),
+(refunded_at:DATETIME, 退款成功时间),
+(refund_no:VARCHAR, 退款单号),
+(refund_channel:VARCHAR, 退款去向：ORIGINAL/BALANCE/GIFT_CARD),
+(reject_reason:VARCHAR, 驳回原因),
+(auditor:VARCHAR, 审核人),
+(audited_at:DATETIME, 审核时间),
+(is_fast_refund:TINYINT, 是否极速退款),
+(freight_refund:DECIMAL, 退运费金额),
+(buyer_remark:VARCHAR, 买家说明),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_refund_item
+[
+(id:BIGINT, Primary Key),
+(refund_id:BIGINT),
+(order_item_id:BIGINT),
+(quantity:INT),
+(amount:DECIMAL),
+(sku_id:BIGINT),
+(reason_detail:VARCHAR),
+(is_returned:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_aftersale, 售后单
+[
+(id:BIGINT, Primary Key, 售后单ID),
+(order_id:BIGINT, 订单ID),
+(aftersale_type:VARCHAR, 类型：REFUND/RETURN/EXCHANGE/REPAIR),
+(reason_code:VARCHAR, 原因编码),
+(status:VARCHAR, 状态：OPEN/PROCESSING/CLOSED),
+(created_at:DATETIME, 发起时间),
+(closed_at:DATETIME, 关闭时间),
+(aftersale_no:VARCHAR, 售后单号),
+(handler:VARCHAR, 处理客服),
+(priority:TINYINT, 优先级1-3),
+(proof_image_cnt:TINYINT, 凭证图片数),
+(resolution:VARCHAR, 处理结果：REFUNDED/EXCHANGED/REPAIRED/REJECTED),
+(satisfaction:TINYINT, 售后满意度1-5),
+(channel:VARCHAR, 发起渠道：APP/PHONE/ONLINE_CHAT),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_aftersale_reason, 售后/退款原因维表
+[
+(id:BIGINT, Primary Key, 原因ID),
+(code:VARCHAR, 原因编码，如STOCKOUT缺货/QUALITY质量问题/LATE_DELIVERY物流超时/NO_REASON七天无理由),
+(name:VARCHAR, 原因名称),
+(responsibility:VARCHAR, 责任方：MERCHANT/LOGISTICS/CUSTOMER),
+(category:VARCHAR, 原因大类：FULFILLMENT/PRODUCT/CUSTOMER),
+(need_return:TINYINT, 是否需退货),
+(sort_order:INT, 排序),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_cart
+[
+(id:BIGINT, Primary Key),
+(member_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(added_at:DATETIME),
+(converted:TINYINT),
+(shop_id:BIGINT),
+(price_at_add:DECIMAL),
+(source:VARCHAR),
+(removed_at:DATETIME),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_order_invoice
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(invoice_type:VARCHAR),
+(invoice_amount:DECIMAL),
+(issued_at:DATETIME),
+(invoice_no:VARCHAR),
+(title:VARCHAR),
+(tax_no:VARCHAR),
+(tax_amount:DECIMAL),
+(status:VARCHAR),
+(is_electronic:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_order_review, 商品评价
+[
+(id:BIGINT, Primary Key, 评价ID),
+(order_item_id:BIGINT, 订单明细ID),
+(member_id:BIGINT, 会员ID),
+(score:TINYINT, 评分1-5),
+(has_image:TINYINT, 是否带图),
+(created_at:DATETIME, 评价时间),
+(sku_id:BIGINT, SKU ID),
+(content:VARCHAR, 评价内容),
+(is_anonymous:TINYINT, 是否匿名),
+(reply_content:VARCHAR, 商家回复),
+(replied_at:DATETIME, 回复时间),
+(logistics_score:TINYINT, 物流评分1-5),
+(service_score:TINYINT, 服务评分1-5),
+(useful_cnt:INT, 有用数),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_order_split
+[
+(id:BIGINT, Primary Key),
+(parent_order_id:BIGINT),
+(child_order_id:BIGINT),
+(split_reason:VARCHAR),
+(split_at:DATETIME),
+(warehouse_id:BIGINT),
+(operator:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_presale_order
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(deposit_amount:DECIMAL),
+(balance_amount:DECIMAL),
+(balance_paid_at:DATETIME),
+(deposit_paid_at:DATETIME),
+(balance_start_at:DATETIME),
+(balance_end_at:DATETIME),
+(deposit_expand:DECIMAL),
+(status:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_order_source, 订单来源维表
+[
+(id:BIGINT, Primary Key, 来源ID),
+(code:VARCHAR, 来源编码：APP/MINI_PROGRAM/WEB/LIVE/OFFLINE),
+(name:VARCHAR, 来源名称),
+(is_online:TINYINT, 是否线上),
+(sort_order:INT, 排序),
+(owner_team:VARCHAR, 负责团队),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_daily_shop_sales, 店铺日销售汇总（T+1离线计算）
+[
+(id:BIGINT, Primary Key, 记录ID),
+(stat_date:DATE, 统计日期),
+(shop_id:BIGINT, 店铺ID),
+(gmv:DECIMAL, GMV：当日支付订单的商品总额+运费，不扣优惠、不扣退款),
+(paid_amount:DECIMAL, 实付金额：当日支付订单的实付合计),
+(refund_amount:DECIMAL, 当日退款成功金额),
+(net_sales:DECIMAL, 退款后金额=实付金额-退款金额),
+(order_cnt:INT, 支付订单数),
+(buyer_cnt:INT, 支付买家数),
+(discount_amount:DECIMAL, 当日优惠总额),
+(freight_amount:DECIMAL, 当日运费),
+(new_buyer_cnt:INT, 新买家数),
+(item_qty:INT, 销售件数),
+(refund_order_cnt:INT, 退款订单数),
+(cancel_order_cnt:INT, 取消订单数),
+(etl_batch:VARCHAR, ETL批次号),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: trd_daily_sku_sales
+[
+(id:BIGINT, Primary Key),
+(stat_date:DATE),
+(sku_id:BIGINT),
+(sales_qty:INT),
+(sales_amount:DECIMAL),
+(refund_qty:INT),
+(shop_id:BIGINT),
+(gmv:DECIMAL),
+(order_cnt:INT),
+(buyer_cnt:INT),
+(refund_amount:DECIMAL),
+(etl_batch:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: trd_order_cancel, 订单取消记录
+[
+(id:BIGINT, Primary Key, 记录ID),
+(order_id:BIGINT, 订单ID),
+(cancel_reason:VARCHAR, 取消原因),
+(cancel_by:VARCHAR, 发起方：USER/SYSTEM_TIMEOUT/CS),
+(cancelled_at:DATETIME, 取消时间),
+(refund_needed:TINYINT, 是否需要退款),
+(order_status_before:VARCHAR, 取消前状态：CREATED/PAID),
+(remark:VARCHAR, 备注),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_complaint
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(complaint_type:VARCHAR),
+(severity:TINYINT),
+(created_at:DATETIME),
+(resolved_at:DATETIME),
+(complaint_no:VARCHAR),
+(channel:VARCHAR),
+(handler:VARCHAR),
+(result:VARCHAR),
+(satisfaction:TINYINT),
+(is_escalated:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_return_logistics, 退货物流：用户寄回商品的运单
+[
+(id:BIGINT, Primary Key, 记录ID),
+(refund_id:BIGINT, 退款单ID),
+(carrier_id:BIGINT, 承运商ID),
+(tracking_no:VARCHAR, 退货运单号),
+(shipped_at:DATETIME, 用户寄出时间),
+(received_at:DATETIME, 仓库签收时间),
+(freight_fee:DECIMAL, 退货运费),
+(freight_payer:VARCHAR, 运费承担方：BUYER/MERCHANT/INSURANCE),
+(warehouse_id:BIGINT, 退回仓库ID),
+(inspect_result:VARCHAR, 质检结果：PASS/DAMAGED/MISSING),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_compensation
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(comp_type:VARCHAR),
+(amount:DECIMAL),
+(reason_code:VARCHAR),
+(created_at:DATETIME),
+(comp_no:VARCHAR),
+(approved_by:VARCHAR),
+(status:VARCHAR),
+(paid_at:DATETIME),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: trd_order_tag, 订单标签
+[
+(id:BIGINT, Primary Key, 记录ID),
+(order_id:BIGINT, 订单ID),
+(tag:VARCHAR, 标签：FIRST_ORDER首单/BIG_PROMO大促/HIGH_RISK风险单),
+(tag_source:VARCHAR, 打标来源：RULE/MODEL/MANUAL),
+(tagged_at:DATETIME, 打标时间),
+(expire_at:DATETIME, 失效时间),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: trd_gift_card_usage
+[
+(id:BIGINT, Primary Key),
+(order_id:BIGINT),
+(card_no:VARCHAR),
+(used_amount:DECIMAL),
+(used_at:DATETIME),
+(card_type:VARCHAR),
+(card_face_value:DECIMAL),
+(balance_after:DECIMAL),
+(member_id:BIGINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_spu, 商品SPU：同款商品
+[
+(id:BIGINT, Primary Key, SPU ID),
+(spu_name:VARCHAR, 商品名称),
+(category_id:BIGINT, 末级类目ID),
+(brand_id:BIGINT, 品牌ID),
+(series_id:BIGINT, 系列ID),
+(launch_date:DATE, 首次上架日期),
+(spu_code:VARCHAR, SPU编码),
+(subtitle:VARCHAR, 副标题),
+(origin:VARCHAR, 产地),
+(shelf_life_days:INT, 保质期（天）),
+(is_imported:TINYINT, 是否进口),
+(tax_rate:DECIMAL, 税率),
+(spu_status:VARCHAR, 状态：ON_SALE/OFF_SALE/DRAFT),
+(main_image:VARCHAR, 主图URL),
+(selling_point:VARCHAR, 卖点),
+(season:VARCHAR, 适用季节：SPRING/SUMMER/AUTUMN/WINTER/ALL),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_sku, 商品SKU：可售卖的最小单元（规格）
+[
+(id:BIGINT, Primary Key, SKU ID),
+(spu_id:BIGINT, SPU ID),
+(sku_code:VARCHAR, SKU编码),
+(spec:VARCHAR, 规格描述，如颜色/尺码),
+(list_price:DECIMAL, 标价),
+(status:VARCHAR, 状态：ON_SALE在售/OFF_SALE下架),
+(barcode:VARCHAR, 主条码),
+(weight_kg:DECIMAL, 重量（千克）),
+(volume_cm3:DECIMAL, 体积（立方厘米）),
+(color:VARCHAR, 颜色),
+(size:VARCHAR, 尺码),
+(market_price:DECIMAL, 市场价),
+(min_order_qty:INT, 起订量),
+(is_fragile:TINYINT, 是否易碎),
+(image:VARCHAR, 图片URL),
+(launch_at:DATETIME, 上架时间),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_category, 商品类目，三级树形
+[
+(id:BIGINT, Primary Key, 类目ID),
+(parent_id:BIGINT, 父类目ID，一级类目为0),
+(level:TINYINT, 层级1/2/3),
+(name:VARCHAR, 类目名称),
+(code:VARCHAR, 类目编码),
+(sort_order:INT, 排序),
+(is_leaf:TINYINT, 是否末级),
+(icon:VARCHAR, 图标URL),
+(gross_margin_target:DECIMAL, 目标毛利率),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_brand, 品牌
+[
+(id:BIGINT, Primary Key, 品牌ID),
+(name:VARCHAR, 品牌名称),
+(is_own:TINYINT, 是否自有品牌),
+(country:VARCHAR, 品牌国家),
+(english_name:VARCHAR, 英文名),
+(logo:VARCHAR, Logo URL),
+(level:VARCHAR, 品牌等级：S/A/B/C),
+(authorized_until:DATE, 授权截止日期),
+(contact:VARCHAR, 品牌对接人),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_price_history
+[
+(id:BIGINT, Primary Key),
+(sku_id:BIGINT),
+(old_price:DECIMAL),
+(new_price:DECIMAL),
+(changed_at:DATETIME),
+(change_reason:VARCHAR),
+(operator:VARCHAR),
+(approved:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: prd_attribute
+[
+(id:BIGINT, Primary Key),
+(name:VARCHAR),
+(category_id:BIGINT),
+(input_type:VARCHAR),
+(is_required:TINYINT),
+(is_searchable:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_sku_attribute
+[
+(id:BIGINT, Primary Key),
+(sku_id:BIGINT),
+(attribute_id:BIGINT),
+(value:VARCHAR),
+(value_code:VARCHAR),
+(sort_order:INT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_label, 商品标签定义
+[
+(id:BIGINT, Primary Key, 标签ID),
+(name:VARCHAR, 标签名，如新品/爆款/清仓),
+(label_type:VARCHAR, 标签类型：OPERATION/SYSTEM),
+(color:VARCHAR, 显示颜色),
+(is_active:TINYINT, 是否启用),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_sku_label
+[
+(id:BIGINT, Primary Key),
+(sku_id:BIGINT),
+(label_id:BIGINT),
+(start_at:DATETIME),
+(end_at:DATETIME),
+(operator:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_bundle
+[
+(id:BIGINT, Primary Key),
+(name:VARCHAR),
+(bundle_price:DECIMAL),
+(status:VARCHAR),
+(start_at:DATETIME),
+(end_at:DATETIME),
+(shop_id:BIGINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_bundle_item
+[
+(id:BIGINT, Primary Key),
+(bundle_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(is_main:TINYINT),
+(share_ratio:DECIMAL),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_listing_log, 上下架记录
+[
+(id:BIGINT, Primary Key, 记录ID),
+(sku_id:BIGINT, SKU ID),
+(action:VARCHAR, 动作：ON/OFF),
+(acted_at:DATETIME, 操作时间),
+(shop_id:BIGINT, 店铺ID),
+(operator:VARCHAR, 操作人),
+(reason:VARCHAR, 原因：NEW/RESTOCK/SOLD_OUT/COMPLIANCE/SEASON_END),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: prd_sku_cost, SKU采购成本（按月）
+[
+(id:BIGINT, Primary Key, 记录ID),
+(sku_id:BIGINT, SKU ID),
+(month_key:VARCHAR, 月份YYYY-MM),
+(unit_cost:DECIMAL, 单位成本),
+(supplier_id:BIGINT, 主供应商ID),
+(freight_cost:DECIMAL, 单位运输成本),
+(cost_source:VARCHAR, 成本来源：PURCHASE/ESTIMATE),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: prd_series
+[
+(id:BIGINT, Primary Key),
+(brand_id:BIGINT),
+(name:VARCHAR),
+(launch_year:INT),
+(positioning:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: prd_sku_barcode
+[
+(id:BIGINT, Primary Key),
+(sku_id:BIGINT),
+(barcode:VARCHAR),
+(barcode_type:VARCHAR),
+(is_primary:TINYINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: usr_member, 会员
+[
+(id:BIGINT, Primary Key, 会员ID),
+(register_at:DATETIME, 注册时间),
+(gender:VARCHAR, 性别：M/F/U),
+(birth_year:INT, 出生年份),
+(level_id:BIGINT, 当前会员等级ID),
+(register_channel_id:BIGINT, 注册渠道ID),
+(province:VARCHAR, 常住省份),
+(region_id:BIGINT, 常住区域ID),
+(member_no:VARCHAR, 会员编号),
+(nickname:VARCHAR, 昵称),
+(city:VARCHAR, 常住城市),
+(phone_masked:VARCHAR, 手机号（脱敏）),
+(points_balance:INT, 当前积分余额),
+(total_paid_amount:DECIMAL, 累计实付金额),
+(total_order_cnt:INT, 累计支付订单数),
+(last_order_at:DATETIME, 最近下单时间),
+(is_vip_plus:TINYINT, 是否付费会员),
+(status:VARCHAR, 状态：ACTIVE/FROZEN/CANCELLED),
+(wechat_bound:TINYINT, 是否绑定微信),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: usr_member_level, 会员等级
+[
+(id:BIGINT, Primary Key, 等级ID),
+(name:VARCHAR, 等级名称：普通/银卡/金卡/黑金),
+(min_points:INT, 所需积分),
+(discount_rate:DECIMAL, 会员折扣率),
+(benefits:VARCHAR, 权益说明),
+(free_shipping:TINYINT, 是否包邮),
+(birthday_coupon:DECIMAL, 生日券面额),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: usr_member_level_log
+[
+(id:BIGINT, Primary Key),
+(member_id:BIGINT),
+(from_level_id:BIGINT),
+(to_level_id:BIGINT),
+(changed_at:DATETIME),
+(change_type:VARCHAR),
+(points_at_change:INT),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: usr_address
+[
+(id:BIGINT, Primary Key),
+(member_id:BIGINT),
+(province:VARCHAR),
+(city:VARCHAR),
+(is_default:TINYINT),
+(district:VARCHAR),
+(detail:VARCHAR),
+(label:VARCHAR),
+(created_at:DATETIME),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: usr_points_log
+[
+(id:BIGINT, Primary Key),
+(member_id:BIGINT),
+(change_points:INT),
+(biz_type:VARCHAR),
+(created_at:DATETIME),
+(order_id:BIGINT),
+(balance_after:INT),
+(expire_at:DATE),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: usr_member_tag, 会员标签
+[
+(id:BIGINT, Primary Key, 记录ID),
+(member_id:BIGINT, 会员ID),
+(tag:VARCHAR, 标签：HIGH_VALUE高价值/CHURN_RISK流失风险/NEW新客),
+(tag_source:VARCHAR, 来源：RULE/MODEL/MANUAL),
+(score:DECIMAL, 标签置信分),
+(tagged_at:DATETIME, 打标时间),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: mkt_coupon_template, 优惠券模板
+[
+(id:BIGINT, Primary Key, 模板ID),
+(name:VARCHAR, 券名称),
+(coupon_type:VARCHAR, 类型：FULL_REDUCTION满减/DISCOUNT折扣/NO_THRESHOLD无门槛),
+(threshold_amount:DECIMAL, 使用门槛金额),
+(face_value:DECIMAL, 面额或折扣),
+(activity_id:BIGINT, 所属活动ID),
+(valid_days:INT, 领取后有效天数),
+(total_qty:INT, 发行总量),
+(per_user_limit:INT, 每人限领),
+(funded_by:VARCHAR, 出资方：PLATFORM/MERCHANT/BRAND),
+(scope:VARCHAR, 适用范围：ALL/CATEGORY/SKU),
+(status:VARCHAR, 状态：ACTIVE/PAUSED/ENDED),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: mkt_coupon, 用户领取的优惠券
+[
+(id:BIGINT, Primary Key, 券ID),
+(template_id:BIGINT, 模板ID),
+(member_id:BIGINT, 会员ID),
+(status:VARCHAR, 状态：UNUSED/USED/EXPIRED),
+(received_at:DATETIME, 领取时间),
+(used_at:DATETIME, 使用时间),
+(coupon_code:VARCHAR, 券码),
+(order_id:BIGINT, 使用的订单ID),
+(expire_at:DATETIME, 过期时间),
+(receive_channel:VARCHAR, 领取渠道：ACTIVITY_PAGE/LIVE/CS/AUTO),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: mkt_activity, 营销活动
+[
+(id:BIGINT, Primary Key, 活动ID),
+(name:VARCHAR, 活动名称，如双11/618/年货节),
+(activity_type:VARCHAR, 类型：BIG_PROMO大促/FLASH_SALE秒杀/NEW_USER拉新),
+(start_at:DATETIME, 开始时间),
+(end_at:DATETIME, 结束时间),
+(budget:DECIMAL, 活动预算),
+(owner:VARCHAR, 负责人),
+(status:VARCHAR, 状态：PLANNED/RUNNING/ENDED),
+(target_gmv:DECIMAL, 目标GMV),
+(platform_id:BIGINT, 平台ID（空为全平台）),
+(description:VARCHAR, 活动说明),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: mkt_activity_sku
+[
+(id:BIGINT, Primary Key),
+(activity_id:BIGINT),
+(sku_id:BIGINT),
+(activity_price:DECIMAL),
+(stock_limit:INT),
+(per_user_limit:INT),
+(sold_qty:INT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: mkt_channel, 流量/投放渠道
+[
+(id:BIGINT, Primary Key, 渠道ID),
+(code:VARCHAR, 渠道编码：DOUYIN/XHS/BAIDU/WECHAT/ORGANIC),
+(name:VARCHAR, 渠道名称),
+(is_paid:TINYINT, 是否付费渠道),
+(owner_team:VARCHAR, 负责团队),
+(billing_mode:VARCHAR, 计费方式：CPC/CPM/CPS/FREE),
+(is_active:TINYINT, 是否启用),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: mkt_ad_spend, 广告投放花费（按日按渠道）
+[
+(id:BIGINT, Primary Key, 记录ID),
+(stat_date:DATE, 日期),
+(channel_id:BIGINT, 渠道ID),
+(spend:DECIMAL, 花费),
+(impressions:BIGINT, 曝光),
+(clicks:BIGINT, 点击),
+(campaign_name:VARCHAR, 投放计划名称),
+(conversions:INT, 转化数),
+(cpc:DECIMAL, 平均点击成本),
+(account_id:VARCHAR, 投放账户),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: mkt_traffic_daily, 店铺流量日表
+[
+(id:BIGINT, Primary Key, 记录ID),
+(stat_date:DATE, 日期),
+(shop_id:BIGINT, 店铺ID),
+(channel_id:BIGINT, 渠道ID),
+(pv:BIGINT, 浏览量),
+(uv:BIGINT, 访客数),
+(avg_stay_sec:INT, 平均停留秒数),
+(bounce_rate:DECIMAL, 跳失率),
+(add_cart_uv:INT, 加购访客数),
+(new_visitor_uv:INT, 新访客数),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: mkt_live_session
+[
+(id:BIGINT, Primary Key),
+(shop_id:BIGINT),
+(anchor:VARCHAR),
+(start_at:DATETIME),
+(duration_min:INT),
+(viewers:INT),
+(title:VARCHAR),
+(gmv:DECIMAL),
+(order_cnt:INT),
+(peak_online:INT),
+(likes:BIGINT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: mkt_member_attribution
+[
+(id:BIGINT, Primary Key),
+(member_id:BIGINT),
+(first_order_id:BIGINT),
+(channel_id:BIGINT),
+(attribution_model:VARCHAR),
+(attributed_at:DATETIME),
+(campaign_name:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: scm_supplier, 供应商
+[
+(id:BIGINT, Primary Key, 供应商ID),
+(name:VARCHAR, 供应商名称),
+(province:VARCHAR, 所在省份),
+(lead_days:INT, 平均交货周期（天）),
+(supplier_code:VARCHAR, 供应商编码),
+(contact:VARCHAR, 联系人),
+(phone_masked:VARCHAR, 电话（脱敏）),
+(rating:VARCHAR, 评级：A/B/C/D),
+(settlement_cycle:VARCHAR, 结算周期：MONTHLY/BIWEEKLY/PER_ORDER),
+(status:VARCHAR, 状态：ACTIVE/SUSPENDED),
+(credit_limit:DECIMAL, 授信额度),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: scm_purchase_order, 采购单
+[
+(id:BIGINT, Primary Key, 采购单ID),
+(supplier_id:BIGINT, 供应商ID),
+(warehouse_id:BIGINT, 收货仓ID),
+(status:VARCHAR, 状态：CREATED/PARTIAL_RECEIVED/RECEIVED/CANCELLED),
+(created_at:DATETIME, 下单时间),
+(expected_at:DATE, 预计到货日期),
+(po_no:VARCHAR, 采购单号),
+(buyer:VARCHAR, 采购员),
+(total_amount:DECIMAL, 采购总金额),
+(currency_code:VARCHAR, 币种),
+(approved_at:DATETIME, 审批时间),
+(received_at:DATETIME, 实际到货时间),
+(remark:VARCHAR, 备注),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: scm_purchase_order_item
+[
+(id:BIGINT, Primary Key),
+(po_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(unit_cost:DECIMAL),
+(received_qty:INT),
+(tax_rate:DECIMAL),
+(expected_at:DATE),
+(line_status:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_warehouse, 仓库
+[
+(id:BIGINT, Primary Key, 仓库ID),
+(name:VARCHAR, 仓库名称),
+(warehouse_type:VARCHAR, 类型：CENTRAL中心仓/REGIONAL区域仓/FRONT前置仓),
+(region_id:BIGINT, 所在区域ID),
+(code:VARCHAR, 仓库编码),
+(province:VARCHAR, 所在省份),
+(city:VARCHAR, 所在城市),
+(area_sqm:INT, 面积（平方米）),
+(capacity_qty:INT, 设计容量（件）),
+(manager:VARCHAR, 仓库负责人),
+(is_bonded:TINYINT, 是否保税仓),
+(status:VARCHAR, 状态：ACTIVE/CLOSED),
+(opened_at:DATE, 启用日期),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: wms_inbound, 入库单（采购到货/退货入库/调拨入库）
+[
+(id:BIGINT, Primary Key, 入库单ID),
+(warehouse_id:BIGINT, 仓库ID),
+(inbound_type:VARCHAR, 类型：PURCHASE/RETURN/TRANSFER),
+(ref_id:BIGINT, 来源单据ID（采购单/退款单/调拨单）),
+(received_at:DATETIME, 入库时间),
+(inbound_no:VARCHAR, 入库单号),
+(operator:VARCHAR, 操作员),
+(status:VARCHAR, 状态：RECEIVING/DONE/CANCELLED),
+(qc_result:VARCHAR, 质检结果：PASS/PARTIAL/FAIL),
+(dock_no:VARCHAR, 月台号),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: wms_inbound_item
+[
+(id:BIGINT, Primary Key),
+(inbound_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(expected_qty:INT),
+(defect_qty:INT),
+(batch_no:VARCHAR),
+(location_code:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_inventory_snapshot, 库存日快照：每日24点各仓各SKU库存
+[
+(id:BIGINT, Primary Key, 记录ID),
+(snapshot_date:DATE, 快照日期),
+(warehouse_id:BIGINT, 仓库ID),
+(sku_id:BIGINT, SKU ID),
+(on_hand_qty:INT, 在库数量),
+(locked_qty:INT, 已占用数量),
+(available_qty:INT, 可用数量=在库-占用),
+(in_transit_qty:INT, 在途数量),
+(defect_qty:INT, 残次数量),
+(inventory_cost:DECIMAL, 库存成本金额),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: wms_inventory
+[
+(id:BIGINT, Primary Key),
+(warehouse_id:BIGINT),
+(sku_id:BIGINT),
+(on_hand_qty:INT),
+(locked_qty:INT),
+(safety_stock:INT),
+(updated_at:DATETIME),
+(in_transit_qty:INT),
+(defect_qty:INT),
+(location_code:VARCHAR),
+(last_inbound_at:DATETIME),
+(last_outbound_at:DATETIME),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_transfer, 调拨单：仓间移库
+[
+(id:BIGINT, Primary Key, 调拨单ID),
+(from_warehouse_id:BIGINT, 调出仓),
+(to_warehouse_id:BIGINT, 调入仓),
+(status:VARCHAR, 状态：CREATED/IN_TRANSIT/DONE),
+(created_at:DATETIME, 创建时间),
+(done_at:DATETIME, 完成时间),
+(transfer_no:VARCHAR, 调拨单号),
+(reason:VARCHAR, 调拨原因：REPLENISH/BALANCE/RETURN_TO_CENTRAL),
+(carrier_id:BIGINT, 承运商ID),
+(operator:VARCHAR, 操作员),
+(shipped_at:DATETIME, 发出时间),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: wms_transfer_item
+[
+(id:BIGINT, Primary Key),
+(transfer_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(received_qty:INT),
+(batch_no:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_outbound, 出库单：仓库拣货出库
+[
+(id:BIGINT, Primary Key, 出库单ID),
+(fulfillment_id:BIGINT, 履约单ID),
+(warehouse_id:BIGINT, 出库仓ID),
+(picked_at:DATETIME, 拣货完成时间),
+(outbound_at:DATETIME, 出库时间),
+(outbound_no:VARCHAR, 出库单号),
+(picker:VARCHAR, 拣货员),
+(packer:VARCHAR, 打包员),
+(package_cnt:TINYINT, 包裹数),
+(weight_kg:DECIMAL, 包裹重量（千克）),
+(status:VARCHAR, 状态：PICKING/PACKED/SHIPPED),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: wms_outbound_item
+[
+(id:BIGINT, Primary Key),
+(outbound_id:BIGINT),
+(sku_id:BIGINT),
+(quantity:INT),
+(batch_no:VARCHAR),
+(location_code:VARCHAR),
+(picked_qty:INT),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_stockout_record, 缺货记录：订单分配库存失败
+[
+(id:BIGINT, Primary Key, 记录ID),
+(order_id:BIGINT, 订单ID),
+(sku_id:BIGINT, 缺货SKU ID),
+(warehouse_id:BIGINT, 尝试分配的仓库ID),
+(shortage_qty:INT, 缺货数量),
+(detected_at:DATETIME, 发现时间),
+(handle_result:VARCHAR, 处理结果：CANCELLED/TRANSFERRED/BACKORDERED),
+(handled_at:DATETIME, 处理时间),
+(alternative_warehouse_id:BIGINT, 替代仓库ID),
+(notified_buyer:TINYINT, 是否已通知买家),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: wms_stocktake
+[
+(id:BIGINT, Primary Key),
+(warehouse_id:BIGINT),
+(stocktake_date:DATE),
+(stocktake_no:VARCHAR),
+(stocktake_type:VARCHAR),
+(operator:VARCHAR),
+(status:VARCHAR),
+(finished_at:DATETIME),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: wms_stocktake_item
+[
+(id:BIGINT, Primary Key),
+(stocktake_id:BIGINT),
+(sku_id:BIGINT),
+(book_qty:INT),
+(actual_qty:INT),
+(diff_qty:INT),
+(diff_amount:DECIMAL),
+(location_code:VARCHAR),
+(adjust_reason:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: tms_carrier, 承运商（快递公司）
+[
+(id:BIGINT, Primary Key, 承运商ID),
+(name:VARCHAR, 名称，如顺丰/京东物流/中通),
+(service_level:VARCHAR, 服务等级：EXPRESS/STANDARD),
+(code:VARCHAR, 承运商编码),
+(contact:VARCHAR, 对接人),
+(contract_end:DATE, 合同到期日),
+(cod_supported:TINYINT, 是否支持货到付款),
+(base_fee:DECIMAL, 首重运费),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: tms_shipment, 发货运单：商家发给用户的快递
+[
+(id:BIGINT, Primary Key, 运单ID),
+(fulfillment_id:BIGINT, 履约单ID),
+(carrier_id:BIGINT, 承运商ID),
+(tracking_no:VARCHAR, 运单号),
+(shipped_at:DATETIME, 揽收时间),
+(delivered_at:DATETIME, 签收时间),
+(weight_kg:DECIMAL, 计费重量（千克）),
+(freight_cost:DECIMAL, 运费成本),
+(insured:TINYINT, 是否保价),
+(receiver_city:VARCHAR, 收货城市),
+(status:VARCHAR, 状态：IN_TRANSIT/DELIVERED/EXCEPTION/RETURNED),
+(exception_type:VARCHAR, 异常类型：DELAY/LOST/DAMAGED/REFUSED),
+(sign_type:VARCHAR, 签收方式：SELF/AGENT/LOCKER),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: tms_shipment_track
+[
+(id:BIGINT, Primary Key),
+(shipment_id:BIGINT),
+(node:VARCHAR),
+(city:VARCHAR),
+(event_at:DATETIME),
+(description:VARCHAR),
+(operator:VARCHAR),
+(province:VARCHAR),
+(created_by:VARCHAR),
+(created_time:DATETIME)
+]
+# Table: tms_delivery_sla, 配送时效承诺：按仓库与收货区域
+[
+(id:BIGINT, Primary Key, 记录ID),
+(warehouse_id:BIGINT, 发货仓ID),
+(region_id:BIGINT, 收货区域ID),
+(promised_hours:INT, 承诺送达时长（小时）),
+(carrier_id:BIGINT, 承运商ID（空为全部）),
+(effective_from:DATE, 生效日期),
+(service_level:VARCHAR, 服务等级：EXPRESS/STANDARD),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: oms_fulfillment_order, 履约单：订单分配到仓库后的履约任务，一个订单可拆多个
+[
+(id:BIGINT, Primary Key, 履约单ID),
+(order_id:BIGINT, 订单ID),
+(warehouse_id:BIGINT, 分配仓库ID),
+(status:VARCHAR, 状态：ALLOCATED/PICKING/SHIPPED/DELIVERED/CANCELLED),
+(allocated_at:DATETIME, 分配时间),
+(promised_at:DATETIME, 承诺送达时间),
+(fulfillment_no:VARCHAR, 履约单号),
+(split_seq:TINYINT, 拆单序号),
+(delivery_type:VARCHAR, 配送方式：EXPRESS/SAME_DAY/PICKUP),
+(priority:TINYINT, 优先级1-3),
+(shipped_at:DATETIME, 发货时间),
+(delivered_at:DATETIME, 送达时间),
+(cancel_reason:VARCHAR, 取消原因：STOCKOUT/USER/RISK),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: fin_settlement, 店铺结算单（按月）
+[
+(id:BIGINT, Primary Key, 结算单ID),
+(shop_id:BIGINT, 店铺ID),
+(month_key:VARCHAR, 结算月份YYYY-MM),
+(gross_amount:DECIMAL, 应结算总额),
+(commission:DECIMAL, 平台佣金),
+(net_amount:DECIMAL, 实际结算金额),
+(settled_at:DATETIME, 结算时间),
+(settlement_no:VARCHAR, 结算单号),
+(refund_deduct:DECIMAL, 退款扣减),
+(freight_income:DECIMAL, 运费收入),
+(adjust_amount:DECIMAL, 调整金额),
+(status:VARCHAR, 状态：PENDING/CONFIRMED/PAID),
+(invoice_no:VARCHAR, 结算发票号),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: fin_settlement_item
+[
+(id:BIGINT, Primary Key),
+(settlement_id:BIGINT),
+(order_id:BIGINT),
+(amount:DECIMAL),
+(commission:DECIMAL),
+(refund_amount:DECIMAL),
+(settle_type:VARCHAR),
+(biz_date:DATE),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: fin_platform_fee
+[
+(id:BIGINT, Primary Key),
+(platform_id:BIGINT),
+(category_id:BIGINT),
+(commission_rate:DECIMAL),
+(effective_from:DATE),
+(effective_to:DATE),
+(tech_fee_rate:DECIMAL),
+(created_by:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME),
+(is_deleted:TINYINT)
+]
+# Table: fin_sales_target, 月度销售目标（按店铺）
+[
+(id:BIGINT, Primary Key, 记录ID),
+(shop_id:BIGINT, 店铺ID),
+(month_key:VARCHAR, 月份YYYY-MM),
+(target_amount:DECIMAL, 目标实付金额),
+(target_orders:INT, 目标订单数),
+(target_gmv:DECIMAL, 目标GMV),
+(owner:VARCHAR, 负责人),
+(version:VARCHAR, 目标版本：INITIAL/REVISED),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间),
+(is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
+]
+# Table: fin_exchange_rate, 汇率（按日）
+[
+(id:BIGINT, Primary Key, 记录ID),
+(rate_date:DATE, 日期),
+(currency_code:VARCHAR, 币种),
+(rate_to_cny:DECIMAL, 兑人民币汇率),
+(source:VARCHAR, 汇率来源：PBOC/BANK),
+(rate_type:VARCHAR, 汇率类型：MIDDLE/BUY/SELL),
+(created_by:VARCHAR, 创建人),
+(created_time:DATETIME, 记录创建时间)
+]
+# Table: dim_region, 区域维表：大区-省
+[
+(id:BIGINT, Primary Key, 区域ID),
+(big_region:VARCHAR, 大区：华东/华北/华南/华中/西南/西北/东北),
+(province:VARCHAR, 省份),
+(region_code:VARCHAR, 区域编码),
+(city_tier:VARCHAR, 城市等级：T1/T2/T3/T4),
+(manager:VARCHAR, 大区负责人),
+(population_10k:INT, 人口（万）),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间)
+]
+# Table: dim_shop, 店铺维表
+[
+(id:BIGINT, Primary Key, 店铺ID),
+(name:VARCHAR, 店铺名称),
+(platform_id:BIGINT, 所属平台ID),
+(region_id:BIGINT, 运营归属区域ID),
+(opened_at:DATE, 开店日期),
+(shop_code:VARCHAR, 店铺编码),
+(shop_type:VARCHAR, 店铺类型：FLAGSHIP/SPECIALTY/DIRECT),
+(manager:VARCHAR, 店长),
+(status:VARCHAR, 状态：OPEN/CLOSED),
+(rating:DECIMAL, 店铺评分),
+(closed_at:DATE, 关店日期),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间)
+]
+# Table: dim_store
+[
+(id:BIGINT, Primary Key),
+(name:VARCHAR),
+(shop_id:BIGINT),
+(region_id:BIGINT),
+(store_code:VARCHAR),
+(city:VARCHAR),
+(area_sqm:INT),
+(opened_at:DATE),
+(status:VARCHAR),
+(created_time:DATETIME),
+(updated_time:DATETIME)
+]
+# Table: dim_date, 日期维表
+[
+(date_key:DATE, Primary Key, 日期（主键）),
+(year:INT, 年),
+(quarter:TINYINT, 季度),
+(month:TINYINT, 月),
+(week_of_year:TINYINT, 周),
+(is_weekend:TINYINT, 是否周末),
+(is_holiday:TINYINT, 是否法定节假日),
+(promo_name:VARCHAR, 当日所属大促名称，无则为空),
+(day_of_week:TINYINT, 星期几1-7),
+(is_workday:TINYINT, 是否工作日),
+(fiscal_year:INT, 财年),
+(fiscal_quarter:TINYINT, 财季),
+(year_month:VARCHAR, 年月YYYY-MM),
+(week_start:DATE, 所在周周一日期),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间)
+]
+# Table: dim_currency
+[
+(code:VARCHAR, Primary Key),
+(name:VARCHAR),
+(symbol:VARCHAR),
+(precision_digits:TINYINT),
+(is_active:TINYINT),
+(created_time:DATETIME),
+(updated_time:DATETIME)
+]
+# Table: dim_platform, 销售平台维表
+[
+(id:BIGINT, Primary Key, 平台ID),
+(name:VARCHAR, 平台：天猫/京东/抖音/自营商城),
+(code:VARCHAR, 平台编码),
+(commission_rate:DECIMAL, 默认佣金率),
+(settle_cycle:VARCHAR, 结算周期：MONTHLY/BIWEEKLY),
+(is_active:TINYINT, 是否启用),
+(created_time:DATETIME, 记录创建时间),
+(updated_time:DATETIME, 记录更新时间)
+]
+【Foreign keys】
+trd_order.member_id=usr_member.id
+trd_order.shop_id=dim_shop.id
+trd_order.source_id=trd_order_source.id
+trd_order.currency_code=dim_currency.code
+trd_order_item.order_id=trd_order.id
+trd_order_item.sku_id=prd_sku.id
+trd_order_status_log.order_id=trd_order.id
+trd_order_address.order_id=trd_order.id
+trd_order_address.region_id=dim_region.id
+trd_order_promotion.order_id=trd_order.id
+trd_order_promotion.coupon_id=mkt_coupon.id
+trd_order_promotion.activity_id=mkt_activity.id
+trd_payment.order_id=trd_order.id
+trd_payment_channel_fee.payment_id=trd_payment.id
+trd_refund.order_id=trd_order.id
+trd_refund.aftersale_id=trd_aftersale.id
+trd_refund.reason_code=trd_aftersale_reason.code
+trd_refund_item.refund_id=trd_refund.id
+trd_refund_item.order_item_id=trd_order_item.id
+trd_aftersale.order_id=trd_order.id
+trd_aftersale.reason_code=trd_aftersale_reason.code
+trd_cart.member_id=usr_member.id
+trd_cart.sku_id=prd_sku.id
+trd_order_invoice.order_id=trd_order.id
+trd_order_review.order_item_id=trd_order_item.id
+trd_order_review.member_id=usr_member.id
+trd_order_split.parent_order_id=trd_order.id
+trd_order_split.child_order_id=trd_order.id
+trd_presale_order.order_id=trd_order.id
+trd_daily_shop_sales.stat_date=dim_date.date_key
+trd_daily_shop_sales.shop_id=dim_shop.id
+trd_daily_sku_sales.stat_date=dim_date.date_key
+trd_daily_sku_sales.sku_id=prd_sku.id
+trd_order_cancel.order_id=trd_order.id
+trd_complaint.order_id=trd_order.id
+trd_return_logistics.refund_id=trd_refund.id
+trd_return_logistics.carrier_id=tms_carrier.id
+trd_compensation.order_id=trd_order.id
+trd_compensation.reason_code=trd_aftersale_reason.code
+trd_order_tag.order_id=trd_order.id
+trd_gift_card_usage.order_id=trd_order.id
+prd_spu.category_id=prd_category.id
+prd_spu.brand_id=prd_brand.id
+prd_spu.series_id=prd_series.id
+prd_sku.spu_id=prd_spu.id
+prd_category.parent_id=prd_category.id
+prd_price_history.sku_id=prd_sku.id
+prd_attribute.category_id=prd_category.id
+prd_sku_attribute.sku_id=prd_sku.id
+prd_sku_attribute.attribute_id=prd_attribute.id
+prd_sku_label.sku_id=prd_sku.id
+prd_sku_label.label_id=prd_label.id
+prd_bundle_item.bundle_id=prd_bundle.id
+prd_bundle_item.sku_id=prd_sku.id
+prd_listing_log.sku_id=prd_sku.id
+prd_sku_cost.sku_id=prd_sku.id
+prd_series.brand_id=prd_brand.id
+prd_sku_barcode.sku_id=prd_sku.id
+usr_member.level_id=usr_member_level.id
+usr_member.register_channel_id=mkt_channel.id
+usr_member.region_id=dim_region.id
+usr_member_level_log.member_id=usr_member.id
+usr_member_level_log.from_level_id=usr_member_level.id
+usr_member_level_log.to_level_id=usr_member_level.id
+usr_address.member_id=usr_member.id
+usr_points_log.member_id=usr_member.id
+usr_member_tag.member_id=usr_member.id
+mkt_coupon_template.activity_id=mkt_activity.id
+mkt_coupon.template_id=mkt_coupon_template.id
+mkt_coupon.member_id=usr_member.id
+mkt_activity_sku.activity_id=mkt_activity.id
+mkt_activity_sku.sku_id=prd_sku.id
+mkt_ad_spend.stat_date=dim_date.date_key
+mkt_ad_spend.channel_id=mkt_channel.id
+mkt_traffic_daily.stat_date=dim_date.date_key
+mkt_traffic_daily.shop_id=dim_shop.id
+mkt_traffic_daily.channel_id=mkt_channel.id
+mkt_live_session.shop_id=dim_shop.id
+mkt_member_attribution.member_id=usr_member.id
+mkt_member_attribution.first_order_id=trd_order.id
+mkt_member_attribution.channel_id=mkt_channel.id
+scm_purchase_order.supplier_id=scm_supplier.id
+scm_purchase_order.warehouse_id=wms_warehouse.id
+scm_purchase_order_item.po_id=scm_purchase_order.id
+scm_purchase_order_item.sku_id=prd_sku.id
+wms_warehouse.region_id=dim_region.id
+wms_inbound.warehouse_id=wms_warehouse.id
+wms_inbound_item.inbound_id=wms_inbound.id
+wms_inbound_item.sku_id=prd_sku.id
+wms_inventory_snapshot.snapshot_date=dim_date.date_key
+wms_inventory_snapshot.warehouse_id=wms_warehouse.id
+wms_inventory_snapshot.sku_id=prd_sku.id
+wms_inventory.warehouse_id=wms_warehouse.id
+wms_inventory.sku_id=prd_sku.id
+wms_transfer.from_warehouse_id=wms_warehouse.id
+wms_transfer.to_warehouse_id=wms_warehouse.id
+wms_transfer_item.transfer_id=wms_transfer.id
+wms_transfer_item.sku_id=prd_sku.id
+wms_outbound.fulfillment_id=oms_fulfillment_order.id
+wms_outbound.warehouse_id=wms_warehouse.id
+wms_outbound_item.outbound_id=wms_outbound.id
+wms_outbound_item.sku_id=prd_sku.id
+wms_stockout_record.order_id=trd_order.id
+wms_stockout_record.sku_id=prd_sku.id
+wms_stockout_record.warehouse_id=wms_warehouse.id
+wms_stocktake.warehouse_id=wms_warehouse.id
+wms_stocktake_item.stocktake_id=wms_stocktake.id
+wms_stocktake_item.sku_id=prd_sku.id
+tms_shipment.fulfillment_id=oms_fulfillment_order.id
+tms_shipment.carrier_id=tms_carrier.id
+tms_shipment_track.shipment_id=tms_shipment.id
+tms_delivery_sla.warehouse_id=wms_warehouse.id
+tms_delivery_sla.region_id=dim_region.id
+oms_fulfillment_order.order_id=trd_order.id
+oms_fulfillment_order.warehouse_id=wms_warehouse.id
+fin_settlement.shop_id=dim_shop.id
+fin_settlement_item.settlement_id=fin_settlement.id
+fin_settlement_item.order_id=trd_order.id
+fin_platform_fee.platform_id=dim_platform.id
+fin_platform_fee.category_id=prd_category.id
+fin_sales_target.shop_id=dim_shop.id
+fin_exchange_rate.currency_code=dim_currency.code
+dim_shop.platform_id=dim_platform.id
+dim_shop.region_id=dim_region.id
+dim_store.shop_id=dim_shop.id
+dim_store.region_id=dim_region.id

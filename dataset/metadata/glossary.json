@@ -1,0 +1,3518 @@
+[
+ {
+  "type": "metric",
+  "term": "GMV",
+  "synonyms": [
+   "成交总额",
+   "商品交易总额",
+   "交易额",
+   "流水"
+  ],
+  "description": "已支付订单的商品原价总额加运费，不扣优惠、不扣退款。按天看可直接用 trd_daily_shop_sales.gmv。；公式：SUM(trd_order.total_amount + trd_order.freight_amount)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.gmv",
+  "tables": [
+   "trd_order",
+   "trd_daily_shop_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "实付金额",
+  "synonyms": [
+   "支付金额",
+   "成交金额",
+   "实收金额",
+   "付款金额"
+  ],
+  "description": "用户实际支付的钱 = 商品总额 - 优惠总额 + 运费。；公式：SUM(trd_order.pay_amount)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.paid_amount",
+  "tables": [
+   "trd_order",
+   "trd_daily_shop_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "销售额",
+  "synonyms": [
+   "营业额",
+   "销售收入",
+   "卖了多少钱"
+  ],
+  "description": "未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。；公式：默认等同实付金额 SUM(trd_order.pay_amount)；按商品/类目统计时用 SUM(trd_order_item.pay_share)；过滤：trd_order.paid_at IS NOT NULL AND trd_order.order_status NOT IN ('CANCELLED','CLOSED')；涉及：trd_order, trd_order_item, trd_daily_sku_sales.sales_amount",
+  "tables": [
+   "trd_order",
+   "trd_order_item",
+   "trd_daily_sku_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "退款后金额",
+  "synonyms": [
+   "净销售额",
+   "净销售",
+   "退款后销售额",
+   "净收入"
+  ],
+  "description": "实付金额扣除退款成功金额。退款按退款成功时间 refunded_at 归属。；公式：实付金额 - SUM(trd_refund.refund_amount WHERE refund_status='SUCCESS')；涉及：trd_order, trd_refund, trd_daily_shop_sales.net_sales",
+  "tables": [
+   "trd_order",
+   "trd_refund",
+   "trd_daily_shop_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "退款金额",
+  "synonyms": [
+   "退款额",
+   "退了多少钱"
+  ],
+  "description": "只统计退款成功的单子；申请中/被拒绝的不算。；公式：SUM(trd_refund.refund_amount)；过滤：trd_refund.refund_status = 'SUCCESS'；涉及：trd_refund",
+  "tables": [
+   "trd_refund"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "退款率",
+  "synonyms": [
+   "退款比例",
+   "退单率"
+  ],
+  "description": "按订单数计算。金额退款率 = 退款金额 / 实付金额，用户明确说“金额”时才用。；公式：COUNT(DISTINCT 有成功退款的订单) / COUNT(DISTINCT 支付订单)；涉及：trd_refund, trd_order",
+  "tables": [
+   "trd_refund",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "缺货退款率",
+  "synonyms": [
+   "缺货导致的退款率",
+   "因缺货退款比例"
+  ],
+  "description": "跨交易与履约：退款原因编码 STOCKOUT，可用 wms_stockout_record 核对到具体缺货SKU与仓库。；公式：COUNT(DISTINCT reason_code='STOCKOUT' 且退款成功的订单) / COUNT(DISTINCT 支付订单)；涉及：trd_refund, trd_aftersale_reason, wms_stockout_record, trd_order",
+  "tables": [
+   "trd_refund",
+   "trd_aftersale_reason",
+   "wms_stockout_record",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "订单数",
+  "synonyms": [
+   "单量",
+   "支付订单数",
+   "成交单数"
+  ],
+  "description": "默认指支付订单数；“下单数”则不加支付条件。；公式：COUNT(DISTINCT trd_order.id)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.order_cnt",
+  "tables": [
+   "trd_order",
+   "trd_daily_shop_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "下单数",
+  "synonyms": [
+   "下单量",
+   "创建订单数"
+  ],
+  "description": "含未支付、已取消的订单，按 created_at 归属。；公式：COUNT(trd_order.id)；涉及：trd_order",
+  "tables": [
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "客单价",
+  "synonyms": [
+   "ATV",
+   "笔单价",
+   "平均订单金额"
+  ],
+  "description": "按订单计算的平均实付金额。“人均消费”则是实付金额/支付买家数。；公式：实付金额 / 支付订单数；涉及：trd_order",
+  "tables": [
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "买家数",
+  "synonyms": [
+   "支付买家数",
+   "下单用户数",
+   "购买人数",
+   "成交用户数"
+  ],
+  "description": "公式：COUNT(DISTINCT trd_order.member_id)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.buyer_cnt",
+  "tables": [
+   "trd_order",
+   "trd_daily_shop_sales"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "复购率",
+  "synonyms": [
+   "回购率",
+   "重复购买率"
+  ],
+  "description": "公式：统计期内支付订单数>=2 的买家数 / 统计期内支付买家数；涉及：trd_order",
+  "tables": [
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "UV",
+  "synonyms": [
+   "访客数",
+   "独立访客"
+  ],
+  "description": "按店铺按渠道的日访客数，跨天直接相加（近似口径，不做跨天去重）。；公式：SUM(mkt_traffic_daily.uv)；涉及：mkt_traffic_daily",
+  "tables": [
+   "mkt_traffic_daily"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "PV",
+  "synonyms": [
+   "浏览量",
+   "页面浏览量"
+  ],
+  "description": "公式：SUM(mkt_traffic_daily.pv)；涉及：mkt_traffic_daily",
+  "tables": [
+   "mkt_traffic_daily"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "转化率",
+  "synonyms": [
+   "支付转化率",
+   "下单转化率",
+   "CVR"
+  ],
+  "description": "店铺维度，同一天同一店铺对齐后计算。；公式：支付买家数 / UV；涉及：trd_order, mkt_traffic_daily",
+  "tables": [
+   "trd_order",
+   "mkt_traffic_daily"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "ROI",
+  "synonyms": [
+   "投产比",
+   "投入产出比",
+   "ROAS"
+  ],
+  "description": "渠道归因按会员首单归因渠道 mkt_member_attribution。；公式：归因到该渠道的实付金额 / SUM(mkt_ad_spend.spend)；涉及：mkt_ad_spend, mkt_member_attribution, trd_order",
+  "tables": [
+   "mkt_ad_spend",
+   "mkt_member_attribution",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "毛利",
+  "synonyms": [
+   "毛利润",
+   "毛利额"
+  ],
+  "description": "成本按订单支付月份匹配 prd_sku_cost.month_key。毛利率 = 毛利 / 销售额。；公式：SUM(trd_order_item.pay_share) - SUM(trd_order_item.quantity * prd_sku_cost.unit_cost)；涉及：trd_order_item, prd_sku_cost",
+  "tables": [
+   "trd_order_item",
+   "prd_sku_cost"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "动销率",
+  "synonyms": [
+   "动销比",
+   "商品动销率"
+  ],
+  "description": "在售 = prd_sku.status='ON_SALE'。；公式：统计期内有销量的在售SKU数 / 在售SKU数；涉及：trd_order_item, trd_order, prd_sku",
+  "tables": [
+   "trd_order_item",
+   "trd_order",
+   "prd_sku"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "售罄率",
+  "synonyms": [
+   "售空率"
+  ],
+  "description": "公式：统计期销量 / (统计期销量 + 期末在库数量)；涉及：trd_order_item, wms_inventory_snapshot",
+  "tables": [
+   "trd_order_item",
+   "wms_inventory_snapshot"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "DOS",
+  "synonyms": [
+   "库存可售天数",
+   "库存周转天数",
+   "days of supply",
+   "可售天数"
+  ],
+  "description": "可用库存取 wms_inventory_snapshot.available_qty（日快照）；问“当前”时用实时表 wms_inventory。；公式：期末可用库存 / 近28天日均销量；涉及：wms_inventory_snapshot, trd_order_item, trd_order",
+  "tables": [
+   "wms_inventory_snapshot",
+   "trd_order_item",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "库存周转率",
+  "synonyms": [
+   "周转率",
+   "存货周转"
+  ],
+  "description": "公式：统计期销售成本 / 平均库存成本；涉及：trd_order_item, prd_sku_cost, wms_inventory_snapshot",
+  "tables": [
+   "trd_order_item",
+   "prd_sku_cost",
+   "wms_inventory_snapshot"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "缺货率",
+  "synonyms": [
+   "缺货比例",
+   "断货率"
+  ],
+  "description": "公式：发生缺货的订单数 / 支付订单数；涉及：wms_stockout_record, trd_order",
+  "tables": [
+   "wms_stockout_record",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "履约时效",
+  "synonyms": [
+   "发货时效",
+   "配送时长",
+   "送达时长",
+   "物流时效"
+  ],
+  "description": "从支付到签收的小时数。仅“发货时效”指支付到揽收 shipped_at。；公式：AVG(TIMESTAMPDIFF(HOUR, trd_order.paid_at, tms_shipment.delivered_at))；涉及：trd_order, oms_fulfillment_order, tms_shipment",
+  "tables": [
+   "trd_order",
+   "oms_fulfillment_order",
+   "tms_shipment"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "准时送达率",
+  "synonyms": [
+   "按时送达率",
+   "时效达成率",
+   "SLA达成率"
+  ],
+  "description": "公式：COUNT(delivered_at <= oms_fulfillment_order.promised_at) / COUNT(已签收履约单)；涉及：oms_fulfillment_order, tms_shipment",
+  "tables": [
+   "oms_fulfillment_order",
+   "tms_shipment"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "发货率",
+  "synonyms": [
+   "48小时发货率"
+  ],
+  "description": "公式：支付后48小时内揽收的订单数 / 支付订单数；涉及：trd_order, oms_fulfillment_order, tms_shipment",
+  "tables": [
+   "trd_order",
+   "oms_fulfillment_order",
+   "tms_shipment"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "采购到货率",
+  "synonyms": [
+   "到货率",
+   "供应商到货率"
+  ],
+  "description": "公式：SUM(wms_inbound_item.quantity, inbound_type='PURCHASE') / SUM(scm_purchase_order_item.quantity)；涉及：scm_purchase_order, scm_purchase_order_item, wms_inbound, wms_inbound_item",
+  "tables": [
+   "scm_purchase_order",
+   "scm_purchase_order_item",
+   "wms_inbound",
+   "wms_inbound_item"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "盘点差异率",
+  "synonyms": [
+   "盘差率",
+   "库存准确率的反面"
+  ],
+  "description": "公式：SUM(ABS(actual_qty - book_qty)) / SUM(book_qty)；涉及：wms_stocktake, wms_stocktake_item",
+  "tables": [
+   "wms_stocktake",
+   "wms_stocktake_item"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "销售目标达成率",
+  "synonyms": [
+   "目标完成率",
+   "达成率"
+  ],
+  "description": "公式：月实付金额 / fin_sales_target.target_amount；涉及：trd_order, fin_sales_target",
+  "tables": [
+   "trd_order",
+   "fin_sales_target"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "平台佣金",
+  "synonyms": [
+   "扣点",
+   "佣金"
+  ],
+  "description": "公式：SUM(fin_settlement.commission)；涉及：fin_settlement",
+  "tables": [
+   "fin_settlement"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "件单价",
+  "synonyms": [
+   "平均件单价",
+   "单件价格"
+  ],
+  "description": "公式：SUM(trd_order_item.pay_share) / SUM(trd_order_item.quantity)；涉及：trd_order_item, trd_order",
+  "tables": [
+   "trd_order_item",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "连带率",
+  "synonyms": [
+   "件数比",
+   "每单件数",
+   "UPT"
+  ],
+  "description": "公式：SUM(trd_order_item.quantity) / 支付订单数；涉及：trd_order_item, trd_order",
+  "tables": [
+   "trd_order_item",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "人均消费",
+  "synonyms": [
+   "ARPU",
+   "人均实付"
+  ],
+  "description": "公式：实付金额 / 支付买家数；涉及：trd_order",
+  "tables": [
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "毛利率",
+  "synonyms": [
+   "毛利占比"
+  ],
+  "description": "公式：毛利 / 销售额（按商品维度实付分摊口径）；涉及：trd_order_item, prd_sku_cost",
+  "tables": [
+   "trd_order_item",
+   "prd_sku_cost"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "退货率",
+  "synonyms": [
+   "退货比例"
+  ],
+  "description": "只算退货退款；仅退款不计入。；公式：COUNT(DISTINCT refund_type='RETURN_REFUND' 且成功的订单) / 支付订单数；涉及：trd_refund, trd_order",
+  "tables": [
+   "trd_refund",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "取消率",
+  "synonyms": [
+   "订单取消率"
+  ],
+  "description": "公式：order_status='CANCELLED' 的订单数 / 下单数；涉及：trd_order, trd_order_cancel",
+  "tables": [
+   "trd_order",
+   "trd_order_cancel"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "优惠率",
+  "synonyms": [
+   "折扣率",
+   "让利率"
+  ],
+  "description": "公式：SUM(discount_amount) / SUM(total_amount)；涉及：trd_order",
+  "tables": [
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "新客占比",
+  "synonyms": [
+   "新客比例",
+   "新买家占比"
+  ],
+  "description": "公式：统计期首单买家数 / 支付买家数；涉及：trd_order, trd_order_tag",
+  "tables": [
+   "trd_order",
+   "trd_order_tag"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "会员渗透率",
+  "synonyms": [
+   "付费会员占比"
+  ],
+  "description": "公式：银卡及以上会员的支付买家数 / 支付买家数；涉及：usr_member, trd_order",
+  "tables": [
+   "usr_member",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "点击率",
+  "synonyms": [
+   "CTR"
+  ],
+  "description": "公式：SUM(mkt_ad_spend.clicks) / SUM(mkt_ad_spend.impressions)；涉及：mkt_ad_spend",
+  "tables": [
+   "mkt_ad_spend"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "点击成本",
+  "synonyms": [
+   "CPC",
+   "平均点击成本"
+  ],
+  "description": "公式：SUM(mkt_ad_spend.spend) / SUM(mkt_ad_spend.clicks)；涉及：mkt_ad_spend",
+  "tables": [
+   "mkt_ad_spend"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "库存金额",
+  "synonyms": [
+   "库存成本",
+   "存货金额"
+  ],
+  "description": "公式：SUM(wms_inventory_snapshot.available_qty * prd_sku_cost.unit_cost)；涉及：wms_inventory_snapshot, prd_sku_cost",
+  "tables": [
+   "wms_inventory_snapshot",
+   "prd_sku_cost"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "好评率",
+  "synonyms": [
+   "五星好评率",
+   "满意度"
+  ],
+  "description": "公式：COUNT(score>=4) / COUNT(评价)；涉及：trd_order_review",
+  "tables": [
+   "trd_order_review"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "客诉率",
+  "synonyms": [
+   "投诉率"
+  ],
+  "description": "公式：客诉工单数 / 支付订单数；涉及：trd_complaint, trd_order",
+  "tables": [
+   "trd_complaint",
+   "trd_order"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "加购转化率",
+  "synonyms": [
+   "加购下单率"
+  ],
+  "description": "公式：COUNT(trd_cart.converted=1) / COUNT(trd_cart)；涉及：trd_cart",
+  "tables": [
+   "trd_cart"
+  ]
+ },
+ {
+  "type": "dimension",
+  "term": "大区",
+  "synonyms": [
+   "区域",
+   "地区",
+   "片区"
+  ],
+  "description": "店铺运营归属的大区 dim_shop.region_id -> dim_region.big_region（华东/华北/华南/华中/西南/西北/东北）。按收货地看时用 trd_order_address.region_id，问题须明确“收货地”。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "类目",
+  "synonyms": [
+   "品类",
+   "分类",
+   "商品分类"
+  ],
+  "description": "prd_category 三级树；“一级类目/大类”需沿 parent_id 向上取 level=1。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "渠道",
+  "synonyms": [
+   "流量渠道",
+   "投放渠道",
+   "来源渠道"
+  ],
+  "description": "指 mkt_channel（抖音/小红书/百度/微信/自然流量）；“下单渠道/订单来源”是 trd_order_source（APP/小程序/网页/直播/线下），两者不同。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "平台",
+  "synonyms": [
+   "销售平台",
+   "电商平台"
+  ],
+  "description": "dim_platform（天猫/京东/抖音/自营商城），通过 dim_shop.platform_id 关联。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "大促",
+  "synonyms": [
+   "双11",
+   "618",
+   "年货节",
+   "促销期"
+  ],
+  "description": "dim_date.promo_name 非空的日期；活动明细见 mkt_activity。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "新客",
+  "synonyms": [
+   "新用户",
+   "首单用户"
+  ],
+  "description": "统计期内产生首笔支付订单的会员；订单标签 trd_order_tag.tag='FIRST_ORDER'。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "上周 / 上月 / 同比 / 环比",
+  "synonyms": [],
+  "description": "上周为自然周（周一至周日）；同比为去年同期，环比为上一个相同长度周期。",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "SKU",
+  "synonyms": [],
+  "description": "库存量单位，最小可售规格 prd_sku",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "SPU",
+  "synonyms": [],
+  "description": "标准产品单元，同款商品 prd_spu",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "ATV",
+  "synonyms": [],
+  "description": "客单价",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "CVR",
+  "synonyms": [],
+  "description": "转化率",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "SLA",
+  "synonyms": [],
+  "description": "时效承诺 tms_delivery_sla / oms_fulfillment_order.promised_at",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "RFM",
+  "synonyms": [],
+  "description": "最近一次消费(Recency)、消费频次(Frequency)、消费金额(Monetary) 会员分层",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "WMS",
+  "synonyms": [],
+  "description": "仓储系统（wms_ 前缀表）",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "TMS",
+  "synonyms": [],
+  "description": "运输系统（tms_ 前缀表）",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "OMS",
+  "synonyms": [],
+  "description": "订单履约系统（oms_ 前缀表）",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "SCM",
+  "synonyms": [],
+  "description": "供应链采购（scm_ 前缀表）",
+  "tables": []
+ },
+ {
+  "type": "enum_value",
+  "term": "东北",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '东北'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "东北"
+ },
+ {
+  "type": "enum_value",
+  "term": "华南",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '华南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "华南"
+ },
+ {
+  "type": "enum_value",
+  "term": "华中",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '华中'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "华中"
+ },
+ {
+  "type": "enum_value",
+  "term": "华东",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '华东'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "华东"
+ },
+ {
+  "type": "enum_value",
+  "term": "华北",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '华北'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "华北"
+ },
+ {
+  "type": "enum_value",
+  "term": "西南",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '西南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "西南"
+ },
+ {
+  "type": "enum_value",
+  "term": "西北",
+  "synonyms": [],
+  "description": "大区取值，对应 dim_region.big_region = '西北'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.big_region",
+  "value": "西北"
+ },
+ {
+  "type": "enum_value",
+  "term": "四川",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '四川'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "四川"
+ },
+ {
+  "type": "enum_value",
+  "term": "吉林",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '吉林'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "吉林"
+ },
+ {
+  "type": "enum_value",
+  "term": "内蒙古",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '内蒙古'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "内蒙古"
+ },
+ {
+  "type": "enum_value",
+  "term": "上海",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '上海'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "上海"
+ },
+ {
+  "type": "enum_value",
+  "term": "安徽",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '安徽'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "安徽"
+ },
+ {
+  "type": "enum_value",
+  "term": "宁夏",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '宁夏'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "宁夏"
+ },
+ {
+  "type": "enum_value",
+  "term": "山东",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '山东'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "山东"
+ },
+ {
+  "type": "enum_value",
+  "term": "山西",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '山西'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "山西"
+ },
+ {
+  "type": "enum_value",
+  "term": "天津",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '天津'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "天津"
+ },
+ {
+  "type": "enum_value",
+  "term": "广东",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '广东'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "广东"
+ },
+ {
+  "type": "enum_value",
+  "term": "广西",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '广西'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "广西"
+ },
+ {
+  "type": "enum_value",
+  "term": "新疆",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '新疆'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "新疆"
+ },
+ {
+  "type": "enum_value",
+  "term": "江苏",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '江苏'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "江苏"
+ },
+ {
+  "type": "enum_value",
+  "term": "江西",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '江西'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "江西"
+ },
+ {
+  "type": "enum_value",
+  "term": "湖南",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '湖南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "湖南"
+ },
+ {
+  "type": "enum_value",
+  "term": "湖北",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '湖北'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "湖北"
+ },
+ {
+  "type": "enum_value",
+  "term": "河南",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '河南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "河南"
+ },
+ {
+  "type": "enum_value",
+  "term": "河北",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '河北'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "河北"
+ },
+ {
+  "type": "enum_value",
+  "term": "海南",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '海南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "海南"
+ },
+ {
+  "type": "enum_value",
+  "term": "浙江",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '浙江'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "浙江"
+ },
+ {
+  "type": "enum_value",
+  "term": "云南",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '云南'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "云南"
+ },
+ {
+  "type": "enum_value",
+  "term": "北京",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '北京'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "北京"
+ },
+ {
+  "type": "enum_value",
+  "term": "甘肃",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '甘肃'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "甘肃"
+ },
+ {
+  "type": "enum_value",
+  "term": "福建",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '福建'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "福建"
+ },
+ {
+  "type": "enum_value",
+  "term": "青海",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '青海'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "青海"
+ },
+ {
+  "type": "enum_value",
+  "term": "黑龙江",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '黑龙江'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "黑龙江"
+ },
+ {
+  "type": "enum_value",
+  "term": "重庆",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '重庆'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "重庆"
+ },
+ {
+  "type": "enum_value",
+  "term": "贵州",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '贵州'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "贵州"
+ },
+ {
+  "type": "enum_value",
+  "term": "西藏",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '西藏'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "西藏"
+ },
+ {
+  "type": "enum_value",
+  "term": "辽宁",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '辽宁'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "辽宁"
+ },
+ {
+  "type": "enum_value",
+  "term": "陕西",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '陕西'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "陕西"
+ },
+ {
+  "type": "enum_value",
+  "term": "个人护理",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '个人护理'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "个人护理"
+ },
+ {
+  "type": "enum_value",
+  "term": "个人护理基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '个人护理基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "个人护理基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "个人护理精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '个人护理精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "个人护理精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "家居日用",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '家居日用'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "家居日用"
+ },
+ {
+  "type": "enum_value",
+  "term": "家纺",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '家纺'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "家纺"
+ },
+ {
+  "type": "enum_value",
+  "term": "家纺基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '家纺基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "家纺基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "家纺精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '家纺精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "家纺精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "彩妆",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '彩妆'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "彩妆"
+ },
+ {
+  "type": "enum_value",
+  "term": "彩妆基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '彩妆基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "彩妆基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "彩妆精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '彩妆精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "彩妆精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "手机通讯",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "手机通讯"
+ },
+ {
+  "type": "enum_value",
+  "term": "手机通讯基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "手机通讯基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "手机通讯精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "手机通讯精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "数码家电",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '数码家电'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "数码家电"
+ },
+ {
+  "type": "enum_value",
+  "term": "母婴玩具",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '母婴玩具'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "母婴玩具"
+ },
+ {
+  "type": "enum_value",
+  "term": "服饰鞋包",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '服饰鞋包'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "服饰鞋包"
+ },
+ {
+  "type": "enum_value",
+  "term": "护肤",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '护肤'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "护肤"
+ },
+ {
+  "type": "enum_value",
+  "term": "护肤基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '护肤基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "护肤基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "护肤精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '护肤精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "护肤精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "智能家电",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '智能家电'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "智能家电"
+ },
+ {
+  "type": "enum_value",
+  "term": "智能家电基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '智能家电基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "智能家电基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "智能家电精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '智能家电精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "智能家电精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "生鲜水果",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "生鲜水果"
+ },
+ {
+  "type": "enum_value",
+  "term": "生鲜水果基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "生鲜水果基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "生鲜水果精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "生鲜水果精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "电脑办公",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "电脑办公"
+ },
+ {
+  "type": "enum_value",
+  "term": "电脑办公基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "电脑办公基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "电脑办公精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "电脑办公精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "童装",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '童装'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "童装"
+ },
+ {
+  "type": "enum_value",
+  "term": "童装基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '童装基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "童装基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "童装精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '童装精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "童装精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "箱包",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '箱包'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "箱包"
+ },
+ {
+  "type": "enum_value",
+  "term": "箱包基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '箱包基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "箱包基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "箱包精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '箱包精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "箱包精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "粮油调味",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "粮油调味"
+ },
+ {
+  "type": "enum_value",
+  "term": "粮油调味基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "粮油调味基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "粮油调味精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "粮油调味精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "美妆个护",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '美妆个护'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "美妆个护"
+ },
+ {
+  "type": "enum_value",
+  "term": "玩具",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '玩具'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "玩具"
+ },
+ {
+  "type": "enum_value",
+  "term": "玩具基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '玩具基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "玩具基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "玩具精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '玩具精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "玩具精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "食品生鲜",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '食品生鲜'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "食品生鲜"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫",
+  "synonyms": [],
+  "description": "销售平台取值，对应 dim_platform.name = '天猫'",
+  "tables": [
+   "dim_platform"
+  ],
+  "column": "dim_platform.name",
+  "value": "天猫"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音",
+  "synonyms": [],
+  "description": "销售平台取值，对应 dim_platform.name = '抖音'",
+  "tables": [
+   "dim_platform"
+  ],
+  "column": "dim_platform.name",
+  "value": "抖音"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东",
+  "synonyms": [],
+  "description": "销售平台取值，对应 dim_platform.name = '京东'",
+  "tables": [
+   "dim_platform"
+  ],
+  "column": "dim_platform.name",
+  "value": "京东"
+ },
+ {
+  "type": "enum_value",
+  "term": "自营商城",
+  "synonyms": [],
+  "description": "销售平台取值，对应 dim_platform.name = '自营商城'",
+  "tables": [
+   "dim_platform"
+  ],
+  "column": "dim_platform.name",
+  "value": "自营商城"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫家居店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '天猫家居店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "天猫家居店"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫旗舰店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '天猫旗舰店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "天猫旗舰店"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫数码专营店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '天猫数码专营店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "天猫数码专营店"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音东北店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音东北店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音东北店"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音官方直播间",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音官方直播间'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音官方直播间"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音华中店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音华中店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音华中店"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东华南店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '京东华南店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "京东华南店"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东自营旗舰店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '京东自营旗舰店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "京东自营旗舰店"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东西南店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '京东西南店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "京东西南店"
+ },
+ {
+  "type": "enum_value",
+  "term": "自营商城总店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '自营商城总店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "自营商城总店"
+ },
+ {
+  "type": "enum_value",
+  "term": "自营商城华北店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '自营商城华北店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "自营商城华北店"
+ },
+ {
+  "type": "enum_value",
+  "term": "自营商城西北店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '自营商城西北店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "自营商城西北店"
+ },
+ {
+  "type": "enum_value",
+  "term": "百度",
+  "synonyms": [
+   "BAIDU"
+  ],
+  "description": "流量渠道取值，对应 mkt_channel.code = 'BAIDU'",
+  "tables": [
+   "mkt_channel"
+  ],
+  "column": "mkt_channel.code",
+  "value": "BAIDU"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音",
+  "synonyms": [
+   "DOUYIN"
+  ],
+  "description": "流量渠道取值，对应 mkt_channel.code = 'DOUYIN'",
+  "tables": [
+   "mkt_channel"
+  ],
+  "column": "mkt_channel.code",
+  "value": "DOUYIN"
+ },
+ {
+  "type": "enum_value",
+  "term": "自然流量",
+  "synonyms": [
+   "ORGANIC"
+  ],
+  "description": "流量渠道取值，对应 mkt_channel.code = 'ORGANIC'",
+  "tables": [
+   "mkt_channel"
+  ],
+  "column": "mkt_channel.code",
+  "value": "ORGANIC"
+ },
+ {
+  "type": "enum_value",
+  "term": "微信",
+  "synonyms": [
+   "WECHAT"
+  ],
+  "description": "流量渠道取值，对应 mkt_channel.code = 'WECHAT'",
+  "tables": [
+   "mkt_channel"
+  ],
+  "column": "mkt_channel.code",
+  "value": "WECHAT"
+ },
+ {
+  "type": "enum_value",
+  "term": "小红书",
+  "synonyms": [
+   "XHS"
+  ],
+  "description": "流量渠道取值，对应 mkt_channel.code = 'XHS'",
+  "tables": [
+   "mkt_channel"
+  ],
+  "column": "mkt_channel.code",
+  "value": "XHS"
+ },
+ {
+  "type": "enum_value",
+  "term": "手机APP",
+  "synonyms": [
+   "APP"
+  ],
+  "description": "下单来源取值，对应 trd_order_source.code = 'APP'",
+  "tables": [
+   "trd_order_source"
+  ],
+  "column": "trd_order_source.code",
+  "value": "APP"
+ },
+ {
+  "type": "enum_value",
+  "term": "直播间",
+  "synonyms": [
+   "LIVE"
+  ],
+  "description": "下单来源取值，对应 trd_order_source.code = 'LIVE'",
+  "tables": [
+   "trd_order_source"
+  ],
+  "column": "trd_order_source.code",
+  "value": "LIVE"
+ },
+ {
+  "type": "enum_value",
+  "term": "小程序",
+  "synonyms": [
+   "MINI_PROGRAM"
+  ],
+  "description": "下单来源取值，对应 trd_order_source.code = 'MINI_PROGRAM'",
+  "tables": [
+   "trd_order_source"
+  ],
+  "column": "trd_order_source.code",
+  "value": "MINI_PROGRAM"
+ },
+ {
+  "type": "enum_value",
+  "term": "线下门店",
+  "synonyms": [
+   "OFFLINE"
+  ],
+  "description": "下单来源取值，对应 trd_order_source.code = 'OFFLINE'",
+  "tables": [
+   "trd_order_source"
+  ],
+  "column": "trd_order_source.code",
+  "value": "OFFLINE"
+ },
+ {
+  "type": "enum_value",
+  "term": "网页",
+  "synonyms": [
+   "WEB"
+  ],
+  "description": "下单来源取值，对应 trd_order_source.code = 'WEB'",
+  "tables": [
+   "trd_order_source"
+  ],
+  "column": "trd_order_source.code",
+  "value": "WEB"
+ },
+ {
+  "type": "enum_value",
+  "term": "运输破损",
+  "synonyms": [
+   "DAMAGED"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'DAMAGED'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "DAMAGED"
+ },
+ {
+  "type": "enum_value",
+  "term": "物流超时",
+  "synonyms": [
+   "LATE_DELIVERY"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'LATE_DELIVERY'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "LATE_DELIVERY"
+ },
+ {
+  "type": "enum_value",
+  "term": "七天无理由",
+  "synonyms": [
+   "NO_REASON"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'NO_REASON'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "NO_REASON"
+ },
+ {
+  "type": "enum_value",
+  "term": "质量问题",
+  "synonyms": [
+   "QUALITY"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'QUALITY'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "QUALITY"
+ },
+ {
+  "type": "enum_value",
+  "term": "缺货",
+  "synonyms": [
+   "STOCKOUT"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'STOCKOUT'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "STOCKOUT"
+ },
+ {
+  "type": "enum_value",
+  "term": "发错货",
+  "synonyms": [
+   "WRONG_ITEM"
+  ],
+  "description": "售后/退款原因取值，对应 trd_aftersale_reason.code = 'WRONG_ITEM'",
+  "tables": [
+   "trd_aftersale_reason"
+  ],
+  "column": "trd_aftersale_reason.code",
+  "value": "WRONG_ITEM"
+ },
+ {
+  "type": "enum_value",
+  "term": "CANCELLED",
+  "synonyms": [],
+  "description": "订单状态取值，对应 trd_order.order_status = 'CANCELLED'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.order_status",
+  "value": "CANCELLED"
+ },
+ {
+  "type": "enum_value",
+  "term": "CLOSED",
+  "synonyms": [],
+  "description": "订单状态取值，对应 trd_order.order_status = 'CLOSED'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.order_status",
+  "value": "CLOSED"
+ },
+ {
+  "type": "enum_value",
+  "term": "COMPLETED",
+  "synonyms": [],
+  "description": "订单状态取值，对应 trd_order.order_status = 'COMPLETED'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.order_status",
+  "value": "COMPLETED"
+ },
+ {
+  "type": "enum_value",
+  "term": "SHIPPED",
+  "synonyms": [],
+  "description": "订单状态取值，对应 trd_order.order_status = 'SHIPPED'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.order_status",
+  "value": "SHIPPED"
+ },
+ {
+  "type": "enum_value",
+  "term": "REJECTED",
+  "synonyms": [],
+  "description": "退款状态取值，对应 trd_refund.refund_status = 'REJECTED'",
+  "tables": [
+   "trd_refund"
+  ],
+  "column": "trd_refund.refund_status",
+  "value": "REJECTED"
+ },
+ {
+  "type": "enum_value",
+  "term": "SUCCESS",
+  "synonyms": [],
+  "description": "退款状态取值，对应 trd_refund.refund_status = 'SUCCESS'",
+  "tables": [
+   "trd_refund"
+  ],
+  "column": "trd_refund.refund_status",
+  "value": "SUCCESS"
+ },
+ {
+  "type": "enum_value",
+  "term": "REFUND_ONLY",
+  "synonyms": [],
+  "description": "退款类型取值，对应 trd_refund.refund_type = 'REFUND_ONLY'",
+  "tables": [
+   "trd_refund"
+  ],
+  "column": "trd_refund.refund_type",
+  "value": "REFUND_ONLY"
+ },
+ {
+  "type": "enum_value",
+  "term": "RETURN_REFUND",
+  "synonyms": [],
+  "description": "退款类型取值，对应 trd_refund.refund_type = 'RETURN_REFUND'",
+  "tables": [
+   "trd_refund"
+  ],
+  "column": "trd_refund.refund_type",
+  "value": "RETURN_REFUND"
+ },
+ {
+  "type": "enum_value",
+  "term": "REFUND",
+  "synonyms": [],
+  "description": "售后类型取值，对应 trd_aftersale.aftersale_type = 'REFUND'",
+  "tables": [
+   "trd_aftersale"
+  ],
+  "column": "trd_aftersale.aftersale_type",
+  "value": "REFUND"
+ },
+ {
+  "type": "enum_value",
+  "term": "RETURN",
+  "synonyms": [],
+  "description": "售后类型取值，对应 trd_aftersale.aftersale_type = 'RETURN'",
+  "tables": [
+   "trd_aftersale"
+  ],
+  "column": "trd_aftersale.aftersale_type",
+  "value": "RETURN"
+ },
+ {
+  "type": "enum_value",
+  "term": "中通",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '中通'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "中通"
+ },
+ {
+  "type": "enum_value",
+  "term": "极速达",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '极速达'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "极速达"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东物流",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '京东物流'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "京东物流"
+ },
+ {
+  "type": "enum_value",
+  "term": "圆通",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '圆通'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "圆通"
+ },
+ {
+  "type": "enum_value",
+  "term": "顺丰",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '顺丰'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "顺丰"
+ },
+ {
+  "type": "enum_value",
+  "term": "上海前置仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '上海前置仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "上海前置仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "北京前置仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '北京前置仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "北京前置仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华南中心仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华南中心仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华南中心仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华中区域仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华中区域仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华中区域仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华东中心仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华东中心仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华东中心仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华东区域仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华东区域仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华东区域仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华北区域仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华北区域仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华北区域仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "西南区域仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '西南区域仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "西南区域仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "CENTRAL",
+  "synonyms": [],
+  "description": "仓库类型取值，对应 wms_warehouse.warehouse_type = 'CENTRAL'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.warehouse_type",
+  "value": "CENTRAL"
+ },
+ {
+  "type": "enum_value",
+  "term": "FRONT",
+  "synonyms": [],
+  "description": "仓库类型取值，对应 wms_warehouse.warehouse_type = 'FRONT'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.warehouse_type",
+  "value": "FRONT"
+ },
+ {
+  "type": "enum_value",
+  "term": "REGIONAL",
+  "synonyms": [],
+  "description": "仓库类型取值，对应 wms_warehouse.warehouse_type = 'REGIONAL'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.warehouse_type",
+  "value": "REGIONAL"
+ },
+ {
+  "type": "enum_value",
+  "term": "普通",
+  "synonyms": [],
+  "description": "会员等级取值，对应 usr_member_level.name = '普通'",
+  "tables": [
+   "usr_member_level"
+  ],
+  "column": "usr_member_level.name",
+  "value": "普通"
+ },
+ {
+  "type": "enum_value",
+  "term": "银卡",
+  "synonyms": [],
+  "description": "会员等级取值，对应 usr_member_level.name = '银卡'",
+  "tables": [
+   "usr_member_level"
+  ],
+  "column": "usr_member_level.name",
+  "value": "银卡"
+ },
+ {
+  "type": "enum_value",
+  "term": "黑金",
+  "synonyms": [],
+  "description": "会员等级取值，对应 usr_member_level.name = '黑金'",
+  "tables": [
+   "usr_member_level"
+  ],
+  "column": "usr_member_level.name",
+  "value": "黑金"
+ },
+ {
+  "type": "enum_value",
+  "term": "金卡",
+  "synonyms": [],
+  "description": "会员等级取值，对应 usr_member_level.name = '金卡'",
+  "tables": [
+   "usr_member_level"
+  ],
+  "column": "usr_member_level.name",
+  "value": "金卡"
+ },
+ {
+  "type": "enum_value",
+  "term": "CHURN_RISK",
+  "synonyms": [],
+  "description": "会员标签取值，对应 usr_member_tag.tag = 'CHURN_RISK'",
+  "tables": [
+   "usr_member_tag"
+  ],
+  "column": "usr_member_tag.tag",
+  "value": "CHURN_RISK"
+ },
+ {
+  "type": "enum_value",
+  "term": "HIGH_VALUE",
+  "synonyms": [],
+  "description": "会员标签取值，对应 usr_member_tag.tag = 'HIGH_VALUE'",
+  "tables": [
+   "usr_member_tag"
+  ],
+  "column": "usr_member_tag.tag",
+  "value": "HIGH_VALUE"
+ },
+ {
+  "type": "enum_value",
+  "term": "BIG_PROMO",
+  "synonyms": [],
+  "description": "订单标签取值，对应 trd_order_tag.tag = 'BIG_PROMO'",
+  "tables": [
+   "trd_order_tag"
+  ],
+  "column": "trd_order_tag.tag",
+  "value": "BIG_PROMO"
+ },
+ {
+  "type": "enum_value",
+  "term": "FIRST_ORDER",
+  "synonyms": [],
+  "description": "订单标签取值，对应 trd_order_tag.tag = 'FIRST_ORDER'",
+  "tables": [
+   "trd_order_tag"
+  ],
+  "column": "trd_order_tag.tag",
+  "value": "FIRST_ORDER"
+ },
+ {
+  "type": "enum_value",
+  "term": "HIGH_RISK",
+  "synonyms": [],
+  "description": "订单标签取值，对应 trd_order_tag.tag = 'HIGH_RISK'",
+  "tables": [
+   "trd_order_tag"
+  ],
+  "column": "trd_order_tag.tag",
+  "value": "HIGH_RISK"
+ },
+ {
+  "type": "enum_value",
+  "term": "会员专享",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '会员专享'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "会员专享"
+ },
+ {
+  "type": "enum_value",
+  "term": "新品",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '新品'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "新品"
+ },
+ {
+  "type": "enum_value",
+  "term": "清仓",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '清仓'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "清仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "直播专享",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '直播专享'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "直播专享"
+ },
+ {
+  "type": "enum_value",
+  "term": "爆款",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '爆款'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "爆款"
+ },
+ {
+  "type": "enum_value",
+  "term": "BIG_PROMO",
+  "synonyms": [],
+  "description": "活动类型取值，对应 mkt_activity.activity_type = 'BIG_PROMO'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.activity_type",
+  "value": "BIG_PROMO"
+ },
+ {
+  "type": "enum_value",
+  "term": "FLASH_SALE",
+  "synonyms": [],
+  "description": "活动类型取值，对应 mkt_activity.activity_type = 'FLASH_SALE'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.activity_type",
+  "value": "FLASH_SALE"
+ },
+ {
+  "type": "enum_value",
+  "term": "2024双11",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2024双11'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2024双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "2025618",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2025618'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2025618"
+ },
+ {
+  "type": "enum_value",
+  "term": "2025年货节",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2025年货节'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2025年货节"
+ },
+ {
+  "type": "enum_value",
+  "term": "2025双11",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2025双11'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2025双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "2026618",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2026618'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2026618"
+ },
+ {
+  "type": "enum_value",
+  "term": "2026年货节",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2026年货节'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2026年货节"
+ },
+ {
+  "type": "enum_value",
+  "term": "2026双11",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2026双11'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2026双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀1",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀1'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀1"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀10",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀10'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀10"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀11",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀11'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀11"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀12",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀12'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀12"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀2",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀2'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀2"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀3",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀3'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀3"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀4",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀4'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀4"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀5",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀5'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀5"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀6",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀6'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀6"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀7",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀7'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀7"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀8",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀8'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀8"
+ },
+ {
+  "type": "enum_value",
+  "term": "限时秒杀9",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀9'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "限时秒杀9"
+ },
+ {
+  "type": "enum_value",
+  "term": "ALIPAY",
+  "synonyms": [],
+  "description": "支付渠道取值，对应 trd_payment.pay_channel = 'ALIPAY'",
+  "tables": [
+   "trd_payment"
+  ],
+  "column": "trd_payment.pay_channel",
+  "value": "ALIPAY"
+ },
+ {
+  "type": "enum_value",
+  "term": "CARD",
+  "synonyms": [],
+  "description": "支付渠道取值，对应 trd_payment.pay_channel = 'CARD'",
+  "tables": [
+   "trd_payment"
+  ],
+  "column": "trd_payment.pay_channel",
+  "value": "CARD"
+ },
+ {
+  "type": "enum_value",
+  "term": "GIFT_CARD",
+  "synonyms": [],
+  "description": "支付渠道取值，对应 trd_payment.pay_channel = 'GIFT_CARD'",
+  "tables": [
+   "trd_payment"
+  ],
+  "column": "trd_payment.pay_channel",
+  "value": "GIFT_CARD"
+ },
+ {
+  "type": "enum_value",
+  "term": "WECHAT",
+  "synonyms": [],
+  "description": "支付渠道取值，对应 trd_payment.pay_channel = 'WECHAT'",
+  "tables": [
+   "trd_payment"
+  ],
+  "column": "trd_payment.pay_channel",
+  "value": "WECHAT"
+ },
+ {
+  "type": "enum_value",
+  "term": "FULL_REDUCTION",
+  "synonyms": [],
+  "description": "优惠券类型取值，对应 mkt_coupon_template.coupon_type = 'FULL_REDUCTION'",
+  "tables": [
+   "mkt_coupon_template"
+  ],
+  "column": "mkt_coupon_template.coupon_type",
+  "value": "FULL_REDUCTION"
+ },
+ {
+  "type": "enum_value",
+  "term": "NO_THRESHOLD",
+  "synonyms": [],
+  "description": "优惠券类型取值，对应 mkt_coupon_template.coupon_type = 'NO_THRESHOLD'",
+  "tables": [
+   "mkt_coupon_template"
+  ],
+  "column": "mkt_coupon_template.coupon_type",
+  "value": "NO_THRESHOLD"
+ },
+ {
+  "type": "enum_value",
+  "term": "DELIVERED",
+  "synonyms": [],
+  "description": "履约单状态取值，对应 oms_fulfillment_order.status = 'DELIVERED'",
+  "tables": [
+   "oms_fulfillment_order"
+  ],
+  "column": "oms_fulfillment_order.status",
+  "value": "DELIVERED"
+ },
+ {
+  "type": "enum_value",
+  "term": "DELIVERED",
+  "synonyms": [],
+  "description": "物流轨迹节点取值，对应 tms_shipment_track.node = 'DELIVERED'",
+  "tables": [
+   "tms_shipment_track"
+  ],
+  "column": "tms_shipment_track.node",
+  "value": "DELIVERED"
+ },
+ {
+  "type": "enum_value",
+  "term": "IN_TRANSIT",
+  "synonyms": [],
+  "description": "物流轨迹节点取值，对应 tms_shipment_track.node = 'IN_TRANSIT'",
+  "tables": [
+   "tms_shipment_track"
+  ],
+  "column": "tms_shipment_track.node",
+  "value": "IN_TRANSIT"
+ },
+ {
+  "type": "enum_value",
+  "term": "OUT_FOR_DELIVERY",
+  "synonyms": [],
+  "description": "物流轨迹节点取值，对应 tms_shipment_track.node = 'OUT_FOR_DELIVERY'",
+  "tables": [
+   "tms_shipment_track"
+  ],
+  "column": "tms_shipment_track.node",
+  "value": "OUT_FOR_DELIVERY"
+ },
+ {
+  "type": "enum_value",
+  "term": "PICKED_UP",
+  "synonyms": [],
+  "description": "物流轨迹节点取值，对应 tms_shipment_track.node = 'PICKED_UP'",
+  "tables": [
+   "tms_shipment_track"
+  ],
+  "column": "tms_shipment_track.node",
+  "value": "PICKED_UP"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌A27",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌A27'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌A27"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌B28",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌B28'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌B28"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌C29",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌C29'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌C29"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌D30",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌D30'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌D30"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌G7",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌G7'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌G7"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌H8",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌H8'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌H8"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌I9",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌I9'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌I9"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌J10",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌J10'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌J10"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌K11",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌K11'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌K11"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌L12",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌L12'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌L12"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌M13",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌M13'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌M13"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌N14",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌N14'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌N14"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌O15",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌O15'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌O15"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌P16",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌P16'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌P16"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌Q17",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌Q17'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌Q17"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌R18",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌R18'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌R18"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌S19",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌S19'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌S19"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌T20",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌T20'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌T20"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌U21",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌U21'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌U21"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌V22",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌V22'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌V22"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌W23",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌W23'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌W23"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌X24",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌X24'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌X24"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌Y25",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌Y25'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌Y25"
+ },
+ {
+  "type": "enum_value",
+  "term": "品牌Z26",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '品牌Z26'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "品牌Z26"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌A1",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌A1'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌A1"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌B2",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌B2'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌B2"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌C3",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌C3'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌C3"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌D4",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌D4'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌D4"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌E5",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌E5'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌E5"
+ },
+ {
+  "type": "enum_value",
+  "term": "自有品牌F6",
+  "synonyms": [],
+  "description": "品牌取值，对应 prd_brand.name = '自有品牌F6'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.name",
+  "value": "自有品牌F6"
+ },
+ {
+  "type": "enum_value",
+  "term": "A",
+  "synonyms": [],
+  "description": "品牌等级取值，对应 prd_brand.level = 'A'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.level",
+  "value": "A"
+ },
+ {
+  "type": "enum_value",
+  "term": "B",
+  "synonyms": [],
+  "description": "品牌等级取值，对应 prd_brand.level = 'B'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.level",
+  "value": "B"
+ },
+ {
+  "type": "enum_value",
+  "term": "C",
+  "synonyms": [],
+  "description": "品牌等级取值，对应 prd_brand.level = 'C'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.level",
+  "value": "C"
+ },
+ {
+  "type": "enum_value",
+  "term": "S",
+  "synonyms": [],
+  "description": "品牌等级取值，对应 prd_brand.level = 'S'",
+  "tables": [
+   "prd_brand"
+  ],
+  "column": "prd_brand.level",
+  "value": "S"
+ },
+ {
+  "type": "enum_value",
+  "term": "LOGISTICS",
+  "synonyms": [],
+  "description": "客诉类型取值，对应 trd_complaint.complaint_type = 'LOGISTICS'",
+  "tables": [
+   "trd_complaint"
+  ],
+  "column": "trd_complaint.complaint_type",
+  "value": "LOGISTICS"
+ },
+ {
+  "type": "enum_value",
+  "term": "PRICE",
+  "synonyms": [],
+  "description": "客诉类型取值，对应 trd_complaint.complaint_type = 'PRICE'",
+  "tables": [
+   "trd_complaint"
+  ],
+  "column": "trd_complaint.complaint_type",
+  "value": "PRICE"
+ },
+ {
+  "type": "enum_value",
+  "term": "QUALITY",
+  "synonyms": [],
+  "description": "客诉类型取值，对应 trd_complaint.complaint_type = 'QUALITY'",
+  "tables": [
+   "trd_complaint"
+  ],
+  "column": "trd_complaint.complaint_type",
+  "value": "QUALITY"
+ },
+ {
+  "type": "enum_value",
+  "term": "SERVICE",
+  "synonyms": [],
+  "description": "客诉类型取值，对应 trd_complaint.complaint_type = 'SERVICE'",
+  "tables": [
+   "trd_complaint"
+  ],
+  "column": "trd_complaint.complaint_type",
+  "value": "SERVICE"
+ },
+ {
+  "type": "enum_value",
+  "term": "618",
+  "synonyms": [],
+  "description": "大促名称取值，对应 dim_date.promo_name = '618'",
+  "tables": [
+   "dim_date"
+  ],
+  "column": "dim_date.promo_name",
+  "value": "618"
+ },
+ {
+  "type": "enum_value",
+  "term": "年货节",
+  "synonyms": [],
+  "description": "大促名称取值，对应 dim_date.promo_name = '年货节'",
+  "tables": [
+   "dim_date"
+  ],
+  "column": "dim_date.promo_name",
+  "value": "年货节"
+ },
+ {
+  "type": "enum_value",
+  "term": "双11",
+  "synonyms": [],
+  "description": "大促名称取值，对应 dim_date.promo_name = '双11'",
+  "tables": [
+   "dim_date"
+  ],
+  "column": "dim_date.promo_name",
+  "value": "双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "ANDROID",
+  "synonyms": [],
+  "description": "下单设备取值，对应 trd_order.device_type = 'ANDROID'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.device_type",
+  "value": "ANDROID"
+ },
+ {
+  "type": "enum_value",
+  "term": "H5",
+  "synonyms": [],
+  "description": "下单设备取值，对应 trd_order.device_type = 'H5'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.device_type",
+  "value": "H5"
+ },
+ {
+  "type": "enum_value",
+  "term": "IOS",
+  "synonyms": [],
+  "description": "下单设备取值，对应 trd_order.device_type = 'IOS'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.device_type",
+  "value": "IOS"
+ },
+ {
+  "type": "enum_value",
+  "term": "PC",
+  "synonyms": [],
+  "description": "下单设备取值，对应 trd_order.device_type = 'PC'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.device_type",
+  "value": "PC"
+ },
+ {
+  "type": "enum_value",
+  "term": "COD",
+  "synonyms": [],
+  "description": "支付方式取值，对应 trd_order.pay_type = 'COD'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.pay_type",
+  "value": "COD"
+ },
+ {
+  "type": "enum_value",
+  "term": "INSTALLMENT",
+  "synonyms": [],
+  "description": "支付方式取值，对应 trd_order.pay_type = 'INSTALLMENT'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.pay_type",
+  "value": "INSTALLMENT"
+ },
+ {
+  "type": "enum_value",
+  "term": "ONLINE",
+  "synonyms": [],
+  "description": "支付方式取值，对应 trd_order.pay_type = 'ONLINE'",
+  "tables": [
+   "trd_order"
+  ],
+  "column": "trd_order.pay_type",
+  "value": "ONLINE"
+ },
+ {
+  "type": "enum_value",
+  "term": "DELAY",
+  "synonyms": [],
+  "description": "物流异常类型取值，对应 tms_shipment.exception_type = 'DELAY'",
+  "tables": [
+   "tms_shipment"
+  ],
+  "column": "tms_shipment.exception_type",
+  "value": "DELAY"
+ }
+]
