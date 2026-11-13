@@ -53,7 +53,7 @@ ENUM_SOURCES = [
 
 
 def mysql(sql):
-    out = subprocess.run(["docker", "exec", CONTAINER, "mysql", "-uroot", "-proot", "gbi_ecommerce", "-N", "-B", "-e", sql],
+    out = subprocess.run(["docker", "exec", CONTAINER, "mysql", "--default-character-set=utf8mb4", "-uroot", "-proot", "gbi_ecommerce", "-N", "-B", "-e", sql],
                          capture_output=True, text=True, check=True).stdout
     return [line.split("\t") for line in out.strip().split("\n") if line]
 

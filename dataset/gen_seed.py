@@ -1,7 +1,7 @@
 """Deterministic seed-data generator for gbi_ecommerce (86 tables).
 
 Usage: python3 dataset/gen_seed.py [mysql|pg] > /tmp/seed.sql
-       docker exec -i <mysql> mysql -uroot -proot gbi_ecommerce < /tmp/seed.sql
+       docker exec -i <mysql> mysql --default-character-set=utf8mb4 -uroot -proot gbi_ecommerce < /tmp/seed.sql
 
 Data window: 2024-11-01 .. 2026-10-31 (24 months). Same random seed -> same data.
 Planted patterns for 归因/根因 questions are listed in dataset/README.md (PLANTED).

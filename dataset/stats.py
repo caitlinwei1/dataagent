@@ -12,7 +12,7 @@ C = sys.argv[1] if len(sys.argv) > 1 else "data-agent-mysql-datasource"
 
 
 def q(sql):
-    out = subprocess.run(["docker", "exec", C, "mysql", "-uroot", "-proot", "-N", "-B", "-e", sql],
+    out = subprocess.run(["docker", "exec", C, "mysql", "--default-character-set=utf8mb4", "-uroot", "-proot", "-N", "-B", "-e", sql],
                          capture_output=True, text=True, check=True).stdout
     return [r.split("\t") for r in out.strip().split("\n") if r]
 

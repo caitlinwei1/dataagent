@@ -54,6 +54,7 @@ def main():
     ap.add_argument("--api", default="http://localhost:8065")
     ap.add_argument("--type", default="mysql", choices=["mysql", "postgresql"])
     ap.add_argument("--name", default="电商经营分析")
+    ap.add_argument("--db", default="gbi_ecommerce", help="MySQL database (gbi_ecommerce_partial for the comment ablation)")
     ap.add_argument("--skip-knowledge", action="store_true")
     ap.add_argument("--semantic-only", type=int, metavar="AGENT_ID")
     ap.add_argument("--knowledge-only", type=int, metavar="AGENT_ID", help="only import knowledge + init for an existing agent")
@@ -69,9 +70,9 @@ def main():
         print("init", call(api, "POST", f"/api/agent/{a.knowledge_only}/datasources/init"))
         return
     if a.type == "mysql":
-        ds = dict(name=f"gbi_ecommerce (MySQL, 只读)", type="mysql", host="127.0.0.1", port=13306, databaseName="gbi_ecommerce",
+        ds = dict(name=f"{a.db} (MySQL, 只读)", type="mysql", host="127.0.0.1", port=13306, databaseName=a.db,
                   username="gbi_reader", password="gbi_reader_local",
-                  connectionUrl="jdbc:mysql://127.0.0.1:13306/gbi_ecommerce?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true",
+                  connectionUrl=f"jdbc:mysql://127.0.0.1:13306/{a.db}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true",
                   status="active", description="电商经营分析 86 表（只读账号）")
     else:
         ds = dict(name=f"gbi_ecommerce (PostgreSQL, 只读)", type="postgresql", host="127.0.0.1", port=15432, databaseName="postgres",
