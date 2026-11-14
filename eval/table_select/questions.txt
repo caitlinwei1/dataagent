@@ -1,0 +1,188 @@
+# 180 道独立选表题。格式：标签 | 金标表(逗号分隔，回答该题所需的最小表集合) | 问题 | 多轮上文(可选，用 / 分隔多句)
+# 标签：域(trd/prd/mkt/scm/fin/cross) + 题型(single 单表, join 多表, syn 近义词/口径, abbr 缩写, enum 枚举值, look 相似表, multi 多轮, ablate 金标含消融表)
+# ---------------- 交易域 36
+trd,single | trd_order | 2026年9月一共有多少笔支付订单？
+trd,single,syn | trd_order | 上个季度的实付金额合计是多少？
+trd,syn | trd_order | 2026年10月的GMV是多少？按订单表算，不用汇总表
+trd,syn,look | trd_daily_shop_sales | 用日汇总表看一下2026年10月每天的GMV走势
+trd,syn | trd_daily_shop_sales | 各店铺2026年Q3的退款后金额分别是多少？
+trd,join | trd_order,dim_shop,dim_region | 2026年10月华东大区每个店铺的GMV是多少？
+trd,join,syn | trd_order | 2026年国庆期间的客单价是多少？
+trd,join | trd_order,trd_order_item | 2026年9月平均每单买几件商品？
+trd,single | trd_refund | 2026年10月退款成功的金额一共多少？
+trd,join,enum | trd_refund,trd_aftersale_reason | 因为七天无理由退款的单子占全部退款的比例是多少？
+trd,join,syn | trd_refund,trd_order | 2026年8月的退款率是多少？
+trd,single,enum | trd_refund | 退货退款和仅退款各有多少单？
+trd,single,ablate | trd_refund_item,trd_order_item | 退款最多的10个SKU是哪些？
+trd,single | trd_aftersale | 2026年售后单里换货的有多少？
+trd,single,ablate | trd_cart | 加购后最终下单的比例是多少？
+trd,single,ablate | trd_order_invoice | 2026年开了多少张增值税专用发票？
+trd,join | trd_order_review,trd_order_item | 评分在2分及以下的差评主要集中在哪些SKU？
+trd,single,ablate | trd_order_split | 因为多仓发货拆单的订单有多少？
+trd,single,ablate | trd_presale_order | 预售订单的定金总额和尾款总额分别是多少？
+trd,join,enum | trd_order,trd_order_source | 直播间下单的订单占比是多少？
+trd,single | trd_order_cancel | 系统超时自动取消的订单有多少？
+trd,single,ablate | trd_complaint | 物流类客诉的平均解决时长是多少小时？
+trd,look | trd_return_logistics | 用户寄回退货的运单平均几天到仓？
+trd,single,ablate | trd_compensation | 2026年给用户的现金赔付总额是多少？
+trd,enum | trd_order_tag,trd_order | 打了大促标签的订单实付金额是多少？
+trd,single,ablate | trd_gift_card_usage | 礼品卡一共抵扣了多少钱？
+trd,join | trd_payment | 各支付渠道的支付成功率是多少？
+trd,join,ablate | trd_payment_channel_fee,trd_payment | 微信支付一共付了多少手续费？
+trd,ablate | trd_order_status_log | 订单从支付到发货平均间隔多少小时？
+trd,ablate | trd_order_promotion | 优惠券带来的优惠金额总共多少？
+trd,join | trd_order_address,dim_region | 收货地在西南的订单有多少？
+trd,syn,ablate | trd_daily_sku_sales | 用SKU日汇总表看2026年10月销量最高的20个SKU
+trd,join,syn | trd_order,usr_member | 2026年支付的复购率是多少？
+trd,syn | trd_order | 2026年1月的下单数和支付订单数分别是多少？
+trd,syn | trd_order | 2026年的优惠率是多少？
+trd,join | trd_order,trd_order_tag | 2026年新客首单的平均实付金额是多少？
+# ---------------- 商品域 30
+prd,join | trd_order_item,prd_sku,prd_spu,prd_category | 2026年各一级类目的销售额是多少？
+prd,join,syn | trd_order_item,prd_sku,prd_spu,prd_brand | 自有品牌的销量占比是多少？
+prd,single | prd_sku | 目前在售的SKU有多少个？
+prd,syn | trd_order_item,trd_order,prd_sku | 2026年10月的动销率是多少？
+prd,join | trd_order_item,prd_sku_cost,trd_order | 2026年9月的毛利率是多少？
+prd,join | prd_sku_cost,prd_sku | 哪些SKU的单位成本在过去一年上涨超过10%？
+prd,single,ablate | prd_price_history | 2026年调价次数最多的SKU是哪些？
+prd,single | prd_category | 类目树一共有几个一级类目、几个三级类目？
+prd,join,enum | prd_spu,prd_category,prd_sku | 手机通讯类目下有多少个SKU？
+prd,join | prd_spu,prd_brand | 每个品牌各有多少个SPU？
+prd,join,ablate | prd_series,prd_spu | 各系列下的商品数量是多少？
+prd,join,ablate | prd_sku_attribute,prd_attribute | 材质属性有哪些取值？
+prd,join,ablate | prd_sku_label,prd_label | 打了爆款标签的SKU有多少个？
+prd,join,ablate | prd_bundle,prd_bundle_item | 每个组合套装包含几个SKU？
+prd,single | prd_listing_log | 2026年下架了多少个SKU？
+prd,single,ablate | prd_sku_barcode | 条码以69开头的SKU有多少？
+prd,join | prd_spu,prd_brand | 进口品牌（非中国）的SPU有哪些？
+prd,join | trd_order_item,prd_sku,prd_spu | 2026年销量最高的10个商品（SPU）
+prd,join | trd_order_item,prd_sku | 件单价最高的10个SKU
+prd,join | trd_order_review,trd_order_item,prd_sku,prd_spu,prd_category | 好评率最低的一级类目是哪个？
+prd,join | trd_refund_item,trd_order_item,prd_sku,prd_spu,prd_category | 各一级类目的退款件数是多少？
+prd,abbr | prd_sku,prd_spu | 每个SPU平均有几个SKU？
+prd,join | prd_spu | 2025年以后首次上架的商品有多少？
+prd,join | prd_sku | 标价超过3000元的SKU有多少？
+prd,join | wms_inventory,prd_sku | 在售但当前没有任何库存的SKU有哪些？
+prd,multi | trd_order_item,prd_sku,prd_spu,prd_category | 那服饰鞋包呢？ | 2026年数码家电类目卖了多少钱？
+prd,multi | trd_order_item,prd_sku,prd_spu,prd_brand,prd_category | 按品牌拆一下 | 2026年美妆个护类目的销售额是多少？
+prd,syn | trd_order_item,prd_sku_cost,trd_order | 毛利额最高的20个SKU
+prd,join | mkt_activity_sku,prd_sku | 双11活动价比标价低30%以上的SKU有哪些？
+prd,join,ablate | fin_platform_fee,prd_category,dim_platform | 美妆个护类目在各平台的佣金率是多少？
+# ---------------- 用户与营销域 30
+mkt,single | usr_member | 2026年新注册了多少会员？
+mkt,join,enum | usr_member,usr_member_level | 金卡及以上会员有多少人？
+mkt,join | trd_order,usr_member,usr_member_level | 各会员等级的人均消费是多少？
+mkt,single,ablate | usr_member_level_log | 2026年有多少会员升级了？
+mkt,single,ablate | usr_points_log | 2026年积分发放和消耗分别是多少？
+mkt,enum | usr_member_tag | 有流失风险标签的会员有多少？
+mkt,join | mkt_coupon,mkt_coupon_template | 各优惠券模板的核销率是多少？
+mkt,single | mkt_coupon | 过期未使用的优惠券有多少张？
+mkt,single | mkt_activity | 2026年一共办了几次大促活动？
+mkt,join,ablate | mkt_activity_sku,mkt_activity | 2026年双11有多少个活动商品？
+mkt,join | mkt_ad_spend,mkt_channel | 2026年各付费渠道的投放花费是多少？
+mkt,abbr | mkt_ad_spend,mkt_channel | 抖音渠道的CTR和CPC分别是多少？
+mkt,abbr | mkt_traffic_daily | 2026年10月全店铺的UV和PV是多少？
+mkt,abbr,join | mkt_traffic_daily,trd_order | 2026年9月各店铺的转化率
+mkt,abbr | mkt_ad_spend,mkt_member_attribution,trd_order,mkt_channel | 各付费渠道的ROI是多少？
+mkt,single,ablate | mkt_live_session | 观看人数最多的10场直播是哪些？
+mkt,join,ablate | mkt_live_session,dim_shop | 每个店铺的直播总时长是多少？
+mkt,look | mkt_channel,usr_member | 各流量渠道注册的会员数
+mkt,look | trd_order,trd_order_source | 各下单端（APP、小程序、网页）的订单数
+mkt,join,ablate | mkt_member_attribution,mkt_channel | 首单归因到小红书的会员有多少？
+mkt,join | usr_member,dim_region | 各大区的会员数量
+mkt,look | usr_address | 会员地址簿里默认地址在广东的有多少人？
+mkt,join | trd_order,usr_member | 90后会员的客单价是多少？
+mkt,join | trd_order_promotion,mkt_activity | 每个活动带来的优惠金额是多少？
+mkt,join | mkt_coupon_template,mkt_activity | 每个大促配了几种优惠券？
+mkt,syn | trd_order,trd_order_tag | 2026年的新客占比是多少？
+mkt,syn | trd_order,usr_member | 2026年会员渗透率（银卡及以上买家占比）
+mkt,abbr | trd_order,usr_member | 做一个RFM分层，统计各层会员数
+mkt,multi | mkt_ad_spend,mkt_channel | 那小红书呢？ | 2026年10月抖音投放花了多少钱？
+mkt,multi | mkt_traffic_daily,dim_date | 只看大促日呢？ | 2026年全年UV是多少？
+# ---------------- 库存仓储与履约 36
+scm,single | scm_supplier | 交货周期超过14天的供应商有哪些？
+scm,join | scm_purchase_order,scm_supplier | 各供应商2026年的采购单数
+scm,join,ablate | scm_purchase_order_item,scm_purchase_order,scm_supplier | 各供应商2026年的采购金额
+scm,syn,ablate | scm_purchase_order_item,wms_inbound,wms_inbound_item | 2026年采购到货率是多少？
+scm,single | wms_warehouse | 有几个前置仓？分别在哪？
+scm,join,enum | wms_inbound,wms_warehouse | 华东中心仓2026年的入库单数量
+scm,single,ablate | wms_inbound_item,wms_inbound | 退货入库的商品件数一共多少？
+scm,look | wms_inventory_snapshot | 2026年10月18日各仓库的可用库存总量
+scm,look,ablate | wms_inventory | 现在哪些SKU的库存低于安全库存？
+scm,abbr | wms_inventory_snapshot,trd_order_item,trd_order | 2026年10月底各SKU的DOS（库存可售天数）
+scm,syn | wms_inventory_snapshot,prd_sku_cost | 2026年10月31日的库存金额是多少？
+scm,join,ablate | wms_transfer,wms_transfer_item | 2026年调拨了多少件商品？
+scm,join | wms_transfer,wms_warehouse | 从中心仓调往区域仓的调拨单有多少？
+scm,look | wms_outbound,wms_warehouse | 各仓库2026年10月的出库单数
+scm,join,ablate | wms_outbound_item,wms_outbound | 平均每张出库单出库几件？
+scm,look | wms_outbound | 拣货完成到出库平均要多久？
+scm,single | wms_stockout_record | 2026年10月发生缺货的订单有多少？
+scm,join,enum | wms_stockout_record,wms_warehouse | 华东区域仓哪周缺货最多？
+scm,syn | wms_stockout_record,trd_order | 2026年的缺货率是多少？
+scm,join,ablate | wms_stocktake,wms_stocktake_item | 各仓库的盘点差异率
+scm,single | tms_carrier | 提供快递服务的承运商有哪些？
+scm,look | tms_shipment,tms_carrier | 各承运商2026年的运单量
+scm,syn | tms_shipment,oms_fulfillment_order,trd_order | 2026年Q3的平均履约时效（支付到签收小时数）
+scm,syn,join | tms_shipment,oms_fulfillment_order | 各承运商的准时送达率
+scm,join | tms_shipment,oms_fulfillment_order,trd_order,trd_order_address,dim_region | 西南地区各承运商的平均配送时长
+scm,single,ablate | tms_shipment_track | 物流轨迹里出现异常节点的运单有多少？
+scm,single | tms_delivery_sla | 华东中心仓发往西北的承诺时效是多少小时？
+scm,look | oms_fulfillment_order | 一笔订单被分配到多个仓库履约的情况有多少？
+scm,syn | oms_fulfillment_order,tms_shipment,trd_order | 支付后48小时内发货的比例是多少？
+scm,look | oms_fulfillment_order,wms_warehouse | 各仓库承接的履约单数量
+scm,join | wms_warehouse,dim_region | 每个大区有几个仓库？
+scm,multi | tms_shipment,tms_carrier | 那京东物流呢？ | 顺丰2026年的运单平均配送时长是多少？
+scm,multi | wms_stockout_record,wms_warehouse | 换成华南中心仓看看 | 华东区域仓2026年10月缺货记录有多少条？
+scm,abbr | wms_inventory_snapshot,wms_warehouse | WMS里北京前置仓最新一天的在库数量
+scm,join | wms_inventory_snapshot,prd_sku,prd_spu,prd_category | 2026年10月15日华东区域仓数码家电的可用库存
+scm,syn,ablate | scm_purchase_order,scm_purchase_order_item,prd_sku | 还没到货的采购单涉及哪些SKU？
+# ---------------- 财务结算与维表 24
+fin,single | fin_settlement | 2026年各月的平台佣金是多少？
+fin,join | fin_settlement,dim_shop | 2026年结算金额最高的店铺
+fin,join,ablate | fin_settlement_item,fin_settlement | 2026年9月结算单包含多少笔订单？
+fin,syn | fin_sales_target,trd_order | 2026年10月各店铺的销售目标达成率
+fin,single | fin_sales_target | 2026年全年的销售目标总额
+fin,single | fin_exchange_rate | 2026年10月美元兑人民币的平均汇率
+fin,join | dim_shop,dim_platform | 每个平台有几家店铺？
+fin,join | dim_shop,dim_region | 各大区分别有哪些店铺？
+fin,join,ablate | dim_store,dim_region | 线下门店在各大区的分布
+fin,single | dim_date | 2026年有多少个周末？
+fin,join | trd_order,dim_date | 2026年大促日的日均GMV是多少？
+fin,join | trd_order,dim_date | 节假日和非节假日的日均订单数对比
+fin,single,ablate | dim_currency | 系统支持哪些币种？
+fin,join | trd_order,dim_shop,dim_platform | 2026年各平台的GMV
+fin,join | trd_order,dim_shop,dim_platform | 抖音平台2026年的客单价
+fin,join | fin_settlement,dim_shop,dim_platform | 京东平台2026年交了多少佣金？
+fin,syn | fin_settlement,trd_order,dim_shop | 2026年9月结算金额和实付金额差了多少？
+fin,join | trd_order,dim_shop,dim_region,fin_sales_target | 华东大区2026年10月的目标达成率
+fin,multi | trd_order,dim_shop,dim_platform | 换成天猫 | 2026年京东平台的实付金额是多少？
+fin,multi | trd_order,dim_shop,dim_region | 同比呢？ | 2026年10月华东大区的GMV是多少？
+fin,multi | fin_settlement,dim_shop | 只看自营商城的店铺 | 2026年各店铺的结算金额
+fin,join | trd_order,fin_exchange_rate | 如果按美元计价，2026年10月的实付金额是多少？
+fin,join | trd_daily_shop_sales,dim_shop,dim_region | 用日汇总表比较各大区2026年Q3的GMV
+fin,single | dim_region | 华中大区包含哪些省份？
+# ---------------- 跨域 24
+cross,join | trd_refund,wms_stockout_record | 2026年10月因缺货导致的退款金额是多少？
+cross,syn | trd_refund,trd_order | 2026年的缺货退款率是多少？
+cross,join | trd_refund,wms_stockout_record,wms_warehouse | 缺货退款主要来自哪个仓库？
+cross,join | trd_order,dim_shop,dim_region,trd_refund | 上周华东GMV为什么跌了？看看退款原因（上周指2026-10-12至10-18）
+cross,join | trd_order,trd_order_item,prd_sku,prd_spu,prd_category,dim_shop,dim_region | 2026-10-12那周华东哪个一级类目的销售额跌得最多？
+cross,join | wms_inventory_snapshot,wms_warehouse,prd_sku,prd_spu,prd_category | 2026-10-12那周华东区域仓数码家电的可用库存走势
+cross,join | tms_shipment,oms_fulfillment_order,trd_refund | 物流超时的订单退款率是不是更高？
+cross,join | trd_refund,oms_fulfillment_order,tms_shipment | 因物流超时退款的订单平均配送时长
+cross,join | trd_complaint,tms_shipment,oms_fulfillment_order | 物流客诉多的订单都是哪些承运商送的？
+cross,join | trd_order_review,trd_order_item,oms_fulfillment_order,tms_shipment | 准时送达和延迟送达的订单评分差多少？
+cross,join | mkt_activity,trd_order,dim_date | 2025年双11期间的GMV和平时日均相比是多少倍？
+cross,join | mkt_ad_spend,trd_order,mkt_member_attribution | 2026年抖音投放花费和抖音归因订单的实付金额
+cross,join | usr_member,trd_order,dim_region,dim_shop | 会员常住大区和下单店铺所属大区不一致的订单占比
+cross,join | trd_order,trd_order_address,oms_fulfillment_order,wms_warehouse | 收货地和发货仓不在同一大区的订单比例
+cross,join | trd_order_item,wms_outbound_item,wms_outbound,oms_fulfillment_order | 下单件数和实际出库件数不一致的订单有哪些？
+cross,join | scm_purchase_order,wms_stockout_record | 缺货期间华东区域仓有没有在途的采购单？
+cross,join | trd_order_item,prd_sku_cost,trd_order,dim_shop,dim_platform | 各平台2026年的毛利率
+cross,join | fin_settlement,fin_platform_fee,dim_shop | 结算佣金和按费率算出来的佣金是否一致？
+cross,join | trd_refund,trd_order,dim_shop,dim_region | 各大区2026年的退款率
+cross,join | trd_compensation,trd_aftersale_reason,trd_order | 赔付金额按责任方（商家/物流/用户）分别是多少？
+cross,multi | trd_refund,trd_aftersale_reason,trd_order | 按原因拆开看 | 2026年10月的退款率是多少？
+cross,multi | tms_shipment,oms_fulfillment_order,trd_order,trd_order_address,dim_region,tms_carrier | 按承运商拆一下 | 2026年Q3西南地区的平均履约时长是多少？
+cross,multi | trd_order,trd_order_item,prd_sku,prd_spu,prd_category,dim_shop,dim_region | 是哪个类目拖累的？ | 2026年10月12日那周华东GMV环比降了多少？
+cross,multi | wms_stockout_record,trd_refund | 这些缺货单最后退款了多少钱？ | 2026年10月华东区域仓有多少缺货记录？
