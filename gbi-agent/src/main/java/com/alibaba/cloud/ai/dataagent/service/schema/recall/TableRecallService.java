@@ -175,12 +175,16 @@ public class TableRecallService {
 				}
 			}
 		}
-		// a neighbour shared by several seeds (a bridge) first; then by seed order
-		return links.keySet()
+		// the seeds lead the list: an expansion list that left them out would hand every neighbour a vote the
+		// seed itself lacks and push the seed down (measured: -13 pt Recall@5 on the full-comment schema).
+		// Then a neighbour shared by several seeds (a bridge), then by seed order.
+		List<String> out = new ArrayList<>(seeds);
+		links.keySet()
 			.stream()
 			.sorted(Comparator.<String>comparingInt(t -> -links.get(t)).thenComparingInt(t -> firstSeed(adj, seeds, t))
 				.thenComparing(t -> t))
-			.toList();
+			.forEach(out::add);
+		return out;
 	}
 
 	private static int firstSeed(Map<String, Set<String>> adj, List<String> seeds, String t) {

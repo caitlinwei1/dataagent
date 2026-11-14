@@ -12,7 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 CHANNELS = ["vector", "column", "keyword", "term", "value", "join", "multiTurn"]
 # original, then each channel added cumulatively
 CONFIGS = [("original", "original", None)] + [
-    (("+" if i else "") + c, "v2", CHANNELS[:i + 1]) for i, c in enumerate(CHANNELS)]
+    (("+" if i else "") + c, "v2", CHANNELS[:i + 1]) for i, c in enumerate(CHANNELS)] + [
+    # ablation: everything except the two embedding channels
+    ("no_embedding", "v2", ["keyword", "term", "value", "join", "multiTurn"])]
 
 
 def post(api, body):
@@ -42,7 +44,8 @@ def main():
     qs = [json.loads(l) for l in open(os.path.join(ROOT, "eval/table_select/questions.jsonl"))]
     outdir = os.path.join(ROOT, "eval/table_select/results", a.tag)
     os.makedirs(outdir, exist_ok=True)
-    summary = {}
+    sp = os.path.join(outdir, "summary.json")
+    summary = json.load(open(sp)) if os.path.exists(sp) else {}  # a --configs subset only replaces its own rows
     for name, mode, ch in CONFIGS:
         if name not in a.configs.split(","):
             continue
