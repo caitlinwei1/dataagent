@@ -1,0 +1,180 @@
+{"id": "TS001", "domain": "trd", "tags": ["single"], "question": "2026年9月一共有多少笔支付订单？", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS002", "domain": "trd", "tags": ["single", "syn"], "question": "上个季度的实付金额合计是多少？", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS003", "domain": "trd", "tags": ["syn"], "question": "2026年10月的GMV是多少？按订单表算，不用汇总表", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS004", "domain": "trd", "tags": ["syn", "look"], "question": "用日汇总表看一下2026年10月每天的GMV走势", "context": [], "gold_tables": ["trd_daily_shop_sales"], "gold_has_ablated": false}
+{"id": "TS005", "domain": "trd", "tags": ["syn"], "question": "各店铺2026年Q3的退款后金额分别是多少？", "context": [], "gold_tables": ["trd_daily_shop_sales"], "gold_has_ablated": false}
+{"id": "TS006", "domain": "trd", "tags": ["join"], "question": "2026年10月华东大区每个店铺的GMV是多少？", "context": [], "gold_tables": ["trd_order", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS007", "domain": "trd", "tags": ["join", "syn"], "question": "2026年国庆期间的客单价是多少？", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS008", "domain": "trd", "tags": ["join"], "question": "2026年9月平均每单买几件商品？", "context": [], "gold_tables": ["trd_order", "trd_order_item"], "gold_has_ablated": false}
+{"id": "TS009", "domain": "trd", "tags": ["single"], "question": "2026年10月退款成功的金额一共多少？", "context": [], "gold_tables": ["trd_refund"], "gold_has_ablated": false}
+{"id": "TS010", "domain": "trd", "tags": ["join", "enum"], "question": "因为七天无理由退款的单子占全部退款的比例是多少？", "context": [], "gold_tables": ["trd_refund", "trd_aftersale_reason"], "gold_has_ablated": false}
+{"id": "TS011", "domain": "trd", "tags": ["join", "syn"], "question": "2026年8月的退款率是多少？", "context": [], "gold_tables": ["trd_refund", "trd_order"], "gold_has_ablated": false}
+{"id": "TS012", "domain": "trd", "tags": ["single", "enum"], "question": "退货退款和仅退款各有多少单？", "context": [], "gold_tables": ["trd_refund"], "gold_has_ablated": false}
+{"id": "TS013", "domain": "trd", "tags": ["single", "ablate"], "question": "退款最多的10个SKU是哪些？", "context": [], "gold_tables": ["trd_refund_item", "trd_order_item"], "gold_has_ablated": true}
+{"id": "TS014", "domain": "trd", "tags": ["single"], "question": "2026年售后单里换货的有多少？", "context": [], "gold_tables": ["trd_aftersale"], "gold_has_ablated": false}
+{"id": "TS015", "domain": "trd", "tags": ["single", "ablate"], "question": "加购后最终下单的比例是多少？", "context": [], "gold_tables": ["trd_cart"], "gold_has_ablated": true}
+{"id": "TS016", "domain": "trd", "tags": ["single", "ablate"], "question": "2026年开了多少张增值税专用发票？", "context": [], "gold_tables": ["trd_order_invoice"], "gold_has_ablated": true}
+{"id": "TS017", "domain": "trd", "tags": ["join"], "question": "评分在2分及以下的差评主要集中在哪些SKU？", "context": [], "gold_tables": ["trd_order_review", "trd_order_item"], "gold_has_ablated": false}
+{"id": "TS018", "domain": "trd", "tags": ["single", "ablate"], "question": "因为多仓发货拆单的订单有多少？", "context": [], "gold_tables": ["trd_order_split"], "gold_has_ablated": true}
+{"id": "TS019", "domain": "trd", "tags": ["single", "ablate"], "question": "预售订单的定金总额和尾款总额分别是多少？", "context": [], "gold_tables": ["trd_presale_order"], "gold_has_ablated": true}
+{"id": "TS020", "domain": "trd", "tags": ["join", "enum"], "question": "直播间下单的订单占比是多少？", "context": [], "gold_tables": ["trd_order", "trd_order_source"], "gold_has_ablated": false}
+{"id": "TS021", "domain": "trd", "tags": ["single"], "question": "系统超时自动取消的订单有多少？", "context": [], "gold_tables": ["trd_order_cancel"], "gold_has_ablated": false}
+{"id": "TS022", "domain": "trd", "tags": ["single", "ablate"], "question": "物流类客诉的平均解决时长是多少小时？", "context": [], "gold_tables": ["trd_complaint"], "gold_has_ablated": true}
+{"id": "TS023", "domain": "trd", "tags": ["look"], "question": "用户寄回退货的运单平均几天到仓？", "context": [], "gold_tables": ["trd_return_logistics"], "gold_has_ablated": false}
+{"id": "TS024", "domain": "trd", "tags": ["single", "ablate"], "question": "2026年给用户的现金赔付总额是多少？", "context": [], "gold_tables": ["trd_compensation"], "gold_has_ablated": true}
+{"id": "TS025", "domain": "trd", "tags": ["enum"], "question": "打了大促标签的订单实付金额是多少？", "context": [], "gold_tables": ["trd_order_tag", "trd_order"], "gold_has_ablated": false}
+{"id": "TS026", "domain": "trd", "tags": ["single", "ablate"], "question": "礼品卡一共抵扣了多少钱？", "context": [], "gold_tables": ["trd_gift_card_usage"], "gold_has_ablated": true}
+{"id": "TS027", "domain": "trd", "tags": ["join"], "question": "各支付渠道的支付成功率是多少？", "context": [], "gold_tables": ["trd_payment"], "gold_has_ablated": false}
+{"id": "TS028", "domain": "trd", "tags": ["join", "ablate"], "question": "微信支付一共付了多少手续费？", "context": [], "gold_tables": ["trd_payment_channel_fee", "trd_payment"], "gold_has_ablated": true}
+{"id": "TS029", "domain": "trd", "tags": ["ablate"], "question": "订单从支付到发货平均间隔多少小时？", "context": [], "gold_tables": ["trd_order_status_log"], "gold_has_ablated": true}
+{"id": "TS030", "domain": "trd", "tags": ["ablate"], "question": "优惠券带来的优惠金额总共多少？", "context": [], "gold_tables": ["trd_order_promotion"], "gold_has_ablated": true}
+{"id": "TS031", "domain": "trd", "tags": ["join"], "question": "收货地在西南的订单有多少？", "context": [], "gold_tables": ["trd_order_address", "dim_region"], "gold_has_ablated": false}
+{"id": "TS032", "domain": "trd", "tags": ["syn", "ablate"], "question": "用SKU日汇总表看2026年10月销量最高的20个SKU", "context": [], "gold_tables": ["trd_daily_sku_sales"], "gold_has_ablated": true}
+{"id": "TS033", "domain": "trd", "tags": ["join", "syn"], "question": "2026年支付的复购率是多少？", "context": [], "gold_tables": ["trd_order", "usr_member"], "gold_has_ablated": false}
+{"id": "TS034", "domain": "trd", "tags": ["syn"], "question": "2026年1月的下单数和支付订单数分别是多少？", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS035", "domain": "trd", "tags": ["syn"], "question": "2026年的优惠率是多少？", "context": [], "gold_tables": ["trd_order"], "gold_has_ablated": false}
+{"id": "TS036", "domain": "trd", "tags": ["join"], "question": "2026年新客首单的平均实付金额是多少？", "context": [], "gold_tables": ["trd_order", "trd_order_tag"], "gold_has_ablated": false}
+{"id": "TS037", "domain": "prd", "tags": ["join"], "question": "2026年各一级类目的销售额是多少？", "context": [], "gold_tables": ["trd_order_item", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": false}
+{"id": "TS038", "domain": "prd", "tags": ["join", "syn"], "question": "自有品牌的销量占比是多少？", "context": [], "gold_tables": ["trd_order_item", "prd_sku", "prd_spu", "prd_brand"], "gold_has_ablated": false}
+{"id": "TS039", "domain": "prd", "tags": ["single"], "question": "目前在售的SKU有多少个？", "context": [], "gold_tables": ["prd_sku"], "gold_has_ablated": false}
+{"id": "TS040", "domain": "prd", "tags": ["syn"], "question": "2026年10月的动销率是多少？", "context": [], "gold_tables": ["trd_order_item", "trd_order", "prd_sku"], "gold_has_ablated": false}
+{"id": "TS041", "domain": "prd", "tags": ["join"], "question": "2026年9月的毛利率是多少？", "context": [], "gold_tables": ["trd_order_item", "prd_sku_cost", "trd_order"], "gold_has_ablated": false}
+{"id": "TS042", "domain": "prd", "tags": ["join"], "question": "哪些SKU的单位成本在过去一年上涨超过10%？", "context": [], "gold_tables": ["prd_sku_cost", "prd_sku"], "gold_has_ablated": false}
+{"id": "TS043", "domain": "prd", "tags": ["single", "ablate"], "question": "2026年调价次数最多的SKU是哪些？", "context": [], "gold_tables": ["prd_price_history"], "gold_has_ablated": true}
+{"id": "TS044", "domain": "prd", "tags": ["single"], "question": "类目树一共有几个一级类目、几个三级类目？", "context": [], "gold_tables": ["prd_category"], "gold_has_ablated": false}
+{"id": "TS045", "domain": "prd", "tags": ["join", "enum"], "question": "手机通讯类目下有多少个SKU？", "context": [], "gold_tables": ["prd_spu", "prd_category", "prd_sku"], "gold_has_ablated": false}
+{"id": "TS046", "domain": "prd", "tags": ["join"], "question": "每个品牌各有多少个SPU？", "context": [], "gold_tables": ["prd_spu", "prd_brand"], "gold_has_ablated": false}
+{"id": "TS047", "domain": "prd", "tags": ["join", "ablate"], "question": "各系列下的商品数量是多少？", "context": [], "gold_tables": ["prd_series", "prd_spu"], "gold_has_ablated": true}
+{"id": "TS048", "domain": "prd", "tags": ["join", "ablate"], "question": "材质属性有哪些取值？", "context": [], "gold_tables": ["prd_sku_attribute", "prd_attribute"], "gold_has_ablated": true}
+{"id": "TS049", "domain": "prd", "tags": ["join", "ablate"], "question": "打了爆款标签的SKU有多少个？", "context": [], "gold_tables": ["prd_sku_label", "prd_label"], "gold_has_ablated": true}
+{"id": "TS050", "domain": "prd", "tags": ["join", "ablate"], "question": "每个组合套装包含几个SKU？", "context": [], "gold_tables": ["prd_bundle", "prd_bundle_item"], "gold_has_ablated": true}
+{"id": "TS051", "domain": "prd", "tags": ["single"], "question": "2026年下架了多少个SKU？", "context": [], "gold_tables": ["prd_listing_log"], "gold_has_ablated": false}
+{"id": "TS052", "domain": "prd", "tags": ["single", "ablate"], "question": "条码以69开头的SKU有多少？", "context": [], "gold_tables": ["prd_sku_barcode"], "gold_has_ablated": true}
+{"id": "TS053", "domain": "prd", "tags": ["join"], "question": "进口品牌（非中国）的SPU有哪些？", "context": [], "gold_tables": ["prd_spu", "prd_brand"], "gold_has_ablated": false}
+{"id": "TS054", "domain": "prd", "tags": ["join"], "question": "2026年销量最高的10个商品（SPU）", "context": [], "gold_tables": ["trd_order_item", "prd_sku", "prd_spu"], "gold_has_ablated": false}
+{"id": "TS055", "domain": "prd", "tags": ["join"], "question": "件单价最高的10个SKU", "context": [], "gold_tables": ["trd_order_item", "prd_sku"], "gold_has_ablated": false}
+{"id": "TS056", "domain": "prd", "tags": ["join"], "question": "好评率最低的一级类目是哪个？", "context": [], "gold_tables": ["trd_order_review", "trd_order_item", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": false}
+{"id": "TS057", "domain": "prd", "tags": ["join"], "question": "各一级类目的退款件数是多少？", "context": [], "gold_tables": ["trd_refund_item", "trd_order_item", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": true}
+{"id": "TS058", "domain": "prd", "tags": ["abbr"], "question": "每个SPU平均有几个SKU？", "context": [], "gold_tables": ["prd_sku", "prd_spu"], "gold_has_ablated": false}
+{"id": "TS059", "domain": "prd", "tags": ["join"], "question": "2025年以后首次上架的商品有多少？", "context": [], "gold_tables": ["prd_spu"], "gold_has_ablated": false}
+{"id": "TS060", "domain": "prd", "tags": ["join"], "question": "标价超过3000元的SKU有多少？", "context": [], "gold_tables": ["prd_sku"], "gold_has_ablated": false}
+{"id": "TS061", "domain": "prd", "tags": ["join"], "question": "在售但当前没有任何库存的SKU有哪些？", "context": [], "gold_tables": ["wms_inventory", "prd_sku"], "gold_has_ablated": true}
+{"id": "TS062", "domain": "prd", "tags": ["multi"], "question": "那服饰鞋包呢？", "context": ["2026年数码家电类目卖了多少钱？"], "gold_tables": ["trd_order_item", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": false}
+{"id": "TS063", "domain": "prd", "tags": ["multi"], "question": "按品牌拆一下", "context": ["2026年美妆个护类目的销售额是多少？"], "gold_tables": ["trd_order_item", "prd_sku", "prd_spu", "prd_brand", "prd_category"], "gold_has_ablated": false}
+{"id": "TS064", "domain": "prd", "tags": ["syn"], "question": "毛利额最高的20个SKU", "context": [], "gold_tables": ["trd_order_item", "prd_sku_cost", "trd_order"], "gold_has_ablated": false}
+{"id": "TS065", "domain": "prd", "tags": ["join"], "question": "双11活动价比标价低30%以上的SKU有哪些？", "context": [], "gold_tables": ["mkt_activity_sku", "prd_sku"], "gold_has_ablated": true}
+{"id": "TS066", "domain": "prd", "tags": ["join", "ablate"], "question": "美妆个护类目在各平台的佣金率是多少？", "context": [], "gold_tables": ["fin_platform_fee", "prd_category", "dim_platform"], "gold_has_ablated": true}
+{"id": "TS067", "domain": "mkt", "tags": ["single"], "question": "2026年新注册了多少会员？", "context": [], "gold_tables": ["usr_member"], "gold_has_ablated": false}
+{"id": "TS068", "domain": "mkt", "tags": ["join", "enum"], "question": "金卡及以上会员有多少人？", "context": [], "gold_tables": ["usr_member", "usr_member_level"], "gold_has_ablated": false}
+{"id": "TS069", "domain": "mkt", "tags": ["join"], "question": "各会员等级的人均消费是多少？", "context": [], "gold_tables": ["trd_order", "usr_member", "usr_member_level"], "gold_has_ablated": false}
+{"id": "TS070", "domain": "mkt", "tags": ["single", "ablate"], "question": "2026年有多少会员升级了？", "context": [], "gold_tables": ["usr_member_level_log"], "gold_has_ablated": true}
+{"id": "TS071", "domain": "mkt", "tags": ["single", "ablate"], "question": "2026年积分发放和消耗分别是多少？", "context": [], "gold_tables": ["usr_points_log"], "gold_has_ablated": true}
+{"id": "TS072", "domain": "mkt", "tags": ["enum"], "question": "有流失风险标签的会员有多少？", "context": [], "gold_tables": ["usr_member_tag"], "gold_has_ablated": false}
+{"id": "TS073", "domain": "mkt", "tags": ["join"], "question": "各优惠券模板的核销率是多少？", "context": [], "gold_tables": ["mkt_coupon", "mkt_coupon_template"], "gold_has_ablated": false}
+{"id": "TS074", "domain": "mkt", "tags": ["single"], "question": "过期未使用的优惠券有多少张？", "context": [], "gold_tables": ["mkt_coupon"], "gold_has_ablated": false}
+{"id": "TS075", "domain": "mkt", "tags": ["single"], "question": "2026年一共办了几次大促活动？", "context": [], "gold_tables": ["mkt_activity"], "gold_has_ablated": false}
+{"id": "TS076", "domain": "mkt", "tags": ["join", "ablate"], "question": "2026年双11有多少个活动商品？", "context": [], "gold_tables": ["mkt_activity_sku", "mkt_activity"], "gold_has_ablated": true}
+{"id": "TS077", "domain": "mkt", "tags": ["join"], "question": "2026年各付费渠道的投放花费是多少？", "context": [], "gold_tables": ["mkt_ad_spend", "mkt_channel"], "gold_has_ablated": false}
+{"id": "TS078", "domain": "mkt", "tags": ["abbr"], "question": "抖音渠道的CTR和CPC分别是多少？", "context": [], "gold_tables": ["mkt_ad_spend", "mkt_channel"], "gold_has_ablated": false}
+{"id": "TS079", "domain": "mkt", "tags": ["abbr"], "question": "2026年10月全店铺的UV和PV是多少？", "context": [], "gold_tables": ["mkt_traffic_daily"], "gold_has_ablated": false}
+{"id": "TS080", "domain": "mkt", "tags": ["abbr", "join"], "question": "2026年9月各店铺的转化率", "context": [], "gold_tables": ["mkt_traffic_daily", "trd_order"], "gold_has_ablated": false}
+{"id": "TS081", "domain": "mkt", "tags": ["abbr"], "question": "各付费渠道的ROI是多少？", "context": [], "gold_tables": ["mkt_ad_spend", "mkt_member_attribution", "trd_order", "mkt_channel"], "gold_has_ablated": true}
+{"id": "TS082", "domain": "mkt", "tags": ["single", "ablate"], "question": "观看人数最多的10场直播是哪些？", "context": [], "gold_tables": ["mkt_live_session"], "gold_has_ablated": true}
+{"id": "TS083", "domain": "mkt", "tags": ["join", "ablate"], "question": "每个店铺的直播总时长是多少？", "context": [], "gold_tables": ["mkt_live_session", "dim_shop"], "gold_has_ablated": true}
+{"id": "TS084", "domain": "mkt", "tags": ["look"], "question": "各流量渠道注册的会员数", "context": [], "gold_tables": ["mkt_channel", "usr_member"], "gold_has_ablated": false}
+{"id": "TS085", "domain": "mkt", "tags": ["look"], "question": "各下单端（APP、小程序、网页）的订单数", "context": [], "gold_tables": ["trd_order", "trd_order_source"], "gold_has_ablated": false}
+{"id": "TS086", "domain": "mkt", "tags": ["join", "ablate"], "question": "首单归因到小红书的会员有多少？", "context": [], "gold_tables": ["mkt_member_attribution", "mkt_channel"], "gold_has_ablated": true}
+{"id": "TS087", "domain": "mkt", "tags": ["join"], "question": "各大区的会员数量", "context": [], "gold_tables": ["usr_member", "dim_region"], "gold_has_ablated": false}
+{"id": "TS088", "domain": "mkt", "tags": ["look"], "question": "会员地址簿里默认地址在广东的有多少人？", "context": [], "gold_tables": ["usr_address"], "gold_has_ablated": true}
+{"id": "TS089", "domain": "mkt", "tags": ["join"], "question": "90后会员的客单价是多少？", "context": [], "gold_tables": ["trd_order", "usr_member"], "gold_has_ablated": false}
+{"id": "TS090", "domain": "mkt", "tags": ["join"], "question": "每个活动带来的优惠金额是多少？", "context": [], "gold_tables": ["trd_order_promotion", "mkt_activity"], "gold_has_ablated": true}
+{"id": "TS091", "domain": "mkt", "tags": ["join"], "question": "每个大促配了几种优惠券？", "context": [], "gold_tables": ["mkt_coupon_template", "mkt_activity"], "gold_has_ablated": false}
+{"id": "TS092", "domain": "mkt", "tags": ["syn"], "question": "2026年的新客占比是多少？", "context": [], "gold_tables": ["trd_order", "trd_order_tag"], "gold_has_ablated": false}
+{"id": "TS093", "domain": "mkt", "tags": ["syn"], "question": "2026年会员渗透率（银卡及以上买家占比）", "context": [], "gold_tables": ["trd_order", "usr_member"], "gold_has_ablated": false}
+{"id": "TS094", "domain": "mkt", "tags": ["abbr"], "question": "做一个RFM分层，统计各层会员数", "context": [], "gold_tables": ["trd_order", "usr_member"], "gold_has_ablated": false}
+{"id": "TS095", "domain": "mkt", "tags": ["multi"], "question": "那小红书呢？", "context": ["2026年10月抖音投放花了多少钱？"], "gold_tables": ["mkt_ad_spend", "mkt_channel"], "gold_has_ablated": false}
+{"id": "TS096", "domain": "mkt", "tags": ["multi"], "question": "只看大促日呢？", "context": ["2026年全年UV是多少？"], "gold_tables": ["mkt_traffic_daily", "dim_date"], "gold_has_ablated": false}
+{"id": "TS097", "domain": "scm", "tags": ["single"], "question": "交货周期超过14天的供应商有哪些？", "context": [], "gold_tables": ["scm_supplier"], "gold_has_ablated": false}
+{"id": "TS098", "domain": "scm", "tags": ["join"], "question": "各供应商2026年的采购单数", "context": [], "gold_tables": ["scm_purchase_order", "scm_supplier"], "gold_has_ablated": false}
+{"id": "TS099", "domain": "scm", "tags": ["join", "ablate"], "question": "各供应商2026年的采购金额", "context": [], "gold_tables": ["scm_purchase_order_item", "scm_purchase_order", "scm_supplier"], "gold_has_ablated": true}
+{"id": "TS100", "domain": "scm", "tags": ["syn", "ablate"], "question": "2026年采购到货率是多少？", "context": [], "gold_tables": ["scm_purchase_order_item", "wms_inbound", "wms_inbound_item"], "gold_has_ablated": true}
+{"id": "TS101", "domain": "scm", "tags": ["single"], "question": "有几个前置仓？分别在哪？", "context": [], "gold_tables": ["wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS102", "domain": "scm", "tags": ["join", "enum"], "question": "华东中心仓2026年的入库单数量", "context": [], "gold_tables": ["wms_inbound", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS103", "domain": "scm", "tags": ["single", "ablate"], "question": "退货入库的商品件数一共多少？", "context": [], "gold_tables": ["wms_inbound_item", "wms_inbound"], "gold_has_ablated": true}
+{"id": "TS104", "domain": "scm", "tags": ["look"], "question": "2026年10月18日各仓库的可用库存总量", "context": [], "gold_tables": ["wms_inventory_snapshot"], "gold_has_ablated": false}
+{"id": "TS105", "domain": "scm", "tags": ["look", "ablate"], "question": "现在哪些SKU的库存低于安全库存？", "context": [], "gold_tables": ["wms_inventory"], "gold_has_ablated": true}
+{"id": "TS106", "domain": "scm", "tags": ["abbr"], "question": "2026年10月底各SKU的DOS（库存可售天数）", "context": [], "gold_tables": ["wms_inventory_snapshot", "trd_order_item", "trd_order"], "gold_has_ablated": false}
+{"id": "TS107", "domain": "scm", "tags": ["syn"], "question": "2026年10月31日的库存金额是多少？", "context": [], "gold_tables": ["wms_inventory_snapshot", "prd_sku_cost"], "gold_has_ablated": false}
+{"id": "TS108", "domain": "scm", "tags": ["join", "ablate"], "question": "2026年调拨了多少件商品？", "context": [], "gold_tables": ["wms_transfer", "wms_transfer_item"], "gold_has_ablated": true}
+{"id": "TS109", "domain": "scm", "tags": ["join"], "question": "从中心仓调往区域仓的调拨单有多少？", "context": [], "gold_tables": ["wms_transfer", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS110", "domain": "scm", "tags": ["look"], "question": "各仓库2026年10月的出库单数", "context": [], "gold_tables": ["wms_outbound", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS111", "domain": "scm", "tags": ["join", "ablate"], "question": "平均每张出库单出库几件？", "context": [], "gold_tables": ["wms_outbound_item", "wms_outbound"], "gold_has_ablated": true}
+{"id": "TS112", "domain": "scm", "tags": ["look"], "question": "拣货完成到出库平均要多久？", "context": [], "gold_tables": ["wms_outbound"], "gold_has_ablated": false}
+{"id": "TS113", "domain": "scm", "tags": ["single"], "question": "2026年10月发生缺货的订单有多少？", "context": [], "gold_tables": ["wms_stockout_record"], "gold_has_ablated": false}
+{"id": "TS114", "domain": "scm", "tags": ["join", "enum"], "question": "华东区域仓哪周缺货最多？", "context": [], "gold_tables": ["wms_stockout_record", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS115", "domain": "scm", "tags": ["syn"], "question": "2026年的缺货率是多少？", "context": [], "gold_tables": ["wms_stockout_record", "trd_order"], "gold_has_ablated": false}
+{"id": "TS116", "domain": "scm", "tags": ["join", "ablate"], "question": "各仓库的盘点差异率", "context": [], "gold_tables": ["wms_stocktake", "wms_stocktake_item"], "gold_has_ablated": true}
+{"id": "TS117", "domain": "scm", "tags": ["single"], "question": "提供快递服务的承运商有哪些？", "context": [], "gold_tables": ["tms_carrier"], "gold_has_ablated": false}
+{"id": "TS118", "domain": "scm", "tags": ["look"], "question": "各承运商2026年的运单量", "context": [], "gold_tables": ["tms_shipment", "tms_carrier"], "gold_has_ablated": false}
+{"id": "TS119", "domain": "scm", "tags": ["syn"], "question": "2026年Q3的平均履约时效（支付到签收小时数）", "context": [], "gold_tables": ["tms_shipment", "oms_fulfillment_order", "trd_order"], "gold_has_ablated": false}
+{"id": "TS120", "domain": "scm", "tags": ["syn", "join"], "question": "各承运商的准时送达率", "context": [], "gold_tables": ["tms_shipment", "oms_fulfillment_order"], "gold_has_ablated": false}
+{"id": "TS121", "domain": "scm", "tags": ["join"], "question": "西南地区各承运商的平均配送时长", "context": [], "gold_tables": ["tms_shipment", "oms_fulfillment_order", "trd_order", "trd_order_address", "dim_region"], "gold_has_ablated": false}
+{"id": "TS122", "domain": "scm", "tags": ["single", "ablate"], "question": "物流轨迹里出现异常节点的运单有多少？", "context": [], "gold_tables": ["tms_shipment_track"], "gold_has_ablated": true}
+{"id": "TS123", "domain": "scm", "tags": ["single"], "question": "华东中心仓发往西北的承诺时效是多少小时？", "context": [], "gold_tables": ["tms_delivery_sla"], "gold_has_ablated": false}
+{"id": "TS124", "domain": "scm", "tags": ["look"], "question": "一笔订单被分配到多个仓库履约的情况有多少？", "context": [], "gold_tables": ["oms_fulfillment_order"], "gold_has_ablated": false}
+{"id": "TS125", "domain": "scm", "tags": ["syn"], "question": "支付后48小时内发货的比例是多少？", "context": [], "gold_tables": ["oms_fulfillment_order", "tms_shipment", "trd_order"], "gold_has_ablated": false}
+{"id": "TS126", "domain": "scm", "tags": ["look"], "question": "各仓库承接的履约单数量", "context": [], "gold_tables": ["oms_fulfillment_order", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS127", "domain": "scm", "tags": ["join"], "question": "每个大区有几个仓库？", "context": [], "gold_tables": ["wms_warehouse", "dim_region"], "gold_has_ablated": false}
+{"id": "TS128", "domain": "scm", "tags": ["multi"], "question": "那京东物流呢？", "context": ["顺丰2026年的运单平均配送时长是多少？"], "gold_tables": ["tms_shipment", "tms_carrier"], "gold_has_ablated": false}
+{"id": "TS129", "domain": "scm", "tags": ["multi"], "question": "换成华南中心仓看看", "context": ["华东区域仓2026年10月缺货记录有多少条？"], "gold_tables": ["wms_stockout_record", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS130", "domain": "scm", "tags": ["abbr"], "question": "WMS里北京前置仓最新一天的在库数量", "context": [], "gold_tables": ["wms_inventory_snapshot", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS131", "domain": "scm", "tags": ["join"], "question": "2026年10月15日华东区域仓数码家电的可用库存", "context": [], "gold_tables": ["wms_inventory_snapshot", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": false}
+{"id": "TS132", "domain": "scm", "tags": ["syn", "ablate"], "question": "还没到货的采购单涉及哪些SKU？", "context": [], "gold_tables": ["scm_purchase_order", "scm_purchase_order_item", "prd_sku"], "gold_has_ablated": true}
+{"id": "TS133", "domain": "fin", "tags": ["single"], "question": "2026年各月的平台佣金是多少？", "context": [], "gold_tables": ["fin_settlement"], "gold_has_ablated": false}
+{"id": "TS134", "domain": "fin", "tags": ["join"], "question": "2026年结算金额最高的店铺", "context": [], "gold_tables": ["fin_settlement", "dim_shop"], "gold_has_ablated": false}
+{"id": "TS135", "domain": "fin", "tags": ["join", "ablate"], "question": "2026年9月结算单包含多少笔订单？", "context": [], "gold_tables": ["fin_settlement_item", "fin_settlement"], "gold_has_ablated": true}
+{"id": "TS136", "domain": "fin", "tags": ["syn"], "question": "2026年10月各店铺的销售目标达成率", "context": [], "gold_tables": ["fin_sales_target", "trd_order"], "gold_has_ablated": false}
+{"id": "TS137", "domain": "fin", "tags": ["single"], "question": "2026年全年的销售目标总额", "context": [], "gold_tables": ["fin_sales_target"], "gold_has_ablated": false}
+{"id": "TS138", "domain": "fin", "tags": ["single"], "question": "2026年10月美元兑人民币的平均汇率", "context": [], "gold_tables": ["fin_exchange_rate"], "gold_has_ablated": false}
+{"id": "TS139", "domain": "fin", "tags": ["join"], "question": "每个平台有几家店铺？", "context": [], "gold_tables": ["dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS140", "domain": "fin", "tags": ["join"], "question": "各大区分别有哪些店铺？", "context": [], "gold_tables": ["dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS141", "domain": "fin", "tags": ["join", "ablate"], "question": "线下门店在各大区的分布", "context": [], "gold_tables": ["dim_store", "dim_region"], "gold_has_ablated": true}
+{"id": "TS142", "domain": "fin", "tags": ["single"], "question": "2026年有多少个周末？", "context": [], "gold_tables": ["dim_date"], "gold_has_ablated": false}
+{"id": "TS143", "domain": "fin", "tags": ["join"], "question": "2026年大促日的日均GMV是多少？", "context": [], "gold_tables": ["trd_order", "dim_date"], "gold_has_ablated": false}
+{"id": "TS144", "domain": "fin", "tags": ["join"], "question": "节假日和非节假日的日均订单数对比", "context": [], "gold_tables": ["trd_order", "dim_date"], "gold_has_ablated": false}
+{"id": "TS145", "domain": "fin", "tags": ["single", "ablate"], "question": "系统支持哪些币种？", "context": [], "gold_tables": ["dim_currency"], "gold_has_ablated": true}
+{"id": "TS146", "domain": "fin", "tags": ["join"], "question": "2026年各平台的GMV", "context": [], "gold_tables": ["trd_order", "dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS147", "domain": "fin", "tags": ["join"], "question": "抖音平台2026年的客单价", "context": [], "gold_tables": ["trd_order", "dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS148", "domain": "fin", "tags": ["join"], "question": "京东平台2026年交了多少佣金？", "context": [], "gold_tables": ["fin_settlement", "dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS149", "domain": "fin", "tags": ["syn"], "question": "2026年9月结算金额和实付金额差了多少？", "context": [], "gold_tables": ["fin_settlement", "trd_order", "dim_shop"], "gold_has_ablated": false}
+{"id": "TS150", "domain": "fin", "tags": ["join"], "question": "华东大区2026年10月的目标达成率", "context": [], "gold_tables": ["trd_order", "dim_shop", "dim_region", "fin_sales_target"], "gold_has_ablated": false}
+{"id": "TS151", "domain": "fin", "tags": ["multi"], "question": "换成天猫", "context": ["2026年京东平台的实付金额是多少？"], "gold_tables": ["trd_order", "dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS152", "domain": "fin", "tags": ["multi"], "question": "同比呢？", "context": ["2026年10月华东大区的GMV是多少？"], "gold_tables": ["trd_order", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS153", "domain": "fin", "tags": ["multi"], "question": "只看自营商城的店铺", "context": ["2026年各店铺的结算金额"], "gold_tables": ["fin_settlement", "dim_shop"], "gold_has_ablated": false}
+{"id": "TS154", "domain": "fin", "tags": ["join"], "question": "如果按美元计价，2026年10月的实付金额是多少？", "context": [], "gold_tables": ["trd_order", "fin_exchange_rate"], "gold_has_ablated": false}
+{"id": "TS155", "domain": "fin", "tags": ["join"], "question": "用日汇总表比较各大区2026年Q3的GMV", "context": [], "gold_tables": ["trd_daily_shop_sales", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS156", "domain": "fin", "tags": ["single"], "question": "华中大区包含哪些省份？", "context": [], "gold_tables": ["dim_region"], "gold_has_ablated": false}
+{"id": "TS157", "domain": "cross", "tags": ["join"], "question": "2026年10月因缺货导致的退款金额是多少？", "context": [], "gold_tables": ["trd_refund", "wms_stockout_record"], "gold_has_ablated": false}
+{"id": "TS158", "domain": "cross", "tags": ["syn"], "question": "2026年的缺货退款率是多少？", "context": [], "gold_tables": ["trd_refund", "trd_order"], "gold_has_ablated": false}
+{"id": "TS159", "domain": "cross", "tags": ["join"], "question": "缺货退款主要来自哪个仓库？", "context": [], "gold_tables": ["trd_refund", "wms_stockout_record", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS160", "domain": "cross", "tags": ["join"], "question": "上周华东GMV为什么跌了？看看退款原因（上周指2026-10-12至10-18）", "context": [], "gold_tables": ["trd_order", "dim_shop", "dim_region", "trd_refund"], "gold_has_ablated": false}
+{"id": "TS161", "domain": "cross", "tags": ["join"], "question": "2026-10-12那周华东哪个一级类目的销售额跌得最多？", "context": [], "gold_tables": ["trd_order", "trd_order_item", "prd_sku", "prd_spu", "prd_category", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS162", "domain": "cross", "tags": ["join"], "question": "2026-10-12那周华东区域仓数码家电的可用库存走势", "context": [], "gold_tables": ["wms_inventory_snapshot", "wms_warehouse", "prd_sku", "prd_spu", "prd_category"], "gold_has_ablated": false}
+{"id": "TS163", "domain": "cross", "tags": ["join"], "question": "物流超时的订单退款率是不是更高？", "context": [], "gold_tables": ["tms_shipment", "oms_fulfillment_order", "trd_refund"], "gold_has_ablated": false}
+{"id": "TS164", "domain": "cross", "tags": ["join"], "question": "因物流超时退款的订单平均配送时长", "context": [], "gold_tables": ["trd_refund", "oms_fulfillment_order", "tms_shipment"], "gold_has_ablated": false}
+{"id": "TS165", "domain": "cross", "tags": ["join"], "question": "物流客诉多的订单都是哪些承运商送的？", "context": [], "gold_tables": ["trd_complaint", "tms_shipment", "oms_fulfillment_order"], "gold_has_ablated": true}
+{"id": "TS166", "domain": "cross", "tags": ["join"], "question": "准时送达和延迟送达的订单评分差多少？", "context": [], "gold_tables": ["trd_order_review", "trd_order_item", "oms_fulfillment_order", "tms_shipment"], "gold_has_ablated": false}
+{"id": "TS167", "domain": "cross", "tags": ["join"], "question": "2025年双11期间的GMV和平时日均相比是多少倍？", "context": [], "gold_tables": ["mkt_activity", "trd_order", "dim_date"], "gold_has_ablated": false}
+{"id": "TS168", "domain": "cross", "tags": ["join"], "question": "2026年抖音投放花费和抖音归因订单的实付金额", "context": [], "gold_tables": ["mkt_ad_spend", "trd_order", "mkt_member_attribution"], "gold_has_ablated": true}
+{"id": "TS169", "domain": "cross", "tags": ["join"], "question": "会员常住大区和下单店铺所属大区不一致的订单占比", "context": [], "gold_tables": ["usr_member", "trd_order", "dim_region", "dim_shop"], "gold_has_ablated": false}
+{"id": "TS170", "domain": "cross", "tags": ["join"], "question": "收货地和发货仓不在同一大区的订单比例", "context": [], "gold_tables": ["trd_order", "trd_order_address", "oms_fulfillment_order", "wms_warehouse"], "gold_has_ablated": false}
+{"id": "TS171", "domain": "cross", "tags": ["join"], "question": "下单件数和实际出库件数不一致的订单有哪些？", "context": [], "gold_tables": ["trd_order_item", "wms_outbound_item", "wms_outbound", "oms_fulfillment_order"], "gold_has_ablated": true}
+{"id": "TS172", "domain": "cross", "tags": ["join"], "question": "缺货期间华东区域仓有没有在途的采购单？", "context": [], "gold_tables": ["scm_purchase_order", "wms_stockout_record"], "gold_has_ablated": false}
+{"id": "TS173", "domain": "cross", "tags": ["join"], "question": "各平台2026年的毛利率", "context": [], "gold_tables": ["trd_order_item", "prd_sku_cost", "trd_order", "dim_shop", "dim_platform"], "gold_has_ablated": false}
+{"id": "TS174", "domain": "cross", "tags": ["join"], "question": "结算佣金和按费率算出来的佣金是否一致？", "context": [], "gold_tables": ["fin_settlement", "fin_platform_fee", "dim_shop"], "gold_has_ablated": true}
+{"id": "TS175", "domain": "cross", "tags": ["join"], "question": "各大区2026年的退款率", "context": [], "gold_tables": ["trd_refund", "trd_order", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS176", "domain": "cross", "tags": ["join"], "question": "赔付金额按责任方（商家/物流/用户）分别是多少？", "context": [], "gold_tables": ["trd_compensation", "trd_aftersale_reason", "trd_order"], "gold_has_ablated": true}
+{"id": "TS177", "domain": "cross", "tags": ["multi"], "question": "按原因拆开看", "context": ["2026年10月的退款率是多少？"], "gold_tables": ["trd_refund", "trd_aftersale_reason", "trd_order"], "gold_has_ablated": false}
+{"id": "TS178", "domain": "cross", "tags": ["multi"], "question": "按承运商拆一下", "context": ["2026年Q3西南地区的平均履约时长是多少？"], "gold_tables": ["tms_shipment", "oms_fulfillment_order", "trd_order", "trd_order_address", "dim_region", "tms_carrier"], "gold_has_ablated": false}
+{"id": "TS179", "domain": "cross", "tags": ["multi"], "question": "是哪个类目拖累的？", "context": ["2026年10月12日那周华东GMV环比降了多少？"], "gold_tables": ["trd_order", "trd_order_item", "prd_sku", "prd_spu", "prd_category", "dim_shop", "dim_region"], "gold_has_ablated": false}
+{"id": "TS180", "domain": "cross", "tags": ["multi"], "question": "这些缺货单最后退款了多少钱？", "context": ["2026年10月华东区域仓有多少缺货记录？"], "gold_tables": ["wms_stockout_record", "trd_refund"], "gold_has_ablated": false}
