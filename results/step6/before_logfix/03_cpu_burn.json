@@ -1,0 +1,9 @@
+{
+  "case" : "03_cpu_burn",
+  "seconds" : 4.3,
+  "success" : true,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\nblocked ('dashscope.aliyuncs.com', 443) gaierror\nblocked ('1.1.1.1', 53) OSError\nblocked ('172.17.0.1', 13306) OSError\nwall=4.04s cpu=4.07s cores_used=1.01\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import multiprocessing as mp, time, resource\ndef burn(sec):\n    end = time.time() + sec\n    while time.time() < end:\n        pass\nt0 = time.time()\nps = [mp.Process(target=burn, args=(4,)) for _ in range(2)]\n[p.start() for p in ps]; [p.join() for p in ps]\nwall = time.time() - t0\ncpu = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime\nprint(f\"wall={wall:.2f}s cpu={cpu:.2f}s cores_used={cpu / wall:.2f}\")\n"
+}

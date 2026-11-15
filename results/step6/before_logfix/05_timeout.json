@@ -1,0 +1,9 @@
+{
+  "case" : "05_timeout",
+  "seconds" : 60.1,
+  "success" : false,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\nblocked ('dashscope.aliyuncs.com', 443) gaierror\nblocked ('1.1.1.1', 53) OSError\nblocked ('172.17.0.1', 13306) OSError\nwall=4.04s cpu=4.07s cores_used=1.01\ncpu.max n/a | cfs 100000 / 100000\nmemory 524288000\nmemory+swap 524288000\npids 64\nstart\n",
+  "stderr" : "Killed\nKilled\n",
+  "exception" : "StdErr: Killed\nKilled\n",
+  "code" : "import time\nprint(\"start\", flush=True)\ntime.sleep(600)\nprint(\"SHOULD NOT REACH\")\n"
+}

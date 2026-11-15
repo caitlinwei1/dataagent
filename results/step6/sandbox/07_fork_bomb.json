@@ -1,0 +1,9 @@
+{
+  "case" : "07_fork_bomb",
+  "seconds" : 0.1,
+  "success" : true,
+  "stdout" : "fork refused after 61 children: [Errno 11] Resource temporarily unavailable\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import os, time\nn = 0\ntry:\n    for _ in range(10000):\n        if os.fork() == 0:\n            time.sleep(30); os._exit(0)\n        n += 1\nexcept OSError as e:\n    print(\"fork refused after\", n, \"children:\", e)\n"
+}

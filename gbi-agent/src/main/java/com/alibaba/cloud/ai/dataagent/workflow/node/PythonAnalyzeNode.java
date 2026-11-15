@@ -21,6 +21,7 @@ import com.alibaba.cloud.ai.graph.action.NodeAction;
 import com.alibaba.cloud.ai.graph.streaming.StreamingOutput;
 import com.alibaba.cloud.ai.dataagent.prompt.PromptConstant;
 import com.alibaba.cloud.ai.dataagent.service.llm.LlmService;
+import com.alibaba.cloud.ai.dataagent.util.JsonUtil;
 import com.alibaba.cloud.ai.dataagent.util.FluxUtil;
 import com.alibaba.cloud.ai.dataagent.util.PlanProcessUtil;
 import com.alibaba.cloud.ai.dataagent.util.StateUtil;
@@ -65,7 +66,7 @@ public class PythonAnalyzeNode implements NodeAction {
 
 		if (isFallbackMode) {
 			// 降级模式
-			String fallbackMessage = "Python 高级分析功能暂时不可用，出现错误";
+			String fallbackMessage = fallbackMessage(currentStep, pythonOutput);
 			log.warn("Python分析节点检测到降级模式，返回固定提示信息");
 
 			Flux<ChatResponse> fallbackFlux = Flux.just(ChatResponseUtil.createResponse(fallbackMessage));
@@ -75,7 +76,9 @@ public class PythonAnalyzeNode implements NodeAction {
 						Map<String, String> updatedSqlResult = PlanProcessUtil.addStepResult(sqlExecuteResult,
 								currentStep, fallbackMessage);
 						log.info("python fallback message: {}", fallbackMessage);
-						return Map.of(SQL_EXECUTE_NODE_OUTPUT, updatedSqlResult, PLAN_CURRENT_STEP, currentStep + 1);
+						// the degradation is scoped to this step: the next Python step gets a fresh budget
+						return Map.of(SQL_EXECUTE_NODE_OUTPUT, updatedSqlResult, PLAN_CURRENT_STEP, currentStep + 1,
+								PYTHON_FALLBACK_MODE, false, PYTHON_TRIES_COUNT, 0);
 					}, fallbackFlux);
 
 			return Map.of(PYTHON_ANALYSIS_NODE_OUTPUT, generator);
@@ -91,10 +94,36 @@ public class PythonAnalyzeNode implements NodeAction {
 					Map<String, String> updatedSqlResult = PlanProcessUtil.addStepResult(sqlExecuteResult, currentStep,
 							aiResponse);
 					log.info("python analyze result: {}", aiResponse);
-					return Map.of(SQL_EXECUTE_NODE_OUTPUT, updatedSqlResult, PLAN_CURRENT_STEP, currentStep + 1);
+					return Map.of(SQL_EXECUTE_NODE_OUTPUT, updatedSqlResult, PLAN_CURRENT_STEP, currentStep + 1,
+							PYTHON_TRIES_COUNT, 0);
 				}, pythonAnalyzeFlux);
 
 		return Map.of(PYTHON_ANALYSIS_NODE_OUTPUT, generator);
+	}
+
+	static String fallbackMessage(int step, String pythonOutput) {
+		String reason = "";
+		try {
+			var node = JsonUtil.getObjectMapper().readTree(pythonOutput == null ? "{}" : pythonOutput);
+			String err = node.path("last_error").asText("");
+			if (err.contains("OOMKilled")) {
+				reason = "内存超过沙箱上限";
+			}
+			else if (err.contains("timeout")) {
+				reason = "运行超时";
+			}
+			else if (!err.isBlank()) {
+				String[] lines = err.strip().split("\n");
+				reason = lines[lines.length - 1];
+			}
+			if (node.has("tries")) {
+				reason = "已重写 " + node.path("tries").asInt() + " 次" + (reason.isEmpty() ? "" : "，最后错误：" + reason);
+			}
+		}
+		catch (Exception ignored) {
+		}
+		return "【降级】第 " + step + " 步的 Python 分析未完成" + (reason.isEmpty() ? "" : "（" + reason + "）")
+				+ "。本步只保留上一步 SQL 的查询结果，报告不包含此步的计算结论。";
 	}
 
 }
