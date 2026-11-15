@@ -1,0 +1,51 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gbi-gateway
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+  cloud:
+    gateway:
+      httpclient:
+        # a full report run takes minutes; SSE streams stay open for the whole graph run
+        response-timeout: 600s
+      routes:
+        - id: gbi-auth
+          uri: ${AUTH_URI:http://127.0.0.1:9200}
+          predicates:
+            - Path=/auth/**
+        # LLM-backed endpoints: per-user token bucket, because each call costs model tokens and minutes of compute
+        - id: gbi-agent-llm
+          uri: ${AGENT_URI:http://127.0.0.1:8065}
+          predicates:
+            - Path=/api/stream/**,/openapi/v1/reports
+            - Method=GET,POST
+          filters:
+            - name: RequestRateLimiter
+              args:
+                key-resolver: "#{@userKeyResolver}"
+                redis-rate-limiter.replenishRate: ${GBI_LLM_RATE:1}
+                redis-rate-limiter.burstCapacity: ${GBI_LLM_BURST:5}
+                redis-rate-limiter.requestedTokens: 1
+        - id: gbi-agent
+          uri: ${AGENT_URI:http://127.0.0.1:8065}
+          predicates:
+            - Path=/api/**,/openapi/**,/echo/**
+gbi:
+  gateway:
+    jwt-secret: ${GBI_JWT_SECRET:change-me-gbi-jwt-secret-0123456789abcdef0123456789abcdef0123456789}
+    sign-secret: ${GBI_GATEWAY_SIGN_SECRET:change-me-gbi-gateway-sign-secret}
+    # paths that pass without a token (RuoYi: security.ignore.whites). /auth/** validates its own token.
+    ignore-whites:
+      - /auth/login
+      - /auth/logout
+      - /auth/refresh
+      - /auth/me
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

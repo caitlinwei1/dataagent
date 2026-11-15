@@ -106,6 +106,19 @@ public class SchemaRecallNode implements NodeAction {
 						com.alibaba.cloud.ai.dataagent.service.schema.recall.TableRecallService
 							.previousQuestions(StateUtil.getStringValue(state, MULTI_TURN_CONTEXT, "")))
 				: schemaService.getTableDocumentsByDatasource(datasourceId, input));
+		// table-level data permission: tables the user may not query never reach the prompt, so the model cannot
+		// see (or leak) their structure, and does not waste a generation on SQL the guard would reject
+		com.alibaba.cloud.ai.dataagent.security.DataPermission permission = com.alibaba.cloud.ai.dataagent.security.DataPermission
+			.fromState(state.value(GBI_DATA_PERMISSION).orElse(null));
+		if (permission != null && !permission.allTables()) {
+			int before = tableDocuments.size();
+			tableDocuments.removeIf(d -> {
+				Object n = d.getMetadata().get("name");
+				return n == null || !permission.allowsTable(n.toString());
+			});
+			log.info("data_permission recall user={} kept {}/{} tables", permission.userName(), tableDocuments.size(),
+					before);
+		}
 		// extract table names
 		List<String> recalledTableNames = extractTableName(tableDocuments);
 		List<Document> columnDocuments = schemaService.getColumnDocumentsByTableName(datasourceId, recalledTableNames);

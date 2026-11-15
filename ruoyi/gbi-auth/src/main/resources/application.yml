@@ -1,0 +1,25 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: gbi-auth
+  datasource:
+    url: ${GBI_SYSTEM_DB_URL:jdbc:mysql://127.0.0.1:3306/gbi_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${GBI_SYSTEM_DB_USER:root}
+    password: ${GBI_SYSTEM_DB_PASSWORD:root}
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+gbi:
+  auth:
+    # 64+ bytes, must match the gateway's
+    jwt-secret: ${GBI_JWT_SECRET:change-me-gbi-jwt-secret-0123456789abcdef0123456789abcdef0123456789}
+    expire-minutes: 720
+    max-retry: 5
+    lock-minutes: 10
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

@@ -90,7 +90,11 @@ public class SqlExecuteNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
 
+	private final com.alibaba.cloud.ai.dataagent.security.RowPermissionRewriter rowPermissionRewriter;
+
 	private static final int SAMPLE_DATA_NUMBER = 20;
+
+	private static final int MAX_PERMISSION_DENIALS = 2;
 
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
@@ -117,7 +121,34 @@ public class SqlExecuteNode implements NodeAction {
 		if (!guard.passed()) {
 			return blocked(state, sqlQuery, guard);
 		}
-		return executeSqlQuery(state, currentStep, sqlQuery, dbConfig, agentId);
+
+		// data permission: table grants, then the row filter is written into the SQL that actually runs. The model's
+		// SQL stays as it was in the state, so a regeneration or the next turn never sees (and copies) the filters.
+		String executedSql = sqlQuery;
+		java.util.List<String> filteredTables = java.util.List.of();
+		var permission = com.alibaba.cloud.ai.dataagent.security.DataPermission
+			.fromState(state.value(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_DATA_PERMISSION).orElse(null));
+		if (permission != null) {
+			java.util.List<String> denied = guard.tables().stream().filter(t -> !permission.allowsTable(t)).toList();
+			if (!denied.isEmpty()) {
+				log.info("data_permission deny user={} tables={}", permission.userName(), denied);
+				return blocked(state, sqlQuery, com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult
+					.permissionDenied("当前用户无权查询表：" + String.join(", ", denied) + "，请只用有权限的表", guard.tables()));
+			}
+			try {
+				var rewritten = rowPermissionRewriter.rewrite(sqlQuery, permission);
+				executedSql = rewritten.sql();
+				filteredTables = rewritten.filteredTables();
+			}
+			catch (com.alibaba.cloud.ai.dataagent.security.RowPermissionRewriter.RewriteException e) {
+				log.info("data_permission rewrite_failed user={} msg={}", permission.userName(), e.getMessage());
+				return blocked(state, sqlQuery, com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult
+					.permissionDenied(e.getMessage() + "，请改写成更简单的 SELECT", guard.tables()));
+			}
+			log.info("data_permission exec user={} scope={} filtered={} sql={}", permission.userName(),
+					permission.describe(), filteredTables, executedSql);
+		}
+		return executeSqlQuery(state, currentStep, sqlQuery, executedSql, filteredTables, dbConfig, agentId);
 	}
 
 	/**
@@ -155,12 +186,24 @@ public class SqlExecuteNode implements NodeAction {
 
 	private Map<String, Object> blocked(OverAllState state, String sqlQuery,
 			com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult guard) {
-		Map<String, Object> result = Map.of(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(guard.feedback()));
+		Map<String, Object> result = new HashMap<>(
+				Map.of(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(guard.feedback())));
+		String next = "，将重新生成SQL";
+		if (guard.failedCheck() == com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlCheck.PERMISSION) {
+			// one retry lets the model switch to tables the user may read; a second denial means the question needs
+			// data outside the user's permission, and rewording the SQL cannot change that
+			int denials = state.value(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_PERMISSION_DENIALS, 0) + 1;
+			result.put(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_PERMISSION_DENIALS, denials);
+			if (denials >= MAX_PERMISSION_DENIALS) {
+				result.put(SQL_GENERATE_COUNT, properties.getMaxSqlRetryCount());
+				next = "。连续 " + denials + " 次需要无权限的数据，停止重试：这个问题超出了你的数据权限，请联系管理员授权";
+			}
+		}
 		Flux<ChatResponse> displayFlux = Flux.just(ChatResponseUtil.createResponse("执行SQL前校验："),
 				ChatResponseUtil.createPureResponse(TextType.SQL.getStartSign()),
 				ChatResponseUtil.createResponse(sqlQuery),
 				ChatResponseUtil.createPureResponse(TextType.SQL.getEndSign()),
-				ChatResponseUtil.createResponse(guard.feedback() + "，将重新生成SQL"));
+				ChatResponseUtil.createResponse(guard.feedback() + next));
 		Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(this.getClass(),
 				state, v -> result, displayFlux);
 		return Map.of(SQL_EXECUTE_NODE_OUTPUT, generator);
@@ -182,10 +225,10 @@ public class SqlExecuteNode implements NodeAction {
 	 */
 	@SuppressWarnings("unchecked")
 	private Map<String, Object> executeSqlQuery(OverAllState state, Integer currentStep, String sqlQuery,
-			DbConfigBO dbConfig, Long agentId) {
+			String executedSql, java.util.List<String> filteredTables, DbConfigBO dbConfig, Long agentId) {
 		// Execute business logic first - actual SQL execution
 		DbQueryParameter dbQueryParameter = new DbQueryParameter();
-		dbQueryParameter.setSql(sqlQuery);
+		dbQueryParameter.setSql(executedSql);
 		dbQueryParameter.setSchema(dbConfig.getSchema());
 
 		Accessor dbAccessor = databaseUtil.getAgentAccessor(agentId);
@@ -198,6 +241,9 @@ public class SqlExecuteNode implements NodeAction {
 			emitter.next(ChatResponseUtil.createPureResponse(TextType.SQL.getStartSign()));
 			emitter.next(ChatResponseUtil.createResponse(sqlQuery));
 			emitter.next(ChatResponseUtil.createPureResponse(TextType.SQL.getEndSign()));
+			if (!filteredTables.isEmpty()) {
+				emitter.next(ChatResponseUtil.createResponse("已按数据权限过滤：" + String.join(", ", filteredTables)));
+			}
 			ResultBO resultBO = ResultBO.builder().build();
 
 			try {

@@ -1,0 +1,303 @@
+{
+  "runs": [
+    {
+      "seconds": 93.1,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "ReportGeneratorNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "trd_daily_shop_sales, trd_order, fin_sales_target, dim_shop, trd_order_item, fin_settlement_item, trd_gift_card_usage, fin_settlement, trd_daily_sku_sales, trd_order_invoice",
+      "sql": [
+        "SELECT \n  shop_id,\n  SUM(gmv) AS gmv\nFROM trd_daily_shop_sales\nWHERE stat_date >= '2026-03-01' \n  AND stat_date < '2026-04-01'\nGROUP BY shop_id\nORDER BY gmv DESC;"
+      ],
+      "permission_notes": [
+        "已按数据权限过滤：trd_daily_shop_sales"
+      ],
+      "result_sets": [
+        [
+          {
+            "shop_id": "1",
+            "gmv": "104175.81"
+          },
+          {
+            "shop_id": "2",
+            "gmv": "128917.14"
+          },
+          {
+            "shop_id": "3",
+            "gmv": "97041.25"
+          },
+          {
+            "shop_id": "7",
+            "gmv": "110494.39"
+          },
+          {
+            "shop_id": "10",
+            "gmv": "121447.49"
+          }
+        ]
+      ],
+      "tail": "立GMV健康度仪表盘**：  \n  - 新增指标：`GMV/营业天数`（剔除歇业日）、`GMV/曝光UV`（转化效率）、`运费占比`（成本合理性）；  \n  - 设置阈值告警（如连续2月GMV环比下降 >10% 自动触发运营介入）；  \n- **试点资源倾斜机制**：  \n  - 对GMV排名前2店铺，在下月增加10%首页Banner曝光配额；  \n  - 对排名后2店铺，匹配1名增长顾问进行1对1诊断（聚焦商品结构与用户评价响应率）。\n\n### ⚠️ 风险提示\n- 当前仅5家店铺数据，**样本量偏小**，暂无法支撑区域/业态维度交叉分析（如“华东vs华南”、“服饰vs数码”）；  \n- 建议下月同步拉取 `trd_daily_shop_sales` 中 `order_cnt`（订单量）、`pay_amt`（实付金额）字段，构建GMV→实收漏斗，识别优惠使用强度与退款影响。报告生成完成！\n",
+      "user": "east_ops",
+      "question": "2026年3月各店铺的GMV分别是多少？",
+      "thread": "e2e-east_ops-ef0b11d6"
+    },
+    {
+      "seconds": 92.6,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "ReportGeneratorNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "trd_daily_shop_sales, trd_order, dim_shop, trd_order_item, trd_gift_card_usage, trd_daily_sku_sales, trd_order_invoice",
+      "sql": [
+        "SELECT \n  shop_id,\n  SUM(gmv) AS gmv\nFROM trd_daily_shop_sales\nWHERE stat_date >= '2026-03-01' AND stat_date < '2026-04-01'\nGROUP BY shop_id\nORDER BY gmv DESC;"
+      ],
+      "permission_notes": [
+        "已按数据权限过滤：trd_daily_shop_sales"
+      ],
+      "result_sets": [
+        [
+          {
+            "shop_id": "1",
+            "gmv": "104175.81"
+          },
+          {
+            "shop_id": "2",
+            "gmv": "128917.14"
+          },
+          {
+            "shop_id": "3",
+            "gmv": "97041.25"
+          },
+          {
+            "shop_id": "4",
+            "gmv": "86606.83"
+          },
+          {
+            "shop_id": "7",
+            "gmv": "110494.39"
+          },
+          {
+            "shop_id": "10",
+            "gmv": "121447.49"
+          },
+          {
+            "shop_id": "11",
+            "gmv": "120882.52"
+          }
+        ]
+      ],
+      "tail": "- **构建店铺健康度仪表盘**：  \n  - 新增指标：`GMV/营业天数`（剔除歇业影响）、`运费占GMV比`（监控物流成本合理性）、`支付订单数`（区分GMV驱动因素）  \n- **试点“店铺联盟”机制**：  \n  - 将 shop_id:4（低GMV但稳定）、shop_id:11（高GMV）组成结对，共享爆款选品池与直播排期资源，验证协同效应  \n\n### 5.3 数据基建建议\n- 在 `trd_daily_shop_sales` 表中补充 `order_count`（支付订单数）字段，支撑GMV归因分析（价格驱动 vs 订单量驱动）  \n- 建立月度GMV环比自动预警：当任一店铺环比下降 >15% 时触发根因分析工单  \n\n---  \n**报告生成时间**：2026年4月1日  \n**数据时效性声明**：基于2026年3月全量已结算订单，不含待支付/退款中订单。报告生成完成！\n",
+      "user": "shop_ops",
+      "question": "2026年3月各店铺的GMV分别是多少？",
+      "thread": "e2e-shop_ops-63c3c547"
+    },
+    {
+      "seconds": 98.4,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "ReportGeneratorNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "trd_daily_shop_sales, trd_order, fin_sales_target, dim_shop, trd_order_item, fin_settlement_item, trd_gift_card_usage, fin_settlement, trd_daily_sku_sales, trd_order_invoice",
+      "sql": [
+        "SELECT \n  shop_id,\n  SUM(gmv) AS gmv\nFROM trd_daily_shop_sales\nWHERE stat_date >= '2026-03-01' AND stat_date < '2026-04-01'\nGROUP BY shop_id\nORDER BY gmv DESC;"
+      ],
+      "permission_notes": [],
+      "result_sets": [
+        [
+          {
+            "shop_id": "1",
+            "gmv": "104175.81"
+          },
+          {
+            "shop_id": "2",
+            "gmv": "128917.14"
+          },
+          {
+            "shop_id": "3",
+            "gmv": "97041.25"
+          },
+          {
+            "shop_id": "4",
+            "gmv": "86606.83"
+          },
+          {
+            "shop_id": "5",
+            "gmv": "197994.25"
+          },
+          {
+            "shop_id": "6",
+            "gmv": "145328.88"
+          },
+          {
+            "shop_id": "7",
+            "gmv": "110494.39"
+          },
+          {
+            "shop_id": "8",
+            "gmv": "153469.28"
+          },
+          {
+            "shop_id": "9",
+            "gmv": "120138.90"
+          },
+          {
+            "shop_id": "10",
+            "gmv": "121447.49"
+          },
+          {
+            "shop_id": "11",
+            "gmv": "120882.52"
+          },
+          {
+            "shop_id": "12",
+            "gmv": "73672.17"
+          }
+        ]
+      ],
+      "tail": "③ 优先接入新流量入口（如首页推荐位）。  \n- **监控强化**：在BI看板中增加“单店GMV月度同比/环比”预警阈值（±15%），自动触发运营介入流程。  \n\n### ⏭️ 下一步行动项\n| 任务                     | 责任人 | 时间节点   |\n|--------------------------|--------|------------|\n| 获取Top 3店铺3月营销明细 | 市场部 | 2026-04-05 |\n| 店铺 `12` 状态与订单诊断 | 运营部 | 2026-04-03 |\n| 输出《GMV健康度评估SOP》 | 数据部 | 2026-04-10 |\n\n> **注**：所有建议均基于当前GMV数据客观推导，未引入外部假设。后续分析可关联 `dim_shop` 补充店铺类型（自营/第三方）、城市、成立时长等维度，深化归因。报告生成完成！\n",
+      "user": "admin",
+      "question": "2026年3月各店铺的GMV分别是多少？",
+      "thread": "e2e-admin-caf75aa2"
+    },
+    {
+      "seconds": 86.8,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "dim_shop",
+      "sql": [],
+      "permission_notes": [
+        "当前用户无权查询表：trd_daily_shop_sales"
+      ],
+      "result_sets": [],
+      "tail": "trd_daily_shop_sales` `d` ON `d`.`shop_id` = `s`.`id` WHERE `d`.`date` >= '2026-03-01' AND `d`.`date` < '2026-04-01' GROUP BY `s`.`name`;\nSQL守卫拦截[PERMISSION/权限]：当前用户无权查询表：trd_daily_shop_sales，请只用有权限的表，将重新生成SQL\n正在进行重试评估...\n步骤[1]中，SQL次数生成超限，最大尝试次数：10，已尝试次数:10，该步骤内容: \n 从 trd_daily_shop_sales 表中查询 2026年3月（>= '2026-03-01' AND < '2026-04-01'）期间各店铺的GMV总和，并通过 shop_id 关联 dim_shop 表获取店铺名称，结果按店铺名称分组\n重试评估完成！\n",
+      "user": "sh_wh",
+      "question": "2026年3月各店铺的GMV分别是多少？",
+      "thread": "e2e-sh_wh-2052d131"
+    },
+    {
+      "seconds": 83.1,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "ReportGeneratorNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "wms_outbound_item, wms_outbound, wms_inventory_snapshot, wms_warehouse, oms_fulfillment_order, wms_inbound_item, wms_inventory, wms_inbound, wms_stocktake, wms_stockout_record",
+      "sql": [
+        "SELECT \n  COUNT(*) AS outbound_count,\n  w.name AS warehouse_name\nFROM wms_outbound o\nJOIN wms_warehouse w ON o.warehouse_id = w.id\nWHERE o.outbound_at >= '2026-03-01' \n  AND o.outbound_at < '2026-04-01'\nGROUP BY w.name\nORDER BY outbound_count DESC;",
+        "SELECT \n    COALESCE(COUNT(o.id), 0) AS outbound_count,\n    w.name AS warehouse_name\n  FROM wms_warehouse w\n  LEFT JOIN wms_outbound o \n    ON w.id = o.warehouse_id \n    AND o.outbound_at >= '2026-03-01' \n    AND o.outbound_at < '2026-04-01'\n  GROUP BY w.name;"
+      ],
+      "permission_notes": [
+        "已按数据权限过滤：wms_outbound"
+      ],
+      "result_sets": [
+        [
+          {
+            "warehouse_name": "上海前置仓",
+            "outbound_count": "44"
+          }
+        ]
+      ],
+      "tail": "eries\": [\n        {\n            \"name\": \"出库单量\",\n            \"type\": \"bar\",\n            \"data\": [44, 0, 0, 0, 0, 0],\n            \"itemStyle\": {\n                \"color\": function(params) {\n                    return params.value === 0 ? \"#d3d3d3\" : \"#5470c6\";\n                }\n            }\n        }\n    ],\n    \"color\": [\"#5470c6\", \"#91cc75\", \"#fac858\", \"#ee6666\", \"#73c0de\", \"#3ca272\"]\n}\n```报告生成完成！\n",
+      "user": "sh_wh",
+      "question": "2026年3月各仓库的出库单数量是多少？",
+      "thread": "e2e-sh_wh-32e8104a"
+    },
+    {
+      "seconds": 77.4,
+      "nodes": [
+        "EvidenceRecallNode",
+        "FeasibilityAssessmentNode",
+        "IntentRecognitionNode",
+        "PlannerNode",
+        "QueryEnhanceNode",
+        "ReportGeneratorNode",
+        "SchemaRecallNode",
+        "SemanticConsistencyNode",
+        "SqlExecuteNode",
+        "SqlGenerateNode",
+        "TableRelationNode"
+      ],
+      "recalled_tables": "wms_outbound_item, wms_outbound, wms_inventory_snapshot, wms_warehouse, oms_fulfillment_order, wms_inbound_item, wms_inventory, wms_inbound, wms_stocktake, wms_stockout_record",
+      "sql": [
+        "SELECT w.name, COUNT(*) AS outbound_count\n  FROM wms_outbound o\n  LEFT JOIN wms_warehouse w ON o.warehouse_id = w.id\n  WHERE o.outbound_at >= '2026-03-01' AND o.outbound_at < '2026-04-01'\n  GROUP BY w.name\n  ORDER BY outbound_count DESC;"
+      ],
+      "permission_notes": [
+        "已按数据权限过滤：wms_outbound"
+      ],
+      "result_sets": [
+        [
+          {
+            "name": "华东中心仓",
+            "outbound_count": "55"
+          },
+          {
+            "name": "华东区域仓",
+            "outbound_count": "412"
+          },
+          {
+            "name": "上海前置仓",
+            "outbound_count": "44"
+          }
+        ]
+      ],
+      "tail": "erColor\": \"#fff\",\n                \"borderWidth\": 2\n            },\n            \"label\": { \"show\": true, \"formatter\": \"{b}\\n{c}单\\n{d}%\" },\n            \"data\": [\n                { \"value\": 412, \"name\": \"华东区域仓\" },\n                { \"value\": 55, \"name\": \"华东中心仓\" },\n                { \"value\": 44, \"name\": \"上海前置仓\" }\n            ]\n        }\n    ],\n    \"color\": [\"#5470C6\", \"#91CC75\", \"#FAC858\"]\n}\n```报告生成完成！\n",
+      "user": "east_ops",
+      "question": "2026年3月各仓库的出库单数量是多少？",
+      "thread": "e2e-east_ops-6dee7b56"
+    }
+  ],
+  "thread_takeover_resume": {
+    "status": 403,
+    "body": "{\"code\":403,\"msg\":\"无权访问该会话：e2e-sh_wh-2052d131\"}"
+  },
+  "thread_takeover_new_turn": {
+    "status": 403,
+    "body": "{\"code\":403,\"msg\":\"无权访问该会话：e2e-sh_wh-2052d131\"}"
+  }
+}
