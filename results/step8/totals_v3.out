@@ -1,0 +1,5 @@
+3 tasks to run
+R05 FAILED 32.0s charts=0/0 evidence=0 keys=0/1 must=0/2 model=qwen-plus
+R40 FAILED 105.5s charts=0/0 evidence=4 keys=0/1 must=0/0 model=qwen-plus
+R07 COMPLETED 174.7s charts=1/1 evidence=1 keys=1/1 must=0/0 model=qwen-plus
+{"n": 3, "completed": 1, "completion_rate": 0.333, "with_valid_chart": 1, "charts": 1, "charts_valid": 1, "with_evidence": 1, "keys_hit": 1, "keys_total": 1, "must_hit": 0, "must_total": 2, "numbers": 50, "numbers_untraced": 1, "with_conclusion": 1, "with_recommendation": 1, "system_seconds_p50": 174.7, "system_minutes_mean": 2.9, "manual_minutes_est_mean": 72.0, "time_saved_ratio": 0.96}

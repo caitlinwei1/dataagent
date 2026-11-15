@@ -1,0 +1,33 @@
+{
+ "threadId": "report-ac4febc8-0492-46a9-b6ea-99d108a9049a",
+ "question": "2026年10月12日到18日这一周，华东地区数码家电的销量为什么比前一周下滑？",
+ "status": "FAILED",
+ "seconds": 381.573660058,
+ "plan": [
+  {
+   "step": "1",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 prd_spu 表和 prd_category 表关联查询，统计华东地区（通过 dim_region 和 prd_spu 关联）且属于数码家电类目的 SPU 数量、ON_SALE 状态的 SPU 数量；同时从 prd_sku 表关联查询对应 SKU 的总数量、ON_SALE 状态的 SKU 数量。时间范围不适用，因维表无时间字段。"
+  },
+  {
+   "step": "2",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 trd_order_item 表（通过外键 trd_order_item.sku_id = prd_sku.id）关联 prd_sku、prd_spu、prd_category 和 dim_region 表，统计2026年10月5日至10月18日期间，华东地区数码家电类目的订单行数、商品件数（quantity 字段需确认是否存在，若不存在则用 COUNT(*) 代替）、订单数（DISTINCT order_id）。按日期分组，并区分两个对比周：2026-10-05至2026-10-11（前一周）和2026-10-12至2026-10-18（当周）。"
+  },
+  {
+   "step": "3",
+   "tool": "PYTHON_GENERATE_NODE",
+   "instruction": "读取步骤2输出的订单数据，计算当周（10-12至10-18）与前一周（10-05至10-11）的订单行数、商品件数、订单数的同比变化率；识别销量下滑是否由订单数减少、件均下降或新客流失导致；结合步骤1的SPU/SKU供给数据，分析是否因缺货（OFF_SALE SKU占比升高）或新品上架不足（launch_date在当周的SPU数）导致；输出各归因维度的贡献度排序。"
+  },
+  {
+   "step": "4",
+   "tool": "REPORT_GENERATOR_NODE",
+   "instruction": ""
+  }
+ ],
+ "markdown": "",
+ "charts": [],
+ "evidence": [],
+ "issues": [],
+ "_model": "qwen-plus"
+}
