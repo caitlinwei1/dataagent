@@ -38,6 +38,9 @@ public class GraphRequest {
 
 	private boolean rejectedPlan;
 
+	/** Plan JSON edited by the reviewer; when set, it replaces the generated plan and is executed. */
+	private String editedPlan;
+
 	private boolean nl2sqlOnly;
 
 }

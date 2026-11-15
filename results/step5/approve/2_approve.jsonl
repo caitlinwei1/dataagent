@@ -1,0 +1,904 @@
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "HumanFeedbackNode", "textType": "TEXT", "text": "计划已确认，开始执行\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "r`.`big_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`, COALESCE", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(SUM(`s", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "gmv`),", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 0) AS", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `gmv", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_amount`\nFROM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `dim_region`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS `r`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "\nLEFT JOIN", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `dim_shop`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS `ds", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` ON `ds", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`region_id`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `r`.`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id`\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "LEFT JOIN `tr", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "d_daily_shop_sales", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` AS `s", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` ON `s", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`shop_id`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `ds`.`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id` AND", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `s`.`stat", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date` >= '", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "2026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `s`.`stat", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date` <=", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-31'", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "\nWHERE `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "r`.`big_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` IN ('华东", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "', '华北',", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '华南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "', '华中',", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '西南', '", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "西北', '东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "')\nGROUP BY", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `r`.`big", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_region`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "\nORDER BY `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "gmv_amount`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " DESC;", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT `r`.`big_region`, COALESCE(SUM(`s`.`gmv`), 0) AS `gmv_amount`\nFROM `dim_region` AS `r`\nLEFT JOIN `dim_shop` AS `ds` ON `ds`.`region_id` = `r`.`id`\nLEFT JOIN `trd_daily_shop_sales` AS `s` ON `s`.`shop_id` = `ds`.`id` AND `s`.`stat_date` >= '2026-03-01' AND `s`.`stat_date` <= '2026-03-31'\nWHERE `r`.`big_region` IN ('华东', '华北', '华南', '华中', '西南', '西北', '东北')\nGROUP BY `r`.`big_region`\nORDER BY `gmv_amount` DESC;\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"big_region\",\"gmv_amount\"],\"data\":[{\"big_region\":\"华东\",\"gmv_amount\":\"562076.08\"},{\"big_region\":\"华北\",\"gmv_amount\":\"207489.35\"},{\"big_region\":\"华南\",\"gmv_amount\":\"197994.25\"},{\"big_region\":\"华中\",\"gmv_amount\":\"153469.28\"},{\"big_region\":\"西南\",\"gmv_amount\":\"145328.88\"},{\"big_region\":\"东北\",\"gmv_amount\":\"120138.90\"},{\"big_region\":\"西北\",\"gmv_amount\":\"73672.17\"}],\"errorMsg\":null},\"displayStyle\":null}", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "开始生成报告...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "# ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6年3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "按", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺运营归属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "统计已支付订单", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V分析报告\n\n##", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". 执行摘要", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n- **统计", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "周期**：2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26-0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3-01", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 至 2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "026-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "31  \n-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **统计", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "对象**：已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "订单 GMV  \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "GMV 口径", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**：商品", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "原价总额 + ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运费，**不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "扣优惠、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "不扣退款**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- **七大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区合计 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：**1,4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,16", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.9", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1 元**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最高大区**：**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东**，为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **562", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",076", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8 元**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，占整体 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "38.4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9%**  \n-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最低大区**：**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北**，为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **7", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3,67", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2.17", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元**，占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 **5.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "05", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**  \n- **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "无数据大区**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：本次", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "七大区均有销售", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据，**不存在", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV 为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 的大区**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- **低", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "贡献大区**：**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北、东北**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 明显偏低", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，分别仅占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 **5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".05%**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、**8.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "23", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**  \n- **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "集中度判断**：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华北、华南三大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区合计 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "为 **96", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7,55", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".68 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元**，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "占整体 **6", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.26", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，说明业绩高度", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "集中在头部大区。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n## 2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". 分析背景", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与用户诉求\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "用户希望查询 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26年3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月** 期间", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，按 **店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运营归属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "** 统计 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "已支付订单 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V**。大区范围", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "包括：\n\n-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华东\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 华北\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 华南\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 华中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n- 西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n- 西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n- 东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n本次分析需", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "明确以下业务口径", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：\n\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 项目 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "口径", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "说明 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "---|---|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n| 时间", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "范围 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "至 20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "订单状态 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "已支付订单 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n| GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 计算方式 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 商品", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "原价总额 + ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运费 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 是否扣优惠", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 不扣", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优惠", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是否扣退款 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 不扣退款", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分组维度 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运营归属大区 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n| 大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "完整性 | 七大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区均需展示，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "无", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据大区补 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n---\n\n##", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 3. ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据分析过程\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 3.1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 数据来源与关联", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "关系\n\n本次分析", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "使用", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "以下数据对象：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 数据对象 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 用途", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n|---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|---|\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| `trd", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_daily", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_shop_sales` |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 提供", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺日粒度 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 数据，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "字段 `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "gmv` ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "口径", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "为当日支付订单", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "商品总额 + ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运费，不扣", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优惠、不扣", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "退款 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `dim_shop`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 提供店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "维度", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，通过 `region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_id` 关联", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "dim_region` |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 提供大区维度", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，字段 `big", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_region`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 用于按华东", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、华北、华南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、华中、西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、西北、东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分组 |\n\n关联", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "链路如下：\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "```text", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\ntrd_daily", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_shop_sales.shop_id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ↓\ndim_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n        ↓\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "dim_shop.region_id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n        ↓\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "dim_region.id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n        ↓\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "dim_region.big_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n```\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 3.2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 主要处理步骤", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n1.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **限定统计日期", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**  \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "   过滤 `", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "trd_daily_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_sales.stat", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_date`：\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "   -", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `stat_date >=", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " '202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-01'", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`\n  ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " - `stat_date", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " <= '20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26-0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3-31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "'`\n\n2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". **关联店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区**  \n  ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 通过 `dim", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_shop.region_id =", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " dim_region.id`", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 将销售", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据归属到店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运营", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区。\n\n3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". **按大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "聚合 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**  \n   ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "对 `trd", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_daily", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_shop_sales.gmv", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "` 进行求", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "和，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "得到各大区 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V。\n\n4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "保证七大区完整", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "返回**  \n  ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "以 `dim_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "` 中七大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区为基准进行", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "汇总，确保无", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "销售", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据的大区返回", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0。本次", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结果中七大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "均有", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据。\n\n5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "按 GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "降序排列**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n   用于", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "识别头部大区与", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低贡献", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区。\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 3.3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "参考查询逻辑\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "```sql", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\nWITH monthly_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_gmv AS (", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    SELECT\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " shop_id,\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        SUM(gmv", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ") AS gmv", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_amount\n    FROM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " trd_daily_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_sales\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    WHERE stat_date", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " >= '20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26-0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3-01", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "'\n      AND", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " stat_date <= '", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "'\n    GROUP", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " BY shop_id\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ")", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\nSELECT\n   ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " r.big_region,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    COALES", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "CE(SUM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "(m.gmv_amount", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "), 0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ") AS gmv", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_amount\nFROM dim", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_region r\nLEFT", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " JOIN dim_shop s", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    ON r", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".id = s", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".region_id\nLEFT", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " JOIN monthly_shop_g", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "mv m\n   ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ON s.id =", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " m.shop_id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\nGROUP BY r", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".big", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_region\nORDER BY", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " g", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "mv_amount DESC;", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n```\n\n---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n## 4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结果数据\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".1 各大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区 GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "明细\n\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "排名 | 大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "金额", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（元） |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 占整体 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "比例 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "---:|---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|---:|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "---:|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n| 1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 华东 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 56", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2,07", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "08 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "38.4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9% |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 2 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华北 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "207,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "489.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "35 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "14.2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1% |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 3 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华南 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "197,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "994.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "13.5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6% |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 4 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华中 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "153,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "469.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "28 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "10.5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1% |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5 | 西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 14", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5,32", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.8", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8 | 9", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".95%", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6 | 东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 12", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,13", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.9", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0 | 8", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3% |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 7 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 西北 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "73,6", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "72.1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5.05", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "% |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 合计 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "七大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区 | **1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",46", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,16", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".91**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "100.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "00%** |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n### 4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".2 可视化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "图表\n\n```ech", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "arts\n{\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    \"title\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n        \"text", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "026年", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "各大区已支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "订单GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\"\n    },", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    \"tooltip\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {\n        \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "trigger\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "axis\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"axisPointer\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {\n            \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "type\": \"shadow", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\"\n        }", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    },\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    \"grid\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {\n        \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "left\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3%\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"right\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4%\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"bottom\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3%\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"containLabel\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " true\n    },", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "xAxis\": {", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"type\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "category\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"data\": [", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n            \"华东", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\",\n           ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"华北\",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"华南\",", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n            \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华中\",\n           ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"西南\",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"东北\",", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"西北\"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        ],\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"axisLabel\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {\n            \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "rotate\": 3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0\n        }", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    },\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    \"yAxis", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": {\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"type\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "value\",\n       ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"name\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "GMV（元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\"\n    },", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n    \"series", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": [\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        {\n           ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"name\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "GMV\",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"type\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"bar\",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"data\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " [\n                ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "562", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "076.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "08,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n                2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0748", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9.3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5,\n               ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9799", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4.25", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "                15", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3469", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "28,\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "                1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4532", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "88,\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "                1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2013", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.90", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",\n                ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7367", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2.17", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n           ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ],\n            \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "barMaxWidth\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 40,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n            \"label", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": {\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "                \"show\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " true,\n               ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"position\": \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "top\"\n           ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " }\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        }\n   ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ]\n}\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "```\n\n---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n## 5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结果解读\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 5.1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华东大区是", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "绝对主力", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n华东大区 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "为 **56", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2,07", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".08 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元**，占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的 **38", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".49%**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "显著高于其他大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。其", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV 约为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北大区的 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "63 倍", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**，说明华东", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区在店铺规模", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、流量承接、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "转化或商品供给", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "方面具备明显优势", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 5.2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华北、华南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "构成第二梯队\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华北与华南 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 分别为 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "207,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "489.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "35 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "** 和", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **197", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "994.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**，两者", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "接近，合计占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "27.7", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**。这两个大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "仅次于华东的重要增长", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支撑", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区域。\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 5.3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 华中、西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "处于中部水平\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华中 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 为 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "153", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",469", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8 元**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV 为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "145,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "328.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "88 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**，两者", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "合计占整体 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "20.4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6%**。相比", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "头部大区，中部", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区仍有提升空间", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，但贡献", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "相对稳定。\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5.4 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "东北、西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "贡献偏低\n\n东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "为 **12", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,13", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "90 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**，西北 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **73,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "672.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "17", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 元**，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "两者合计仅占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **13.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "27%**。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "其中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北大区为七大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区中最低，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "说明", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "该区域在店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数量", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、活跃店铺、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量规模或转化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "效率方面可能存在不足", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n### ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5.5 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体集中度较高\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东、华北、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华南三大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区合计 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 为 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "967,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "559", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".68 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元**，占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 **66", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".26%**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。这表明 2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年3月已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付订单 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 高度集中于", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "头部大区，后续", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "需要关注区域发展", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "均衡性，避免", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "过度依赖单一", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区域。\n\n---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n## 6", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "业务建议与后续", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "行动\n\n###", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 6.1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 保持华东大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优势，防范过度", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "集中\n\n华东大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "贡献最大，建议", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "继续巩固", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "其优势，同时", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "关注是否存在增长瓶颈", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、流量成本上升", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "或店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结构单一等问题。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "可通过", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东大区内部店铺", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分层", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分析，识别头部", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺贡献与长", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "尾店铺活跃度。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n### ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.2 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "重点", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提升西北、东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "等", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低贡献大区\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北和东北大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 明显偏低，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议优先", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "开展以下分析：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 分析方向 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 建议", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "关注点 |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|---|---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺覆盖 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、东北是否有足够", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺数量与活跃", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺 |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 流量获取", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 曝光、访问", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、搜索/推荐", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是否不足 |\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "转化效率 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "转化率是否低于全国", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "平均 |\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 商品结构 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 商品", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "原价、品类结构", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、价格带是否", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "匹配当地需求 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n|", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 运费影响 |", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 运费", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是否影响支付转化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "或 GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结构", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运营活动 | ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是否", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "缺少区域化运营", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "活动或资源投入", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n\n### ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.3 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "对中部大区进行", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "精细化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运营\n\n华中、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区贡献处于中等", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "水平，具备", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "进一步增长空间。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "通过以下方式提升：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n- 对", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "高潜店铺进行", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量扶持；\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 分析低转化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "商品与高退款", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "风险商品；\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 优化区域商品", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "供给", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与价格策略；", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n- ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提升店铺运营归属", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区下的协同效率", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n### ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.4 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "后续建议补充", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分析维度\n\n为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提升分析深度，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "后续继续拆解以下", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "指标", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：\n\n1.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **按日趋势", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**：查看 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年3月各大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 波动，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "识别", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月初、月中、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月末表现", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "差异。  \n2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **按店铺类型", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "/等级**：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "判断", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低贡献大区是否", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "由店铺结构导致", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。  \n3.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **按商品与", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运费", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "拆分**：分析", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "商品原价总额与", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "运费对 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 的贡献", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "占比。  \n4", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **按优惠、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "退款口径另算", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "净", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " GMV**：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "当前", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "口径不扣优惠", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "扣退款，后续", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "可补充净收入", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "视角。  \n5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **按大区转化", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "漏斗分析**：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "从曝光、访问", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、加购、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付等环节", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "定位低 GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "瓶颈。\n\n---", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n##", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 7. ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结论\n\n20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年3月，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "按店铺运营归属", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区统计的已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付订单 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 合计为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **1,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "460,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "68.9", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**。七大区均有", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据，无 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0 的大", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区。其中 **", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东大区 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 最高**", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，为 **5", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "62,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "076.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "08", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 元**，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "占整体 **3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.49", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**；**西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大区 GMV ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最低**，为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **73,", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "672.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "17 元", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**，占", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "整体 **5.", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "05", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%**。整体 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "V 呈现明显", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "头部集中特征，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "华东、华北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "、华南三大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "贡献", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "超过六成。建议", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "后续重点关注", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "西北、东北等", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低贡献大区的", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店铺运营、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量获取与支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "转化效率，同时", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "保持华东大区优势", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "并提升", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "区域增长均衡性", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "报告生成完成！\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "0aa0ec46-2fa6-419c-b8eb-fd63952c6716", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true}
