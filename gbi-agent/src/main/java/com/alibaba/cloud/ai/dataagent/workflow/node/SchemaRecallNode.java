@@ -102,7 +102,9 @@ public class SchemaRecallNode implements NodeAction {
 		// Execute business logic first - recall schema information immediately
 		// GBI: the original call ignores the question text; multi-channel recall uses it (gbi.recall.enabled)
 		List<Document> tableDocuments = new ArrayList<>(tableRecallService.isEnabled()
-				? tableRecallService.recallTableDocuments(Long.valueOf(agentId), datasourceId, input)
+				? tableRecallService.recallTableDocuments(Long.valueOf(agentId), datasourceId, input,
+						com.alibaba.cloud.ai.dataagent.service.schema.recall.TableRecallService
+							.previousQuestions(StateUtil.getStringValue(state, MULTI_TURN_CONTEXT, "")))
 				: schemaService.getTableDocumentsByDatasource(datasourceId, input));
 		// extract table names
 		List<String> recalledTableNames = extractTableName(tableDocuments);

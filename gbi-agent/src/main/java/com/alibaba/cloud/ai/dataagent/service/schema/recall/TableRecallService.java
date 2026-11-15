@@ -87,8 +87,16 @@ public class TableRecallService {
 
 	/** Table documents in fused order, for SchemaRecallNode. */
 	public List<Document> recallTableDocuments(Long agentId, Integer datasourceId, String query) {
+		return recallTableDocuments(agentId, datasourceId, query, List.of());
+	}
+
+	/**
+	 * Top-K table documents for a question; {@code context} holds the earlier questions of the same conversation
+	 * (used by the multi-turn channel).
+	 */
+	public List<Document> recallTableDocuments(Long agentId, Integer datasourceId, String query, List<String> context) {
 		Index idx = index(datasourceId);
-		return rank(agentId, datasourceId, query, List.of(), defaults()).stream()
+		return rank(agentId, datasourceId, query, context, defaults()).stream()
 			.limit(props.getTopK())
 			.map(r -> idx.tableDocs.get(r.table()))
 			.filter(Objects::nonNull)
@@ -222,6 +230,20 @@ public class TableRecallService {
 				.filterExpression(f).build())
 			.stream()
 			.map(d -> (String) d.getMetadata().get(DocumentMetadataConstant.NAME))
+			.toList();
+	}
+
+	/**
+	 * Earlier user questions from the graph's MULTI_TURN_CONTEXT ("用户: ...\nAI计划: ..." per turn, or "(无)").
+	 */
+	public static List<String> previousQuestions(String multiTurnContext) {
+		if (multiTurnContext == null || multiTurnContext.isBlank()) {
+			return List.of();
+		}
+		return multiTurnContext.lines()
+			.filter(l -> l.startsWith("用户: "))
+			.map(l -> l.substring("用户: ".length()).trim())
+			.filter(l -> !l.isEmpty())
 			.toList();
 	}
 
