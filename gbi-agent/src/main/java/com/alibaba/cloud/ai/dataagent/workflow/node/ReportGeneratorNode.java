@@ -20,6 +20,7 @@ import com.alibaba.cloud.ai.dataagent.dto.planner.Plan;
 import com.alibaba.cloud.ai.dataagent.entity.UserPromptConfig;
 import com.alibaba.cloud.ai.dataagent.prompt.PromptHelper;
 import com.alibaba.cloud.ai.dataagent.service.llm.LlmService;
+import com.alibaba.cloud.ai.dataagent.service.report.ResultTotals;
 import com.alibaba.cloud.ai.dataagent.service.prompt.UserPromptService;
 import com.alibaba.cloud.ai.dataagent.enums.TextType;
 import com.alibaba.cloud.ai.graph.GraphResponse;
@@ -224,7 +225,8 @@ public class ReportGeneratorNode implements NodeAction {
 					// Ignore parsing errors
 				}
 
-				sb.append("**执行结果**: \n```json\n").append(stepResult).append("\n```\n\n");
+				sb.append("**执行结果**: \n```json\n").append(stepResult).append("\n```\n");
+				sb.append(ResultTotals.describe(stepResult)).append("\n");
 			}
 		}
 

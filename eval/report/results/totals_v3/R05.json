@@ -1,0 +1,15 @@
+{
+ "threadId": "report-6b045e8e-4d92-48dd-8ac4-a492bf33beca",
+ "question": "2026年10月12日到18日这一周，华东地区数码家电的销量为什么比前一周下滑？",
+ "status": "FAILED",
+ "seconds": 32.000999576,
+ "plan": [],
+ "markdown": "",
+ "charts": [],
+ "evidence": [],
+ "issues": [
+  "可行性评估未通过：【需求类型】：《需要澄清》  \n【语种类型】：《中文》  \n【需求内容】：要分析销量同比下滑的原因，需关联销售事实表（如 `trd_daily_sku_sales` 或 `trd_order_item`）来获取销量数据，但当前召回的 Schema 中未包含任何销售/订单事实表（如无 `trd_order`、`trd_order_item`、`trd_daily_sku_sales` 等含销量/订单量/金额字段的表），也未提供销量定义或计算逻辑（如“销量”指订单数、商品件数还是GMV？）。请问您是否确认数据源中存在销售相关表？或者能否明确“销量”的具体口径（例如：某日该类目在华东地区的SKU销售件数总和）？"
+ ],
+ "untracedNumbers": [],
+ "_model": "qwen-plus"
+}

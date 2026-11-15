@@ -1,0 +1,220 @@
+{
+ "threadId": "report-2086f245-6f98-41f2-a3ec-91a3c20837bc",
+ "question": "2026年第一季度经营报告",
+ "status": "FAILED",
+ "seconds": 105.493218537,
+ "plan": [
+  {
+   "step": "1",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 trd_daily_shop_sales 表查询 2026 年第一季度（>= '2026-01-01' AND < '2026-04-01'）的每日 GMV、实付金额（paid_amount）、退款后金额（net_sales）、支付订单数（order_cnt）、支付买家数（buyer_cnt），并按 stat_date 分组。"
+  },
+  {
+   "step": "2",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 mkt_traffic_daily 表查询 2026 年第一季度（>= '2026-01-01' AND < '2026-04-01'）的每日访客数（uv）、浏览量（pv）、加购访客数（add_cart_uv），并按 stat_date 分组。"
+  },
+  {
+   "step": "3",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 mkt_ad_spend 表查询 2026 年第一季度（>= '2026-01-01' AND < '2026-04-01'）的每日广告花费（spend）、转化数（conversions），并按 stat_date 分组。"
+  },
+  {
+   "step": "4",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从 fin_settlement 表查询 2026 年第一季度（month_key IN ('2026-01', '2026-02', '2026-03')）的每月实际结算金额（net_amount）、平台佣金（commission）。"
+  },
+  {
+   "step": "5",
+   "tool": "PYTHON_GENERATE_NODE",
+   "instruction": "读取步骤1至步骤4的输出数据，计算2026年第一季度核心经营指标：1. 季度总GMV、总实付、总净销售；2. 广告ROI = 总净销售 / 总广告花费；3. 整体转化率 = 总支付订单数 / 总访客数；4. 加购转化率 = 总加购访客数 / 总访客数；5. 佣金率 = 总佣金 / 总实际结算金额；6. 绘制季度GMV、广告花费、净销售的趋势折线图。"
+  },
+  {
+   "step": "6",
+   "tool": "REPORT_GENERATOR_NODE",
+   "instruction": ""
+  }
+ ],
+ "markdown": "",
+ "charts": [],
+ "evidence": [
+  {
+   "index": 1,
+   "sql": "select `stat_date`, sum(`gmv`) as `gmv`, sum(`paid_amount`) as `paid_amount`, sum(`net_sales`) as `net_sales`, sum(`order_cnt`) as `order_cnt`, sum(`buyer_cnt`) as `buyer_cnt` from `trd_daily_shop_sales` where `stat_date` >= '2026-01-01' and `stat_date` < '2026-04-01' group by `stat_date`;",
+   "columns": [
+    "stat_date",
+    "gmv",
+    "paid_amount",
+    "net_sales",
+    "order_cnt",
+    "buyer_cnt"
+   ],
+   "rowCount": 90,
+   "preview": [
+    {
+     "stat_date": "2026-01-01",
+     "gmv": "47319.84",
+     "paid_amount": "45452.13",
+     "net_sales": "43396.68",
+     "order_cnt": "41",
+     "buyer_cnt": "41"
+    },
+    {
+     "stat_date": "2026-01-02",
+     "gmv": "63983.90",
+     "paid_amount": "63277.45",
+     "net_sales": "62809.44",
+     "order_cnt": "45",
+     "buyer_cnt": "45"
+    },
+    {
+     "stat_date": "2026-01-03",
+     "gmv": "42333.65",
+     "paid_amount": "41575.69",
+     "net_sales": "40251.24",
+     "order_cnt": "46",
+     "buyer_cnt": "46"
+    },
+    {
+     "stat_date": "2026-01-04",
+     "gmv": "48819.70",
+     "paid_amount": "47288.18",
+     "net_sales": "46557.79",
+     "order_cnt": "50",
+     "buyer_cnt": "50"
+    },
+    {
+     "stat_date": "2026-01-05",
+     "gmv": "42026.03",
+     "paid_amount": "40929.28",
+     "net_sales": "36274.47",
+     "order_cnt": "49",
+     "buyer_cnt": "49"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "sql": "select `stat_date`, sum(`uv`) as `uv`, sum(`pv`) as `pv`, sum(`add_cart_uv`) as `add_cart_uv` from `mkt_traffic_daily` where `stat_date` >= '2026-01-01' and `stat_date` < '2026-04-01' group by `stat_date`;",
+   "columns": [
+    "stat_date",
+    "uv",
+    "pv",
+    "add_cart_uv"
+   ],
+   "rowCount": 90,
+   "preview": [
+    {
+     "stat_date": "2026-01-01",
+     "uv": "856",
+     "pv": "3160",
+     "add_cart_uv": "15502"
+    },
+    {
+     "stat_date": "2026-01-02",
+     "uv": "876",
+     "pv": "3221",
+     "add_cart_uv": "15877"
+    },
+    {
+     "stat_date": "2026-01-03",
+     "uv": "925",
+     "pv": "3488",
+     "add_cart_uv": "14085"
+    },
+    {
+     "stat_date": "2026-01-04",
+     "uv": "1010",
+     "pv": "3615",
+     "add_cart_uv": "15534"
+    },
+    {
+     "stat_date": "2026-01-05",
+     "uv": "997",
+     "pv": "3738",
+     "add_cart_uv": "15024"
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "sql": "select `stat_date`, sum(`spend`) as `spend`, sum(`conversions`) as `conversions` from `mkt_ad_spend` where `stat_date` >= '2026-01-01' and `stat_date` < '2026-04-01' group by `stat_date`;",
+   "columns": [
+    "stat_date",
+    "spend",
+    "conversions"
+   ],
+   "rowCount": 90,
+   "preview": [
+    {
+     "stat_date": "2026-01-01",
+     "spend": "22688.87",
+     "conversions": "1446"
+    },
+    {
+     "stat_date": "2026-01-02",
+     "spend": "24020.40",
+     "conversions": "1011"
+    },
+    {
+     "stat_date": "2026-01-03",
+     "spend": "30822.51",
+     "conversions": "1231"
+    },
+    {
+     "stat_date": "2026-01-04",
+     "spend": "24920.90",
+     "conversions": "882"
+    },
+    {
+     "stat_date": "2026-01-05",
+     "spend": "25429.30",
+     "conversions": "516"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "sql": "select `month_key`, `net_amount`, `commission` from `fin_settlement` where `month_key` in ('2026-01', '2026-02', '2026-03');",
+   "columns": [
+    "month_key",
+    "net_amount",
+    "commission"
+   ],
+   "rowCount": 36,
+   "preview": [
+    {
+     "month_key": "2026-01",
+     "net_amount": "144276.44",
+     "commission": "7593.50"
+    },
+    {
+     "month_key": "2026-02",
+     "net_amount": "70876.21",
+     "commission": "3730.33"
+    },
+    {
+     "month_key": "2026-03",
+     "net_amount": "97306.47",
+     "commission": "5121.39"
+    },
+    {
+     "month_key": "2026-01",
+     "net_amount": "137706.11",
+     "commission": "7247.69"
+    },
+    {
+     "month_key": "2026-02",
+     "net_amount": "84472.95",
+     "commission": "4445.94"
+    }
+   ]
+  }
+ ],
+ "issues": [
+  "Error in stream processing: 200 OK from POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions, but response failed with cause: io.netty.channel.unix.Errors$NativeIoException: recvAddress(..) failed: Connection reset by peer",
+  "SQL执行失败: SQL执行失败[DIALECT/方言]：Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'gbi_ecommerce.mkt_traffic_daily.uv' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by"
+ ],
+ "untracedNumbers": [],
+ "_model": "qwen-plus"
+}

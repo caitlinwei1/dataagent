@@ -1,0 +1,28 @@
+{
+ "threadId": "report-ffaf7246-790d-43db-9639-5a84c6d0aeab",
+ "question": "2026年第三季度发往西南地区的订单，准时送达率为什么偏低？",
+ "status": "FAILED",
+ "seconds": 241.91768505,
+ "plan": [
+  {
+   "step": "1",
+   "tool": "SQL_GENERATE_NODE",
+   "instruction": "从oms_fulfillment_order、tms_shipment和dim_region三表关联查询2026年第三季度（>= '2026-07-01' AND < '2026-10-01'）发往西南地区（dim_region.big_region = '西南'）且已签收（tms_shipment.status = 'DELIVERED'）的履约单数据，返回字段包括：oms_fulfillment_order.id, oms_fulfillment_order.promised_at, tms_shipment.delivered_at, oms_fulfillment_order.delivery_type, oms_fulfillment_order.priority, tms_shipment.carrier_id, oms_fulfillment_order.warehouse_id, dim_region.city_tier, tms_shipment.exception_type"
+  },
+  {
+   "step": "2",
+   "tool": "PYTHON_GENERATE_NODE",
+   "instruction": "读取步骤1的数据，计算整体准时送达率（delivered_at <= promised_at的比例）。然后按以下维度分别计算准时率并排序：delivery_type、priority、carrier_id、warehouse_id、city_tier、exception_type（仅保留非NULL值），识别各维度中准时率最低的Top 3项；最后分析exception_type='DELAY'的样本在各维度中的分布占比，定位主要延迟归因路径。"
+  },
+  {
+   "step": "3",
+   "tool": "REPORT_GENERATOR_NODE",
+   "instruction": ""
+  }
+ ],
+ "markdown": "",
+ "charts": [],
+ "evidence": [],
+ "issues": [],
+ "_model": "qwen-plus"
+}

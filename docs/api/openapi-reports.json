@@ -1,0 +1,339 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8065",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "报告 OpenAPI",
+      "description": "提交分析问题，获取带图表和数据证据的 Markdown 报告"
+    }
+  ],
+  "paths": {
+    "/openapi/v1/reports": {
+      "post": {
+        "tags": [
+          "报告 OpenAPI"
+        ],
+        "summary": "生成分析报告（同步）",
+        "description": "跑完整链路后返回报告；status=DEGRADED 表示有步骤降级，issues 里写明原因",
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GbiReport"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi/v1/reports/{threadId}": {
+      "get": {
+        "tags": [
+          "报告 OpenAPI"
+        ],
+        "summary": "按会话 ID 查询报告",
+        "operationId": "get_3",
+        "parameters": [
+          {
+            "name": "threadId",
+            "in": "path",
+            "description": "会话 ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GbiReport"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi/v1/reports/{threadId}/markdown": {
+      "get": {
+        "tags": [
+          "报告 OpenAPI"
+        ],
+        "summary": "下载报告 Markdown（含数据证据附录）",
+        "operationId": "markdown",
+        "parameters": [
+          {
+            "name": "threadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/markdown;charset=UTF-8": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiResponseObject": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      },
+      "ReportRequest": {
+        "type": "object",
+        "description": "报告请求",
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "description": "智能体 ID",
+            "example": 5
+          },
+          "question": {
+            "type": "string",
+            "description": "分析问题",
+            "example": "2026年3月华东的GMV和去年同期相比变化了多少？从一级类目和平台两个维度分析原因"
+          },
+          "threadId": {
+            "type": "string",
+            "description": "可选：会话 ID，传入则作为多轮追问的上下文"
+          },
+          "timeoutSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "可选：超时秒数，默认 900"
+          }
+        }
+      },
+      "Chart": {
+        "type": "object",
+        "description": "一张 ECharts 图表",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string",
+            "description": "图表类型，取第一个 series 的 type"
+          },
+          "valid": {
+            "type": "boolean",
+            "description": "ECharts option 是否为合法 JSON 且含 series"
+          },
+          "option": {
+            "type": "string",
+            "description": "ECharts option（JSON 字符串）"
+          }
+        }
+      },
+      "Evidence": {
+        "type": "object",
+        "description": "一条 SQL 证据",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sql": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preview": {
+            "type": "array",
+            "description": "前 5 行",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "GbiReport": {
+        "type": "object",
+        "description": "分析报告：Markdown 正文、图表配置和每个数字可追溯的 SQL 证据",
+        "properties": {
+          "threadId": {
+            "type": "string",
+            "description": "会话 ID（conversationId），可用于查询和复现"
+          },
+          "question": {
+            "type": "string",
+            "description": "原始问题"
+          },
+          "status": {
+            "type": "string",
+            "description": "COMPLETED / FAILED / DEGRADED（有步骤降级，报告不完整）"
+          },
+          "seconds": {
+            "type": "number",
+            "format": "double",
+            "description": "从提问到报告完成的秒数"
+          },
+          "plan": {
+            "type": "array",
+            "description": "执行计划的步骤（工具 + 说明）",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "markdown": {
+            "type": "string",
+            "description": "报告正文（Markdown，图表为 ```echarts 代码块），末尾附数据证据"
+          },
+          "charts": {
+            "type": "array",
+            "description": "报告中的 ECharts 图表",
+            "items": {
+              "$ref": "#/components/schemas/Chart"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "description": "数据证据：每一步执行的 SQL 和结果摘要",
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            }
+          },
+          "issues": {
+            "type": "array",
+            "description": "错误或降级说明",
+            "items": {
+              "type": "string"
+            }
+          },
+          "untracedNumbers": {
+            "type": "array",
+            "description": "正文中在 SQL 结果里找不到出处的金额类数字（换算、推算或抄错，需人工核对）",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
