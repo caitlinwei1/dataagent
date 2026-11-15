@@ -21,6 +21,7 @@ import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_GENERATE_COUN
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_GENERATE_OUTPUT;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_REGENERATE_REASON;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_RESULT_LIST_MEMORY;
+import static com.alibaba.cloud.ai.dataagent.constant.Constant.TABLE_RELATION_OUTPUT;
 
 import com.alibaba.cloud.ai.dataagent.bo.DbConfigBO;
 import com.alibaba.cloud.ai.dataagent.bo.schema.DisplayStyleBO;
@@ -83,6 +84,10 @@ public class SqlExecuteNode implements NodeAction {
 
 	private final JsonParseUtil jsonParseUtil;
 
+	private final com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlGuard sqlGuard;
+
+	private final com.alibaba.cloud.ai.dataagent.service.datasource.AgentDatasourceService agentDatasourceService;
+
 	private static final int SAMPLE_DATA_NUMBER = 20;
 
 	@Override
@@ -106,7 +111,57 @@ public class SqlExecuteNode implements NodeAction {
 		// Dynamically get the data source configuration for an agent
 		DbConfigBO dbConfig = databaseUtil.getAgentDbConfig(agentId);
 
+		com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult guard = guard(state, sqlQuery, dbConfig, agentId);
+		if (!guard.passed()) {
+			return blocked(state, sqlQuery, guard);
+		}
 		return executeSqlQuery(state, currentStep, sqlQuery, dbConfig, agentId);
+	}
+
+	/**
+	 * Syntax / read-only / whitelist / column checks before the SQL reaches the database. The whitelist is the
+	 * agent's selected tables; columns come from the recalled schema.
+	 */
+	private com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult guard(OverAllState state, String sql,
+			DbConfigBO dbConfig, Long agentId) {
+		java.util.Set<String> whitelist = new java.util.HashSet<>();
+		try {
+			var ds = agentDatasourceService.getCurrentAgentDatasource(agentId);
+			if (ds != null && ds.getSelectTables() != null) {
+				ds.getSelectTables().forEach(t -> whitelist.add(t.toLowerCase(java.util.Locale.ROOT)));
+			}
+		}
+		catch (Exception e) {
+			log.warn("No table whitelist for agent {}: {}", agentId, e.getMessage());
+		}
+		java.util.Map<String, java.util.Set<String>> columns = new java.util.HashMap<>();
+		com.alibaba.cloud.ai.dataagent.dto.schema.SchemaDTO schema = StateUtil.getObjectValue(state,
+				TABLE_RELATION_OUTPUT, com.alibaba.cloud.ai.dataagent.dto.schema.SchemaDTO.class,
+				(com.alibaba.cloud.ai.dataagent.dto.schema.SchemaDTO) null);
+		if (schema != null && schema.getTable() != null) {
+			for (var t : schema.getTable()) {
+				java.util.Set<String> cs = new java.util.HashSet<>();
+				t.getColumn().forEach(c -> cs.add(c.getName().toLowerCase(java.util.Locale.ROOT)));
+				columns.put(t.getName().toLowerCase(java.util.Locale.ROOT), cs);
+			}
+		}
+		var result = sqlGuard.check(sql, dbConfig.getSchema(), whitelist, columns);
+		log.info("sql_guard agent={} passed={} check={} class={} tables={} msg={}", agentId, result.passed(),
+				result.failedCheck(), result.errorClass(), result.tables(), result.message());
+		return result;
+	}
+
+	private Map<String, Object> blocked(OverAllState state, String sqlQuery,
+			com.alibaba.cloud.ai.dataagent.service.sql.guard.GuardResult guard) {
+		Map<String, Object> result = Map.of(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(guard.feedback()));
+		Flux<ChatResponse> displayFlux = Flux.just(ChatResponseUtil.createResponse("执行SQL前校验："),
+				ChatResponseUtil.createPureResponse(TextType.SQL.getStartSign()),
+				ChatResponseUtil.createResponse(sqlQuery),
+				ChatResponseUtil.createPureResponse(TextType.SQL.getEndSign()),
+				ChatResponseUtil.createResponse(guard.feedback() + "，将重新生成SQL"));
+		Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(this.getClass(),
+				state, v -> result, displayFlux);
+		return Map.of(SQL_EXECUTE_NODE_OUTPUT, generator);
 	}
 
 	/**
@@ -183,8 +238,10 @@ public class SqlExecuteNode implements NodeAction {
 						currentStep + 1, SQL_GENERATE_COUNT, 0));
 			}
 			catch (Exception e) {
-				String errorMessage = e.getMessage();
-				log.error("SQL execution failed - SQL as follows: \n {} \n ", sqlQuery, e);
+				com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClass errorClass = com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClassifier
+					.classify(e);
+				String errorMessage = "SQL执行失败[" + errorClass + "/" + errorClass.label() + "]：" + e.getMessage();
+				log.error("SQL execution failed class={} - SQL as follows: \n {} \n ", errorClass, sqlQuery, e);
 				result.put(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(errorMessage));
 				emitter.next(ChatResponseUtil.createResponse("SQL执行失败: " + errorMessage));
 			}

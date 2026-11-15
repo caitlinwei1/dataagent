@@ -45,6 +45,8 @@ public class SqlExecutor {
 	 */
 	public static ResultSetBO executeSqlAndReturnObject(Connection connection, String schema, String sql)
 			throws SQLException {
+		// defence in depth next to the SELECT-only account and SqlGuard: the driver refuses writes on this session
+		connection.setReadOnly(true);
 		try (Statement statement = connection.createStatement()) {
 			statement.setMaxRows(RESULT_SET_LIMIT);
 			statement.setQueryTimeout(STATEMENT_TIMEOUT);
