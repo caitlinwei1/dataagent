@@ -1,0 +1,29 @@
+# Milvus standalone (embedded etcd, local storage) for gbi-agent's persistent vector store.
+# Fine for a single node / demo. For production use the cluster chart with external etcd + object storage.
+#   docker compose -f deploy/milvus/docker-compose.yml up -d
+services:
+  milvus:
+    image: milvusdb/milvus:v2.5.14
+    container_name: gbi-milvus
+    command: ["milvus", "run", "standalone"]
+    security_opt: ["seccomp:unconfined"]
+    environment:
+      ETCD_USE_EMBED: "true"
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      ETCD_CONFIG_PATH: /milvus/configs/embedEtcd.yaml
+      COMMON_STORAGETYPE: local
+    volumes:
+      - milvus-data:/var/lib/milvus
+      - ./embedEtcd.yaml:/milvus/configs/embedEtcd.yaml:ro
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 15s
+      start_period: 60s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+volumes:
+  milvus-data:
