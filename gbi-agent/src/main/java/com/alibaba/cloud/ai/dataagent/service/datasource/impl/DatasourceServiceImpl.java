@@ -64,6 +64,14 @@ public class DatasourceServiceImpl implements DatasourceService {
 
 	private final DatasourceTypeHandlerRegistry datasourceTypeHandlerRegistry;
 
+	private final org.springframework.context.ApplicationEventPublisher eventPublisher;
+
+	/** Join-path recall caches the relation graph per datasource. */
+	private void relationsChanged(Integer datasourceId) {
+		eventPublisher
+			.publishEvent(new com.alibaba.cloud.ai.dataagent.service.schema.recall.SchemaChangedEvent(datasourceId));
+	}
+
 	@Override
 	public List<Datasource> getAllDatasource() {
 		return datasourceMapper.selectAll();
@@ -301,6 +309,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 		// 插入外键
 		logicalRelationMapper.insert(logicalRelation);
 		log.info("Logical relation added successfully with id: {}", logicalRelation.getId());
+		relationsChanged(datasourceId);
 
 		return logicalRelation;
 	}
@@ -331,6 +340,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 		}
 
 		log.info("Logical relation updated successfully: {}", logicalRelationId);
+		relationsChanged(datasourceId);
 
 		// 返回更新后的数据
 		return logicalRelationMapper.selectById(logicalRelationId);
@@ -357,6 +367,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 		}
 
 		log.info("Logical relation deleted successfully: {}", logicalRelationId);
+		relationsChanged(datasourceId);
 	}
 
 	@Override
@@ -436,6 +447,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 		log.info("Saved logical relations for datasource {}: {} inserted, {} updated, {} deleted", datasourceId,
 				insertedCount, updatedCount, deletedCount);
 
+		relationsChanged(datasourceId);
 		return logicalRelationMapper.selectByDatasourceId(datasourceId);
 	}
 

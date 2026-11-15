@@ -45,6 +45,8 @@ public class AgentDatasourceServiceImpl implements AgentDatasourceService {
 
 	private final AgentDatasourceTablesMapper tablesMapper;
 
+	private final org.springframework.context.ApplicationEventPublisher eventPublisher;
+
 	@Override
 	public Boolean initializeSchemaForAgentWithDatasource(Long agentId, Integer datasourceId, List<String> tables) {
 		Assert.notNull(agentId, "Agent ID cannot be null");
@@ -72,7 +74,10 @@ public class AgentDatasourceServiceImpl implements AgentDatasourceService {
 			log.info("Created SchemaInitRequest for agent: {}, dbConfig: {}, tables: {}", agentIdStr, dbConfig, tables);
 
 			// Call the original initialization method
-			return schemaService.schema(datasourceId, schemaInitRequest);
+			Boolean ok = schemaService.schema(datasourceId, schemaInitRequest);
+			eventPublisher.publishEvent(
+					new com.alibaba.cloud.ai.dataagent.service.schema.recall.SchemaChangedEvent(datasourceId));
+			return ok;
 
 		}
 		catch (Exception e) {

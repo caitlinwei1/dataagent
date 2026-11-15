@@ -218,6 +218,11 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>3.17.4</version>
         </dependency>
+        <!-- 持久化向量库：Milvus（spring.ai.vectorstore.type=milvus，见 application-milvus.yml）-->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-vector-store-milvus</artifactId>
+        </dependency>
         <!--        elasticsearch自动配置-->
         <dependency>
             <groupId>org.springframework.ai</groupId>

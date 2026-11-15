@@ -19,7 +19,13 @@ import com.alibaba.cloud.ai.dataagent.entity.Agent;
 import com.alibaba.cloud.ai.dataagent.entity.AgentDatasource;
 import com.alibaba.cloud.ai.dataagent.service.datasource.AgentDatasourceService;
 import com.alibaba.cloud.ai.dataagent.service.vectorstore.AgentVectorStoreService;
+import com.alibaba.cloud.ai.dataagent.constant.Constant;
+import com.alibaba.cloud.ai.dataagent.constant.DocumentMetadataConstant;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import org.springframework.ai.vectorstore.filter.Filter;
+import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import lombok.RequiredArgsConstructor;
@@ -138,6 +144,14 @@ public class AgentStartupInitialization implements ApplicationRunner, Disposable
 				return false;
 			}
 
+			// Schema docs carry datasourceId, not agentId, so hasDocuments(agentId) above only sees business
+			// knowledge. With a persistent store (Milvus) that made every restart re-embed the whole schema.
+			if (schemaVectorsPresent(datasourceId, tables)) {
+				log.info("Agent {} datasource {} already has table vectors for all {} tables, skipping initialization",
+						agentId, datasourceId, tables.size());
+				return true;
+			}
+
 			log.info("Initializing agent {} with datasource {} and {} tables", agentId, datasourceId, tables.size());
 
 			Boolean result = agentDatasourceService.initializeSchemaForAgentWithDatasource(agentId, datasourceId,
@@ -155,6 +169,25 @@ public class AgentStartupInitialization implements ApplicationRunner, Disposable
 		}
 		catch (Exception e) {
 			log.error("Error initializing datasource for agent {}, reason: {}", agent.getId(), e.getMessage());
+			return false;
+		}
+	}
+
+	private boolean schemaVectorsPresent(Integer datasourceId, List<String> tables) {
+		try {
+			FilterExpressionBuilder b = new FilterExpressionBuilder();
+			Filter.Expression f = b
+				.and(b.eq(Constant.DATASOURCE_ID, datasourceId.toString()),
+						b.eq(DocumentMetadataConstant.VECTOR_TYPE, DocumentMetadataConstant.TABLE))
+				.build();
+			Set<Object> present = agentVectorStoreService.getDocumentsOnlyByFilter(f, tables.size() + 100)
+				.stream()
+				.map(d -> d.getMetadata().get(DocumentMetadataConstant.NAME))
+				.collect(Collectors.toSet());
+			return present.containsAll(tables);
+		}
+		catch (Exception e) {
+			log.warn("Could not check table vectors for datasource {}: {}", datasourceId, e.getMessage());
 			return false;
 		}
 	}

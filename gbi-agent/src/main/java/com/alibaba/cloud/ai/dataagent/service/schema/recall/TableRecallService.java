@@ -247,6 +247,11 @@ public class TableRecallService {
 			.toList();
 	}
 
+	@org.springframework.context.event.EventListener
+	public void onSchemaChanged(SchemaChangedEvent event) {
+		invalidate(event.datasourceId());
+	}
+
 	public void invalidate(Integer datasourceId) {
 		indexes.remove(datasourceId);
 		adjacency.remove(datasourceId);
@@ -327,7 +332,8 @@ public class TableRecallService {
 				.build();
 			List<Document> docs = vectorStore.similaritySearch(SearchRequest.builder()
 				.query("schema")
-				.topK(100000)
+				// one datasource has ~1.2k schema docs; 16384 is Milvus' topK ceiling
+				.topK(16384)
 				.similarityThreshold(0.0)
 				.filterExpression(f)
 				.build());
