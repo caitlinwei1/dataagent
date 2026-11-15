@@ -1,0 +1,26 @@
+# 列级语义模型（导入 DataAgent semantic_model）：集中在近义字段与易混字段上
+- {table: trd_order, column: total_amount, name: 商品总额, synonyms: "原价总额,商品原价合计", desc: "订单商品原价合计，不含运费、未扣优惠。GMV = total_amount + freight_amount（仅已支付订单）"}
+- {table: trd_order, column: pay_amount, name: 实付金额, synonyms: "支付金额,成交金额,实收金额,销售额", desc: "用户实际支付金额 = total_amount - discount_amount + freight_amount。未说明口径的“销售额”按此字段"}
+- {table: trd_order, column: discount_amount, name: 优惠总额, synonyms: "优惠金额,让利,折扣金额", desc: "券+活动+会员折扣合计，明细见 trd_order_promotion"}
+- {table: trd_order, column: freight_amount, name: 运费, synonyms: "邮费,配送费", desc: "订单运费，满99包邮"}
+- {table: trd_order, column: paid_at, name: 支付时间, synonyms: "付款时间,成交时间", desc: "销售类指标默认按支付时间归属日期；为空表示未支付"}
+- {table: trd_order, column: created_at, name: 下单时间, synonyms: "创建时间,下单日期", desc: "下单数、取消率按下单时间归属"}
+- {table: trd_order, column: order_status, name: 订单状态, synonyms: "状态", desc: "CANCELLED/CLOSED 不计入销售；CLOSED 多为缺货关闭"}
+- {table: trd_order_item, column: pay_share, name: 明细实付金额, synonyms: "商品销售额,SKU销售额,类目销售额", desc: "按商品/类目/品牌统计销售额时使用，不含运费"}
+- {table: trd_order_item, column: item_amount, name: 明细原价金额, synonyms: "商品原价金额", desc: "单价*件数，未扣优惠"}
+- {table: trd_order_item, column: quantity, name: 购买件数, synonyms: "销量,件数,卖了多少件", desc: "SKU 销量"}
+- {table: trd_daily_shop_sales, column: gmv, name: GMV, synonyms: "成交总额,交易额,流水", desc: "T+1 汇总的店铺日 GMV（支付订单商品总额+运费，不扣优惠和退款）"}
+- {table: trd_daily_shop_sales, column: paid_amount, name: 日实付金额, synonyms: "日支付金额,日销售额", desc: "T+1 汇总的店铺日实付"}
+- {table: trd_daily_shop_sales, column: net_sales, name: 退款后金额, synonyms: "净销售额,净销售,退款后销售额", desc: "实付金额 - 当日退款成功金额"}
+- {table: trd_daily_sku_sales, column: sales_amount, name: SKU日销售额, synonyms: "SKU实付销售额", desc: "T+1 汇总，实付分摊口径"}
+- {table: trd_refund, column: refund_amount, name: 退款金额, synonyms: "退款额", desc: "只统计 refund_status='SUCCESS'；按 refunded_at 归属"}
+- {table: trd_refund, column: reason_code, name: 退款原因, synonyms: "退款理由,退货原因", desc: "STOCKOUT 缺货 / QUALITY 质量 / LATE_DELIVERY 物流超时 / NO_REASON 七天无理由 / WRONG_ITEM 发错货 / DAMAGED 破损"}
+- {table: wms_inventory_snapshot, column: available_qty, name: 可用库存, synonyms: "可售库存,可卖库存", desc: "日快照：在库-占用；只覆盖 2026-08-01 起"}
+- {table: wms_inventory, column: on_hand_qty, name: 当前在库数量, synonyms: "实时库存,现有库存", desc: "实时表，只有当前时点"}
+- {table: tms_shipment, column: delivered_at, name: 签收时间, synonyms: "送达时间,妥投时间", desc: "履约时效 = delivered_at - trd_order.paid_at"}
+- {table: oms_fulfillment_order, column: promised_at, name: 承诺送达时间, synonyms: "SLA时间,时效承诺", desc: "准时送达：delivered_at <= promised_at"}
+- {table: dim_shop, column: region_id, name: 店铺所属区域, synonyms: "运营大区,区域", desc: "“华东销售额”等区域问题默认按店铺运营归属区域"}
+- {table: trd_order_address, column: region_id, name: 收货区域, synonyms: "收货地区,买家所在区域", desc: "问题明确“收货地/买家所在地”时使用"}
+- {table: mkt_traffic_daily, column: uv, name: 访客数, synonyms: "UV,独立访客", desc: "店铺×渠道×日；跨天直接相加"}
+- {table: mkt_ad_spend, column: spend, name: 投放花费, synonyms: "广告费,投放金额,推广费", desc: "按日按渠道"}
+- {table: prd_sku_cost, column: unit_cost, name: 单位成本, synonyms: "成本价,采购成本", desc: "按月，计算毛利时按订单支付月份匹配 month_key"}

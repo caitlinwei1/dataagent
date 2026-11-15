@@ -1,0 +1,298 @@
+# 业务术语、同义词与计算口径（电商经营分析）
+# 导入目标：DataAgent business_knowledge（business_term / synonyms / description）
+# 约定：所有金额默认人民币；“时间”默认按支付时间 trd_order.paid_at 归属；已取消/已关闭订单不计入销售。
+# 口径歧义是刻意保留的评测点：用户只说“销售额”时按默认口径，回答中须写明口径。
+
+metrics:
+  - term: GMV
+    synonyms: [成交总额, 商品交易总额, 交易额, 流水]
+    formula: SUM(trd_order.total_amount + trd_order.freight_amount)
+    filter: trd_order.paid_at IS NOT NULL
+    tables: [trd_order, trd_daily_shop_sales.gmv]
+    description: 已支付订单的商品原价总额加运费，不扣优惠、不扣退款。按天看可直接用 trd_daily_shop_sales.gmv。
+
+  - term: 实付金额
+    synonyms: [支付金额, 成交金额, 实收金额, 付款金额]
+    formula: SUM(trd_order.pay_amount)
+    filter: trd_order.paid_at IS NOT NULL
+    tables: [trd_order, trd_daily_shop_sales.paid_amount]
+    description: 用户实际支付的钱 = 商品总额 - 优惠总额 + 运费。
+
+  - term: 销售额
+    synonyms: [营业额, 销售收入, 卖了多少钱]
+    formula: 默认等同实付金额 SUM(trd_order.pay_amount)；按商品/类目统计时用 SUM(trd_order_item.pay_share)
+    filter: trd_order.paid_at IS NOT NULL AND trd_order.order_status NOT IN ('CANCELLED','CLOSED')
+    tables: [trd_order, trd_order_item, trd_daily_sku_sales.sales_amount]
+    description: 未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。
+
+  - term: 退款后金额
+    synonyms: [净销售额, 净销售, 退款后销售额, 净收入]
+    formula: 实付金额 - SUM(trd_refund.refund_amount WHERE refund_status='SUCCESS')
+    tables: [trd_order, trd_refund, trd_daily_shop_sales.net_sales]
+    description: 实付金额扣除退款成功金额。退款按退款成功时间 refunded_at 归属。
+
+  - term: 退款金额
+    synonyms: [退款额, 退了多少钱]
+    formula: SUM(trd_refund.refund_amount)
+    filter: trd_refund.refund_status = 'SUCCESS'
+    tables: [trd_refund]
+    description: 只统计退款成功的单子；申请中/被拒绝的不算。
+
+  - term: 退款率
+    synonyms: [退款比例, 退单率]
+    formula: COUNT(DISTINCT 有成功退款的订单) / COUNT(DISTINCT 支付订单)
+    tables: [trd_refund, trd_order]
+    description: 按订单数计算。金额退款率 = 退款金额 / 实付金额，用户明确说“金额”时才用。
+
+  - term: 缺货退款率
+    synonyms: [缺货导致的退款率, 因缺货退款比例]
+    formula: COUNT(DISTINCT reason_code='STOCKOUT' 且退款成功的订单) / COUNT(DISTINCT 支付订单)
+    tables: [trd_refund, trd_aftersale_reason, wms_stockout_record, trd_order]
+    description: 跨交易与履约：退款原因编码 STOCKOUT，可用 wms_stockout_record 核对到具体缺货SKU与仓库。
+
+  - term: 订单数
+    synonyms: [单量, 支付订单数, 成交单数]
+    formula: COUNT(DISTINCT trd_order.id)
+    filter: trd_order.paid_at IS NOT NULL
+    tables: [trd_order, trd_daily_shop_sales.order_cnt]
+    description: 默认指支付订单数；“下单数”则不加支付条件。
+
+  - term: 下单数
+    synonyms: [下单量, 创建订单数]
+    formula: COUNT(trd_order.id)
+    tables: [trd_order]
+    description: 含未支付、已取消的订单，按 created_at 归属。
+
+  - term: 客单价
+    synonyms: [ATV, 笔单价, 平均订单金额]
+    formula: 实付金额 / 支付订单数
+    tables: [trd_order]
+    description: 按订单计算的平均实付金额。“人均消费”则是实付金额/支付买家数。
+
+  - term: 买家数
+    synonyms: [支付买家数, 下单用户数, 购买人数, 成交用户数]
+    formula: COUNT(DISTINCT trd_order.member_id)
+    filter: trd_order.paid_at IS NOT NULL
+    tables: [trd_order, trd_daily_shop_sales.buyer_cnt]
+
+  - term: 复购率
+    synonyms: [回购率, 重复购买率]
+    formula: 统计期内支付订单数>=2 的买家数 / 统计期内支付买家数
+    tables: [trd_order]
+
+  - term: UV
+    synonyms: [访客数, 独立访客]
+    formula: SUM(mkt_traffic_daily.uv)
+    tables: [mkt_traffic_daily]
+    description: 按店铺按渠道的日访客数，跨天直接相加（近似口径，不做跨天去重）。
+
+  - term: PV
+    synonyms: [浏览量, 页面浏览量]
+    formula: SUM(mkt_traffic_daily.pv)
+    tables: [mkt_traffic_daily]
+
+  - term: 转化率
+    synonyms: [支付转化率, 下单转化率, CVR]
+    formula: 支付买家数 / UV
+    tables: [trd_order, mkt_traffic_daily]
+    description: 店铺维度，同一天同一店铺对齐后计算。
+
+  - term: ROI
+    synonyms: [投产比, 投入产出比, ROAS]
+    formula: 归因到该渠道的实付金额 / SUM(mkt_ad_spend.spend)
+    tables: [mkt_ad_spend, mkt_member_attribution, trd_order]
+    description: 渠道归因按会员首单归因渠道 mkt_member_attribution。
+
+  - term: 毛利
+    synonyms: [毛利润, 毛利额]
+    formula: SUM(trd_order_item.pay_share) - SUM(trd_order_item.quantity * prd_sku_cost.unit_cost)
+    tables: [trd_order_item, prd_sku_cost]
+    description: 成本按订单支付月份匹配 prd_sku_cost.month_key。毛利率 = 毛利 / 销售额。
+
+  - term: 动销率
+    synonyms: [动销比, 商品动销率]
+    formula: 统计期内有销量的在售SKU数 / 在售SKU数
+    tables: [trd_order_item, trd_order, prd_sku]
+    description: 在售 = prd_sku.status='ON_SALE'。
+
+  - term: 售罄率
+    synonyms: [售空率]
+    formula: 统计期销量 / (统计期销量 + 期末在库数量)
+    tables: [trd_order_item, wms_inventory_snapshot]
+
+  - term: DOS
+    synonyms: [库存可售天数, 库存周转天数, days of supply, 可售天数]
+    formula: 期末可用库存 / 近28天日均销量
+    tables: [wms_inventory_snapshot, trd_order_item, trd_order]
+    description: 可用库存取 wms_inventory_snapshot.available_qty（日快照）；问“当前”时用实时表 wms_inventory。
+
+  - term: 库存周转率
+    synonyms: [周转率, 存货周转]
+    formula: 统计期销售成本 / 平均库存成本
+    tables: [trd_order_item, prd_sku_cost, wms_inventory_snapshot]
+
+  - term: 缺货率
+    synonyms: [缺货比例, 断货率]
+    formula: 发生缺货的订单数 / 支付订单数
+    tables: [wms_stockout_record, trd_order]
+
+  - term: 履约时效
+    synonyms: [发货时效, 配送时长, 送达时长, 物流时效]
+    formula: AVG(TIMESTAMPDIFF(HOUR, trd_order.paid_at, tms_shipment.delivered_at))
+    tables: [trd_order, oms_fulfillment_order, tms_shipment]
+    description: 从支付到签收的小时数。仅“发货时效”指支付到揽收 shipped_at。
+
+  - term: 准时送达率
+    synonyms: [按时送达率, 时效达成率, SLA达成率]
+    formula: COUNT(delivered_at <= oms_fulfillment_order.promised_at) / COUNT(已签收履约单)
+    tables: [oms_fulfillment_order, tms_shipment]
+
+  - term: 发货率
+    synonyms: [48小时发货率]
+    formula: 支付后48小时内揽收的订单数 / 支付订单数
+    tables: [trd_order, oms_fulfillment_order, tms_shipment]
+
+  - term: 采购到货率
+    synonyms: [到货率, 供应商到货率]
+    formula: SUM(wms_inbound_item.quantity, inbound_type='PURCHASE') / SUM(scm_purchase_order_item.quantity)
+    tables: [scm_purchase_order, scm_purchase_order_item, wms_inbound, wms_inbound_item]
+
+  - term: 盘点差异率
+    synonyms: [盘差率, 库存准确率的反面]
+    formula: SUM(ABS(actual_qty - book_qty)) / SUM(book_qty)
+    tables: [wms_stocktake, wms_stocktake_item]
+
+  - term: 销售目标达成率
+    synonyms: [目标完成率, 达成率]
+    formula: 月实付金额 / fin_sales_target.target_amount
+    tables: [trd_order, fin_sales_target]
+
+  - term: 平台佣金
+    synonyms: [扣点, 佣金]
+    formula: SUM(fin_settlement.commission)
+    tables: [fin_settlement]
+
+  - term: 件单价
+    synonyms: [平均件单价, 单件价格]
+    formula: SUM(trd_order_item.pay_share) / SUM(trd_order_item.quantity)
+    tables: [trd_order_item, trd_order]
+
+  - term: 连带率
+    synonyms: [件数比, 每单件数, UPT]
+    formula: SUM(trd_order_item.quantity) / 支付订单数
+    tables: [trd_order_item, trd_order]
+
+  - term: 人均消费
+    synonyms: [ARPU, 人均实付]
+    formula: 实付金额 / 支付买家数
+    tables: [trd_order]
+
+  - term: 毛利率
+    synonyms: [毛利占比]
+    formula: 毛利 / 销售额（按商品维度实付分摊口径）
+    tables: [trd_order_item, prd_sku_cost]
+
+  - term: 退货率
+    synonyms: [退货比例]
+    formula: COUNT(DISTINCT refund_type='RETURN_REFUND' 且成功的订单) / 支付订单数
+    tables: [trd_refund, trd_order]
+    description: 只算退货退款；仅退款不计入。
+
+  - term: 取消率
+    synonyms: [订单取消率]
+    formula: order_status='CANCELLED' 的订单数 / 下单数
+    tables: [trd_order, trd_order_cancel]
+
+  - term: 优惠率
+    synonyms: [折扣率, 让利率]
+    formula: SUM(discount_amount) / SUM(total_amount)
+    tables: [trd_order]
+
+  - term: 新客占比
+    synonyms: [新客比例, 新买家占比]
+    formula: 统计期首单买家数 / 支付买家数
+    tables: [trd_order, trd_order_tag]
+
+  - term: 会员渗透率
+    synonyms: [付费会员占比]
+    formula: 银卡及以上会员的支付买家数 / 支付买家数
+    tables: [usr_member, trd_order]
+
+  - term: 点击率
+    synonyms: [CTR]
+    formula: SUM(mkt_ad_spend.clicks) / SUM(mkt_ad_spend.impressions)
+    tables: [mkt_ad_spend]
+
+  - term: 点击成本
+    synonyms: [CPC, 平均点击成本]
+    formula: SUM(mkt_ad_spend.spend) / SUM(mkt_ad_spend.clicks)
+    tables: [mkt_ad_spend]
+
+  - term: 库存金额
+    synonyms: [库存成本, 存货金额]
+    formula: SUM(wms_inventory_snapshot.available_qty * prd_sku_cost.unit_cost)
+    tables: [wms_inventory_snapshot, prd_sku_cost]
+
+  - term: 好评率
+    synonyms: [五星好评率, 满意度]
+    formula: COUNT(score>=4) / COUNT(评价)
+    tables: [trd_order_review]
+
+  - term: 客诉率
+    synonyms: [投诉率]
+    formula: 客诉工单数 / 支付订单数
+    tables: [trd_complaint, trd_order]
+
+  - term: 加购转化率
+    synonyms: [加购下单率]
+    formula: COUNT(trd_cart.converted=1) / COUNT(trd_cart)
+    tables: [trd_cart]
+
+dimensions:
+  - term: 大区
+    synonyms: [区域, 地区, 片区]
+    description: 店铺运营归属的大区 dim_shop.region_id -> dim_region.big_region（华东/华北/华南/华中/西南/西北/东北）。按收货地看时用 trd_order_address.region_id，问题须明确“收货地”。
+  - term: 类目
+    synonyms: [品类, 分类, 商品分类]
+    description: prd_category 三级树；“一级类目/大类”需沿 parent_id 向上取 level=1。
+  - term: 渠道
+    synonyms: [流量渠道, 投放渠道, 来源渠道]
+    description: 指 mkt_channel（抖音/小红书/百度/微信/自然流量）；“下单渠道/订单来源”是 trd_order_source（APP/小程序/网页/直播/线下），两者不同。
+  - term: 平台
+    synonyms: [销售平台, 电商平台]
+    description: dim_platform（天猫/京东/抖音/自营商城），通过 dim_shop.platform_id 关联。
+  - term: 大促
+    synonyms: [双11, 618, 年货节, 促销期]
+    description: dim_date.promo_name 非空的日期；活动明细见 mkt_activity。
+  - term: 新客
+    synonyms: [新用户, 首单用户]
+    description: 统计期内产生首笔支付订单的会员；订单标签 trd_order_tag.tag='FIRST_ORDER'。
+  - term: 上周 / 上月 / 同比 / 环比
+    description: 上周为自然周（周一至周日）；同比为去年同期，环比为上一个相同长度周期。
+
+abbreviations:
+  SKU: 库存量单位，最小可售规格 prd_sku
+  SPU: 标准产品单元，同款商品 prd_spu
+  GMV: 见 metrics.GMV
+  UV: 访客数
+  PV: 浏览量
+  DOS: 库存可售天数
+  ATV: 客单价
+  CVR: 转化率
+  ROI: 投产比
+  SLA: 时效承诺 tms_delivery_sla / oms_fulfillment_order.promised_at
+  RFM: 最近一次消费(Recency)、消费频次(Frequency)、消费金额(Monetary) 会员分层
+  WMS: 仓储系统（wms_ 前缀表）
+  TMS: 运输系统（tms_ 前缀表）
+  OMS: 订单履约系统（oms_ 前缀表）
+  SCM: 供应链采购（scm_ 前缀表）
+
+look_alike_tables:
+  - [wms_inventory, wms_inventory_snapshot, "实时 vs 日快照；问历史某天库存用 snapshot"]
+  - [oms_fulfillment_order, wms_outbound, tms_shipment, "履约单(分仓) -> 出库单(拣货出库) -> 运单(快递)"]
+  - [tms_shipment, trd_return_logistics, "发货运单 vs 用户退货寄回运单"]
+  - [trd_refund, trd_aftersale, trd_compensation, "退款(钱) vs 售后单(流程) vs 额外赔付"]
+  - [trd_daily_shop_sales, trd_daily_sku_sales, trd_order, "汇总表 vs 明细；汇总表 T+1"]
+  - [usr_address, trd_order_address, "会员地址簿 vs 订单收货地址快照"]
+  - [mkt_channel, trd_order_source, "流量渠道 vs 下单端"]
+  - [dim_shop, dim_store, "线上店铺 vs 线下门店"]

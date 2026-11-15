@@ -1,0 +1,10043 @@
+[
+ {
+  "name": "trd_order",
+  "domain": "交易",
+  "comment": "订单主表：一笔用户下单一行，金额字段口径见业务知识",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_no",
+    "type": "s",
+    "comment": "订单编号",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "下单会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "source_id",
+    "type": "i",
+    "comment": "订单来源ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_status",
+    "type": "s",
+    "comment": "订单状态：CREATED待支付/PAID已支付/SHIPPED已发货/COMPLETED已完成/CANCELLED已取消/CLOSED已关闭",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "total_amount",
+    "type": "d",
+    "comment": "商品总额（原价合计，不含运费，未扣优惠）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "discount_amount",
+    "type": "d",
+    "comment": "优惠总额（券+活动+会员折扣）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "freight_amount",
+    "type": "d",
+    "comment": "运费",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pay_amount",
+    "type": "d",
+    "comment": "实付金额=商品总额-优惠总额+运费",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "currency_code",
+    "type": "s",
+    "comment": "币种",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "下单时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "paid_at",
+    "type": "ts",
+    "comment": "支付时间，未支付为空",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "completed_at",
+    "type": "ts",
+    "comment": "确认收货时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_presale",
+    "type": "t",
+    "comment": "是否预售订单 1是0否",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pay_type",
+    "type": "s",
+    "comment": "支付方式：ONLINE/COD/INSTALLMENT",
+    "kind": "extra",
+    "enum": [
+     "ONLINE",
+     "COD",
+     "INSTALLMENT"
+    ]
+   },
+   {
+    "name": "device_type",
+    "type": "s",
+    "comment": "下单设备：IOS/ANDROID/PC/H5",
+    "kind": "extra",
+    "enum": [
+     "IOS",
+     "ANDROID",
+     "PC",
+     "H5"
+    ]
+   },
+   {
+    "name": "buyer_remark",
+    "type": "l",
+    "comment": "买家备注",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "seller_remark",
+    "type": "l",
+    "comment": "卖家备注",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "invoice_flag",
+    "type": "t",
+    "comment": "是否需要发票",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "points_used",
+    "type": "i",
+    "comment": "使用积分数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "points_amount",
+    "type": "d",
+    "comment": "积分抵扣金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tax_amount",
+    "type": "d",
+    "comment": "税费",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "order_type",
+    "type": "s",
+    "comment": "订单类型：NORMAL/PRESALE/GROUP_BUY/EXCHANGE",
+    "kind": "extra",
+    "enum": [
+     "NORMAL",
+     "PRESALE",
+     "GROUP_BUY",
+     "EXCHANGE"
+    ]
+   },
+   {
+    "name": "is_first_order",
+    "type": "t",
+    "comment": "是否首单",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "risk_level",
+    "type": "s",
+    "comment": "风控等级：LOW/MEDIUM/HIGH",
+    "kind": "extra",
+    "enum": [
+     "LOW",
+     "MEDIUM",
+     "HIGH"
+    ]
+   },
+   {
+    "name": "close_reason",
+    "type": "s",
+    "comment": "关闭原因：STOCKOUT/TIMEOUT/FRAUD/USER",
+    "kind": "extra",
+    "enum": [
+     "STOCKOUT",
+     "TIMEOUT",
+     "FRAUD",
+     "USER"
+    ]
+   },
+   {
+    "name": "delivery_type",
+    "type": "s",
+    "comment": "配送方式：EXPRESS/SAME_DAY/PICKUP",
+    "kind": "extra",
+    "enum": [
+     "EXPRESS",
+     "SAME_DAY",
+     "PICKUP"
+    ]
+   },
+   {
+    "name": "expected_delivery_date",
+    "type": "dt",
+    "comment": "预计送达日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order",
+    "column": "source_id",
+    "ref_table": "trd_order_source",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order",
+    "column": "currency_code",
+    "ref_table": "dim_currency",
+    "ref_column": "code"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_item",
+  "domain": "交易",
+  "comment": "订单明细：订单内每个SKU一行",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "购买件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "unit_price",
+    "type": "d",
+    "comment": "成交单价（原价）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "item_amount",
+    "type": "d",
+    "comment": "明细原价金额=单价*件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "discount_share",
+    "type": "d",
+    "comment": "分摊到该明细的优惠金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pay_share",
+    "type": "d",
+    "comment": "分摊到该明细的实付金额（不含运费）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_name",
+    "type": "l",
+    "comment": "下单时商品名称快照",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "category_id",
+    "type": "b",
+    "comment": "下单时末级类目ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "brand_id",
+    "type": "b",
+    "comment": "下单时品牌ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_gift",
+    "type": "t",
+    "comment": "是否赠品",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "activity_price",
+    "type": "d",
+    "comment": "活动价",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "coupon_share",
+    "type": "d",
+    "comment": "分摊的券优惠",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "promotion_share",
+    "type": "d",
+    "comment": "分摊的活动优惠",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "member_share",
+    "type": "d",
+    "comment": "分摊的会员折扣",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cost_price",
+    "type": "d",
+    "comment": "下单时成本价",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "item_status",
+    "type": "s",
+    "comment": "明细状态：NORMAL/REFUNDED/PARTIAL_REFUNDED",
+    "kind": "extra",
+    "enum": [
+     "NORMAL",
+     "REFUNDED",
+     "PARTIAL_REFUNDED"
+    ]
+   },
+   {
+    "name": "refunded_qty",
+    "type": "i",
+    "comment": "已退件数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "weight_kg",
+    "type": "d",
+    "comment": "重量（千克）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_item",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_status_log",
+  "domain": "交易",
+  "comment": "订单状态变更流水",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "流水ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "from_status",
+    "type": "s",
+    "comment": "变更前状态",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "to_status",
+    "type": "s",
+    "comment": "变更后状态",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "changed_at",
+    "type": "ts",
+    "comment": "变更时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作方：USER/SYSTEM/CS",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "remark",
+    "type": "l",
+    "comment": "备注",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "client_ip",
+    "type": "s",
+    "comment": "操作IP",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "source_system",
+    "type": "s",
+    "comment": "来源系统：OMS/APP/CS_PORTAL",
+    "kind": "extra",
+    "enum": [
+     "OMS",
+     "APP",
+     "CS_PORTAL"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_status_log",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_address",
+  "domain": "交易",
+  "comment": "订单收货地址快照",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "地址ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "收货省份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "收货城市",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "收货地所属区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "receiver_name",
+    "type": "s",
+    "comment": "收货人（脱敏）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "district",
+    "type": "s",
+    "comment": "区县",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "detail_address",
+    "type": "l",
+    "comment": "详细地址（脱敏）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "postcode",
+    "type": "s",
+    "comment": "邮编",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "phone_masked",
+    "type": "s",
+    "comment": "手机号（脱敏）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "address_type",
+    "type": "s",
+    "comment": "地址类型：HOME/OFFICE/SCHOOL/OTHER",
+    "kind": "extra",
+    "enum": [
+     "HOME",
+     "OFFICE",
+     "SCHOOL",
+     "OTHER"
+    ]
+   },
+   {
+    "name": "longitude",
+    "type": "r",
+    "comment": "经度",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "latitude",
+    "type": "r",
+    "comment": "纬度",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_address",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_address",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_promotion",
+  "domain": "交易",
+  "comment": "订单优惠分摊明细：每种优惠一行",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "分摊ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promo_type",
+    "type": "s",
+    "comment": "优惠类型：COUPON/ACTIVITY/MEMBER",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "coupon_id",
+    "type": "b",
+    "comment": "使用的优惠券ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "activity_id",
+    "type": "b",
+    "comment": "参与的活动ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promo_amount",
+    "type": "d",
+    "comment": "该项优惠金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promo_name",
+    "type": "l",
+    "comment": "优惠名称",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "promo_level",
+    "type": "s",
+    "comment": "优惠层级：ORDER/ITEM/SHIPPING",
+    "kind": "extra",
+    "enum": [
+     "ORDER",
+     "ITEM",
+     "SHIPPING"
+    ]
+   },
+   {
+    "name": "funded_by",
+    "type": "s",
+    "comment": "出资方：PLATFORM/MERCHANT/BRAND",
+    "kind": "extra",
+    "enum": [
+     "PLATFORM",
+     "MERCHANT",
+     "BRAND"
+    ]
+   },
+   {
+    "name": "threshold_amount",
+    "type": "d",
+    "comment": "门槛金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_promotion",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_promotion",
+    "column": "coupon_id",
+    "ref_table": "mkt_coupon",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_promotion",
+    "column": "activity_id",
+    "ref_table": "mkt_activity",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_payment",
+  "domain": "交易",
+  "comment": "支付单：一笔订单可能多次支付尝试",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "支付单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pay_channel",
+    "type": "s",
+    "comment": "支付渠道：ALIPAY/WECHAT/CARD/GIFT_CARD",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pay_status",
+    "type": "s",
+    "comment": "支付状态：SUCCESS/FAILED/CLOSED",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "amount",
+    "type": "d",
+    "comment": "支付金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "paid_at",
+    "type": "ts",
+    "comment": "支付完成时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "trade_no",
+    "type": "s",
+    "comment": "第三方支付流水号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "pay_terminal",
+    "type": "s",
+    "comment": "支付终端：APP/H5/PC/POS",
+    "kind": "extra",
+    "enum": [
+     "APP",
+     "H5",
+     "PC",
+     "POS"
+    ]
+   },
+   {
+    "name": "currency_code",
+    "type": "s",
+    "comment": "币种",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "fail_reason",
+    "type": "s",
+    "comment": "失败原因：INSUFFICIENT_BALANCE/RISK_CONTROL/TIMEOUT/USER_CANCEL",
+    "kind": "extra",
+    "enum": [
+     "INSUFFICIENT_BALANCE",
+     "RISK_CONTROL",
+     "TIMEOUT",
+     "USER_CANCEL"
+    ]
+   },
+   {
+    "name": "installment_num",
+    "type": "t",
+    "comment": "分期期数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "bank_name",
+    "type": "s",
+    "comment": "银行名称",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_refunded",
+    "type": "t",
+    "comment": "是否发生过退款",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_payment",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_payment_channel_fee",
+  "domain": "交易",
+  "comment": "支付渠道手续费",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "payment_id",
+    "type": "b",
+    "comment": "支付单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "fee_rate",
+    "type": "r",
+    "comment": "费率",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "fee_amount",
+    "type": "d",
+    "comment": "手续费金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "settle_date",
+    "type": "dt",
+    "comment": "手续费结算日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "fee_type",
+    "type": "s",
+    "comment": "费用类型：TRANSACTION/REFUND_REVERSAL",
+    "kind": "extra",
+    "enum": [
+     "TRANSACTION",
+     "REFUND_REVERSAL"
+    ]
+   },
+   {
+    "name": "pay_channel",
+    "type": "s",
+    "comment": "支付渠道",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_payment_channel_fee",
+    "column": "payment_id",
+    "ref_table": "trd_payment",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_refund",
+  "domain": "交易",
+  "comment": "退款单：仅退款或退货退款",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "退款单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "aftersale_id",
+    "type": "b",
+    "comment": "关联售后单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_type",
+    "type": "s",
+    "comment": "类型：REFUND_ONLY仅退款/RETURN_REFUND退货退款",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "reason_code",
+    "type": "s",
+    "comment": "退款原因编码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_status",
+    "type": "s",
+    "comment": "退款状态：APPLIED/APPROVED/REJECTED/SUCCESS",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_amount",
+    "type": "d",
+    "comment": "退款金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "applied_at",
+    "type": "ts",
+    "comment": "申请时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refunded_at",
+    "type": "ts",
+    "comment": "退款成功时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_no",
+    "type": "s",
+    "comment": "退款单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "refund_channel",
+    "type": "s",
+    "comment": "退款去向：ORIGINAL/BALANCE/GIFT_CARD",
+    "kind": "extra",
+    "enum": [
+     "ORIGINAL",
+     "BALANCE",
+     "GIFT_CARD"
+    ]
+   },
+   {
+    "name": "reject_reason",
+    "type": "l",
+    "comment": "驳回原因",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "auditor",
+    "type": "s",
+    "comment": "审核人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "audited_at",
+    "type": "ts",
+    "comment": "审核时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_fast_refund",
+    "type": "t",
+    "comment": "是否极速退款",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_refund",
+    "type": "d",
+    "comment": "退运费金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "buyer_remark",
+    "type": "l",
+    "comment": "买家说明",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_refund",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_refund",
+    "column": "aftersale_id",
+    "ref_table": "trd_aftersale",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_refund",
+    "column": "reason_code",
+    "ref_table": "trd_aftersale_reason",
+    "ref_column": "code"
+   }
+  ]
+ },
+ {
+  "name": "trd_refund_item",
+  "domain": "交易",
+  "comment": "退款明细：退款涉及的SKU",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_id",
+    "type": "b",
+    "comment": "退款单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_item_id",
+    "type": "b",
+    "comment": "订单明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "退款件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "amount",
+    "type": "d",
+    "comment": "该SKU退款金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "reason_detail",
+    "type": "l",
+    "comment": "原因描述",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_returned",
+    "type": "t",
+    "comment": "是否已退回实物",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_refund_item",
+    "column": "refund_id",
+    "ref_table": "trd_refund",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_refund_item",
+    "column": "order_item_id",
+    "ref_table": "trd_order_item",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_aftersale",
+  "domain": "交易",
+  "comment": "售后单",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "售后单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "aftersale_type",
+    "type": "s",
+    "comment": "类型：REFUND/RETURN/EXCHANGE/REPAIR",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "reason_code",
+    "type": "s",
+    "comment": "原因编码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：OPEN/PROCESSING/CLOSED",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "发起时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "closed_at",
+    "type": "ts",
+    "comment": "关闭时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "aftersale_no",
+    "type": "s",
+    "comment": "售后单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "handler",
+    "type": "s",
+    "comment": "处理客服",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "priority",
+    "type": "t",
+    "comment": "优先级1-3",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "proof_image_cnt",
+    "type": "t",
+    "comment": "凭证图片数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "resolution",
+    "type": "s",
+    "comment": "处理结果：REFUNDED/EXCHANGED/REPAIRED/REJECTED",
+    "kind": "extra",
+    "enum": [
+     "REFUNDED",
+     "EXCHANGED",
+     "REPAIRED",
+     "REJECTED"
+    ]
+   },
+   {
+    "name": "satisfaction",
+    "type": "t",
+    "comment": "售后满意度1-5",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "channel",
+    "type": "s",
+    "comment": "发起渠道：APP/PHONE/ONLINE_CHAT",
+    "kind": "extra",
+    "enum": [
+     "APP",
+     "PHONE",
+     "ONLINE_CHAT"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_aftersale",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_aftersale",
+    "column": "reason_code",
+    "ref_table": "trd_aftersale_reason",
+    "ref_column": "code"
+   }
+  ]
+ },
+ {
+  "name": "trd_aftersale_reason",
+  "domain": "交易",
+  "comment": "售后/退款原因维表",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "原因ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "原因编码，如STOCKOUT缺货/QUALITY质量问题/LATE_DELIVERY物流超时/NO_REASON七天无理由",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "原因名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "responsibility",
+    "type": "s",
+    "comment": "责任方：MERCHANT/LOGISTICS/CUSTOMER",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "category",
+    "type": "s",
+    "comment": "原因大类：FULFILLMENT/PRODUCT/CUSTOMER",
+    "kind": "extra",
+    "enum": [
+     "FULFILLMENT",
+     "PRODUCT",
+     "CUSTOMER"
+    ]
+   },
+   {
+    "name": "need_return",
+    "type": "t",
+    "comment": "是否需退货",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "sort_order",
+    "type": "i",
+    "comment": "排序",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "trd_cart",
+  "domain": "交易",
+  "comment": "购物车加购记录",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "加购件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "added_at",
+    "type": "ts",
+    "comment": "加购时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "converted",
+    "type": "t",
+    "comment": "是否已下单 1是0否",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "price_at_add",
+    "type": "d",
+    "comment": "加购时价格",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "source",
+    "type": "s",
+    "comment": "加购来源：SEARCH/RECOMMEND/LIVE/ACTIVITY",
+    "kind": "extra",
+    "enum": [
+     "SEARCH",
+     "RECOMMEND",
+     "LIVE",
+     "ACTIVITY"
+    ]
+   },
+   {
+    "name": "removed_at",
+    "type": "ts",
+    "comment": "移出时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_cart",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_cart",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_invoice",
+  "domain": "交易",
+  "comment": "订单发票",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "发票ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "invoice_type",
+    "type": "s",
+    "comment": "发票类型：NORMAL/VAT",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "invoice_amount",
+    "type": "d",
+    "comment": "开票金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "issued_at",
+    "type": "ts",
+    "comment": "开票时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "invoice_no",
+    "type": "s",
+    "comment": "发票号码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "title",
+    "type": "l",
+    "comment": "发票抬头",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tax_no",
+    "type": "s",
+    "comment": "税号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tax_amount",
+    "type": "d",
+    "comment": "税额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "开票状态：ISSUED/VOID/RED",
+    "kind": "extra",
+    "enum": [
+     "ISSUED",
+     "VOID",
+     "RED"
+    ]
+   },
+   {
+    "name": "is_electronic",
+    "type": "t",
+    "comment": "是否电子发票",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_invoice",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_review",
+  "domain": "交易",
+  "comment": "商品评价",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "评价ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_item_id",
+    "type": "b",
+    "comment": "订单明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "score",
+    "type": "t",
+    "comment": "评分1-5",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "has_image",
+    "type": "t",
+    "comment": "是否带图",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "评价时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "content",
+    "type": "l",
+    "comment": "评价内容",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_anonymous",
+    "type": "t",
+    "comment": "是否匿名",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "reply_content",
+    "type": "l",
+    "comment": "商家回复",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "replied_at",
+    "type": "ts",
+    "comment": "回复时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "logistics_score",
+    "type": "t",
+    "comment": "物流评分1-5",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "service_score",
+    "type": "t",
+    "comment": "服务评分1-5",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "useful_cnt",
+    "type": "i",
+    "comment": "有用数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_review",
+    "column": "order_item_id",
+    "ref_table": "trd_order_item",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_review",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_split",
+  "domain": "交易",
+  "comment": "拆单关系：父订单拆成多个子订单发货",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "parent_order_id",
+    "type": "b",
+    "comment": "父订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "child_order_id",
+    "type": "b",
+    "comment": "子订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "split_reason",
+    "type": "s",
+    "comment": "拆单原因：MULTI_WAREHOUSE/PRESALE/OVERSIZE",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "split_at",
+    "type": "ts",
+    "comment": "拆单时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "子单分配仓库ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作方：SYSTEM/MANUAL",
+    "kind": "extra",
+    "enum": [
+     "SYSTEM",
+     "MANUAL"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_split",
+    "column": "parent_order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_order_split",
+    "column": "child_order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_presale_order",
+  "domain": "交易",
+  "comment": "预售订单定金与尾款",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "deposit_amount",
+    "type": "d",
+    "comment": "定金",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "balance_amount",
+    "type": "d",
+    "comment": "尾款",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "balance_paid_at",
+    "type": "ts",
+    "comment": "尾款支付时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "deposit_paid_at",
+    "type": "ts",
+    "comment": "定金支付时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "balance_start_at",
+    "type": "ts",
+    "comment": "尾款开始时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "balance_end_at",
+    "type": "ts",
+    "comment": "尾款截止时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "deposit_expand",
+    "type": "d",
+    "comment": "定金膨胀金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "预售状态：DEPOSIT_PAID/BALANCE_PAID/EXPIRED",
+    "kind": "extra",
+    "enum": [
+     "DEPOSIT_PAID",
+     "BALANCE_PAID",
+     "EXPIRED"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_presale_order",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_source",
+  "domain": "交易",
+  "comment": "订单来源维表",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "来源ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "来源编码：APP/MINI_PROGRAM/WEB/LIVE/OFFLINE",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "来源名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_online",
+    "type": "t",
+    "comment": "是否线上",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "sort_order",
+    "type": "i",
+    "comment": "排序",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "owner_team",
+    "type": "s",
+    "comment": "负责团队",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "trd_daily_shop_sales",
+  "domain": "交易",
+  "comment": "店铺日销售汇总（T+1离线计算）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stat_date",
+    "type": "dt",
+    "comment": "统计日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "gmv",
+    "type": "d",
+    "comment": "GMV：当日支付订单的商品总额+运费，不扣优惠、不扣退款",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "paid_amount",
+    "type": "d",
+    "comment": "实付金额：当日支付订单的实付合计",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_amount",
+    "type": "d",
+    "comment": "当日退款成功金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "net_sales",
+    "type": "d",
+    "comment": "退款后金额=实付金额-退款金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_cnt",
+    "type": "i",
+    "comment": "支付订单数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "buyer_cnt",
+    "type": "i",
+    "comment": "支付买家数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "discount_amount",
+    "type": "d",
+    "comment": "当日优惠总额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_amount",
+    "type": "d",
+    "comment": "当日运费",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "new_buyer_cnt",
+    "type": "i",
+    "comment": "新买家数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "item_qty",
+    "type": "i",
+    "comment": "销售件数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "refund_order_cnt",
+    "type": "i",
+    "comment": "退款订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cancel_order_cnt",
+    "type": "i",
+    "comment": "取消订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "etl_batch",
+    "type": "s",
+    "comment": "ETL批次号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_daily_shop_sales",
+    "column": "stat_date",
+    "ref_table": "dim_date",
+    "ref_column": "date_key"
+   },
+   {
+    "table": "trd_daily_shop_sales",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_daily_sku_sales",
+  "domain": "交易",
+  "comment": "SKU日销售汇总（T+1离线计算）",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stat_date",
+    "type": "dt",
+    "comment": "统计日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sales_qty",
+    "type": "i",
+    "comment": "销量件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sales_amount",
+    "type": "d",
+    "comment": "销售额（实付分摊口径）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_qty",
+    "type": "i",
+    "comment": "退款件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID（汇总为全店铺时为空）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "gmv",
+    "type": "d",
+    "comment": "SKU维度GMV",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "order_cnt",
+    "type": "i",
+    "comment": "包含该SKU的订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "buyer_cnt",
+    "type": "i",
+    "comment": "买家数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "refund_amount",
+    "type": "d",
+    "comment": "退款金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "etl_batch",
+    "type": "s",
+    "comment": "ETL批次号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_daily_sku_sales",
+    "column": "stat_date",
+    "ref_table": "dim_date",
+    "ref_column": "date_key"
+   },
+   {
+    "table": "trd_daily_sku_sales",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_cancel",
+  "domain": "交易",
+  "comment": "订单取消记录",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "cancel_reason",
+    "type": "s",
+    "comment": "取消原因",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "cancel_by",
+    "type": "s",
+    "comment": "发起方：USER/SYSTEM_TIMEOUT/CS",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "cancelled_at",
+    "type": "ts",
+    "comment": "取消时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_needed",
+    "type": "t",
+    "comment": "是否需要退款",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "order_status_before",
+    "type": "s",
+    "comment": "取消前状态：CREATED/PAID",
+    "kind": "extra",
+    "enum": [
+     "CREATED",
+     "PAID"
+    ]
+   },
+   {
+    "name": "remark",
+    "type": "l",
+    "comment": "备注",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_cancel",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_complaint",
+  "domain": "交易",
+  "comment": "客诉工单",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "工单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "complaint_type",
+    "type": "s",
+    "comment": "客诉类型：LOGISTICS/QUALITY/SERVICE/PRICE",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "severity",
+    "type": "t",
+    "comment": "严重程度1-3",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "创建时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "resolved_at",
+    "type": "ts",
+    "comment": "解决时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "complaint_no",
+    "type": "s",
+    "comment": "工单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "channel",
+    "type": "s",
+    "comment": "客诉渠道：PHONE/ONLINE/12315/SOCIAL",
+    "kind": "extra",
+    "enum": [
+     "PHONE",
+     "ONLINE",
+     "12315",
+     "SOCIAL"
+    ]
+   },
+   {
+    "name": "handler",
+    "type": "s",
+    "comment": "处理人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "result",
+    "type": "s",
+    "comment": "处理结果：COMPENSATED/EXPLAINED/ESCALATED",
+    "kind": "extra",
+    "enum": [
+     "COMPENSATED",
+     "EXPLAINED",
+     "ESCALATED"
+    ]
+   },
+   {
+    "name": "satisfaction",
+    "type": "t",
+    "comment": "满意度1-5",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_escalated",
+    "type": "t",
+    "comment": "是否升级",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_complaint",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_return_logistics",
+  "domain": "交易",
+  "comment": "退货物流：用户寄回商品的运单",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "refund_id",
+    "type": "b",
+    "comment": "退款单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "carrier_id",
+    "type": "b",
+    "comment": "承运商ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tracking_no",
+    "type": "s",
+    "comment": "退货运单号",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shipped_at",
+    "type": "ts",
+    "comment": "用户寄出时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "received_at",
+    "type": "ts",
+    "comment": "仓库签收时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "freight_fee",
+    "type": "d",
+    "comment": "退货运费",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_payer",
+    "type": "s",
+    "comment": "运费承担方：BUYER/MERCHANT/INSURANCE",
+    "kind": "extra",
+    "enum": [
+     "BUYER",
+     "MERCHANT",
+     "INSURANCE"
+    ]
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "退回仓库ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "inspect_result",
+    "type": "s",
+    "comment": "质检结果：PASS/DAMAGED/MISSING",
+    "kind": "extra",
+    "enum": [
+     "PASS",
+     "DAMAGED",
+     "MISSING"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_return_logistics",
+    "column": "refund_id",
+    "ref_table": "trd_refund",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_return_logistics",
+    "column": "carrier_id",
+    "ref_table": "tms_carrier",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_compensation",
+  "domain": "交易",
+  "comment": "赔付单：对用户的额外补偿",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "赔付ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "comp_type",
+    "type": "s",
+    "comment": "赔付类型：CASH/COUPON/POINTS",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "amount",
+    "type": "d",
+    "comment": "赔付金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "reason_code",
+    "type": "s",
+    "comment": "原因编码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "赔付时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "comp_no",
+    "type": "s",
+    "comment": "赔付单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "approved_by",
+    "type": "s",
+    "comment": "审批人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：APPLIED/PAID/REJECTED",
+    "kind": "extra",
+    "enum": [
+     "APPLIED",
+     "PAID",
+     "REJECTED"
+    ]
+   },
+   {
+    "name": "paid_at",
+    "type": "ts",
+    "comment": "发放时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_compensation",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "trd_compensation",
+    "column": "reason_code",
+    "ref_table": "trd_aftersale_reason",
+    "ref_column": "code"
+   }
+  ]
+ },
+ {
+  "name": "trd_order_tag",
+  "domain": "交易",
+  "comment": "订单标签",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tag",
+    "type": "s",
+    "comment": "标签：FIRST_ORDER首单/BIG_PROMO大促/HIGH_RISK风险单",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tag_source",
+    "type": "s",
+    "comment": "打标来源：RULE/MODEL/MANUAL",
+    "kind": "extra",
+    "enum": [
+     "RULE",
+     "MODEL",
+     "MANUAL"
+    ]
+   },
+   {
+    "name": "tagged_at",
+    "type": "ts",
+    "comment": "打标时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "expire_at",
+    "type": "ts",
+    "comment": "失效时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_order_tag",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "trd_gift_card_usage",
+  "domain": "交易",
+  "comment": "礼品卡使用记录",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "card_no",
+    "type": "s",
+    "comment": "礼品卡号",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "used_amount",
+    "type": "d",
+    "comment": "抵扣金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "used_at",
+    "type": "ts",
+    "comment": "使用时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "card_type",
+    "type": "s",
+    "comment": "卡类型：ELECTRONIC/PHYSICAL",
+    "kind": "extra",
+    "enum": [
+     "ELECTRONIC",
+     "PHYSICAL"
+    ]
+   },
+   {
+    "name": "card_face_value",
+    "type": "d",
+    "comment": "卡面额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "balance_after",
+    "type": "d",
+    "comment": "使用后余额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "trd_gift_card_usage",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_spu",
+  "domain": "商品",
+  "comment": "商品SPU：同款商品",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "SPU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "spu_name",
+    "type": "l",
+    "comment": "商品名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "category_id",
+    "type": "b",
+    "comment": "末级类目ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "brand_id",
+    "type": "b",
+    "comment": "品牌ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "series_id",
+    "type": "b",
+    "comment": "系列ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "launch_date",
+    "type": "dt",
+    "comment": "首次上架日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "spu_code",
+    "type": "s",
+    "comment": "SPU编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "subtitle",
+    "type": "l",
+    "comment": "副标题",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "origin",
+    "type": "s",
+    "comment": "产地",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "shelf_life_days",
+    "type": "i",
+    "comment": "保质期（天）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_imported",
+    "type": "t",
+    "comment": "是否进口",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tax_rate",
+    "type": "r",
+    "comment": "税率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "spu_status",
+    "type": "s",
+    "comment": "状态：ON_SALE/OFF_SALE/DRAFT",
+    "kind": "extra",
+    "enum": [
+     "ON_SALE",
+     "OFF_SALE",
+     "DRAFT"
+    ]
+   },
+   {
+    "name": "main_image",
+    "type": "l",
+    "comment": "主图URL",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "selling_point",
+    "type": "l",
+    "comment": "卖点",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "season",
+    "type": "s",
+    "comment": "适用季节：SPRING/SUMMER/AUTUMN/WINTER/ALL",
+    "kind": "extra",
+    "enum": [
+     "SPRING",
+     "SUMMER",
+     "AUTUMN",
+     "WINTER",
+     "ALL"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_spu",
+    "column": "category_id",
+    "ref_table": "prd_category",
+    "ref_column": "id"
+   },
+   {
+    "table": "prd_spu",
+    "column": "brand_id",
+    "ref_table": "prd_brand",
+    "ref_column": "id"
+   },
+   {
+    "table": "prd_spu",
+    "column": "series_id",
+    "ref_table": "prd_series",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_sku",
+  "domain": "商品",
+  "comment": "商品SKU：可售卖的最小单元（规格）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "spu_id",
+    "type": "b",
+    "comment": "SPU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_code",
+    "type": "s",
+    "comment": "SKU编码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "spec",
+    "type": "l",
+    "comment": "规格描述，如颜色/尺码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "list_price",
+    "type": "d",
+    "comment": "标价",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ON_SALE在售/OFF_SALE下架",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "barcode",
+    "type": "s",
+    "comment": "主条码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "weight_kg",
+    "type": "d",
+    "comment": "重量（千克）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "volume_cm3",
+    "type": "d",
+    "comment": "体积（立方厘米）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "color",
+    "type": "s",
+    "comment": "颜色",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "size",
+    "type": "s",
+    "comment": "尺码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "market_price",
+    "type": "d",
+    "comment": "市场价",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "min_order_qty",
+    "type": "i",
+    "comment": "起订量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_fragile",
+    "type": "t",
+    "comment": "是否易碎",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "image",
+    "type": "l",
+    "comment": "图片URL",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "launch_at",
+    "type": "ts",
+    "comment": "上架时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_sku",
+    "column": "spu_id",
+    "ref_table": "prd_spu",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_category",
+  "domain": "商品",
+  "comment": "商品类目，三级树形",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "类目ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "parent_id",
+    "type": "b",
+    "comment": "父类目ID，一级类目为0",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "level",
+    "type": "t",
+    "comment": "层级1/2/3",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "类目名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "类目编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "sort_order",
+    "type": "i",
+    "comment": "排序",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_leaf",
+    "type": "t",
+    "comment": "是否末级",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "icon",
+    "type": "l",
+    "comment": "图标URL",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "gross_margin_target",
+    "type": "r",
+    "comment": "目标毛利率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_category",
+    "column": "parent_id",
+    "ref_table": "prd_category",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_brand",
+  "domain": "商品",
+  "comment": "品牌",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "品牌ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "品牌名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_own",
+    "type": "t",
+    "comment": "是否自有品牌",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "country",
+    "type": "s",
+    "comment": "品牌国家",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "english_name",
+    "type": "s",
+    "comment": "英文名",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "logo",
+    "type": "l",
+    "comment": "Logo URL",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "level",
+    "type": "s",
+    "comment": "品牌等级：S/A/B/C",
+    "kind": "extra",
+    "enum": [
+     "S",
+     "A",
+     "B",
+     "C"
+    ]
+   },
+   {
+    "name": "authorized_until",
+    "type": "dt",
+    "comment": "授权截止日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "contact",
+    "type": "s",
+    "comment": "品牌对接人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "prd_price_history",
+  "domain": "商品",
+  "comment": "SKU价格变更历史",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "old_price",
+    "type": "d",
+    "comment": "原价格",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "new_price",
+    "type": "d",
+    "comment": "新价格",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "changed_at",
+    "type": "ts",
+    "comment": "变更时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "change_reason",
+    "type": "s",
+    "comment": "调价原因：PROMOTION/COST_CHANGE/COMPETITOR/CLEARANCE",
+    "kind": "extra",
+    "enum": [
+     "PROMOTION",
+     "COST_CHANGE",
+     "COMPETITOR",
+     "CLEARANCE"
+    ]
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "approved",
+    "type": "t",
+    "comment": "是否审批通过",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_price_history",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_attribute",
+  "domain": "商品",
+  "comment": "商品属性定义",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "属性ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "属性名，如颜色/材质",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "category_id",
+    "type": "b",
+    "comment": "适用类目ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "input_type",
+    "type": "s",
+    "comment": "录入方式：SELECT/TEXT/NUMBER",
+    "kind": "extra",
+    "enum": [
+     "SELECT",
+     "TEXT",
+     "NUMBER"
+    ]
+   },
+   {
+    "name": "is_required",
+    "type": "t",
+    "comment": "是否必填",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_searchable",
+    "type": "t",
+    "comment": "是否可搜索",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_attribute",
+    "column": "category_id",
+    "ref_table": "prd_category",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_sku_attribute",
+  "domain": "商品",
+  "comment": "SKU属性取值",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "attribute_id",
+    "type": "b",
+    "comment": "属性ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "value",
+    "type": "s",
+    "comment": "属性值",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "value_code",
+    "type": "s",
+    "comment": "属性值编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "sort_order",
+    "type": "i",
+    "comment": "排序",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_sku_attribute",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   },
+   {
+    "table": "prd_sku_attribute",
+    "column": "attribute_id",
+    "ref_table": "prd_attribute",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_label",
+  "domain": "商品",
+  "comment": "商品标签定义",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "标签ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "标签名，如新品/爆款/清仓",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "label_type",
+    "type": "s",
+    "comment": "标签类型：OPERATION/SYSTEM",
+    "kind": "extra",
+    "enum": [
+     "OPERATION",
+     "SYSTEM"
+    ]
+   },
+   {
+    "name": "color",
+    "type": "s",
+    "comment": "显示颜色",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_active",
+    "type": "t",
+    "comment": "是否启用",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "prd_sku_label",
+  "domain": "商品",
+  "comment": "SKU打标",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "label_id",
+    "type": "b",
+    "comment": "标签ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "start_at",
+    "type": "ts",
+    "comment": "生效时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "end_at",
+    "type": "ts",
+    "comment": "失效时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "打标人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_sku_label",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   },
+   {
+    "table": "prd_sku_label",
+    "column": "label_id",
+    "ref_table": "prd_label",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_bundle",
+  "domain": "商品",
+  "comment": "组合套装",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "套装ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "l",
+    "comment": "套装名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "bundle_price",
+    "type": "d",
+    "comment": "套装价",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ON_SALE/OFF_SALE",
+    "kind": "extra",
+    "enum": [
+     "ON_SALE",
+     "OFF_SALE"
+    ]
+   },
+   {
+    "name": "start_at",
+    "type": "ts",
+    "comment": "开始时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "end_at",
+    "type": "ts",
+    "comment": "结束时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "prd_bundle_item",
+  "domain": "商品",
+  "comment": "套装包含的SKU",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "bundle_id",
+    "type": "b",
+    "comment": "套装ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "件数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_main",
+    "type": "t",
+    "comment": "是否主商品",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "share_ratio",
+    "type": "r",
+    "comment": "价格分摊比例",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_bundle_item",
+    "column": "bundle_id",
+    "ref_table": "prd_bundle",
+    "ref_column": "id"
+   },
+   {
+    "table": "prd_bundle_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_listing_log",
+  "domain": "商品",
+  "comment": "上下架记录",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "action",
+    "type": "s",
+    "comment": "动作：ON/OFF",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "acted_at",
+    "type": "ts",
+    "comment": "操作时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "reason",
+    "type": "s",
+    "comment": "原因：NEW/RESTOCK/SOLD_OUT/COMPLIANCE/SEASON_END",
+    "kind": "extra",
+    "enum": [
+     "NEW",
+     "RESTOCK",
+     "SOLD_OUT",
+     "COMPLIANCE",
+     "SEASON_END"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_listing_log",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_sku_cost",
+  "domain": "商品",
+  "comment": "SKU采购成本（按月）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "month_key",
+    "type": "s",
+    "comment": "月份YYYY-MM",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "unit_cost",
+    "type": "d",
+    "comment": "单位成本",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "supplier_id",
+    "type": "b",
+    "comment": "主供应商ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_cost",
+    "type": "d",
+    "comment": "单位运输成本",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cost_source",
+    "type": "s",
+    "comment": "成本来源：PURCHASE/ESTIMATE",
+    "kind": "extra",
+    "enum": [
+     "PURCHASE",
+     "ESTIMATE"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_sku_cost",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_series",
+  "domain": "商品",
+  "comment": "商品系列",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "系列ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "brand_id",
+    "type": "b",
+    "comment": "品牌ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "系列名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "launch_year",
+    "type": "i",
+    "comment": "上市年份",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "positioning",
+    "type": "s",
+    "comment": "定位：ENTRY/MID/PREMIUM",
+    "kind": "extra",
+    "enum": [
+     "ENTRY",
+     "MID",
+     "PREMIUM"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_series",
+    "column": "brand_id",
+    "ref_table": "prd_brand",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "prd_sku_barcode",
+  "domain": "商品",
+  "comment": "SKU条码",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "barcode",
+    "type": "s",
+    "comment": "条码",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "barcode_type",
+    "type": "s",
+    "comment": "条码类型：EAN13/UPC/INNER",
+    "kind": "extra",
+    "enum": [
+     "EAN13",
+     "UPC",
+     "INNER"
+    ]
+   },
+   {
+    "name": "is_primary",
+    "type": "t",
+    "comment": "是否主条码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "prd_sku_barcode",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "usr_member",
+  "domain": "用户与营销",
+  "comment": "会员",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "register_at",
+    "type": "ts",
+    "comment": "注册时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "gender",
+    "type": "s",
+    "comment": "性别：M/F/U",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "birth_year",
+    "type": "i",
+    "comment": "出生年份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "level_id",
+    "type": "b",
+    "comment": "当前会员等级ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "register_channel_id",
+    "type": "b",
+    "comment": "注册渠道ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "常住省份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "常住区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_no",
+    "type": "s",
+    "comment": "会员编号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "nickname",
+    "type": "s",
+    "comment": "昵称",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "常住城市",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "phone_masked",
+    "type": "s",
+    "comment": "手机号（脱敏）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "points_balance",
+    "type": "i",
+    "comment": "当前积分余额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "total_paid_amount",
+    "type": "d",
+    "comment": "累计实付金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "total_order_cnt",
+    "type": "i",
+    "comment": "累计支付订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "last_order_at",
+    "type": "ts",
+    "comment": "最近下单时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_vip_plus",
+    "type": "t",
+    "comment": "是否付费会员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ACTIVE/FROZEN/CANCELLED",
+    "kind": "extra",
+    "enum": [
+     "ACTIVE",
+     "FROZEN",
+     "CANCELLED"
+    ]
+   },
+   {
+    "name": "wechat_bound",
+    "type": "t",
+    "comment": "是否绑定微信",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "usr_member",
+    "column": "level_id",
+    "ref_table": "usr_member_level",
+    "ref_column": "id"
+   },
+   {
+    "table": "usr_member",
+    "column": "register_channel_id",
+    "ref_table": "mkt_channel",
+    "ref_column": "id"
+   },
+   {
+    "table": "usr_member",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "usr_member_level",
+  "domain": "用户与营销",
+  "comment": "会员等级",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "等级ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "等级名称：普通/银卡/金卡/黑金",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "min_points",
+    "type": "i",
+    "comment": "所需积分",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "discount_rate",
+    "type": "r",
+    "comment": "会员折扣率",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "benefits",
+    "type": "l",
+    "comment": "权益说明",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "free_shipping",
+    "type": "t",
+    "comment": "是否包邮",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "birthday_coupon",
+    "type": "d",
+    "comment": "生日券面额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "usr_member_level_log",
+  "domain": "用户与营销",
+  "comment": "会员等级变更记录",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "from_level_id",
+    "type": "b",
+    "comment": "原等级",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "to_level_id",
+    "type": "b",
+    "comment": "新等级",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "changed_at",
+    "type": "ts",
+    "comment": "变更时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "change_type",
+    "type": "s",
+    "comment": "变更类型：UPGRADE/DOWNGRADE/MANUAL",
+    "kind": "extra",
+    "enum": [
+     "UPGRADE",
+     "DOWNGRADE",
+     "MANUAL"
+    ]
+   },
+   {
+    "name": "points_at_change",
+    "type": "i",
+    "comment": "变更时积分",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "usr_member_level_log",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   },
+   {
+    "table": "usr_member_level_log",
+    "column": "from_level_id",
+    "ref_table": "usr_member_level",
+    "ref_column": "id"
+   },
+   {
+    "table": "usr_member_level_log",
+    "column": "to_level_id",
+    "ref_table": "usr_member_level",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "usr_address",
+  "domain": "用户与营销",
+  "comment": "会员收货地址簿",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "地址ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "省份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "城市",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_default",
+    "type": "t",
+    "comment": "是否默认地址",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "district",
+    "type": "s",
+    "comment": "区县",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "detail",
+    "type": "l",
+    "comment": "详细地址（脱敏）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "label",
+    "type": "s",
+    "comment": "地址标签：HOME/OFFICE/OTHER",
+    "kind": "extra",
+    "enum": [
+     "HOME",
+     "OFFICE",
+     "OTHER"
+    ]
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "创建时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "usr_address",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "usr_points_log",
+  "domain": "用户与营销",
+  "comment": "积分流水",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "流水ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "change_points",
+    "type": "i",
+    "comment": "积分变动，正为获得负为消耗",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "biz_type",
+    "type": "s",
+    "comment": "业务类型：ORDER/REFUND/SIGN_IN/REDEEM",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "关联订单ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "balance_after",
+    "type": "i",
+    "comment": "变动后余额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "expire_at",
+    "type": "dt",
+    "comment": "积分过期日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "usr_points_log",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "usr_member_tag",
+  "domain": "用户与营销",
+  "comment": "会员标签",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tag",
+    "type": "s",
+    "comment": "标签：HIGH_VALUE高价值/CHURN_RISK流失风险/NEW新客",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tag_source",
+    "type": "s",
+    "comment": "来源：RULE/MODEL/MANUAL",
+    "kind": "extra",
+    "enum": [
+     "RULE",
+     "MODEL",
+     "MANUAL"
+    ]
+   },
+   {
+    "name": "score",
+    "type": "r",
+    "comment": "标签置信分",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tagged_at",
+    "type": "ts",
+    "comment": "打标时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "usr_member_tag",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_coupon_template",
+  "domain": "用户与营销",
+  "comment": "优惠券模板",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "模板ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "l",
+    "comment": "券名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "coupon_type",
+    "type": "s",
+    "comment": "类型：FULL_REDUCTION满减/DISCOUNT折扣/NO_THRESHOLD无门槛",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "threshold_amount",
+    "type": "d",
+    "comment": "使用门槛金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "face_value",
+    "type": "d",
+    "comment": "面额或折扣",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "activity_id",
+    "type": "b",
+    "comment": "所属活动ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "valid_days",
+    "type": "i",
+    "comment": "领取后有效天数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "total_qty",
+    "type": "i",
+    "comment": "发行总量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "per_user_limit",
+    "type": "i",
+    "comment": "每人限领",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "funded_by",
+    "type": "s",
+    "comment": "出资方：PLATFORM/MERCHANT/BRAND",
+    "kind": "extra",
+    "enum": [
+     "PLATFORM",
+     "MERCHANT",
+     "BRAND"
+    ]
+   },
+   {
+    "name": "scope",
+    "type": "s",
+    "comment": "适用范围：ALL/CATEGORY/SKU",
+    "kind": "extra",
+    "enum": [
+     "ALL",
+     "CATEGORY",
+     "SKU"
+    ]
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ACTIVE/PAUSED/ENDED",
+    "kind": "extra",
+    "enum": [
+     "ACTIVE",
+     "PAUSED",
+     "ENDED"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_coupon_template",
+    "column": "activity_id",
+    "ref_table": "mkt_activity",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_coupon",
+  "domain": "用户与营销",
+  "comment": "用户领取的优惠券",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "券ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "template_id",
+    "type": "b",
+    "comment": "模板ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：UNUSED/USED/EXPIRED",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "received_at",
+    "type": "ts",
+    "comment": "领取时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "used_at",
+    "type": "ts",
+    "comment": "使用时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "coupon_code",
+    "type": "s",
+    "comment": "券码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "使用的订单ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "expire_at",
+    "type": "ts",
+    "comment": "过期时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "receive_channel",
+    "type": "s",
+    "comment": "领取渠道：ACTIVITY_PAGE/LIVE/CS/AUTO",
+    "kind": "extra",
+    "enum": [
+     "ACTIVITY_PAGE",
+     "LIVE",
+     "CS",
+     "AUTO"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_coupon",
+    "column": "template_id",
+    "ref_table": "mkt_coupon_template",
+    "ref_column": "id"
+   },
+   {
+    "table": "mkt_coupon",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_activity",
+  "domain": "用户与营销",
+  "comment": "营销活动",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "活动ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "l",
+    "comment": "活动名称，如双11/618/年货节",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "activity_type",
+    "type": "s",
+    "comment": "类型：BIG_PROMO大促/FLASH_SALE秒杀/NEW_USER拉新",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "start_at",
+    "type": "ts",
+    "comment": "开始时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "end_at",
+    "type": "ts",
+    "comment": "结束时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "budget",
+    "type": "d",
+    "comment": "活动预算",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "owner",
+    "type": "s",
+    "comment": "负责人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：PLANNED/RUNNING/ENDED",
+    "kind": "extra",
+    "enum": [
+     "PLANNED",
+     "RUNNING",
+     "ENDED"
+    ]
+   },
+   {
+    "name": "target_gmv",
+    "type": "d",
+    "comment": "目标GMV",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "platform_id",
+    "type": "b",
+    "comment": "平台ID（空为全平台）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "description",
+    "type": "l",
+    "comment": "活动说明",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "mkt_activity_sku",
+  "domain": "用户与营销",
+  "comment": "活动商品及活动价",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "activity_id",
+    "type": "b",
+    "comment": "活动ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "activity_price",
+    "type": "d",
+    "comment": "活动价",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stock_limit",
+    "type": "i",
+    "comment": "活动库存",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "per_user_limit",
+    "type": "i",
+    "comment": "每人限购",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "sold_qty",
+    "type": "i",
+    "comment": "活动已售件数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_activity_sku",
+    "column": "activity_id",
+    "ref_table": "mkt_activity",
+    "ref_column": "id"
+   },
+   {
+    "table": "mkt_activity_sku",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_channel",
+  "domain": "用户与营销",
+  "comment": "流量/投放渠道",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "渠道ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "渠道编码：DOUYIN/XHS/BAIDU/WECHAT/ORGANIC",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "渠道名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_paid",
+    "type": "t",
+    "comment": "是否付费渠道",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "owner_team",
+    "type": "s",
+    "comment": "负责团队",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "billing_mode",
+    "type": "s",
+    "comment": "计费方式：CPC/CPM/CPS/FREE",
+    "kind": "extra",
+    "enum": [
+     "CPC",
+     "CPM",
+     "CPS",
+     "FREE"
+    ]
+   },
+   {
+    "name": "is_active",
+    "type": "t",
+    "comment": "是否启用",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "mkt_ad_spend",
+  "domain": "用户与营销",
+  "comment": "广告投放花费（按日按渠道）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stat_date",
+    "type": "dt",
+    "comment": "日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "channel_id",
+    "type": "b",
+    "comment": "渠道ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "spend",
+    "type": "d",
+    "comment": "花费",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "impressions",
+    "type": "b",
+    "comment": "曝光",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "clicks",
+    "type": "b",
+    "comment": "点击",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "campaign_name",
+    "type": "l",
+    "comment": "投放计划名称",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "conversions",
+    "type": "i",
+    "comment": "转化数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cpc",
+    "type": "d",
+    "comment": "平均点击成本",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "account_id",
+    "type": "s",
+    "comment": "投放账户",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_ad_spend",
+    "column": "stat_date",
+    "ref_table": "dim_date",
+    "ref_column": "date_key"
+   },
+   {
+    "table": "mkt_ad_spend",
+    "column": "channel_id",
+    "ref_table": "mkt_channel",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_traffic_daily",
+  "domain": "用户与营销",
+  "comment": "店铺流量日表",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stat_date",
+    "type": "dt",
+    "comment": "日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "channel_id",
+    "type": "b",
+    "comment": "渠道ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "pv",
+    "type": "b",
+    "comment": "浏览量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "uv",
+    "type": "b",
+    "comment": "访客数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "avg_stay_sec",
+    "type": "i",
+    "comment": "平均停留秒数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "bounce_rate",
+    "type": "r",
+    "comment": "跳失率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "add_cart_uv",
+    "type": "i",
+    "comment": "加购访客数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "new_visitor_uv",
+    "type": "i",
+    "comment": "新访客数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_traffic_daily",
+    "column": "stat_date",
+    "ref_table": "dim_date",
+    "ref_column": "date_key"
+   },
+   {
+    "table": "mkt_traffic_daily",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   },
+   {
+    "table": "mkt_traffic_daily",
+    "column": "channel_id",
+    "ref_table": "mkt_channel",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_live_session",
+  "domain": "用户与营销",
+  "comment": "直播场次",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "场次ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "anchor",
+    "type": "s",
+    "comment": "主播",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "start_at",
+    "type": "ts",
+    "comment": "开播时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "duration_min",
+    "type": "i",
+    "comment": "时长（分钟）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "viewers",
+    "type": "i",
+    "comment": "观看人数",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "title",
+    "type": "l",
+    "comment": "直播标题",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "gmv",
+    "type": "d",
+    "comment": "场次GMV",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "order_cnt",
+    "type": "i",
+    "comment": "场次订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "peak_online",
+    "type": "i",
+    "comment": "峰值在线人数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "likes",
+    "type": "b",
+    "comment": "点赞数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_live_session",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "mkt_member_attribution",
+  "domain": "用户与营销",
+  "comment": "会员首单归因渠道",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "member_id",
+    "type": "b",
+    "comment": "会员ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "first_order_id",
+    "type": "b",
+    "comment": "首单订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "channel_id",
+    "type": "b",
+    "comment": "归因渠道ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "attribution_model",
+    "type": "s",
+    "comment": "归因模型：FIRST_TOUCH/LAST_TOUCH",
+    "kind": "extra",
+    "enum": [
+     "FIRST_TOUCH",
+     "LAST_TOUCH"
+    ]
+   },
+   {
+    "name": "attributed_at",
+    "type": "ts",
+    "comment": "归因时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "campaign_name",
+    "type": "l",
+    "comment": "投放计划名称",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "mkt_member_attribution",
+    "column": "member_id",
+    "ref_table": "usr_member",
+    "ref_column": "id"
+   },
+   {
+    "table": "mkt_member_attribution",
+    "column": "first_order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "mkt_member_attribution",
+    "column": "channel_id",
+    "ref_table": "mkt_channel",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "scm_supplier",
+  "domain": "库存仓储与履约",
+  "comment": "供应商",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "供应商ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "l",
+    "comment": "供应商名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "所在省份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "lead_days",
+    "type": "i",
+    "comment": "平均交货周期（天）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "supplier_code",
+    "type": "s",
+    "comment": "供应商编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "contact",
+    "type": "s",
+    "comment": "联系人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "phone_masked",
+    "type": "s",
+    "comment": "电话（脱敏）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "rating",
+    "type": "s",
+    "comment": "评级：A/B/C/D",
+    "kind": "extra",
+    "enum": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ]
+   },
+   {
+    "name": "settlement_cycle",
+    "type": "s",
+    "comment": "结算周期：MONTHLY/BIWEEKLY/PER_ORDER",
+    "kind": "extra",
+    "enum": [
+     "MONTHLY",
+     "BIWEEKLY",
+     "PER_ORDER"
+    ]
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ACTIVE/SUSPENDED",
+    "kind": "extra",
+    "enum": [
+     "ACTIVE",
+     "SUSPENDED"
+    ]
+   },
+   {
+    "name": "credit_limit",
+    "type": "d",
+    "comment": "授信额度",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "scm_purchase_order",
+  "domain": "库存仓储与履约",
+  "comment": "采购单",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "采购单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "supplier_id",
+    "type": "b",
+    "comment": "供应商ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "收货仓ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：CREATED/PARTIAL_RECEIVED/RECEIVED/CANCELLED",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "下单时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "expected_at",
+    "type": "dt",
+    "comment": "预计到货日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "po_no",
+    "type": "s",
+    "comment": "采购单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "buyer",
+    "type": "s",
+    "comment": "采购员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "total_amount",
+    "type": "d",
+    "comment": "采购总金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "currency_code",
+    "type": "s",
+    "comment": "币种",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "approved_at",
+    "type": "ts",
+    "comment": "审批时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "received_at",
+    "type": "ts",
+    "comment": "实际到货时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "remark",
+    "type": "l",
+    "comment": "备注",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "scm_purchase_order",
+    "column": "supplier_id",
+    "ref_table": "scm_supplier",
+    "ref_column": "id"
+   },
+   {
+    "table": "scm_purchase_order",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "scm_purchase_order_item",
+  "domain": "库存仓储与履约",
+  "comment": "采购单明细",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "po_id",
+    "type": "b",
+    "comment": "采购单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "采购数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "unit_cost",
+    "type": "d",
+    "comment": "采购单价",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "received_qty",
+    "type": "i",
+    "comment": "实收数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tax_rate",
+    "type": "r",
+    "comment": "税率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "expected_at",
+    "type": "dt",
+    "comment": "预计到货日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "line_status",
+    "type": "s",
+    "comment": "行状态：OPEN/RECEIVED/CANCELLED",
+    "kind": "extra",
+    "enum": [
+     "OPEN",
+     "RECEIVED",
+     "CANCELLED"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "scm_purchase_order_item",
+    "column": "po_id",
+    "ref_table": "scm_purchase_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "scm_purchase_order_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_warehouse",
+  "domain": "库存仓储与履约",
+  "comment": "仓库",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "仓库名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_type",
+    "type": "s",
+    "comment": "类型：CENTRAL中心仓/REGIONAL区域仓/FRONT前置仓",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "所在区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "仓库编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "所在省份",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "所在城市",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "area_sqm",
+    "type": "i",
+    "comment": "面积（平方米）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "capacity_qty",
+    "type": "i",
+    "comment": "设计容量（件）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "manager",
+    "type": "s",
+    "comment": "仓库负责人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_bonded",
+    "type": "t",
+    "comment": "是否保税仓",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ACTIVE/CLOSED",
+    "kind": "extra",
+    "enum": [
+     "ACTIVE",
+     "CLOSED"
+    ]
+   },
+   {
+    "name": "opened_at",
+    "type": "dt",
+    "comment": "启用日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_warehouse",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_inbound",
+  "domain": "库存仓储与履约",
+  "comment": "入库单（采购到货/退货入库/调拨入库）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "入库单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "inbound_type",
+    "type": "s",
+    "comment": "类型：PURCHASE/RETURN/TRANSFER",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "ref_id",
+    "type": "b",
+    "comment": "来源单据ID（采购单/退款单/调拨单）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "received_at",
+    "type": "ts",
+    "comment": "入库时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "inbound_no",
+    "type": "s",
+    "comment": "入库单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：RECEIVING/DONE/CANCELLED",
+    "kind": "extra",
+    "enum": [
+     "RECEIVING",
+     "DONE",
+     "CANCELLED"
+    ]
+   },
+   {
+    "name": "qc_result",
+    "type": "s",
+    "comment": "质检结果：PASS/PARTIAL/FAIL",
+    "kind": "extra",
+    "enum": [
+     "PASS",
+     "PARTIAL",
+     "FAIL"
+    ]
+   },
+   {
+    "name": "dock_no",
+    "type": "s",
+    "comment": "月台号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_inbound",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_inbound_item",
+  "domain": "库存仓储与履约",
+  "comment": "入库明细",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "inbound_id",
+    "type": "b",
+    "comment": "入库单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "入库数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "expected_qty",
+    "type": "i",
+    "comment": "应收数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "defect_qty",
+    "type": "i",
+    "comment": "次品数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "batch_no",
+    "type": "s",
+    "comment": "批次号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "location_code",
+    "type": "s",
+    "comment": "上架库位",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_inbound_item",
+    "column": "inbound_id",
+    "ref_table": "wms_inbound",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_inbound_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_inventory_snapshot",
+  "domain": "库存仓储与履约",
+  "comment": "库存日快照：每日24点各仓各SKU库存",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "snapshot_date",
+    "type": "dt",
+    "comment": "快照日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "on_hand_qty",
+    "type": "i",
+    "comment": "在库数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "locked_qty",
+    "type": "i",
+    "comment": "已占用数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "available_qty",
+    "type": "i",
+    "comment": "可用数量=在库-占用",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "in_transit_qty",
+    "type": "i",
+    "comment": "在途数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "defect_qty",
+    "type": "i",
+    "comment": "残次数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "inventory_cost",
+    "type": "d",
+    "comment": "库存成本金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_inventory_snapshot",
+    "column": "snapshot_date",
+    "ref_table": "dim_date",
+    "ref_column": "date_key"
+   },
+   {
+    "table": "wms_inventory_snapshot",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_inventory_snapshot",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_inventory",
+  "domain": "库存仓储与履约",
+  "comment": "实时库存：当前时刻各仓各SKU库存",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "on_hand_qty",
+    "type": "i",
+    "comment": "在库数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "locked_qty",
+    "type": "i",
+    "comment": "已占用数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "safety_stock",
+    "type": "i",
+    "comment": "安全库存",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "updated_at",
+    "type": "ts",
+    "comment": "更新时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "in_transit_qty",
+    "type": "i",
+    "comment": "在途数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "defect_qty",
+    "type": "i",
+    "comment": "残次数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "location_code",
+    "type": "s",
+    "comment": "主库位",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "last_inbound_at",
+    "type": "ts",
+    "comment": "最近入库时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "last_outbound_at",
+    "type": "ts",
+    "comment": "最近出库时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_inventory",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_inventory",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_transfer",
+  "domain": "库存仓储与履约",
+  "comment": "调拨单：仓间移库",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "调拨单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "from_warehouse_id",
+    "type": "b",
+    "comment": "调出仓",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "to_warehouse_id",
+    "type": "b",
+    "comment": "调入仓",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：CREATED/IN_TRANSIT/DONE",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "created_at",
+    "type": "ts",
+    "comment": "创建时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "done_at",
+    "type": "ts",
+    "comment": "完成时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "transfer_no",
+    "type": "s",
+    "comment": "调拨单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "reason",
+    "type": "s",
+    "comment": "调拨原因：REPLENISH/BALANCE/RETURN_TO_CENTRAL",
+    "kind": "extra",
+    "enum": [
+     "REPLENISH",
+     "BALANCE",
+     "RETURN_TO_CENTRAL"
+    ]
+   },
+   {
+    "name": "carrier_id",
+    "type": "b",
+    "comment": "承运商ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "操作员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "shipped_at",
+    "type": "ts",
+    "comment": "发出时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_transfer",
+    "column": "from_warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_transfer",
+    "column": "to_warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_transfer_item",
+  "domain": "库存仓储与履约",
+  "comment": "调拨明细",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "transfer_id",
+    "type": "b",
+    "comment": "调拨单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "received_qty",
+    "type": "i",
+    "comment": "实收数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "batch_no",
+    "type": "s",
+    "comment": "批次号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_transfer_item",
+    "column": "transfer_id",
+    "ref_table": "wms_transfer",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_transfer_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_outbound",
+  "domain": "库存仓储与履约",
+  "comment": "出库单：仓库拣货出库",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "出库单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "fulfillment_id",
+    "type": "b",
+    "comment": "履约单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "出库仓ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "picked_at",
+    "type": "ts",
+    "comment": "拣货完成时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "outbound_at",
+    "type": "ts",
+    "comment": "出库时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "outbound_no",
+    "type": "s",
+    "comment": "出库单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "picker",
+    "type": "s",
+    "comment": "拣货员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "packer",
+    "type": "s",
+    "comment": "打包员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "package_cnt",
+    "type": "t",
+    "comment": "包裹数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "weight_kg",
+    "type": "d",
+    "comment": "包裹重量（千克）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：PICKING/PACKED/SHIPPED",
+    "kind": "extra",
+    "enum": [
+     "PICKING",
+     "PACKED",
+     "SHIPPED"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_outbound",
+    "column": "fulfillment_id",
+    "ref_table": "oms_fulfillment_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_outbound",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_outbound_item",
+  "domain": "库存仓储与履约",
+  "comment": "出库明细",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "outbound_id",
+    "type": "b",
+    "comment": "出库单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quantity",
+    "type": "i",
+    "comment": "出库数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "batch_no",
+    "type": "s",
+    "comment": "批次号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "location_code",
+    "type": "s",
+    "comment": "拣货库位",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "picked_qty",
+    "type": "i",
+    "comment": "实拣数量",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_outbound_item",
+    "column": "outbound_id",
+    "ref_table": "wms_outbound",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_outbound_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_stockout_record",
+  "domain": "库存仓储与履约",
+  "comment": "缺货记录：订单分配库存失败",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "缺货SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "尝试分配的仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shortage_qty",
+    "type": "i",
+    "comment": "缺货数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "detected_at",
+    "type": "ts",
+    "comment": "发现时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "handle_result",
+    "type": "s",
+    "comment": "处理结果：CANCELLED/TRANSFERRED/BACKORDERED",
+    "kind": "extra",
+    "enum": [
+     "CANCELLED",
+     "TRANSFERRED",
+     "BACKORDERED"
+    ]
+   },
+   {
+    "name": "handled_at",
+    "type": "ts",
+    "comment": "处理时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "alternative_warehouse_id",
+    "type": "b",
+    "comment": "替代仓库ID",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "notified_buyer",
+    "type": "t",
+    "comment": "是否已通知买家",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_stockout_record",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_stockout_record",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_stockout_record",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_stocktake",
+  "domain": "库存仓储与履约",
+  "comment": "盘点单",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "盘点单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stocktake_date",
+    "type": "dt",
+    "comment": "盘点日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stocktake_no",
+    "type": "s",
+    "comment": "盘点单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "stocktake_type",
+    "type": "s",
+    "comment": "盘点类型：FULL/CYCLE/SPOT",
+    "kind": "extra",
+    "enum": [
+     "FULL",
+     "CYCLE",
+     "SPOT"
+    ]
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "盘点人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：DRAFT/DONE/ADJUSTED",
+    "kind": "extra",
+    "enum": [
+     "DRAFT",
+     "DONE",
+     "ADJUSTED"
+    ]
+   },
+   {
+    "name": "finished_at",
+    "type": "ts",
+    "comment": "完成时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_stocktake",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "wms_stocktake_item",
+  "domain": "库存仓储与履约",
+  "comment": "盘点差异明细",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "stocktake_id",
+    "type": "b",
+    "comment": "盘点单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "sku_id",
+    "type": "b",
+    "comment": "SKU ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "book_qty",
+    "type": "i",
+    "comment": "账面数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "actual_qty",
+    "type": "i",
+    "comment": "实盘数量",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "diff_qty",
+    "type": "i",
+    "comment": "差异数量=实盘-账面",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "diff_amount",
+    "type": "d",
+    "comment": "差异金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "location_code",
+    "type": "s",
+    "comment": "库位",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "adjust_reason",
+    "type": "s",
+    "comment": "调整原因：LOSS/DAMAGE/MISPICK/UNKNOWN",
+    "kind": "extra",
+    "enum": [
+     "LOSS",
+     "DAMAGE",
+     "MISPICK",
+     "UNKNOWN"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "wms_stocktake_item",
+    "column": "stocktake_id",
+    "ref_table": "wms_stocktake",
+    "ref_column": "id"
+   },
+   {
+    "table": "wms_stocktake_item",
+    "column": "sku_id",
+    "ref_table": "prd_sku",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "tms_carrier",
+  "domain": "库存仓储与履约",
+  "comment": "承运商（快递公司）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "承运商ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "名称，如顺丰/京东物流/中通",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "service_level",
+    "type": "s",
+    "comment": "服务等级：EXPRESS/STANDARD",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "承运商编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "contact",
+    "type": "s",
+    "comment": "对接人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "contract_end",
+    "type": "dt",
+    "comment": "合同到期日",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cod_supported",
+    "type": "t",
+    "comment": "是否支持货到付款",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "base_fee",
+    "type": "d",
+    "comment": "首重运费",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "tms_shipment",
+  "domain": "库存仓储与履约",
+  "comment": "发货运单：商家发给用户的快递",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "运单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "fulfillment_id",
+    "type": "b",
+    "comment": "履约单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "carrier_id",
+    "type": "b",
+    "comment": "承运商ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "tracking_no",
+    "type": "s",
+    "comment": "运单号",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shipped_at",
+    "type": "ts",
+    "comment": "揽收时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "delivered_at",
+    "type": "ts",
+    "comment": "签收时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "weight_kg",
+    "type": "d",
+    "comment": "计费重量（千克）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_cost",
+    "type": "d",
+    "comment": "运费成本",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "insured",
+    "type": "t",
+    "comment": "是否保价",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "receiver_city",
+    "type": "s",
+    "comment": "收货城市",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：IN_TRANSIT/DELIVERED/EXCEPTION/RETURNED",
+    "kind": "extra",
+    "enum": [
+     "IN_TRANSIT",
+     "DELIVERED",
+     "EXCEPTION",
+     "RETURNED"
+    ]
+   },
+   {
+    "name": "exception_type",
+    "type": "s",
+    "comment": "异常类型：DELAY/LOST/DAMAGED/REFUSED",
+    "kind": "extra",
+    "enum": [
+     "DELAY",
+     "LOST",
+     "DAMAGED",
+     "REFUSED"
+    ]
+   },
+   {
+    "name": "sign_type",
+    "type": "s",
+    "comment": "签收方式：SELF/AGENT/LOCKER",
+    "kind": "extra",
+    "enum": [
+     "SELF",
+     "AGENT",
+     "LOCKER"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "tms_shipment",
+    "column": "fulfillment_id",
+    "ref_table": "oms_fulfillment_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "tms_shipment",
+    "column": "carrier_id",
+    "ref_table": "tms_carrier",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "tms_shipment_track",
+  "domain": "库存仓储与履约",
+  "comment": "物流轨迹节点",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shipment_id",
+    "type": "b",
+    "comment": "运单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "node",
+    "type": "s",
+    "comment": "节点：PICKED_UP/IN_TRANSIT/OUT_FOR_DELIVERY/DELIVERED/EXCEPTION",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "所在城市",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "event_at",
+    "type": "ts",
+    "comment": "时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "description",
+    "type": "l",
+    "comment": "轨迹描述",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "operator",
+    "type": "s",
+    "comment": "网点/快递员",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "所在省份",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "tms_shipment_track",
+    "column": "shipment_id",
+    "ref_table": "tms_shipment",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "tms_delivery_sla",
+  "domain": "库存仓储与履约",
+  "comment": "配送时效承诺：按仓库与收货区域",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "发货仓ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "收货区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promised_hours",
+    "type": "i",
+    "comment": "承诺送达时长（小时）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "carrier_id",
+    "type": "b",
+    "comment": "承运商ID（空为全部）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "effective_from",
+    "type": "dt",
+    "comment": "生效日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "service_level",
+    "type": "s",
+    "comment": "服务等级：EXPRESS/STANDARD",
+    "kind": "extra",
+    "enum": [
+     "EXPRESS",
+     "STANDARD"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "tms_delivery_sla",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   },
+   {
+    "table": "tms_delivery_sla",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "oms_fulfillment_order",
+  "domain": "库存仓储与履约",
+  "comment": "履约单：订单分配到仓库后的履约任务，一个订单可拆多个",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "履约单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "warehouse_id",
+    "type": "b",
+    "comment": "分配仓库ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：ALLOCATED/PICKING/SHIPPED/DELIVERED/CANCELLED",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "allocated_at",
+    "type": "ts",
+    "comment": "分配时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promised_at",
+    "type": "ts",
+    "comment": "承诺送达时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "fulfillment_no",
+    "type": "s",
+    "comment": "履约单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "split_seq",
+    "type": "t",
+    "comment": "拆单序号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "delivery_type",
+    "type": "s",
+    "comment": "配送方式：EXPRESS/SAME_DAY/PICKUP",
+    "kind": "extra",
+    "enum": [
+     "EXPRESS",
+     "SAME_DAY",
+     "PICKUP"
+    ]
+   },
+   {
+    "name": "priority",
+    "type": "t",
+    "comment": "优先级1-3",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "shipped_at",
+    "type": "ts",
+    "comment": "发货时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "delivered_at",
+    "type": "ts",
+    "comment": "送达时间",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "cancel_reason",
+    "type": "s",
+    "comment": "取消原因：STOCKOUT/USER/RISK",
+    "kind": "extra",
+    "enum": [
+     "STOCKOUT",
+     "USER",
+     "RISK"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "oms_fulfillment_order",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   },
+   {
+    "table": "oms_fulfillment_order",
+    "column": "warehouse_id",
+    "ref_table": "wms_warehouse",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "fin_settlement",
+  "domain": "财务结算与维表",
+  "comment": "店铺结算单（按月）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "结算单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "month_key",
+    "type": "s",
+    "comment": "结算月份YYYY-MM",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "gross_amount",
+    "type": "d",
+    "comment": "应结算总额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "commission",
+    "type": "d",
+    "comment": "平台佣金",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "net_amount",
+    "type": "d",
+    "comment": "实际结算金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "settled_at",
+    "type": "ts",
+    "comment": "结算时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "settlement_no",
+    "type": "s",
+    "comment": "结算单号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "refund_deduct",
+    "type": "d",
+    "comment": "退款扣减",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "freight_income",
+    "type": "d",
+    "comment": "运费收入",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "adjust_amount",
+    "type": "d",
+    "comment": "调整金额",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：PENDING/CONFIRMED/PAID",
+    "kind": "extra",
+    "enum": [
+     "PENDING",
+     "CONFIRMED",
+     "PAID"
+    ]
+   },
+   {
+    "name": "invoice_no",
+    "type": "s",
+    "comment": "结算发票号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "fin_settlement",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "fin_settlement_item",
+  "domain": "财务结算与维表",
+  "comment": "结算明细：按订单",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "明细ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "settlement_id",
+    "type": "b",
+    "comment": "结算单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "order_id",
+    "type": "b",
+    "comment": "订单ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "amount",
+    "type": "d",
+    "comment": "结算金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "commission",
+    "type": "d",
+    "comment": "该单佣金",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "refund_amount",
+    "type": "d",
+    "comment": "该单退款",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "settle_type",
+    "type": "s",
+    "comment": "类型：SALE/REFUND/ADJUST",
+    "kind": "extra",
+    "enum": [
+     "SALE",
+     "REFUND",
+     "ADJUST"
+    ]
+   },
+   {
+    "name": "biz_date",
+    "type": "dt",
+    "comment": "业务日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "fin_settlement_item",
+    "column": "settlement_id",
+    "ref_table": "fin_settlement",
+    "ref_column": "id"
+   },
+   {
+    "table": "fin_settlement_item",
+    "column": "order_id",
+    "ref_table": "trd_order",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "fin_platform_fee",
+  "domain": "财务结算与维表",
+  "comment": "平台费率配置（按平台按类目）",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "platform_id",
+    "type": "b",
+    "comment": "平台ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "category_id",
+    "type": "b",
+    "comment": "一级类目ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "commission_rate",
+    "type": "r",
+    "comment": "佣金率",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "effective_from",
+    "type": "dt",
+    "comment": "生效日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "effective_to",
+    "type": "dt",
+    "comment": "失效日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "tech_fee_rate",
+    "type": "r",
+    "comment": "技术服务费率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "fin_platform_fee",
+    "column": "platform_id",
+    "ref_table": "dim_platform",
+    "ref_column": "id"
+   },
+   {
+    "table": "fin_platform_fee",
+    "column": "category_id",
+    "ref_table": "prd_category",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "fin_sales_target",
+  "domain": "财务结算与维表",
+  "comment": "月度销售目标（按店铺）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "month_key",
+    "type": "s",
+    "comment": "月份YYYY-MM",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "target_amount",
+    "type": "d",
+    "comment": "目标实付金额",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "target_orders",
+    "type": "i",
+    "comment": "目标订单数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "target_gmv",
+    "type": "d",
+    "comment": "目标GMV",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "owner",
+    "type": "s",
+    "comment": "负责人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "version",
+    "type": "s",
+    "comment": "目标版本：INITIAL/REVISED",
+    "kind": "extra",
+    "enum": [
+     "INITIAL",
+     "REVISED"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "is_deleted",
+    "type": "t",
+    "comment": "逻辑删除标记 1已删除0正常",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "fin_sales_target",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "fin_exchange_rate",
+  "domain": "财务结算与维表",
+  "comment": "汇率（按日）",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "记录ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "rate_date",
+    "type": "dt",
+    "comment": "日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "currency_code",
+    "type": "s",
+    "comment": "币种",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "rate_to_cny",
+    "type": "r",
+    "comment": "兑人民币汇率",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "source",
+    "type": "s",
+    "comment": "汇率来源：PBOC/BANK",
+    "kind": "extra",
+    "enum": [
+     "PBOC",
+     "BANK"
+    ]
+   },
+   {
+    "name": "rate_type",
+    "type": "s",
+    "comment": "汇率类型：MIDDLE/BUY/SELL",
+    "kind": "extra",
+    "enum": [
+     "MIDDLE",
+     "BUY",
+     "SELL"
+    ]
+   },
+   {
+    "name": "created_by",
+    "type": "s",
+    "comment": "创建人",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "fin_exchange_rate",
+    "column": "currency_code",
+    "ref_table": "dim_currency",
+    "ref_column": "code"
+   }
+  ]
+ },
+ {
+  "name": "dim_region",
+  "domain": "财务结算与维表",
+  "comment": "区域维表：大区-省",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "big_region",
+    "type": "s",
+    "comment": "大区：华东/华北/华南/华中/西南/西北/东北",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "province",
+    "type": "s",
+    "comment": "省份",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_code",
+    "type": "s",
+    "comment": "区域编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "city_tier",
+    "type": "s",
+    "comment": "城市等级：T1/T2/T3/T4",
+    "kind": "extra",
+    "enum": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ]
+   },
+   {
+    "name": "manager",
+    "type": "s",
+    "comment": "大区负责人",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "population_10k",
+    "type": "i",
+    "comment": "人口（万）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "dim_shop",
+  "domain": "财务结算与维表",
+  "comment": "店铺维表",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "店铺名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "platform_id",
+    "type": "b",
+    "comment": "所属平台ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "运营归属区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "opened_at",
+    "type": "dt",
+    "comment": "开店日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_code",
+    "type": "s",
+    "comment": "店铺编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "shop_type",
+    "type": "s",
+    "comment": "店铺类型：FLAGSHIP/SPECIALTY/DIRECT",
+    "kind": "extra",
+    "enum": [
+     "FLAGSHIP",
+     "SPECIALTY",
+     "DIRECT"
+    ]
+   },
+   {
+    "name": "manager",
+    "type": "s",
+    "comment": "店长",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：OPEN/CLOSED",
+    "kind": "extra",
+    "enum": [
+     "OPEN",
+     "CLOSED"
+    ]
+   },
+   {
+    "name": "rating",
+    "type": "r",
+    "comment": "店铺评分",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "closed_at",
+    "type": "dt",
+    "comment": "关店日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "dim_shop",
+    "column": "platform_id",
+    "ref_table": "dim_platform",
+    "ref_column": "id"
+   },
+   {
+    "table": "dim_shop",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "dim_store",
+  "domain": "财务结算与维表",
+  "comment": "线下门店维表",
+  "ablate": true,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "门店ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "门店名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "shop_id",
+    "type": "b",
+    "comment": "归属店铺ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "region_id",
+    "type": "b",
+    "comment": "所在区域ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "store_code",
+    "type": "s",
+    "comment": "门店编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "city",
+    "type": "s",
+    "comment": "所在城市",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "area_sqm",
+    "type": "i",
+    "comment": "面积（平方米）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "opened_at",
+    "type": "dt",
+    "comment": "开业日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "status",
+    "type": "s",
+    "comment": "状态：OPEN/CLOSED/RENOVATING",
+    "kind": "extra",
+    "enum": [
+     "OPEN",
+     "CLOSED",
+     "RENOVATING"
+    ]
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": [
+   {
+    "table": "dim_store",
+    "column": "shop_id",
+    "ref_table": "dim_shop",
+    "ref_column": "id"
+   },
+   {
+    "table": "dim_store",
+    "column": "region_id",
+    "ref_table": "dim_region",
+    "ref_column": "id"
+   }
+  ]
+ },
+ {
+  "name": "dim_date",
+  "domain": "财务结算与维表",
+  "comment": "日期维表",
+  "ablate": false,
+  "primary_key": "date_key",
+  "columns": [
+   {
+    "name": "date_key",
+    "type": "dt",
+    "comment": "日期（主键）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "year",
+    "type": "i",
+    "comment": "年",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "quarter",
+    "type": "t",
+    "comment": "季度",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "month",
+    "type": "t",
+    "comment": "月",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "week_of_year",
+    "type": "t",
+    "comment": "周",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_weekend",
+    "type": "t",
+    "comment": "是否周末",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "is_holiday",
+    "type": "t",
+    "comment": "是否法定节假日",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "promo_name",
+    "type": "s",
+    "comment": "当日所属大促名称，无则为空",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "day_of_week",
+    "type": "t",
+    "comment": "星期几1-7",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_workday",
+    "type": "t",
+    "comment": "是否工作日",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "fiscal_year",
+    "type": "i",
+    "comment": "财年",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "fiscal_quarter",
+    "type": "t",
+    "comment": "财季",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "year_month",
+    "type": "s",
+    "comment": "年月YYYY-MM",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "week_start",
+    "type": "dt",
+    "comment": "所在周周一日期",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "dim_currency",
+  "domain": "财务结算与维表",
+  "comment": "币种维表",
+  "ablate": true,
+  "primary_key": "code",
+  "columns": [
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "币种代码（主键），如CNY/USD/HKD",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "币种名称",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "symbol",
+    "type": "s",
+    "comment": "符号",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "precision_digits",
+    "type": "t",
+    "comment": "精度位数",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "is_active",
+    "type": "t",
+    "comment": "是否启用",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ },
+ {
+  "name": "dim_platform",
+  "domain": "财务结算与维表",
+  "comment": "销售平台维表",
+  "ablate": false,
+  "primary_key": "id",
+  "columns": [
+   {
+    "name": "id",
+    "type": "id",
+    "comment": "平台ID",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "name",
+    "type": "s",
+    "comment": "平台：天猫/京东/抖音/自营商城",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "code",
+    "type": "s",
+    "comment": "平台编码",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "commission_rate",
+    "type": "r",
+    "comment": "默认佣金率",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "settle_cycle",
+    "type": "s",
+    "comment": "结算周期：MONTHLY/BIWEEKLY",
+    "kind": "extra",
+    "enum": [
+     "MONTHLY",
+     "BIWEEKLY"
+    ]
+   },
+   {
+    "name": "is_active",
+    "type": "t",
+    "comment": "是否启用",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "created_time",
+    "type": "ts",
+    "comment": "记录创建时间",
+    "kind": "audit",
+    "enum": null
+   },
+   {
+    "name": "updated_time",
+    "type": "ts",
+    "comment": "记录更新时间",
+    "kind": "audit",
+    "enum": null
+   }
+  ],
+  "foreign_keys": []
+ }
+]

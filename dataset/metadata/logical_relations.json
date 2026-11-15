@@ -1,0 +1,758 @@
+[
+ {
+  "table": "trd_order",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order",
+  "column": "source_id",
+  "ref_table": "trd_order_source",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order",
+  "column": "currency_code",
+  "ref_table": "dim_currency",
+  "ref_column": "code"
+ },
+ {
+  "table": "trd_order_item",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_status_log",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_address",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_address",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_promotion",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_promotion",
+  "column": "coupon_id",
+  "ref_table": "mkt_coupon",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_promotion",
+  "column": "activity_id",
+  "ref_table": "mkt_activity",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_payment",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_payment_channel_fee",
+  "column": "payment_id",
+  "ref_table": "trd_payment",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_refund",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_refund",
+  "column": "aftersale_id",
+  "ref_table": "trd_aftersale",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_refund",
+  "column": "reason_code",
+  "ref_table": "trd_aftersale_reason",
+  "ref_column": "code"
+ },
+ {
+  "table": "trd_refund_item",
+  "column": "refund_id",
+  "ref_table": "trd_refund",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_refund_item",
+  "column": "order_item_id",
+  "ref_table": "trd_order_item",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_aftersale",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_aftersale",
+  "column": "reason_code",
+  "ref_table": "trd_aftersale_reason",
+  "ref_column": "code"
+ },
+ {
+  "table": "trd_cart",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_cart",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_invoice",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_review",
+  "column": "order_item_id",
+  "ref_table": "trd_order_item",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_review",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_split",
+  "column": "parent_order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_split",
+  "column": "child_order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_presale_order",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_daily_shop_sales",
+  "column": "stat_date",
+  "ref_table": "dim_date",
+  "ref_column": "date_key"
+ },
+ {
+  "table": "trd_daily_shop_sales",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_daily_sku_sales",
+  "column": "stat_date",
+  "ref_table": "dim_date",
+  "ref_column": "date_key"
+ },
+ {
+  "table": "trd_daily_sku_sales",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_order_cancel",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_complaint",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_return_logistics",
+  "column": "refund_id",
+  "ref_table": "trd_refund",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_return_logistics",
+  "column": "carrier_id",
+  "ref_table": "tms_carrier",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_compensation",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_compensation",
+  "column": "reason_code",
+  "ref_table": "trd_aftersale_reason",
+  "ref_column": "code"
+ },
+ {
+  "table": "trd_order_tag",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "trd_gift_card_usage",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_spu",
+  "column": "category_id",
+  "ref_table": "prd_category",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_spu",
+  "column": "brand_id",
+  "ref_table": "prd_brand",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_spu",
+  "column": "series_id",
+  "ref_table": "prd_series",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku",
+  "column": "spu_id",
+  "ref_table": "prd_spu",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_category",
+  "column": "parent_id",
+  "ref_table": "prd_category",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_price_history",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_attribute",
+  "column": "category_id",
+  "ref_table": "prd_category",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_attribute",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_attribute",
+  "column": "attribute_id",
+  "ref_table": "prd_attribute",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_label",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_label",
+  "column": "label_id",
+  "ref_table": "prd_label",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_bundle_item",
+  "column": "bundle_id",
+  "ref_table": "prd_bundle",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_bundle_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_listing_log",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_cost",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_series",
+  "column": "brand_id",
+  "ref_table": "prd_brand",
+  "ref_column": "id"
+ },
+ {
+  "table": "prd_sku_barcode",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member",
+  "column": "level_id",
+  "ref_table": "usr_member_level",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member",
+  "column": "register_channel_id",
+  "ref_table": "mkt_channel",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member_level_log",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member_level_log",
+  "column": "from_level_id",
+  "ref_table": "usr_member_level",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member_level_log",
+  "column": "to_level_id",
+  "ref_table": "usr_member_level",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_address",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_points_log",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "usr_member_tag",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_coupon_template",
+  "column": "activity_id",
+  "ref_table": "mkt_activity",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_coupon",
+  "column": "template_id",
+  "ref_table": "mkt_coupon_template",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_coupon",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_activity_sku",
+  "column": "activity_id",
+  "ref_table": "mkt_activity",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_activity_sku",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_ad_spend",
+  "column": "stat_date",
+  "ref_table": "dim_date",
+  "ref_column": "date_key"
+ },
+ {
+  "table": "mkt_ad_spend",
+  "column": "channel_id",
+  "ref_table": "mkt_channel",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_traffic_daily",
+  "column": "stat_date",
+  "ref_table": "dim_date",
+  "ref_column": "date_key"
+ },
+ {
+  "table": "mkt_traffic_daily",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_traffic_daily",
+  "column": "channel_id",
+  "ref_table": "mkt_channel",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_live_session",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_member_attribution",
+  "column": "member_id",
+  "ref_table": "usr_member",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_member_attribution",
+  "column": "first_order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "mkt_member_attribution",
+  "column": "channel_id",
+  "ref_table": "mkt_channel",
+  "ref_column": "id"
+ },
+ {
+  "table": "scm_purchase_order",
+  "column": "supplier_id",
+  "ref_table": "scm_supplier",
+  "ref_column": "id"
+ },
+ {
+  "table": "scm_purchase_order",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "scm_purchase_order_item",
+  "column": "po_id",
+  "ref_table": "scm_purchase_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "scm_purchase_order_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_warehouse",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inbound",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inbound_item",
+  "column": "inbound_id",
+  "ref_table": "wms_inbound",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inbound_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inventory_snapshot",
+  "column": "snapshot_date",
+  "ref_table": "dim_date",
+  "ref_column": "date_key"
+ },
+ {
+  "table": "wms_inventory_snapshot",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inventory_snapshot",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inventory",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_inventory",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_transfer",
+  "column": "from_warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_transfer",
+  "column": "to_warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_transfer_item",
+  "column": "transfer_id",
+  "ref_table": "wms_transfer",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_transfer_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_outbound",
+  "column": "fulfillment_id",
+  "ref_table": "oms_fulfillment_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_outbound",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_outbound_item",
+  "column": "outbound_id",
+  "ref_table": "wms_outbound",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_outbound_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stockout_record",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stockout_record",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stockout_record",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stocktake",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stocktake_item",
+  "column": "stocktake_id",
+  "ref_table": "wms_stocktake",
+  "ref_column": "id"
+ },
+ {
+  "table": "wms_stocktake_item",
+  "column": "sku_id",
+  "ref_table": "prd_sku",
+  "ref_column": "id"
+ },
+ {
+  "table": "tms_shipment",
+  "column": "fulfillment_id",
+  "ref_table": "oms_fulfillment_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "tms_shipment",
+  "column": "carrier_id",
+  "ref_table": "tms_carrier",
+  "ref_column": "id"
+ },
+ {
+  "table": "tms_shipment_track",
+  "column": "shipment_id",
+  "ref_table": "tms_shipment",
+  "ref_column": "id"
+ },
+ {
+  "table": "tms_delivery_sla",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "tms_delivery_sla",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ },
+ {
+  "table": "oms_fulfillment_order",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "oms_fulfillment_order",
+  "column": "warehouse_id",
+  "ref_table": "wms_warehouse",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_settlement",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_settlement_item",
+  "column": "settlement_id",
+  "ref_table": "fin_settlement",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_settlement_item",
+  "column": "order_id",
+  "ref_table": "trd_order",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_platform_fee",
+  "column": "platform_id",
+  "ref_table": "dim_platform",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_platform_fee",
+  "column": "category_id",
+  "ref_table": "prd_category",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_sales_target",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "fin_exchange_rate",
+  "column": "currency_code",
+  "ref_table": "dim_currency",
+  "ref_column": "code"
+ },
+ {
+  "table": "dim_shop",
+  "column": "platform_id",
+  "ref_table": "dim_platform",
+  "ref_column": "id"
+ },
+ {
+  "table": "dim_shop",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ },
+ {
+  "table": "dim_store",
+  "column": "shop_id",
+  "ref_table": "dim_shop",
+  "ref_column": "id"
+ },
+ {
+  "table": "dim_store",
+  "column": "region_id",
+  "ref_table": "dim_region",
+  "ref_column": "id"
+ }
+]
