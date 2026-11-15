@@ -1,0 +1,1016 @@
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 2.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 2.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 2.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 2.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 2.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 2.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 5.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 5.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"分析", "error": false, "complete": false, "_t": 5.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 5.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "5年4月至20", "error": false, "complete": false, "_t": 5.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "25年12月", "error": false, "complete": false, "_t": 5.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "每月实付金额趋势", "error": false, "complete": false, "_t": 5.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "，计算每月环比增长率，并", "error": false, "complete": false, "_t": 5.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "指出增长最快的月份\"}", "error": false, "complete": false, "_t": 5.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 5.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "分析2025年4月至2025年12月每月实付金额趋势，计算每月环比增长率，并指出增长最快的月份\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 7 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 实付金额, 说明: 用户实际支付的钱 = 商品总额 - 优惠总额 + 运费。；公式：SUM(trd_order.pay_amount)；过滤：trd_order.paid_at IS NO...\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 人均消费, 说明: 公式：实付金额 / 支付买家数；涉及：trd_order, 同义词: ARPU,人均实付\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: INSTALLMENT, 说明: 支付方式取值，对应 trd_order.pay_type = 'INSTALLMENT', 同义词: \n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 销售目标达成率, 说明: 公式：月实付金额 / fin_sales_target.target_amount；涉及：trd_order, fin_sales_target, 同义词: 目标...\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 2025双11, 说明: 营销活动取值，对应 mkt_activity.name = '2025双11', 同义词: \n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 销售额, 说明: 未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。；公式：默认等同实付金额 SUM(trd_order.pay_amount...\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 客单价, 说明: 按订单计算的平均实付金额。“人均消费”则是实付金额/支付买家数。；公式：实付金额 / 支付订单数；涉及：trd_order, 同义词: ATV,笔单价,平均订单金额\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 6.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 8.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 8.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 8.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "分析20", "error": false, "complete": false, "_t": 8.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25年4月到", "error": false, "complete": false, "_t": 8.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年1", "error": false, "complete": false, "_t": 8.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2月（即日期", "error": false, "complete": false, "_t": 8.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "范围 >= '20", "error": false, "complete": false, "_t": 9.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25-04-", "error": false, "complete": false, "_t": 9.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND <", "error": false, "complete": false, "_t": 9.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '2026", "error": false, "complete": false, "_t": 9.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01-", "error": false, "complete": false, "_t": 9.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01'）期间，", "error": false, "complete": false, "_t": 9.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "每月实付金额（SUM", "error": false, "complete": false, "_t": 9.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "(trd_order.pay_amount)，", "error": false, "complete": false, "_t": 9.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "要求 trd_order.p", "error": false, "complete": false, "_t": 9.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "aid_at IS NOT", "error": false, "complete": false, "_t": 10.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " NULL）的趋势，按", "error": false, "complete": false, "_t": 10.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "自然月分组聚合", "error": false, "complete": false, "_t": 10.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，计算各月环比", "error": false, "complete": false, "_t": 10.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "增长率（(当", "error": false, "complete": false, "_t": 10.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月实付金额 -", "error": false, "complete": false, "_t": 10.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " 上月实付", "error": false, "complete": false, "_t": 10.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "金额) / 上月实", "error": false, "complete": false, "_t": 10.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "付金额），并", "error": false, "complete": false, "_t": 10.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "识别环比增长率最高的", "error": false, "complete": false, "_t": 11.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月份\",\n  \"expanded", "error": false, "complete": false, "_t": 11.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_queries\": [\n    \"统计", "error": false, "complete": false, "_t": 11.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年4", "error": false, "complete": false, "_t": 11.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月至2025年", "error": false, "complete": false, "_t": 11.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "12月每月", "error": false, "complete": false, "_t": 11.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的实付金额，并", "error": false, "complete": false, "_t": 11.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "计算相邻两月之间的", "error": false, "complete": false, "_t": 11.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "环比增长百分比，找出", "error": false, "complete": false, "_t": 11.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "其中环比增幅最大的那", "error": false, "complete": false, "_t": 12.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "个月份\",\n    \"", "error": false, "complete": false, "_t": 12.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "请按月汇总", "error": false, "complete": false, "_t": 12.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年4", "error": false, "complete": false, "_t": 12.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月到2025", "error": false, "complete": false, "_t": 12.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年12月的实", "error": false, "complete": false, "_t": 12.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "付金额，基于", "error": false, "complete": false, "_t": 12.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "半开区间['", "error": false, "complete": false, "_t": 12.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025-0", "error": false, "complete": false, "_t": 12.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "4-01',", "error": false, "complete": false, "_t": 13.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '2026-", "error": false, "complete": false, "_t": 13.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01-01')", "error": false, "complete": false, "_t": 13.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，计算每月环比变化", "error": false, "complete": false, "_t": 13.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "率，并返回增长最快的月份", "error": false, "complete": false, "_t": 13.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "及对应增长率\",\n   ", "error": false, "complete": false, "_t": 13.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"在202", "error": false, "complete": false, "_t": 13.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5年4月1", "error": false, "complete": false, "_t": 13.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日至202", "error": false, "complete": false, "_t": 13.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5年12月3", "error": false, "complete": false, "_t": 14.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1日期间，逐", "error": false, "complete": false, "_t": 14.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月计算实付金额（", "error": false, "complete": false, "_t": 14.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "支付成功订单的", "error": false, "complete": false, "_t": 14.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "pay_amount总和），", "error": false, "complete": false, "_t": 14.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "求出各月环比", "error": false, "complete": false, "_t": 14.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "增长率，并指出增长率", "error": false, "complete": false, "_t": 14.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "峰值所在的月份\"\n", "error": false, "complete": false, "_t": 14.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  ]\n}", "error": false, "complete": false, "_t": 14.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 14.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 18.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: trd_aftersale_reason, scm_supplier, prd_sku_attribute, prd_attribute, mkt_member_attribution, dim_store, dim_shop, trd_daily_shop_sales, prd_brand, trd_order\n", "error": false, "complete": false, "_t": 18.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 18.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 18.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 18.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 18.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 20.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "trd_order", "error": false, "complete": false, "_t": 20.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\"]", "error": false, "complete": false, "_t": 20.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 20.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 20.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 20.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 20.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 22.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 22.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 22.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 23.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n【语", "error": false, "complete": false, "_t": 23.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "种类型】：《", "error": false, "complete": false, "_t": 23.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中文》  \n【需求", "error": false, "complete": false, "_t": 23.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：分析", "error": false, "complete": false, "_t": 23.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2025", "error": false, "complete": false, "_t": 23.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "年4月到20", "error": false, "complete": false, "_t": 23.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "25年12月", "error": false, "complete": false, "_t": 23.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（即日期范围 >=", "error": false, "complete": false, "_t": 23.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2025-", "error": false, "complete": false, "_t": 24.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "04-01'", "error": false, "complete": false, "_t": 24.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AND < '202", "error": false, "complete": false, "_t": 24.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-01-", "error": false, "complete": false, "_t": 24.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "01'）期间，", "error": false, "complete": false, "_t": 24.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "每月实付金额（", "error": false, "complete": false, "_t": 24.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "SUM(trd_order.pay_amount", "error": false, "complete": false, "_t": 24.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ")，要求 trd_order", "error": false, "complete": false, "_t": 24.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".paid_at IS NOT NULL", "error": false, "complete": false, "_t": 25.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）的趋势，按自然", "error": false, "complete": false, "_t": 25.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "月分组聚合，计算", "error": false, "complete": false, "_t": 25.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "各月环比增长率", "error": false, "complete": false, "_t": 25.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（(当月", "error": false, "complete": false, "_t": 25.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "实付金额 -", "error": false, "complete": false, "_t": 25.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 上月实付金额", "error": false, "complete": false, "_t": 25.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ") / 上月实", "error": false, "complete": false, "_t": 25.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "付金额），并识别", "error": false, "complete": false, "_t": 25.92}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "环比增长率最高的月份", "error": false, "complete": false, "_t": 25.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 25.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 29.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "  \"thought", "error": false, "complete": false, "_t": 29.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_process\": \"", "error": false, "complete": false, "_t": 29.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "用户要求", "error": false, "complete": false, "_t": 29.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "分析2025年", "error": false, "complete": false, "_t": 29.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "4月至202", "error": false, "complete": false, "_t": 29.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "5年12月期间", "error": false, "complete": false, "_t": 29.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "每月实付金额", "error": false, "complete": false, "_t": 30.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "趋势、环比增长率及", "error": false, "complete": false, "_t": 30.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "最高环比月份。我已", "error": false, "complete": false, "_t": 30.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "核查AVAILABLE DATA CONTEXT中的", "error": false, "complete": false, "_t": 30.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "trd_order表", "error": false, "complete": false, "_t": 30.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "，确认存在pay", "error": false, "complete": false, "_t": 30.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_amount（实付金额", "error": false, "complete": false, "_t": 30.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "）和paid_at（支付", "error": false, "complete": false, "_t": 30.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "时间）字段，且业务", "error": false, "complete": false, "_t": 31.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "术语表明确实", "error": false, "complete": false, "_t": 31.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "付金额需满足", "error": false, "complete": false, "_t": 31.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "paid_at IS NOT", "error": false, "complete": false, "_t": 31.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " NULL。时间范围已", "error": false, "complete": false, "_t": 31.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "由系统精确给出", "error": false, "complete": false, "_t": 31.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "为>= '20", "error": false, "complete": false, "_t": 31.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "25-04-", "error": false, "complete": false, "_t": 31.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 31.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 31.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "1-01'，", "error": false, "complete": false, "_t": 32.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "符合半开区间要求", "error": false, "complete": false, "_t": 32.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "。由于环比计算", "error": false, "complete": false, "_t": 32.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "涉及跨月比较", "error": false, "complete": false, "_t": 32.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "和除法运算", "error": false, "complete": false, "_t": 32.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "，SQL难以直接", "error": false, "complete": false, "_t": 32.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "生成带环比率", "error": false, "complete": false, "_t": 32.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "的完整结果（", "error": false, "complete": false, "_t": 32.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "尤其需处理上", "error": false, "complete": false, "_t": 32.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "月值缺失及", "error": false, "complete": false, "_t": 32.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "除零），因此", "error": false, "complete": false, "_t": 33.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "必须分两步：", "error": false, "complete": false, "_t": 33.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "Step1用SQL按", "error": false, "complete": false, "_t": 33.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "自然月提取各月", "error": false, "complete": false, "_t": 33.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "实付总额；", "error": false, "complete": false, "_t": 33.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "Step2用Python读", "error": false, "complete": false, "_t": 33.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "取该结果，计算", "error": false, "complete": false, "_t": 33.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "环比增长率并识别", "error": false, "complete": false, "_t": 33.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "最大值月份。\",\n ", "error": false, "complete": false, "_t": 33.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"execution_plan\": [\n   ", "error": false, "complete": false, "_t": 33.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " {\n      \"step\": ", "error": false, "complete": false, "_t": 34.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "1,\n      \"tool_to", "error": false, "complete": false, "_t": 34.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_use\": \"SQL_GENERATE", "error": false, "complete": false, "_t": 34.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_NODE\",\n      \"tool_parameters", "error": false, "complete": false, "_t": 34.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": {\n        \"instruction\":", "error": false, "complete": false, "_t": 34.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"从trd_order表", "error": false, "complete": false, "_t": 34.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "中，筛选支付", "error": false, "complete": false, "_t": 34.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "时间paid_at不", "error": false, "complete": false, "_t": 34.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "为空的订单，", "error": false, "complete": false, "_t": 35.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "限定日期范围为", "error": false, "complete": false, "_t": 35.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": ">= '2025", "error": false, "complete": false, "_t": 35.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "-04-01", "error": false, "complete": false, "_t": 35.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "' AND < '20", "error": false, "complete": false, "_t": 35.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "26-01-", "error": false, "complete": false, "_t": 35.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "01'，按", "error": false, "complete": false, "_t": 35.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "自然月（使用", "error": false, "complete": false, "_t": 35.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "DATE_FORMAT(paid", "error": false, "complete": false, "_t": 35.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_at, '%Y-%m", "error": false, "complete": false, "_t": 36.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "')）分组，", "error": false, "complete": false, "_t": 36.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "聚合计算每月实付金额", "error": false, "complete": false, "_t": 36.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "总和SUM(p", "error": false, "complete": false, "_t": 36.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "ay_amount)。\"\n     ", "error": false, "complete": false, "_t": 36.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " }\n    },\n    {\n     ", "error": false, "complete": false, "_t": 36.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"step\": 2,\n", "error": false, "complete": false, "_t": 36.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_to_use\":", "error": false, "complete": false, "_t": 36.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"PYTHON_GENERATE_NODE\",\n", "error": false, "complete": false, "_t": 37.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_parameters\": {\n", "error": false, "complete": false, "_t": 37.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "        \"instruction\": \"读", "error": false, "complete": false, "_t": 37.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "取上一步的", "error": false, "complete": false, "_t": 37.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "月度实付金额数据", "error": false, "complete": false, "_t": 37.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "，按月份升", "error": false, "complete": false, "_t": 37.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "序排序，计算各月", "error": false, "complete": false, "_t": 37.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "环比增长率（公式", "error": false, "complete": false, "_t": 37.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "：(当月金额", "error": false, "complete": false, "_t": 37.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " - 上月金额", "error": false, "complete": false, "_t": 38.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": ") / 上月", "error": false, "complete": false, "_t": 38.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "金额），将结果添加", "error": false, "complete": false, "_t": 38.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "为新列'month", "error": false, "complete": false, "_t": 38.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "_on_month_growth'；识别", "error": false, "complete": false, "_t": 38.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "该列中最大", "error": false, "complete": false, "_t": 38.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "值对应的月份；", "error": false, "complete": false, "_t": 38.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "输出包含月份、实", "error": false, "complete": false, "_t": 38.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "付金额、环比", "error": false, "complete": false, "_t": 38.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "增长率的完整表格，并标注", "error": false, "complete": false, "_t": 39.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "最高环比增长率的", "error": false, "complete": false, "_t": 39.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "月份。\"\n      }\n   ", "error": false, "complete": false, "_t": 39.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " },\n    {\n     ", "error": false, "complete": false, "_t": 39.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"step\": 3,\n", "error": false, "complete": false, "_t": 39.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_to_use\":", "error": false, "complete": false, "_t": 39.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"REPORT_GENERATOR_NODE\",\n", "error": false, "complete": false, "_t": 39.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_parameters\": {\n", "error": false, "complete": false, "_t": 39.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "        \"summary_and_recommendations", "error": false, "complete": false, "_t": 39.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": \"总结202", "error": false, "complete": false, "_t": 40.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "5年4月至1", "error": false, "complete": false, "_t": 40.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "2月实付金额月", "error": false, "complete": false, "_t": 40.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "度趋势，指出整体", "error": false, "complete": false, "_t": 40.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "增长/下降态势", "error": false, "complete": false, "_t": 40.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "；明确列出各", "error": false, "complete": false, "_t": 40.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "月环比增长率，并强调", "error": false, "complete": false, "_t": 40.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "环比增长率最高的具体", "error": false, "complete": false, "_t": 40.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "月份及其数值；结合业务", "error": false, "complete": false, "_t": 40.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "背景（如是否", "error": false, "complete": false, "_t": 41.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "关联大促节点", "error": false, "complete": false, "_t": 41.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "），分析该高", "error": false, "complete": false, "_t": 41.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "增长月份的可能驱动", "error": false, "complete": false, "_t": 41.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "因素，并提出针对性", "error": false, "complete": false, "_t": 41.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "建议（例如：复", "error": false, "complete": false, "_t": 41.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "刻该月成功", "error": false, "complete": false, "_t": 41.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "策略至其他月份", "error": false, "complete": false, "_t": 41.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "）。\"\n      }\n", "error": false, "complete": false, "_t": 41.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PlannerNode", "textType": "JSON", "text": "    }\n  ]\n}", "error": false, "complete": false, "_t": 41.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 41.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 43.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " DATE", "error": false, "complete": false, "_t": 43.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_FORMAT(`", "error": false, "complete": false, "_t": 43.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "paid", "error": false, "complete": false, "_t": 43.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at`, '%Y-%m", "error": false, "complete": false, "_t": 43.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "') AS `month`, SUM", "error": false, "complete": false, "_t": 43.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(`pay_amount`) AS", "error": false, "complete": false, "_t": 43.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `monthly_pay_amount` FROM", "error": false, "complete": false, "_t": 43.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `trd_order`", "error": false, "complete": false, "_t": 43.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " WHERE `paid_at`", "error": false, "complete": false, "_t": 43.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " IS NOT NULL AND `paid", "error": false, "complete": false, "_t": 44.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` >= '20", "error": false, "complete": false, "_t": 44.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "25-04-", "error": false, "complete": false, "_t": 44.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND `paid", "error": false, "complete": false, "_t": 44.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` < '20", "error": false, "complete": false, "_t": 44.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-01-", "error": false, "complete": false, "_t": 44.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' GROUP BY DATE", "error": false, "complete": false, "_t": 44.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_FORMAT(`paid_at`, '%", "error": false, "complete": false, "_t": 45.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "Y-%m');", "error": false, "complete": false, "_t": 45.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 45.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 45.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 47.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 47.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 47.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 47.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT DATE_FORMAT(`paid_at`, '%Y-%m') AS `month`, SUM(`pay_amount`) AS `monthly_pay_amount` FROM `trd_order` WHERE `paid_at` IS NOT NULL AND `paid_at` >= '2025-04-01' AND `paid_at` < '2026-01-01' GROUP BY DATE_FORMAT(`paid_at`, '%Y-%m');\n", "error": false, "complete": false, "_t": 47.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 50.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 50.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"month\",\"monthly_pay_amount\"],\"data\":[{\"month\":\"2025-04\",\"monthly_pay_amount\":\"1119177.85\"},{\"month\":\"2025-05\",\"monthly_pay_amount\":\"1265333.63\"},{\"month\":\"2025-06\",\"monthly_pay_amount\":\"1884567.24\"},{\"month\":\"2025-07\",\"monthly_pay_amount\":\"1231108.56\"},{\"month\":\"2025-08\",\"monthly_pay_amount\":\"1233513.96\"},{\"month\":\"2025-09\",\"monthly_pay_amount\":\"1126199.28\"},{\"month\":\"2025-10\",\"monthly_pay_amount\":\"1389512.18\"},{\"month\":\"2025-11\",\"monthly_pay_amount\":\"2097267.24\"},{\"month\":\"2025-12\",\"monthly_pay_amount\":\"1190545.09\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"line\",\"title\":\"2025年4-12月实付金额趋势\",\"x\":\"month\",\"y\":[\"monthly_pay_amount\"]}}", "error": false, "complete": false, "_t": 50.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "```", "error": false, "complete": false, "_t": 52.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "python", "error": false, "complete": false, "_t": 52.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport sys", "error": false, "complete": false, "_t": 52.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport json", "error": false, "complete": false, "_t": 52.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport traceback\nimport pandas", "error": false, "complete": false, "_t": 52.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " as pd\nimport numpy as", "error": false, "complete": false, "_t": 52.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " np\n\ntry:\n", "error": false, "complete": false, "_t": 52.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 从stdin", "error": false, "complete": false, "_t": 53.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "读取输入数据", "error": false, "complete": false, "_t": 53.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    input_data = json", "error": false, "complete": false, "_t": 53.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".load(sys.stdin)\n\n   ", "error": false, "complete": false, "_t": 53.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " # 转换", "error": false, "complete": false, "_t": 53.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "为DataFrame\n    df", "error": false, "complete": false, "_t": 53.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = pd.DataFrame(input_data)\n\n", "error": false, "complete": false, "_t": 53.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 自动类型", "error": false, "complete": false, "_t": 53.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "推断：将", "error": false, "complete": false, "_t": 53.88}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "字符串形式的数值转换", "error": false, "complete": false, "_t": 53.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "为实际数值类型", "error": false, "complete": false, "_t": 54.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    for col in df", "error": false, "complete": false, "_t": 54.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".columns:\n        df[col]", "error": false, "complete": false, "_t": 54.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = pd.to_numeric(df[col", "error": false, "complete": false, "_t": 54.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "], errors='ignore')\n\n", "error": false, "complete": false, "_t": 54.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 确保", "error": false, "complete": false, "_t": 54.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "有必要的列\n    if", "error": false, "complete": false, "_t": 54.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " df.empty or '", "error": false, "complete": false, "_t": 54.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "month' not in df.columns", "error": false, "complete": false, "_t": 55.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " or 'monthly_pay_amount'", "error": false, "complete": false, "_t": 55.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " not in df.columns:\n       ", "error": false, "complete": false, "_t": 55.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result = {\n           ", "error": false, "complete": false, "_t": 55.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " \"error\": \"输入", "error": false, "complete": false, "_t": 55.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "数据缺少必要字段", "error": false, "complete": false, "_t": 55.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 'month' 或", "error": false, "complete": false, "_t": 55.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 'monthly_pay_amount'\"\n", "error": false, "complete": false, "_t": 55.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        }\n        print(json", "error": false, "complete": false, "_t": 55.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".dumps(result, ensure_ascii", "error": false, "complete": false, "_t": 56.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "=False))\n        sys", "error": false, "complete": false, "_t": 56.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".exit(0)\n\n    #", "error": false, "complete": false, "_t": 56.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 将 month", "error": false, "complete": false, "_t": 56.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 列转为 datetime", "error": false, "complete": false, "_t": 56.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "（取每月1", "error": false, "complete": false, "_t": 56.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "日），便于排序和", "error": false, "complete": false, "_t": 56.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "时间连续性校", "error": false, "complete": false, "_t": 56.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "验\n    df['month", "error": false, "complete": false, "_t": 56.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_date'] = pd", "error": false, "complete": false, "_t": 56.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".to_datetime(df['month'],", "error": false, "complete": false, "_t": 57.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " format='%Y-%m',", "error": false, "complete": false, "_t": 57.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " errors='coerce')\n    \n", "error": false, "complete": false, "_t": 57.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 过滤出", "error": false, "complete": false, "_t": 57.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "2025", "error": false, "complete": false, "_t": 57.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "-04", "error": false, "complete": false, "_t": 57.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 至 2025", "error": false, "complete": false, "_t": 57.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "-12 的", "error": false, "complete": false, "_t": 57.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "数据（即 month", "error": false, "complete": false, "_t": 57.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_date 在 [202", "error": false, "complete": false, "_t": 58.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "5-04-", "error": false, "complete": false, "_t": 58.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "01, 20", "error": false, "complete": false, "_t": 58.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "25-12-", "error": false, "complete": false, "_t": 58.44}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "01]）\n", "error": false, "complete": false, "_t": 58.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    start_bound = pd.Timestamp", "error": false, "complete": false, "_t": 58.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "('2025-", "error": false, "complete": false, "_t": 58.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "04-01')\n", "error": false, "complete": false, "_t": 58.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    end_bound = pd", "error": false, "complete": false, "_t": 59.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".Timestamp('2026", "error": false, "complete": false, "_t": 59.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "-01-01", "error": false, "complete": false, "_t": 59.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "')  #", "error": false, "complete": false, "_t": 59.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 排除2026", "error": false, "complete": false, "_t": 59.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "-01及", "error": false, "complete": false, "_t": 59.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "以后\n    df = df", "error": false, "complete": false, "_t": 59.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[(df['month_date']", "error": false, "complete": false, "_t": 59.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " >= start_bound) & (", "error": false, "complete": false, "_t": 60.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "df['month_date'] <", "error": false, "complete": false, "_t": 60.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " end_bound)].copy()\n\n   ", "error": false, "complete": false, "_t": 60.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " # 按 month", "error": false, "complete": false, "_t": 60.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_date 升序排序", "error": false, "complete": false, "_t": 60.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "，确保时序正确", "error": false, "complete": false, "_t": 60.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    df = df.sort", "error": false, "complete": false, "_t": 60.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_values('month_date').", "error": false, "complete": false, "_t": 60.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "reset_index(drop=True)\n\n", "error": false, "complete": false, "_t": 60.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 若无", "error": false, "complete": false, "_t": 61.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "数据，返回空结果\n", "error": false, "complete": false, "_t": 61.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    if df.empty:\n       ", "error": false, "complete": false, "_t": 61.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result = {\n            \"t", "error": false, "complete": false, "_t": 61.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "rend\": [],\n            \"highest", "error": false, "complete": false, "_t": 61.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_growth_month\": None", "error": false, "complete": false, "_t": 61.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ",\n            \"highest", "error": false, "complete": false, "_t": 61.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_growth_rate\": None", "error": false, "complete": false, "_t": 61.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n        }\n        print(json", "error": false, "complete": false, "_t": 62.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".dumps(result, ensure_ascii=False", "error": false, "complete": false, "_t": 62.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "))\n        sys.exit(0", "error": false, "complete": false, "_t": 62.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ")\n\n    # 计算", "error": false, "complete": false, "_t": 62.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "环比增长率（月", "error": false, "complete": false, "_t": 62.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "度）\n    df", "error": false, "complete": false, "_t": 62.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "['prev_monthly", "error": false, "complete": false, "_t": 62.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_pay_amount'] = df['", "error": false, "complete": false, "_t": 62.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "monthly_pay_amount'].shift(", "error": false, "complete": false, "_t": 62.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "1)\n    df['month", "error": false, "complete": false, "_t": 63.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_on_month_growth'] = np", "error": false, "complete": false, "_t": 63.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".where(\n        df['prev", "error": false, "complete": false, "_t": 63.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_monthly_pay_amount'] !=", "error": false, "complete": false, "_t": 63.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 0,\n        (df", "error": false, "complete": false, "_t": 63.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "['monthly_pay_amount'] -", "error": false, "complete": false, "_t": 63.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " df['prev_monthly_pay", "error": false, "complete": false, "_t": 63.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_amount']) / df['prev", "error": false, "complete": false, "_t": 63.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_monthly_pay_amount'],\n       ", "error": false, "complete": false, "_t": 64.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " np.nan\n    )\n\n   ", "error": false, "complete": false, "_t": 64.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " # 保留原始", "error": false, "complete": false, "_t": 64.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " month 字符串", "error": false, "complete": false, "_t": 64.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "（如 '202", "error": false, "complete": false, "_t": 64.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "5-04'）", "error": false, "complete": false, "_t": 64.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "用于输出\n    df", "error": false, "complete": false, "_t": 64.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "['month_str'] = df", "error": false, "complete": false, "_t": 64.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "['month_date'].", "error": false, "complete": false, "_t": 65.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "dt.strftime('%Y-%", "error": false, "complete": false, "_t": 65.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "m')\n\n    #", "error": false, "complete": false, "_t": 65.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 构建趋势列表", "error": false, "complete": false, "_t": 65.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "（含 month, monthly", "error": false, "complete": false, "_t": 65.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_pay_amount, month", "error": false, "complete": false, "_t": 65.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_on_month_growth）\n    trend", "error": false, "complete": false, "_t": 65.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_records = []\n    for _,", "error": false, "complete": false, "_t": 65.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " row in df.iterrows():\n", "error": false, "complete": false, "_t": 65.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        record = {\n           ", "error": false, "complete": false, "_t": 66.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " \"month\": row['month", "error": false, "complete": false, "_t": 66.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_str'],\n            \"monthly", "error": false, "complete": false, "_t": 66.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_pay_amount\": float(row['", "error": false, "complete": false, "_t": 66.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "monthly_pay_amount']) if pd", "error": false, "complete": false, "_t": 66.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".notna(row['monthly_pay", "error": false, "complete": false, "_t": 66.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_amount']) else None,\n           ", "error": false, "complete": false, "_t": 66.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " \"month_on_month_growth", "error": false, "complete": false, "_t": 66.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\": float(row['month_on", "error": false, "complete": false, "_t": 67.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_month_growth']) if pd.not", "error": false, "complete": false, "_t": 67.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "na(row['month_on_month", "error": false, "complete": false, "_t": 67.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_growth']) else None\n       ", "error": false, "complete": false, "_t": 67.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " }\n        trend_records.append(record", "error": false, "complete": false, "_t": 67.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ")\n\n    # 找出", "error": false, "complete": false, "_t": 67.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "最高环比增长率（", "error": false, "complete": false, "_t": 67.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "忽略 NaN 和首", "error": false, "complete": false, "_t": 67.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "月）\n    growth", "error": false, "complete": false, "_t": 67.92}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_series = df['", "error": false, "complete": false, "_t": 68.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "month_on_month_growth']\n", "error": false, "complete": false, "_t": 68.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    if growth_series.drop", "error": false, "complete": false, "_t": 68.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "na().empty:\n        highest", "error": false, "complete": false, "_t": 68.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_idx = None\n        highest", "error": false, "complete": false, "_t": 68.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_month = None\n", "error": false, "complete": false, "_t": 68.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        highest_rate = None\n", "error": false, "complete": false, "_t": 68.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    else:\n        highest", "error": false, "complete": false, "_t": 68.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_idx = growth_series.idx", "error": false, "complete": false, "_t": 68.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "max()\n        highest_month =", "error": false, "complete": false, "_t": 69.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " df.loc[highest_idx,", "error": false, "complete": false, "_t": 69.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 'month_str']\n        highest", "error": false, "complete": false, "_t": 69.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_rate = float(g", "error": false, "complete": false, "_t": 69.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "rowth_series.loc[highest_idx", "error": false, "complete": false, "_t": 69.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "])\n\n    result = {\n       ", "error": false, "complete": false, "_t": 69.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " \"trend\": trend_records", "error": false, "complete": false, "_t": 69.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ",\n        \"highest_growth_month", "error": false, "complete": false, "_t": 70.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\": highest_month,\n        \"", "error": false, "complete": false, "_t": 70.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "highest_growth_rate\": highest_rate", "error": false, "complete": false, "_t": 70.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    }\n\n    print(json", "error": false, "complete": false, "_t": 70.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".dumps(result, ensure_ascii", "error": false, "complete": false, "_t": 70.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "=False))\n\nexcept Exception:\n   ", "error": false, "complete": false, "_t": 70.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " traceback.print_exc(file", "error": false, "complete": false, "_t": 70.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "=sys.stderr)\n    sys.exit", "error": false, "complete": false, "_t": 70.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(1)\n```", "error": false, "complete": false, "_t": 70.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "开始执行Python代码...\n", "error": false, "complete": false, "_t": 71.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "标准输出：\n", "error": false, "complete": false, "_t": 71.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonExecuteNode", "textType": "JSON", "text": "{\"trend\":[{\"month\":\"2025-04\",\"monthly_pay_amount\":1119177.85,\"month_on_month_growth\":null},{\"month\":\"2025-05\",\"monthly_pay_amount\":1265333.63,\"month_on_month_growth\":0.13059209490252133},{\"month\":\"2025-06\",\"monthly_pay_amount\":1884567.24,\"month_on_month_growth\":0.48938366555546314},{\"month\":\"2025-07\",\"monthly_pay_amount\":1231108.56,\"month_on_month_growth\":-0.3467420350573429},{\"month\":\"2025-08\",\"monthly_pay_amount\":1233513.96,\"month_on_month_growth\":0.0019538488141126295},{\"month\":\"2025-09\",\"monthly_pay_amount\":1126199.28,\"month_on_month_growth\":-0.08699916132282762},{\"month\":\"2025-10\",\"monthly_pay_amount\":1389512.18,\"month_on_month_growth\":0.23380666696927732},{\"month\":\"2025-11\",\"monthly_pay_amount\":2097267.24,\"month_on_month_growth\":0.5093550601334061},{\"month\":\"2025-12\",\"monthly_pay_amount\":1190545.09,\"month_on_month_growth\":-0.432335056165756}],\"highest_growth_month\":\"2025-11\",\"highest_growth_rate\":0.5093550601334061}\n", "error": false, "complete": false, "_t": 71.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "Python代码执行成功！\n", "error": false, "complete": false, "_t": 71.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "正在分析代码运行结果...\n\n", "error": false, "complete": false, "_t": 71.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "2", "error": false, "complete": false, "_t": 72.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "025", "error": false, "complete": false, "_t": 72.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "年4月至", "error": false, "complete": false, "_t": 72.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "202", "error": false, "complete": false, "_t": 72.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "5年12月期间", "error": false, "complete": false, "_t": 73.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "，每月实付金额", "error": false, "complete": false, "_t": 73.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "呈现波动上升趋势。其中", "error": false, "complete": false, "_t": 73.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "，2025", "error": false, "complete": false, "_t": 73.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "年4月实付金额", "error": false, "complete": false, "_t": 73.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "为111.", "error": false, "complete": false, "_t": 73.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "92万元，随后", "error": false, "complete": false, "_t": 73.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "逐月变化：", "error": false, "complete": false, "_t": 73.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "5月增长13", "error": false, "complete": false, "_t": 74.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": ".06%，", "error": false, "complete": false, "_t": 74.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "6月大幅增长4", "error": false, "complete": false, "_t": 74.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "8.94", "error": false, "complete": false, "_t": 74.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "%至188.", "error": false, "complete": false, "_t": 74.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "46万元，7", "error": false, "complete": false, "_t": 74.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "月回落34.6", "error": false, "complete": false, "_t": 74.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "7%，8月微", "error": false, "complete": false, "_t": 74.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "增0.20", "error": false, "complete": false, "_t": 74.88}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "%，9月下降", "error": false, "complete": false, "_t": 74.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "8.70%，", "error": false, "complete": false, "_t": 75.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "10月回升", "error": false, "complete": false, "_t": 75.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "23.3", "error": false, "complete": false, "_t": 75.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "8%，11月实现", "error": false, "complete": false, "_t": 75.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "最高环比增长5", "error": false, "complete": false, "_t": 75.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "0.94", "error": false, "complete": false, "_t": 75.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "%，达209.", "error": false, "complete": false, "_t": 75.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "73万元，1", "error": false, "complete": false, "_t": 75.8}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "2月则大幅回落", "error": false, "complete": false, "_t": 75.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "43.2", "error": false, "complete": false, "_t": 76.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "3%至11", "error": false, "complete": false, "_t": 76.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "9.05万元。", "error": false, "complete": false, "_t": 76.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "环比增长率最高的月份是2", "error": false, "complete": false, "_t": 76.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "025年11", "error": false, "complete": false, "_t": 76.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "月，增长率为50", "error": false, "complete": false, "_t": 76.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": ".94%。", "error": false, "complete": false, "_t": 76.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "\n结果分析完成。\n", "error": false, "complete": false, "_t": 76.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "开始生成报告...\n", "error": false, "complete": false, "_t": 76.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "#", "error": false, "complete": false, "_t": 78.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2", "error": false, "complete": false, "_t": 78.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025", "error": false, "complete": false, "_t": 78.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年4–", "error": false, "complete": false, "_t": 78.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12月实付金额", "error": false, "complete": false, "_t": 78.4}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月度趋势与", "error": false, "complete": false, "_t": 78.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "环比增长分析报告\n\n##", "error": false, "complete": false, "_t": 78.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1. 执行", "error": false, "complete": false, "_t": 78.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "摘要\n\n- **整体", "error": false, "complete": false, "_t": 78.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "趋势**：202", "error": false, "complete": false, "_t": 78.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5年4月至1", "error": false, "complete": false, "_t": 79.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2月实付金额呈", "error": false, "complete": false, "_t": 79.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "“波动上升后", "error": false, "complete": false, "_t": 79.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "大幅回落”态势，累计", "error": false, "complete": false, "_t": 79.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "总额约1,", "error": false, "complete": false, "_t": 79.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "467.3", "error": false, "complete": false, "_t": 79.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "万元，末期", "error": false, "complete": false, "_t": 79.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（12月）", "error": false, "complete": false, "_t": 79.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "金额回落至11", "error": false, "complete": false, "_t": 79.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9.05万元，", "error": false, "complete": false, "_t": 80.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低于4月起点", "error": false, "complete": false, "_t": 80.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（111.9", "error": false, "complete": false, "_t": 80.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2万元），但中间", "error": false, "complete": false, "_t": 80.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "出现显著峰值。\n", "error": false, "complete": false, "_t": 80.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- **关键指标", "error": false, "complete": false, "_t": 80.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**：\n  - 最", "error": false, "complete": false, "_t": 80.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "高单月实", "error": false, "complete": false, "_t": 80.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付金额：**20", "error": false, "complete": false, "_t": 80.88}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25年1", "error": false, "complete": false, "_t": 81.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1月，209", "error": false, "complete": false, "_t": 81.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".73万元**\n", "error": false, "complete": false, "_t": 81.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  - **最高环比增长率", "error": false, "complete": false, "_t": 81.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：+50.", "error": false, "complete": false, "_t": 81.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "94%（20", "error": false, "complete": false, "_t": 81.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25年11月", "error": false, "complete": false, "_t": 81.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）** —— ", "error": false, "complete": false, "_t": 81.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "为全周期唯一", "error": false, "complete": false, "_t": 81.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "超50%", "error": false, "complete": false, "_t": 82.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的月度增长\n ", "error": false, "complete": false, "_t": 82.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " - 最大环比", "error": false, "complete": false, "_t": 82.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "跌幅：-4", "error": false, "complete": false, "_t": 82.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3.23%（", "error": false, "complete": false, "_t": 82.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025年1", "error": false, "complete": false, "_t": 82.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2月）\n- **核心", "error": false, "complete": false, "_t": 82.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结论**：1", "error": false, "complete": false, "_t": 82.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1月为绝对", "error": false, "complete": false, "_t": 82.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "增长引擎，其", "error": false, "complete": false, "_t": 83.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "驱动因素值得深度", "error": false, "complete": false, "_t": 83.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "归因；1", "error": false, "complete": false, "_t": 83.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2月断崖式下滑", "error": false, "complete": false, "_t": 83.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "需紧急排查异常", "error": false, "complete": false, "_t": 83.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "原因（如支付链", "error": false, "complete": false, "_t": 83.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "路故障、大", "error": false, "complete": false, "_t": 83.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "促结束后的自然", "error": false, "complete": false, "_t": 83.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "回落或数据口径", "error": false, "complete": false, "_t": 83.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "偏差）。\n\n---\n\n", "error": false, "complete": false, "_t": 83.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "## 2. 分", "error": false, "complete": false, "_t": 83.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "析背景与用户", "error": false, "complete": false, "_t": 84.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "诉求\n\n用户需", "error": false, "complete": false, "_t": 84.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "聚焦**202", "error": false, "complete": false, "_t": 84.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5年4月1", "error": false, "complete": false, "_t": 84.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "日–2025", "error": false, "complete": false, "_t": 84.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年12月31", "error": false, "complete": false, "_t": 84.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "日**（SQL", "error": false, "complete": false, "_t": 84.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "时间范围：`", "error": false, "complete": false, "_t": 84.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ">= '202", "error": false, "complete": false, "_t": 84.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-04-", "error": false, "complete": false, "_t": 85.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01' AND <", "error": false, "complete": false, "_t": 85.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " '2026", "error": false, "complete": false, "_t": 85.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-01-", "error": false, "complete": false, "_t": 85.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01'`）", "error": false, "complete": false, "_t": 85.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "这一完整自然月", "error": false, "complete": false, "_t": 85.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "序列，完成三项", "error": false, "complete": false, "_t": 85.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "刚性目标：\n\n", "error": false, "complete": false, "_t": 85.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1. ✅", "error": false, "complete": false, "_t": 85.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 按自然月聚合", "error": false, "complete": false, "_t": 85.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `SUM(pay_amount)`", "error": false, "complete": false, "_t": 86.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，仅保留 `paid", "error": false, "complete": false, "_t": 86.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_at IS NOT NULL`", "error": false, "complete": false, "_t": 86.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 的有效支付订单；\n2", "error": false, "complete": false, "_t": 86.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". ✅", "error": false, "complete": false, "_t": 86.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 计算逐月环比", "error": false, "complete": false, "_t": 86.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "增长率（MoM", "error": false, "complete": false, "_t": 86.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "），公式：`(", "error": false, "complete": false, "_t": 86.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "当月金额 −", "error": false, "complete": false, "_t": 86.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 上月金额)", "error": false, "complete": false, "_t": 86.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " / 上月金额`；\n", "error": false, "complete": false, "_t": 87.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3. ✅ 明", "error": false, "complete": false, "_t": 87.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "确识别并突出", "error": false, "complete": false, "_t": 87.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "显示**环比增长率", "error": false, "complete": false, "_t": 87.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最高的具体月份及", "error": false, "complete": false, "_t": 87.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数值**。\n\n本", "error": false, "complete": false, "_t": 87.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分析严格遵循半", "error": false, "complete": false, "_t": 87.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "开区间语义与", "error": false, "complete": false, "_t": 87.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "业务定义（实", "error": false, "complete": false, "_t": 87.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付=已成功", "error": false, "complete": false, "_t": 87.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "支付），确保结果", "error": false, "complete": false, "_t": 88.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "可审计、可复", "error": false, "complete": false, "_t": 88.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "现。\n\n---\n\n## 3", "error": false, "complete": false, "_t": 88.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ". 数据分析过程", "error": false, "complete": false, "_t": 88.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n### 3.1", "error": false, "complete": false, "_t": 88.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 步骤1", "error": false, "complete": false, "_t": 88.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：SQL聚合获取", "error": false, "complete": false, "_t": 88.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "原始月度实", "error": false, "complete": false, "_t": 88.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付金额\n\n执行", "error": false, "complete": false, "_t": 88.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "SQL（逻辑等", "error": false, "complete": false, "_t": 88.93}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "价）：\n```", "error": false, "complete": false, "_t": 89.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "sql\nSELECT \n", "error": false, "complete": false, "_t": 89.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  DATE_FORMAT(paid", "error": false, "complete": false, "_t": 89.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_at, '%Y-%m", "error": false, "complete": false, "_t": 89.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "') AS month,\n  SUM", "error": false, "complete": false, "_t": 89.52}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "(pay_amount) AS monthly", "error": false, "complete": false, "_t": 89.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_pay_amount\nFROM", "error": false, "complete": false, "_t": 89.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " trd_order\n", "error": false, "complete": false, "_t": 89.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "WHERE paid_at IS NOT", "error": false, "complete": false, "_t": 89.92}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " NULL \n  AND paid", "error": false, "complete": false, "_t": 90.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_at >= '202", "error": false, "complete": false, "_t": 90.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-04-", "error": false, "complete": false, "_t": 90.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01' \n  AND", "error": false, "complete": false, "_t": 90.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " paid_at < '", "error": false, "complete": false, "_t": 90.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2026-0", "error": false, "complete": false, "_t": 90.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1-01'\nGROUP", "error": false, "complete": false, "_t": 90.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " BY DATE_FORMAT(paid", "error": false, "complete": false, "_t": 90.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_at, '%Y-%m", "error": false, "complete": false, "_t": 90.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "')\nORDER BY month", "error": false, "complete": false, "_t": 91.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ";\n```\n\n输出", "error": false, "complete": false, "_t": 91.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结构化结果（单位", "error": false, "complete": false, "_t": 91.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：元，保留两位", "error": false, "complete": false, "_t": 91.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "小数）：\n\n", "error": false, "complete": false, "_t": 91.52}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| month     | monthly_pay", "error": false, "complete": false, "_t": 91.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_amount |\n|-----------", "error": false, "complete": false, "_t": 91.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|---------------------|\n|", "error": false, "complete": false, "_t": 91.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2025-", "error": false, "complete": false, "_t": 91.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "04   | 1", "error": false, "complete": false, "_t": 92.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1191", "error": false, "complete": false, "_t": 92.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "77.85         ", "error": false, "complete": false, "_t": 92.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 92.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-05   |", "error": false, "complete": false, "_t": 92.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1265", "error": false, "complete": false, "_t": 92.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "333.63", "error": false, "complete": false, "_t": 92.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "          |\n| 20", "error": false, "complete": false, "_t": 92.93}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25-06  ", "error": false, "complete": false, "_t": 93.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 1884", "error": false, "complete": false, "_t": 93.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "567.", "error": false, "complete": false, "_t": 93.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "24          |\n| ", "error": false, "complete": false, "_t": 93.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-0", "error": false, "complete": false, "_t": 93.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7   | 12", "error": false, "complete": false, "_t": 93.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3110", "error": false, "complete": false, "_t": 93.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.56", "error": false, "complete": false, "_t": 93.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "          |\n| 20", "error": false, "complete": false, "_t": 94.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25-08  ", "error": false, "complete": false, "_t": 94.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 1233", "error": false, "complete": false, "_t": 94.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "513.9", "error": false, "complete": false, "_t": 94.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6          |\n|", "error": false, "complete": false, "_t": 94.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2025-", "error": false, "complete": false, "_t": 94.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "09   | 1", "error": false, "complete": false, "_t": 94.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1261", "error": false, "complete": false, "_t": 94.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "99.28         ", "error": false, "complete": false, "_t": 94.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 95.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-10   |", "error": false, "complete": false, "_t": 95.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1389", "error": false, "complete": false, "_t": 95.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "512.1", "error": false, "complete": false, "_t": 95.44}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8          |\n| 2", "error": false, "complete": false, "_t": 95.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025-11", "error": false, "complete": false, "_t": 95.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "   | 209", "error": false, "complete": false, "_t": 95.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7267", "error": false, "complete": false, "_t": 96.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".24          |\n|", "error": false, "complete": false, "_t": 96.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2025-", "error": false, "complete": false, "_t": 96.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12   | 1", "error": false, "complete": false, "_t": 96.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1905", "error": false, "complete": false, "_t": 96.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "45.0", "error": false, "complete": false, "_t": 96.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9          |\n\n>", "error": false, "complete": false, "_t": 96.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ✅ 共9", "error": false, "complete": false, "_t": 96.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "个月数据，无", "error": false, "complete": false, "_t": 96.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "缺失，时间连续", "error": false, "complete": false, "_t": 96.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，符合分析要求", "error": false, "complete": false, "_t": 96.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n### 3.2", "error": false, "complete": false, "_t": 97.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 步骤2：Python", "error": false, "complete": false, "_t": 97.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "计算环比并识别", "error": false, "complete": false, "_t": 97.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "极值\n\n基于", "error": false, "complete": false, "_t": 97.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "上表，按", "error": false, "complete": false, "_t": 97.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`month`升", "error": false, "complete": false, "_t": 97.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "序排序后，", "error": false, "complete": false, "_t": 97.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "使用向量化计算：\n", "error": false, "complete": false, "_t": 97.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- `month_on", "error": false, "complete": false, "_t": 97.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_month_growth = (", "error": false, "complete": false, "_t": 97.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "current / previous)", "error": false, "complete": false, "_t": 98.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " - 1`\n", "error": false, "complete": false, "_t": 98.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 4月无", "error": false, "complete": false, "_t": 98.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "上月，环比", "error": false, "complete": false, "_t": 98.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "记为 `None", "error": false, "complete": false, "_t": 98.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`\n- 所有增长率", "error": false, "complete": false, "_t": 98.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "保留2位小", "error": false, "complete": false, "_t": 98.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数，以百分比形式", "error": false, "complete": false, "_t": 98.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "呈现\n\n最终衍生", "error": false, "complete": false, "_t": 98.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "表（含环比", "error": false, "complete": false, "_t": 98.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）：\n\n| month", "error": false, "complete": false, "_t": 99.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "     | monthly_pay_amount |", "error": false, "complete": false, "_t": 99.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " month_on_month_growth", "error": false, "complete": false, "_t": 99.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n|-----------|---------------------", "error": false, "complete": false, "_t": 99.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|------------------------|\n| ", "error": false, "complete": false, "_t": 99.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-0", "error": false, "complete": false, "_t": 99.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4   | 1,", "error": false, "complete": false, "_t": 99.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "119,", "error": false, "complete": false, "_t": 99.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "177.85", "error": false, "complete": false, "_t": 100.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "       | —                     ", "error": false, "complete": false, "_t": 100.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 100.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-05   |", "error": false, "complete": false, "_t": 100.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,265", "error": false, "complete": false, "_t": 100.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",333.6", "error": false, "complete": false, "_t": 100.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3       | +13", "error": false, "complete": false, "_t": 100.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".06%               ", "error": false, "complete": false, "_t": 100.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 100.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-06   |", "error": false, "complete": false, "_t": 101.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,884", "error": false, "complete": false, "_t": 101.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",567.2", "error": false, "complete": false, "_t": 101.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4       | +4", "error": false, "complete": false, "_t": 101.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8.94%               ", "error": false, "complete": false, "_t": 101.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 101.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-07   |", "error": false, "complete": false, "_t": 101.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,231", "error": false, "complete": false, "_t": 102.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",108.5", "error": false, "complete": false, "_t": 102.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6       | -34", "error": false, "complete": false, "_t": 102.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".67%                |\n", "error": false, "complete": false, "_t": 102.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| 2025", "error": false, "complete": false, "_t": 102.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-08   |", "error": false, "complete": false, "_t": 102.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,233", "error": false, "complete": false, "_t": 102.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",513", "error": false, "complete": false, "_t": 102.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".96       | +", "error": false, "complete": false, "_t": 103.02}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.20%                ", "error": false, "complete": false, "_t": 103.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 103.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-09   |", "error": false, "complete": false, "_t": 103.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,12", "error": false, "complete": false, "_t": 103.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6,199.", "error": false, "complete": false, "_t": 103.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "28       | -8", "error": false, "complete": false, "_t": 103.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".70%                ", "error": false, "complete": false, "_t": 103.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 104.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-10   |", "error": false, "complete": false, "_t": 104.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,389", "error": false, "complete": false, "_t": 104.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",512.1", "error": false, "complete": false, "_t": 104.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8       | +23", "error": false, "complete": false, "_t": 104.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".38%               ", "error": false, "complete": false, "_t": 104.64}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 104.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-11   |", "error": false, "complete": false, "_t": 104.92}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2,097", "error": false, "complete": false, "_t": 105.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",267.2", "error": false, "complete": false, "_t": 105.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4       | **+5", "error": false, "complete": false, "_t": 105.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.94%**", "error": false, "complete": false, "_t": 105.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ← 最高    ", "error": false, "complete": false, "_t": 105.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| 202", "error": false, "complete": false, "_t": 105.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-12   |", "error": false, "complete": false, "_t": 105.78}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,190", "error": false, "complete": false, "_t": 105.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",545.0", "error": false, "complete": false, "_t": 106.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9       | -4", "error": false, "complete": false, "_t": 106.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3.23%               ", "error": false, "complete": false, "_t": 106.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n\n✅", "error": false, "complete": false, "_t": 106.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 环比最高月份", "error": false, "complete": false, "_t": 106.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "确认：**202", "error": false, "complete": false, "_t": 106.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5年11月", "error": false, "complete": false, "_t": 106.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（+50.9", "error": false, "complete": false, "_t": 106.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4%）**\n\n---\n\n##", "error": false, "complete": false, "_t": 106.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 4. 结果解读", "error": false, "complete": false, "_t": 107.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\n\n### 4.1", "error": false, "complete": false, "_t": 107.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 月度趋势", "error": false, "complete": false, "_t": 107.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "特征\n- **双", "error": false, "complete": false, "_t": 107.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "峰结构**：6", "error": false, "complete": false, "_t": 107.56}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月（+48.", "error": false, "complete": false, "_t": 107.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "94%）、", "error": false, "complete": false, "_t": 107.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "11月（+", "error": false, "complete": false, "_t": 107.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "50.94%", "error": false, "complete": false, "_t": 108.04}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）形成两个显著", "error": false, "complete": false, "_t": 108.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "高峰，间隔5", "error": false, "complete": false, "_t": 108.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "个月，暗示可能存在", "error": false, "complete": false, "_t": 108.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "季节性运营节奏", "error": false, "complete": false, "_t": 108.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "；\n- **强波动性", "error": false, "complete": false, "_t": 108.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**：7月（-", "error": false, "complete": false, "_t": 108.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "34.67%", "error": false, "complete": false, "_t": 108.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）与12", "error": false, "complete": false, "_t": 108.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月（-43.", "error": false, "complete": false, "_t": 108.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "23%）连续", "error": false, "complete": false, "_t": 109.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "出现超30", "error": false, "complete": false, "_t": 109.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%负增长，提示", "error": false, "complete": false, "_t": 109.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "业务稳定性不足；\n- **", "error": false, "complete": false, "_t": 109.41}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "11月突破", "error": false, "complete": false, "_t": 109.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "性表现**：不仅", "error": false, "complete": false, "_t": 109.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "环比最高，且", "error": false, "complete": false, "_t": 109.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "绝对金额（2", "error": false, "complete": false, "_t": 109.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "09.73", "error": false, "complete": false, "_t": 109.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "万元）为全", "error": false, "complete": false, "_t": 109.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "周期峰值，较", "error": false, "complete": false, "_t": 110.1}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4月起点高出", "error": false, "complete": false, "_t": 110.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "86.7", "error": false, "complete": false, "_t": 110.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%，远超其他", "error": false, "complete": false, "_t": 110.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月份增幅。\n\n### ", "error": false, "complete": false, "_t": 110.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4.2 关", "error": false, "complete": false, "_t": 110.53}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "键洞察\n- **1", "error": false, "complete": false, "_t": 110.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1月是唯一", "error": false, "complete": false, "_t": 110.77}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "兼具“高基数", "error": false, "complete": false, "_t": 110.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "+高增速”的月份", "error": false, "complete": false, "_t": 110.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**：10月已达", "error": false, "complete": false, "_t": 111.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "138.9", "error": false, "complete": false, "_t": 111.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5万元，1", "error": false, "complete": false, "_t": 111.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1月在此基础上再增", "error": false, "complete": false, "_t": 111.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "50.94%，", "error": false, "complete": false, "_t": 111.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "说明并非低基数", "error": false, "complete": false, "_t": 111.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "反弹，而是系统", "error": false, "complete": false, "_t": 111.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "性增长；\n- **", "error": false, "complete": false, "_t": 111.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12月异常", "error": false, "complete": false, "_t": 111.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "回落需警惕**：从", "error": false, "complete": false, "_t": 112.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "209.", "error": false, "complete": false, "_t": 112.16}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "73万元骤", "error": false, "complete": false, "_t": 112.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "降至119.", "error": false, "complete": false, "_t": 112.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "05万元（", "error": false, "complete": false, "_t": 112.42}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "降幅43.23", "error": false, "complete": false, "_t": 112.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%），幅度超过", "error": false, "complete": false, "_t": 112.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7月回落（", "error": false, "complete": false, "_t": 112.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-34.67", "error": false, "complete": false, "_t": 112.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%），可能反映", "error": false, "complete": false, "_t": 112.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：\n  -", "error": false, "complete": false, "_t": 113.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 年终结算规则", "error": false, "complete": false, "_t": 113.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "变更（如发票", "error": false, "complete": false, "_t": 113.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "/退款集中处理", "error": false, "complete": false, "_t": 113.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）；\n  -", "error": false, "complete": false, "_t": 113.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 支付渠道", "error": false, "complete": false, "_t": 113.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "临时限流或", "error": false, "complete": false, "_t": 113.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "风控策略收紧；\n  -", "error": false, "complete": false, "_t": 113.7}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 数据采集延迟（如部分", "error": false, "complete": false, "_t": 113.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12月下旬订单", "error": false, "complete": false, "_t": 113.92}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "计入次年1", "error": false, "complete": false, "_t": 114.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月）——需核", "error": false, "complete": false, "_t": 114.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "对`paid_at`分布", "error": false, "complete": false, "_t": 114.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n---\n\n## ", "error": false, "complete": false, "_t": 114.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5. 建议", "error": false, "complete": false, "_t": 114.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与后续行动\n\n|", "error": false, "complete": false, "_t": 114.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 类别         |", "error": false, "complete": false, "_t": 114.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 具体建议                                                                 |\n|", "error": false, "complete": false, "_t": 114.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "--------------|--------------------------------------------------------------------------", "error": false, "complete": false, "_t": 114.91}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|\n| **归", "error": false, "complete": false, "_t": 115.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "因分析** |", "error": false, "complete": false, "_t": 115.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 立即启动", "error": false, "complete": false, "_t": 115.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025", "error": false, "complete": false, "_t": 115.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年11月专项", "error": false, "complete": false, "_t": 115.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "复盘：检查", "error": false, "complete": false, "_t": 115.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "同期营销活动（如", "error": false, "complete": false, "_t": 115.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "双11大", "error": false, "complete": false, "_t": 115.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "促）、新客", "error": false, "complete": false, "_t": 115.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "转化率、", "error": false, "complete": false, "_t": 115.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "客单价、TOP", "error": false, "complete": false, "_t": 115.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "商品销量、支付", "error": false, "complete": false, "_t": 116.03}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "成功率等维度，定位", "error": false, "complete": false, "_t": 116.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "增长主因。 |\n", "error": false, "complete": false, "_t": 116.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "| **风险管控", "error": false, "complete": false, "_t": 116.34}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "** | 对2", "error": false, "complete": false, "_t": 116.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025年12", "error": false, "complete": false, "_t": 116.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月数据开展完整性", "error": false, "complete": false, "_t": 116.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "验证：抽样", "error": false, "complete": false, "_t": 116.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "比对`paid_at", "error": false, "complete": false, "_t": 116.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`在12月", "error": false, "complete": false, "_t": 116.96}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25–31日", "error": false, "complete": false, "_t": 117.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的订单是否真实入", "error": false, "complete": false, "_t": 117.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "账；核查是否存在", "error": false, "complete": false, "_t": 117.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "批量退款/冲", "error": false, "complete": false, "_t": 117.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "正操作。 |\n|", "error": false, "complete": false, "_t": 117.51}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **策略复用", "error": false, "complete": false, "_t": 117.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "** | 若1", "error": false, "complete": false, "_t": 117.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1月增长由", "error": false, "complete": false, "_t": 117.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "某类活动（如", "error": false, "complete": false, "_t": 117.9}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "会员日、跨", "error": false, "complete": false, "_t": 117.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "店满减）驱动，", "error": false, "complete": false, "_t": 118.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议将该模式", "error": false, "complete": false, "_t": 118.17}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "模块化，并适", "error": false, "complete": false, "_t": 118.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "配至202", "error": false, "complete": false, "_t": 118.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6年Q2", "error": false, "complete": false, "_t": 118.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（5–6", "error": false, "complete": false, "_t": 118.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月）测试复", "error": false, "complete": false, "_t": 118.63}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "刻效果。 |\n|", "error": false, "complete": false, "_t": 118.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **监控强化** | 在", "error": false, "complete": false, "_t": 118.88}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "BI看板中新增", "error": false, "complete": false, "_t": 118.97}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "「月度实", "error": false, "complete": false, "_t": 119.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付金额环比」", "error": false, "complete": false, "_t": 119.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "预警规则：当", "error": false, "complete": false, "_t": 119.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|MoM| >", "error": false, "complete": false, "_t": 119.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 30%时", "error": false, "complete": false, "_t": 119.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "自动触发根因提", "error": false, "complete": false, "_t": 119.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "报流程，避免", "error": false, "complete": false, "_t": 119.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "事后响应滞后。 |\n\n", "error": false, "complete": false, "_t": 119.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "---\n\n## 6.", "error": false, "complete": false, "_t": 119.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 可视化", "error": false, "complete": false, "_t": 119.93}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：月度实", "error": false, "complete": false, "_t": 120.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付金额与环比增长率", "error": false, "complete": false, "_t": 120.15}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "双轴图\n\n```", "error": false, "complete": false, "_t": 120.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "echarts\n{\n   ", "error": false, "complete": false, "_t": 120.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"title\": {", "error": false, "complete": false, "_t": 120.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"text\": \"2", "error": false, "complete": false, "_t": 120.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025年", "error": false, "complete": false, "_t": 120.68}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4–12月实", "error": false, "complete": false, "_t": 120.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "付金额及环比增长率", "error": false, "complete": false, "_t": 120.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\", \"subtext", "error": false, "complete": false, "_t": 121.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"实付金额（", "error": false, "complete": false, "_t": 121.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "万元）｜环比增长率", "error": false, "complete": false, "_t": 121.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（%）\" },\n", "error": false, "complete": false, "_t": 121.36}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    \"tooltip\": {\n", "error": false, "complete": false, "_t": 121.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        \"trigger\": \"", "error": false, "complete": false, "_t": 121.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "axis\",\n        \"axis", "error": false, "complete": false, "_t": 121.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Pointer\": { \"type\":", "error": false, "complete": false, "_t": 121.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"cross\" },\n", "error": false, "complete": false, "_t": 121.93}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        \"formatter\": \"{", "error": false, "complete": false, "_t": 122.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "b}<br/>", "error": false, "complete": false, "_t": 122.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "实付金额：{c", "error": false, "complete": false, "_t": 122.26}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0}万元<br/>环比", "error": false, "complete": false, "_t": 122.33}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：{c1", "error": false, "complete": false, "_t": 122.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "}%\"\n    },\n    \"", "error": false, "complete": false, "_t": 122.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "legend\": { \"data", "error": false, "complete": false, "_t": 122.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": [\"实付金额（", "error": false, "complete": false, "_t": 122.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "万元）\", \"环比增长率", "error": false, "complete": false, "_t": 122.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（%）\"] },\n   ", "error": false, "complete": false, "_t": 123.07}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"grid\": { \"", "error": false, "complete": false, "_t": 123.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "left\": \"3", "error": false, "complete": false, "_t": 123.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%\", \"right\":", "error": false, "complete": false, "_t": 123.39}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"4%\", \"bottom", "error": false, "complete": false, "_t": 123.49}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"3%\", \"contain", "error": false, "complete": false, "_t": 123.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Label\": true },\n    \"", "error": false, "complete": false, "_t": 123.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "xAxis\": [\n", "error": false, "complete": false, "_t": 123.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        {\n            \"type\":", "error": false, "complete": false, "_t": 123.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"category\",\n            \"", "error": false, "complete": false, "_t": 124.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "data\": [\"202", "error": false, "complete": false, "_t": 124.24}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-04\", \"", "error": false, "complete": false, "_t": 124.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-0", "error": false, "complete": false, "_t": 124.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5\", \"202", "error": false, "complete": false, "_t": 124.65}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-06\", \"", "error": false, "complete": false, "_t": 124.75}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-0", "error": false, "complete": false, "_t": 124.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7\", \"202", "error": false, "complete": false, "_t": 125.05}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-08\", \"", "error": false, "complete": false, "_t": 125.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-0", "error": false, "complete": false, "_t": 125.27}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9\", \"202", "error": false, "complete": false, "_t": 125.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-10\", \"", "error": false, "complete": false, "_t": 125.54}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2025-1", "error": false, "complete": false, "_t": 125.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1\", \"202", "error": false, "complete": false, "_t": 125.83}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5-12\"],\n", "error": false, "complete": false, "_t": 125.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"axisTick", "error": false, "complete": false, "_t": 126.0}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": { \"alignWith", "error": false, "complete": false, "_t": 126.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Label\": true }\n", "error": false, "complete": false, "_t": 126.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        }\n    ],\n   ", "error": false, "complete": false, "_t": 126.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"yAxis\": [\n       ", "error": false, "complete": false, "_t": 126.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " {\n            \"type\": \"", "error": false, "complete": false, "_t": 126.55}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "value\",\n            \"", "error": false, "complete": false, "_t": 126.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "name\": \"实付金额", "error": false, "complete": false, "_t": 126.81}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（万元）\",\n            \"", "error": false, "complete": false, "_t": 126.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "position\": \"left\",\n           ", "error": false, "complete": false, "_t": 127.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"min\": 1", "error": false, "complete": false, "_t": 127.19}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "00,\n            \"max", "error": false, "complete": false, "_t": 127.3}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 220,\n", "error": false, "complete": false, "_t": 127.45}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"interval\":", "error": false, "complete": false, "_t": 127.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 20,\n           ", "error": false, "complete": false, "_t": 127.66}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"axisLabel\": { \"", "error": false, "complete": false, "_t": 127.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "formatter\": \"{value", "error": false, "complete": false, "_t": 127.85}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "}万\" }\n       ", "error": false, "complete": false, "_t": 127.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " },\n        {\n            \"type", "error": false, "complete": false, "_t": 128.11}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"value\",\n            \"", "error": false, "complete": false, "_t": 128.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "name\": \"环比增长率（", "error": false, "complete": false, "_t": 128.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%）\",\n            \"position", "error": false, "complete": false, "_t": 128.5}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"right\",\n            \"", "error": false, "complete": false, "_t": 128.62}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "min\": -5", "error": false, "complete": false, "_t": 128.73}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,\n            \"max\":", "error": false, "complete": false, "_t": 128.82}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 60,\n           ", "error": false, "complete": false, "_t": 128.95}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"interval\": 1", "error": false, "complete": false, "_t": 129.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,\n            \"axisLabel", "error": false, "complete": false, "_t": 129.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": { \"formatter\": \"{", "error": false, "complete": false, "_t": 129.35}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "value}%\" }\n        }\n", "error": false, "complete": false, "_t": 129.47}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "    ],\n    \"series\":", "error": false, "complete": false, "_t": 129.6}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " [\n        {\n            \"name", "error": false, "complete": false, "_t": 129.72}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"实付金额（", "error": false, "complete": false, "_t": 129.87}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "万元）\",\n            \"type", "error": false, "complete": false, "_t": 130.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"bar\",\n            \"", "error": false, "complete": false, "_t": 130.12}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "yAxisIndex\": 0", "error": false, "complete": false, "_t": 130.28}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",\n            \"data\": [", "error": false, "complete": false, "_t": 130.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "111.", "error": false, "complete": false, "_t": 130.44}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "92, 1", "error": false, "complete": false, "_t": 130.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "26.53,", "error": false, "complete": false, "_t": 130.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 188.4", "error": false, "complete": false, "_t": 130.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6, 123", "error": false, "complete": false, "_t": 130.93}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".11,", "error": false, "complete": false, "_t": 131.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 123.3", "error": false, "complete": false, "_t": 131.23}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5, 112", "error": false, "complete": false, "_t": 131.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".62, 1", "error": false, "complete": false, "_t": 131.46}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "38.95,", "error": false, "complete": false, "_t": 131.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 209.7", "error": false, "complete": false, "_t": 131.74}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3, 119", "error": false, "complete": false, "_t": 131.86}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".05],\n            \"", "error": false, "complete": false, "_t": 131.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "itemStyle\": { \"", "error": false, "complete": false, "_t": 132.09}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "color\": \"#5", "error": false, "complete": false, "_t": 132.18}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "470C6", "error": false, "complete": false, "_t": 132.32}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\" }\n        },\n        {\n", "error": false, "complete": false, "_t": 132.44}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"name\": \"环比", "error": false, "complete": false, "_t": 132.58}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "增长率（%）\",\n           ", "error": false, "complete": false, "_t": 132.69}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"type\": \"line\",\n", "error": false, "complete": false, "_t": 132.84}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            \"yAxisIndex\":", "error": false, "complete": false, "_t": 132.98}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1,\n            \"data", "error": false, "complete": false, "_t": 133.08}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": [null, 1", "error": false, "complete": false, "_t": 133.22}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3.06, ", "error": false, "complete": false, "_t": 133.37}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "48.94,", "error": false, "complete": false, "_t": 133.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " -34.67", "error": false, "complete": false, "_t": 133.61}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ", 0.20", "error": false, "complete": false, "_t": 133.76}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ", -8.70", "error": false, "complete": false, "_t": 133.88}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ", 23.3", "error": false, "complete": false, "_t": 134.01}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8, 50.", "error": false, "complete": false, "_t": 134.14}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "94, -43", "error": false, "complete": false, "_t": 134.29}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".23],\n            \"", "error": false, "complete": false, "_t": 134.43}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "smooth\": true,\n            \"", "error": false, "complete": false, "_t": 134.57}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "itemStyle\": { \"color", "error": false, "complete": false, "_t": 134.67}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"#EE66", "error": false, "complete": false, "_t": 134.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "66\" },\n            \"", "error": false, "complete": false, "_t": 134.94}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "label\": {\n                \"show", "error": false, "complete": false, "_t": 135.06}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": true,\n                \"position", "error": false, "complete": false, "_t": 135.2}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"top\",\n                \"", "error": false, "complete": false, "_t": 135.31}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "formatter\": \"{c", "error": false, "complete": false, "_t": 135.38}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "}%\"\n            }\n", "error": false, "complete": false, "_t": 135.48}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        }\n    ],\n   ", "error": false, "complete": false, "_t": 135.59}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"dataZoom\": [\n", "error": false, "complete": false, "_t": 135.71}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        { \"type", "error": false, "complete": false, "_t": 135.79}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"inside\"", "error": false, "complete": false, "_t": 135.89}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " },\n        { \"type\":", "error": false, "complete": false, "_t": 135.99}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"slider\", \"show", "error": false, "complete": false, "_t": 136.13}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": false }\n    ]\n", "error": false, "complete": false, "_t": 136.21}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "}\n```", "error": false, "complete": false, "_t": 136.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "报告生成完成！\n", "error": false, "complete": false, "_t": 136.25}
+{"agentId": "5", "threadId": "upstream_recall-P06-1-5a3f8b", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 136.26}

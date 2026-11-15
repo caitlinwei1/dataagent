@@ -33,12 +33,12 @@ CLASS_RE = re.compile(r"(?:SQL守卫拦截|SQL执行失败)\[([A-Z_]+)/")
 
 
 # ------------------------------------------------------------------ calling the backend
-def stream(query, thread, nl2sql_only, timeout=900):
+def stream(query, thread, nl2sql_only, timeout=900, api=None):
     params = dict(agentId=AGENT, query=query, threadId=thread, nl2sqlOnly=str(nl2sql_only).lower(),
                   humanFeedback="false")
     events, t0, first = [], time.time(), None
     try:
-        with requests.get(API, params=params, stream=True, timeout=timeout) as r:
+        with requests.get(api or API, params=params, stream=True, timeout=timeout) as r:
             for line in r.iter_lines(decode_unicode=True):
                 if line and line.startswith("data:"):
                     try:
@@ -239,14 +239,14 @@ def key_hit(q, report):
 
 
 # ------------------------------------------------------------------ main
-def run_one(q, config, tdir):
+def run_one(q, config, tdir, api=None):
     thread = f"{config}-{q['id']}-{uuid.uuid4().hex[:6]}"
     full = q["task"] == "multi_step"
     ctx_turns = []
     for c in q["context"]:
-        ev, secs, _ = stream(c, thread, nl2sql_only=True)
+        ev, secs, _ = stream(c, thread, nl2sql_only=True, api=api)
         ctx_turns.append(dict(question=c, seconds=secs, final_sql=extract(ev)["final_sql"]))
-    ev, secs, first = stream(q["question"], thread, nl2sql_only=not full, timeout=1800 if full else 900)
+    ev, secs, first = stream(q["question"], thread, nl2sql_only=not full, timeout=1800 if full else 900, api=api)
     with open(os.path.join(tdir, q["id"] + ".jsonl"), "w") as f:
         for e in ev:
             f.write(json.dumps(e, ensure_ascii=False) + "\n")
