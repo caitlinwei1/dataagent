@@ -1,0 +1,9 @@
+{
+  "case" : "08_privileges",
+  "seconds" : 0.1,
+  "success" : true,
+  "stdout" : "denied chown /etc/passwd PermissionError\ndenied raw socket PermissionError\ndenied mount OSError\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import os, socket\nfor name, fn in [(\"chown /etc/passwd\", lambda: os.chown(\"/etc/passwd\", 1, 1)),\n                 (\"raw socket\", lambda: socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_ICMP)),\n                 (\"mount\", lambda: os.system(\"mount -t tmpfs none /mnt 2>/dev/null\") != 0 and (_ for _ in ()).throw(OSError(\"mount failed\")))]:\n    try:\n        fn(); print(\"ALLOWED\", name)\n    except Exception as e:\n        print(\"denied\", name, type(e).__name__)\n"
+}

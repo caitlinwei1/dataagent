@@ -1,0 +1,9 @@
+{
+  "case" : "06_network",
+  "seconds" : 0.4,
+  "success" : true,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\nblocked ('dashscope.aliyuncs.com', 443) gaierror\nblocked ('1.1.1.1', 53) OSError\nblocked ('172.17.0.1', 13306) OSError\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import socket\nfor target in [(\"dashscope.aliyuncs.com\", 443), (\"1.1.1.1\", 53), (\"172.17.0.1\", 13306)]:\n    try:\n        s = socket.create_connection(target, timeout=3)\n        print(\"CONNECTED\", target); s.close()\n    except Exception as e:\n        print(\"blocked\", target, type(e).__name__)\n"
+}

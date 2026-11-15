@@ -35,6 +35,8 @@ import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.util.StringUtils;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.*;
@@ -91,11 +93,12 @@ public class PythonExecuteNode implements NodeAction {
 				if (triesCount >= codeExecutorProperties.getPythonMaxTriesCount()) {
 					log.error("Python执行失败且已超过最大重试次数（已尝试次数：{}），启动降级兜底逻辑。错误信息: {}", triesCount, errorMsg);
 
-					String fallbackOutput = "{}";
+					String fallbackOutput = fallbackOutput(triesCount, taskResponse);
 
 					Flux<ChatResponse> fallbackDisplayFlux = Flux.create(emitter -> {
 						emitter.next(ChatResponseUtil.createResponse("开始执行Python代码..."));
-						emitter.next(ChatResponseUtil.createResponse("Python代码执行失败已超过最大重试次数，采用降级策略继续处理。"));
+						emitter.next(ChatResponseUtil
+							.createResponse("Python代码已重写 " + triesCount + " 次仍执行失败，本步骤降级：只保留SQL结果，不再生成Python计算结论。"));
 						emitter.complete();
 					});
 
@@ -160,6 +163,27 @@ public class PythonExecuteNode implements NodeAction {
 					errorDisplayFlux);
 
 			return Map.of(PYTHON_EXECUTE_NODE_OUTPUT, generator);
+		}
+	}
+
+	/**
+	 * Machine-readable record of the degradation, kept in PYTHON_EXECUTE_NODE_OUTPUT so the analyze node and the report
+	 * can say explicitly which step degraded and why (instead of an empty "{}").
+	 */
+	static String fallbackOutput(int triesCount, CodePoolExecutorService.TaskResponse r) {
+		String err = String.valueOf(StringUtils.hasText(r.stdErr()) ? r.stdErr() : r.exceptionMsg()).strip();
+		if (err.length() > 400) {
+			err = "..." + err.substring(err.length() - 400);
+		}
+		Map<String, Object> m = new LinkedHashMap<>();
+		m.put("degraded", true);
+		m.put("tries", triesCount);
+		m.put("last_error", err);
+		try {
+			return JsonUtil.getObjectMapper().writeValueAsString(m);
+		}
+		catch (Exception e) {
+			return "{\"degraded\":true}";
 		}
 	}
 

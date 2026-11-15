@@ -1,0 +1,9 @@
+{
+  "case" : "08_privileges",
+  "seconds" : 0.1,
+  "success" : true,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\nblocked ('dashscope.aliyuncs.com', 443) gaierror\nblocked ('1.1.1.1', 53) OSError\nblocked ('172.17.0.1', 13306) OSError\nwall=4.04s cpu=4.07s cores_used=1.01\ncpu.max n/a | cfs 100000 / 100000\nmemory 524288000\nmemory+swap 524288000\npids 64\nstart\ndenied chown /etc/passwd PermissionError\ndenied raw socket PermissionError\nmount: drop permissions failed.\nALLOWED mount\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import os, socket\nfor name, fn in [(\"chown /etc/passwd\", lambda: os.chown(\"/etc/passwd\", 1, 1)),\n                 (\"raw socket\", lambda: socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_ICMP)),\n                 (\"mount\", lambda: os.system(\"mount -t tmpfs none /mnt 2>&1\") or (_ for _ in ()).throw(OSError(\"mount returned 0\")))]:\n    try:\n        fn(); print(\"ALLOWED\", name)\n    except Exception as e:\n        print(\"denied\", name, type(e).__name__)\n"
+}

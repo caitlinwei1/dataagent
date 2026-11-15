@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.time.Instant;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -247,8 +248,15 @@ public class DockerCodePoolExecutorService extends AbstractCodePoolExecutorServi
 	 * Create container's HostConfig
 	 */
 	private HostConfig createHostConfig(Path tempDir) {
-		HostConfig config = newHostConfig().withMemory(this.properties.getLimitMemory() * 1024L * 1024L)
-			.withCpuCount(this.properties.getCpuCore())
+		long memoryBytes = this.properties.getLimitMemory() * 1024L * 1024L;
+		HostConfig config = newHostConfig().withMemory(memoryBytes)
+			// memory+swap = memory: no swap on top of the limit (Docker otherwise allows as much swap again)
+			.withMemorySwap(memoryBytes)
+			// NanoCPUs is `--cpus` and works on Linux; b297203 only set CpuCount, which the Docker daemon honours on
+			// Windows only, so on Linux the container could use every core
+			.withNanoCPUs(this.properties.getCpuCore() * 1_000_000_000L)
+			// a fork bomb stops at this many processes instead of exhausting the host
+			.withPidsLimit(this.properties.getPidsLimit())
 			.withCapDrop(Capability.ALL)
 			.withAutoRemove(false)
 			.withTmpFs(Map.of("/tmp", ""))
@@ -329,14 +337,24 @@ public class DockerCodePoolExecutorService extends AbstractCodePoolExecutorServi
 				.start()
 				.awaitCompletion(this.properties.getContainerTimeout(), TimeUnit.SECONDS);
 
-			// 3. Fetch logs
-			LogResult logs = this.fetchExecutionLogs(containerId, tempDir);
+			// 3. Fetch logs of THIS run only. Pooled containers are restarted for every task and
+			// `docker logs` returns the output of every previous run too, so without the cut-off
+			// one task (or user) would read another's results. StartedAt comes from the daemon's
+			// clock, so the filter also holds for a remote Docker host.
+			InspectContainerResponse inspectResponse = dockerClient.inspectContainerCmd(containerId).exec();
+			Instant startedAt = parseInstant(inspectResponse.getState().getStartedAt());
+			LogResult logs = this.fetchExecutionLogs(containerId, startedAt);
 			String stdout = logs.stdout;
 			String stderr = logs.stderr;
 
 			// 4. Check exit code
-			InspectContainerResponse inspectResponse = dockerClient.inspectContainerCmd(containerId).exec();
 			int exitCode = Objects.requireNonNull(inspectResponse.getState().getExitCodeLong()).intValue();
+			if (exitCode == 137) {
+				// SIGKILL: tell the rewrite loop why, the bare "Killed" is not actionable
+				stderr = stderr + (Boolean.TRUE.equals(inspectResponse.getState().getOOMKilled())
+						? "\n[sandbox] OOMKilled: memory limit " + properties.getLimitMemory() + " MiB exceeded"
+						: "\n[sandbox] killed: timeout " + properties.getCodeTimeout() + " exceeded");
+			}
 			if (exitCode != 0) {
 				String errorMessage = "Docker exit code " + exitCode + ". Stderr: " + stderr + ". Stdout: " + stdout;
 				log.error("Error executing Docker container {}: {}", containerId, errorMessage);
@@ -383,29 +401,69 @@ public class DockerCodePoolExecutorService extends AbstractCodePoolExecutorServi
 	private record LogResult(String stdout, String stderr) {
 	}
 
-	private LogResult fetchExecutionLogs(String containerId, Path tempDir) throws InterruptedException {
+	private LogResult fetchExecutionLogs(String containerId, Instant startedAt) throws InterruptedException {
 		StringBuilder stdoutBuilder = new StringBuilder();
 		StringBuilder stderrBuilder = new StringBuilder();
 
 		final int MAX_LOG_SIZE = 5 * 1024 * 1024; // 5MB limit
-		dockerClient.logContainerCmd(containerId)
-			.withStdOut(true)
-			.withStdErr(true)
-			.exec(new ResultCallback.Adapter<Frame>() {
-				@Override
-				public void onNext(Frame item) {
-					String payload = new String(item.getPayload(), StandardCharsets.UTF_8);
-					if (item.getStreamType() == StreamType.STDOUT) {
-						appendWithLimit(stdoutBuilder, payload, MAX_LOG_SIZE);
-					}
-					else if (item.getStreamType() == StreamType.STDERR) {
-						appendWithLimit(stderrBuilder, payload, MAX_LOG_SIZE);
-					}
+		var cmd = dockerClient.logContainerCmd(containerId).withStdOut(true).withStdErr(true).withTimestamps(true);
+		if (startedAt != null) {
+			cmd = cmd.withSince((int) startedAt.getEpochSecond());
+		}
+		cmd.exec(new ResultCallback.Adapter<Frame>() {
+			@Override
+			public void onNext(Frame item) {
+				String payload = currentRunOnly(new String(item.getPayload(), StandardCharsets.UTF_8), startedAt);
+				if (payload.isEmpty()) {
+					return;
 				}
-			})
-			.awaitCompletion();
+				if (item.getStreamType() == StreamType.STDOUT) {
+					appendWithLimit(stdoutBuilder, payload, MAX_LOG_SIZE);
+				}
+				else if (item.getStreamType() == StreamType.STDERR) {
+					appendWithLimit(stderrBuilder, payload, MAX_LOG_SIZE);
+				}
+			}
+		}).awaitCompletion();
 
 		return new LogResult(stdoutBuilder.toString(), stderrBuilder.toString());
+	}
+
+	/**
+	 * Strips the RFC3339Nano timestamp Docker puts in front of every log line and drops lines written before
+	 * {@code startedAt} (i.e. by an earlier task in the same pooled container). Lines without a parsable timestamp are
+	 * kept as they are.
+	 */
+	static String currentRunOnly(String payload, Instant startedAt) {
+		StringBuilder out = new StringBuilder(payload.length());
+		int i = 0;
+		while (i < payload.length()) {
+			int nl = payload.indexOf('\n', i);
+			int end = nl < 0 ? payload.length() : nl + 1;
+			String line = payload.substring(i, end);
+			i = end;
+			int sp = line.indexOf(' ');
+			Instant ts = sp > 0 ? parseInstant(line.substring(0, sp)) : null;
+			if (ts == null) {
+				out.append(line);
+			}
+			else if (startedAt == null || !ts.isBefore(startedAt)) {
+				out.append(line, sp + 1, line.length());
+			}
+		}
+		return out.toString();
+	}
+
+	static Instant parseInstant(String s) {
+		if (s == null || s.isBlank()) {
+			return null;
+		}
+		try {
+			return Instant.parse(s.trim());
+		}
+		catch (Exception e) {
+			return null;
+		}
 	}
 
 	private void appendWithLimit(StringBuilder builder, String payload, int limit) {

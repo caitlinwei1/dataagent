@@ -1,0 +1,9 @@
+{
+  "case" : "03_cpu_burn",
+  "seconds" : 4.2,
+  "success" : true,
+  "stdout" : "wall=4.01s cpu=4.05s cores_used=1.01\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import multiprocessing as mp, time, resource\ndef burn(sec):\n    end = time.time() + sec\n    while time.time() < end:\n        pass\nt0 = time.time()\nps = [mp.Process(target=burn, args=(4,)) for _ in range(2)]\n[p.start() for p in ps]; [p.join() for p in ps]\nwall = time.time() - t0\ncpu = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime\nprint(f\"wall={wall:.2f}s cpu={cpu:.2f}s cores_used={cpu / wall:.2f}\")\n"
+}

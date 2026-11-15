@@ -1,0 +1,9 @@
+{
+  "case" : "02_cgroup",
+  "seconds" : 0.1,
+  "success" : true,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\nblocked ('dashscope.aliyuncs.com', 443) gaierror\nblocked ('1.1.1.1', 53) OSError\nblocked ('172.17.0.1', 13306) OSError\nwall=4.04s cpu=4.07s cores_used=1.01\ncpu.max n/a | cfs 100000 / 100000\nmemory 524288000\nmemory+swap 524288000\npids 64\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import os\ndef rd(*ps):\n    for p in ps:\n        if os.path.exists(p):\n            return open(p).read().strip()\n    return \"n/a\"\nquota = rd(\"/sys/fs/cgroup/cpu/cpu.cfs_quota_us\"); period = rd(\"/sys/fs/cgroup/cpu/cpu.cfs_period_us\")\nprint(\"cpu.max\", rd(\"/sys/fs/cgroup/cpu.max\"), \"| cfs\", quota, \"/\", period)\nprint(\"memory\", rd(\"/sys/fs/cgroup/memory.max\", \"/sys/fs/cgroup/memory/memory.limit_in_bytes\"))\nprint(\"memory+swap\", rd(\"/sys/fs/cgroup/memory.swap.max\", \"/sys/fs/cgroup/memory/memory.memsw.limit_in_bytes\"))\nprint(\"pids\", rd(\"/sys/fs/cgroup/pids.max\", \"/sys/fs/cgroup/pids/pids.max\"))\n"
+}

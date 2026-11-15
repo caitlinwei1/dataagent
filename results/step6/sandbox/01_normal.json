@@ -1,0 +1,9 @@
+{
+  "case" : "01_normal",
+  "seconds" : 0.5,
+  "success" : true,
+  "stdout" : "{\"华东\": 40, \"华北\": 20}\n",
+  "stderr" : null,
+  "exception" : null,
+  "code" : "import pandas as pd, json\ndf = pd.DataFrame({\"region\": [\"华东\", \"华北\", \"华东\"], \"gmv\": [10, 20, 30]})\nprint(json.dumps(df.groupby(\"region\")[\"gmv\"].sum().to_dict(), ensure_ascii=False))\n"
+}

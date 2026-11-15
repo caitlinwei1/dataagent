@@ -1,0 +1,9 @@
+{
+  "case" : "04_memory",
+  "seconds" : 0.6,
+  "success" : false,
+  "stdout" : "allocated 64 MiB\nallocated 128 MiB\nallocated 192 MiB\nallocated 256 MiB\nallocated 320 MiB\nallocated 384 MiB\nallocated 448 MiB\n",
+  "stderr" : "Killed\n\n[sandbox] OOMKilled: memory limit 500 MiB exceeded",
+  "exception" : "StdErr: Killed\n\n[sandbox] OOMKilled: memory limit 500 MiB exceeded",
+  "code" : "blocks = []\nfor i in range(16):\n    blocks.append(bytearray(64 * 1024 * 1024))\n    print(\"allocated\", (i + 1) * 64, \"MiB\", flush=True)\nprint(\"SHOULD NOT REACH\")\n"
+}

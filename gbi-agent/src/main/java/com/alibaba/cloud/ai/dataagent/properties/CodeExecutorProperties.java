@@ -105,6 +105,11 @@ public class CodeExecutorProperties {
 	Long cpuCore = 1L;
 
 	/**
+	 * Max processes / threads in one sandbox container
+	 */
+	Long pidsLimit = 64L;
+
+	/**
 	 * Python code execution time limit
 	 */
 	String codeTimeout = "60s";

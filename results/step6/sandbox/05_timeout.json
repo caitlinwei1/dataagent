@@ -1,0 +1,9 @@
+{
+  "case" : "05_timeout",
+  "seconds" : 60.1,
+  "success" : false,
+  "stdout" : "start\n",
+  "stderr" : "Killed\n\n[sandbox] killed: timeout 60s exceeded",
+  "exception" : "StdErr: Killed\n\n[sandbox] killed: timeout 60s exceeded",
+  "code" : "import time\nprint(\"start\", flush=True)\ntime.sleep(600)\nprint(\"SHOULD NOT REACH\")\n"
+}

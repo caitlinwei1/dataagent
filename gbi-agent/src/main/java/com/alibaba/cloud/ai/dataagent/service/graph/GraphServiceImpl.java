@@ -140,12 +140,13 @@ public class GraphServiceImpl implements GraphService {
 		}
 		String multiTurnContext = multiTurnContextManager.buildContext(threadId);
 		multiTurnContextManager.beginTurn(threadId, query);
-		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(
-				Map.of(IS_ONLY_NL2SQL, nl2sqlOnly, INPUT_KEY, query, AGENT_ID, agentId, HUMAN_REVIEW_ENABLED,
-						humanReviewEnabled, MULTI_TURN_CONTEXT, multiTurnContext,
-						// a new question in the same thread starts with a fresh review budget
-						HUMAN_REPLAN_COUNT, 0, HUMAN_FEEDBACK_DATA, Map.of(), PLAN_REPAIR_COUNT, 0,
-						HUMAN_REJECT_REASONS, java.util.List.of()),
+		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(Map.ofEntries(Map.entry(IS_ONLY_NL2SQL, nl2sqlOnly),
+				Map.entry(INPUT_KEY, query), Map.entry(AGENT_ID, agentId),
+				Map.entry(HUMAN_REVIEW_ENABLED, humanReviewEnabled), Map.entry(MULTI_TURN_CONTEXT, multiTurnContext),
+				// a new question in the same thread starts with a fresh review / repair / python budget
+				Map.entry(HUMAN_REPLAN_COUNT, 0), Map.entry(HUMAN_FEEDBACK_DATA, Map.of()),
+				Map.entry(PLAN_REPAIR_COUNT, 0), Map.entry(HUMAN_REJECT_REASONS, java.util.List.of()),
+				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false)),
 				RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
 	}
