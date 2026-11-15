@@ -735,14 +735,14 @@
  },
  {
   "type": "enum_value",
-  "term": "华南",
+  "term": "华东",
   "synonyms": [],
-  "description": "大区取值，对应 dim_region.big_region = '华南'",
+  "description": "大区取值，对应 dim_region.big_region = '华东'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.big_region",
-  "value": "华南"
+  "value": "华东"
  },
  {
   "type": "enum_value",
@@ -757,17 +757,6 @@
  },
  {
   "type": "enum_value",
-  "term": "华东",
-  "synonyms": [],
-  "description": "大区取值，对应 dim_region.big_region = '华东'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.big_region",
-  "value": "华东"
- },
- {
-  "type": "enum_value",
   "term": "华北",
   "synonyms": [],
   "description": "大区取值，对应 dim_region.big_region = '华北'",
@@ -779,14 +768,14 @@
  },
  {
   "type": "enum_value",
-  "term": "西南",
+  "term": "华南",
   "synonyms": [],
-  "description": "大区取值，对应 dim_region.big_region = '西南'",
+  "description": "大区取值，对应 dim_region.big_region = '华南'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.big_region",
-  "value": "西南"
+  "value": "华南"
  },
  {
   "type": "enum_value",
@@ -801,36 +790,14 @@
  },
  {
   "type": "enum_value",
-  "term": "四川",
+  "term": "西南",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '四川'",
+  "description": "大区取值，对应 dim_region.big_region = '西南'",
   "tables": [
    "dim_region"
   ],
-  "column": "dim_region.province",
-  "value": "四川"
- },
- {
-  "type": "enum_value",
-  "term": "吉林",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '吉林'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "吉林"
- },
- {
-  "type": "enum_value",
-  "term": "内蒙古",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '内蒙古'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "内蒙古"
+  "column": "dim_region.big_region",
+  "value": "西南"
  },
  {
   "type": "enum_value",
@@ -845,14 +812,69 @@
  },
  {
   "type": "enum_value",
-  "term": "安徽",
+  "term": "云南",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '安徽'",
+  "description": "省份取值，对应 dim_region.province = '云南'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.province",
-  "value": "安徽"
+  "value": "云南"
+ },
+ {
+  "type": "enum_value",
+  "term": "内蒙古",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '内蒙古'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "内蒙古"
+ },
+ {
+  "type": "enum_value",
+  "term": "北京",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '北京'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "北京"
+ },
+ {
+  "type": "enum_value",
+  "term": "吉林",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '吉林'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "吉林"
+ },
+ {
+  "type": "enum_value",
+  "term": "四川",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '四川'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "四川"
+ },
+ {
+  "type": "enum_value",
+  "term": "天津",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '天津'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "天津"
  },
  {
   "type": "enum_value",
@@ -864,6 +886,17 @@
   ],
   "column": "dim_region.province",
   "value": "宁夏"
+ },
+ {
+  "type": "enum_value",
+  "term": "安徽",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '安徽'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "安徽"
  },
  {
   "type": "enum_value",
@@ -886,17 +919,6 @@
   ],
   "column": "dim_region.province",
   "value": "山西"
- },
- {
-  "type": "enum_value",
-  "term": "天津",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '天津'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "天津"
  },
  {
   "type": "enum_value",
@@ -955,25 +977,14 @@
  },
  {
   "type": "enum_value",
-  "term": "湖南",
+  "term": "河北",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '湖南'",
+  "description": "省份取值，对应 dim_region.province = '河北'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.province",
-  "value": "湖南"
- },
- {
-  "type": "enum_value",
-  "term": "湖北",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '湖北'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "湖北"
+  "value": "河北"
  },
  {
   "type": "enum_value",
@@ -988,14 +999,14 @@
  },
  {
   "type": "enum_value",
-  "term": "河北",
+  "term": "浙江",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '河北'",
+  "description": "省份取值，对应 dim_region.province = '浙江'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.province",
-  "value": "河北"
+  "value": "浙江"
  },
  {
   "type": "enum_value",
@@ -1010,36 +1021,25 @@
  },
  {
   "type": "enum_value",
-  "term": "浙江",
+  "term": "湖北",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '浙江'",
+  "description": "省份取值，对应 dim_region.province = '湖北'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.province",
-  "value": "浙江"
+  "value": "湖北"
  },
  {
   "type": "enum_value",
-  "term": "云南",
+  "term": "湖南",
   "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '云南'",
+  "description": "省份取值，对应 dim_region.province = '湖南'",
   "tables": [
    "dim_region"
   ],
   "column": "dim_region.province",
-  "value": "云南"
- },
- {
-  "type": "enum_value",
-  "term": "北京",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '北京'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "北京"
+  "value": "湖南"
  },
  {
   "type": "enum_value",
@@ -1065,6 +1065,61 @@
  },
  {
   "type": "enum_value",
+  "term": "西藏",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '西藏'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "西藏"
+ },
+ {
+  "type": "enum_value",
+  "term": "贵州",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '贵州'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "贵州"
+ },
+ {
+  "type": "enum_value",
+  "term": "辽宁",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '辽宁'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "辽宁"
+ },
+ {
+  "type": "enum_value",
+  "term": "重庆",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '重庆'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "重庆"
+ },
+ {
+  "type": "enum_value",
+  "term": "陕西",
+  "synonyms": [],
+  "description": "省份取值，对应 dim_region.province = '陕西'",
+  "tables": [
+   "dim_region"
+  ],
+  "column": "dim_region.province",
+  "value": "陕西"
+ },
+ {
+  "type": "enum_value",
   "term": "青海",
   "synonyms": [],
   "description": "省份取值，对应 dim_region.province = '青海'",
@@ -1084,61 +1139,6 @@
   ],
   "column": "dim_region.province",
   "value": "黑龙江"
- },
- {
-  "type": "enum_value",
-  "term": "重庆",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '重庆'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "重庆"
- },
- {
-  "type": "enum_value",
-  "term": "贵州",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '贵州'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "贵州"
- },
- {
-  "type": "enum_value",
-  "term": "西藏",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '西藏'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "西藏"
- },
- {
-  "type": "enum_value",
-  "term": "辽宁",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '辽宁'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "辽宁"
- },
- {
-  "type": "enum_value",
-  "term": "陕西",
-  "synonyms": [],
-  "description": "省份取值，对应 dim_region.province = '陕西'",
-  "tables": [
-   "dim_region"
-  ],
-  "column": "dim_region.province",
-  "value": "陕西"
  },
  {
   "type": "enum_value",
@@ -1172,6 +1172,138 @@
   ],
   "column": "prd_category.name",
   "value": "个人护理精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "休闲零食精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "休闲零食精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "厨具精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '厨具精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "厨具精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "女装精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '女装精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "女装精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "奶粉辅食精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "奶粉辅食精选"
  },
  {
   "type": "enum_value",
@@ -1219,72 +1351,6 @@
  },
  {
   "type": "enum_value",
-  "term": "奶粉辅食",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "奶粉辅食"
- },
- {
-  "type": "enum_value",
-  "term": "奶粉辅食基础款",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食基础款'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "奶粉辅食基础款"
- },
- {
-  "type": "enum_value",
-  "term": "奶粉辅食精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "奶粉辅食精选"
- },
- {
-  "type": "enum_value",
-  "term": "女装",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "女装"
- },
- {
-  "type": "enum_value",
-  "term": "女装基础款",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装基础款'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "女装基础款"
- },
- {
-  "type": "enum_value",
-  "term": "女装精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "女装精选"
- },
- {
-  "type": "enum_value",
   "term": "彩妆",
   "synonyms": [],
   "description": "商品类目取值，对应 prd_category.name = '彩妆'",
@@ -1315,72 +1381,6 @@
   ],
   "column": "prd_category.name",
   "value": "彩妆精选"
- },
- {
-  "type": "enum_value",
-  "term": "休闲零食",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "休闲零食"
- },
- {
-  "type": "enum_value",
-  "term": "休闲零食基础款",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食基础款'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "休闲零食基础款"
- },
- {
-  "type": "enum_value",
-  "term": "休闲零食精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "休闲零食精选"
- },
- {
-  "type": "enum_value",
-  "term": "收纳清洁",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "收纳清洁"
- },
- {
-  "type": "enum_value",
-  "term": "收纳清洁基础款",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁基础款'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "收纳清洁基础款"
- },
- {
-  "type": "enum_value",
-  "term": "收纳清洁精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "收纳清洁精选"
  },
  {
   "type": "enum_value",
@@ -1417,39 +1417,6 @@
  },
  {
   "type": "enum_value",
-  "term": "数码家电",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '数码家电'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "数码家电"
- },
- {
-  "type": "enum_value",
-  "term": "母婴玩具",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '母婴玩具'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "母婴玩具"
- },
- {
-  "type": "enum_value",
-  "term": "服饰鞋包",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '服饰鞋包'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "服饰鞋包"
- },
- {
-  "type": "enum_value",
   "term": "护肤",
   "synonyms": [],
   "description": "商品类目取值，对应 prd_category.name = '护肤'",
@@ -1480,6 +1447,50 @@
   ],
   "column": "prd_category.name",
   "value": "护肤精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "收纳清洁精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "收纳清洁精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "数码家电",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '数码家电'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "数码家电"
  },
  {
   "type": "enum_value",
@@ -1516,69 +1527,58 @@
  },
  {
   "type": "enum_value",
-  "term": "厨具",
+  "term": "服饰鞋包",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具'",
+  "description": "商品类目取值，对应 prd_category.name = '服饰鞋包'",
   "tables": [
    "prd_category"
   ],
   "column": "prd_category.name",
-  "value": "厨具"
+  "value": "服饰鞋包"
  },
  {
   "type": "enum_value",
-  "term": "厨具基础款",
+  "term": "母婴玩具",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '母婴玩具'",
   "tables": [
    "prd_category"
   ],
   "column": "prd_category.name",
-  "value": "厨具基础款"
+  "value": "母婴玩具"
  },
  {
   "type": "enum_value",
-  "term": "厨具精选",
+  "term": "玩具",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具精选'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具'",
   "tables": [
    "prd_category"
   ],
   "column": "prd_category.name",
-  "value": "厨具精选"
+  "value": "玩具"
  },
  {
   "type": "enum_value",
-  "term": "男装",
+  "term": "玩具基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具基础款'",
   "tables": [
    "prd_category"
   ],
   "column": "prd_category.name",
-  "value": "男装"
+  "value": "玩具基础款"
  },
  {
   "type": "enum_value",
-  "term": "男装基础款",
+  "term": "玩具精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具精选'",
   "tables": [
    "prd_category"
   ],
   "column": "prd_category.name",
-  "value": "男装基础款"
- },
- {
-  "type": "enum_value",
-  "term": "男装精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "男装精选"
+  "value": "玩具精选"
  },
  {
   "type": "enum_value",
@@ -1645,6 +1645,39 @@
   ],
   "column": "prd_category.name",
   "value": "电脑办公精选"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装基础款",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装基础款'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装基础款"
+ },
+ {
+  "type": "enum_value",
+  "term": "男装精选",
+  "synonyms": [],
+  "description": "商品类目取值，对应 prd_category.name = '男装精选'",
+  "tables": [
+   "prd_category"
+  ],
+  "column": "prd_category.name",
+  "value": "男装精选"
  },
  {
   "type": "enum_value",
@@ -1758,39 +1791,6 @@
  },
  {
   "type": "enum_value",
-  "term": "玩具",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "玩具"
- },
- {
-  "type": "enum_value",
-  "term": "玩具基础款",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具基础款'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "玩具基础款"
- },
- {
-  "type": "enum_value",
-  "term": "玩具精选",
-  "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具精选'",
-  "tables": [
-   "prd_category"
-  ],
-  "column": "prd_category.name",
-  "value": "玩具精选"
- },
- {
-  "type": "enum_value",
   "term": "食品生鲜",
   "synonyms": [],
   "description": "商品类目取值，对应 prd_category.name = '食品生鲜'",
@@ -1799,6 +1799,17 @@
   ],
   "column": "prd_category.name",
   "value": "食品生鲜"
+ },
+ {
+  "type": "enum_value",
+  "term": "京东",
+  "synonyms": [],
+  "description": "销售平台取值，对应 dim_platform.name = '京东'",
+  "tables": [
+   "dim_platform"
+  ],
+  "column": "dim_platform.name",
+  "value": "京东"
  },
  {
   "type": "enum_value",
@@ -1824,17 +1835,6 @@
  },
  {
   "type": "enum_value",
-  "term": "京东",
-  "synonyms": [],
-  "description": "销售平台取值，对应 dim_platform.name = '京东'",
-  "tables": [
-   "dim_platform"
-  ],
-  "column": "dim_platform.name",
-  "value": "京东"
- },
- {
-  "type": "enum_value",
   "term": "自营商城",
   "synonyms": [],
   "description": "销售平台取值，对应 dim_platform.name = '自营商城'",
@@ -1843,72 +1843,6 @@
   ],
   "column": "dim_platform.name",
   "value": "自营商城"
- },
- {
-  "type": "enum_value",
-  "term": "天猫家居店",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫家居店'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "天猫家居店"
- },
- {
-  "type": "enum_value",
-  "term": "天猫旗舰店",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫旗舰店'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "天猫旗舰店"
- },
- {
-  "type": "enum_value",
-  "term": "天猫数码专营店",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫数码专营店'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "天猫数码专营店"
- },
- {
-  "type": "enum_value",
-  "term": "抖音东北店",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音东北店'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "抖音东北店"
- },
- {
-  "type": "enum_value",
-  "term": "抖音官方直播间",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音官方直播间'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "抖音官方直播间"
- },
- {
-  "type": "enum_value",
-  "term": "抖音华中店",
-  "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音华中店'",
-  "tables": [
-   "dim_shop"
-  ],
-  "column": "dim_shop.name",
-  "value": "抖音华中店"
  },
  {
   "type": "enum_value",
@@ -1945,14 +1879,69 @@
  },
  {
   "type": "enum_value",
-  "term": "自营商城总店",
+  "term": "天猫家居店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '自营商城总店'",
+  "description": "店铺取值，对应 dim_shop.name = '天猫家居店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "自营商城总店"
+  "value": "天猫家居店"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫数码专营店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '天猫数码专营店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "天猫数码专营店"
+ },
+ {
+  "type": "enum_value",
+  "term": "天猫旗舰店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '天猫旗舰店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "天猫旗舰店"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音东北店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音东北店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音东北店"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音华中店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音华中店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音华中店"
+ },
+ {
+  "type": "enum_value",
+  "term": "抖音官方直播间",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '抖音官方直播间'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "抖音官方直播间"
  },
  {
   "type": "enum_value",
@@ -1964,6 +1953,17 @@
   ],
   "column": "dim_shop.name",
   "value": "自营商城华北店"
+ },
+ {
+  "type": "enum_value",
+  "term": "自营商城总店",
+  "synonyms": [],
+  "description": "店铺取值，对应 dim_shop.name = '自营商城总店'",
+  "tables": [
+   "dim_shop"
+  ],
+  "column": "dim_shop.name",
+  "value": "自营商城总店"
  },
  {
   "type": "enum_value",
@@ -2307,17 +2307,6 @@
  },
  {
   "type": "enum_value",
-  "term": "极速达",
-  "synonyms": [],
-  "description": "承运商取值，对应 tms_carrier.name = '极速达'",
-  "tables": [
-   "tms_carrier"
-  ],
-  "column": "tms_carrier.name",
-  "value": "极速达"
- },
- {
-  "type": "enum_value",
   "term": "京东物流",
   "synonyms": [],
   "description": "承运商取值，对应 tms_carrier.name = '京东物流'",
@@ -2337,6 +2326,17 @@
   ],
   "column": "tms_carrier.name",
   "value": "圆通"
+ },
+ {
+  "type": "enum_value",
+  "term": "极速达",
+  "synonyms": [],
+  "description": "承运商取值，对应 tms_carrier.name = '极速达'",
+  "tables": [
+   "tms_carrier"
+  ],
+  "column": "tms_carrier.name",
+  "value": "极速达"
  },
  {
   "type": "enum_value",
@@ -2373,28 +2373,6 @@
  },
  {
   "type": "enum_value",
-  "term": "华南中心仓",
-  "synonyms": [],
-  "description": "仓库取值，对应 wms_warehouse.name = '华南中心仓'",
-  "tables": [
-   "wms_warehouse"
-  ],
-  "column": "wms_warehouse.name",
-  "value": "华南中心仓"
- },
- {
-  "type": "enum_value",
-  "term": "华中区域仓",
-  "synonyms": [],
-  "description": "仓库取值，对应 wms_warehouse.name = '华中区域仓'",
-  "tables": [
-   "wms_warehouse"
-  ],
-  "column": "wms_warehouse.name",
-  "value": "华中区域仓"
- },
- {
-  "type": "enum_value",
   "term": "华东中心仓",
   "synonyms": [],
   "description": "仓库取值，对应 wms_warehouse.name = '华东中心仓'",
@@ -2417,6 +2395,17 @@
  },
  {
   "type": "enum_value",
+  "term": "华中区域仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华中区域仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华中区域仓"
+ },
+ {
+  "type": "enum_value",
   "term": "华北区域仓",
   "synonyms": [],
   "description": "仓库取值，对应 wms_warehouse.name = '华北区域仓'",
@@ -2425,6 +2414,17 @@
   ],
   "column": "wms_warehouse.name",
   "value": "华北区域仓"
+ },
+ {
+  "type": "enum_value",
+  "term": "华南中心仓",
+  "synonyms": [],
+  "description": "仓库取值，对应 wms_warehouse.name = '华南中心仓'",
+  "tables": [
+   "wms_warehouse"
+  ],
+  "column": "wms_warehouse.name",
+  "value": "华南中心仓"
  },
  {
   "type": "enum_value",
@@ -2483,6 +2483,17 @@
  },
  {
   "type": "enum_value",
+  "term": "金卡",
+  "synonyms": [],
+  "description": "会员等级取值，对应 usr_member_level.name = '金卡'",
+  "tables": [
+   "usr_member_level"
+  ],
+  "column": "usr_member_level.name",
+  "value": "金卡"
+ },
+ {
+  "type": "enum_value",
   "term": "银卡",
   "synonyms": [],
   "description": "会员等级取值，对应 usr_member_level.name = '银卡'",
@@ -2502,17 +2513,6 @@
   ],
   "column": "usr_member_level.name",
   "value": "黑金"
- },
- {
-  "type": "enum_value",
-  "term": "金卡",
-  "synonyms": [],
-  "description": "会员等级取值，对应 usr_member_level.name = '金卡'",
-  "tables": [
-   "usr_member_level"
-  ],
-  "column": "usr_member_level.name",
-  "value": "金卡"
  },
  {
   "type": "enum_value",
@@ -2604,17 +2604,6 @@
  },
  {
   "type": "enum_value",
-  "term": "直播专享",
-  "synonyms": [],
-  "description": "商品标签取值，对应 prd_label.name = '直播专享'",
-  "tables": [
-   "prd_label"
-  ],
-  "column": "prd_label.name",
-  "value": "直播专享"
- },
- {
-  "type": "enum_value",
   "term": "爆款",
   "synonyms": [],
   "description": "商品标签取值，对应 prd_label.name = '爆款'",
@@ -2623,6 +2612,17 @@
   ],
   "column": "prd_label.name",
   "value": "爆款"
+ },
+ {
+  "type": "enum_value",
+  "term": "直播专享",
+  "synonyms": [],
+  "description": "商品标签取值，对应 prd_label.name = '直播专享'",
+  "tables": [
+   "prd_label"
+  ],
+  "column": "prd_label.name",
+  "value": "直播专享"
  },
  {
   "type": "enum_value",
@@ -2670,17 +2670,6 @@
  },
  {
   "type": "enum_value",
-  "term": "2025年货节",
-  "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2025年货节'",
-  "tables": [
-   "mkt_activity"
-  ],
-  "column": "mkt_activity.name",
-  "value": "2025年货节"
- },
- {
-  "type": "enum_value",
   "term": "2025双11",
   "synonyms": [],
   "description": "营销活动取值，对应 mkt_activity.name = '2025双11'",
@@ -2689,6 +2678,17 @@
   ],
   "column": "mkt_activity.name",
   "value": "2025双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "2025年货节",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2025年货节'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2025年货节"
  },
  {
   "type": "enum_value",
@@ -2703,17 +2703,6 @@
  },
  {
   "type": "enum_value",
-  "term": "2026年货节",
-  "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2026年货节'",
-  "tables": [
-   "mkt_activity"
-  ],
-  "column": "mkt_activity.name",
-  "value": "2026年货节"
- },
- {
-  "type": "enum_value",
   "term": "2026双11",
   "synonyms": [],
   "description": "营销活动取值，对应 mkt_activity.name = '2026双11'",
@@ -2722,6 +2711,17 @@
   ],
   "column": "mkt_activity.name",
   "value": "2026双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "2026年货节",
+  "synonyms": [],
+  "description": "营销活动取值，对应 mkt_activity.name = '2026年货节'",
+  "tables": [
+   "mkt_activity"
+  ],
+  "column": "mkt_activity.name",
+  "value": "2026年货节"
  },
  {
   "type": "enum_value",
@@ -3407,17 +3407,6 @@
  },
  {
   "type": "enum_value",
-  "term": "年货节",
-  "synonyms": [],
-  "description": "大促名称取值，对应 dim_date.promo_name = '年货节'",
-  "tables": [
-   "dim_date"
-  ],
-  "column": "dim_date.promo_name",
-  "value": "年货节"
- },
- {
-  "type": "enum_value",
   "term": "双11",
   "synonyms": [],
   "description": "大促名称取值，对应 dim_date.promo_name = '双11'",
@@ -3426,6 +3415,17 @@
   ],
   "column": "dim_date.promo_name",
   "value": "双11"
+ },
+ {
+  "type": "enum_value",
+  "term": "年货节",
+  "synonyms": [],
+  "description": "大促名称取值，对应 dim_date.promo_name = '年货节'",
+  "tables": [
+   "dim_date"
+  ],
+  "column": "dim_date.promo_name",
+  "value": "年货节"
  },
  {
   "type": "enum_value",

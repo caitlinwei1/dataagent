@@ -138,7 +138,7 @@ def daterange(a, b):
 
 
 OUT.write("SET FOREIGN_KEY_CHECKS=0; SET UNIQUE_CHECKS=0; SET autocommit=0;\n" if DIALECT == "mysql"
-          else "SET search_path TO gbi_ecommerce; BEGIN;\n")
+          else f"SET search_path TO {os.environ.get('GBI_DB', 'gbi_ecommerce')}; BEGIN;\n")
 
 # ------------------------------------------------------------------ dims
 platforms = ["天猫", "京东", "抖音", "自营商城"]
