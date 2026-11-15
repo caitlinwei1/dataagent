@@ -91,6 +91,18 @@ public final class Constant {
 
 	public static final String PLAN_REPAIR_COUNT = "PLAN_REPAIR_COUNT";
 
+	/** Human rejections of the plan in this turn (kept apart from the structural PLAN_REPAIR_COUNT). */
+	public static final String HUMAN_REPLAN_COUNT = "HUMAN_REPLAN_COUNT";
+
+	/** Outcome of plan review: APPROVED, EDITED, REJECTED, REPLAN_LIMIT. */
+	public static final String HUMAN_REVIEW_STATUS = "HUMAN_REVIEW_STATUS";
+
+	/** All rejection reasons of this turn, oldest first; the planner sees them together. */
+	public static final String HUMAN_REJECT_REASONS = "HUMAN_REJECT_REASONS";
+
+	/** Streaming output of the human feedback node (messages shown to the reviewer). */
+	public static final String HUMAN_FEEDBACK_NODE_OUTPUT = "HUMAN_FEEDBACK_NODE_OUTPUT";
+
 	// Node KEY
 	public static final String PLANNER_NODE = "PLANNER_NODE";
 

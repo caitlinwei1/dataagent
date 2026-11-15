@@ -98,6 +98,16 @@ public final class PlanProcessUtil {
 	 * @return the parsed plan object
 	 * @throws IllegalStateException if plan output is empty or plan parsing fails
 	 */
+	/** Parse a plan JSON (e.g. one edited by the reviewer); null if it does not parse. */
+	public static Plan parsePlan(String json) {
+		try {
+			return converter.convert(json);
+		}
+		catch (RuntimeException e) {
+			return null;
+		}
+	}
+
 	public static Plan getPlan(OverAllState state) {
 		String plannerNodeOutput = (String) state.value(PLANNER_NODE_OUTPUT)
 			.orElseThrow(() -> new IllegalStateException("计划节点输出为空"));

@@ -1,0 +1,275 @@
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\n  \"classification", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\": \"《可能的", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "数据分析请求》", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"\n}", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\n  \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": " \"查询20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "26年3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "月各大区的GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "V数据\"\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "}", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年3月各大区的GMV数据\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: GMV, 说明: 已支付订单的商品原价总额加运费，不扣优惠、不扣退款。按天看可直接用 trd_daily_shop_sales.gmv。；公式：SUM(trd_order.total_am...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 2026年货节, 说明: 营销活动取值，对应 mkt_activity.name = '2026年货节', 同义词: \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 2026双11, 说明: 营销活动取值，对应 mkt_activity.name = '2026双11', 同义词: \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 2026618, 说明: 营销活动取值，对应 mkt_activity.name = '2026618', 同义词: \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 大区, 说明: 店铺运营归属的大区 dim_shop.region_id -> dim_region.big_region（华东/华北/华南/华中/西南/西北/东北）。按收货地看时用 tr...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 大促, 说明: dim_date.promo_name 非空的日期；活动明细见 mkt_activity。, 同义词: 双11,618,年货节,促销期\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 2025618, 说明: 营销活动取值，对应 mkt_activity.name = '2025618', 同义词: \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 618, 说明: 大促名称取值，对应 dim_date.promo_name = '618', 同义词: \n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical_query", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\": \"查询2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026年", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01至", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-31）", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "期间，按", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "店铺运营归属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（华东、华北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "、华南、华中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "、西南、西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "、东北）分别", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "统计已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "支付订单的商品原价", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "总额加运费", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（不扣优惠", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "、不扣退款", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）的GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "分别是多少\",\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"expanded_queries\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " [\n    \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "统计202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1日至2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026年", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3月31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日各运营大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的不扣优惠、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "不扣退款的", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "成交总额GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "V分别是多少？", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n    \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "按店铺所属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "拆分，查询2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年3月已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "支付订单", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的商品原价加运费", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "总额（GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "各是多少？\",", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\n    \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "各大区的", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "商品交易总额GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "V，口径为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "已支付", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "订单原价加运费", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "且不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "扣优惠、不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "扣退款。\"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\n  ]", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\n}", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: dim_region, trd_daily_shop_sales, trd_order, dim_shop, trd_order_item, dim_store, trd_order_address, trd_order_promotion, fin_settlement_item, trd_order_split\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"trd_order", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"dim_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\",", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"dim_region\"]", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【需求类型】", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：《数据分析》", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "\n【语种类型", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《中文》\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【需求内容", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：查询2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026年", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-01至", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "26-0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "3-31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）期间，按", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "店铺运营归属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（华东、华北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、华南、华中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、西南", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、西北、东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）分别统计已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "支付订单的商品原价", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "总额加运费（", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "不扣优惠、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "不扣退款", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）的GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "分别是多少", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "{", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\n  \"thought", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_process\": \"用户", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "需要查询20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "26年3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "月按店铺运营", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "归属大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "统计已支付订单", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "GMV。我", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "核对了可用", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "Schema：trd", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_order包含paid_at", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "、total", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_amount、freight", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_amount、is", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_deleted、shop_id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "；dim_shop包含", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "id、region_id", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "；dim_region包含", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "id、big_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "。GMV口径", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "为SUM(total_amount", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " + freight_amount)，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "过滤", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "paid_at在2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "026-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "-01至", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "2026", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "-03-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "31", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "且未删除。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "计划通过一条SQL", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "按dim", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_region.big_region分组", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "聚合，并保留", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "七大区，缺失", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "区域补0，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "最后生成报告回答", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "各大区GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "。\",\n ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"execution_plan\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " [\n    {", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\n      \"step", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": 1", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ",\n      \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "tool_to_use\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"SQL_GENERATE", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_NODE\",\n     ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"tool_parameters\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " {\n        \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "instruction\": \"从", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " trd_order o", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " 关联 dim_shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " s（o.shop", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_id=s.id）", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "和 dim_region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " r（s.region", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_id=r.id），", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "统计202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "6年3月", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "已支付订单GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "V。过滤条件", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "：o.is_deleted", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "=0；o", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ".paid_at >=", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " '202", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "6-03", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "-01 ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "00:0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "0:00", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "' 且 o", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ".paid_at", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " < '20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "26", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "-04-", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "01", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " 00:", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "0:00", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "'；GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "计算为 SUM(o", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ".total_amount + o", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ".freight", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_amount)，不扣", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "优惠、不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "扣退款。按", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " r.big_region ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "分组。为确保输出", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "华东、华北、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "华南、华中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "、西南、西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "、东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "七大区，请以", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "七大区列表作为", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "基准，", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "LEFT JOIN 按", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " big_region 聚合", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "后的订单结果；", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "若某大区", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "无订单则 GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "V ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "显示为 0", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "。输出字段", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "：big_region、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "gmv。\"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\n      }\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "    },\n   ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " {\n      \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "step\": 2", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": ",\n      \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "tool_to_use\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"REPORT_GENERATOR", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "_NODE\",\n     ", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"tool_parameters\":", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": " {\n        \"", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "summary_and_recommendations", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": \"汇总步骤", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "1结果", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "，列出20", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "26年3", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "月七大区（", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "华东、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "华北、华南、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "华中", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "、西南、西北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "、东北", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "）的GMV", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "数值；明确GM", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "V口径为已", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "支付订单商品原价", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "总额加运费、", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "不扣优惠不", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "扣退款；指出", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "GMV最高和", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "最低大区，并", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "给出基于区域销售", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "规模的分析建议。", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\"\n      }", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "\n    }\n", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": "PlannerNode", "textType": "JSON", "text": "  ]\n}", "error": false, "complete": false}
+{"agentId": "5", "threadId": "31901bc0-7367-4555-bc40-ef3a257da8af", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true}

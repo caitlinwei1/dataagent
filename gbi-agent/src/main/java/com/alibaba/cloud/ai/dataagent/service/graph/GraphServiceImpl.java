@@ -55,8 +55,23 @@ public class GraphServiceImpl implements GraphService {
 	private final MultiTurnContextManager multiTurnContextManager;
 
 	public GraphServiceImpl(StateGraph stateGraph, ExecutorService executorService,
-			MultiTurnContextManager multiTurnContextManager) throws GraphStateException {
-		this.compiledGraph = stateGraph.compile(CompileConfig.builder().interruptBefore(HUMAN_FEEDBACK_NODE).build());
+			MultiTurnContextManager multiTurnContextManager,
+			com.alibaba.cloud.ai.dataagent.service.hitl.GbiHitlProperties hitlProperties, javax.sql.DataSource dataSource)
+			throws GraphStateException {
+		CompileConfig.Builder config = CompileConfig.builder().interruptBefore(HUMAN_FEEDBACK_NODE);
+		if ("mysql".equalsIgnoreCase(hitlProperties.getCheckpoint())) {
+			// paused plan reviews live in the meta database: a threadId can be resumed after a restart or on another
+			// instance (b297203 keeps them in JVM memory only)
+			config.saverConfig(com.alibaba.cloud.ai.graph.checkpoint.config.SaverConfig.builder()
+				.register(com.alibaba.cloud.ai.graph.checkpoint.savers.mysql.MysqlSaver.builder()
+					.dataSource(dataSource)
+					.stateSerializer(stateGraph.getStateSerializer())
+					.createOption(com.alibaba.cloud.ai.graph.checkpoint.savers.mysql.CreateOption.CREATE_IF_NOT_EXISTS)
+					.build())
+				.build());
+			log.info("Graph checkpoints: MySQL (meta database)");
+		}
+		this.compiledGraph = stateGraph.compile(config.build());
 		this.executor = executorService;
 		this.multiTurnContextManager = multiTurnContextManager;
 	}
@@ -127,7 +142,10 @@ public class GraphServiceImpl implements GraphService {
 		multiTurnContextManager.beginTurn(threadId, query);
 		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(
 				Map.of(IS_ONLY_NL2SQL, nl2sqlOnly, INPUT_KEY, query, AGENT_ID, agentId, HUMAN_REVIEW_ENABLED,
-						humanReviewEnabled, MULTI_TURN_CONTEXT, multiTurnContext),
+						humanReviewEnabled, MULTI_TURN_CONTEXT, multiTurnContext,
+						// a new question in the same thread starts with a fresh review budget
+						HUMAN_REPLAN_COUNT, 0, HUMAN_FEEDBACK_DATA, Map.of(), PLAN_REPAIR_COUNT, 0,
+						HUMAN_REJECT_REASONS, java.util.List.of()),
 				RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
 	}
@@ -147,8 +165,11 @@ public class GraphServiceImpl implements GraphService {
 			log.warn("StreamContext already cleaned for threadId: {}, skipping stream start", threadId);
 			return;
 		}
-		Map<String, Object> feedbackData = Map.of("feedback", !graphRequest.isRejectedPlan(), "feedback_content",
-				feedbackContent);
+		Map<String, Object> feedbackData = new HashMap<>(
+				Map.of("feedback", !graphRequest.isRejectedPlan(), "feedback_content", feedbackContent));
+		if (StringUtils.hasText(graphRequest.getEditedPlan())) {
+			feedbackData.put("edited_plan", graphRequest.getEditedPlan());
+		}
 		if (graphRequest.isRejectedPlan()) {
 			multiTurnContextManager.restartLastTurn(threadId);
 		}
