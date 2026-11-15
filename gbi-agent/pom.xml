@@ -218,6 +218,12 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>3.17.4</version>
         </dependency>
+        <!-- SQL 守卫：解析 SQL 做只读 / 表白名单 / 列存在性校验 -->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>5.1</version>
+        </dependency>
         <!-- 持久化向量库：Milvus（spring.ai.vectorstore.type=milvus，见 application-milvus.yml）-->
         <dependency>
             <groupId>org.springframework.ai</groupId>

@@ -1,0 +1,75 @@
+{"id": "L01", "dialect": "mysql", "expect": "pass", "sql": "SELECT SUM(pay_amount) AS gmv FROM trd_order WHERE paid_at >= '2026-02-01' AND paid_at < '2026-05-01'"}
+{"id": "L02", "dialect": "mysql", "expect": "pass", "sql": "SELECT s.name, SUM(o.pay_amount) gmv FROM trd_order o JOIN dim_shop s ON o.shop_id = s.id GROUP BY s.name ORDER BY gmv DESC LIMIT 10"}
+{"id": "L03", "dialect": "mysql", "expect": "pass", "sql": "SELECT DATE_FORMAT(o.paid_at, '%Y-%m') AS ym, COUNT(*) AS orders, SUM(o.pay_amount)/COUNT(DISTINCT o.member_id) AS arpu FROM trd_order o WHERE o.order_status <> 'CANCELLED' GROUP BY ym ORDER BY ym"}
+{"id": "L04", "dialect": "mysql", "expect": "pass", "sql": "SELECT r.big_region, SUM(i.pay_share) FROM trd_order_item i JOIN trd_order o ON i.order_id = o.id JOIN dim_shop s ON o.shop_id = s.id JOIN dim_region r ON s.region_id = r.id GROUP BY r.big_region"}
+{"id": "L05", "dialect": "mysql", "expect": "pass", "sql": "WITH m AS (SELECT shop_id, SUM(pay_amount) gmv FROM trd_order GROUP BY shop_id) SELECT shop_id, gmv, RANK() OVER (ORDER BY gmv DESC) rk FROM m"}
+{"id": "L06", "dialect": "mysql", "expect": "pass", "sql": "SELECT o.shop_id, COUNT(DISTINCT rf.order_id) / COUNT(DISTINCT o.id) AS refund_rate FROM trd_order o LEFT JOIN trd_refund rf ON rf.order_id = o.id GROUP BY o.shop_id HAVING COUNT(DISTINCT o.id) > 100"}
+{"id": "L07", "dialect": "mysql", "expect": "pass", "sql": "SELECT sku_id, SUM(quantity) qty FROM trd_order_item WHERE created_time >= NOW() - INTERVAL 30 DAY GROUP BY sku_id ORDER BY qty DESC LIMIT 20"}
+{"id": "L08", "dialect": "mysql", "expect": "pass", "sql": "SELECT CASE WHEN pay_amount >= 500 THEN '高' WHEN pay_amount >= 100 THEN '中' ELSE '低' END AS band, COUNT(*) FROM trd_order GROUP BY band"}
+{"id": "L09", "dialect": "mysql", "expect": "pass", "sql": "SELECT member_id FROM trd_order WHERE member_id IN (SELECT id FROM usr_member WHERE level_id >= 3) LIMIT 100"}
+{"id": "L10", "dialect": "mysql", "expect": "pass", "sql": "SELECT 'paid' AS k, COUNT(*) FROM trd_order WHERE paid_at IS NOT NULL UNION ALL SELECT 'refund', COUNT(*) FROM trd_refund"}
+{"id": "L11", "dialect": "mysql", "expect": "pass", "sql": "SELECT w.name, SUM(inv.on_hand_qty) FROM wms_inventory inv JOIN wms_warehouse w ON inv.warehouse_id = w.id GROUP BY w.name"}
+{"id": "L12", "dialect": "mysql", "expect": "pass", "sql": "SELECT COALESCE(SUM(refund_amount), 0) FROM trd_refund WHERE refund_status = 'SUCCESS'"}
+{"id": "L13", "dialect": "mysql", "expect": "pass", "sql": "SELECT `o`.`shop_id`, COUNT(*) FROM `trd_order` `o` GROUP BY `o`.`shop_id`"}
+{"id": "L14", "dialect": "mysql", "expect": "pass", "sql": "SELECT gbi_ecommerce.trd_order.shop_id, COUNT(*) FROM gbi_ecommerce.trd_order GROUP BY gbi_ecommerce.trd_order.shop_id"}
+{"id": "L15", "dialect": "mysql", "expect": "pass", "sql": "SELECT d.year_month_str, SUM(o.pay_amount) FROM trd_order o JOIN (SELECT DISTINCT DATE_FORMAT(paid_at,'%Y-%m') year_month_str, id FROM trd_order) d ON d.id = o.id GROUP BY d.year_month_str"}
+{"id": "L16", "dialect": "mysql", "expect": "pass", "sql": "SELECT carrier_id, AVG(TIMESTAMPDIFF(HOUR, shipped_at, delivered_at)) AS hours FROM tms_shipment WHERE delivered_at IS NOT NULL GROUP BY carrier_id"}
+{"id": "L17", "dialect": "mysql", "expect": "pass", "sql": "SELECT COUNT(*) FROM trd_order WHERE YEAR(paid_at) = 2026 AND MONTH(paid_at) BETWEEN 2 AND 4;"}
+{"id": "L18", "dialect": "pg", "expect": "pass", "sql": "SELECT date_trunc('month', paid_at)::date AS m, SUM(pay_amount) FROM trd_order GROUP BY 1 ORDER BY 1"}
+{"id": "L19", "dialect": "pg", "expect": "pass", "sql": "SELECT shop_id, pay_amount, LAG(pay_amount) OVER (PARTITION BY shop_id ORDER BY paid_at) AS prev FROM trd_order LIMIT 50"}
+{"id": "L20", "dialect": "pg", "expect": "pass", "sql": "SELECT s.name, PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY o.pay_amount) FROM trd_order o JOIN dim_shop s ON s.id = o.shop_id GROUP BY s.name"}
+{"id": "L21", "dialect": "pg", "expect": "pass", "sql": "SELECT o.id FROM trd_order o WHERE o.paid_at >= CURRENT_DATE - INTERVAL '30 days' LIMIT 10"}
+{"id": "L22", "dialect": "pg", "expect": "pass", "sql": "WITH a AS (SELECT member_id, MIN(paid_at) first_paid FROM trd_order GROUP BY member_id), b AS (SELECT member_id FROM a WHERE first_paid >= '2026-02-01') SELECT COUNT(*) FROM b"}
+{"id": "L23", "dialect": "pg", "expect": "pass", "sql": "SELECT so.warehouse_id, COUNT(*) FROM wms_stockout_record so WHERE so.created_time BETWEEN '2026-10-12' AND '2026-10-18' GROUP BY so.warehouse_id"}
+{"id": "L24", "dialect": "pg", "expect": "pass", "sql": "SELECT COUNT(*) FILTER (WHERE pay_amount > 100) AS big, COUNT(*) AS total FROM trd_order"}
+{"id": "L25", "dialect": "mysql", "expect": "pass", "sql": "SELECT p.name AS platform, COUNT(*) FROM trd_order o JOIN dim_shop s ON o.shop_id = s.id JOIN dim_platform p ON s.platform_id = p.id WHERE p.name = '抖音' GROUP BY p.name"}
+{"id": "L26", "dialect": "mysql", "expect": "pass", "sql": "SELECT x.shop_id, x.gmv FROM (SELECT shop_id, SUM(pay_amount) AS gmv FROM trd_order GROUP BY shop_id) x WHERE x.gmv > 10000"}
+{"id": "L27", "dialect": "mysql", "expect": "pass", "sql": "SELECT ROUND(SUM(i.pay_share - i.cost_price * i.quantity), 2) AS gross_profit FROM trd_order_item i"}
+{"id": "L28", "dialect": "mysql", "expect": "pass", "sql": "SELECT COUNT(*) AS cnt FROM trd_order ORDER BY cnt"}
+{"id": "L29", "dialect": "pg", "expect": "pass", "sql": "SELECT EXTRACT(DOW FROM paid_at) AS dow, COUNT(*) FROM trd_order GROUP BY dow"}
+{"id": "L30", "dialect": "mysql", "expect": "pass", "sql": "SELECT IFNULL(c.name, '未知'), COUNT(*) FROM trd_order_item i LEFT JOIN prd_category c ON c.id = i.category_id GROUP BY c.name"}
+{"id": "W01", "dialect": "mysql", "expect": "READ_ONLY", "sql": "DELETE FROM trd_order WHERE id = 1"}
+{"id": "W02", "dialect": "mysql", "expect": "READ_ONLY", "sql": "UPDATE trd_order SET pay_amount = 0"}
+{"id": "W03", "dialect": "mysql", "expect": "READ_ONLY", "sql": "INSERT INTO trd_order (id) VALUES (1)"}
+{"id": "W04", "dialect": "mysql", "expect": "READ_ONLY", "sql": "DROP TABLE trd_order"}
+{"id": "W05", "dialect": "mysql", "expect": "READ_ONLY", "sql": "TRUNCATE TABLE trd_refund"}
+{"id": "W06", "dialect": "mysql", "expect": "READ_ONLY", "sql": "ALTER TABLE trd_order ADD COLUMN x INT"}
+{"id": "W07", "dialect": "mysql", "expect": "READ_ONLY", "sql": "CREATE TABLE t AS SELECT * FROM trd_order"}
+{"id": "W08", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT 1; DROP TABLE trd_order"}
+{"id": "W09", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT COUNT(*) FROM trd_order;\n-- 汇总\nDELETE FROM trd_order"}
+{"id": "W10", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT * FROM trd_order INTO OUTFILE '/tmp/o.csv'"}
+{"id": "W11", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT id INTO @x FROM trd_order LIMIT 1"}
+{"id": "W12", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT * FROM trd_order WHERE id = 1 FOR UPDATE"}
+{"id": "W13", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT * FROM trd_order WHERE id = 1 LOCK IN SHARE MODE"}
+{"id": "W14", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT SLEEP(30)"}
+{"id": "W15", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT BENCHMARK(100000000, MD5('x'))"}
+{"id": "W16", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT id FROM trd_order WHERE id = 1 AND SLEEP(5) = 0"}
+{"id": "W17", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SELECT LOAD_FILE('/etc/passwd')"}
+{"id": "W18", "dialect": "pg", "expect": "READ_ONLY", "sql": "SELECT pg_sleep(30)"}
+{"id": "W19", "dialect": "pg", "expect": "READ_ONLY", "sql": "SELECT pg_read_file('/etc/passwd')"}
+{"id": "W20", "dialect": "pg", "expect": "READ_ONLY", "sql": "WITH d AS (DELETE FROM trd_order WHERE id = 1 RETURNING id) SELECT * FROM d"}
+{"id": "W21", "dialect": "mysql", "expect": "READ_ONLY", "sql": "CALL refresh_stats()"}
+{"id": "W22", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SET GLOBAL max_connections = 1"}
+{"id": "W23", "dialect": "mysql", "expect": "READ_ONLY", "sql": "GRANT ALL ON *.* TO 'gbi_reader'@'%'"}
+{"id": "W24", "dialect": "mysql", "expect": "READ_ONLY", "sql": "REPLACE INTO trd_order (id) VALUES (1)"}
+{"id": "W25", "dialect": "pg", "expect": "READ_ONLY", "sql": "SELECT set_config('statement_timeout', '0', false)"}
+{"id": "W26", "dialect": "pg", "expect": "READ_ONLY", "sql": "SELECT pg_terminate_backend(pid) FROM pg_stat_activity"}
+{"id": "W27", "dialect": "mysql", "expect": "READ_ONLY", "sql": "SHOW GRANTS"}
+{"id": "W28", "dialect": "pg", "expect": "READ_ONLY", "sql": "EXPLAIN ANALYZE DELETE FROM trd_order"}
+{"id": "T01", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT table_name FROM information_schema.tables"}
+{"id": "T02", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT user, authentication_string FROM mysql.user"}
+{"id": "T03", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT api_key FROM saa_data_agent.model_config"}
+{"id": "T04", "dialect": "pg", "expect": "WHITELIST", "sql": "SELECT usename, passwd FROM pg_catalog.pg_shadow"}
+{"id": "T05", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT id FROM trd_order UNION SELECT id FROM saa_data_agent.agent"}
+{"id": "T06", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT COUNT(*) FROM trd_orders"}
+{"id": "T07", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT * FROM trd_order o WHERE EXISTS (SELECT 1 FROM gbi_ecommerce_partial.trd_order p WHERE p.id = o.id)"}
+{"id": "T08", "dialect": "mysql", "expect": "WHITELIST", "sql": "SELECT shop_id, SUM(amount) FROM sales_daily GROUP BY shop_id"}
+{"id": "C01", "dialect": "mysql", "expect": "COLUMN", "sql": "SELECT SUM(o.paid_amount) FROM trd_order o"}
+{"id": "C02", "dialect": "mysql", "expect": "COLUMN", "sql": "SELECT s.shop_name, COUNT(*) FROM trd_order o JOIN dim_shop s ON o.shop_id = s.id GROUP BY s.shop_name"}
+{"id": "C03", "dialect": "mysql", "expect": "COLUMN", "sql": "SELECT SUM(gmv) FROM trd_order"}
+{"id": "C04", "dialect": "mysql", "expect": "COLUMN", "sql": "SELECT r.region_name FROM dim_region r"}
+{"id": "C05", "dialect": "pg", "expect": "COLUMN", "sql": "SELECT date_trunc('month', o.pay_time) FROM trd_order o"}
+{"id": "S01", "dialect": "mysql", "expect": "SYNTAX", "sql": "SELEC id FROM trd_order"}
+{"id": "S02", "dialect": "mysql", "expect": "SYNTAX", "sql": "SELECT id, FROM trd_order"}
+{"id": "S03", "dialect": "mysql", "expect": "SYNTAX", "sql": "SELECT SUM(pay_amount FROM trd_order"}
+{"id": "S04", "dialect": "mysql", "expect": "SYNTAX", "sql": ""}

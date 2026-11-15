@@ -1,0 +1,476 @@
+{
+  "summary" : {
+    "pass" : {
+      "total" : 30,
+      "matched" : 30
+    },
+    "READ_ONLY" : {
+      "total" : 28,
+      "matched" : 28
+    },
+    "WHITELIST" : {
+      "total" : 8,
+      "matched" : 8
+    },
+    "COLUMN" : {
+      "total" : 5,
+      "matched" : 5
+    },
+    "SYNTAX" : {
+      "total" : 4,
+      "matched" : 4
+    },
+    "ms_per_case" : 2.907398413333333
+  },
+  "cases" : [ {
+    "id" : "L01",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L02",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L03",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L04",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L05",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L06",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L07",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L08",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L09",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L10",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L11",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L12",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L13",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L14",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L15",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L16",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L17",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L18",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L19",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L20",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L21",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L22",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L23",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L24",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L25",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L26",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L27",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L28",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L29",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "L30",
+    "expect" : "pass",
+    "got" : "pass",
+    "errorClass" : null,
+    "message" : ""
+  }, {
+    "id" : "W01",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Delete"
+  }, {
+    "id" : "W02",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Update"
+  }, {
+    "id" : "W03",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Insert"
+  }, {
+    "id" : "W04",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Drop"
+  }, {
+    "id" : "W05",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Truncate"
+  }, {
+    "id" : "W06",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Alter"
+  }, {
+    "id" : "W07",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 CreateTable"
+  }, {
+    "id" : "W08",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许一条语句，实际 2 条"
+  }, {
+    "id" : "W09",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许一条语句，实际 2 条"
+  }, {
+    "id" : "W10",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 INTO，只允许纯 SELECT"
+  }, {
+    "id" : "W11",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 INTO，只允许纯 SELECT"
+  }, {
+    "id" : "W12",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许加锁读（FOR UPDATE）"
+  }, {
+    "id" : "W13",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 LOCK，只允许纯 SELECT"
+  }, {
+    "id" : "W14",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 sleep()"
+  }, {
+    "id" : "W15",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 benchmark()"
+  }, {
+    "id" : "W16",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 sleep()"
+  }, {
+    "id" : "W17",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 load_file()"
+  }, {
+    "id" : "W18",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 pg_sleep()"
+  }, {
+    "id" : "W19",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 pg_read_file()"
+  }, {
+    "id" : "W20",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 DELETE，只允许纯 SELECT"
+  }, {
+    "id" : "W21",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Execute"
+  }, {
+    "id" : "W22",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 SetStatement"
+  }, {
+    "id" : "W23",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 GRANT，只允许纯 SELECT"
+  }, {
+    "id" : "W24",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 Upsert"
+  }, {
+    "id" : "W25",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 set_config()"
+  }, {
+    "id" : "W26",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "不允许调用函数 pg_terminate_backend()"
+  }, {
+    "id" : "W27",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "只允许 SELECT，实际是 ShowStatement"
+  }, {
+    "id" : "W28",
+    "expect" : "READ_ONLY",
+    "got" : "READ_ONLY",
+    "errorClass" : "SECURITY",
+    "message" : "无法解析且包含 DELETE，只允许纯 SELECT"
+  }, {
+    "id" : "T01",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许访问系统库 information_schema"
+  }, {
+    "id" : "T02",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许访问系统库 mysql"
+  }, {
+    "id" : "T03",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许跨库访问 saa_data_agent.model_config"
+  }, {
+    "id" : "T04",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许访问系统库 pg_catalog"
+  }, {
+    "id" : "T05",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许跨库访问 saa_data_agent.agent"
+  }, {
+    "id" : "T06",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表不在白名单：trd_orders"
+  }, {
+    "id" : "T07",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "不允许跨库访问 gbi_ecommerce_partial.trd_order"
+  }, {
+    "id" : "T08",
+    "expect" : "WHITELIST",
+    "got" : "WHITELIST",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表不在白名单：sales_daily"
+  }, {
+    "id" : "C01",
+    "expect" : "COLUMN",
+    "got" : "COLUMN",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表 trd_order 没有字段 paid_amount"
+  }, {
+    "id" : "C02",
+    "expect" : "COLUMN",
+    "got" : "COLUMN",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表 dim_shop 没有字段 shop_name"
+  }, {
+    "id" : "C03",
+    "expect" : "COLUMN",
+    "got" : "COLUMN",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表 trd_order 没有字段 gmv"
+  }, {
+    "id" : "C04",
+    "expect" : "COLUMN",
+    "got" : "COLUMN",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表 dim_region 没有字段 region_name"
+  }, {
+    "id" : "C05",
+    "expect" : "COLUMN",
+    "got" : "COLUMN",
+    "errorClass" : "TABLE_SELECTION",
+    "message" : "表 trd_order 没有字段 pay_time"
+  }, {
+    "id" : "S01",
+    "expect" : "SYNTAX",
+    "got" : "SYNTAX",
+    "errorClass" : "DIALECT",
+    "message" : "无法解析：net.sf.jsqlparser.parser.ParseException: Encountered unexpected token: \"SELEC\" <S_IDENTIFIER>"
+  }, {
+    "id" : "S02",
+    "expect" : "SYNTAX",
+    "got" : "SYNTAX",
+    "errorClass" : "DIALECT",
+    "message" : "无法解析：net.sf.jsqlparser.parser.ParseException: Encountered unexpected token: \",\" \",\""
+  }, {
+    "id" : "S03",
+    "expect" : "SYNTAX",
+    "got" : "SYNTAX",
+    "errorClass" : "DIALECT",
+    "message" : "无法解析：net.sf.jsqlparser.parser.ParseException: Encountered unexpected token: \"(\" \"(\""
+  }, {
+    "id" : "S04",
+    "expect" : "SYNTAX",
+    "got" : "SYNTAX",
+    "errorClass" : "DIALECT",
+    "message" : "SQL 为空"
+  } ]
+}
