@@ -1,0 +1,54 @@
+{
+  "c1": {
+    "C_direct_open": {
+      "p50": 1.17,
+      "p95": 1.75,
+      "p99": 2.69,
+      "mean": 1.24,
+      "rps": 803.1
+    },
+    "A_direct_signed": {
+      "p50": 1.18,
+      "p95": 1.66,
+      "p99": 2.76,
+      "mean": 1.23,
+      "rps": 811.7
+    },
+    "B_via_gateway": {
+      "p50": 2.16,
+      "p95": 3.19,
+      "p99": 6.51,
+      "mean": 2.33,
+      "rps": 429.7
+    },
+    "gateway_overhead_p50_ms": 0.98,
+    "gateway_overhead_p99_ms": 3.75,
+    "agent_filter_p50_ms": 0.01
+  },
+  "c16": {
+    "C_direct_open": {
+      "p50": 9.36,
+      "p95": 30.11,
+      "p99": 44.03,
+      "mean": 11.89,
+      "rps": 1316.8
+    },
+    "A_direct_signed": {
+      "p50": 10.43,
+      "p95": 31.34,
+      "p99": 41.48,
+      "mean": 12.64,
+      "rps": 1232.3
+    },
+    "B_via_gateway": {
+      "p50": 11.59,
+      "p95": 29.12,
+      "p99": 39.76,
+      "mean": 13.43,
+      "rps": 1163.1
+    },
+    "gateway_overhead_p50_ms": 1.16,
+    "gateway_overhead_p99_ms": -1.72,
+    "agent_filter_p50_ms": 1.07
+  }
+}

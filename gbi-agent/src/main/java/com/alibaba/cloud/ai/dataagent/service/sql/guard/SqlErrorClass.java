@@ -15,7 +15,9 @@ public enum SqlErrorClass {
 	EXECUTION("执行"),
 
 	/** Blocked before execution because it is not a pure read (write, DDL, lock, file / sleep functions). */
-	SECURITY("安全");
+	SECURITY("安全"),
+	/** The user may not read this table / these rows; the model should answer with the tables it is allowed. */
+	PERMISSION("权限");
 
 	private final String label;
 

@@ -1,0 +1,24 @@
+# Microservice mode: gbi-agent sits behind gbi-gateway and trusts only requests the gateway signed.
+# Activate with --spring.profiles.active=...,security (scripts/up.sh does this when SECURITY=on).
+gbi:
+  security:
+    enabled: true
+    sign-secret: ${GBI_GATEWAY_SIGN_SECRET:change-me-gbi-gateway-sign-secret}
+    row-policies: classpath:data-permission/row-policies.yml
+    # function permissions (RuoYi @RequiresPermissions as config); first match wins, unmatched needs gbi:admin
+    default-permission: gbi:admin
+    rules:
+      - path: /api/stream/**
+        methods: [GET]
+        permission: gbi:query
+      - path: /api/data-permission/**
+        permission: gbi:query
+      - path: /api/agent/list
+        methods: [GET]
+        permission: gbi:query
+      - path: /openapi/v1/reports
+        methods: [POST]
+        permission: gbi:report
+      - path: /openapi/v1/reports/**
+        methods: [GET]
+        permission: gbi:report
