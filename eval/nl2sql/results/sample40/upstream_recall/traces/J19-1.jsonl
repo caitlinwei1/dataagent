@@ -1,0 +1,581 @@
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 2.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 2.47}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 2.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 2.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 2.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 2.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 5.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 5.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 5.17}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "6年8月华东中心", "error": false, "complete": false, "_t": 5.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "仓每天的可用库存总量", "error": false, "complete": false, "_t": 5.37}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 5.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 5.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 6.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年8月华东中心仓每天的可用库存总量\n", "error": false, "complete": false, "_t": 6.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 6.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 6.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 华东中心仓, 说明: 仓库取值，对应 wms_warehouse.name = '华东中心仓', 同义词: \n", "error": false, "complete": false, "_t": 6.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 华东区域仓, 说明: 仓库取值，对应 wms_warehouse.name = '华东区域仓', 同义词: \n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 华东, 说明: 大区取值，对应 dim_region.big_region = '华东', 同义词: \n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 库存金额, 说明: 公式：SUM(wms_inventory_snapshot.available_qty * prd_sku_cost.unit_cost)；涉及：wms_invento...\n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 华南中心仓, 说明: 仓库取值，对应 wms_warehouse.name = '华南中心仓', 同义词: \n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: DOS, 说明: 可用库存取 wms_inventory_snapshot.available_qty（日快照）；问“当前”时用实时表 wms_inventory。；公式：期末可用库存 /...\n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 华中区域仓, 说明: 仓库取值，对应 wms_warehouse.name = '华中区域仓', 同义词: \n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 上海前置仓, 说明: 仓库取值，对应 wms_warehouse.name = '上海前置仓', 同义词: \n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 7.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 7.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 7.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询20", "error": false, "complete": false, "_t": 8.12}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年8月（", "error": false, "complete": false, "_t": 8.21}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ">= '20", "error": false, "complete": false, "_t": 8.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-08-", "error": false, "complete": false, "_t": 8.47}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 8.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 8.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "9-01'）", "error": false, "complete": false, "_t": 8.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "期间，华东中心仓（", "error": false, "complete": false, "_t": 9.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "wms_warehouse", "error": false, "complete": false, "_t": 9.08}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ".name = '华东中心仓", "error": false, "complete": false, "_t": 9.22}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "'）每日的", "error": false, "complete": false, "_t": 9.33}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "可用库存总量（SUM(w", "error": false, "complete": false, "_t": 9.46}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "ms_inventory_snapshot.available_qty)", "error": false, "complete": false, "_t": 9.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）\",\n  \"expanded_queries", "error": false, "complete": false, "_t": 9.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\": [\n    \"统计2", "error": false, "complete": false, "_t": 9.83}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026年", "error": false, "complete": false, "_t": 9.95}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "8月每天在", "error": false, "complete": false, "_t": 10.01}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华东中心仓的", "error": false, "complete": false, "_t": 10.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "可用库存总和", "error": false, "complete": false, "_t": 10.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，时间范围为2", "error": false, "complete": false, "_t": 10.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026-08", "error": false, "complete": false, "_t": 10.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01至", "error": false, "complete": false, "_t": 10.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026", "error": false, "complete": false, "_t": 10.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-08-31", "error": false, "complete": false, "_t": 10.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（含）\",\n   ", "error": false, "complete": false, "_t": 10.84}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"请给出202", "error": false, "complete": false, "_t": 10.98}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年8月每一天", "error": false, "complete": false, "_t": 11.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华东中心仓的", "error": false, "complete": false, "_t": 11.17}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "可用库存汇总值", "error": false, "complete": false, "_t": 11.24}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，按日粒", "error": false, "complete": false, "_t": 11.35}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "度聚合\",\n    \"", "error": false, "complete": false, "_t": 11.42}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华东中心仓在", "error": false, "complete": false, "_t": 11.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年8", "error": false, "complete": false, "_t": 11.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月每日的available", "error": false, "complete": false, "_t": 11.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_qty总和是多少？", "error": false, "complete": false, "_t": 11.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "要求时间范围严格按", "error": false, "complete": false, "_t": 12.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日历月，", "error": false, "complete": false, "_t": 12.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "即从202", "error": false, "complete": false, "_t": 12.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-08-0", "error": false, "complete": false, "_t": 12.3}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1（含）到", "error": false, "complete": false, "_t": 12.45}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 12.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "9-01（不含", "error": false, "complete": false, "_t": 12.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）\"\n  ]\n}", "error": false, "complete": false, "_t": 12.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 12.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 14.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: trd_aftersale_reason, scm_supplier, prd_sku_attribute, prd_attribute, mkt_member_attribution, dim_store, dim_shop, trd_daily_shop_sales, prd_brand, trd_order\n", "error": false, "complete": false, "_t": 14.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 14.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 14.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 14.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 14.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 18.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "JSON", "text": "wms_inventory", "error": false, "complete": false, "_t": 18.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_snapshot\",", "error": false, "complete": false, "_t": 18.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"wms", "error": false, "complete": false, "_t": 18.24}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_warehouse\"]", "error": false, "complete": false, "_t": 18.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 18.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 18.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 18.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 18.28}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 20.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 20.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 20.42}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 20.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n【语", "error": false, "complete": false, "_t": 20.63}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "种类型】：《", "error": false, "complete": false, "_t": 20.74}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中文》  \n【需求", "error": false, "complete": false, "_t": 20.83}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：查询", "error": false, "complete": false, "_t": 20.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026年", "error": false, "complete": false, "_t": 21.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "8月（>= '", "error": false, "complete": false, "_t": 21.16}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026-", "error": false, "complete": false, "_t": 21.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "08-01", "error": false, "complete": false, "_t": 21.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "' AND < '2", "error": false, "complete": false, "_t": 21.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026-09", "error": false, "complete": false, "_t": 21.62}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-01'）", "error": false, "complete": false, "_t": 21.71}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "期间，华东中心仓", "error": false, "complete": false, "_t": 21.84}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（wms_", "error": false, "complete": false, "_t": 21.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "warehouse.name = '华东中心", "error": false, "complete": false, "_t": 22.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "仓'）每日", "error": false, "complete": false, "_t": 22.13}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "的可用库存总量", "error": false, "complete": false, "_t": 22.23}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（SUM(wms_inventory", "error": false, "complete": false, "_t": 22.37}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_snapshot.available_qty)", "error": false, "complete": false, "_t": 22.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）  \n\n**判断", "error": false, "complete": false, "_t": 22.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "依据**：  \n-", "error": false, "complete": false, "_t": 22.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **时间范围", "error": false, "complete": false, "_t": 22.74}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：明确给出", "error": false, "complete": false, "_t": 22.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `>= '2", "error": false, "complete": false, "_t": 22.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026-08", "error": false, "complete": false, "_t": 23.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-01' AND <", "error": false, "complete": false, "_t": 23.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2026-", "error": false, "complete": false, "_t": 23.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "09-01'", "error": false, "complete": false, "_t": 23.45}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，且【", "error": false, "complete": false, "_t": 23.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息】中已", "error": false, "complete": false, "_t": 23.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "确认该口径为标准", "error": false, "complete": false, "_t": 23.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "半开区间，可", "error": false, "complete": false, "_t": 23.85}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "直接使用；  \n-", "error": false, "complete": false, "_t": 23.98}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **仓库实体", "error": false, "complete": false, "_t": 24.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：“华东中心仓”", "error": false, "complete": false, "_t": 24.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "在【参考信息】", "error": false, "complete": false, "_t": 24.33}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中明确定义为", "error": false, "complete": false, "_t": 24.46}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_warehouse.name", "error": false, "complete": false, "_t": 24.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " = '华东中心仓'", "error": false, "complete": false, "_t": 24.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，属标准", "error": false, "complete": false, "_t": 24.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务术语，映", "error": false, "complete": false, "_t": 24.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "射清晰；  \n-", "error": false, "complete": false, "_t": 24.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **指标", "error": false, "complete": false, "_t": 25.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“可用库存总量", "error": false, "complete": false, "_t": 25.17}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”**：  \n", "error": false, "complete": false, "_t": 25.25}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  - 查询中明确指定", "error": false, "complete": false, "_t": 25.42}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为 `SUM(wms_inventory", "error": false, "complete": false, "_t": 25.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_snapshot.available_qty)`；", "error": false, "complete": false, "_t": 25.63}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n  - 【", "error": false, "complete": false, "_t": 25.71}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息】中“", "error": false, "complete": false, "_t": 25.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DOS”术语", "error": false, "complete": false, "_t": 25.92}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "说明中明确指出：`", "error": false, "complete": false, "_t": 26.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可用库存取 w", "error": false, "complete": false, "_t": 26.17}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_inventory_snapshot.available_qty（", "error": false, "complete": false, "_t": 26.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "日快照）`，", "error": false, "complete": false, "_t": 26.4}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "证实该字段存在且语", "error": false, "complete": false, "_t": 26.53}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "义匹配；  \n-", "error": false, "complete": false, "_t": 26.66}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **表与", "error": false, "complete": false, "_t": 26.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "字段存在性**：虽然", "error": false, "complete": false, "_t": 26.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【召回的数据库", "error": false, "complete": false, "_t": 26.97}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema】未显", "error": false, "complete": false, "_t": 27.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "式列出 `wms_", "error": false, "complete": false, "_t": 27.21}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "warehouse` 和 `w", "error": false, "complete": false, "_t": 27.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_inventory_snapshot`", "error": false, "complete": false, "_t": 27.41}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 表，但：", "error": false, "complete": false, "_t": 27.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n  - 【", "error": false, "complete": false, "_t": 27.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DB_ID】为", "error": false, "complete": false, "_t": 27.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `gbi_ec", "error": false, "complete": false, "_t": 27.74}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ommerce`，表明", "error": false, "complete": false, "_t": 27.9}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "这是电商/供应链", "error": false, "complete": false, "_t": 27.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "域数据库，而", "error": false, "complete": false, "_t": 28.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_", "error": false, "complete": false, "_t": 28.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 前缀", "error": false, "complete": false, "_t": 28.26}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "是仓储管理系统（Warehouse", "error": false, "complete": false, "_t": 28.33}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " Management System）的标准", "error": false, "complete": false, "_t": 28.4}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "命名惯例；  \n", "error": false, "complete": false, "_t": 28.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  - 【Foreign", "error": false, "complete": false, "_t": 28.62}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " keys】中存在", "error": false, "complete": false, "_t": 28.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_stock", "error": false, "complete": false, "_t": 28.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "out_record.order_id", "error": false, "complete": false, "_t": 28.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "=trd_order", "error": false, "complete": false, "_t": 28.93}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".id`，证明", "error": false, "complete": false, "_t": 29.01}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_*", "error": false, "complete": false, "_t": 29.13}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 相关表", "error": false, "complete": false, "_t": 29.25}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "确实在该库", "error": false, "complete": false, "_t": 29.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中存在（否则", "error": false, "complete": false, "_t": 29.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "外键无法定义）；", "error": false, "complete": false, "_t": 29.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n  - 更", "error": false, "complete": false, "_t": 29.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关键的是，【参考信息", "error": false, "complete": false, "_t": 29.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】中反复引用", "error": false, "complete": false, "_t": 29.89}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_inventory_snapshot`", "error": false, "complete": false, "_t": 30.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 和 `wms_warehouse", "error": false, "complete": false, "_t": 30.16}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`（如D", "error": false, "complete": false, "_t": 30.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "OS定义、华东", "error": false, "complete": false, "_t": 30.31}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中心仓说明），且作为", "error": false, "complete": false, "_t": 30.46}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务术语被权威", "error": false, "complete": false, "_t": 30.51}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "解释——这构成", "error": false, "complete": false, "_t": 30.62}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "强证据：这些", "error": false, "complete": false, "_t": 30.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "表**必然存在于", "error": false, "complete": false, "_t": 30.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "当前数据库Schema中", "error": false, "complete": false, "_t": 30.88}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**，只是未", "error": false, "complete": false, "_t": 30.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "被本次召回完整", "error": false, "complete": false, "_t": 31.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "列出（召回不", "error": false, "complete": false, "_t": 31.15}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "全 ≠ 不存在）", "error": false, "complete": false, "_t": 31.28}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "；  \n- ✅ **", "error": false, "complete": false, "_t": 31.37}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "聚合粒度“", "error": false, "complete": false, "_t": 31.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "每日”**：", "error": false, "complete": false, "_t": 31.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`wms_inventory", "error": false, "complete": false, "_t": 31.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_snapshot` 名称含", "error": false, "complete": false, "_t": 31.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " “snapshot”（快", "error": false, "complete": false, "_t": 31.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "照），结合“", "error": false, "complete": false, "_t": 31.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DOS”说明", "error": false, "complete": false, "_t": 32.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中注明“日快照", "error": false, "complete": false, "_t": 32.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”，可合理推断", "error": false, "complete": false, "_t": 32.29}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "该表按日记录", "error": false, "complete": false, "_t": 32.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "库存状态，支持", "error": false, "complete": false, "_t": 32.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `GROUP BY stat", "error": false, "complete": false, "_t": 32.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_date` 或类似", "error": false, "complete": false, "_t": 32.69}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "日期字段（常见", "error": false, "complete": false, "_t": 32.76}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "字段名如 `snapshot", "error": false, "complete": false, "_t": 32.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_date`/`stat", "error": false, "complete": false, "_t": 32.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_date`/`date_key", "error": false, "complete": false, "_t": 33.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，可在后续", "error": false, "complete": false, "_t": 33.19}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "SQL中通过探索", "error": false, "complete": false, "_t": 33.31}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "确认，不构成", "error": false, "complete": false, "_t": 33.35}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "前置阻碍）；  \n\n", "error": false, "complete": false, "_t": 33.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "综上，所有", "error": false, "complete": false, "_t": 33.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "核心要素（时间、", "error": false, "complete": false, "_t": 33.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "仓库、指标、表", "error": false, "complete": false, "_t": 33.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "级语义）均", "error": false, "complete": false, "_t": 33.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "能在Schema线索 +", "error": false, "complete": false, "_t": 33.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " Evidence定义中闭环", "error": false, "complete": false, "_t": 34.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "验证，无不可", "error": false, "complete": false, "_t": 34.14}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "绕过的关键缺失", "error": false, "complete": false, "_t": 34.25}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "。符合“乐观", "error": false, "complete": false, "_t": 34.29}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "包容”原则，", "error": false, "complete": false, "_t": 34.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "应直接进入数据分析", "error": false, "complete": false, "_t": 34.47}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "阶段。", "error": false, "complete": false, "_t": 34.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 34.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 34.5}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 34.51}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 36.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `w", "error": false, "complete": false, "_t": 36.76}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_inventory_snapshot", "error": false, "complete": false, "_t": 36.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`", "error": false, "complete": false, "_t": 36.88}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "stat_date`, sum", "error": false, "complete": false, "_t": 37.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(`wms_inventory_snapshot`.`", "error": false, "complete": false, "_t": 37.14}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "available_qty`) as `total", "error": false, "complete": false, "_t": 37.23}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_available_qty` from", "error": false, "complete": false, "_t": 37.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms_inventory_snapshot", "error": false, "complete": false, "_t": 37.42}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `w", "error": false, "complete": false, "_t": 37.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse` on", "error": false, "complete": false, "_t": 37.66}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms_inventory_snapshot`.`", "error": false, "complete": false, "_t": 37.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse_id` = `w", "error": false, "complete": false, "_t": 37.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse`.`id", "error": false, "complete": false, "_t": 37.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` where `wms", "error": false, "complete": false, "_t": 38.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_warehouse`.`name", "error": false, "complete": false, "_t": 38.21}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 38.35}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms", "error": false, "complete": false, "_t": 38.47}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`stat_date`", "error": false, "complete": false, "_t": 38.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " >= '2026", "error": false, "complete": false, "_t": 38.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-08-01", "error": false, "complete": false, "_t": 38.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms", "error": false, "complete": false, "_t": 38.98}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`stat_date`", "error": false, "complete": false, "_t": 39.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '2026", "error": false, "complete": false, "_t": 39.22}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-09-01", "error": false, "complete": false, "_t": 39.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' group by `w", "error": false, "complete": false, "_t": 39.48}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_inventory_snapshot`.`stat_date", "error": false, "complete": false, "_t": 39.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`;", "error": false, "complete": false, "_t": 39.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 39.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 39.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 41.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 41.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 41.12}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 41.12}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`stat_date`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`stat_date` >= '2026-08-01' and `wms_inventory_snapshot`.`stat_date` < '2026-09-01' group by `wms_inventory_snapshot`.`stat_date`;\n", "error": false, "complete": false, "_t": 41.13}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.stat_date' in 'field list'\n", "error": false, "complete": false, "_t": 41.13}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 41.14}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 43.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 43.51}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 43.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "date", "error": false, "complete": false, "_t": 43.64}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_key`, sum(`wms", "error": false, "complete": false, "_t": 43.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 43.92}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 44.08}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 44.16}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 44.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 44.45}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 44.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 44.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `w", "error": false, "complete": false, "_t": 44.82}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse`.`", "error": false, "complete": false, "_t": 44.93}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "name` = '华东中心", "error": false, "complete": false, "_t": 45.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "仓' and `wms", "error": false, "complete": false, "_t": 45.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`", "error": false, "complete": false, "_t": 45.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " >= '2026", "error": false, "complete": false, "_t": 45.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-08-01", "error": false, "complete": false, "_t": 45.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms", "error": false, "complete": false, "_t": 45.71}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`", "error": false, "complete": false, "_t": 45.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '2026", "error": false, "complete": false, "_t": 45.95}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-09-01", "error": false, "complete": false, "_t": 46.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' group by `wms", "error": false, "complete": false, "_t": 46.24}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`;", "error": false, "complete": false, "_t": 46.31}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 46.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 46.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 48.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 48.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 48.76}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 48.76}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`date_key`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`date_key` >= '2026-08-01' and `wms_inventory_snapshot`.`date_key` < '2026-09-01' group by `wms_inventory_snapshot`.`date_key`;\n", "error": false, "complete": false, "_t": 48.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.date_key' in 'field list'\n", "error": false, "complete": false, "_t": 48.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 48.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 52.47}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 52.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 52.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "stat", "error": false, "complete": false, "_t": 52.71}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date`, sum(`wms", "error": false, "complete": false, "_t": 52.84}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 52.97}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 53.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 53.21}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 53.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 53.5}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 53.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 53.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `", "error": false, "complete": false, "_t": 53.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_warehouse`.`name", "error": false, "complete": false, "_t": 53.98}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 54.13}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms_inventory", "error": false, "complete": false, "_t": 54.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date` >=", "error": false, "complete": false, "_t": 54.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 54.51}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 54.66}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 54.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`stat_date` <", "error": false, "complete": false, "_t": 54.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 55.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 55.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 55.31}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date`;", "error": false, "complete": false, "_t": 55.35}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 55.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 55.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 57.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 57.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 57.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 57.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`stat_date`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`stat_date` >= '2026-08-01' and `wms_inventory_snapshot`.`stat_date` < '2026-09-01' group by `wms_inventory_snapshot`.`stat_date`;\n", "error": false, "complete": false, "_t": 57.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.stat_date' in 'field list'\n", "error": false, "complete": false, "_t": 57.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 57.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 58.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 58.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 58.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "date", "error": false, "complete": false, "_t": 59.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_key`, sum(`wms", "error": false, "complete": false, "_t": 59.19}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 59.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 59.45}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 59.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 59.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 59.86}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 59.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 60.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `", "error": false, "complete": false, "_t": 60.22}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_warehouse`.`name", "error": false, "complete": false, "_t": 60.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 60.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms_inventory", "error": false, "complete": false, "_t": 60.63}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`date_key` >=", "error": false, "complete": false, "_t": 60.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 60.85}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 61.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 61.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`date_key` <", "error": false, "complete": false, "_t": 61.24}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 61.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 61.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 61.66}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`date_key`;", "error": false, "complete": false, "_t": 61.69}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 61.69}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 61.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 63.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 63.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 63.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 63.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`date_key`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`date_key` >= '2026-08-01' and `wms_inventory_snapshot`.`date_key` < '2026-09-01' group by `wms_inventory_snapshot`.`date_key`;\n", "error": false, "complete": false, "_t": 63.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.date_key' in 'field list'\n", "error": false, "complete": false, "_t": 63.09}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 63.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 65.49}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 65.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 65.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "stat", "error": false, "complete": false, "_t": 65.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date`, sum(`wms", "error": false, "complete": false, "_t": 65.85}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 65.98}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 66.11}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 66.23}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 66.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 66.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 66.62}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 66.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `", "error": false, "complete": false, "_t": 66.89}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_warehouse`.`name", "error": false, "complete": false, "_t": 67.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 67.15}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms_inventory", "error": false, "complete": false, "_t": 67.28}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date` >=", "error": false, "complete": false, "_t": 67.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 67.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 67.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 67.77}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`stat_date` <", "error": false, "complete": false, "_t": 67.92}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 68.03}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 68.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 68.32}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date`;", "error": false, "complete": false, "_t": 68.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 68.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 68.37}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 69.64}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 69.64}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 69.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 69.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`stat_date`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`stat_date` >= '2026-08-01' and `wms_inventory_snapshot`.`stat_date` < '2026-09-01' group by `wms_inventory_snapshot`.`stat_date`;\n", "error": false, "complete": false, "_t": 69.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.stat_date' in 'field list'\n", "error": false, "complete": false, "_t": 69.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 69.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 72.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 72.14}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 72.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "date", "error": false, "complete": false, "_t": 72.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_key`, sum(`wms", "error": false, "complete": false, "_t": 72.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 72.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 72.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 72.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `w", "error": false, "complete": false, "_t": 72.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse` on `", "error": false, "complete": false, "_t": 73.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_inventory_snapshot`.`warehouse", "error": false, "complete": false, "_t": 73.15}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `wms", "error": false, "complete": false, "_t": 73.31}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_warehouse`.`id` where", "error": false, "complete": false, "_t": 73.41}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms_warehouse`.`", "error": false, "complete": false, "_t": 73.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "name` = '华东中心", "error": false, "complete": false, "_t": 73.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "仓' and `wms", "error": false, "complete": false, "_t": 73.85}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`", "error": false, "complete": false, "_t": 73.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " >= '2026", "error": false, "complete": false, "_t": 74.08}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-08-01", "error": false, "complete": false, "_t": 74.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms", "error": false, "complete": false, "_t": 74.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`", "error": false, "complete": false, "_t": 74.45}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '2026", "error": false, "complete": false, "_t": 74.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-09-01", "error": false, "complete": false, "_t": 74.74}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' group by `wms", "error": false, "complete": false, "_t": 74.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`date_key`;", "error": false, "complete": false, "_t": 74.93}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 74.93}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 74.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 76.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 76.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 76.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 76.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`date_key`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`date_key` >= '2026-08-01' and `wms_inventory_snapshot`.`date_key` < '2026-09-01' group by `wms_inventory_snapshot`.`date_key`;\n", "error": false, "complete": false, "_t": 76.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.date_key' in 'field list'\n", "error": false, "complete": false, "_t": 76.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 76.55}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 78.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 78.63}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 78.67}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "stat", "error": false, "complete": false, "_t": 78.8}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date`, sum(`wms", "error": false, "complete": false, "_t": 78.92}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 79.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 79.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 79.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 79.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 79.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 79.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 79.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `", "error": false, "complete": false, "_t": 79.97}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_warehouse`.`name", "error": false, "complete": false, "_t": 80.07}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 80.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms_inventory", "error": false, "complete": false, "_t": 80.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date` >=", "error": false, "complete": false, "_t": 80.41}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 80.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 80.69}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 80.78}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`stat_date` <", "error": false, "complete": false, "_t": 80.95}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 81.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 81.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 81.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date`;", "error": false, "complete": false, "_t": 81.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 81.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 81.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 83.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 83.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 83.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 83.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`stat_date`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`stat_date` >= '2026-08-01' and `wms_inventory_snapshot`.`stat_date` < '2026-09-01' group by `wms_inventory_snapshot`.`stat_date`;\n", "error": false, "complete": false, "_t": 83.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.stat_date' in 'field list'\n", "error": false, "complete": false, "_t": 83.02}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 83.03}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 84.51}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 84.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 84.63}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "date", "error": false, "complete": false, "_t": 84.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_key`, sum(`wms", "error": false, "complete": false, "_t": 84.87}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 85.01}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 85.16}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 85.25}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 85.4}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 85.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 85.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 85.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `w", "error": false, "complete": false, "_t": 85.93}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse`.`name`", "error": false, "complete": false, "_t": 86.04}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = '华东中心仓'", "error": false, "complete": false, "_t": 86.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 86.29}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`date_key` >=", "error": false, "complete": false, "_t": 86.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 86.54}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 86.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 86.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`date_key` <", "error": false, "complete": false, "_t": 86.94}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 87.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 87.2}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 87.34}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`date_key`;", "error": false, "complete": false, "_t": 87.37}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 87.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 87.38}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 89.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 89.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 89.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 89.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`date_key`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`date_key` >= '2026-08-01' and `wms_inventory_snapshot`.`date_key` < '2026-09-01' group by `wms_inventory_snapshot`.`date_key`;\n", "error": false, "complete": false, "_t": 89.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.date_key' in 'field list'\n", "error": false, "complete": false, "_t": 89.99}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 90.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 91.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 91.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 91.68}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "stat", "error": false, "complete": false, "_t": 91.79}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_date`, sum(`wms", "error": false, "complete": false, "_t": 91.91}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 92.05}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 92.18}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 92.3}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 92.52}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 92.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 92.69}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 92.82}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `", "error": false, "complete": false, "_t": 92.95}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "wms_warehouse`.`name", "error": false, "complete": false, "_t": 93.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = '华东中心仓", "error": false, "complete": false, "_t": 93.22}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `wms_inventory", "error": false, "complete": false, "_t": 93.35}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date` >=", "error": false, "complete": false, "_t": 93.46}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 93.59}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 93.75}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 93.83}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`stat_date` <", "error": false, "complete": false, "_t": 94.0}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 94.1}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 94.25}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 94.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`stat_date`;", "error": false, "complete": false, "_t": 94.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 94.43}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 94.44}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 95.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 95.7}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 95.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 95.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`stat_date`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`stat_date` >= '2026-08-01' and `wms_inventory_snapshot`.`stat_date` < '2026-09-01' group by `wms_inventory_snapshot`.`stat_date`;\n", "error": false, "complete": false, "_t": 95.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.stat_date' in 'field list'\n", "error": false, "complete": false, "_t": 95.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "检测到SQL执行异常，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 95.72}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 97.53}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `wms", "error": false, "complete": false, "_t": 97.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`", "error": false, "complete": false, "_t": 97.65}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "date", "error": false, "complete": false, "_t": 97.74}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_key`, sum(`wms", "error": false, "complete": false, "_t": 97.9}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`available_qty`)", "error": false, "complete": false, "_t": 98.03}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `total_available_qty`", "error": false, "complete": false, "_t": 98.16}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " from `wms_inventory_snapshot", "error": false, "complete": false, "_t": 98.27}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` join `wms_", "error": false, "complete": false, "_t": 98.42}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "warehouse` on `wms", "error": false, "complete": false, "_t": 98.56}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_inventory_snapshot`.`warehouse_id`", "error": false, "complete": false, "_t": 98.66}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `wms_warehouse", "error": false, "complete": false, "_t": 98.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where `w", "error": false, "complete": false, "_t": 98.96}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_warehouse`.`name`", "error": false, "complete": false, "_t": 99.06}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = '华东中心仓'", "error": false, "complete": false, "_t": 99.22}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 99.3}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`date_key` >=", "error": false, "complete": false, "_t": 99.46}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 99.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "08-01'", "error": false, "complete": false, "_t": 99.73}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `wms_inventory_snapshot", "error": false, "complete": false, "_t": 99.81}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`date_key` <", "error": false, "complete": false, "_t": 99.97}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 100.07}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "09-01'", "error": false, "complete": false, "_t": 100.23}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by `wms_inventory", "error": false, "complete": false, "_t": 100.36}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_snapshot`.`date_key`;", "error": false, "complete": false, "_t": 100.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 100.39}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 100.4}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 101.57}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 101.58}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 101.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 101.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select `wms_inventory_snapshot`.`date_key`, sum(`wms_inventory_snapshot`.`available_qty`) as `total_available_qty` from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` where `wms_warehouse`.`name` = '华东中心仓' and `wms_inventory_snapshot`.`date_key` >= '2026-08-01' and `wms_inventory_snapshot`.`date_key` < '2026-09-01' group by `wms_inventory_snapshot`.`date_key`;\n", "error": false, "complete": false, "_t": 101.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'wms_inventory_snapshot.date_key' in 'field list'\n", "error": false, "complete": false, "_t": 101.6}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "正在进行重试评估...\n", "error": false, "complete": false, "_t": 101.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "步骤[1]中，SQL次数生成超限，最大尝试次数：10，已尝试次数:10，该步骤内容: \n SQL生成\n", "error": false, "complete": false, "_t": 101.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "重试评估完成！\n", "error": false, "complete": false, "_t": 101.61}
+{"agentId": "5", "threadId": "upstream_recall-J19-1-5e285e", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 101.62}

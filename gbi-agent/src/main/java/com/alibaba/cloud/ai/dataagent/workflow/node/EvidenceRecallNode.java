@@ -24,6 +24,7 @@ import com.alibaba.cloud.ai.dataagent.mapper.AgentKnowledgeMapper;
 import com.alibaba.cloud.ai.dataagent.prompt.PromptHelper;
 import com.alibaba.cloud.ai.dataagent.service.llm.LlmService;
 import com.alibaba.cloud.ai.dataagent.service.vectorstore.AgentVectorStoreService;
+import com.alibaba.cloud.ai.dataagent.service.nl2sql.TimeRangeHints;
 import com.alibaba.cloud.ai.dataagent.util.*;
 import com.alibaba.cloud.ai.graph.GraphResponse;
 import com.alibaba.cloud.ai.graph.OverAllState;
@@ -58,6 +59,8 @@ public class EvidenceRecallNode implements NodeAction {
 
 	private final AgentKnowledgeMapper agentKnowledgeMapper;
 
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 
@@ -89,6 +92,14 @@ public class EvidenceRecallNode implements NodeAction {
 						ChatResponseUtil.createResponse("\n查询重写完成！")),
 				result -> {
 					resultMap.putAll(getEvidences(result, agentId, evidenceDisplaySink));
+					// GBI: calendar-exact time ranges go to every downstream prompt with the evidence
+					String timeHints = !nl2sqlProperties.isTimeHints() ? "" : TimeRangeHints.hints("无".equals(multiTurn) || "(无)".equals(multiTurn) ? ""
+							: multiTurn, question);
+					if (!timeHints.isEmpty()) {
+						Object ev = resultMap.get(EVIDENCE);
+						String base = ev == null || "无".equals(ev) ? "" : ev.toString();
+						resultMap.put(EVIDENCE, timeHints + (base.isEmpty() ? "" : "\n" + base));
+					}
 					return resultMap;
 				});
 

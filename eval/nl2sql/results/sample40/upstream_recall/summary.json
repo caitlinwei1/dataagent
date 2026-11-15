@@ -1,0 +1,128 @@
+{
+ "n": 40,
+ "sql_questions": 30,
+ "sql_exec_success": 0.8667,
+ "ex": 0.5,
+ "ex_strict": 0.5,
+ "multi_step_questions": 10,
+ "multi_step_completion": 0.6,
+ "multi_step_key_hit": 1.0,
+ "first_try_exec": 0.7667,
+ "repaired": 3,
+ "guard_blocks": 10,
+ "error_classes": {
+  "TABLE_SELECTION": 33,
+  "EXECUTION": 1,
+  "READ_ONLY": 10
+ },
+ "python_runs": 9,
+ "python_degraded": 0,
+ "sql_latency_p50": 39.7,
+ "sql_latency_p90": 101.6,
+ "multi_step_latency_p50": 201.2,
+ "by_task": {
+  "join": {
+   "n": 10,
+   "exec": 0.8,
+   "ex": 0.2,
+   "completed": null
+  },
+  "multi_step": {
+   "n": 10,
+   "exec": 0.7,
+   "ex": null,
+   "completed": 0.6
+  },
+  "multi_turn": {
+   "n": 10,
+   "exec": 0.9,
+   "ex": 0.5,
+   "completed": null
+  },
+  "single": {
+   "n": 10,
+   "exec": 0.9,
+   "ex": 0.8,
+   "completed": null
+  }
+ },
+ "by_intent": {
+  "agg": {
+   "n": 8,
+   "exec": 0.875,
+   "ex": 0.8333,
+   "completed": 0.5
+  },
+  "cmp": {
+   "n": 8,
+   "exec": 1.0,
+   "ex": 0.1667,
+   "completed": 0.5
+  },
+  "drill": {
+   "n": 8,
+   "exec": 0.75,
+   "ex": 0.8333,
+   "completed": 0.0
+  },
+  "top": {
+   "n": 8,
+   "exec": 0.75,
+   "ex": 0.1667,
+   "completed": 1.0
+  },
+  "trend": {
+   "n": 8,
+   "exec": 0.75,
+   "ex": 0.5,
+   "completed": 1.0
+  }
+ },
+ "models": {
+  "qwen-plus": 40
+ },
+ "dev": {
+  "n": 20,
+  "sql_questions": 15,
+  "sql_exec_success": 0.8667,
+  "ex": 0.5333,
+  "ex_strict": 0.5333,
+  "multi_step_questions": 5,
+  "multi_step_completion": 0.6,
+  "multi_step_key_hit": 1.0,
+  "first_try_exec": 0.8667,
+  "repaired": 0,
+  "guard_blocks": 0,
+  "error_classes": {
+   "TABLE_SELECTION": 22
+  },
+  "python_runs": 6,
+  "python_degraded": 0,
+  "sql_latency_p50": 40.1,
+  "sql_latency_p90": 101.6,
+  "multi_step_latency_p50": 209.0
+ },
+ "holdout": {
+  "n": 20,
+  "sql_questions": 15,
+  "sql_exec_success": 0.8667,
+  "ex": 0.4667,
+  "ex_strict": 0.4667,
+  "multi_step_questions": 5,
+  "multi_step_completion": 0.6,
+  "multi_step_key_hit": null,
+  "first_try_exec": 0.6667,
+  "repaired": 3,
+  "guard_blocks": 10,
+  "error_classes": {
+   "TABLE_SELECTION": 11,
+   "EXECUTION": 1,
+   "READ_ONLY": 10
+  },
+  "python_runs": 3,
+  "python_degraded": 0,
+  "sql_latency_p50": 38.0,
+  "sql_latency_p90": 99.1,
+  "multi_step_latency_p50": 151.1
+ }
+}

@@ -88,6 +88,8 @@ public class SqlExecuteNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.datasource.AgentDatasourceService agentDatasourceService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
+
 	private static final int SAMPLE_DATA_NUMBER = 20;
 
 	@Override
@@ -240,7 +242,9 @@ public class SqlExecuteNode implements NodeAction {
 			catch (Exception e) {
 				com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClass errorClass = com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClassifier
 					.classify(e);
-				String errorMessage = "SQL执行失败[" + errorClass + "/" + errorClass.label() + "]：" + e.getMessage();
+				String errorMessage = "SQL执行失败[" + errorClass + "/" + errorClass.label() + "]：" + e.getMessage()
+						+ (nl2sqlProperties.isRepairHints()
+								? com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClassifier.repairHint(e) : "");
 				log.error("SQL execution failed class={} - SQL as follows: \n {} \n ", errorClass, sqlQuery, e);
 				result.put(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(errorMessage));
 				emitter.next(ChatResponseUtil.createResponse("SQL执行失败: " + errorMessage));

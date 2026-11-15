@@ -1,0 +1,122 @@
+{
+ "n": 40,
+ "sql_questions": 30,
+ "sql_exec_success": 1.0,
+ "ex": 0.5667,
+ "ex_strict": 0.5333,
+ "multi_step_questions": 10,
+ "multi_step_completion": 0.6,
+ "multi_step_key_hit": 1.0,
+ "first_try_exec": 0.9,
+ "repaired": 3,
+ "guard_blocks": 0,
+ "error_classes": {
+  "TABLE_SELECTION": 10
+ },
+ "python_runs": 7,
+ "python_degraded": 0,
+ "sql_latency_p50": 42.0,
+ "sql_latency_p90": 57.3,
+ "multi_step_latency_p50": 178.0,
+ "by_task": {
+  "join": {
+   "n": 10,
+   "exec": 1.0,
+   "ex": 0.4,
+   "completed": null
+  },
+  "multi_step": {
+   "n": 10,
+   "exec": 0.7,
+   "ex": null,
+   "completed": 0.6
+  },
+  "multi_turn": {
+   "n": 10,
+   "exec": 1.0,
+   "ex": 0.4,
+   "completed": null
+  },
+  "single": {
+   "n": 10,
+   "exec": 1.0,
+   "ex": 0.9,
+   "completed": null
+  }
+ },
+ "by_intent": {
+  "agg": {
+   "n": 8,
+   "exec": 0.875,
+   "ex": 0.6667,
+   "completed": 0.5
+  },
+  "cmp": {
+   "n": 8,
+   "exec": 0.875,
+   "ex": 0.5,
+   "completed": 0.5
+  },
+  "drill": {
+   "n": 8,
+   "exec": 1.0,
+   "ex": 0.8333,
+   "completed": 0.5
+  },
+  "top": {
+   "n": 8,
+   "exec": 1.0,
+   "ex": 0.3333,
+   "completed": 1.0
+  },
+  "trend": {
+   "n": 8,
+   "exec": 0.875,
+   "ex": 0.5,
+   "completed": 0.5
+  }
+ },
+ "models": {
+  "qwen-plus": 40
+ },
+ "dev": {
+  "n": 20,
+  "sql_questions": 15,
+  "sql_exec_success": 1.0,
+  "ex": 0.4667,
+  "ex_strict": 0.4667,
+  "multi_step_questions": 5,
+  "multi_step_completion": 0.6,
+  "multi_step_key_hit": 1.0,
+  "first_try_exec": 1.0,
+  "repaired": 0,
+  "guard_blocks": 0,
+  "error_classes": {
+   "TABLE_SELECTION": 10
+  },
+  "python_runs": 3,
+  "python_degraded": 0,
+  "sql_latency_p50": 39.5,
+  "sql_latency_p90": 50.2,
+  "multi_step_latency_p50": 144.6
+ },
+ "holdout": {
+  "n": 20,
+  "sql_questions": 15,
+  "sql_exec_success": 1.0,
+  "ex": 0.6667,
+  "ex_strict": 0.6,
+  "multi_step_questions": 5,
+  "multi_step_completion": 0.6,
+  "multi_step_key_hit": null,
+  "first_try_exec": 0.8,
+  "repaired": 3,
+  "guard_blocks": 0,
+  "error_classes": {},
+  "python_runs": 4,
+  "python_degraded": 0,
+  "sql_latency_p50": 42.2,
+  "sql_latency_p90": 59.7,
+  "multi_step_latency_p50": 179.5
+ }
+}

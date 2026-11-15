@@ -62,4 +62,22 @@ public final class SqlErrorClassifier {
 		return SqlErrorClass.EXECUTION;
 	}
 
+	private static final java.util.regex.Pattern BAD_DATE = java.util.regex.Pattern
+		.compile("(?:Incorrect (?:DATE|DATETIME|date|datetime) value|date/time field value out of range|invalid input syntax for type (?:date|timestamp))[^']*'([^']+)'");
+
+	/**
+	 * A concrete instruction for the regeneration prompt when the error alone does not tell the model what to change
+	 * (observed: '2026-02-29' regenerated ten times in a row). Empty when there is nothing specific to say.
+	 */
+	public static String repairHint(Throwable error) {
+		for (Throwable t = error; t != null; t = t.getCause()) {
+			java.util.regex.Matcher m = BAD_DATE.matcher(String.valueOf(t.getMessage()));
+			if (m.find()) {
+				return "。修复提示：日期 '" + m.group(1) + "' 在日历上不存在；按月/按年过滤请使用半开区间 >= 起始日 AND < 下一周期起始日，"
+						+ "照抄证据中【时间口径】给出的日期，不要自己推算月末";
+			}
+		}
+		return "";
+	}
+
 }

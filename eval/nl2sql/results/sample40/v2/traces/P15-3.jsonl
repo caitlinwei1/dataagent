@@ -1,0 +1,1082 @@
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 3.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 3.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 3.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "5年12月各", "error": false, "complete": false, "_t": 3.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "投放渠道的点击成本，", "error": false, "complete": false, "_t": 3.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "结合花费和点击", "error": false, "complete": false, "_t": 3.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "量给出预算分配建议", "error": false, "complete": false, "_t": 4.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 4.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 4.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2025年12月各投放渠道的点击成本，结合花费和点击量给出预算分配建议\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 7 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 点击成本, 说明: 公式：SUM(mkt_ad_spend.spend) / SUM(mkt_ad_spend.clicks)；涉及：mkt_ad_spend, 同义词: CPC,平均点击...\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 点击率, 说明: 公式：SUM(mkt_ad_spend.clicks) / SUM(mkt_ad_spend.impressions)；涉及：mkt_ad_spend, 同义词: CTR\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 渠道, 说明: 指 mkt_channel（抖音/小红书/百度/微信/自然流量）；“下单渠道/订单来源”是 trd_order_source（APP/小程序/网页/直播/线下），两者不同。...\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: ROI, 说明: 渠道归因按会员首单归因渠道 mkt_member_attribution。；公式：归因到该渠道的实付金额 / SUM(mkt_ad_spend.spend)；涉及：mkt...\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 百度, 说明: 流量渠道取值，对应 mkt_channel.code = 'BAIDU', 同义词: BAIDU\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 2025双11, 说明: 营销活动取值，对应 mkt_activity.name = '2025双11', 同义词: \n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 抖音, 说明: 流量渠道取值，对应 mkt_channel.code = 'DOUYIN', 同义词: DOUYIN\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 8.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 8.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 8.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询20", "error": false, "complete": false, "_t": 8.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25年12月", "error": false, "complete": false, "_t": 8.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（>= '20", "error": false, "complete": false, "_t": 8.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25-12-", "error": false, "complete": false, "_t": 8.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 8.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 9.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1-01'）", "error": false, "complete": false, "_t": 9.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "各投放渠道（", "error": false, "complete": false, "_t": 9.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "抖音/小红书", "error": false, "complete": false, "_t": 9.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "/百度/微信/自然", "error": false, "complete": false, "_t": 9.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "流量）的点击成本（", "error": false, "complete": false, "_t": 9.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "CPC = SUM(mkt", "error": false, "complete": false, "_t": 9.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_ad_spend.spend)", "error": false, "complete": false, "_t": 9.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " / SUM(mkt_ad_s", "error": false, "complete": false, "_t": 10.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "pend.clicks)", "error": false, "complete": false, "_t": 10.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "），找出点击成本最低的", "error": false, "complete": false, "_t": 10.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "渠道；同时结合该", "error": false, "complete": false, "_t": 10.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "渠道在2025", "error": false, "complete": false, "_t": 10.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年12月的总", "error": false, "complete": false, "_t": 10.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "花费和总点击量，", "error": false, "complete": false, "_t": 10.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "给出预算分配优化", "error": false, "complete": false, "_t": 10.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "建议（例如：若", "error": false, "complete": false, "_t": 11.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "某渠道点击成本显著", "error": false, "complete": false, "_t": 11.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "低于均值且", "error": false, "complete": false, "_t": 11.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "点击量充足，可适度", "error": false, "complete": false, "_t": 11.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "增加其预算占比", "error": false, "complete": false, "_t": 11.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）\",\n  \"expanded_queries", "error": false, "complete": false, "_t": 11.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\": [\n    \"在", "error": false, "complete": false, "_t": 11.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年1", "error": false, "complete": false, "_t": 11.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2月（>= '2", "error": false, "complete": false, "_t": 11.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "025-12", "error": false, "complete": false, "_t": 12.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01' AND <", "error": false, "complete": false, "_t": 12.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '202", "error": false, "complete": false, "_t": 12.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-01-", "error": false, "complete": false, "_t": 12.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01'）", "error": false, "complete": false, "_t": 12.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "内，各流量", "error": false, "complete": false, "_t": 12.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "渠道中哪个渠道", "error": false, "complete": false, "_t": 12.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的平均点击成本（C", "error": false, "complete": false, "_t": 12.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "PC）最低？", "error": false, "complete": false, "_t": 12.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "请基于各渠道", "error": false, "complete": false, "_t": 12.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的广告花费总额", "error": false, "complete": false, "_t": 13.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "和点击总量，", "error": false, "complete": false, "_t": 13.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "分析其效率并", "error": false, "complete": false, "_t": 13.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "提出下阶段预算", "error": false, "complete": false, "_t": 13.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "倾斜建议。\",\n   ", "error": false, "complete": false, "_t": 13.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"统计202", "error": false, "complete": false, "_t": 13.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5年12月", "error": false, "complete": false, "_t": 13.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（>= '20", "error": false, "complete": false, "_t": 13.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25-12-", "error": false, "complete": false, "_t": 13.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 14.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 14.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1-01'", "error": false, "complete": false, "_t": 14.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）抖音、小", "error": false, "complete": false, "_t": 14.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "红书、百度、", "error": false, "complete": false, "_t": 14.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "微信、自然流量五个", "error": false, "complete": false, "_t": 14.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "投放渠道的点击", "error": false, "complete": false, "_t": 14.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "成本（SUM(s", "error": false, "complete": false, "_t": 14.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "pend)/SUM(clicks", "error": false, "complete": false, "_t": 14.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ")），识别成本", "error": false, "complete": false, "_t": 14.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "最优渠道，并依据", "error": false, "complete": false, "_t": 15.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "其花费规模与点击表现", "error": false, "complete": false, "_t": 15.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "给出预算再分配策略", "error": false, "complete": false, "_t": 15.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "。\",\n    \"针对", "error": false, "complete": false, "_t": 15.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年1", "error": false, "complete": false, "_t": 15.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2月（>= '2", "error": false, "complete": false, "_t": 15.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "025-12", "error": false, "complete": false, "_t": 15.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01' AND <", "error": false, "complete": false, "_t": 15.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '2026-", "error": false, "complete": false, "_t": 16.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01-01'", "error": false, "complete": false, "_t": 16.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）的广告投放数据", "error": false, "complete": false, "_t": 16.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，计算各渠道点击", "error": false, "complete": false, "_t": 16.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "成本，确定最低CPC", "error": false, "complete": false, "_t": 16.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "渠道；结合该", "error": false, "complete": false, "_t": 16.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "渠道的花费绝对", "error": false, "complete": false, "_t": 16.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "值和点击量", "error": false, "complete": false, "_t": 16.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "级，评估其性价比", "error": false, "complete": false, "_t": 16.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，输出可落地", "error": false, "complete": false, "_t": 16.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的预算优化建议。\"\n", "error": false, "complete": false, "_t": 17.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  ]\n}", "error": false, "complete": false, "_t": 17.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 17.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 20.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: mkt_channel, mkt_ad_spend, dim_platform, mkt_member_attribution, mkt_traffic_daily, trd_payment_channel_fee, trd_order, trd_payment, prd_sku_cost, usr_member\n", "error": false, "complete": false, "_t": 20.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 20.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 20.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 20.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 20.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 23.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "JSON", "text": "mkt_ad", "error": false, "complete": false, "_t": 23.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_spend\",", "error": false, "complete": false, "_t": 23.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"mkt", "error": false, "complete": false, "_t": 23.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_channel\"]", "error": false, "complete": false, "_t": 23.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 23.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 23.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 23.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 23.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 26.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 26.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 26.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：《", "error": false, "complete": false, "_t": 26.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数据分析》  \n【语种", "error": false, "complete": false, "_t": 27.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型】：《", "error": false, "complete": false, "_t": 27.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中文》  \n【需求", "error": false, "complete": false, "_t": 27.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：查询", "error": false, "complete": false, "_t": 27.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2025", "error": false, "complete": false, "_t": 27.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "年12月（>=", "error": false, "complete": false, "_t": 27.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2025-", "error": false, "complete": false, "_t": 27.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "12-01'", "error": false, "complete": false, "_t": 27.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AND < '202", "error": false, "complete": false, "_t": 27.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-01-0", "error": false, "complete": false, "_t": 28.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1'）各投放", "error": false, "complete": false, "_t": 28.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "渠道（抖音/小红", "error": false, "complete": false, "_t": 28.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "书/百度/微信/", "error": false, "complete": false, "_t": 28.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "自然流量）的点击", "error": false, "complete": false, "_t": 28.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "成本（CPC =", "error": false, "complete": false, "_t": 28.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " SUM(mkt_ad_spend", "error": false, "complete": false, "_t": 28.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".spend) /", "error": false, "complete": false, "_t": 28.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " SUM(mkt_ad_spend", "error": false, "complete": false, "_t": 28.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".clicks)），", "error": false, "complete": false, "_t": 29.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "找出点击成本最低的", "error": false, "complete": false, "_t": 29.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "渠道；同时结合", "error": false, "complete": false, "_t": 29.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "该渠道在202", "error": false, "complete": false, "_t": 29.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "5年12月的", "error": false, "complete": false, "_t": 29.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "总花费和总", "error": false, "complete": false, "_t": 29.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "点击量，给出", "error": false, "complete": false, "_t": 29.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "预算分配优化建议（例如", "error": false, "complete": false, "_t": 29.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：若某渠道", "error": false, "complete": false, "_t": 29.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "点击成本显著低于均", "error": false, "complete": false, "_t": 30.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "值且点击量", "error": false, "complete": false, "_t": 30.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "充足，可适度", "error": false, "complete": false, "_t": 30.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "增加其预算占比）  \n\n", "error": false, "complete": false, "_t": 30.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**可行性说明**：  \n", "error": false, "complete": false, "_t": 30.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- ✅ **", "error": false, "complete": false, "_t": 30.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间范围**：明确", "error": false, "complete": false, "_t": 30.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "给出 `>= '2", "error": false, "complete": false, "_t": 30.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "025-12", "error": false, "complete": false, "_t": 30.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-01' AND <", "error": false, "complete": false, "_t": 31.08}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2026-", "error": false, "complete": false, "_t": 31.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "01-01'", "error": false, "complete": false, "_t": 31.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，且 Schema", "error": false, "complete": false, "_t": 31.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 中 `mkt_ad_s", "error": false, "complete": false, "_t": 31.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "pend.stat_date`", "error": false, "complete": false, "_t": 31.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 为 DATE 类型，", "error": false, "complete": false, "_t": 31.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可直接过滤；  \n-", "error": false, "complete": false, "_t": 31.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **渠道枚", "error": false, "complete": false, "_t": 32.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "举**：用户", "error": false, "complete": false, "_t": 32.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "指定“抖音/小", "error": false, "complete": false, "_t": 32.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "红书/百度/微信", "error": false, "complete": false, "_t": 32.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "/自然流量”，", "error": false, "complete": false, "_t": 32.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema 中 `m", "error": false, "complete": false, "_t": 32.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "kt_channel.code`", "error": false, "complete": false, "_t": 32.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 明确包含 `'", "error": false, "complete": false, "_t": 32.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DOUYIN'/'", "error": false, "complete": false, "_t": 32.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "XHS'/'BA", "error": false, "complete": false, "_t": 33.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "IDU'/'WE", "error": false, "complete": false, "_t": 33.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "CHAT'/'ORG", "error": false, "complete": false, "_t": 33.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ANIC'`，", "error": false, "complete": false, "_t": 33.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且 Evidence 将“", "error": false, "complete": false, "_t": 33.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "抖音”映射为 `'", "error": false, "complete": false, "_t": 33.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DOUYIN'`、“", "error": false, "complete": false, "_t": 33.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "百度”映射", "error": false, "complete": false, "_t": 33.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为 `'BAIDU'", "error": false, "complete": false, "_t": 33.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，其余同", "error": false, "complete": false, "_t": 33.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "理可推（微信", "error": false, "complete": false, "_t": 34.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "→`WECHAT`", "error": false, "complete": false, "_t": 34.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、自然流量→`ORG", "error": false, "complete": false, "_t": 34.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ANIC`、小红", "error": false, "complete": false, "_t": 34.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "书→`XHS`", "error": false, "complete": false, "_t": 34.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）；  \n- ✅", "error": false, "complete": false, "_t": 34.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " **点击成本（", "error": false, "complete": false, "_t": 34.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "CPC）**：Evidence", "error": false, "complete": false, "_t": 34.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 明确定义为", "error": false, "complete": false, "_t": 35.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `SUM(spend)/", "error": false, "complete": false, "_t": 35.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "SUM(clicks)`", "error": false, "complete": false, "_t": 35.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，且 `mkt_ad", "error": false, "complete": false, "_t": 35.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_spend` 表完整", "error": false, "complete": false, "_t": 35.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "提供 `spend` 和", "error": false, "complete": false, "_t": 35.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `clicks` 字", "error": false, "complete": false, "_t": 35.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "段，并通过 `channel", "error": false, "complete": false, "_t": 35.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_id` 外键", "error": false, "complete": false, "_t": 35.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关联 `mkt", "error": false, "complete": false, "_t": 36.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_channel`，支持按", "error": false, "complete": false, "_t": 36.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "渠道聚合；  \n-", "error": false, "complete": false, "_t": 36.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **预算", "error": false, "complete": false, "_t": 36.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "优化建议所需基础", "error": false, "complete": false, "_t": 36.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数据**：总", "error": false, "complete": false, "_t": 36.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "花费（`SUM(s", "error": false, "complete": false, "_t": 36.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "pend)`）、总点击", "error": false, "complete": false, "_t": 36.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "量（`SUM(click", "error": false, "complete": false, "_t": 36.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "s)`）、各", "error": false, "complete": false, "_t": 36.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "渠道 CPC、全", "error": false, "complete": false, "_t": 37.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "渠道 CPC 均值", "error": false, "complete": false, "_t": 37.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（可计算）、", "error": false, "complete": false, "_t": 37.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "点击量充足性", "error": false, "complete": false, "_t": 37.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（可基于绝对", "error": false, "complete": false, "_t": 37.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "值或相对分", "error": false, "complete": false, "_t": 37.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "位数判断，", "error": false, "complete": false, "_t": 37.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "如 > 全渠道点击", "error": false, "complete": false, "_t": 37.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "量中位数/", "error": false, "complete": false, "_t": 37.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "均值的7", "error": false, "complete": false, "_t": 37.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "0%等——", "error": false, "complete": false, "_t": 38.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "属合理业务推", "error": false, "complete": false, "_t": 38.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "断，无需额外", "error": false, "complete": false, "_t": 38.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "字段）；  \n", "error": false, "complete": false, "_t": 38.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- ✅ **关联", "error": false, "complete": false, "_t": 38.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "完整性**：`", "error": false, "complete": false, "_t": 38.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "mkt_ad_spend.channel", "error": false, "complete": false, "_t": 38.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_id → mkt_channel", "error": false, "complete": false, "_t": 38.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".id` 外键存在", "error": false, "complete": false, "_t": 38.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，确保渠道名称", "error": false, "complete": false, "_t": 38.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（`mkt_channel.name", "error": false, "complete": false, "_t": 39.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`）与花费", "error": false, "complete": false, "_t": 39.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数据可精准对", "error": false, "complete": false, "_t": 39.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "齐；  \n-", "error": false, "complete": false, "_t": 39.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ⚠️", "error": false, "complete": false, "_t": 39.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 注：`m", "error": false, "complete": false, "_t": 39.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "kt_channel` 表中", "error": false, "complete": false, "_t": 39.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `name` 字", "error": false, "complete": false, "_t": 39.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "段示例含", "error": false, "complete": false, "_t": 39.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“抖音”“", "error": false, "complete": false, "_t": 39.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "小红书”“百度", "error": false, "complete": false, "_t": 40.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”，与用户口语", "error": false, "complete": false, "_t": 40.08}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "一致；`code", "error": false, "complete": false, "_t": 40.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 字段用于", "error": false, "complete": false, "_t": 40.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "精确匹配（避免", "error": false, "complete": false, "_t": 40.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "名称歧义），Evidence", "error": false, "complete": false, "_t": 40.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 已建立映", "error": false, "complete": false, "_t": 40.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "射，无歧义风险", "error": false, "complete": false, "_t": 40.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "。  \n\n综上，所有", "error": false, "complete": false, "_t": 40.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "核心要素（时间", "error": false, "complete": false, "_t": 40.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、渠道、指标", "error": false, "complete": false, "_t": 40.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、计算逻辑、", "error": false, "complete": false, "_t": 41.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关联关系）均在", "error": false, "complete": false, "_t": 41.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " Schema 和 Evidence 中有", "error": false, "complete": false, "_t": 41.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "明确定义或", "error": false, "complete": false, "_t": 41.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可推导支撑", "error": false, "complete": false, "_t": 41.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，**无需澄清", "error": false, "complete": false, "_t": 41.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，可直接执行", "error": false, "complete": false, "_t": 41.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "分析**。", "error": false, "complete": false, "_t": 41.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 41.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 45.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "  \"thought", "error": false, "complete": false, "_t": 45.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "_process\": \"", "error": false, "complete": false, "_t": 45.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "用户需要", "error": false, "complete": false, "_t": 45.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "查询202", "error": false, "complete": false, "_t": 46.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "5年12月各", "error": false, "complete": false, "_t": 46.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "投放渠道（抖音/小", "error": false, "complete": false, "_t": 46.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "红书/百度/微信", "error": false, "complete": false, "_t": 46.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "/自然流量）的点击", "error": false, "complete": false, "_t": 46.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "成本（CPC），并", "error": false, "complete": false, "_t": 46.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "找出最低者，", "error": false, "complete": false, "_t": 46.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "再结合其总花费和", "error": false, "complete": false, "_t": 47.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "总点击量给出", "error": false, "complete": false, "_t": 47.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "预算优化建议。", "error": false, "complete": false, "_t": 47.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "我已核查AVAILABLE", "error": false, "complete": false, "_t": 47.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " DATA CONTEXT：m", "error": false, "complete": false, "_t": 47.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "kt_ad_spend表", "error": false, "complete": false, "_t": 47.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "包含spend、click", "error": false, "complete": false, "_t": 47.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "s、stat_date、channel", "error": false, "complete": false, "_t": 47.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "_id字段；mkt_channel", "error": false, "complete": false, "_t": 47.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "表包含code（", "error": false, "complete": false, "_t": 47.85}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "DOUYIN/X", "error": false, "complete": false, "_t": 47.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "HS/BAIDU", "error": false, "complete": false, "_t": 48.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "/WECHAT/ORG", "error": false, "complete": false, "_t": 48.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "ANIC）、name、", "error": false, "complete": false, "_t": 48.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "id字段；两", "error": false, "complete": false, "_t": 48.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "表通过channel_id/id", "error": false, "complete": false, "_t": 48.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "关联。业务术语表", "error": false, "complete": false, "_t": 48.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "明确CPC=", "error": false, "complete": false, "_t": 48.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "SUM(spend)/", "error": false, "complete": false, "_t": 48.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "SUM(clicks)，且", "error": false, "complete": false, "_t": 48.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "时间范围已给", "error": false, "complete": false, "_t": 49.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "定为>= '20", "error": false, "complete": false, "_t": 49.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "25-12-", "error": false, "complete": false, "_t": 49.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 49.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 49.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "1-01'。", "error": false, "complete": false, "_t": 49.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "因此，计划分", "error": false, "complete": false, "_t": 49.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "三步：Step", "error": false, "complete": false, "_t": 49.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "1用SQL按", "error": false, "complete": false, "_t": 49.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "channel_id聚合计算", "error": false, "complete": false, "_t": 50.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "各渠道总sp", "error": false, "complete": false, "_t": 50.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "end和总clicks", "error": false, "complete": false, "_t": 50.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "；Step2用", "error": false, "complete": false, "_t": 50.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "Python计算各渠道CPC", "error": false, "complete": false, "_t": 50.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "、识别最低值", "error": false, "complete": false, "_t": 50.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "、计算均值、", "error": false, "complete": false, "_t": 50.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "评估点击量充足", "error": false, "complete": false, "_t": 50.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "性（如是否", "error": false, "complete": false, "_t": 50.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "高于中位数），", "error": false, "complete": false, "_t": 50.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "并输出关键指标；Step", "error": false, "complete": false, "_t": 51.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "3用Report整合", "error": false, "complete": false, "_t": 51.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "结论与可执行", "error": false, "complete": false, "_t": 51.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "预算建议。\",\n  \"", "error": false, "complete": false, "_t": 51.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "execution_plan\": [\n    {\n", "error": false, "complete": false, "_t": 51.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"step\": 1", "error": false, "complete": false, "_t": 51.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": ",\n      \"tool_to_use", "error": false, "complete": false, "_t": 51.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": \"SQL_GENERATE_NODE", "error": false, "complete": false, "_t": 51.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "\",\n      \"tool_parameters\":", "error": false, "complete": false, "_t": 52.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " {\n        \"instruction\": \"", "error": false, "complete": false, "_t": 52.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "从mkt_ad_s", "error": false, "complete": false, "_t": 52.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "pend表和m", "error": false, "complete": false, "_t": 52.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "kt_channel表关联", "error": false, "complete": false, "_t": 52.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "查询，统计202", "error": false, "complete": false, "_t": 52.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "5年12月（", "error": false, "complete": false, "_t": 52.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": ">= '2025", "error": false, "complete": false, "_t": 52.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "-12-01", "error": false, "complete": false, "_t": 52.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "' AND < '20", "error": false, "complete": false, "_t": 53.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "26-01", "error": false, "complete": false, "_t": 53.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "-01'）各", "error": false, "complete": false, "_t": 53.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "渠道（code为", "error": false, "complete": false, "_t": 53.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "DOUYIN/X", "error": false, "complete": false, "_t": 53.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "HS/BAIDU/", "error": false, "complete": false, "_t": 53.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "WECHAT/ORGANIC", "error": false, "complete": false, "_t": 53.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "）的总花费（", "error": false, "complete": false, "_t": 53.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "spend）和", "error": false, "complete": false, "_t": 53.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "总点击量（clicks", "error": false, "complete": false, "_t": 54.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "），按渠道code", "error": false, "complete": false, "_t": 54.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "分组\"\n      }\n   ", "error": false, "complete": false, "_t": 54.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " },\n    {\n      \"step", "error": false, "complete": false, "_t": 54.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "\": 2,\n", "error": false, "complete": false, "_t": 54.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_to_use\":", "error": false, "complete": false, "_t": 54.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"PYTHON_GENERATE_NODE\",\n", "error": false, "complete": false, "_t": 54.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "      \"tool_parameters\": {\n", "error": false, "complete": false, "_t": 54.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "        \"instruction\": \"读", "error": false, "complete": false, "_t": 55.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "取上一步结果", "error": false, "complete": false, "_t": 55.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "，计算每个渠道的C", "error": false, "complete": false, "_t": 55.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "PC（spend/c", "error": false, "complete": false, "_t": 55.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "licks），找出", "error": false, "complete": false, "_t": 55.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "CPC最低的渠道；", "error": false, "complete": false, "_t": 55.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "计算所有渠道C", "error": false, "complete": false, "_t": 55.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "PC均值；", "error": false, "complete": false, "_t": 55.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "判断该最低CPC渠道", "error": false, "complete": false, "_t": 55.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "的点击量是否充足", "error": false, "complete": false, "_t": 56.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "（高于所有渠道点击", "error": false, "complete": false, "_t": 56.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "量中位数）", "error": false, "complete": false, "_t": 56.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "；输出最低CPC渠道", "error": false, "complete": false, "_t": 56.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "名称、其CPC值", "error": false, "complete": false, "_t": 56.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "、总花费、", "error": false, "complete": false, "_t": 56.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "总点击量、C", "error": false, "complete": false, "_t": 56.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "PC均值、点击", "error": false, "complete": false, "_t": 56.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "量中位数及", "error": false, "complete": false, "_t": 56.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "是否充足\"\n      }\n", "error": false, "complete": false, "_t": 57.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "    },\n    {\n      \"", "error": false, "complete": false, "_t": 57.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "step\": 3,\n     ", "error": false, "complete": false, "_t": 57.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"tool_to_use\": \"", "error": false, "complete": false, "_t": 57.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "REPORT_GENERATOR_NODE\",\n     ", "error": false, "complete": false, "_t": 57.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"tool_parameters\": {\n       ", "error": false, "complete": false, "_t": 57.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"summary_and_recommendations\":", "error": false, "complete": false, "_t": 57.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " \"总结202", "error": false, "complete": false, "_t": 57.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "5年12月各", "error": false, "complete": false, "_t": 58.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "渠道点击成本表现", "error": false, "complete": false, "_t": 58.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "，明确指出点击成本最低", "error": false, "complete": false, "_t": 58.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "的渠道及其具体", "error": false, "complete": false, "_t": 58.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "数值、总花费和", "error": false, "complete": false, "_t": 58.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "总点击量；对比", "error": false, "complete": false, "_t": 58.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "该渠道CPC与全", "error": false, "complete": false, "_t": 58.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "渠道均值，", "error": false, "complete": false, "_t": 58.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "评估其性价比优势", "error": false, "complete": false, "_t": 58.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "；若其点击量充足", "error": false, "complete": false, "_t": 59.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "（高于中位数", "error": false, "complete": false, "_t": 59.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "），建议在下", "error": false, "complete": false, "_t": 59.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "期预算中适度提高", "error": false, "complete": false, "_t": 59.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "该渠道预算占比（", "error": false, "complete": false, "_t": 59.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "例如+10%-", "error": false, "complete": false, "_t": 59.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "15%），以", "error": false, "complete": false, "_t": 59.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "放大高ROI效应；若", "error": false, "complete": false, "_t": 59.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "点击量不充足，则建议", "error": false, "complete": false, "_t": 59.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "同步优化其曝光", "error": false, "complete": false, "_t": 60.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "或落地页转化", "error": false, "complete": false, "_t": 60.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "率以提升流量", "error": false, "complete": false, "_t": 60.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": "规模。\"\n     ", "error": false, "complete": false, "_t": 60.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PlannerNode", "textType": "JSON", "text": " }\n    }\n  ]\n}", "error": false, "complete": false, "_t": 60.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 60.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 62.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c", "error": false, "complete": false, "_t": 62.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`", "error": false, "complete": false, "_t": 62.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "code`,", "error": false, "complete": false, "_t": 62.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " SUM(`s`.`spend", "error": false, "complete": false, "_t": 62.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`) AS `total_s", "error": false, "complete": false, "_t": 62.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "pend`, SUM(`s", "error": false, "complete": false, "_t": 62.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`clicks`) AS `", "error": false, "complete": false, "_t": 63.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "total_clicks`", "error": false, "complete": false, "_t": 63.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " FROM `mkt_ad_s", "error": false, "complete": false, "_t": 63.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "pend` AS `s`", "error": false, "complete": false, "_t": 63.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " INNER JOIN `m", "error": false, "complete": false, "_t": 63.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "kt_channel` AS `", "error": false, "complete": false, "_t": 63.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "c` ON `s", "error": false, "complete": false, "_t": 63.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`channel_id` =", "error": false, "complete": false, "_t": 63.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c`.`id` WHERE", "error": false, "complete": false, "_t": 63.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `s`.`stat_date", "error": false, "complete": false, "_t": 64.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` >= '20", "error": false, "complete": false, "_t": 64.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "25-12-", "error": false, "complete": false, "_t": 64.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND `s", "error": false, "complete": false, "_t": 64.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`stat_date` < '", "error": false, "complete": false, "_t": 64.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "2026-0", "error": false, "complete": false, "_t": 64.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1-01' AND", "error": false, "complete": false, "_t": 64.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c`.`code` IN", "error": false, "complete": false, "_t": 64.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " ('DOUYIN', '", "error": false, "complete": false, "_t": 65.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "XHS', 'BAID", "error": false, "complete": false, "_t": 65.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "U', 'WECHAT',", "error": false, "complete": false, "_t": 65.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 'ORGANIC') GROUP", "error": false, "complete": false, "_t": 65.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " BY `c`.`code`;", "error": false, "complete": false, "_t": 65.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 65.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 65.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 67.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 67.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 68.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 68.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT `c`.`code`, SUM(`s`.`spend`) AS `total_spend`, SUM(`s`.`clicks`) AS `total_clicks` FROM `mkt_ad_spend` AS `s` INNER JOIN `mkt_channel` AS `c` ON `s`.`channel_id` = `c`.`id` WHERE `s`.`stat_date` >= '2025-12-01' AND `s`.`stat_date` < '2026-01-01' AND `c`.`code` IN ('DOUYIN', 'XHS', 'BAIDU', 'WECHAT', 'ORGANIC') GROUP BY `c`.`code`;\n", "error": false, "complete": false, "_t": 68.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 70.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 70.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"code\",\"total_spend\",\"total_clicks\"],\"data\":[{\"total_spend\":\"177736.23\",\"code\":\"DOUYIN\",\"total_clicks\":\"364822\"},{\"total_spend\":\"201515.85\",\"code\":\"XHS\",\"total_clicks\":\"479053\"},{\"total_spend\":\"191486.07\",\"code\":\"BAIDU\",\"total_clicks\":\"441778\"},{\"total_spend\":\"186918.77\",\"code\":\"WECHAT\",\"total_clicks\":\"441590\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"column\",\"title\":\"各渠道点击成本(CPC)\",\"x\":\"code\",\"y\":[\"cpc\"]}}", "error": false, "complete": false, "_t": 70.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "```", "error": false, "complete": false, "_t": 72.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "python", "error": false, "complete": false, "_t": 72.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport sys", "error": false, "complete": false, "_t": 73.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport json", "error": false, "complete": false, "_t": 73.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\nimport traceback\nimport pandas", "error": false, "complete": false, "_t": 73.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " as pd\nimport numpy as", "error": false, "complete": false, "_t": 73.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " np\n\ntry:\n    #", "error": false, "complete": false, "_t": 73.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 从stdin读取输入", "error": false, "complete": false, "_t": 73.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "数据\n    input_data =", "error": false, "complete": false, "_t": 73.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " json.load(sys.stdin)\n\n   ", "error": false, "complete": false, "_t": 73.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " # 转换", "error": false, "complete": false, "_t": 74.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "为DataFrame\n    df", "error": false, "complete": false, "_t": 74.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = pd.DataFrame(input_data)\n\n", "error": false, "complete": false, "_t": 74.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 自动类型", "error": false, "complete": false, "_t": 74.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "推断：将字符串", "error": false, "complete": false, "_t": 74.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "形式的数值转换", "error": false, "complete": false, "_t": 74.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "为实际数值类型", "error": false, "complete": false, "_t": 74.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    for col in df", "error": false, "complete": false, "_t": 74.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".columns:\n        df", "error": false, "complete": false, "_t": 74.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[col] = pd", "error": false, "complete": false, "_t": 75.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".to_numeric(df[col], errors", "error": false, "complete": false, "_t": 75.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "='ignore')\n\n    #", "error": false, "complete": false, "_t": 75.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 初始化结果字典\n   ", "error": false, "complete": false, "_t": 75.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result = {\n        \"lowest", "error": false, "complete": false, "_t": 75.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_cpc_channel\": None", "error": false, "complete": false, "_t": 75.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ",\n        \"c", "error": false, "complete": false, "_t": 75.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pc_value\": None,\n", "error": false, "complete": false, "_t": 75.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        \"total_s", "error": false, "complete": false, "_t": 75.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pend\": None,\n        \"", "error": false, "complete": false, "_t": 76.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_clicks\": None,\n", "error": false, "complete": false, "_t": 76.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        \"cpc_mean\":", "error": false, "complete": false, "_t": 76.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " None,\n        \"click", "error": false, "complete": false, "_t": 76.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "s_median\": None,\n", "error": false, "complete": false, "_t": 76.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        \"is_click", "error": false, "complete": false, "_t": 76.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "s_sufficient\": None", "error": false, "complete": false, "_t": 76.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ",\n        \"budget", "error": false, "complete": false, "_t": 76.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_recommendation\": \"\"\n", "error": false, "complete": false, "_t": 76.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    }\n\n    #", "error": false, "complete": false, "_t": 77.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 检查必要字段是否存在\n", "error": false, "complete": false, "_t": 77.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    if df.empty or", "error": false, "complete": false, "_t": 77.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " not all(col in df.columns", "error": false, "complete": false, "_t": 77.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " for col in [\"", "error": false, "complete": false, "_t": 77.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_spend\", \"code", "error": false, "complete": false, "_t": 77.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\", \"total_clicks\"]", "error": false, "complete": false, "_t": 77.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "):\n        raise ValueError(\"输入", "error": false, "complete": false, "_t": 77.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "数据缺少必要字段：'", "error": false, "complete": false, "_t": 78.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_spend', 'code", "error": false, "complete": false, "_t": 78.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "', 'total_clicks'", "error": false, "complete": false, "_t": 78.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\")\n\n    #", "error": false, "complete": false, "_t": 78.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 计算各渠道C", "error": false, "complete": false, "_t": 78.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "PC（spend /", "error": false, "complete": false, "_t": 78.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " clicks），避免除", "error": false, "complete": false, "_t": 78.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "零\n    df", "error": false, "complete": false, "_t": 78.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"cpc\"]", "error": false, "complete": false, "_t": 78.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = np.where(df[\"", "error": false, "complete": false, "_t": 78.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_clicks\"]", "error": false, "complete": false, "_t": 79.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " > 0, df", "error": false, "complete": false, "_t": 79.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"total_spend\"]", "error": false, "complete": false, "_t": 79.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " / df[\"total_clicks", "error": false, "complete": false, "_t": 79.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\"], np.nan)\n\n   ", "error": false, "complete": false, "_t": 79.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " # 过滤掉", "error": false, "complete": false, "_t": 79.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "无效CPC（", "error": false, "complete": false, "_t": 79.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "NaN或无穷）\n    valid", "error": false, "complete": false, "_t": 79.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_df = df.drop", "error": false, "complete": false, "_t": 79.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "na(subset=[\"c", "error": false, "complete": false, "_t": 80.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pc\"]).replace([", "error": false, "complete": false, "_t": 80.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "np.inf, -np.inf", "error": false, "complete": false, "_t": 80.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "], np.nan).", "error": false, "complete": false, "_t": 80.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "dropna(subset=[\"c", "error": false, "complete": false, "_t": 80.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pc\"])\n\n    if len", "error": false, "complete": false, "_t": 80.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(valid_df) == 0", "error": false, "complete": false, "_t": 80.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ":\n        raise ValueError(\"无", "error": false, "complete": false, "_t": 80.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "有效渠道CPC数据", "error": false, "complete": false, "_t": 80.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "（点击量全", "error": false, "complete": false, "_t": 81.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "为0或计算", "error": false, "complete": false, "_t": 81.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "异常）\")\n\n    #", "error": false, "complete": false, "_t": 81.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 找出C", "error": false, "complete": false, "_t": 81.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "PC最低的渠道行", "error": false, "complete": false, "_t": 81.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\n    min_c", "error": false, "complete": false, "_t": 81.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pc_idx = valid_df[\"", "error": false, "complete": false, "_t": 81.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "cpc\"].idxmin", "error": false, "complete": false, "_t": 81.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "()\n    lowest_row", "error": false, "complete": false, "_t": 81.85}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = valid_df.loc", "error": false, "complete": false, "_t": 81.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[min_cpc_idx", "error": false, "complete": false, "_t": 82.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "]\n\n    #", "error": false, "complete": false, "_t": 82.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 填充基础", "error": false, "complete": false, "_t": 82.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "指标\n    result", "error": false, "complete": false, "_t": 82.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"lowest_cpc_channel\"]", "error": false, "complete": false, "_t": 82.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " = str(lowest_row[\"", "error": false, "complete": false, "_t": 82.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "code\"])\n    result", "error": false, "complete": false, "_t": 82.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"cpc_value\"] =", "error": false, "complete": false, "_t": 82.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " float(lowest_row[\"", "error": false, "complete": false, "_t": 82.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "cpc\"])\n    result[\"", "error": false, "complete": false, "_t": 83.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_spend\"] = float", "error": false, "complete": false, "_t": 83.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(lowest_row[\"total_s", "error": false, "complete": false, "_t": 83.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pend\"])\n    result[\"total", "error": false, "complete": false, "_t": 83.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_clicks\"] = int", "error": false, "complete": false, "_t": 83.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(lowest_row[\"total", "error": false, "complete": false, "_t": 83.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_clicks\"])\n    result[\"", "error": false, "complete": false, "_t": 83.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "cpc_mean\"] = float", "error": false, "complete": false, "_t": 83.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(valid_df[\"c", "error": false, "complete": false, "_t": 84.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "pc\"].mean())\n    result", "error": false, "complete": false, "_t": 84.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"clicks_median\"] =", "error": false, "complete": false, "_t": 84.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " float(valid_df[\"total", "error": false, "complete": false, "_t": 84.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_clicks\"].median())\n   ", "error": false, "complete": false, "_t": 84.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result[\"is_clicks_s", "error": false, "complete": false, "_t": 84.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "ufficient\"] = bool", "error": false, "complete": false, "_t": 84.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(lowest_row[\"", "error": false, "complete": false, "_t": 84.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "total_clicks\"] >=", "error": false, "complete": false, "_t": 84.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result[\"clicks", "error": false, "complete": false, "_t": 85.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_median\"])\n\n    # 生成", "error": false, "complete": false, "_t": 85.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "预算分配优化建议\n   ", "error": false, "complete": false, "_t": 85.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " cpc_ratio = result", "error": false, "complete": false, "_t": 85.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"cpc_value\"] /", "error": false, "complete": false, "_t": 85.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " result[\"cpc_mean\"]", "error": false, "complete": false, "_t": 85.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " if result[\"cpc_mean", "error": false, "complete": false, "_t": 85.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "\"] > 0 else", "error": false, "complete": false, "_t": 85.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " np.inf\n    suff", "error": false, "complete": false, "_t": 86.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "iciency = result[\"is_click", "error": false, "complete": false, "_t": 86.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "s_sufficient\"]\n\n", "error": false, "complete": false, "_t": 86.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    if cpc_ratio", "error": false, "complete": false, "_t": 86.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " < 0.8", "error": false, "complete": false, "_t": 86.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " and sufficiency:\n", "error": false, "complete": false, "_t": 86.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "        result[\"budget_recommend", "error": false, "complete": false, "_t": 86.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "ation\"] = \"该", "error": false, "complete": false, "_t": 86.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "渠道点击成本显著低于均", "error": false, "complete": false, "_t": 86.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "值（{:.", "error": false, "complete": false, "_t": 86.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "1%}），且点击", "error": false, "complete": false, "_t": 87.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "量充足（≥", "error": false, "complete": false, "_t": 87.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "中位数），", "error": false, "complete": false, "_t": 87.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "建议适度增加预算", "error": false, "complete": false, "_t": 87.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "占比，扩大优质", "error": false, "complete": false, "_t": 87.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "流量获取。\".", "error": false, "complete": false, "_t": 87.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "format(cpc_ratio)\n", "error": false, "complete": false, "_t": 87.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    elif cpc_ratio <", "error": false, "complete": false, "_t": 87.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 0.9", "error": false, "complete": false, "_t": 87.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " and sufficiency:\n        result", "error": false, "complete": false, "_t": 88.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "[\"budget_recommendation\"] =", "error": false, "complete": false, "_t": 88.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " \"该渠道点击成本", "error": false, "complete": false, "_t": 88.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "低于均值（", "error": false, "complete": false, "_t": 88.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "{:.1%}），", "error": false, "complete": false, "_t": 88.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "且点击量充足，可", "error": false, "complete": false, "_t": 88.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "考虑小幅提升预算以", "error": false, "complete": false, "_t": 88.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "优化整体获客", "error": false, "complete": false, "_t": 88.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "效率。\".format", "error": false, "complete": false, "_t": 88.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(cpc_ratio)\n   ", "error": false, "complete": false, "_t": 88.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " elif cpc_ratio >=", "error": false, "complete": false, "_t": 89.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 0.9 and suff", "error": false, "complete": false, "_t": 89.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "iciency:\n        result[\"budget", "error": false, "complete": false, "_t": 89.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_recommendation\"] = \"该", "error": false, "complete": false, "_t": 89.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "渠道点击成本接近", "error": false, "complete": false, "_t": 89.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "均值（{:.1", "error": false, "complete": false, "_t": 89.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "%}），但点击量", "error": false, "complete": false, "_t": 89.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "充足，可维持当前", "error": false, "complete": false, "_t": 89.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "预算，关注转化", "error": false, "complete": false, "_t": 90.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "率进一步优化。\".", "error": false, "complete": false, "_t": 90.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "format(cpc_ratio)\n", "error": false, "complete": false, "_t": 90.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    elif not suff", "error": false, "complete": false, "_t": 90.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "iciency:\n        result[\"budget", "error": false, "complete": false, "_t": 90.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "_recommendation\"] = \"该", "error": false, "complete": false, "_t": 90.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "渠道点击成本最低", "error": false, "complete": false, "_t": 90.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "（{:.1%", "error": false, "complete": false, "_t": 90.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "}均值），但", "error": false, "complete": false, "_t": 90.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "点击量不足（<", "error": false, "complete": false, "_t": 91.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "中位数），建议排查", "error": false, "complete": false, "_t": 91.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "曝光/CTR问题", "error": false, "complete": false, "_t": 91.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "，或测试提", "error": false, "complete": false, "_t": 91.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "价以提升流量", "error": false, "complete": false, "_t": 91.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "规模。\".format", "error": false, "complete": false, "_t": 91.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(cpc_ratio)\n    else", "error": false, "complete": false, "_t": 91.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ":\n        result[\"budget_recommend", "error": false, "complete": false, "_t": 91.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "ation\"] = \"该渠道", "error": false, "complete": false, "_t": 91.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "点击成本最低（{:.", "error": false, "complete": false, "_t": 92.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "1%}均值），", "error": false, "complete": false, "_t": 92.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "但点击量未", "error": false, "complete": false, "_t": 92.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "达中位数", "error": false, "complete": false, "_t": 92.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "，需结合转化", "error": false, "complete": false, "_t": 92.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "效果综合评估是否", "error": false, "complete": false, "_t": 92.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "值得加投。\".format", "error": false, "complete": false, "_t": 92.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(cpc_ratio)\n\n", "error": false, "complete": false, "_t": 92.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    # 输出结果为", "error": false, "complete": false, "_t": 92.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "JSON对象\n    print", "error": false, "complete": false, "_t": 92.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "(json.dumps(result,", "error": false, "complete": false, "_t": 93.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " ensure_ascii=False))\n\nexcept", "error": false, "complete": false, "_t": 93.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " Exception:\n    #", "error": false, "complete": false, "_t": 93.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": " 捕获异常", "error": false, "complete": false, "_t": 93.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "并输出堆栈信息", "error": false, "complete": false, "_t": 93.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "到stderr\n    traceback", "error": false, "complete": false, "_t": 93.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": ".print_exc(file=sys.stderr)\n", "error": false, "complete": false, "_t": 93.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "    sys.exit(1)\n", "error": false, "complete": false, "_t": 93.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonGenerateNode", "textType": "PYTHON", "text": "```", "error": false, "complete": false, "_t": 93.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "开始执行Python代码...\n", "error": false, "complete": false, "_t": 94.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "标准输出：\n", "error": false, "complete": false, "_t": 94.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonExecuteNode", "textType": "JSON", "text": "{\"lowest_cpc_channel\":\"XHS\",\"cpc_value\":0.4206546039791004,\"total_spend\":201515.85,\"total_clicks\":479053,\"cpc_mean\":0.4411426642163366,\"clicks_median\":441684.0,\"is_clicks_sufficient\":true,\"budget_recommendation\":\"该渠道点击成本接近均值（95.4%），但点击量充足，可维持当前预算，关注转化率进一步优化。\"}\n", "error": false, "complete": false, "_t": 94.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonExecuteNode", "textType": "TEXT", "text": "Python代码执行成功！\n", "error": false, "complete": false, "_t": 94.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "正在分析代码运行结果...\n\n", "error": false, "complete": false, "_t": 94.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "2", "error": false, "complete": false, "_t": 96.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "025", "error": false, "complete": false, "_t": 96.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "年12", "error": false, "complete": false, "_t": 96.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "月，小", "error": false, "complete": false, "_t": 96.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "红书渠道的点击成本", "error": false, "complete": false, "_t": 96.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "最低，为0", "error": false, "complete": false, "_t": 96.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": ".42元/", "error": false, "complete": false, "_t": 96.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "次，略低于整体", "error": false, "complete": false, "_t": 96.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "均值（0", "error": false, "complete": false, "_t": 97.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": ".44元/", "error": false, "complete": false, "_t": 97.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "次），总花费2", "error": false, "complete": false, "_t": 97.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "0.15万元", "error": false, "complete": false, "_t": 97.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "，总点击量47", "error": false, "complete": false, "_t": 97.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": ".9万次，点击", "error": false, "complete": false, "_t": 97.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "量充足；该渠道点击", "error": false, "complete": false, "_t": 97.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "成本接近均值（", "error": false, "complete": false, "_t": 97.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "95.4%），", "error": false, "complete": false, "_t": 97.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "可维持当前预算", "error": false, "complete": false, "_t": 98.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "，建议重点关注转化率进一步", "error": false, "complete": false, "_t": 98.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "优化。", "error": false, "complete": false, "_t": 98.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "PythonAnalyzeNode", "textType": "TEXT", "text": "\n结果分析完成。\n", "error": false, "complete": false, "_t": 98.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "开始生成报告...\n", "error": false, "complete": false, "_t": 98.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "#", "error": false, "complete": false, "_t": 100.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2", "error": false, "complete": false, "_t": 100.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025", "error": false, "complete": false, "_t": 100.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年12", "error": false, "complete": false, "_t": 100.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月各渠道点击", "error": false, "complete": false, "_t": 100.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "成本（CPC）", "error": false, "complete": false, "_t": 100.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分析与预算优化报告\n\n", "error": false, "complete": false, "_t": 101.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "## 1. 执行", "error": false, "complete": false, "_t": 101.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "摘要\n\n- **最低", "error": false, "complete": false, "_t": 101.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击成本渠道**：小", "error": false, "complete": false, "_t": 101.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "红书（XHS），", "error": false, "complete": false, "_t": 101.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "CPC = **0.", "error": false, "complete": false, "_t": 101.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "42 元/次", "error": false, "complete": false, "_t": 101.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**  \n- **全", "error": false, "complete": false, "_t": 102.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道 CPC 均", "error": false, "complete": false, "_t": 102.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "值**：**0.", "error": false, "complete": false, "_t": 102.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "44 元/", "error": false, "complete": false, "_t": 102.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "次**（小", "error": false, "complete": false, "_t": 102.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "红书为均", "error": false, "complete": false, "_t": 102.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "值的 95.", "error": false, "complete": false, "_t": 102.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4%）  \n- **", "error": false, "complete": false, "_t": 102.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "小红书核心", "error": false, "complete": false, "_t": 102.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "指标**：总", "error": false, "complete": false, "_t": 102.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "花费 **20.1", "error": false, "complete": false, "_t": 103.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5 万元**，总", "error": false, "complete": false, "_t": 103.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击量 **47.", "error": false, "complete": false, "_t": 103.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "9 万次**  \n", "error": false, "complete": false, "_t": 103.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- **点击量充足性", "error": false, "complete": false, "_t": 103.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "评估**：✅", "error": false, "complete": false, "_t": 103.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 充足（高于", "error": false, "complete": false, "_t": 103.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "所有渠道点击量中位", "error": false, "complete": false, "_t": 103.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数 44", "error": false, "complete": false, "_t": 103.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1,68", "error": false, "complete": false, "_t": 104.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4 次）", "error": false, "complete": false, "_t": 104.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- **核心", "error": false, "complete": false, "_t": 104.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议**：维持", "error": false, "complete": false, "_t": 104.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "当前预算占比，**", "error": false, "complete": false, "_t": 104.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优先优化转化率**", "error": false, "complete": false, "_t": 104.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（非扩大流量", "error": false, "complete": false, "_t": 104.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "规模），因性价比", "error": false, "complete": false, "_t": 104.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "已接近最优，增量", "error": false, "complete": false, "_t": 104.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "价值主要来自后", "error": false, "complete": false, "_t": 105.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "链路提效。\n\n", "error": false, "complete": false, "_t": 105.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "> ✅ 关", "error": false, "complete": false, "_t": 105.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "键结论一句话：小", "error": false, "complete": false, "_t": 105.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "红书是2", "error": false, "complete": false, "_t": 105.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025年12", "error": false, "complete": false, "_t": 105.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "月最具成本效率", "error": false, "complete": false, "_t": 105.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的投放渠道，但", "error": false, "complete": false, "_t": 105.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "其优势属“稳健", "error": false, "complete": false, "_t": 105.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "型”而非“", "error": false, "complete": false, "_t": 105.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "显著红利型”，预算", "error": false, "complete": false, "_t": 106.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优化重心应从", "error": false, "complete": false, "_t": 106.08}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "“加量”转向“", "error": false, "complete": false, "_t": 106.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提质”。\n\n---\n\n##", "error": false, "complete": false, "_t": 106.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 2. 分析背景", "error": false, "complete": false, "_t": 106.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与用户诉求\n\n用户", "error": false, "complete": false, "_t": 106.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "需基于202", "error": false, "complete": false, "_t": 106.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5年12月（", "error": false, "complete": false, "_t": 106.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`>= '20", "error": false, "complete": false, "_t": 106.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "25-12-", "error": false, "complete": false, "_t": 107.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01' AND <", "error": false, "complete": false, "_t": 107.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " '202", "error": false, "complete": false, "_t": 107.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6-01-", "error": false, "complete": false, "_t": 107.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01'`）广告", "error": false, "complete": false, "_t": 107.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "投放数据，完成", "error": false, "complete": false, "_t": 107.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "两项核心目标：\n\n", "error": false, "complete": false, "_t": 107.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- **量化比", "error": false, "complete": false, "_t": 107.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "对**：计算", "error": false, "complete": false, "_t": 107.85}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "抖音（DOUYIN", "error": false, "complete": false, "_t": 107.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）、小红书（", "error": false, "complete": false, "_t": 108.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "XHS）、百度", "error": false, "complete": false, "_t": 108.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（BAIDU", "error": false, "complete": false, "_t": 108.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）、微信（WECHAT）、", "error": false, "complete": false, "_t": 108.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "自然流量（ORG", "error": false, "complete": false, "_t": 108.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "ANIC）五大", "error": false, "complete": false, "_t": 108.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道的点击成本", "error": false, "complete": false, "_t": 108.63}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（CPC =", "error": false, "complete": false, "_t": 108.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 总花费 / 总", "error": false, "complete": false, "_t": 108.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击量），识别", "error": false, "complete": false, "_t": 108.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最低者；  \n- **", "error": false, "complete": false, "_t": 109.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "决策支持**：", "error": false, "complete": false, "_t": 109.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "结合最低CPC渠道", "error": false, "complete": false, "_t": 109.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的绝对花费、", "error": false, "complete": false, "_t": 109.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击规模及相对", "error": false, "complete": false, "_t": 109.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "性价比（vs", "error": false, "complete": false, "_t": 109.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 全渠道均值），", "error": false, "complete": false, "_t": 109.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "给出可落地的**", "error": false, "complete": false, "_t": 109.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "下期预算分配优化", "error": false, "complete": false, "_t": 109.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "建议**。\n\n>", "error": false, "complete": false, "_t": 109.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 🔍 注：原始", "error": false, "complete": false, "_t": 109.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数据中未返回", "error": false, "complete": false, "_t": 110.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `ORGANIC", "error": false, "complete": false, "_t": 110.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`（自然流量）记录", "error": false, "complete": false, "_t": 110.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，实际参与分析", "error": false, "complete": false, "_t": 110.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的渠道为4", "error": false, "complete": false, "_t": 110.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "个（DOUYIN/X", "error": false, "complete": false, "_t": 110.63}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "HS/BAIDU", "error": false, "complete": false, "_t": 110.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "/WECHAT），", "error": false, "complete": false, "_t": 110.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "不影响CPC横向", "error": false, "complete": false, "_t": 110.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "比较有效性。\n\n---\n\n##", "error": false, "complete": false, "_t": 111.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 3. 数据", "error": false, "complete": false, "_t": 111.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "分析过程\n\n### 3", "error": false, "complete": false, "_t": 111.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".1 SQL", "error": false, "complete": false, "_t": 111.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 聚合查询", "error": false, "complete": false, "_t": 111.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（Step 1", "error": false, "complete": false, "_t": 111.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）\n\n关联 `mkt_ad", "error": false, "complete": false, "_t": 111.62}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_spend` ", "error": false, "complete": false, "_t": 111.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与 `mkt_channel", "error": false, "complete": false, "_t": 111.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "` 表，按", "error": false, "complete": false, "_t": 111.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道 `code`", "error": false, "complete": false, "_t": 112.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 统计2025", "error": false, "complete": false, "_t": 112.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "年12月", "error": false, "complete": false, "_t": 112.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "总花费与总点击量", "error": false, "complete": false, "_t": 112.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：\n\n```sql\nSELECT \n", "error": false, "complete": false, "_t": 112.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  c.code,\n", "error": false, "complete": false, "_t": 112.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  SUM(s.s", "error": false, "complete": false, "_t": 112.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "pend) AS total", "error": false, "complete": false, "_t": 112.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_spend,\n ", "error": false, "complete": false, "_t": 112.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " SUM(s.clicks) AS", "error": false, "complete": false, "_t": 113.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " total_clicks\nFROM m", "error": false, "complete": false, "_t": 113.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "kt_ad_spend s", "error": false, "complete": false, "_t": 113.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\nJOIN mkt_channel", "error": false, "complete": false, "_t": 113.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " c ON s.channel", "error": false, "complete": false, "_t": 113.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_id = c.id", "error": false, "complete": false, "_t": 113.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\nWHERE s.stat", "error": false, "complete": false, "_t": 113.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_date >= '2", "error": false, "complete": false, "_t": 113.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025-", "error": false, "complete": false, "_t": 113.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12-01'", "error": false, "complete": false, "_t": 114.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \n  AND s.stat_date", "error": false, "complete": false, "_t": 114.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " < '2026", "error": false, "complete": false, "_t": 114.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "-01-01", "error": false, "complete": false, "_t": 114.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "'\n  AND c.code", "error": false, "complete": false, "_t": 114.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " IN ('DOUYIN',", "error": false, "complete": false, "_t": 114.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 'XHS', 'BA", "error": false, "complete": false, "_t": 114.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "IDU', 'WECHAT", "error": false, "complete": false, "_t": 114.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "', 'ORGANIC')\n", "error": false, "complete": false, "_t": 115.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "GROUP BY c.code;\n``", "error": false, "complete": false, "_t": 115.16}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`\n\n### 3.2", "error": false, "complete": false, "_t": 115.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " Python 计算与", "error": false, "complete": false, "_t": 115.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "评估（Step ", "error": false, "complete": false, "_t": 115.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2）\n\n基于 Step", "error": false, "complete": false, "_t": 115.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 1 结果，执行", "error": false, "complete": false, "_t": 115.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "以下逻辑：\n-", "error": false, "complete": false, "_t": 115.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 计算各渠道", "error": false, "complete": false, "_t": 115.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " CPC：`total", "error": false, "complete": false, "_t": 116.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_spend / total", "error": false, "complete": false, "_t": 116.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "_clicks`（", "error": false, "complete": false, "_t": 116.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "单位：元/", "error": false, "complete": false, "_t": 116.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "次）  \n-", "error": false, "complete": false, "_t": 116.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 求 CPC 最", "error": false, "complete": false, "_t": 116.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "小值及对应渠道  \n", "error": false, "complete": false, "_t": 116.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 计算全", "error": false, "complete": false, "_t": 116.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道 CPC 均值", "error": false, "complete": false, "_t": 116.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- 计", "error": false, "complete": false, "_t": 116.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "算 `total_clicks", "error": false, "complete": false, "_t": 116.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "` 中位数（", "error": false, "complete": false, "_t": 117.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "441,6", "error": false, "complete": false, "_t": 117.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "84）并", "error": false, "complete": false, "_t": 117.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "判断最低CPC渠道", "error": false, "complete": false, "_t": 117.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "是否“充足”（", "error": false, "complete": false, "_t": 117.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "479,05", "error": false, "complete": false, "_t": 117.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3 > 441", "error": false, "complete": false, "_t": 117.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",684 →", "error": false, "complete": false, "_t": 117.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ✅）  \n", "error": false, "complete": false, "_t": 118.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 输出结构化结论", "error": false, "complete": false, "_t": 118.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n\n#### 各渠道 CPC", "error": false, "complete": false, "_t": 118.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 详细计算结果", "error": false, "complete": false, "_t": 118.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "：\n\n| 渠道代码", "error": false, "complete": false, "_t": 118.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 总花费（", "error": false, "complete": false, "_t": 118.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元） | 总点击", "error": false, "complete": false, "_t": 118.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "量 | CPC（", "error": false, "complete": false, "_t": 118.79}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "元/次） |", "error": false, "complete": false, "_t": 118.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 相对于均值 |\n", "error": false, "complete": false, "_t": 119.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|----------|--------------", "error": false, "complete": false, "_t": 119.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "|------------|----------------|", "error": false, "complete": false, "_t": 119.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "--------------|\n| DO", "error": false, "complete": false, "_t": 119.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "UYIN   | 1", "error": false, "complete": false, "_t": 119.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "77,73", "error": false, "complete": false, "_t": 119.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.23   |", "error": false, "complete": false, "_t": 119.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 364", "error": false, "complete": false, "_t": 119.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",822   ", "error": false, "complete": false, "_t": 119.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | **0.4", "error": false, "complete": false, "_t": 120.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "87**       ", "error": false, "complete": false, "_t": 120.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | +10", "error": false, "complete": false, "_t": 120.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".7%       |\n|", "error": false, "complete": false, "_t": 120.34}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " XHS      | 2", "error": false, "complete": false, "_t": 120.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "01,51", "error": false, "complete": false, "_t": 120.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5.85   |", "error": false, "complete": false, "_t": 120.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 479,0", "error": false, "complete": false, "_t": 120.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "53    | **0", "error": false, "complete": false, "_t": 120.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".421", "error": false, "complete": false, "_t": 121.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "** ← 最低", "error": false, "complete": false, "_t": 121.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | −4.6", "error": false, "complete": false, "_t": 121.24}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%        |\n| BA", "error": false, "complete": false, "_t": 121.35}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "IDU    | 1", "error": false, "complete": false, "_t": 121.46}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "91,48", "error": false, "complete": false, "_t": 121.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "6.07  ", "error": false, "complete": false, "_t": 121.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | 441,", "error": false, "complete": false, "_t": 121.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "778    | **", "error": false, "complete": false, "_t": 121.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.433", "error": false, "complete": false, "_t": 122.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**        | −1", "error": false, "complete": false, "_t": 122.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".6%       ", "error": false, "complete": false, "_t": 122.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " |\n| WECHAT   |", "error": false, "complete": false, "_t": 122.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 186,9", "error": false, "complete": false, "_t": 122.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "18.77", "error": false, "complete": false, "_t": 122.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "   | 441", "error": false, "complete": false, "_t": 122.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ",590    |", "error": false, "complete": false, "_t": 122.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **0.42", "error": false, "complete": false, "_t": 122.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3**        |", "error": false, "complete": false, "_t": 123.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " −3.9", "error": false, "complete": false, "_t": 123.22}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%        |\n| **均", "error": false, "complete": false, "_t": 123.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "值** | —", "error": false, "complete": false, "_t": 123.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "            | —         ", "error": false, "complete": false, "_t": 123.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " | **0.44", "error": false, "complete": false, "_t": 123.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0**        |", "error": false, "complete": false, "_t": 123.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " —            |\n\n>", "error": false, "complete": false, "_t": 123.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 💡 小红", "error": false, "complete": false, "_t": 123.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "书（XHS）C", "error": false, "complete": false, "_t": 124.05}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "PC 仅比", "error": false, "complete": false, "_t": 124.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "微信（WECHAT）低", "error": false, "complete": false, "_t": 124.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0.0", "error": false, "complete": false, "_t": 124.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "02 元，但", "error": false, "complete": false, "_t": 124.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击量高出 3", "error": false, "complete": false, "_t": 124.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7,46", "error": false, "complete": false, "_t": 124.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3 次，", "error": false, "complete": false, "_t": 124.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "综合规模与效率", "error": false, "complete": false, "_t": 124.87}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "更优。\n\n---\n\n", "error": false, "complete": false, "_t": 124.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "## 4.", "error": false, "complete": false, "_t": 125.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 结果解读\n\n### ", "error": false, "complete": false, "_t": 125.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "4.1", "error": false, "complete": false, "_t": 125.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 渠道效率全景", "error": false, "complete": false, "_t": 125.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "图\n\n```ech", "error": false, "complete": false, "_t": 125.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "arts\n{\n   ", "error": false, "complete": false, "_t": 125.54}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"title\": {", "error": false, "complete": false, "_t": 125.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"text\": \"2", "error": false, "complete": false, "_t": 125.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "025年", "error": false, "complete": false, "_t": 125.86}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "12月各渠道点击", "error": false, "complete": false, "_t": 125.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "成本（CPC）对比", "error": false, "complete": false, "_t": 126.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\", \"subtext", "error": false, "complete": false, "_t": 126.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"单位：元/", "error": false, "complete": false, "_t": 126.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "次\" },\n    \"tooltip", "error": false, "complete": false, "_t": 126.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": { \"trigger", "error": false, "complete": false, "_t": 126.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"item\", \"formatter", "error": false, "complete": false, "_t": 126.67}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"{a} <", "error": false, "complete": false, "_t": 126.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "br/>{b", "error": false, "complete": false, "_t": 126.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "}: {c}", "error": false, "complete": false, "_t": 126.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 元\" },\n    \"", "error": false, "complete": false, "_t": 127.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "xAxis\": { \n", "error": false, "complete": false, "_t": 127.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        \"type\": \"category", "error": false, "complete": false, "_t": 127.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\", \n        \"", "error": false, "complete": false, "_t": 127.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "data\": [\"抖音", "error": false, "complete": false, "_t": 127.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\", \"小红书\",", "error": false, "complete": false, "_t": 127.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"百度\", \"微信", "error": false, "complete": false, "_t": 127.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\"],\n        \"axis", "error": false, "complete": false, "_t": 127.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Label\": { \"rotate", "error": false, "complete": false, "_t": 127.96}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 0 }\n   ", "error": false, "complete": false, "_t": 128.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " },\n    \"yAxis\":", "error": false, "complete": false, "_t": 128.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " { \n        \"type\":", "error": false, "complete": false, "_t": 128.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"value\", \n       ", "error": false, "complete": false, "_t": 128.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"name\": \"C", "error": false, "complete": false, "_t": 128.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "PC（元/次", "error": false, "complete": false, "_t": 128.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）\",\n        \"min", "error": false, "complete": false, "_t": 128.72}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 0.", "error": false, "complete": false, "_t": 128.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "41,\n        \"", "error": false, "complete": false, "_t": 128.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "max\": 0.5", "error": false, "complete": false, "_t": 129.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0,\n        \"interval", "error": false, "complete": false, "_t": 129.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 0.0", "error": false, "complete": false, "_t": 129.33}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1\n    },\n    \"", "error": false, "complete": false, "_t": 129.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "series\": [\n        {\n           ", "error": false, "complete": false, "_t": 129.57}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"type\": \"bar", "error": false, "complete": false, "_t": 129.71}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\",\n            \"data\": [", "error": false, "complete": false, "_t": 129.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.487,", "error": false, "complete": false, "_t": 129.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0.421", "error": false, "complete": false, "_t": 130.08}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ", 0.43", "error": false, "complete": false, "_t": 130.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3, 0.4", "error": false, "complete": false, "_t": 130.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "23],\n            \"item", "error": false, "complete": false, "_t": 130.5}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Style\": {\n                \"color", "error": false, "complete": false, "_t": 130.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": {\"type\": \"linear", "error": false, "complete": false, "_t": 130.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\", \"x\":", "error": false, "complete": false, "_t": 130.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0, \"y\":", "error": false, "complete": false, "_t": 130.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0, \"x", "error": false, "complete": false, "_t": 131.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "2\": 0", "error": false, "complete": false, "_t": 131.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ", \"y2\": ", "error": false, "complete": false, "_t": 131.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1, \"colorSt", "error": false, "complete": false, "_t": 131.42}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "ops\": [\n                    {\"offset", "error": false, "complete": false, "_t": 131.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 0, \"color", "error": false, "complete": false, "_t": 131.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"#79", "error": false, "complete": false, "_t": 131.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "7979", "error": false, "complete": false, "_t": 131.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\"},\n                    {\"offset", "error": false, "complete": false, "_t": 131.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": 1,", "error": false, "complete": false, "_t": 132.02}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"color\": \"#d", "error": false, "complete": false, "_t": 132.14}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "8d8d8\"}\n", "error": false, "complete": false, "_t": 132.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "                ]}\n            }\n", "error": false, "complete": false, "_t": 132.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "        }\n    ],\n   ", "error": false, "complete": false, "_t": 132.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"grid\": { \"", "error": false, "complete": false, "_t": 132.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "left\": \"3", "error": false, "complete": false, "_t": 132.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "%\", \"right\":", "error": false, "complete": false, "_t": 132.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " \"4%\", \"bottom", "error": false, "complete": false, "_t": 132.85}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "\": \"3%\", \"contain", "error": false, "complete": false, "_t": 133.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "Label\": true }\n}\n``", "error": false, "complete": false, "_t": 133.12}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "`\n\n### 4.2", "error": false, "complete": false, "_t": 133.28}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 关键洞察\n\n- **", "error": false, "complete": false, "_t": 133.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "小红书具备", "error": false, "complete": false, "_t": 133.47}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "“高确定性", "error": false, "complete": false, "_t": 133.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "效率”**：", "error": false, "complete": false, "_t": 133.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "CPC 显著低于", "error": false, "complete": false, "_t": 133.77}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "抖音（−1", "error": false, "complete": false, "_t": 133.82}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "3.5%", "error": false, "complete": false, "_t": 133.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "），且点击量为", "error": false, "complete": false, "_t": 134.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "四渠道最高（", "error": false, "complete": false, "_t": 134.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "+31.", "error": false, "complete": false, "_t": 134.19}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "5% vs", "error": false, "complete": false, "_t": 134.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 抖音），说明", "error": false, "complete": false, "_t": 134.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "其流量质量与定向", "error": false, "complete": false, "_t": 134.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "能力突出；  \n- **", "error": false, "complete": false, "_t": 134.63}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "无显著“洼", "error": false, "complete": false, "_t": 134.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "地红利”**：", "error": false, "complete": false, "_t": 134.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "最低CPC（", "error": false, "complete": false, "_t": 134.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.42", "error": false, "complete": false, "_t": 135.03}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "1）与均值（", "error": false, "complete": false, "_t": 135.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.440", "error": false, "complete": false, "_t": 135.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "）仅差 4", "error": false, "complete": false, "_t": 135.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".6%，所有", "error": false, "complete": false, "_t": 135.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道CPC均在", "error": false, "complete": false, "_t": 135.59}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 0.42", "error": false, "complete": false, "_t": 135.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "–0.49", "error": false, "complete": false, "_t": 135.76}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 区间内", "error": false, "complete": false, "_t": 135.89}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，表明整体投放", "error": false, "complete": false, "_t": 135.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "环境趋于理性，", "error": false, "complete": false, "_t": 136.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**粗放式", "error": false, "complete": false, "_t": 136.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "预算倾斜收益有限", "error": false, "complete": false, "_t": 136.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "**；  \n- **自然", "error": false, "complete": false, "_t": 136.37}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量缺失提示归", "error": false, "complete": false, "_t": 136.44}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "因问题**：`", "error": false, "complete": false, "_t": 136.6}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "ORGANIC` ", "error": false, "complete": false, "_t": 136.68}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "未出现在结果中，需", "error": false, "complete": false, "_t": 136.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "核查是否归因配置", "error": false, "complete": false, "_t": 136.94}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "遗漏或数据采集", "error": false, "complete": false, "_t": 136.99}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "断点，避免", "error": false, "complete": false, "_t": 137.1}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低估真实免费流量贡献", "error": false, "complete": false, "_t": 137.23}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "。\n\n---\n\n## 5.", "error": false, "complete": false, "_t": 137.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 建议", "error": false, "complete": false, "_t": 137.41}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与后续行动\n\n", "error": false, "complete": false, "_t": 137.51}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "### ✅", "error": false, "complete": false, "_t": 137.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 立即执行", "error": false, "complete": false, "_t": 137.69}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "项（Next 7", "error": false, "complete": false, "_t": 137.78}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " Days）\n- **", "error": false, "complete": false, "_t": 137.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "小红书预算", "error": false, "complete": false, "_t": 137.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "策略**：维持", "error": false, "complete": false, "_t": 138.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "当前占比，**暂停", "error": false, "complete": false, "_t": 138.2}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "追加预算**；", "error": false, "complete": false, "_t": 138.26}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "启动 A/B 测试", "error": false, "complete": false, "_t": 138.4}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "，聚焦落地页加载", "error": false, "complete": false, "_t": 138.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "速度、表单字段", "error": false, "complete": false, "_t": 138.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "精简、首屏价值", "error": false, "complete": false, "_t": 138.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "陈述强化，目标", "error": false, "complete": false, "_t": 138.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提升转化率 ≥", "error": false, "complete": false, "_t": 138.9}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 8%；", "error": false, "complete": false, "_t": 139.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- **抖音", "error": false, "complete": false, "_t": 139.13}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "优化优先级**：C", "error": false, "complete": false, "_t": 139.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "PC 最高（", "error": false, "complete": false, "_t": 139.32}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0.487），", "error": false, "complete": false, "_t": 139.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "但点击量基数", "error": false, "complete": false, "_t": 139.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "偏低（36", "error": false, "complete": false, "_t": 139.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": ".5万），建议", "error": false, "complete": false, "_t": 139.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "复盘创意素材", "error": false, "complete": false, "_t": 139.83}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "与人群包，", "error": false, "complete": false, "_t": 139.93}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "排查“高曝光", "error": false, "complete": false, "_t": 140.0}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "低点击”环节", "error": false, "complete": false, "_t": 140.09}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "；  \n- **数据", "error": false, "complete": false, "_t": 140.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "治理动作**：协同", "error": false, "complete": false, "_t": 140.29}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "数仓团队验证", "error": false, "complete": false, "_t": 140.45}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " `ORGANIC`", "error": false, "complete": false, "_t": 140.56}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 渠道在 `m", "error": false, "complete": false, "_t": 140.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "kt_ad_spend` 中", "error": false, "complete": false, "_t": 140.75}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "的埋点与", "error": false, "complete": false, "_t": 140.84}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "归因逻辑，", "error": false, "complete": false, "_t": 140.95}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "确保下月报告", "error": false, "complete": false, "_t": 141.01}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "覆盖全渠道。\n\n###", "error": false, "complete": false, "_t": 141.17}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 📈 中", "error": false, "complete": false, "_t": 141.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "期规划（Next", "error": false, "complete": false, "_t": 141.3}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 30 Days）\n", "error": false, "complete": false, "_t": 141.43}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "- 建立", "error": false, "complete": false, "_t": 141.52}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " **CPC-", "error": false, "complete": false, "_t": 141.64}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "CTR-CVR ", "error": false, "complete": false, "_t": 141.74}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "三维漏斗监控", "error": false, "complete": false, "_t": 141.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "看板**，当", "error": false, "complete": false, "_t": 141.92}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "某渠道 CPC", "error": false, "complete": false, "_t": 142.04}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 连续两月低于", "error": false, "complete": false, "_t": 142.11}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "均值 5", "error": false, "complete": false, "_t": 142.18}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "% 且 CV", "error": false, "complete": false, "_t": 142.27}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "R 同步", "error": false, "complete": false, "_t": 142.36}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "提升时，再", "error": false, "complete": false, "_t": 142.49}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "启动预算弹性上调", "error": false, "complete": false, "_t": 142.55}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "机制（阈值：", "error": false, "complete": false, "_t": 142.66}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "+10%）；", "error": false, "complete": false, "_t": 142.8}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "  \n- 对小", "error": false, "complete": false, "_t": 142.91}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "红书高价值", "error": false, "complete": false, "_t": 142.97}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "点击用户打标", "error": false, "complete": false, "_t": 143.06}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "（如：停留 >", "error": false, "complete": false, "_t": 143.15}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 60s +", "error": false, "complete": false, "_t": 143.31}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 页面滚动深度 > 8", "error": false, "complete": false, "_t": 143.39}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "0%），构建", "error": false, "complete": false, "_t": 143.48}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " Lookalike", "error": false, "complete": false, "_t": 143.61}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " 模型反哺其他", "error": false, "complete": false, "_t": 143.7}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "渠道定向。\n\n>", "error": false, "complete": false, "_t": 143.81}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": " ⚠️ **", "error": false, "complete": false, "_t": 143.88}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "风险提示**：", "error": false, "complete": false, "_t": 143.98}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "若单纯因小", "error": false, "complete": false, "_t": 144.07}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "红书CPC最低", "error": false, "complete": false, "_t": 144.21}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "而增加预算，可能", "error": false, "complete": false, "_t": 144.25}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "稀释其优质", "error": false, "complete": false, "_t": 144.38}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "流量密度，导致C", "error": false, "complete": false, "_t": 144.53}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "PC回升——**", "error": false, "complete": false, "_t": 144.58}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "效率优化永远优先", "error": false, "complete": false, "_t": 144.65}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "MARK_DOWN", "text": "于规模扩张**。", "error": false, "complete": false, "_t": 144.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": "ReportGeneratorNode", "textType": "TEXT", "text": "报告生成完成！\n", "error": false, "complete": false, "_t": 144.73}
+{"agentId": "5", "threadId": "v2-P15-3-be6aa1", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 144.75}
