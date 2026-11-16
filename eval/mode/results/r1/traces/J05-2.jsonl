@@ -1,0 +1,334 @@
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.31}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.41}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.44}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.5}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.74}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 2.83}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 2.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 3.0}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "6年3月从发货", "error": false, "complete": false, "_t": 3.13}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "到签收平均用时", "error": false, "complete": false, "_t": 3.29}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "最长的3家快递公司", "error": false, "complete": false, "_t": 3.33}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 3.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 3.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年3月从发货到签收平均用时最长的3家快递公司\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: DELAY, 说明: 物流异常类型取值，对应 tms_shipment.exception_type = 'DELAY', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 履约时效, 说明: 从支付到签收的小时数。仅“发货时效”指支付到揽收 shipped_at。；公式：AVG(TIMESTAMPDIFF(HOUR, trd_order.paid_at, t...\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 物流超时, 说明: 售后/退款原因取值，对应 trd_aftersale_reason.code = 'LATE_DELIVERY', 同义词: LATE_DELIVERY\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 顺丰, 说明: 承运商取值，对应 tms_carrier.name = '顺丰', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: LOGISTICS, 说明: 客诉类型取值，对应 trd_complaint.complaint_type = 'LOGISTICS', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 极速达, 说明: 承运商取值，对应 tms_carrier.name = '极速达', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 中通, 说明: 承运商取值，对应 tms_carrier.name = '中通', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 圆通, 说明: 承运商取值，对应 tms_carrier.name = '圆通', 同义词: \n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 4.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 5.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 5.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.49}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询", "error": false, "complete": false, "_t": 5.58}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年3", "error": false, "complete": false, "_t": 5.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月（>= '20", "error": false, "complete": false, "_t": 5.86}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-03-", "error": false, "complete": false, "_t": 5.97}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND <", "error": false, "complete": false, "_t": 6.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '2026-", "error": false, "complete": false, "_t": 6.25}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "04-01'", "error": false, "complete": false, "_t": 6.35}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）期间，履约时效（", "error": false, "complete": false, "_t": 6.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "即从支付时间", "error": false, "complete": false, "_t": 6.62}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " paid_at 到妥", "error": false, "complete": false, "_t": 6.68}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "投时间 delivered_at 的", "error": false, "complete": false, "_t": 6.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "小时数）平均", "error": false, "complete": false, "_t": 6.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "值最高的3家承", "error": false, "complete": false, "_t": 6.99}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "运商（快递", "error": false, "complete": false, "_t": 7.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "公司）名称\",\n", "error": false, "complete": false, "_t": 7.19}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"expanded_queries\": [\n", "error": false, "complete": false, "_t": 7.31}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "    \"统计202", "error": false, "complete": false, "_t": 7.43}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年3月各", "error": false, "complete": false, "_t": 7.49}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "承运商的", "error": false, "complete": false, "_t": 7.62}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "平均履约时效（支付", "error": false, "complete": false, "_t": 7.69}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "到签收小时", "error": false, "complete": false, "_t": 7.82}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "数），并列出", "error": false, "complete": false, "_t": 7.86}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "耗时最长的", "error": false, "complete": false, "_t": 8.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "前3名快递", "error": false, "complete": false, "_t": 8.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "公司\",\n    \"20", "error": false, "complete": false, "_t": 8.22}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年3月哪些", "error": false, "complete": false, "_t": 8.34}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "快递公司的平均配送", "error": false, "complete": false, "_t": 8.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "时长（从", "error": false, "complete": false, "_t": 8.53}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "付款完成到客户", "error": false, "complete": false, "_t": 8.57}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "签收）最高", "error": false, "complete": false, "_t": 8.72}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "？请按从", "error": false, "complete": false, "_t": 8.74}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "高到低排序", "error": false, "complete": false, "_t": 8.83}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "取前3位", "error": false, "complete": false, "_t": 8.96}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n    \"在", "error": false, "complete": false, "_t": 9.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年", "error": false, "complete": false, "_t": 9.16}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3月，按", "error": false, "complete": false, "_t": 9.25}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "承运商分", "error": false, "complete": false, "_t": 9.34}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "组计算平均物流", "error": false, "complete": false, "_t": 9.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "时效（paid_at 到", "error": false, "complete": false, "_t": 9.52}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " delivered_at 的小时", "error": false, "complete": false, "_t": 9.67}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "差），排名前三", "error": false, "complete": false, "_t": 9.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的快递公司是", "error": false, "complete": false, "_t": 9.8}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "哪几家？\"\n ", "error": false, "complete": false, "_t": 9.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " ]\n}", "error": false, "complete": false, "_t": 9.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 9.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 11.7}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: oms_fulfillment_order, tms_shipment, tms_shipment_track, tms_carrier, trd_order, trd_compensation, fin_settlement, tms_delivery_sla, trd_return_logistics, scm_supplier\n", "error": false, "complete": false, "_t": 11.7}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 11.7}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 11.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 11.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 11.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 13.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "trd_order", "error": false, "complete": false, "_t": 13.53}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"oms", "error": false, "complete": false, "_t": 13.62}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_fulfillment", "error": false, "complete": false, "_t": 13.72}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_order\", \"tms_ship", "error": false, "complete": false, "_t": 13.85}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "ment\", \"tms", "error": false, "complete": false, "_t": 13.96}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_carrier\"]", "error": false, "complete": false, "_t": 13.98}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 13.99}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 13.99}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 13.99}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 14.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 16.05}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 16.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 16.11}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 16.17}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n", "error": false, "complete": false, "_t": 16.3}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【语种类型", "error": false, "complete": false, "_t": 16.38}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：《中文》", "error": false, "complete": false, "_t": 16.48}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n【需求内容】：", "error": false, "complete": false, "_t": 16.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "查询2026年", "error": false, "complete": false, "_t": 16.75}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "3月（>= '2", "error": false, "complete": false, "_t": 16.88}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026-", "error": false, "complete": false, "_t": 16.97}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "03-01'", "error": false, "complete": false, "_t": 17.11}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AND < '202", "error": false, "complete": false, "_t": 17.23}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-04-0", "error": false, "complete": false, "_t": 17.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1'）期间，", "error": false, "complete": false, "_t": 17.47}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "履约时效（即", "error": false, "complete": false, "_t": 17.58}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "从支付时间 paid", "error": false, "complete": false, "_t": 17.63}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_at 到妥", "error": false, "complete": false, "_t": 17.76}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "投时间 delivered_at 的小时", "error": false, "complete": false, "_t": 17.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数）平均值", "error": false, "complete": false, "_t": 17.96}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "最高的3家承", "error": false, "complete": false, "_t": 18.05}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "运商（快递公司）", "error": false, "complete": false, "_t": 18.21}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "名称  \n\n**分析", "error": false, "complete": false, "_t": 18.26}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "依据如下（符合", "error": false, "complete": false, "_t": 18.35}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "核心原则，无需", "error": false, "complete": false, "_t": 18.42}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "澄清）：**", "error": false, "complete": false, "_t": 18.51}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n✅ **核心", "error": false, "complete": false, "_t": 18.6}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "指标“履约时效”", "error": false, "complete": false, "_t": 18.75}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "已明确定义**", "error": false, "complete": false, "_t": 18.84}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：  \n- 【", "error": false, "complete": false, "_t": 18.96}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息 (Evidence)】", "error": false, "complete": false, "_t": 19.06}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中明确给出业务", "error": false, "complete": false, "_t": 19.14}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "术语定义：  \n  >", "error": false, "complete": false, "_t": 19.27}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " **业务名词:", "error": false, "complete": false, "_t": 19.39}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 履约时效**,", "error": false, "complete": false, "_t": 19.43}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 说明: *", "error": false, "complete": false, "_t": 19.59}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "从支付到签收的", "error": false, "complete": false, "_t": 19.69}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "小时数。……", "error": false, "complete": false, "_t": 19.8}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "公式：AVG(TIMESTAMP", "error": false, "complete": false, "_t": 19.92}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "DIFF(HOUR, trd", "error": false, "complete": false, "_t": 20.06}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_order.paid_at, t", "error": false, "complete": false, "_t": 20.18}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_shipment.del", "error": false, "complete": false, "_t": 20.29}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ivered_at))；涉及", "error": false, "complete": false, "_t": 20.38}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：trd_order,", "error": false, "complete": false, "_t": 20.51}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " oms_fulfillment_order", "error": false, "complete": false, "_t": 20.62}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ", tms_shipment*", "error": false, "complete": false, "_t": 20.74}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n  →", "error": false, "complete": false, "_t": 20.84}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 直接提供计算", "error": false, "complete": false, "_t": 20.93}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "逻辑、所需字段（`", "error": false, "complete": false, "_t": 21.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "trd_order.paid_at", "error": false, "complete": false, "_t": 21.15}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`, `tms", "error": false, "complete": false, "_t": 21.3}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_shipment.delivered_at`", "error": false, "complete": false, "_t": 21.42}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）及关联路径", "error": false, "complete": false, "_t": 21.5}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "。\n\n✅ **关键实体", "error": false, "complete": false, "_t": 21.64}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "完整可追溯**：  \n", "error": false, "complete": false, "_t": 21.74}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- **承运商名称", "error": false, "complete": false, "_t": 21.85}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "** → `tms", "error": false, "complete": false, "_t": 22.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_carrier.name`（", "error": false, "complete": false, "_t": 22.09}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema 中明确存在", "error": false, "complete": false, "_t": 22.15}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，且 `t", "error": false, "complete": false, "_t": 22.27}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_shipment.car", "error": false, "complete": false, "_t": 22.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "rier_id`", "error": false, "complete": false, "_t": 22.44}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 外键关联 `tms", "error": false, "complete": false, "_t": 22.61}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_carrier.id`）  \n", "error": false, "complete": false, "_t": 22.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- **支付时间** →", "error": false, "complete": false, "_t": 22.85}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `trd_order.p", "error": false, "complete": false, "_t": 22.95}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "aid_at`（Schema 中", "error": false, "complete": false, "_t": 23.06}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "存在，且为", "error": false, "complete": false, "_t": 23.15}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务审计时间，", "error": false, "complete": false, "_t": 23.28}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "符合【业务规则】要求", "error": false, "complete": false, "_t": 23.41}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）  \n- **妥", "error": false, "complete": false, "_t": 23.5}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "投时间** → `t", "error": false, "complete": false, "_t": 23.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_shipment.del", "error": false, "complete": false, "_t": 23.72}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ivered_at`（Schema 中", "error": false, "complete": false, "_t": 23.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "存在，字段注", "error": false, "complete": false, "_t": 23.92}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "释为“签收", "error": false, "complete": false, "_t": 24.05}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间”，与“", "error": false, "complete": false, "_t": 24.14}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "妥投”语", "error": false, "complete": false, "_t": 24.25}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "义一致；且【", "error": false, "complete": false, "_t": 24.34}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务规则】强调", "error": false, "complete": false, "_t": 24.4}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `delivered_at", "error": false, "complete": false, "_t": 24.51}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 是妥投业务", "error": false, "complete": false, "_t": 24.62}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间）  \n- **时间", "error": false, "complete": false, "_t": 24.78}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "范围** → 【", "error": false, "complete": false, "_t": 24.84}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息】已严格", "error": false, "complete": false, "_t": 24.95}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "指定 SQL 写法：", "error": false, "complete": false, "_t": 25.09}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`paid_at >= '", "error": false, "complete": false, "_t": 25.19}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026-0", "error": false, "complete": false, "_t": 25.33}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "3-01", "error": false, "complete": false, "_t": 25.43}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "' AND paid_at < '", "error": false, "complete": false, "_t": 25.55}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026-0", "error": false, "complete": false, "_t": 25.68}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "4-01'`", "error": false, "complete": false, "_t": 25.79}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（注意：履约", "error": false, "complete": false, "_t": 25.91}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时效依赖 `paid_at`", "error": false, "complete": false, "_t": 26.03}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 和 `delivered_at`", "error": false, "complete": false, "_t": 26.19}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，但时效计算", "error": false, "complete": false, "_t": 26.23}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "本身不要求两", "error": false, "complete": false, "_t": 26.32}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间同属3", "error": false, "complete": false, "_t": 26.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "月；而用户", "error": false, "complete": false, "_t": 26.53}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "查询隐含逻辑", "error": false, "complete": false, "_t": 26.6}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "是“订单在3", "error": false, "complete": false, "_t": 26.72}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "月支付”，这是", "error": false, "complete": false, "_t": 26.82}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "行业标准口径，", "error": false, "complete": false, "_t": 26.89}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且 Evidence 中所有", "error": false, "complete": false, "_t": 27.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "相似问题（如GM", "error": false, "complete": false, "_t": 27.09}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "V、支付订单数）", "error": false, "complete": false, "_t": 27.24}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "均以 `paid_at`", "error": false, "complete": false, "_t": 27.35}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 作为时间锚", "error": false, "complete": false, "_t": 27.44}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "点，完全一致", "error": false, "complete": false, "_t": 27.55}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）  \n\n✅ **关联路径", "error": false, "complete": false, "_t": 27.64}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "清晰无断点", "error": false, "complete": false, "_t": 27.75}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：  \n- `tr", "error": false, "complete": false, "_t": 27.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order`（含", "error": false, "complete": false, "_t": 28.0}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `paid_at`,", "error": false, "complete": false, "_t": 28.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `id`）  \n", "error": false, "complete": false, "_t": 28.19}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  → 通过", "error": false, "complete": false, "_t": 28.28}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `id = o", "error": false, "complete": false, "_t": 28.39}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_fulfillment_order.order", "error": false, "complete": false, "_t": 28.49}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_id`  \n-", "error": false, "complete": false, "_t": 28.59}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `oms_fulfillment", "error": false, "complete": false, "_t": 28.69}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_order`（含 `id", "error": false, "complete": false, "_t": 28.86}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`）  \n  → ", "error": false, "complete": false, "_t": 28.96}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "通过 `id = t", "error": false, "complete": false, "_t": 29.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_shipment.fulfillment", "error": false, "complete": false, "_t": 29.2}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_id`  \n-", "error": false, "complete": false, "_t": 29.32}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `tms_shipment`", "error": false, "complete": false, "_t": 29.42}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（含 `delivered_at", "error": false, "complete": false, "_t": 29.58}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`, `carrier_id`）", "error": false, "complete": false, "_t": 29.68}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n  → 通过", "error": false, "complete": false, "_t": 29.8}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `carrier_id = t", "error": false, "complete": false, "_t": 29.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ms_carrier.id", "error": false, "complete": false, "_t": 30.02}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`  \n- `tms", "error": false, "complete": false, "_t": 30.12}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_carrier`（含 `", "error": false, "complete": false, "_t": 30.27}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "name`）  \n→", "error": false, "complete": false, "_t": 30.32}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 全链路", "error": false, "complete": false, "_t": 30.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "外键完备，Schema", "error": false, "complete": false, "_t": 30.55}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 中已列出全部", "error": false, "complete": false, "_t": 30.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "必要表及字段。\n\n", "error": false, "complete": false, "_t": 30.76}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "✅ **聚合与", "error": false, "complete": false, "_t": 30.88}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "排序需求可实现", "error": false, "complete": false, "_t": 30.94}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：  \n-", "error": false, "complete": false, "_t": 31.05}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 按承运商分", "error": false, "complete": false, "_t": 31.18}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "组 → `GROUP", "error": false, "complete": false, "_t": 31.24}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " BY tms_carrier", "error": false, "complete": false, "_t": 31.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".name`  \n-", "error": false, "complete": false, "_t": 31.43}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 计算平均", "error": false, "complete": false, "_t": 31.51}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "履约时效 → `", "error": false, "complete": false, "_t": 31.66}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "AVG(TIMESTAMPDIFF(H", "error": false, "complete": false, "_t": 31.77}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "OUR, trd_order.p", "error": false, "complete": false, "_t": 31.92}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "aid_at, tms_ship", "error": false, "complete": false, "_t": 32.04}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ment.delivered_at))", "error": false, "complete": false, "_t": 32.18}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`  \n-", "error": false, "complete": false, "_t": 32.23}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 取TOP3 → `ORDER", "error": false, "complete": false, "_t": 32.36}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " BY ... DESC LIMIT", "error": false, "complete": false, "_t": 32.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 3`  \n\n⚠", "error": false, "complete": false, "_t": 32.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "️ 无不可", "error": false, "complete": false, "_t": 32.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "绕过缺失：", "error": false, "complete": false, "_t": 32.78}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n- 无模糊", "error": false, "complete": false, "_t": 32.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "术语（如“", "error": false, "complete": false, "_t": 32.94}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "最好”“最受欢迎", "error": false, "complete": false, "_t": 33.06}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”）需澄清；  \n", "error": false, "complete": false, "_t": 33.16}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- “承运商名称", "error": false, "complete": false, "_t": 33.29}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”“履约时效”“", "error": false, "complete": false, "_t": 33.45}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026年3", "error": false, "complete": false, "_t": 33.56}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "月”均在 Schema", "error": false, "complete": false, "_t": 33.69}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " + Evidence 中有", "error": false, "complete": false, "_t": 33.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "唯一、可执行", "error": false, "complete": false, "_t": 33.82}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "的映射；  \n", "error": false, "complete": false, "_t": 33.93}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- 所有字段", "error": false, "complete": false, "_t": 34.1}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "非空/逻辑", "error": false, "complete": false, "_t": 34.13}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "删除处理（`is", "error": false, "complete": false, "_t": 34.26}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_deleted=0`）", "error": false, "complete": false, "_t": 34.37}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可按需加", "error": false, "complete": false, "_t": 34.46}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "过滤，属常规", "error": false, "complete": false, "_t": 34.55}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "健壮性处理，不", "error": false, "complete": false, "_t": 34.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "构成障碍。\n\n→", "error": false, "complete": false, "_t": 34.77}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 综上，该", "error": false, "complete": false, "_t": 34.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "请求**完全具备", "error": false, "complete": false, "_t": 34.97}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可分析性**，", "error": false, "complete": false, "_t": 35.05}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "应直接进入SQL", "error": false, "complete": false, "_t": 35.14}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "生成阶段。", "error": false, "complete": false, "_t": 35.17}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 35.18}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 35.19}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 35.21}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 36.97}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `", "error": false, "complete": false, "_t": 37.0}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "c`.`", "error": false, "complete": false, "_t": 37.04}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "name`,", "error": false, "complete": false, "_t": 37.15}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AVG(TIMESTAMPDIFF(H", "error": false, "complete": false, "_t": 37.26}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "OUR, `o`.`paid", "error": false, "complete": false, "_t": 37.41}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at`, `s`.`del", "error": false, "complete": false, "_t": 37.52}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ivered_at`)) AS `", "error": false, "complete": false, "_t": 37.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "avg_fulfillment_hours", "error": false, "complete": false, "_t": 37.77}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`\nFROM `trd_order", "error": false, "complete": false, "_t": 37.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` `o`\n", "error": false, "complete": false, "_t": 38.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "JOIN `oms_fulfillment", "error": false, "complete": false, "_t": 38.11}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_order` `f` ON", "error": false, "complete": false, "_t": 38.27}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`id` =", "error": false, "complete": false, "_t": 38.38}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `f`.`order_id`\n", "error": false, "complete": false, "_t": 38.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "JOIN `tms_shipment", "error": false, "complete": false, "_t": 38.66}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` `s` ON `", "error": false, "complete": false, "_t": 38.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "f`.`id` = `", "error": false, "complete": false, "_t": 38.91}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "s`.`fulfill", "error": false, "complete": false, "_t": 39.02}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ment_id`\nJOIN `t", "error": false, "complete": false, "_t": 39.13}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_carrier` `c", "error": false, "complete": false, "_t": 39.29}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` ON `s`.`carrier", "error": false, "complete": false, "_t": 39.39}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `c`.`", "error": false, "complete": false, "_t": 39.54}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id`\nWHERE `o`.`", "error": false, "complete": false, "_t": 39.65}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "paid_at` >= '2", "error": false, "complete": false, "_t": 39.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-03", "error": false, "complete": false, "_t": 39.92}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' AND `", "error": false, "complete": false, "_t": 40.08}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`.`paid_at` <", "error": false, "complete": false, "_t": 40.18}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 40.31}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "04-01'\n", "error": false, "complete": false, "_t": 40.47}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "  AND `o`.`order", "error": false, "complete": false, "_t": 40.61}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_status` NOT IN ('CANCEL", "error": false, "complete": false, "_t": 40.71}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "LED', 'CLOSED')\n", "error": false, "complete": false, "_t": 40.87}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "  AND `s`.`status", "error": false, "complete": false, "_t": 40.95}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = 'DELIVER", "error": false, "complete": false, "_t": 41.12}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ED'\n  AND `s", "error": false, "complete": false, "_t": 41.22}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`delivered_at` IS", "error": false, "complete": false, "_t": 41.38}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " NOT NULL\n  AND `", "error": false, "complete": false, "_t": 41.48}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`.`paid_at` IS", "error": false, "complete": false, "_t": 41.63}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " NOT NULL\nGROUP BY `", "error": false, "complete": false, "_t": 41.82}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "c`.`name`\nORDER BY", "error": false, "complete": false, "_t": 41.9}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `avg_fulfillment_hours", "error": false, "complete": false, "_t": 42.01}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` DESC\nLIMIT 3", "error": false, "complete": false, "_t": 42.13}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ";", "error": false, "complete": false, "_t": 42.14}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 42.14}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 42.15}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 43.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 43.81}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 43.83}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 43.83}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT `c`.`name`, AVG(TIMESTAMPDIFF(HOUR, `o`.`paid_at`, `s`.`delivered_at`)) AS `avg_fulfillment_hours`\nFROM `trd_order` `o`\nJOIN `oms_fulfillment_order` `f` ON `o`.`id` = `f`.`order_id`\nJOIN `tms_shipment` `s` ON `f`.`id` = `s`.`fulfillment_id`\nJOIN `tms_carrier` `c` ON `s`.`carrier_id` = `c`.`id`\nWHERE `o`.`paid_at` >= '2026-03-01' AND `o`.`paid_at` < '2026-04-01'\n  AND `o`.`order_status` NOT IN ('CANCELLED', 'CLOSED')\n  AND `s`.`status` = 'DELIVERED'\n  AND `s`.`delivered_at` IS NOT NULL\n  AND `o`.`paid_at` IS NOT NULL\nGROUP BY `c`.`name`\nORDER BY `avg_fulfillment_hours` DESC\nLIMIT 3;\n", "error": false, "complete": false, "_t": 43.83}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 45.76}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 45.76}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"name\",\"avg_fulfillment_hours\"],\"data\":[{\"avg_fulfillment_hours\":\"59.0709\",\"name\":\"京东物流\"},{\"avg_fulfillment_hours\":\"58.6000\",\"name\":\"极速达\"},{\"avg_fulfillment_hours\":\"57.9969\",\"name\":\"圆通\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"bar\",\"title\":\"2026年3月履约时效Top3承运商\",\"x\":\"name\",\"y\":[\"avg_fulfillment_hours\"]}}", "error": false, "complete": false, "_t": 45.76}
+{"agentId": "5", "threadId": "mix-J05-2-88c88a", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 45.8}

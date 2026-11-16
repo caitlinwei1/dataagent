@@ -43,4 +43,7 @@ public class GraphRequest {
 
 	private boolean nl2sqlOnly;
 
+	/** GBI answer mode (turbo / mix / ...); empty = gbi.mode.default-mode. */
+	private String mode;
+
 }

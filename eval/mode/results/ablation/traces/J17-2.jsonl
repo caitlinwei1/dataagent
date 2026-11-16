@@ -1,0 +1,238 @@
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.06}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.14}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.19}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.26}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.29}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.29}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.29}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.72}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 2.81}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 2.85}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 2.99}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "6年3月华南中心", "error": false, "complete": false, "_t": 3.12}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "仓每天的出库单", "error": false, "complete": false, "_t": 3.2}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "数\"}", "error": false, "complete": false, "_t": 3.22}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 3.22}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年3月华南中心仓每天的出库单数\n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 华南中心仓, 说明: 仓库取值，对应 wms_warehouse.name = '华南中心仓', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 京东华南店, 说明: 店铺取值，对应 dim_shop.name = '京东华南店', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 华南, 说明: 大区取值，对应 dim_region.big_region = '华南', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 华东中心仓, 说明: 仓库取值，对应 wms_warehouse.name = '华东中心仓', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 华中区域仓, 说明: 仓库取值，对应 wms_warehouse.name = '华中区域仓', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 西南区域仓, 说明: 仓库取值，对应 wms_warehouse.name = '西南区域仓', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: CENTRAL, 说明: 仓库类型取值，对应 wms_warehouse.warehouse_type = 'CENTRAL', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 京东西南店, 说明: 店铺取值，对应 dim_shop.name = '京东西南店', 同义词: \n", "error": false, "complete": false, "_t": 3.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 3.77}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 5.0}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 5.1}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.13}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询20", "error": false, "complete": false, "_t": 5.27}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年3月（", "error": false, "complete": false, "_t": 5.36}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ">= '20", "error": false, "complete": false, "_t": 5.52}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-03-", "error": false, "complete": false, "_t": 5.62}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01' AND < '", "error": false, "complete": false, "_t": 5.75}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 5.91}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "4-01'）", "error": false, "complete": false, "_t": 6.02}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "期间，仓库名称为'", "error": false, "complete": false, "_t": 6.14}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华南中心仓'（", "error": false, "complete": false, "_t": 6.27}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "wms_warehouse.name =", "error": false, "complete": false, "_t": 6.39}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '华南中心仓'）", "error": false, "complete": false, "_t": 6.48}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的每日出库", "error": false, "complete": false, "_t": 6.61}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "单数量，按", "error": false, "complete": false, "_t": 6.7}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "outbound_at日期", "error": false, "complete": false, "_t": 6.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "统计\",\n  \"expanded", "error": false, "complete": false, "_t": 6.92}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_queries\": [\n    \"统计", "error": false, "complete": false, "_t": 7.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年3", "error": false, "complete": false, "_t": 7.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月每天从华南", "error": false, "complete": false, "_t": 7.24}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "中心仓完成出", "error": false, "complete": false, "_t": 7.35}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "库的订单数量，时间", "error": false, "complete": false, "_t": 7.47}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "范围为2026", "error": false, "complete": false, "_t": 7.6}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-03-01", "error": false, "complete": false, "_t": 7.71}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "至2026", "error": false, "complete": false, "_t": 7.86}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-03-31", "error": false, "complete": false, "_t": 7.97}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，依据outbound_at", "error": false, "complete": false, "_t": 8.08}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "字段切分\",\n", "error": false, "complete": false, "_t": 8.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "    \"请给出", "error": false, "complete": false, "_t": 8.26}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年", "error": false, "complete": false, "_t": 8.37}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3月（202", "error": false, "complete": false, "_t": 8.52}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-03-0", "error": false, "complete": false, "_t": 8.61}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1 00:", "error": false, "complete": false, "_t": 8.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "00:00至", "error": false, "complete": false, "_t": 8.87}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026-0", "error": false, "complete": false, "_t": 9.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "4-01", "error": false, "complete": false, "_t": 9.09}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " 00:00", "error": false, "complete": false, "_t": 9.23}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ":00前", "error": false, "complete": false, "_t": 9.3}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）华南中心仓", "error": false, "complete": false, "_t": 9.39}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "每日出库单", "error": false, "complete": false, "_t": 9.47}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "量明细\",\n    \"", "error": false, "complete": false, "_t": 9.56}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "计算202", "error": false, "complete": false, "_t": 9.71}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年3月内", "error": false, "complete": false, "_t": 9.8}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，华南中心仓每天", "error": false, "complete": false, "_t": 9.86}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的出库单", "error": false, "complete": false, "_t": 10.0}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "数，要求使用", "error": false, "complete": false, "_t": 10.11}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "outbound_at作为", "error": false, "complete": false, "_t": 10.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "业务时间，并严格", "error": false, "complete": false, "_t": 10.24}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "按半开区间", "error": false, "complete": false, "_t": 10.37}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " >= '2026", "error": false, "complete": false, "_t": 10.48}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-03-01", "error": false, "complete": false, "_t": 10.59}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "' AND < '2", "error": false, "complete": false, "_t": 10.74}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "026-04", "error": false, "complete": false, "_t": 10.86}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01'", "error": false, "complete": false, "_t": 10.94}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " 过滤\"\n  ]\n", "error": false, "complete": false, "_t": 11.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "}", "error": false, "complete": false, "_t": 11.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 11.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 13.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: wms_warehouse, wms_outbound_item, wms_outbound, wms_inventory_snapshot, wms_stocktake, wms_inbound, wms_inventory, wms_transfer, oms_fulfillment_order, tms_delivery_sla\n", "error": false, "complete": false, "_t": 13.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 13.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 13.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 13.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 13.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 14.95}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "JSON", "text": "wms_", "error": false, "complete": false, "_t": 15.02}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "JSON", "text": "warehouse\", \"", "error": false, "complete": false, "_t": 15.1}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "JSON", "text": "wms_out", "error": false, "complete": false, "_t": 15.15}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "JSON", "text": "bound\"]", "error": false, "complete": false, "_t": 15.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 15.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 15.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 15.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 15.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 16.55}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 16.58}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 16.6}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 16.7}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n【语", "error": false, "complete": false, "_t": 16.85}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "种类型】：《", "error": false, "complete": false, "_t": 16.94}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中文》  \n【需求", "error": false, "complete": false, "_t": 17.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：查询2", "error": false, "complete": false, "_t": 17.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026年3月", "error": false, "complete": false, "_t": 17.28}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（>= '20", "error": false, "complete": false, "_t": 17.41}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "26-03-", "error": false, "complete": false, "_t": 17.57}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "01' AND < '", "error": false, "complete": false, "_t": 17.67}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026-0", "error": false, "complete": false, "_t": 17.8}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "4-01'）", "error": false, "complete": false, "_t": 17.92}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "期间，仓库名称", "error": false, "complete": false, "_t": 18.04}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为'华南中心仓'", "error": false, "complete": false, "_t": 18.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（wms_warehouse.name", "error": false, "complete": false, "_t": 18.31}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " = '华南中心仓'", "error": false, "complete": false, "_t": 18.42}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）的每日出库单", "error": false, "complete": false, "_t": 18.53}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数量，按out", "error": false, "complete": false, "_t": 18.66}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "bound_at日期统计", "error": false, "complete": false, "_t": 18.7}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n\n---  \n**", "error": false, "complete": false, "_t": 18.89}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性分析说明（", "error": false, "complete": false, "_t": 18.91}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内部推理，不输出）", "error": false, "complete": false, "_t": 19.01}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：  \n-", "error": false, "complete": false, "_t": 19.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **核心实体", "error": false, "complete": false, "_t": 19.21}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“华南中心仓”", "error": false, "complete": false, "_t": 19.35}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：在【", "error": false, "complete": false, "_t": 19.46}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息 (Evidence)】", "error": false, "complete": false, "_t": 19.56}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中明确定义为 `", "error": false, "complete": false, "_t": 19.73}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "wms_warehouse.name =", "error": false, "complete": false, "_t": 19.83}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '华南中心仓'`", "error": false, "complete": false, "_t": 19.96}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，且该字段", "error": false, "complete": false, "_t": 20.06}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "存在于 `wms_", "error": false, "complete": false, "_t": 20.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "warehouse` 表中；", "error": false, "complete": false, "_t": 20.31}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n- ✅ **核心", "error": false, "complete": false, "_t": 20.42}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务时间字段 `", "error": false, "complete": false, "_t": 20.54}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "outbound_at`**：", "error": false, "complete": false, "_t": 20.62}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "在 `wms_out", "error": false, "complete": false, "_t": 20.78}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "bound` 表中存在", "error": false, "complete": false, "_t": 20.86}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，类型为 `DAT", "error": false, "complete": false, "_t": 20.99}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ETIME`，且", "error": false, "complete": false, "_t": 21.08}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【参考信息】", "error": false, "complete": false, "_t": 21.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "明确强调“出库用", "error": false, "complete": false, "_t": 21.29}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `outbound_at", "error": false, "complete": false, "_t": 21.4}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`”，并禁止", "error": false, "complete": false, "_t": 21.5}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "使用 `created_time`/", "error": false, "complete": false, "_t": 21.62}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`updated_time`", "error": false, "complete": false, "_t": 21.74}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 等审计时间；  \n", "error": false, "complete": false, "_t": 21.85}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- ✅ **时间范围", "error": false, "complete": false, "_t": 21.94}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "要求**：【", "error": false, "complete": false, "_t": 22.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息】已", "error": false, "complete": false, "_t": 22.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "给出标准SQL半", "error": false, "complete": false, "_t": 22.33}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "开区间写法 `", "error": false, "complete": false, "_t": 22.43}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ">= '2026", "error": false, "complete": false, "_t": 22.49}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-03-01", "error": false, "complete": false, "_t": 22.62}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "' AND < '20", "error": false, "complete": false, "_t": 22.77}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "26-04-", "error": false, "complete": false, "_t": 22.89}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "01'`，可", "error": false, "complete": false, "_t": 23.0}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "直接复用；  \n", "error": false, "complete": false, "_t": 23.15}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "- ✅ **关联", "error": false, "complete": false, "_t": 23.24}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关系**：`wms", "error": false, "complete": false, "_t": 23.4}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_outbound.warehouse_id`", "error": false, "complete": false, "_t": 23.5}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 与 `wms_", "error": false, "complete": false, "_t": 23.65}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "warehouse.id`", "error": false, "complete": false, "_t": 23.7}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 存在外键关系", "error": false, "complete": false, "_t": 23.79}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（Schema中已", "error": false, "complete": false, "_t": 23.92}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "列出），可正确", "error": false, "complete": false, "_t": 23.96}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "JOIN；  \n-", "error": false, "complete": false, "_t": 24.1}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **聚合目标", "error": false, "complete": false, "_t": 24.18}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“每日出库单", "error": false, "complete": false, "_t": 24.3}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数量”**：即", "error": false, "complete": false, "_t": 24.36}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "对 `wms", "error": false, "complete": false, "_t": 24.51}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_outbound` 表按", "error": false, "complete": false, "_t": 24.65}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `DATE(outbound_at)`", "error": false, "complete": false, "_t": 24.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 分组计数", "error": false, "complete": false, "_t": 24.84}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（COUNT(*)），完全", "error": false, "complete": false, "_t": 24.99}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可由现有字段支持", "error": false, "complete": false, "_t": 25.07}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "；  \n-", "error": false, "complete": false, "_t": 25.13}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **无模糊", "error": false, "complete": false, "_t": 25.26}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "术语**：“出", "error": false, "complete": false, "_t": 25.33}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "库单数量”即", "error": false, "complete": false, "_t": 25.46}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `wms_outbound`", "error": false, "complete": false, "_t": 25.57}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 主键 `id` 的", "error": false, "complete": false, "_t": 25.7}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "行数，定义", "error": false, "complete": false, "_t": 25.81}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "清晰；“每日", "error": false, "complete": false, "_t": 25.88}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”即按 `outbound", "error": false, "complete": false, "_t": 26.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_at` 截断", "error": false, "complete": false, "_t": 26.12}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "到日期粒度（", "error": false, "complete": false, "_t": 26.24}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`CAST(outbound_at", "error": false, "complete": false, "_t": 26.34}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AS DATE)` 或 `DATE", "error": false, "complete": false, "_t": 26.5}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "(outbound_at)`）。  \n\n", "error": false, "complete": false, "_t": 26.56}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "→ 所有", "error": false, "complete": false, "_t": 26.65}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关键要素均能在", "error": false, "complete": false, "_t": 26.8}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema + Evidence中", "error": false, "complete": false, "_t": 26.85}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "精准定位，无需", "error": false, "complete": false, "_t": 26.96}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "额外澄清，可直接生成", "error": false, "complete": false, "_t": 27.11}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "SQL执行分析。", "error": false, "complete": false, "_t": 27.14}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 27.14}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 27.16}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 27.17}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 28.72}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " date", "error": false, "complete": false, "_t": 28.74}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(`", "error": false, "complete": false, "_t": 28.76}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "out", "error": false, "complete": false, "_t": 28.89}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "bound_at`) as `date", "error": false, "complete": false, "_t": 28.98}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`, count(*) as `out", "error": false, "complete": false, "_t": 29.13}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "bound_count` from `w", "error": false, "complete": false, "_t": 29.22}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ms_outbound` o", "error": false, "complete": false, "_t": 29.38}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " join `wms_warehouse", "error": false, "complete": false, "_t": 29.47}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` w on o", "error": false, "complete": false, "_t": 29.6}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`warehouse_id` = w", "error": false, "complete": false, "_t": 29.69}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`id` where", "error": false, "complete": false, "_t": 29.77}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " w.`name`", "error": false, "complete": false, "_t": 29.89}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = '华南中心仓", "error": false, "complete": false, "_t": 30.03}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and o.`outbound", "error": false, "complete": false, "_t": 30.13}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` >= '20", "error": false, "complete": false, "_t": 30.24}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-03", "error": false, "complete": false, "_t": 30.39}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' and o", "error": false, "complete": false, "_t": 30.5}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`outbound_at` <", "error": false, "complete": false, "_t": 30.67}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 30.77}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "04-01'", "error": false, "complete": false, "_t": 30.88}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " group by date(`", "error": false, "complete": false, "_t": 30.99}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "outbound_at`", "error": false, "complete": false, "_t": 31.04}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ");", "error": false, "complete": false, "_t": 31.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 31.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 31.05}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 32.44}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 32.44}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 32.46}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 32.46}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select date(`outbound_at`) as `date`, count(*) as `outbound_count` from `wms_outbound` o join `wms_warehouse` w on o.`warehouse_id` = w.`id` where w.`name` = '华南中心仓' and o.`outbound_at` >= '2026-03-01' and o.`outbound_at` < '2026-04-01' group by date(`outbound_at`);\n", "error": false, "complete": false, "_t": 32.46}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 34.34}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 34.34}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"date\",\"outbound_count\"],\"data\":[{\"date\":\"2026-03-01\",\"outbound_count\":\"9\"},{\"date\":\"2026-03-02\",\"outbound_count\":\"4\"},{\"date\":\"2026-03-03\",\"outbound_count\":\"4\"},{\"date\":\"2026-03-04\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-05\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-06\",\"outbound_count\":\"14\"},{\"date\":\"2026-03-07\",\"outbound_count\":\"9\"},{\"date\":\"2026-03-08\",\"outbound_count\":\"10\"},{\"date\":\"2026-03-09\",\"outbound_count\":\"9\"},{\"date\":\"2026-03-10\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-11\",\"outbound_count\":\"12\"},{\"date\":\"2026-03-12\",\"outbound_count\":\"5\"},{\"date\":\"2026-03-13\",\"outbound_count\":\"7\"},{\"date\":\"2026-03-15\",\"outbound_count\":\"14\"},{\"date\":\"2026-03-14\",\"outbound_count\":\"2\"},{\"date\":\"2026-03-16\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-17\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-18\",\"outbound_count\":\"6\"},{\"date\":\"2026-03-20\",\"outbound_count\":\"10\"},{\"date\":\"2026-03-19\",\"outbound_count\":\"8\"},{\"date\":\"2026-03-21\",\"outbound_count\":\"9\"},{\"date\":\"2026-03-22\",\"outbound_count\":\"7\"},{\"date\":\"2026-03-23\",\"outbound_count\":\"10\"},{\"date\":\"2026-03-25\",\"outbound_count\":\"4\"},{\"date\":\"2026-03-24\",\"outbound_count\":\"5\"},{\"date\":\"2026-03-26\",\"outbound_count\":\"5\"},{\"date\":\"2026-03-27\",\"outbound_count\":\"7\"},{\"date\":\"2026-03-28\",\"outbound_count\":\"10\"},{\"date\":\"2026-03-30\",\"outbound_count\":\"6\"},{\"date\":\"2026-03-29\",\"outbound_count\":\"4\"},{\"date\":\"2026-03-31\",\"outbound_count\":\"10\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"line\",\"title\":\"华南中心仓2026年3月每日出库单数量\",\"x\":\"date\",\"y\":[\"outbound_count\"]}}", "error": false, "complete": false, "_t": 34.34}
+{"agentId": "5", "threadId": "mix-nocases-J17-2-2db97c", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 34.36}

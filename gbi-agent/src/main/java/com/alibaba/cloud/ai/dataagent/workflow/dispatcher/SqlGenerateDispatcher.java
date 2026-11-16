@@ -41,9 +41,11 @@ public class SqlGenerateDispatcher implements EdgeAction {
 	public String apply(OverAllState state) {
 		Optional<Object> optional = state.value(SQL_GENERATE_OUTPUT);
 		if (optional.isEmpty()) {
-			int currentCount = state.value(SQL_GENERATE_COUNT, properties.getMaxSqlRetryCount());
+			int maxTries = state.value(GBI_MAX_SQL_RETRIES, 0) > 0 ? state.value(GBI_MAX_SQL_RETRIES, 0)
+					: properties.getMaxSqlRetryCount();
+			int currentCount = state.value(SQL_GENERATE_COUNT, maxTries);
 			// 生成失败，重新生成
-			if (currentCount < properties.getMaxSqlRetryCount()) {
+			if (currentCount < maxTries) {
 				log.info("SQL 生成失败，开始重试，当前次数: {}", currentCount);
 				return SQL_GENERATE_NODE;
 			}

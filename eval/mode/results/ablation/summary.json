@@ -1,0 +1,40 @@
+{
+ "mix-nocases": {
+  "n": 23,
+  "ex": 0.7391,
+  "ex_strict": 0.5652,
+  "exec_success": 1.0,
+  "first_try_exec": 1.0,
+  "latency_p50": 35.2,
+  "latency_mean": 34.8,
+  "latency_p90": 37.8,
+  "first_sql_p50": 27.55,
+  "llm_calls_mean": 9.83,
+  "tokens_mean": 59293,
+  "cost_cny_per_q": 0.0502,
+  "by_task": {
+   "join": 0.778,
+   "multi_turn": 0.6,
+   "single": 0.778
+  }
+ },
+ "turbo-norules": {
+  "n": 23,
+  "ex": 0.6087,
+  "ex_strict": 0.4783,
+  "exec_success": 1.0,
+  "first_try_exec": 1.0,
+  "latency_p50": 14.6,
+  "latency_mean": 14.7,
+  "latency_p90": 15.6,
+  "first_sql_p50": 10.33,
+  "llm_calls_mean": 7.3,
+  "tokens_mean": 38240,
+  "cost_cny_per_q": 0.00814,
+  "by_task": {
+   "join": 0.778,
+   "multi_turn": 0.4,
+   "single": 0.556
+  }
+ }
+}

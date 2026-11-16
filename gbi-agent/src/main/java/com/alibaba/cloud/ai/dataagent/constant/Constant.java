@@ -146,6 +146,12 @@ public final class Constant {
 	// 标记是否进入Python执行失败的降级模式（超过最大重试次数后触发）
 	public static final String PYTHON_FALLBACK_MODE = "PYTHON_FALLBACK_MODE";
 
+	/** GBI: answer mode of the run (Turbo / Mix profile name, see gbi.mode.*). */
+	public static final String GBI_MODE = "GBI_MODE";
+
+	/** GBI: SQL generation attempts per step for this run (from the mode profile). */
+	public static final String GBI_MAX_SQL_RETRIES = "GBI_MAX_SQL_RETRIES";
+
 	// If code execution succeeds, output code running result; if fails, output error
 	// information
 	public static final String PYTHON_EXECUTE_NODE_OUTPUT = "PYTHON_EXECUTE_NODE_OUTPUT";

@@ -1,0 +1,16 @@
+# Local data gateway ("数据在地"). Runs inside the customer's network next to the database; only this file holds
+# database credentials. The cloud service stores the gateway URL and the shared secret, nothing else.
+server:
+  port: ${GATEWAY_PORT:8070}
+gbi:
+  gateway:
+    secret: ${GATEWAY_SECRET}
+    max-skew-seconds: 300
+    max-rows: 1000
+    audit-log: ${GATEWAY_AUDIT_LOG:gateway-audit.jsonl}
+    datasource:
+      dialect: ${GATEWAY_DB_DIALECT:mysql}          # postgresql for PG / Hologres / ADB-PG
+      url: ${GATEWAY_DB_URL:jdbc:mysql://127.0.0.1:13306/gbi_ecommerce?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
+      username: ${GATEWAY_DB_USER:gbi_reader}
+      password: ${GATEWAY_DB_PASSWORD}
+      schema: ${GATEWAY_DB_SCHEMA:gbi_ecommerce}

@@ -1,0 +1,86 @@
+S01-4  turbo-norules ex=False   19.4s attempts=1 calls=6 cost=0.00633
+S01-4  mix-nocases ex=True    33.6s attempts=1 calls=8 cost=0.0394
+S03-4  turbo-norules ex=True    13.7s attempts=1 calls=6 cost=0.00613
+S03-4  mix-nocases ex=True    35.6s attempts=1 calls=8 cost=0.03078
+S08-4  turbo-norules ex=True    13.6s attempts=1 calls=6 cost=0.00662
+S08-4  mix-nocases ex=True    31.6s attempts=1 calls=8 cost=0.03792
+S10-2  turbo-norules ex=True    14.0s attempts=1 calls=6 cost=0.00658
+S10-2  mix-nocases ex=False   37.6s attempts=1 calls=8 cost=0.04569
+S11-2  turbo-norules ex=True    15.8s attempts=1 calls=6 cost=0.00681
+S11-2  mix-nocases ex=True    26.3s attempts=1 calls=8 cost=0.03782
+S13-4  turbo-norules ex=False   14.7s attempts=1 calls=6 cost=0.00691
+S13-4  mix-nocases ex=True    34.7s attempts=1 calls=8 cost=0.03909
+S16-2  turbo-norules ex=False   14.5s attempts=1 calls=6 cost=0.00638
+S16-2  mix-nocases ex=False   31.4s attempts=1 calls=8 cost=0.0375
+S20-1  turbo-norules ex=True    14.0s attempts=1 calls=6 cost=0.00626
+S20-1  mix-nocases ex=True    35.5s attempts=1 calls=8 cost=0.03722
+S23-4  turbo-norules ex=False   13.9s attempts=1 calls=6 cost=0.00684
+S23-4  mix-nocases ex=True    42.4s attempts=1 calls=8 cost=0.04183
+J01-3  turbo-norules ex=True    15.5s attempts=1 calls=6 cost=0.00674
+J01-3  mix-nocases ex=True    35.3s attempts=1 calls=8 cost=0.0427
+J05-2  turbo-norules ex=True    15.6s attempts=1 calls=6 cost=0.00729
+J05-2  mix-nocases ex=True    46.1s attempts=1 calls=8 cost=0.04905
+J06-1  turbo-norules ex=True    13.7s attempts=1 calls=6 cost=0.00654
+J06-1  mix-nocases ex=True    36.6s attempts=1 calls=8 cost=0.04513
+J10-1  turbo-norules ex=True    14.8s attempts=1 calls=6 cost=0.00702
+J10-1  mix-nocases ex=True    35.5s attempts=1 calls=8 cost=0.04338
+J12-4  turbo-norules ex=False   15.1s attempts=1 calls=6 cost=0.00675
+J12-4  mix-nocases ex=False   37.8s attempts=1 calls=8 cost=0.04279
+J15-4  turbo-norules ex=False   14.4s attempts=1 calls=6 cost=0.00679
+J15-4  mix-nocases ex=True    35.6s attempts=1 calls=8 cost=0.04468
+J17-2  turbo-norules ex=True    13.9s attempts=1 calls=6 cost=0.00606
+J17-2  mix-nocases ex=False   34.4s attempts=1 calls=8 cost=0.03646
+J22-1  turbo-norules ex=True    15.2s attempts=1 calls=6 cost=0.00735
+J22-1  mix-nocases ex=True    35.2s attempts=1 calls=8 cost=0.04388
+J24-1  turbo-norules ex=True    14.9s attempts=1 calls=6 cost=0.00708
+J24-1  mix-nocases ex=True    36.5s attempts=1 calls=8 cost=0.04305
+M03-1  turbo-norules ex=False   13.8s attempts=1 calls=12 cost=0.0134
+M03-1  mix-nocases ex=False   31.0s attempts=1 calls=18 cost=0.09101
+M06-1  turbo-norules ex=True    12.5s attempts=1 calls=12 cost=0.01155
+M06-1  mix-nocases ex=True    30.3s attempts=1 calls=16 cost=0.07003
+M07-2  turbo-norules ex=False   15.6s attempts=1 calls=12 cost=0.01385
+M07-2  mix-nocases ex=False   34.6s attempts=1 calls=16 cost=0.08314
+M09-2  turbo-norules ex=True    14.6s attempts=1 calls=12 cost=0.01347
+M09-2  mix-nocases ex=True    31.5s attempts=1 calls=16 cost=0.0774
+M12-1  turbo-norules ex=False   15.4s attempts=1 calls=12 cost=0.01451
+M12-1  mix-nocases ex=True    31.8s attempts=1 calls=16 cost=0.0947
+{
+ "mix-nocases": {
+  "n": 23,
+  "ex": 0.7391,
+  "ex_strict": 0.5652,
+  "exec_success": 1.0,
+  "first_try_exec": 1.0,
+  "latency_p50": 35.2,
+  "latency_mean": 34.8,
+  "latency_p90": 37.8,
+  "first_sql_p50": 27.55,
+  "llm_calls_mean": 9.83,
+  "tokens_mean": 59293,
+  "cost_cny_per_q": 0.0502,
+  "by_task": {
+   "join": 0.778,
+   "multi_turn": 0.6,
+   "single": 0.778
+  }
+ },
+ "turbo-norules": {
+  "n": 23,
+  "ex": 0.6087,
+  "ex_strict": 0.4783,
+  "exec_success": 1.0,
+  "first_try_exec": 1.0,
+  "latency_p50": 14.6,
+  "latency_mean": 14.7,
+  "latency_p90": 15.6,
+  "first_sql_p50": 10.33,
+  "llm_calls_mean": 7.3,
+  "tokens_mean": 38240,
+  "cost_cny_per_q": 0.00814,
+  "by_task": {
+   "join": 0.778,
+   "multi_turn": 0.4,
+   "single": 0.556
+  }
+ }
+}

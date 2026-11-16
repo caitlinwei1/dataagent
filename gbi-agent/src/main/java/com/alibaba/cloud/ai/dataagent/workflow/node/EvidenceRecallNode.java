@@ -61,6 +61,10 @@ public class EvidenceRecallNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
 
+	private final com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties modes;
+
+	private final com.alibaba.cloud.ai.dataagent.service.mode.ModeKnowledge modeKnowledge;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 
@@ -73,6 +77,7 @@ public class EvidenceRecallNode implements NodeAction {
 		log.debug("Agent ID: {}", agentId);
 
 		String multiTurn = StateUtil.getStringValue(state, MULTI_TURN_CONTEXT, "(无)");
+		String mode = state.value(GBI_MODE, modes.getDefaultMode());
 
 		// 构建查询重写提示
 		// 不需要扩展为多个子查询，因为此时LLM不能理解不同公司的个性化业务知识，比如 PV,KMV等专业名词，扩展反而引入噪音。
@@ -95,10 +100,16 @@ public class EvidenceRecallNode implements NodeAction {
 					// GBI: calendar-exact time ranges go to every downstream prompt with the evidence
 					String timeHints = !nl2sqlProperties.isTimeHints() ? "" : TimeRangeHints.hints("无".equals(multiTurn) || "(无)".equals(multiTurn) ? ""
 							: multiTurn, question);
-					if (!timeHints.isEmpty()) {
+					// GBI modes: rules (Turbo / Mix) and similar cases (Mix) are hard evidence too
+					com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties.Profile profile = modes
+						.resolve(mode);
+					String modeHints = modeKnowledge.evidence(question + " " + ("(无)".equals(multiTurn) ? "" : multiTurn),
+							profile.isRules(), profile.isCases(), profile.getCasesTopK());
+					String hints = timeHints + (modeHints.isEmpty() ? "" : (timeHints.isEmpty() ? "" : "\n") + modeHints);
+					if (!hints.isEmpty()) {
 						Object ev = resultMap.get(EVIDENCE);
 						String base = ev == null || "无".equals(ev) ? "" : ev.toString();
-						resultMap.put(EVIDENCE, timeHints + (base.isEmpty() ? "" : "\n" + base));
+						resultMap.put(EVIDENCE, hints + (base.isEmpty() ? "" : "\n" + base));
 					}
 					return resultMap;
 				});

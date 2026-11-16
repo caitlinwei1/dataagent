@@ -42,8 +42,14 @@ public class FeasibilityAssessmentNode implements NodeAction {
 
 	private final LlmService llmService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties modes;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
+		// GBI Turbo: no LLM feasibility pass; questions go straight to planning
+		if (!modes.resolve(state.value(GBI_MODE, modes.getDefaultMode())).isFeasibility()) {
+			return Map.of(FEASIBILITY_ASSESSMENT_NODE_OUTPUT, "【需求类型】：《数据分析》（当前模式跳过可行性评估）");
+		}
 		// 获取canonical_query
 		String canonicalQuery = StateUtil.getCanonicalQuery(state);
 

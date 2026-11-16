@@ -29,6 +29,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 QFILE = os.path.join(ROOT, "eval", "nl2sql", "questions.jsonl")
 API = os.environ.get("GBI_API", "http://localhost:8065") + "/api/stream/search"
 AGENT = os.environ.get("GBI_AGENT", "5")
+MODE = None  # GBI answer mode sent with every request (turbo / mix / ...); None = server default
 CLASS_RE = re.compile(r"(?:SQL守卫拦截|SQL执行失败)\[([A-Z_]+)/")
 
 
@@ -36,6 +37,8 @@ CLASS_RE = re.compile(r"(?:SQL守卫拦截|SQL执行失败)\[([A-Z_]+)/")
 def stream(query, thread, nl2sql_only, timeout=900, api=None):
     params = dict(agentId=AGENT, query=query, threadId=thread, nl2sqlOnly=str(nl2sql_only).lower(),
                   humanFeedback="false")
+    if MODE:
+        params["mode"] = MODE
     events, t0, first = [], time.time(), None
     try:
         with requests.get(api or API, params=params, stream=True, timeout=timeout) as r:

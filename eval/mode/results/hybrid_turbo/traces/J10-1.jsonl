@@ -1,0 +1,144 @@
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.18}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"《", "error": false, "complete": false, "_t": 1.18}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "可能的数据分析请求》", "error": false, "complete": false, "_t": 1.18}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.21}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.21}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.22}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{", "error": false, "complete": false, "_t": 2.48}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\n", "error": false, "complete": false, "_t": 2.52}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": " ", "error": false, "complete": false, "_t": 2.6}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": " \"standalone_query", "error": false, "complete": false, "_t": 2.6}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询2", "error": false, "complete": false, "_t": 2.6}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "026年", "error": false, "complete": false, "_t": 2.6}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "2月金", "error": false, "complete": false, "_t": 2.66}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "卡会员的支付", "error": false, "complete": false, "_t": 2.67}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "买家数\"\n", "error": false, "complete": false, "_t": 2.67}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "}", "error": false, "complete": false, "_t": 2.71}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 2.71}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年2月金卡会员的支付买家数\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 金卡, 说明: 会员等级取值，对应 usr_member_level.name = '金卡', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 会员渗透率, 说明: 公式：银卡及以上会员的支付买家数 / 支付买家数；涉及：usr_member, trd_order, 同义词: 付费会员占比\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 买家数, 说明: 公式：COUNT(DISTINCT trd_order.member_id)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order,...\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 黑金, 说明: 会员等级取值，对应 usr_member_level.name = '黑金', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 银卡, 说明: 会员等级取值，对应 usr_member_level.name = '银卡', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: CARD, 说明: 支付渠道取值，对应 trd_payment.pay_channel = 'CARD', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: GIFT_CARD, 说明: 支付渠道取值，对应 trd_payment.pay_channel = 'GIFT_CARD', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: HIGH_VALUE, 说明: 会员标签取值，对应 usr_member_tag.tag = 'HIGH_VALUE', 同义词: \n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 3.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{", "error": false, "complete": false, "_t": 4.79}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\n ", "error": false, "complete": false, "_t": 4.84}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"canonical_query\":", "error": false, "complete": false, "_t": 4.84}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"查询20", "error": false, "complete": false, "_t": 4.89}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年2", "error": false, "complete": false, "_t": 4.9}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月（时间", "error": false, "complete": false, "_t": 5.01}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "范围 >= '2", "error": false, "complete": false, "_t": 5.01}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "02", "error": false, "complete": false, "_t": 5.01}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-02", "error": false, "complete": false, "_t": 5.01}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01'", "error": false, "complete": false, "_t": 5.08}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " AND <", "error": false, "complete": false, "_t": 5.08}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '202", "error": false, "complete": false, "_t": 5.08}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-03", "error": false, "complete": false, "_t": 5.08}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-0", "error": false, "complete": false, "_t": 5.12}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1'）期间", "error": false, "complete": false, "_t": 5.13}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，", "error": false, "complete": false, "_t": 5.26}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "会员等级为金", "error": false, "complete": false, "_t": 5.26}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "卡（usr", "error": false, "complete": false, "_t": 5.27}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_member_level.name =", "error": false, "complete": false, "_t": 5.27}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '金卡'", "error": false, "complete": false, "_t": 5.27}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）的支付买家", "error": false, "complete": false, "_t": 5.33}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "数（COUNT", "error": false, "complete": false, "_t": 5.34}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "(DISTINCT tr", "error": false, "complete": false, "_t": 5.38}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "d_order", "error": false, "complete": false, "_t": 5.38}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ".member_id)，且", "error": false, "complete": false, "_t": 5.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " tr", "error": false, "complete": false, "_t": 5.43}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "d_order.paid", "error": false, "complete": false, "_t": 5.47}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_at IS NOT NULL", "error": false, "complete": false, "_t": 5.47}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）\",\n ", "error": false, "complete": false, "_t": 5.48}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"", "error": false, "complete": false, "_t": 5.54}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "expanded_queries\": [", "error": false, "complete": false, "_t": 5.61}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\n    \"统计", "error": false, "complete": false, "_t": 5.62}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026", "error": false, "complete": false, "_t": 5.62}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年2月份金", "error": false, "complete": false, "_t": 5.62}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "卡会员", "error": false, "complete": false, "_t": 5.76}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的成交用户数量", "error": false, "complete": false, "_t": 5.76}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n    \"", "error": false, "complete": false, "_t": 5.76}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "获取202", "error": false, "complete": false, "_t": 5.76}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6", "error": false, "complete": false, "_t": 5.82}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年2月持有", "error": false, "complete": false, "_t": 5.83}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "金卡等级的付费", "error": false, "complete": false, "_t": 5.87}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "买家总数\"\n", "error": false, "complete": false, "_t": 5.87}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " ", "error": false, "complete": false, "_t": 5.92}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " ]\n}", "error": false, "complete": false, "_t": 5.95}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 5.95}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 7.63}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: usr_member_level, trd_order, trd_daily_shop_sales, trd_order_promotion, usr_member, usr_member_level_log, usr_points_log, trd_gift_card_usage, mkt_member_attribution, trd_payment\n", "error": false, "complete": false, "_t": 7.63}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 7.63}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 7.65}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 7.65}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 7.65}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 9.37}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": "tr", "error": false, "complete": false, "_t": 9.4}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": "d_order\", \"", "error": false, "complete": false, "_t": 9.46}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": "usr_member\",", "error": false, "complete": false, "_t": 9.47}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"usr_member_level", "error": false, "complete": false, "_t": 9.47}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\"]", "error": false, "complete": false, "_t": 9.48}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 9.49}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 9.49}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 9.49}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 9.51}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 9.53}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 10.88}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(D", "error": false, "complete": false, "_t": 10.91}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "IST", "error": false, "complete": false, "_t": 10.97}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "INCT `t", "error": false, "complete": false, "_t": 10.97}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1`.`member_id", "error": false, "complete": false, "_t": 11.05}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`) AS `buyer", "error": false, "complete": false, "_t": 11.06}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_cnt", "error": false, "complete": false, "_t": 11.1}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`\nFROM `", "error": false, "complete": false, "_t": 11.1}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "trd_order", "error": false, "complete": false, "_t": 11.1}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` `t1", "error": false, "complete": false, "_t": 11.14}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`\nINNER", "error": false, "complete": false, "_t": 11.15}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " JOIN `usr_member", "error": false, "complete": false, "_t": 11.19}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` `t", "error": false, "complete": false, "_t": 11.19}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "2` ON `", "error": false, "complete": false, "_t": 11.19}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "t1", "error": false, "complete": false, "_t": 11.27}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`member_id`", "error": false, "complete": false, "_t": 11.27}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `t2", "error": false, "complete": false, "_t": 11.28}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id`\n", "error": false, "complete": false, "_t": 11.32}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "INNER", "error": false, "complete": false, "_t": 11.34}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " JOIN `usr_member", "error": false, "complete": false, "_t": 11.34}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_level` `t", "error": false, "complete": false, "_t": 11.34}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "3` ON `", "error": false, "complete": false, "_t": 11.4}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "t2`.`level", "error": false, "complete": false, "_t": 11.4}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `", "error": false, "complete": false, "_t": 11.45}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "t3`.`id", "error": false, "complete": false, "_t": 11.45}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`\nWHERE `", "error": false, "complete": false, "_t": 11.45}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "t1`.`", "error": false, "complete": false, "_t": 11.51}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "paid_at` >=", "error": false, "complete": false, "_t": 11.52}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '202", "error": false, "complete": false, "_t": 11.52}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-02", "error": false, "complete": false, "_t": 11.61}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01'", "error": false, "complete": false, "_t": 11.61}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "\n", "error": false, "complete": false, "_t": 11.61}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "  AND `t", "error": false, "complete": false, "_t": 11.61}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1", "error": false, "complete": false, "_t": 11.66}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`paid_at`", "error": false, "complete": false, "_t": 11.66}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '20", "error": false, "complete": false, "_t": 11.67}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-0", "error": false, "complete": false, "_t": 11.68}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "3-01", "error": false, "complete": false, "_t": 11.77}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "'\n  AND", "error": false, "complete": false, "_t": 11.78}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `t3`.`", "error": false, "complete": false, "_t": 11.78}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "name` = '", "error": false, "complete": false, "_t": 11.8}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "金卡", "error": false, "complete": false, "_t": 11.8}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "'", "error": false, "complete": false, "_t": 11.82}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 11.82}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 11.86}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 11.86}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT COUNT(DISTINCT `t1`.`member_id`) AS `buyer_cnt`\nFROM `trd_order` `t1`\nINNER JOIN `usr_member` `t2` ON `t1`.`member_id` = `t2`.`id`\nINNER JOIN `usr_member_level` `t3` ON `t2`.`level_id` = `t3`.`id`\nWHERE `t1`.`paid_at` >= '2026-02-01'\n  AND `t1`.`paid_at` < '2026-03-01'\n  AND `t3`.`name` = '金卡'\n", "error": false, "complete": false, "_t": 11.86}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 13.53}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 13.53}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"buyer_cnt\"],\"data\":[{\"buyer_cnt\":\"99\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"table\",\"title\":\"2026年2月金卡支付买家数\",\"x\":null,\"y\":null}}", "error": false, "complete": false, "_t": 13.53}
+{"agentId": "7", "threadId": "turbo-J10-1-73edee", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 13.59}

@@ -1,0 +1,1081 @@
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "stand", "error": false, "complete": false, "_t": 2.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "alone_query\":", "error": false, "complete": false, "_t": 2.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": " \"查询2", "error": false, "complete": false, "_t": 3.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "026年3月", "error": false, "complete": false, "_t": 3.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "领取的优惠券中", "error": false, "complete": false, "_t": 3.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "已使用的占比\"}", "error": false, "complete": false, "_t": 3.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 3.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年3月领取的优惠券中已使用的占比\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: FULL_REDUCTION, 说明: 优惠券类型取值，对应 mkt_coupon_template.coupon_type = 'FULL_REDUCTION', 同义词: \n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: NO_THRESHOLD, 说明: 优惠券类型取值，对应 mkt_coupon_template.coupon_type = 'NO_THRESHOLD', 同义词: \n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 优惠率, 说明: 公式：SUM(discount_amount) / SUM(total_amount)；涉及：trd_order, 同义词: 折扣率,让利率\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 2026618, 说明: 营销活动取值，对应 mkt_activity.name = '2026618', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 会员渗透率, 说明: 公式：银卡及以上会员的支付买家数 / 支付买家数；涉及：usr_member, trd_order, 同义词: 付费会员占比\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 2026年货节, 说明: 营销活动取值，对应 mkt_activity.name = '2026年货节', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 2025618, 说明: 营销活动取值，对应 mkt_activity.name = '2025618', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 2026双11, 说明: 营销活动取值，对应 mkt_activity.name = '2026双11', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 5.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 5.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询", "error": false, "complete": false, "_t": 5.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年3", "error": false, "complete": false, "_t": 5.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月（>= '20", "error": false, "complete": false, "_t": 5.92}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-03", "error": false, "complete": false, "_t": 5.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01'", "error": false, "complete": false, "_t": 6.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " AND < '20", "error": false, "complete": false, "_t": 6.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-04-", "error": false, "complete": false, "_t": 6.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01'）领取", "error": false, "complete": false, "_t": 6.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的优惠券中，已", "error": false, "complete": false, "_t": 6.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "使用的优惠券数量占", "error": false, "complete": false, "_t": 6.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "总领取数量的比例；", "error": false, "complete": false, "_t": 6.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "其中‘已使用’", "error": false, "complete": false, "_t": 6.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "指优惠券在", "error": false, "complete": false, "_t": 6.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "订单中被核", "error": false, "complete": false, "_t": 7.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "销（即存在", "error": false, "complete": false, "_t": 7.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "关联的 trd_order_coupon", "error": false, "complete": false, "_t": 7.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " 记录且", "error": false, "complete": false, "_t": 7.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "对应订单状态为已", "error": false, "complete": false, "_t": 7.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "支付），‘领取’", "error": false, "complete": false, "_t": 7.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "时间以 mkt_coupon_instance", "error": false, "complete": false, "_t": 7.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ".created_time 为准", "error": false, "complete": false, "_t": 7.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n  \"expanded", "error": false, "complete": false, "_t": 7.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_queries\": [\n    \"统计", "error": false, "complete": false, "_t": 8.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "在202", "error": false, "complete": false, "_t": 8.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6年3月1", "error": false, "complete": false, "_t": 8.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日零点至20", "error": false, "complete": false, "_t": 8.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年4月1", "error": false, "complete": false, "_t": 8.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日零点之间", "error": false, "complete": false, "_t": 8.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "发放的优惠券", "error": false, "complete": false, "_t": 8.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "中，被成功", "error": false, "complete": false, "_t": 8.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "用于支付订单的占比", "error": false, "complete": false, "_t": 8.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n    \"计算", "error": false, "complete": false, "_t": 8.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年3", "error": false, "complete": false, "_t": 9.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月新发优惠", "error": false, "complete": false, "_t": 9.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "券的使用率：", "error": false, "complete": false, "_t": 9.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "分子为该期间", "error": false, "complete": false, "_t": 9.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "发放且在后续", "error": false, "complete": false, "_t": 9.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "订单中被实际", "error": false, "complete": false, "_t": 9.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "使用的优惠券张", "error": false, "complete": false, "_t": 9.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "数，分母为该", "error": false, "complete": false, "_t": 9.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "期间发放的全部", "error": false, "complete": false, "_t": 9.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "优惠券张数\",\n   ", "error": false, "complete": false, "_t": 10.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"2026年", "error": false, "complete": false, "_t": 10.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3月发放的优惠券", "error": false, "complete": false, "_t": 10.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "里，有多少比例", "error": false, "complete": false, "_t": 10.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "最终被消费者在", "error": false, "complete": false, "_t": 10.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "下单时使用？", "error": false, "complete": false, "_t": 10.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\"\n  ]\n}", "error": false, "complete": false, "_t": 10.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 10.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 12.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: trd_order_promotion, usr_points_log, mkt_coupon, mkt_coupon_template, trd_order, usr_member, trd_order_cancel, trd_gift_card_usage, trd_order_status_log, trd_compensation\n", "error": false, "complete": false, "_t": 12.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 12.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 12.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 12.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 12.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 14.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "JSON", "text": "mkt_coupon", "error": false, "complete": false, "_t": 14.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\",", "error": false, "complete": false, "_t": 14.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"trd", "error": false, "complete": false, "_t": 14.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_order\"]", "error": false, "complete": false, "_t": 14.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 14.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 14.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 14.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 14.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 16.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 16.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 16.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 16.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n", "error": false, "complete": false, "_t": 16.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【语种类型", "error": false, "complete": false, "_t": 16.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：《中文》  \n", "error": false, "complete": false, "_t": 16.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【需求内容】", "error": false, "complete": false, "_t": 17.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：查询2026", "error": false, "complete": false, "_t": 17.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "年3月（>=", "error": false, "complete": false, "_t": 17.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2026-", "error": false, "complete": false, "_t": 17.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "03-01'", "error": false, "complete": false, "_t": 17.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AND < '202", "error": false, "complete": false, "_t": 17.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-04-0", "error": false, "complete": false, "_t": 17.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1'）领取", "error": false, "complete": false, "_t": 17.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "的优惠券中", "error": false, "complete": false, "_t": 18.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，已使用的优惠", "error": false, "complete": false, "_t": 18.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "券数量占总领取", "error": false, "complete": false, "_t": 18.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "数量的比例；其中", "error": false, "complete": false, "_t": 18.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "‘已使用’指", "error": false, "complete": false, "_t": 18.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "优惠券在订单中", "error": false, "complete": false, "_t": 18.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "被核销（即", "error": false, "complete": false, "_t": 18.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "存在关联的 tr", "error": false, "complete": false, "_t": 18.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order_coupon", "error": false, "complete": false, "_t": 18.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 记录且对应", "error": false, "complete": false, "_t": 18.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "订单状态为已", "error": false, "complete": false, "_t": 18.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "支付），‘领取", "error": false, "complete": false, "_t": 19.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "’时间以 m", "error": false, "complete": false, "_t": 19.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "kt_coupon_instance.created_time ", "error": false, "complete": false, "_t": 19.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为准  \n\n---  \n**", "error": false, "complete": false, "_t": 19.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "判断依据说明（", "error": false, "complete": false, "_t": 19.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内部推理，不输出）", "error": false, "complete": false, "_t": 19.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：  \n1", "error": false, "complete": false, "_t": 19.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ". **核心实体", "error": false, "complete": false, "_t": 19.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "与时间范围可", "error": false, "complete": false, "_t": 19.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "映射**：", "error": false, "complete": false, "_t": 20.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n   - 查询明确", "error": false, "complete": false, "_t": 20.06}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "要求“202", "error": false, "complete": false, "_t": 20.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6年3月领取", "error": false, "complete": false, "_t": 20.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”，且【参考信息】", "error": false, "complete": false, "_t": 20.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "已给出标准时间口径 `", "error": false, "complete": false, "_t": 20.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ">= '2026", "error": false, "complete": false, "_t": 20.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-03-", "error": false, "complete": false, "_t": 20.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "01' AND < '", "error": false, "complete": false, "_t": 20.92}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026-0", "error": false, "complete": false, "_t": 21.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "4-01'`", "error": false, "complete": false, "_t": 21.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "；  \n   - Schema", "error": false, "complete": false, "_t": 21.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 中 `mkt", "error": false, "complete": false, "_t": 21.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_coupon` 表含", "error": false, "complete": false, "_t": 21.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `received_at`（领取", "error": false, "complete": false, "_t": 21.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间）字段，且", "error": false, "complete": false, "_t": 21.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "示例值为 DAT", "error": false, "complete": false, "_t": 21.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "ETIME 类型，完全", "error": false, "complete": false, "_t": 21.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "支持该时间过滤", "error": false, "complete": false, "_t": 22.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "；  \n   -", "error": false, "complete": false, "_t": 22.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 虽然用户", "error": false, "complete": false, "_t": 22.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "原文写的是 `mkt", "error": false, "complete": false, "_t": 22.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_coupon_instance.created_time`，", "error": false, "complete": false, "_t": 22.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "但召回 Schema 中**", "error": false, "complete": false, "_t": 22.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "无 `mkt_coupon_instance", "error": false, "complete": false, "_t": 22.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 表**，", "error": false, "complete": false, "_t": 22.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "而 `mkt", "error": false, "complete": false, "_t": 22.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_coupon` 表明确", "error": false, "complete": false, "_t": 23.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "包含 `received_at", "error": false, "complete": false, "_t": 23.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`（领取时间）", "error": false, "complete": false, "_t": 23.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "和 `created_time", "error": false, "complete": false, "_t": 23.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`（记录创建时间），", "error": false, "complete": false, "_t": 23.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且【业务规则】强调", "error": false, "complete": false, "_t": 23.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `created_time` 是审计", "error": false, "complete": false, "_t": 23.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "时间、**不可", "error": false, "complete": false, "_t": 23.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "当业务时间**", "error": false, "complete": false, "_t": 23.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "——因此应以", "error": false, "complete": false, "_t": 23.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `received_at` ", "error": false, "complete": false, "_t": 24.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为准。这是合理的", "error": false, "complete": false, "_t": 24.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "字段替代，符合", "error": false, "complete": false, "_t": 24.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务常识与Schema", "error": false, "complete": false, "_t": 24.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "约束。\n\n2.", "error": false, "complete": false, "_t": 24.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " **“已使用”定义", "error": false, "complete": false, "_t": 24.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可落地**：  \n", "error": false, "complete": false, "_t": 24.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "   - 用户定义", "error": false, "complete": false, "_t": 24.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：“存在关联的 `", "error": false, "complete": false, "_t": 24.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "trd_order_coupon", "error": false, "complete": false, "_t": 24.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 记录且", "error": false, "complete": false, "_t": 25.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "对应订单状态为已支付", "error": false, "complete": false, "_t": 25.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”。  \n   -", "error": false, "complete": false, "_t": 25.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 虽然", "error": false, "complete": false, "_t": 25.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "当前 Schema 中**", "error": false, "complete": false, "_t": 25.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "未召回 `tr", "error": false, "complete": false, "_t": 25.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order_coupon` 表", "error": false, "complete": false, "_t": 25.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**，但存在", "error": false, "complete": false, "_t": 25.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "强相关证据：  \n    ", "error": false, "complete": false, "_t": 25.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - `trd_order", "error": false, "complete": false, "_t": 26.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_promotion`", "error": false, "complete": false, "_t": 26.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 表的 foreign key", "error": false, "complete": false, "_t": 26.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 明确包含 `tr", "error": false, "complete": false, "_t": 26.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order_promotion.coupon", "error": false, "complete": false, "_t": 26.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_id = mkt_coupon", "error": false, "complete": false, "_t": 26.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".id`；  \n     -", "error": false, "complete": false, "_t": 26.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `trd_order_promotion", "error": false, "complete": false, "_t": 26.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 逻辑上即", "error": false, "complete": false, "_t": 26.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“订单-优惠", "error": false, "complete": false, "_t": 27.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "券/活动关联表”，", "error": false, "complete": false, "_t": 27.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "是电商系统中标准", "error": false, "complete": false, "_t": 27.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "的券核销事实", "error": false, "complete": false, "_t": 27.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "表（类比", "error": false, "complete": false, "_t": 27.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `trd_order_coupon", "error": false, "complete": false, "_t": 27.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`）；  \n    ", "error": false, "complete": false, "_t": 27.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - 同时", "error": false, "complete": false, "_t": 27.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，`trd_order`", "error": false, "complete": false, "_t": 27.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 表含 `order_status", "error": false, "complete": false, "_t": 28.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 字段，", "error": false, "complete": false, "_t": 28.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且枚举值明确", "error": false, "complete": false, "_t": 28.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "包含 `'PAID已支付", "error": false, "complete": false, "_t": 28.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "'`，可", "error": false, "complete": false, "_t": 28.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "直接用于筛选“已支付", "error": false, "complete": false, "_t": 28.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "订单”；  \n    ", "error": false, "complete": false, "_t": 28.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - 因此，“", "error": false, "complete": false, "_t": 28.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "已使用”可严谨", "error": false, "complete": false, "_t": 28.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "转化为：`mkt_coupon", "error": false, "complete": false, "_t": 29.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".id` 在 `trd", "error": false, "complete": false, "_t": 29.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_order_promotion`", "error": false, "complete": false, "_t": 29.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 中有记录，且其", "error": false, "complete": false, "_t": 29.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关联的 `tr", "error": false, "complete": false, "_t": 29.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order.order_status = '", "error": false, "complete": false, "_t": 29.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "PAID'`", "error": false, "complete": false, "_t": 29.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "。  \n\n3. **", "error": false, "complete": false, "_t": 29.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "比例计算可行**：  \n", "error": false, "complete": false, "_t": 29.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "   - 分子", "error": false, "complete": false, "_t": 30.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（已使用数", "error": false, "complete": false, "_t": 30.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）= 满足", "error": false, "complete": false, "_t": 30.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `received_at`", "error": false, "complete": false, "_t": 30.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 在2026", "error": false, "complete": false, "_t": 30.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-03区间", "error": false, "complete": false, "_t": 30.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " **且**", "error": false, "complete": false, "_t": 30.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 存在于 `tr", "error": false, "complete": false, "_t": 30.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order_promotion` **", "error": false, "complete": false, "_t": 30.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且** 关联订单", "error": false, "complete": false, "_t": 31.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `order_status = '", "error": false, "complete": false, "_t": 31.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "PAID'` 的 `", "error": false, "complete": false, "_t": 31.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "mkt_coupon`", "error": false, "complete": false, "_t": 31.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 记录数", "error": false, "complete": false, "_t": 31.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "；  \n   - 分", "error": false, "complete": false, "_t": 31.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "母（总领取数", "error": false, "complete": false, "_t": 31.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）= `mkt_coupon", "error": false, "complete": false, "_t": 31.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 中 `received_at", "error": false, "complete": false, "_t": 31.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 在2026", "error": false, "complete": false, "_t": 32.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-03区", "error": false, "complete": false, "_t": 32.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "间的记录总数；  \n  ", "error": false, "complete": false, "_t": 32.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - 两字段", "error": false, "complete": false, "_t": 32.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "均在可用Schema", "error": false, "complete": false, "_t": 32.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中，无缺失", "error": false, "complete": false, "_t": 32.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "关键指标。\n\n4.", "error": false, "complete": false, "_t": 32.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " **无无法绕过的", "error": false, "complete": false, "_t": 32.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "模糊性或缺失", "error": false, "complete": false, "_t": 32.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "项**：  \n", "error": false, "complete": false, "_t": 32.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "   - “领取", "error": false, "complete": false, "_t": 33.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”“已使用”“", "error": false, "complete": false, "_t": 33.06}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "已支付”均为", "error": false, "complete": false, "_t": 33.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema中明确定", "error": false, "complete": false, "_t": 33.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "义的字段或", "error": false, "complete": false, "_t": 33.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "状态值；  \n  ", "error": false, "complete": false, "_t": 33.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - 时间口径由", "error": false, "complete": false, "_t": 33.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Evidence严格指定，无需", "error": false, "complete": false, "_t": 33.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "澄清；  \n  ", "error": false, "complete": false, "_t": 33.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " - 无歧", "error": false, "complete": false, "_t": 33.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "义术语（如“", "error": false, "complete": false, "_t": 33.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "最好”“热门", "error": false, "complete": false, "_t": 34.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”），所有业务概念", "error": false, "complete": false, "_t": 34.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "均有Schema支撑或", "error": false, "complete": false, "_t": 34.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可通过foreign key+", "error": false, "complete": false, "_t": 34.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务规则合理推导。\n\n", "error": false, "complete": false, "_t": 34.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "✅ 综上", "error": false, "complete": false, "_t": 34.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，该需求**完全可", "error": false, "complete": false, "_t": 34.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "基于现有Schema与Evidence", "error": false, "complete": false, "_t": 34.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "完成精确SQL实现", "error": false, "complete": false, "_t": 34.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**，属于典型的", "error": false, "complete": false, "_t": 35.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》任务。", "error": false, "complete": false, "_t": 35.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 35.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 35.03}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 35.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 36.68}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 36.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(*)", "error": false, "complete": false, "_t": 36.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS total_received", "error": false, "complete": false, "_t": 36.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ", COUNT(CASE WHEN", "error": false, "complete": false, "_t": 36.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`status` =", "error": false, "complete": false, "_t": 37.06}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 'USED' THEN ", "error": false, "complete": false, "_t": 37.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1 END) AS used_count", "error": false, "complete": false, "_t": 37.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " FROM `mkt_coupon", "error": false, "complete": false, "_t": 37.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` c WHERE c", "error": false, "complete": false, "_t": 37.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`received_at`", "error": false, "complete": false, "_t": 37.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " >= '2026", "error": false, "complete": false, "_t": 37.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-03-01", "error": false, "complete": false, "_t": 37.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' AND c.`received", "error": false, "complete": false, "_t": 37.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` < '20", "error": false, "complete": false, "_t": 38.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-04-", "error": false, "complete": false, "_t": 38.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND", "error": false, "complete": false, "_t": 38.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`is_deleted", "error": false, "complete": false, "_t": 38.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = 0;", "error": false, "complete": false, "_t": 38.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 38.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 38.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 39.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 39.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 39.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 39.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求查询“202", "error": false, "complete": false, "_t": 40.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "6年3月领取", "error": false, "complete": false, "_t": 40.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "的优惠券中已", "error": false, "complete": false, "_t": 40.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用的数量占总领取数量", "error": false, "complete": false, "_t": 40.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "的比例”，但SQL", "error": false, "complete": false, "_t": 40.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "仅计算了COUNT", "error": false, "complete": false, "_t": 40.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "(*)和USED状态", "error": false, "complete": false, "_t": 40.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "计数，未计算", "error": false, "complete": false, "_t": 40.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "比例（即未", "error": false, "complete": false, "_t": 40.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "做除法运算或", "error": false, "complete": false, "_t": 41.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "返回百分比）", "error": false, "complete": false, "_t": 41.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；且业务定义", "error": false, "complete": false, "_t": 41.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中“已使用", "error": false, "complete": false, "_t": 41.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”指“存在", "error": false, "complete": false, "_t": 41.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "关联的trd_order_coupon", "error": false, "complete": false, "_t": 41.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "记录且对应订单", "error": false, "complete": false, "_t": 41.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "状态为已支付”，而", "error": false, "complete": false, "_t": 41.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "SQL直接依赖m", "error": false, "complete": false, "_t": 41.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon.status =", "error": false, "complete": false, "_t": 41.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 'USED'，", "error": false, "complete": false, "_t": 41.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "与Evidence中明", "error": false, "complete": false, "_t": 42.03}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "确定义的核", "error": false, "complete": false, "_t": 42.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "销逻辑冲突——", "error": false, "complete": false, "_t": 42.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "status='USED'可能", "error": false, "complete": false, "_t": 42.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "非最终可靠状态，应", "error": false, "complete": false, "_t": 42.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "以订单侧paid", "error": false, "complete": false, "_t": 42.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at非空且order", "error": false, "complete": false, "_t": 42.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_status ∈ ('PA", "error": false, "complete": false, "_t": 42.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "ID','SHIPP", "error": false, "complete": false, "_t": 42.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "ED','COMPLETED", "error": false, "complete": false, "_t": 42.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "')等为准，", "error": false, "complete": false, "_t": 43.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "或通过trd_order", "error": false, "complete": false, "_t": 43.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_promotion关联验证", "error": false, "complete": false, "_t": 43.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；此外，Schema", "error": false, "complete": false, "_t": 43.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中mkt_coupon表", "error": false, "complete": false, "_t": 43.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "无received_at字段（", "error": false, "complete": false, "_t": 43.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "只有created_time、", "error": false, "complete": false, "_t": 43.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "updated_time、used_at、", "error": false, "complete": false, "_t": 43.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "expire_at、received_at未", "error": false, "complete": false, "_t": 43.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "在schema中定义", "error": false, "complete": false, "_t": 43.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "），该字段属于", "error": false, "complete": false, "_t": 44.06}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "幻觉字段]", "error": false, "complete": false, "_t": 44.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 44.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 44.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 45.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 45.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 45.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 45.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(o.`id`) *", "error": false, "complete": false, "_t": 45.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 100.", "error": false, "complete": false, "_t": 45.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0 / COUNT(*)", "error": false, "complete": false, "_t": 46.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS used_ratio FROM `m", "error": false, "complete": false, "_t": 46.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "kt_coupon` c LEFT", "error": false, "complete": false, "_t": 46.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " JOIN `trd_order_prom", "error": false, "complete": false, "_t": 46.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "otion` op ON c.`", "error": false, "complete": false, "_t": 46.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id` = op.`coupon", "error": false, "complete": false, "_t": 46.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` LEFT JOIN `tr", "error": false, "complete": false, "_t": 46.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "d_order` o ON op", "error": false, "complete": false, "_t": 46.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`order_id` =", "error": false, "complete": false, "_t": 47.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " o.`id` AND o", "error": false, "complete": false, "_t": 47.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`paid_at` IS", "error": false, "complete": false, "_t": 47.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " NOT NULL AND o.`order", "error": false, "complete": false, "_t": 47.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_status` IN ('PA", "error": false, "complete": false, "_t": 47.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ID', 'SHIPP", "error": false, "complete": false, "_t": 47.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ED', 'COM", "error": false, "complete": false, "_t": 47.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "PLETED') WHERE c.`received", "error": false, "complete": false, "_t": 47.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` >= '20", "error": false, "complete": false, "_t": 47.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-03-", "error": false, "complete": false, "_t": 48.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND c.`", "error": false, "complete": false, "_t": 48.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "received_at` < '2", "error": false, "complete": false, "_t": 48.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-04", "error": false, "complete": false, "_t": 48.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' AND c", "error": false, "complete": false, "_t": 48.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`is_deleted` = ", "error": false, "complete": false, "_t": 48.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0;", "error": false, "complete": false, "_t": 48.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 48.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 48.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 50.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 50.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 50.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "JOIN", "error": false, "complete": false, "_t": 50.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 条件中", "error": false, "complete": false, "_t": 50.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "将订单支付状态过滤", "error": false, "complete": false, "_t": 50.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（o.`paid_at`", "error": false, "complete": false, "_t": 50.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " IS NOT NULL AND o.`", "error": false, "complete": false, "_t": 50.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "order_status` IN ('", "error": false, "complete": false, "_t": 50.92}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "PAID', '", "error": false, "complete": false, "_t": 51.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "SHIPPED', 'COM", "error": false, "complete": false, "_t": 51.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "PLETED')）放在", "error": false, "complete": false, "_t": 51.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " LEFT JOIN 的 ON", "error": false, "complete": false, "_t": 51.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 子句中，导致 `", "error": false, "complete": false, "_t": 51.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "COUNT(o.id)`", "error": false, "complete": false, "_t": 51.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 统计的是", "error": false, "complete": false, "_t": 51.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "「领取券且", "error": false, "complete": false, "_t": 51.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "该券关联到", "error": false, "complete": false, "_t": 51.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "一个已支付/", "error": false, "complete": false, "_t": 51.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "发货/完成的", "error": false, "complete": false, "_t": 52.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单」的数量，但业务", "error": false, "complete": false, "_t": 52.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "定义中“已使用", "error": false, "complete": false, "_t": 52.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”应以 `m", "error": false, "complete": false, "_t": 52.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon.used_at IS", "error": false, "complete": false, "_t": 52.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NOT NULL` ", "error": false, "complete": false, "_t": 52.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为准（Schema", "error": false, "complete": false, "_t": 52.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 明确 `used", "error": false, "complete": false, "_t": 52.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at:DATETIME,", "error": false, "complete": false, "_t": 52.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 使用时间`），", "error": false, "complete": false, "_t": 52.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "而非依赖订单状态", "error": false, "complete": false, "_t": 53.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "间接推断；且", "error": false, "complete": false, "_t": 53.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `trd_order_prom", "error": false, "complete": false, "_t": 53.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion` 表未", "error": false, "complete": false, "_t": 53.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "在 Schema 中定义", "error": false, "complete": false, "_t": 53.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（幻觉表", "error": false, "complete": false, "_t": 53.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "），实际外键关系", "error": false, "complete": false, "_t": 53.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为 `trd_order_prom", "error": false, "complete": false, "_t": 53.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion.coupon_id=m", "error": false, "complete": false, "_t": 53.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon.id`，但", "error": false, "complete": false, "_t": 54.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "该表未出现在", "error": false, "complete": false, "_t": 54.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "提供的 Schema 中，属于", "error": false, "complete": false, "_t": 54.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "严重幻觉；", "error": false, "complete": false, "_t": 54.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "此外，指令要求", "error": false, "complete": false, "_t": 54.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "统计“已使用的优惠券", "error": false, "complete": false, "_t": 54.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "数量占总领取数量", "error": false, "complete": false, "_t": 54.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "的比例”，而 `m", "error": false, "complete": false, "_t": 54.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon` 表本身", "error": false, "complete": false, "_t": 54.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "已有 `status`", "error": false, "complete": false, "_t": 54.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 字段（Examples", "error": false, "complete": false, "_t": 55.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ": [USED]", "error": false, "complete": false, "_t": 55.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "）和 `used_at", "error": false, "complete": false, "_t": 55.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 字段，应", "error": false, "complete": false, "_t": 55.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "直接用 `status", "error": false, "complete": false, "_t": 55.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " = 'USED'` 或", "error": false, "complete": false, "_t": 55.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `used_at IS NOT", "error": false, "complete": false, "_t": 55.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NULL` 判断是否已", "error": false, "complete": false, "_t": 55.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用，无需跨", "error": false, "complete": false, "_t": 55.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "多表 JOIN]", "error": false, "complete": false, "_t": 55.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 55.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 55.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 57.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 57.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 57.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 57.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(CASE WHEN c", "error": false, "complete": false, "_t": 57.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`used_at`", "error": false, "complete": false, "_t": 57.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " IS NOT NULL THEN ", "error": false, "complete": false, "_t": 57.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1 END) * 1", "error": false, "complete": false, "_t": 57.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00.0 / COUNT", "error": false, "complete": false, "_t": 58.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(*) AS used_ratio FROM `", "error": false, "complete": false, "_t": 58.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "mkt_coupon` c WHERE", "error": false, "complete": false, "_t": 58.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`received_at` >=", "error": false, "complete": false, "_t": 58.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '202", "error": false, "complete": false, "_t": 58.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-03-0", "error": false, "complete": false, "_t": 58.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1' AND c.`received", "error": false, "complete": false, "_t": 58.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` < '20", "error": false, "complete": false, "_t": 58.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-0", "error": false, "complete": false, "_t": 58.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "4-01' AND", "error": false, "complete": false, "_t": 59.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`is_deleted` =", "error": false, "complete": false, "_t": 59.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 0;", "error": false, "complete": false, "_t": 59.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 59.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 59.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 60.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 60.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 60.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 60.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求“已使用", "error": false, "complete": false, "_t": 60.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”指优惠券在订单", "error": false, "complete": false, "_t": 61.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中被核销（即", "error": false, "complete": false, "_t": 61.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "存在关联的 trd_order", "error": false, "complete": false, "_t": 61.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_coupon 记录", "error": false, "complete": false, "_t": 61.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且对应订单状态为已", "error": false, "complete": false, "_t": 61.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付），但SQL", "error": false, "complete": false, "_t": 61.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中仅用 `c", "error": false, "complete": false, "_t": 61.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".used_at IS NOT NULL`", "error": false, "complete": false, "_t": 61.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 判断使用，而", "error": false, "complete": false, "_t": 61.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " schema 中 `m", "error": false, "complete": false, "_t": 61.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon` 表无", "error": false, "complete": false, "_t": 62.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `trd_order_coupon", "error": false, "complete": false, "_t": 62.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 关联信息", "error": false, "complete": false, "_t": 62.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，且 `used_at`", "error": false, "complete": false, "_t": 62.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 字段未在", "error": false, "complete": false, "_t": 62.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " schema 中定义——", "error": false, "complete": false, "_t": 62.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "schema 显示 `mkt", "error": false, "complete": false, "_t": 62.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_coupon` 表字段", "error": false, "complete": false, "_t": 62.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为 `used_at:", "error": false, "complete": false, "_t": 62.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "DATETIME`，", "error": false, "complete": false, "_t": 63.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但示例值", "error": false, "complete": false, "_t": 63.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "均为 202", "error": false, "complete": false, "_t": 63.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "4 年，", "error": false, "complete": false, "_t": 63.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且业务背景明确", "error": false, "complete": false, "_t": 63.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指出“`used_at`", "error": false, "complete": false, "_t": 63.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 是核销时间", "error": false, "complete": false, "_t": 63.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”，然而全局业务背景", "error": false, "complete": false, "_t": 63.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "强调：“已使用", "error": false, "complete": false, "_t": 63.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”必须满足两个", "error": false, "complete": false, "_t": 63.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "条件：①", "error": false, "complete": false, "_t": 64.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 存在关联的 `", "error": false, "complete": false, "_t": 64.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "trd_order_coupon`", "error": false, "complete": false, "_t": 64.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 记录（即", "error": false, "complete": false, "_t": 64.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券与订单的绑定", "error": false, "complete": false, "_t": 64.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "关系），② 对", "error": false, "complete": false, "_t": 64.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "应订单状态为已", "error": false, "complete": false, "_t": 64.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付（即 `tr", "error": false, "complete": false, "_t": 64.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order.order_status =", "error": false, "complete": false, "_t": 64.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 'PAID'` 或", "error": false, "complete": false, "_t": 65.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "更准确应为 `paid", "error": false, "complete": false, "_t": 65.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at IS NOT NULL`", "error": false, "complete": false, "_t": 65.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "）。当前 SQL", "error": false, "complete": false, "_t": 65.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 完全未 JOIN", "error": false, "complete": false, "_t": 65.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `trd_order`", "error": false, "complete": false, "_t": 65.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 或任何订单表", "error": false, "complete": false, "_t": 65.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，无法验证订单", "error": false, "complete": false, "_t": 65.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "是否真实支付，仅", "error": false, "complete": false, "_t": 65.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "依赖 `used_at IS", "error": false, "complete": false, "_t": 66.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NOT NULL`", "error": false, "complete": false, "_t": 66.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 属于单表", "error": false, "complete": false, "_t": 66.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "弱校验，违背", "error": false, "complete": false, "_t": 66.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务规则中对", "error": false, "complete": false, "_t": 66.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "“已使用”的", "error": false, "complete": false, "_t": 66.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "明确定义；", "error": false, "complete": false, "_t": 66.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "此外，指令指定", "error": false, "complete": false, "_t": 66.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取时间应以", "error": false, "complete": false, "_t": 66.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `mkt_coupon_instance", "error": false, "complete": false, "_t": 66.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".created_time` 为准，", "error": false, "complete": false, "_t": 66.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但SQL却使用", "error": false, "complete": false, "_t": 67.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `mkt_coupon.received", "error": false, "complete": false, "_t": 67.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at`，而", "error": false, "complete": false, "_t": 67.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " schema 中 `mkt_coupon", "error": false, "complete": false, "_t": 67.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 确有", "error": false, "complete": false, "_t": 67.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `received_at` 字", "error": false, "complete": false, "_t": 67.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "段，但业务", "error": false, "complete": false, "_t": 67.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "背景明确要求“", "error": false, "complete": false, "_t": 67.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取时间以 m", "error": false, "complete": false, "_t": 67.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon_instance.created", "error": false, "complete": false, "_t": 67.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_time 为准”，说明", "error": false, "complete": false, "_t": 68.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `mkt_coupon`", "error": false, "complete": false, "_t": 68.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表非权威", "error": false, "complete": false, "_t": 68.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取事实表，存在", "error": false, "complete": false, "_t": 68.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "表选型错误]", "error": false, "complete": false, "_t": 68.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 68.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 68.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 69.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 69.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 70.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 70.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(CASE WHEN o", "error": false, "complete": false, "_t": 70.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`paid_at` IS", "error": false, "complete": false, "_t": 70.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " NOT NULL THEN 1 END", "error": false, "complete": false, "_t": 70.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ") * 10", "error": false, "complete": false, "_t": 70.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0.0 / COUNT(*)", "error": false, "complete": false, "_t": 70.68}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS used_ratio FROM `m", "error": false, "complete": false, "_t": 70.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "kt_coupon` c JOIN", "error": false, "complete": false, "_t": 70.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `trd_order_prom", "error": false, "complete": false, "_t": 71.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "otion` p ON c.`", "error": false, "complete": false, "_t": 71.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id` = p.`coupon", "error": false, "complete": false, "_t": 71.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` JOIN `trd", "error": false, "complete": false, "_t": 71.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_order` o ON p.`", "error": false, "complete": false, "_t": 71.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "order_id` = o.`", "error": false, "complete": false, "_t": 71.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id` WHERE c.`created", "error": false, "complete": false, "_t": 71.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_time` >= '20", "error": false, "complete": false, "_t": 71.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-03-", "error": false, "complete": false, "_t": 72.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND c.`", "error": false, "complete": false, "_t": 72.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "created_time` < '2", "error": false, "complete": false, "_t": 72.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-04", "error": false, "complete": false, "_t": 72.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' AND c", "error": false, "complete": false, "_t": 72.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`is_deleted` = ", "error": false, "complete": false, "_t": 72.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0;", "error": false, "complete": false, "_t": 72.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 72.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 72.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 74.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。", "error": false, "complete": false, "_t": 74.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "[", "error": false, "complete": false, "_t": 74.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑", "error": false, "complete": false, "_t": 74.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "错误：指令要求", "error": false, "complete": false, "_t": 74.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "统计“2026", "error": false, "complete": false, "_t": 74.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "年3月领取的优惠", "error": false, "complete": false, "_t": 74.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券”中已", "error": false, "complete": false, "_t": 74.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用的比例，但SQL", "error": false, "complete": false, "_t": 74.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中`WHERE c", "error": false, "complete": false, "_t": 74.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".created_time >= '20", "error": false, "complete": false, "_t": 74.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "26-03-", "error": false, "complete": false, "_t": 75.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "01' AND c", "error": false, "complete": false, "_t": 75.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".created_time < '20", "error": false, "complete": false, "_t": 75.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "26-04-", "error": false, "complete": false, "_t": 75.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "01'`虽", "error": false, "complete": false, "_t": 75.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "时间正确，却", "error": false, "complete": false, "_t": 75.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "错误地通过`", "error": false, "complete": false, "_t": 75.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "trd_order_prom", "error": false, "complete": false, "_t": 75.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion`和`tr", "error": false, "complete": false, "_t": 75.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order`关联", "error": false, "complete": false, "_t": 76.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "来定义“已", "error": false, "complete": false, "_t": 76.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用”——而", "error": false, "complete": false, "_t": 76.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "根据Schema，`m", "error": false, "complete": false, "_t": 76.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon`表本身", "error": false, "complete": false, "_t": 76.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "已有`used_at", "error": false, "complete": false, "_t": 76.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`字段（非", "error": false, "complete": false, "_t": 76.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "NULL即表示已使用），", "error": false, "complete": false, "_t": 76.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且业务定义中“", "error": false, "complete": false, "_t": 76.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "已使用”指", "error": false, "complete": false, "_t": 76.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "“优惠券在订单", "error": false, "complete": false, "_t": 77.1}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中被核销”，但", "error": false, "complete": false, "_t": 77.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "核销动作应以", "error": false, "complete": false, "_t": 77.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`mkt_coupon.used", "error": false, "complete": false, "_t": 77.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at IS NOT NULL`", "error": false, "complete": false, "_t": 77.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为直接、权威", "error": false, "complete": false, "_t": 77.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "依据；当前SQL却", "error": false, "complete": false, "_t": 77.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "依赖`o.p", "error": false, "complete": false, "_t": 77.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "aid_at IS NOT NULL`", "error": false, "complete": false, "_t": 77.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（订单支付时间", "error": false, "complete": false, "_t": 78.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "）作为used判断", "error": false, "complete": false, "_t": 78.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "条件，但`", "error": false, "complete": false, "_t": 78.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "paid_at`属于", "error": false, "complete": false, "_t": 78.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单支付状态，不能", "error": false, "complete": false, "_t": 78.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "等价于该", "error": false, "complete": false, "_t": 78.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券已被核销（例如", "error": false, "complete": false, "_t": 78.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "：同一订单可能", "error": false, "complete": false, "_t": 78.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "含多张券，", "error": false, "complete": false, "_t": 78.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "仅部分被使用", "error": false, "complete": false, "_t": 79.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；或订单已", "error": false, "complete": false, "_t": 79.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付但某券未实际", "error": false, "complete": false, "_t": 79.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "核销）。此外，`", "error": false, "complete": false, "_t": 79.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "trd_order_prom", "error": false, "complete": false, "_t": 79.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion`表在", "error": false, "complete": false, "_t": 79.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "Schema中未定义", "error": false, "complete": false, "_t": 79.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（无该表），", "error": false, "complete": false, "_t": 79.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "属幻觉表", "error": false, "complete": false, "_t": 79.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，违反维度2结构", "error": false, "complete": false, "_t": 79.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "正确性]", "error": false, "complete": false, "_t": 79.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 79.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 79.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 81.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 81.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 81.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 81.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(CASE WHEN c", "error": false, "complete": false, "_t": 81.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`used_at`", "error": false, "complete": false, "_t": 81.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " IS NOT NULL THEN 1", "error": false, "complete": false, "_t": 81.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " END) * 10", "error": false, "complete": false, "_t": 81.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0.0 / COUNT(*)", "error": false, "complete": false, "_t": 82.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS used_ratio FROM `m", "error": false, "complete": false, "_t": 82.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "kt_coupon` c WHERE", "error": false, "complete": false, "_t": 82.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`created_time` >=", "error": false, "complete": false, "_t": 82.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 82.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "03-01'", "error": false, "complete": false, "_t": 82.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AND c.`created_time`", "error": false, "complete": false, "_t": 82.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '2026", "error": false, "complete": false, "_t": 83.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-04-01", "error": false, "complete": false, "_t": 83.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' AND c.`is_deleted", "error": false, "complete": false, "_t": 83.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = 0;", "error": false, "complete": false, "_t": 83.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 83.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 83.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 84.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 84.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 84.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 84.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求“已使用", "error": false, "complete": false, "_t": 85.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”指优惠券在订单", "error": false, "complete": false, "_t": 85.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中被核销（即", "error": false, "complete": false, "_t": 85.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "存在关联的 trd_order", "error": false, "complete": false, "_t": 85.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_coupon 记录且对应", "error": false, "complete": false, "_t": 85.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单状态为已支付），", "error": false, "complete": false, "_t": 85.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但SQL仅用 `c", "error": false, "complete": false, "_t": 85.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".used_at IS NOT NULL", "error": false, "complete": false, "_t": 85.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 判断使用", "error": false, "complete": false, "_t": 86.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，而 schema 中", "error": false, "complete": false, "_t": 86.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `mkt_coupon`", "error": false, "complete": false, "_t": 86.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表无 `tr", "error": false, "complete": false, "_t": 86.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_coupon` 关", "error": false, "complete": false, "_t": 86.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "联路径，且 `", "error": false, "complete": false, "_t": 86.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "used_at` 字", "error": false, "complete": false, "_t": 86.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "段未在 schema", "error": false, "complete": false, "_t": 86.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 中定义——schema", "error": false, "complete": false, "_t": 86.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 显示 `m", "error": false, "complete": false, "_t": 86.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon` 表字段", "error": false, "complete": false, "_t": 87.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为 `received_at", "error": false, "complete": false, "_t": 87.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`, `expire_at`, `", "error": false, "complete": false, "_t": 87.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "created_time` 等", "error": false, "complete": false, "_t": 87.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，**不存在 `used_at", "error": false, "complete": false, "_t": 87.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 字段**，", "error": false, "complete": false, "_t": 87.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "属幻觉字段]", "error": false, "complete": false, "_t": 87.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 87.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 87.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 88.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 89.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 89.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 89.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(CASE WHEN c.`status", "error": false, "complete": false, "_t": 89.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = 'USED", "error": false, "complete": false, "_t": 89.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' THEN 1 END)", "error": false, "complete": false, "_t": 89.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " * 100.", "error": false, "complete": false, "_t": 89.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0 / COUNT(*) AS used", "error": false, "complete": false, "_t": 89.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_ratio FROM `mkt_coupon", "error": false, "complete": false, "_t": 89.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` c WHERE c.`created", "error": false, "complete": false, "_t": 90.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_time` >= '20", "error": false, "complete": false, "_t": 90.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-03-", "error": false, "complete": false, "_t": 90.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND c.`", "error": false, "complete": false, "_t": 90.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "created_time` < '2", "error": false, "complete": false, "_t": 90.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-04", "error": false, "complete": false, "_t": 90.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' AND c", "error": false, "complete": false, "_t": 90.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`is_deleted` = ", "error": false, "complete": false, "_t": 90.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0;", "error": false, "complete": false, "_t": 90.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 90.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 90.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 92.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 92.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 92.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 92.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求统计“2", "error": false, "complete": false, "_t": 92.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "026年3月", "error": false, "complete": false, "_t": 92.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取的优惠券中已", "error": false, "complete": false, "_t": 92.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用的比例”，而", "error": false, "complete": false, "_t": 92.92}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务背景明确说明", "error": false, "complete": false, "_t": 93.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "‘已使用’指“", "error": false, "complete": false, "_t": 93.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "存在关联的 tr", "error": false, "complete": false, "_t": 93.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_coupon 记录", "error": false, "complete": false, "_t": 93.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且对应订单状态为已", "error": false, "complete": false, "_t": 93.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付”，即需", "error": false, "complete": false, "_t": 93.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过订单支付状态", "error": false, "complete": false, "_t": 93.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（如 trd_order.order", "error": false, "complete": false, "_t": 93.8}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_status = 'PA", "error": false, "complete": false, "_t": 93.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "ID' 或 paid", "error": false, "complete": false, "_t": 93.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at IS NOT NULL）", "error": false, "complete": false, "_t": 94.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "来判定真实核", "error": false, "complete": false, "_t": 94.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "销，而非仅", "error": false, "complete": false, "_t": 94.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "依赖 mkt_coupon.status", "error": false, "complete": false, "_t": 94.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " = 'USED'；", "error": false, "complete": false, "_t": 94.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但当前SQL直接", "error": false, "complete": false, "_t": 94.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用 c.status = 'USED", "error": false, "complete": false, "_t": 94.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "'，该字段为", "error": false, "complete": false, "_t": 94.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务状态，可能被", "error": false, "complete": false, "_t": 94.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "人工修改或未", "error": false, "complete": false, "_t": 95.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "同步，不符合Evidence", "error": false, "complete": false, "_t": 95.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中定义的“", "error": false, "complete": false, "_t": 95.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "已使用”口径", "error": false, "complete": false, "_t": 95.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；此外，Schema", "error": false, "complete": false, "_t": 95.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中无 trd_order_coupon", "error": false, "complete": false, "_t": 95.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表，但", "error": false, "complete": false, "_t": 95.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "存在外键 tr", "error": false, "complete": false, "_t": 95.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_promotion.c", "error": false, "complete": false, "_t": 95.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "oupon_id = m", "error": false, "complete": false, "_t": 95.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon.id，且 order", "error": false, "complete": false, "_t": 96.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_promotion 表才", "error": false, "complete": false, "_t": 96.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "记录实际核销关系", "error": false, "complete": false, "_t": 96.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，故必须关联", "error": false, "complete": false, "_t": 96.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " trd_order_prom", "error": false, "complete": false, "_t": 96.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion 和 trd_order", "error": false, "complete": false, "_t": 96.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 判断 paid_at 或", "error": false, "complete": false, "_t": 96.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " order_status，不能", "error": false, "complete": false, "_t": 96.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "仅查 mkt_coupon", "error": false, "complete": false, "_t": 96.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 单表]", "error": false, "complete": false, "_t": 96.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 96.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 96.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 98.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 98.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 98.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 98.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(op.`id`) *", "error": false, "complete": false, "_t": 98.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 100.0", "error": false, "complete": false, "_t": 98.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " / COUNT(*) AS used_ratio", "error": false, "complete": false, "_t": 98.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " FROM `mkt_coupon`", "error": false, "complete": false, "_t": 98.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c LEFT JOIN `tr", "error": false, "complete": false, "_t": 98.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "d_order_promotion` op", "error": false, "complete": false, "_t": 99.06}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " ON c.`id` =", "error": false, "complete": false, "_t": 99.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " op.`coupon_id`", "error": false, "complete": false, "_t": 99.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " LEFT JOIN `trd_order", "error": false, "complete": false, "_t": 99.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` o ON op", "error": false, "complete": false, "_t": 99.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`order_id` =", "error": false, "complete": false, "_t": 99.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " o.`id` AND", "error": false, "complete": false, "_t": 99.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " o.`paid_at", "error": false, "complete": false, "_t": 99.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` IS NOT NULL WHERE", "error": false, "complete": false, "_t": 99.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`created_time` >=", "error": false, "complete": false, "_t": 100.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '202", "error": false, "complete": false, "_t": 100.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-03-0", "error": false, "complete": false, "_t": 100.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1' AND c.`created", "error": false, "complete": false, "_t": 100.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_time` < '20", "error": false, "complete": false, "_t": 100.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-0", "error": false, "complete": false, "_t": 100.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "4-01' AND", "error": false, "complete": false, "_t": 100.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`is_deleted` =", "error": false, "complete": false, "_t": 100.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 0;", "error": false, "complete": false, "_t": 100.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 100.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 100.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 102.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 102.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 102.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 102.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求统计“2", "error": false, "complete": false, "_t": 102.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "026年3月", "error": false, "complete": false, "_t": 102.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取的优惠券中已", "error": false, "complete": false, "_t": 102.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用的占比”，但SQL", "error": false, "complete": false, "_t": 103.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中`mkt_coupon.created", "error": false, "complete": false, "_t": 103.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_time`是**", "error": false, "complete": false, "_t": 103.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "记录创建时间**", "error": false, "complete": false, "_t": 103.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，而业务背景", "error": false, "complete": false, "_t": 103.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "明确说明“领取", "error": false, "complete": false, "_t": 103.49}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "时间以 `mkt_coupon", "error": false, "complete": false, "_t": 103.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_instance.created_time` ", "error": false, "complete": false, "_t": 103.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为准”；且Schema", "error": false, "complete": false, "_t": 103.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中`mkt_coupon", "error": false, "complete": false, "_t": 103.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`表无`", "error": false, "complete": false, "_t": 103.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "mkt_coupon_instance", "error": false, "complete": false, "_t": 104.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`相关字段或", "error": false, "complete": false, "_t": 104.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "关联路径，当前", "error": false, "complete": false, "_t": 104.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "SQL错误地将`", "error": false, "complete": false, "_t": 104.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "mkt_coupon.created", "error": false, "complete": false, "_t": 104.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_time`当作领取", "error": false, "complete": false, "_t": 104.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "时间，违反业务", "error": false, "complete": false, "_t": 104.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "规则中“created", "error": false, "complete": false, "_t": 104.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_time / updated_time 是记录", "error": false, "complete": false, "_t": 104.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "的审计时间，不能当", "error": false, "complete": false, "_t": 105.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务时间”的强制", "error": false, "complete": false, "_t": 105.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求；此外，`tr", "error": false, "complete": false, "_t": 105.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_promotion`", "error": false, "complete": false, "_t": 105.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "表在Schema中未定义", "error": false, "complete": false, "_t": 105.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（仅存在外", "error": false, "complete": false, "_t": 105.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "键引用`trd_order", "error": false, "complete": false, "_t": 105.71}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_promotion.coupon_id=m", "error": false, "complete": false, "_t": 105.82}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon.id`，但", "error": false, "complete": false, "_t": 105.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "该表未出现在", "error": false, "complete": false, "_t": 106.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "提供的Schema中），", "error": false, "complete": false, "_t": 106.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "属于幻觉表", "error": false, "complete": false, "_t": 106.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "名]", "error": false, "complete": false, "_t": 106.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 106.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 106.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 107.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 107.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 107.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 107.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(op.`id`)", "error": false, "complete": false, "_t": 107.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " * 100.", "error": false, "complete": false, "_t": 108.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0 / COUNT(*) AS used", "error": false, "complete": false, "_t": 108.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_ratio FROM `mkt_coupon", "error": false, "complete": false, "_t": 108.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` c LEFT JOIN `tr", "error": false, "complete": false, "_t": 108.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "d_order_promotion` op", "error": false, "complete": false, "_t": 108.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " ON c.`id` =", "error": false, "complete": false, "_t": 108.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " op.`coupon_id` WHERE", "error": false, "complete": false, "_t": 108.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`received_at", "error": false, "complete": false, "_t": 108.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` >= '202", "error": false, "complete": false, "_t": 109.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-03-0", "error": false, "complete": false, "_t": 109.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1' AND c.`received", "error": false, "complete": false, "_t": 109.37}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` < '20", "error": false, "complete": false, "_t": 109.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-04-", "error": false, "complete": false, "_t": 109.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND c.`", "error": false, "complete": false, "_t": 109.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "is_deleted` = 0", "error": false, "complete": false, "_t": 109.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ";", "error": false, "complete": false, "_t": 109.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 109.85}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 109.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 111.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 111.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑", "error": false, "complete": false, "_t": 111.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "错误：业务", "error": false, "complete": false, "_t": 111.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "背景明确要求“", "error": false, "complete": false, "_t": 111.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "已使用”指优惠", "error": false, "complete": false, "_t": 111.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券在订单中被核", "error": false, "complete": false, "_t": 111.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "销且对应订单状态", "error": false, "complete": false, "_t": 111.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为已支付（", "error": false, "complete": false, "_t": 111.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "即需关联 tr", "error": false, "complete": false, "_t": 111.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order 表并", "error": false, "complete": false, "_t": 112.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "校验 order_status", "error": false, "complete": false, "_t": 112.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " = 'PAID", "error": false, "complete": false, "_t": 112.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "' 或 paid_at IS", "error": false, "complete": false, "_t": 112.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NOT NULL），但当前 SQL", "error": false, "complete": false, "_t": 112.51}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 仅通过 LEFT", "error": false, "complete": false, "_t": 112.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " JOIN trd_order_promotion", "error": false, "complete": false, "_t": 112.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 判断 coupon_id 是否存在", "error": false, "complete": false, "_t": 112.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，未验证订单", "error": false, "complete": false, "_t": 112.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "是否真实支付成功", "error": false, "complete": false, "_t": 112.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；此外，指令", "error": false, "complete": false, "_t": 113.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "和 Evidence 强调“", "error": false, "complete": false, "_t": 113.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取时间以 mkt", "error": false, "complete": false, "_t": 113.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_coupon_instance.created_time ", "error": false, "complete": false, "_t": 113.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为准”，但 SQL 使用", "error": false, "complete": false, "_t": 113.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "了 mkt_coupon", "error": false, "complete": false, "_t": 113.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".received_at —", "error": false, "complete": false, "_t": 113.74}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "— 而 schema", "error": false, "complete": false, "_t": 113.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 中 mkt_coupon", "error": false, "complete": false, "_t": 113.98}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 确有 received", "error": false, "complete": false, "_t": 114.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_at 字段，但", "error": false, "complete": false, "_t": 114.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "全局业务背景中", "error": false, "complete": false, "_t": 114.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "该字段未被定义", "error": false, "complete": false, "_t": 114.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为领取时间口径", "error": false, "complete": false, "_t": 114.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，反而 Evidence", "error": false, "complete": false, "_t": 114.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 明确指出“", "error": false, "complete": false, "_t": 114.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "mkt_coupon_instance", "error": false, "complete": false, "_t": 114.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".created_time 为准”，而", "error": false, "complete": false, "_t": 114.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " schema 中并无 mkt_coupon", "error": false, "complete": false, "_t": 114.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_instance 表，说明", "error": false, "complete": false, "_t": 115.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "该表应存在", "error": false, "complete": false, "_t": 115.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但未提供；然而", "error": false, "complete": false, "_t": 115.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "更关键的是：", "error": false, "complete": false, "_t": 115.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "schema 中 mkt_coupon", "error": false, "complete": false, "_t": 115.47}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表字段明确包含", "error": false, "complete": false, "_t": 115.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " received_at（Examples", "error": false, "complete": false, "_t": 115.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 非空", "error": false, "complete": false, "_t": 115.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "），且无 m", "error": false, "complete": false, "_t": 115.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon_instance", "error": false, "complete": false, "_t": 115.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表，因此应", "error": false, "complete": false, "_t": 116.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "以 schema 为准", "error": false, "complete": false, "_t": 116.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "；但业务背景", "error": false, "complete": false, "_t": 116.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "与 schema 冲突时", "error": false, "complete": false, "_t": 116.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，审计必须优先", "error": false, "complete": false, "_t": 116.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "遵循【数据库 Schema】作为", "error": false, "complete": false, "_t": 116.55}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "事实标准 ——", "error": false, "complete": false, "_t": 116.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 此处 schema 有", "error": false, "complete": false, "_t": 116.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " received_at，故", "error": false, "complete": false, "_t": 116.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "时间字段可用；但核心", "error": false, "complete": false, "_t": 117.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误在于：tr", "error": false, "complete": false, "_t": 117.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_promotion", "error": false, "complete": false, "_t": 117.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 表仅记录优惠", "error": false, "complete": false, "_t": 117.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券在订单中的使用", "error": false, "complete": false, "_t": 117.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "关联，不代表订单已", "error": false, "complete": false, "_t": 117.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付，必须进一步", "error": false, "complete": false, "_t": 117.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "关联 trd_order", "error": false, "complete": false, "_t": 117.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 并过滤 paid_at IS", "error": false, "complete": false, "_t": 117.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NOT NULL 或 order", "error": false, "complete": false, "_t": 117.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_status = 'PAID'", "error": false, "complete": false, "_t": 118.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 才能准", "error": false, "complete": false, "_t": 118.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "确定义“已使用", "error": false, "complete": false, "_t": 118.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”，当前 SQL", "error": false, "complete": false, "_t": 118.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 缺失该关键", "error": false, "complete": false, "_t": 118.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务校验，导致", "error": false, "complete": false, "_t": 118.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " used_ratio 高估", "error": false, "complete": false, "_t": 118.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "（将未支付", "error": false, "complete": false, "_t": 118.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单的 coupon 关", "error": false, "complete": false, "_t": 118.84}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "联也计入已", "error": false, "complete": false, "_t": 118.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用）]", "error": false, "complete": false, "_t": 118.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 118.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 118.94}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 120.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 120.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 120.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 120.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(op.`id`) *", "error": false, "complete": false, "_t": 120.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 100.0", "error": false, "complete": false, "_t": 121.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " / COUNT(*) AS used_ratio", "error": false, "complete": false, "_t": 121.12}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " FROM `mkt_coupon`", "error": false, "complete": false, "_t": 121.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c LEFT JOIN `trd", "error": false, "complete": false, "_t": 121.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_order_promotion` op ON", "error": false, "complete": false, "_t": 121.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`id` = op", "error": false, "complete": false, "_t": 121.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`coupon_id` LEFT", "error": false, "complete": false, "_t": 121.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " JOIN `trd_order`", "error": false, "complete": false, "_t": 121.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " o ON op.`order", "error": false, "complete": false, "_t": 122.0}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = o.`id", "error": false, "complete": false, "_t": 122.13}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` WHERE c.`received", "error": false, "complete": false, "_t": 122.24}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` >= '20", "error": false, "complete": false, "_t": 122.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-03-", "error": false, "complete": false, "_t": 122.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "01' AND c.`", "error": false, "complete": false, "_t": 122.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "received_at` < '2", "error": false, "complete": false, "_t": 122.79}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-04", "error": false, "complete": false, "_t": 122.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' AND c", "error": false, "complete": false, "_t": 123.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`is_deleted` = ", "error": false, "complete": false, "_t": 123.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0 AND (o.`paid", "error": false, "complete": false, "_t": 123.32}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` IS NOT NULL OR", "error": false, "complete": false, "_t": 123.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " o.`order_status` =", "error": false, "complete": false, "_t": 123.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 'PAID');", "error": false, "complete": false, "_t": 123.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 123.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 123.62}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 124.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 125.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑", "error": false, "complete": false, "_t": 125.03}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "错误：指令", "error": false, "complete": false, "_t": 125.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求统计“2", "error": false, "complete": false, "_t": 125.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "026年3月", "error": false, "complete": false, "_t": 125.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "领取的优惠券中已", "error": false, "complete": false, "_t": 125.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用的比例”，但", "error": false, "complete": false, "_t": 125.63}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "SQL中`WHERE`", "error": false, "complete": false, "_t": 125.72}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "条件对`mkt_coupon", "error": false, "complete": false, "_t": 125.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".received_at`进行了", "error": false, "complete": false, "_t": 125.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "时间过滤（正确", "error": false, "complete": false, "_t": 126.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "），却在关联", "error": false, "complete": false, "_t": 126.16}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单时错误地将", "error": false, "complete": false, "_t": 126.22}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`o.paid_at", "error": false, "complete": false, "_t": 126.33}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " IS NOT NULL OR", "error": false, "complete": false, "_t": 126.42}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " o.order_status = '", "error": false, "complete": false, "_t": 126.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "PAID'`作为", "error": false, "complete": false, "_t": 126.61}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "“已使用”", "error": false, "complete": false, "_t": 126.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "判定条件——而", "error": false, "complete": false, "_t": 126.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "根据Schema和业务", "error": false, "complete": false, "_t": 126.92}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "规则，优惠券是否", "error": false, "complete": false, "_t": 127.01}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "“已使用”应", "error": false, "complete": false, "_t": 127.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "以`mkt_coupon", "error": false, "complete": false, "_t": 127.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".used_at IS NOT NULL`", "error": false, "complete": false, "_t": 127.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "为准（字段存在", "error": false, "complete": false, "_t": 127.45}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且语义明确），", "error": false, "complete": false, "_t": 127.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "而非依赖订单支付", "error": false, "complete": false, "_t": 127.67}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "状态；此外，`tr", "error": false, "complete": false, "_t": 127.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_promotion`", "error": false, "complete": false, "_t": 127.91}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "表才是记录优惠券与", "error": false, "complete": false, "_t": 128.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单绑定关系的正", "error": false, "complete": false, "_t": 128.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "表（外键`", "error": false, "complete": false, "_t": 128.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "trd_order_promotion.c", "error": false, "complete": false, "_t": 128.44}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "oupon_id=mkt_coupon.id", "error": false, "complete": false, "_t": 128.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`），但SQL中未", "error": false, "complete": false, "_t": 128.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "正确使用该表的", "error": false, "complete": false, "_t": 128.77}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`used_at`或", "error": false, "complete": false, "_t": 128.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "状态字段，反而", "error": false, "complete": false, "_t": 128.97}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "错误地通过订单", "error": false, "complete": false, "_t": 129.09}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付状态反推券", "error": false, "complete": false, "_t": 129.15}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用，导致语", "error": false, "complete": false, "_t": 129.25}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "义错位；", "error": false, "complete": false, "_t": 129.36}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "另`mkt_coupon`", "error": false, "complete": false, "_t": 129.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "表中无`op", "error": false, "complete": false, "_t": 129.6}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".id`字段（", "error": false, "complete": false, "_t": 129.65}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`op`是", "error": false, "complete": false, "_t": 129.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`trd_order_prom", "error": false, "complete": false, "_t": 129.87}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "otion`别名，", "error": false, "complete": false, "_t": 129.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "其主键为", "error": false, "complete": false, "_t": 130.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "`id`，该", "error": false, "complete": false, "_t": 130.2}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "字段存在，此项", "error": false, "complete": false, "_t": 130.27}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不构成幻觉），", "error": false, "complete": false, "_t": 130.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "但核心问题在于业务", "error": false, "complete": false, "_t": 130.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：用", "error": false, "complete": false, "_t": 130.53}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "订单支付状态代替", "error": false, "complete": false, "_t": 130.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "券核销事实", "error": false, "complete": false, "_t": 130.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，违反“已", "error": false, "complete": false, "_t": 130.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "使用”定义]", "error": false, "complete": false, "_t": 130.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 130.88}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "语义一致性校验未通过，开始重新生成SQL...\n", "error": false, "complete": false, "_t": 130.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 132.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT(*) AS", "error": false, "complete": false, "_t": 132.26}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " total_received,", "error": false, "complete": false, "_t": 132.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " COUNT", "error": false, "complete": false, "_t": 132.35}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(CASE WHEN c", "error": false, "complete": false, "_t": 132.5}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`used_at`", "error": false, "complete": false, "_t": 132.57}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " IS NOT NULL THEN ", "error": false, "complete": false, "_t": 132.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1 END) * 1", "error": false, "complete": false, "_t": 132.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00.0 / COUNT", "error": false, "complete": false, "_t": 132.96}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(*) AS used_ratio FROM `", "error": false, "complete": false, "_t": 133.07}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "mkt_coupon` c WHERE", "error": false, "complete": false, "_t": 133.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`received_at` >=", "error": false, "complete": false, "_t": 133.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '202", "error": false, "complete": false, "_t": 133.43}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "6-03-0", "error": false, "complete": false, "_t": 133.58}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1' AND c.`received", "error": false, "complete": false, "_t": 133.69}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_at` < '20", "error": false, "complete": false, "_t": 133.78}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "26-0", "error": false, "complete": false, "_t": 133.93}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "4-01' AND", "error": false, "complete": false, "_t": 134.04}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " c.`is_deleted` =", "error": false, "complete": false, "_t": 134.19}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 0;", "error": false, "complete": false, "_t": 134.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 134.21}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 134.23}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "不", "error": false, "complete": false, "_t": 135.39}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过。[", "error": false, "complete": false, "_t": 135.46}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "逻辑错误：", "error": false, "complete": false, "_t": 135.52}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "指令", "error": false, "complete": false, "_t": 135.56}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "要求“已使用", "error": false, "complete": false, "_t": 135.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "”指优惠券在订单", "error": false, "complete": false, "_t": 135.83}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中被核销（即", "error": false, "complete": false, "_t": 135.99}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "存在关联的 trd_order", "error": false, "complete": false, "_t": 136.05}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_coupon 记录", "error": false, "complete": false, "_t": 136.18}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且对应订单状态为已", "error": false, "complete": false, "_t": 136.34}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付），但SQL", "error": false, "complete": false, "_t": 136.38}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "中仅用 `c", "error": false, "complete": false, "_t": 136.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": ".used_at IS NOT NULL`", "error": false, "complete": false, "_t": 136.66}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 判断使用，而", "error": false, "complete": false, "_t": 136.75}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "schema中 `m", "error": false, "complete": false, "_t": 136.86}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "kt_coupon` 表无", "error": false, "complete": false, "_t": 136.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `trd_order_coupon", "error": false, "complete": false, "_t": 137.08}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "` 关联信息", "error": false, "complete": false, "_t": 137.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "，且 `used_at`", "error": false, "complete": false, "_t": 137.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 字段业务含义", "error": false, "complete": false, "_t": 137.41}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "未在schema中明", "error": false, "complete": false, "_t": 137.48}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "确定义为“", "error": false, "complete": false, "_t": 137.59}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "核销时间”；", "error": false, "complete": false, "_t": 137.7}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "更关键的是，Evidence", "error": false, "complete": false, "_t": 137.76}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " 明确要求", "error": false, "complete": false, "_t": 137.9}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "“已使用”需", "error": false, "complete": false, "_t": 138.02}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "满足“存在关联的 tr", "error": false, "complete": false, "_t": 138.14}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "d_order_coupon 记录", "error": false, "complete": false, "_t": 138.29}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "且对应订单状态为已", "error": false, "complete": false, "_t": 138.4}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "支付”，当前SQL未", "error": false, "complete": false, "_t": 138.54}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "JOIN任何订单表，无法", "error": false, "complete": false, "_t": 138.64}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "校验订单支付", "error": false, "complete": false, "_t": 138.73}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "状态（如 `", "error": false, "complete": false, "_t": 138.81}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "trd_order.order", "error": false, "complete": false, "_t": 138.89}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "_status = 'PA", "error": false, "complete": false, "_t": 138.95}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "ID'` 或", "error": false, "complete": false, "_t": 139.11}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " `paid_at IS", "error": false, "complete": false, "_t": 139.17}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": " NOT NULL`），违反", "error": false, "complete": false, "_t": 139.28}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "业务规则]", "error": false, "complete": false, "_t": 139.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 139.3}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "正在进行重试评估...\n", "error": false, "complete": false, "_t": 139.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "步骤[1]中，SQL次数生成超限，最大尝试次数：10，已尝试次数:10，该步骤内容: \n SQL生成\n", "error": false, "complete": false, "_t": 139.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "重试评估完成！\n", "error": false, "complete": false, "_t": 139.31}
+{"agentId": "5", "threadId": "mix-S10-2-f90b89", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 139.33}

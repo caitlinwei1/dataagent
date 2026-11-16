@@ -66,10 +66,12 @@ public class SqlGenerateNode implements NodeAction {
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 		// 判断是否达到最大尝试次数
 		int count = state.value(SQL_GENERATE_COUNT, 0);
-		if (count >= properties.getMaxSqlRetryCount()) {
+		int maxTries = state.value(GBI_MAX_SQL_RETRIES, 0) > 0 ? state.value(GBI_MAX_SQL_RETRIES, 0)
+				: properties.getMaxSqlRetryCount();
+		if (count >= maxTries) {
 			ExecutionStep executionStep = PlanProcessUtil.getCurrentExecutionStep(state);
 			String sqlGenerateOutput = String.format("步骤[%d]中，SQL次数生成超限，最大尝试次数：%d，已尝试次数:%d，该步骤内容: \n %s",
-					executionStep.getStep(), properties.getMaxSqlRetryCount(), count,
+					executionStep.getStep(), maxTries, count,
 					executionStep.getToolParameters().getInstruction());
 			log.error("SQL generation failed, reason: {}", sqlGenerateOutput);
 			Flux<ChatResponse> preFlux = Flux.just(ChatResponseUtil.createResponse(sqlGenerateOutput));
