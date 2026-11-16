@@ -27,6 +27,8 @@ flowchart LR
 | 时间口径 | LLM 自己推算日期（会写出 2 月 29 日） | 按日历算好半开区间注入证据；非法日期给出具体的修复提示 | `service/nl2sql/` |
 | 人工审核 | 只有确认 / 驳回，驳回意见只保留最新一条，检查点存在内存 | 加上修改计划 JSON，驳回意见累积，重新规划最多 3 次，检查点可存 MySQL，重启后用 threadId 恢复 | `service/hitl/` |
 | Python 沙箱 | CPU 实际能用 2 核，内存 1000 MiB（含 swap），进程数不限，池化容器会读到别的任务的输出 | 1 核、500 MiB、64 个进程、60 秒、无网络；输出隔离；失败 5 次后显式降级 | `service/code/` |
+| 模式 | 一个模型，一条链路 | Turbo（小模型、精简校验、规则）/ Mix（大模型、规则 + 案例），按请求切换，按模型计量 token | `service/mode/` |
+| 部署 | 后端直连数据库 | 混合部署：本地数据网关（同一个 jar）持有数据库账号，只读、打码、审计，云端只存网关地址和密钥 | `gbigateway/`、`service/gateway/` |
 | 报告 | 只能在聊天页里看 SSE 流 | 开放接口、OpenAPI 文档、系统附上的证据附录、图表校验、失败原因、数字溯源、系统预先算好的合计 | `controller/ReportApiController.java`、`service/report/` |
 
 ## 快速开始
@@ -73,6 +75,8 @@ curl -s localhost:8065/openapi/v1/reports -H 'Content-Type: application/json' \
 | 6 沙箱 | 9 个真实 Docker 用例 | CPU 1.99 → 1.00 核；内存 1000 → 500 MiB；进程数不限 → 64；跨任务输出泄漏 7/8 → 0/12 | [step6](docs/design/step6-sandbox.md) |
 | 7 问数 | 320 题（dev 192 / holdout 128）；**实际跑了 40 题配对样本** | SQL 执行成功率 86.7% → 100%；首次即成功 76.7% → 90%；EX 50.0% → 56.7%；多步完成率 60% → 60%。holdout 目标 EX ≥ 85%，**差距大** | [step7](docs/design/step7-nl2sql-eval.md)、[eval/nl2sql](eval/nl2sql/README.md) |
 | 8 报告 | 40 个任务；**实际跑了 8 题样本** | 完成 3/8；平均耗时 5.0 分钟，人工估算 64.3 分钟（人工是估算值）；“报告自己算错数”修复后 R07 由错变对 | [step8](docs/design/step8-reports.md)、[eval/report](eval/report/README.md) |
+| 10 Turbo / Mix | 23 题配对 + 消融 | EX：default 56.5% / Turbo 73.9% / Mix 91.3%；耗时 p50 35.1 / 13.9 / 36.9 s；成本 0.051 / 0.0087 / 0.061 元每题。只有 Mix 对 default 的 8 胜 0 负是显著的 | [step10](docs/design/step10-turbo-mix-hybrid.md)、[eval/mode](eval/mode/README.md) |
+| 10 混合部署 | 276 条标准 SQL；23 题端到端；7 个安全用例 | 直连 vs 经网关结果 276/276 一致，网关额外 4.5 ms（p50）；混合部署下 EX 17/23，与直连相同；云端不存数据库密码 | [step10](docs/design/step10-turbo-mix-hybrid.md)、[eval/hybrid](eval/hybrid/README.md) |
 
 第 7、8 步只跑了样本，原因是 qwen3.8-flash 的免费额度用完了；之后的运行都换成了 qwen-plus。完整评测各需一条命令，都支持断点续跑：
 
@@ -96,6 +100,9 @@ python3 eval/scripts/run_reports.py --run full --all                 # 第 8 步
 | `gbi.hitl.checkpoint` | memory | 设为 `mysql` 时，重启后能用 threadId 恢复 |
 | `spring.ai.alibaba.data-agent.code-executor.*` | 1 CPU / 500 MiB / 60 s / 64 进程 / 无网络 | 沙箱限制 |
 | `spring.profiles.active=milvus` | – | 向量存 Milvus；不启用时用内存向量库 |
+| `gbi.mode.default-mode` / 请求参数 `mode` | default | `turbo` / `mix` / `default`，每种模式的模型、校验、规则、案例见 `gbi.mode.profiles.*` |
+| `gbi.mode.rules-file` / `cases-file` | `classpath:gbi/rules.yaml` / 空 | 规则干预（Turbo、Mix）和案例学习（Mix）的来源 |
+| 数据源类型 `mysql-gateway` / `postgresql-gateway` | – | 混合部署：云端经本地数据网关取数，网关配置见 `deploy/gateway/gateway.yml` |
 
 ## 仓库结构
 
@@ -106,6 +113,7 @@ eval/               table_select（180）/ sql_guard（75）/ nl2sql（320）/ r
 docs/design/        每一步的设计说明：问题、做法、为什么、备选方案、指标、面试问答
 docs/api/           报告接口的 OpenAPI 文档
 deploy/milvus/      Milvus standalone
+deploy/gateway/     混合部署时本地数据网关的配置
 sandbox/            Python 沙箱镜像
 scripts/            up.sh、数据加载、智能体注册、各步骤的运行脚本
 results/            各步骤的原始记录（日志不入库）
@@ -114,8 +122,8 @@ upstream/           b297203 快照，用于对比
 
 ## 没做和没验证的
 
-- **Hologres / ADB-PG**：代码里支持它们的方言和错误码，但没有真实实例，只在 PostgreSQL 上验证过。
-- **Turbo / Mix 模式和云上 + 本地混合部署**：没有实现。
+- **Hologres / ADB-PG**：代码里支持它们的方言和错误码，网关也支持 PostgreSQL 方言，但没有真实实例，只在本地 PostgreSQL 上验证过。需要提供什么见 [step10 第 6 节](docs/design/step10-turbo-mix-hybrid.md)。
+- **混合部署的生产化**：网关目前要开放入站端口、本地测试用的是 HTTP、密钥不能轮换。生产上应改成网关主动连云端、双向 TLS。
 - **XiYan-SQL 模型**：没有部署。SQL 生成用的是 Qwen（DashScope）；从 XiYan-SQL 借鉴的是 M-Schema 的格式和评测方法。
 - **完整的 320 题和 40 个报告任务**：没有跑完，原因是额度。holdout 还没用过。
 - **`up.sh`**：在已经部署好的环境上验证过可重入，但没有在全新机器上从零跑过。

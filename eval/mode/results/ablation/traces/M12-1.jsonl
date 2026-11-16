@@ -1,0 +1,200 @@
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.02}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.23}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.33}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.36}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.43}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.46}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.52}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 2.62}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 2.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 2.78}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "5年服饰鞋包", "error": false, "complete": false, "_t": 2.89}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "类目的月度销售额\"}", "error": false, "complete": false, "_t": 2.97}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 2.97}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2025年服饰鞋包类目的月度销售额\n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 服饰鞋包, 说明: 商品类目取值，对应 prd_category.name = '服饰鞋包', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 2025双11, 说明: 营销活动取值，对应 mkt_activity.name = '2025双11', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 2025年货节, 说明: 营销活动取值，对应 mkt_activity.name = '2025年货节', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 销售额, 说明: 未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。；公式：默认等同实付金额 SUM(trd_order.pay_amount...\n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 女装, 说明: 商品类目取值，对应 prd_category.name = '女装', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 女装精选, 说明: 商品类目取值，对应 prd_category.name = '女装精选', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 2025618, 说明: 营销活动取值，对应 mkt_activity.name = '2025618', 同义词: \n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 实付金额, 说明: 用户实际支付的钱 = 商品总额 - 优惠总额 + 运费。；公式：SUM(trd_order.pay_amount)；过滤：trd_order.paid_at IS NO...\n", "error": false, "complete": false, "_t": 3.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 3.66}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 4.9}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 4.98}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.03}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询20", "error": false, "complete": false, "_t": 5.17}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25年（", "error": false, "complete": false, "_t": 5.21}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025", "error": false, "complete": false, "_t": 5.34}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01-01", "error": false, "complete": false, "_t": 5.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "至202", "error": false, "complete": false, "_t": 5.56}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5-12-3", "error": false, "complete": false, "_t": 5.7}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1）期间，服饰鞋", "error": false, "complete": false, "_t": 5.85}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "包类目（一级", "error": false, "complete": false, "_t": 5.94}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "类目，通过", "error": false, "complete": false, "_t": 5.98}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "三级类目关联", "error": false, "complete": false, "_t": 6.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "到 prd_category.name", "error": false, "complete": false, "_t": 6.22}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " = '服饰鞋包'", "error": false, "complete": false, "_t": 6.35}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）的月度", "error": false, "complete": false, "_t": 6.44}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "销售额（按实", "error": false, "complete": false, "_t": 6.52}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "付口径，即 SUM", "error": false, "complete": false, "_t": 6.64}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "(trd_order_item.pay", "error": false, "complete": false, "_t": 6.77}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_share)，仅统计", "error": false, "complete": false, "_t": 6.82}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " order_status NOT IN", "error": false, "complete": false, "_t": 6.91}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " ('CANCELLED','", "error": false, "complete": false, "_t": 7.04}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "CLOSED') ", "error": false, "complete": false, "_t": 7.08}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "且 paid_at IS", "error": false, "complete": false, "_t": 7.21}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " NOT NULL 的有效订单）", "error": false, "complete": false, "_t": 7.35}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "\",\n  \"expanded_queries\":", "error": false, "complete": false, "_t": 7.46}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " [\n    \"请", "error": false, "complete": false, "_t": 7.56}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "按自然月维度", "error": false, "complete": false, "_t": 7.63}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，统计202", "error": false, "complete": false, "_t": 7.74}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5全年中每个月", "error": false, "complete": false, "_t": 7.83}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "服饰鞋包类目的", "error": false, "complete": false, "_t": 7.96}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "实付销售额（基于", "error": false, "complete": false, "_t": 8.01}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "有效订单的 pay", "error": false, "complete": false, "_t": 8.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_share 汇总", "error": false, "complete": false, "_t": 8.27}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）\",\n    \"将", "error": false, "complete": false, "_t": 8.31}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025", "error": false, "complete": false, "_t": 8.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年服饰鞋包类目的", "error": false, "complete": false, "_t": 8.53}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "总销售额按月份", "error": false, "complete": false, "_t": 8.67}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "拆分，要求", "error": false, "complete": false, "_t": 8.75}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "时间范围严格为 >=", "error": false, "complete": false, "_t": 8.86}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " '2025-", "error": false, "complete": false, "_t": 9.02}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "01-01'", "error": false, "complete": false, "_t": 9.1}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " AND < '20", "error": false, "complete": false, "_t": 9.22}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-01", "error": false, "complete": false, "_t": 9.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01'，", "error": false, "complete": false, "_t": 9.48}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "并按 prd_category.level", "error": false, "complete": false, "_t": 9.59}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "=1 的 '服饰鞋", "error": false, "complete": false, "_t": 9.73}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "包' 类目路径", "error": false, "complete": false, "_t": 9.84}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "归集\",\n    \"分析", "error": false, "complete": false, "_t": 9.97}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年度", "error": false, "complete": false, "_t": 10.07}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "服饰鞋包类目销售", "error": false, "complete": false, "_t": 10.23}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "表现，输出每月", "error": false, "complete": false, "_t": 10.27}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的实付销售额（", "error": false, "complete": false, "_t": 10.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "SUM(trd_order", "error": false, "complete": false, "_t": 10.49}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_item.pay_share)", "error": false, "complete": false, "_t": 10.6}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "），需确保类", "error": false, "complete": false, "_t": 10.67}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "目归属路径为 c", "error": false, "complete": false, "_t": 10.78}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "3→c2→c", "error": false, "complete": false, "_t": 10.91}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1，且 c", "error": false, "complete": false, "_t": 11.18}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1.name = '服饰", "error": false, "complete": false, "_t": 11.18}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "鞋包'，订单", "error": false, "complete": false, "_t": 11.24}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "状态排除 CANCELLED 和", "error": false, "complete": false, "_t": 11.35}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " CLOSED\"\n  ]\n}", "error": false, "complete": false, "_t": 11.41}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 11.41}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 13.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: trd_order, prd_category, trd_daily_sku_sales, trd_order_item, dim_shop, trd_order_promotion, fin_settlement, fin_platform_fee, prd_sku, prd_spu\n", "error": false, "complete": false, "_t": 13.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 13.65}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 13.68}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 13.68}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 13.68}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 16.03}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "trd_order", "error": false, "complete": false, "_t": 16.1}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\",", "error": false, "complete": false, "_t": 16.12}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"tr", "error": false, "complete": false, "_t": 16.26}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "d_order_item\", \"prd", "error": false, "complete": false, "_t": 16.34}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "_category\"]", "error": false, "complete": false, "_t": 16.36}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 16.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 16.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 16.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 16.38}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 18.48}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 18.51}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 18.53}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 18.61}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n", "error": false, "complete": false, "_t": 18.74}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【语种类型", "error": false, "complete": false, "_t": 18.81}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：《中文", "error": false, "complete": false, "_t": 18.9}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "》  \n【需求", "error": false, "complete": false, "_t": 18.97}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：查询", "error": false, "complete": false, "_t": 19.1}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2025年（", "error": false, "complete": false, "_t": 19.21}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2025-0", "error": false, "complete": false, "_t": 19.34}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1-01至", "error": false, "complete": false, "_t": 19.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2025-", "error": false, "complete": false, "_t": 19.59}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "12-31）", "error": false, "complete": false, "_t": 19.69}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "期间，服饰鞋包类", "error": false, "complete": false, "_t": 19.78}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "目（一级类", "error": false, "complete": false, "_t": 19.91}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "目，通过三级", "error": false, "complete": false, "_t": 20.03}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类目关联到 pr", "error": false, "complete": false, "_t": 20.14}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_category.name = '服饰", "error": false, "complete": false, "_t": 20.24}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "鞋包'）的月", "error": false, "complete": false, "_t": 20.37}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "度销售额（按实付", "error": false, "complete": false, "_t": 20.5}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "口径，即 SUM", "error": false, "complete": false, "_t": 20.61}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "(trd_order_item.pay_share", "error": false, "complete": false, "_t": 20.72}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ")，仅统计 order", "error": false, "complete": false, "_t": 20.85}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_status NOT IN ('CANCELLED", "error": false, "complete": false, "_t": 20.94}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "','CLOSED') ", "error": false, "complete": false, "_t": 21.06}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且 paid_at IS NOT", "error": false, "complete": false, "_t": 21.14}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " NULL 的有效订单）", "error": false, "complete": false, "_t": 21.23}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 21.23}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 21.25}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 21.27}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 22.83}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " date", "error": false, "complete": false, "_t": 22.85}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_format", "error": false, "complete": false, "_t": 22.88}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(`", "error": false, "complete": false, "_t": 22.98}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`.`paid_at`, '%", "error": false, "complete": false, "_t": 23.1}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "Y-%m')", "error": false, "complete": false, "_t": 23.21}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `month`, sum", "error": false, "complete": false, "_t": 23.27}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "(`oi`.`pay", "error": false, "complete": false, "_t": 23.48}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_share`) as `sales", "error": false, "complete": false, "_t": 23.49}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_amount` from `trd", "error": false, "complete": false, "_t": 23.64}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_order` as `o`", "error": false, "complete": false, "_t": 23.71}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " inner join `tr", "error": false, "complete": false, "_t": 23.84}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "d_order_item` as", "error": false, "complete": false, "_t": 23.95}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `oi` on `o", "error": false, "complete": false, "_t": 24.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` = `oi", "error": false, "complete": false, "_t": 24.22}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`order_id` inner", "error": false, "complete": false, "_t": 24.34}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " join `prd_category` as", "error": false, "complete": false, "_t": 24.46}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c3` on", "error": false, "complete": false, "_t": 24.57}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `oi`.`category", "error": false, "complete": false, "_t": 24.66}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `c3", "error": false, "complete": false, "_t": 24.82}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` inner join `", "error": false, "complete": false, "_t": 24.92}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "prd_category` as `c", "error": false, "complete": false, "_t": 25.07}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "2` on `c3", "error": false, "complete": false, "_t": 25.16}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`parent_id` =", "error": false, "complete": false, "_t": 25.31}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c2`.`id`", "error": false, "complete": false, "_t": 25.45}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " inner join `prd_category`", "error": false, "complete": false, "_t": 25.56}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " as `c1` on", "error": false, "complete": false, "_t": 25.69}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c2`.`parent", "error": false, "complete": false, "_t": 25.8}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `c1", "error": false, "complete": false, "_t": 25.93}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`id` where", "error": false, "complete": false, "_t": 26.02}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`paid_at`", "error": false, "complete": false, "_t": 26.18}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " >= '2025", "error": false, "complete": false, "_t": 26.29}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01-01", "error": false, "complete": false, "_t": 26.41}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "' and `o`.`", "error": false, "complete": false, "_t": 26.55}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "paid_at` < '2", "error": false, "complete": false, "_t": 26.66}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-01", "error": false, "complete": false, "_t": 26.79}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01' and `", "error": false, "complete": false, "_t": 26.95}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`.`order_status` not", "error": false, "complete": false, "_t": 27.06}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " in ('CANCELLED',", "error": false, "complete": false, "_t": 27.19}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 'CLOSED') and", "error": false, "complete": false, "_t": 27.28}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`paid_at`", "error": false, "complete": false, "_t": 27.43}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " is not null and `c", "error": false, "complete": false, "_t": 27.54}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "1`.`name` = '", "error": false, "complete": false, "_t": 27.7}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "服饰鞋包' and", "error": false, "complete": false, "_t": 27.78}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `c1`.`level", "error": false, "complete": false, "_t": 27.91}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = 1 group by", "error": false, "complete": false, "_t": 27.98}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " date_format(`o", "error": false, "complete": false, "_t": 28.19}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`paid_at`, '%Y", "error": false, "complete": false, "_t": 28.26}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-%m') order by `", "error": false, "complete": false, "_t": 28.39}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "month`;", "error": false, "complete": false, "_t": 28.4}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 28.4}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 28.42}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 30.09}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 30.09}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 30.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 30.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select date_format(`o`.`paid_at`, '%Y-%m') as `month`, sum(`oi`.`pay_share`) as `sales_amount` from `trd_order` as `o` inner join `trd_order_item` as `oi` on `o`.`id` = `oi`.`order_id` inner join `prd_category` as `c3` on `oi`.`category_id` = `c3`.`id` inner join `prd_category` as `c2` on `c3`.`parent_id` = `c2`.`id` inner join `prd_category` as `c1` on `c2`.`parent_id` = `c1`.`id` where `o`.`paid_at` >= '2025-01-01' and `o`.`paid_at` < '2026-01-01' and `o`.`order_status` not in ('CANCELLED', 'CLOSED') and `o`.`paid_at` is not null and `c1`.`name` = '服饰鞋包' and `c1`.`level` = 1 group by date_format(`o`.`paid_at`, '%Y-%m') order by `month`;\n", "error": false, "complete": false, "_t": 30.11}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 31.82}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 31.82}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"month\",\"sales_amount\"],\"data\":[{\"month\":\"2025-01\",\"sales_amount\":\"187529.34\"},{\"month\":\"2025-02\",\"sales_amount\":\"95318.64\"},{\"month\":\"2025-03\",\"sales_amount\":\"132031.64\"},{\"month\":\"2025-04\",\"sales_amount\":\"139084.75\"},{\"month\":\"2025-05\",\"sales_amount\":\"131254.41\"},{\"month\":\"2025-06\",\"sales_amount\":\"221169.18\"},{\"month\":\"2025-07\",\"sales_amount\":\"137634.85\"},{\"month\":\"2025-08\",\"sales_amount\":\"131721.78\"},{\"month\":\"2025-09\",\"sales_amount\":\"121078.80\"},{\"month\":\"2025-10\",\"sales_amount\":\"147666.35\"},{\"month\":\"2025-11\",\"sales_amount\":\"214246.75\"},{\"month\":\"2025-12\",\"sales_amount\":\"130558.51\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"line\",\"title\":\"服饰鞋包类目月度销售额\",\"x\":\"month\",\"y\":[\"sales_amount\"]}}", "error": false, "complete": false, "_t": 31.82}
+{"agentId": "5", "threadId": "mix-nocases-M12-1-2a2e5b", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 31.84}

@@ -60,7 +60,8 @@ public class ReportApiController {
 	public record ReportRequest(@Schema(description = "智能体 ID", example = "5") String agentId,
 			@Schema(description = "分析问题", example = "2026年3月华东的GMV和去年同期相比变化了多少？从一级类目和平台两个维度分析原因") String question,
 			@Schema(description = "可选：会话 ID，传入则作为多轮追问的上下文") String threadId,
-			@Schema(description = "可选：超时秒数，默认 900") Integer timeoutSeconds) {
+			@Schema(description = "可选：超时秒数，默认 900") Integer timeoutSeconds,
+			@Schema(description = "可选：问答模式 turbo / mix（默认 gbi.mode.default-mode）", example = "mix") String mode) {
 	}
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -77,6 +78,7 @@ public class ReportApiController {
 			.query(req.question())
 			.humanFeedback(false)
 			.nl2sqlOnly(false)
+			.mode(req.mode())
 			.build();
 		long t0 = System.nanoTime();
 		graphService.graphStreamProcess(sink, gr);

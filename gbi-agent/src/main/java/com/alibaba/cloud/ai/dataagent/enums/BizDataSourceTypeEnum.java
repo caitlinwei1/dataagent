@@ -55,7 +55,14 @@ public enum BizDataSourceTypeEnum {
 	MYSQL_VIRTUAL(51, "mysql-virtual", DatabaseDialectEnum.MYSQL.getCode(), DbAccessTypeEnum.MEMORY.getCode()),
 
 	POSTGRESQL_VIRTUAL(52, "postgresql-virtual", DatabaseDialectEnum.POSTGRESQL.getCode(),
-			DbAccessTypeEnum.MEMORY.getCode());
+			DbAccessTypeEnum.MEMORY.getCode()),
+
+	/** GBI hybrid deployment: MySQL behind the local data gateway; the cloud holds no DB credentials. */
+	MYSQL_GATEWAY(61, "mysql-gateway", DatabaseDialectEnum.MYSQL.getCode(), DbAccessTypeEnum.GATEWAY.getCode()),
+
+	/** GBI hybrid deployment: PostgreSQL / Hologres / ADB-PG behind the local data gateway. */
+	POSTGRESQL_GATEWAY(62, "postgresql-gateway", DatabaseDialectEnum.POSTGRESQL.getCode(),
+			DbAccessTypeEnum.GATEWAY.getCode());
 
 	public final Integer code;
 

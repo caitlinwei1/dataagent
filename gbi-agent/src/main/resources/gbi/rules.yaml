@@ -1,0 +1,35 @@
+# GBI rules (问法 -> SQL 写法), the intervention mechanism of Turbo (Mix uses them too).
+# A rule fires when the question contains any keyword in `when`; its `sql` goes into the evidence as a hard
+# constraint. Written from the step-7 error analysis of the 40-question sample (docs/design/step7-nl2sql-eval.md),
+# i.e. from business knowledge, not from the questions the mode comparison is scored on.
+- name: 一级类目
+  when: [一级类目, 一级品类, 大类]
+  sql: |
+    订单明细 trd_order_item.category_id 是三级（叶子）类目。按一级类目过滤或分组时，必须向上关联两次：
+    JOIN prd_category c3 ON i.category_id = c3.id JOIN prd_category c2 ON c3.parent_id = c2.id
+    JOIN prd_category c1 ON c2.parent_id = c1.id，然后用 c1.name。不能直接用一级类目名去匹配 c3。
+- name: 类目名称
+  when: [数码家电, 服饰鞋包, 美妆个护, 食品生鲜, 家居日用, 母婴玩具]
+  sql: |
+    这些是一级类目名（prd_category.level = 1）。商品和订单明细挂在三级类目上，过滤时按上面的 c3 -> c2 -> c1 路径关联到 c1.name。
+- name: 大区归属
+  when: [大区, 华东, 华南, 华北, 华中, 西南, 西北, 东北]
+  sql: |
+    除非问题明确说“收货地址/发往/送达”，大区一律按店铺归属：
+    JOIN dim_shop s ON o.shop_id = s.id JOIN dim_region r ON s.region_id = r.id，用 r.big_region。
+    “发往某大区/收货地区”才用 trd_order_address.region_id -> dim_region。
+- name: GMV
+  when: [GMV, 成交额]
+  sql: |
+    GMV = SUM(o.total_amount + o.freight_amount)，按支付时间 o.paid_at 归属；明细级问题用 trd_order，
+    只有问题按“日/店铺”粒度时才可用 trd_daily_shop_sales，且必须按问题要求的粒度 GROUP BY。
+- name: 有效订单
+  when: [销售额, 销量, 件数]
+  sql: |
+    销售额 = SUM(trd_order_item.pay_share)，销量 = SUM(trd_order_item.quantity)，只算有效订单：
+    o.order_status NOT IN ('CANCELLED','CLOSED')，按 o.paid_at 归属时间。
+- name: 审计时间
+  when: [月, 年, 季度, 周, 日]
+  sql: |
+    created_time / updated_time 是记录的审计时间，不能当业务时间。订单用 paid_at，退款用 refunded_at，出库用 outbound_at，
+    妥投用 delivered_at，广告和流量用 stat_date，库存快照用 snapshot_date。

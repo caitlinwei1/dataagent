@@ -191,6 +191,9 @@ public class SqlExecuteNode implements NodeAction {
 		Accessor dbAccessor = databaseUtil.getAgentAccessor(agentId);
 		final Map<String, Object> result = new HashMap<>();
 
+		// GBI: the SQL runs when the flux is subscribed, on another thread; carry the mode's model along
+		final com.alibaba.cloud.ai.dataagent.service.mode.ModeContext.Model mode = com.alibaba.cloud.ai.dataagent.service.mode.ModeContext
+			.get();
 		// 先返回流式数据，在执行数据库查询
 		Flux<ChatResponse> displayFlux = Flux.create(emitter -> {
 			emitter.next(ChatResponseUtil.createResponse("开始执行SQL..."));
@@ -204,7 +207,14 @@ public class SqlExecuteNode implements NodeAction {
 				// Execute SQL query and get results immediately
 				ResultSetBO resultSetBO = dbAccessor.executeSqlAndReturnObject(dbConfig, dbQueryParameter);
 				// 调用大模型获取图表配置信息并填充到ResultSetBO中
-				DisplayStyleBO displayStyleBO = enrichResultSetWithChartConfig(state, resultSetBO);
+				com.alibaba.cloud.ai.dataagent.service.mode.ModeContext.set(mode);
+				DisplayStyleBO displayStyleBO;
+				try {
+					displayStyleBO = enrichResultSetWithChartConfig(state, resultSetBO);
+				}
+				finally {
+					com.alibaba.cloud.ai.dataagent.service.mode.ModeContext.set(null);
+				}
 				resultBO.setResultSet(resultSetBO);
 				resultBO.setDisplayStyle(displayStyleBO);
 

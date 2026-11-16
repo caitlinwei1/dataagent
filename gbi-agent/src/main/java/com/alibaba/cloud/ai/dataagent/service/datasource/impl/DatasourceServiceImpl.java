@@ -60,6 +60,8 @@ public class DatasourceServiceImpl implements DatasourceService {
 
 	private final DBConnectionPoolFactory poolFactory;
 
+	private final com.alibaba.cloud.ai.dataagent.service.gateway.GatewayAccessor gatewayAccessor;
+
 	private final AccessorFactory accessorFactory;
 
 	private final DatasourceTypeHandlerRegistry datasourceTypeHandlerRegistry;
@@ -180,6 +182,10 @@ public class DatasourceServiceImpl implements DatasourceService {
 		config.setUsername(datasource.getUsername());
 		config.setPassword(datasource.getPassword());
 
+		if (com.alibaba.cloud.ai.dataagent.enums.DbAccessTypeEnum.GATEWAY.getCode().equals(handler.connectionType())) {
+			// GBI hybrid deployment: the cloud cannot reach the database, only the local gateway
+			return gatewayAccessor.ping(originalUrl);
+		}
 		DBConnectionPool pool = poolFactory.getPoolByType(datasource.getType());
 		if (pool == null) {
 			return false;

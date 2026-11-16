@@ -18,7 +18,11 @@ package com.alibaba.cloud.ai.dataagent.service.llm.impls;
 import com.alibaba.cloud.ai.dataagent.service.aimodelconfig.AiModelRegistry;
 import com.alibaba.cloud.ai.dataagent.service.llm.LlmService;
 import lombok.AllArgsConstructor;
+import com.alibaba.cloud.ai.dataagent.service.mode.LlmUsageMeter;
+import com.alibaba.cloud.ai.dataagent.service.mode.ModeContext;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import reactor.core.publisher.Flux;
 
 @AllArgsConstructor
@@ -28,17 +32,43 @@ public class StreamLlmService implements LlmService {
 
 	@Override
 	public Flux<ChatResponse> call(String system, String user) {
-		return registry.getChatClient().prompt().system(system).user(user).stream().chatResponse();
+		return run(spec().system(system).user(user));
 	}
 
 	@Override
 	public Flux<ChatResponse> callSystem(String system) {
-		return registry.getChatClient().prompt().system(system).stream().chatResponse();
+		return run(spec().system(system));
 	}
 
 	@Override
 	public Flux<ChatResponse> callUser(String user) {
-		return registry.getChatClient().prompt().user(user).stream().chatResponse();
+		return run(spec().user(user));
+	}
+
+	/** GBI: the run's mode may pick another model (Turbo / Mix); usage is metered per model. */
+	private ChatClient.ChatClientRequestSpec spec() {
+		ChatClient.ChatClientRequestSpec spec = registry.getChatClient().prompt();
+		return spec.options(options(OpenAiChatOptions.builder().streamUsage(true)));
+	}
+
+	private Flux<ChatResponse> run(ChatClient.ChatClientRequestSpec spec) {
+		String model = ModeContext.model();
+		LlmUsageMeter.call(model);
+		return spec.stream().chatResponse().doOnNext(r -> LlmUsageMeter.usage(model, r));
+	}
+
+	static OpenAiChatOptions options(OpenAiChatOptions.Builder o) {
+		ModeContext.Model m = ModeContext.get();
+		if (m != null && ModeContext.model() != null) {
+			o.model(m.name());
+		}
+		if (m != null && m.thinking() != null) {
+			// sent as a header and moved into the body by DashScopeOpenAiApi (extraBody is dropped by Spring AI 1.1.0)
+			o.httpHeaders(java.util.Map.of(
+					com.alibaba.cloud.ai.dataagent.service.aimodelconfig.DashScopeOpenAiApi.THINKING_HEADER,
+					String.valueOf(m.thinking())));
+		}
+		return o.build();
 	}
 
 }

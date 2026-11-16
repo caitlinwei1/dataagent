@@ -30,7 +30,10 @@ public enum DbAccessTypeEnum {
 
 	FC_HTTP("fc-http"),
 
-	MEMORY("in-memory");
+	MEMORY("in-memory"),
+
+	/** GBI hybrid deployment: data reached through the local data gateway ("服务在云、数据在地"). */
+	GATEWAY("gateway");
 
 	private String code;
 

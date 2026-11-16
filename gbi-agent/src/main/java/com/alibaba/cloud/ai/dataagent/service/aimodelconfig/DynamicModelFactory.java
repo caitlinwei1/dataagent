@@ -60,16 +60,10 @@ public class DynamicModelFactory {
 
 		// 2. 构建 OpenAiApi (核心通讯对象)
 		String apiKey = StringUtils.hasText(config.getApiKey()) ? config.getApiKey() : "";
-		OpenAiApi.Builder apiBuilder = OpenAiApi.builder()
-			.apiKey(apiKey)
-			.baseUrl(config.getBaseUrl())
-			.restClientBuilder(getProxiedRestClientBuilder(config))
-			.webClientBuilder(getProxiedWebClientBuilder(config));
-
-		if (StringUtils.hasText(config.getCompletionsPath())) {
-			apiBuilder.completionsPath(config.getCompletionsPath());
-		}
-		OpenAiApi openAiApi = apiBuilder.build();
+		// GBI: DashScopeOpenAiApi lets the Turbo / Mix modes switch thinking per call
+		OpenAiApi openAiApi = new DashScopeOpenAiApi(config.getBaseUrl(), apiKey,
+				StringUtils.hasText(config.getCompletionsPath()) ? config.getCompletionsPath() : "/v1/chat/completions",
+				"/v1/embeddings", getProxiedRestClientBuilder(config), getProxiedWebClientBuilder(config));
 
 		// 3. 构建运行时选项 (设置默认的模型名称，如 "deepseek-chat" 或 "gpt-4")
 		OpenAiChatOptions openAiChatOptions = OpenAiChatOptions.builder()

@@ -1,0 +1,2490 @@
+{
+  "sqls" : 276,
+  "audit_bytes_sent" : 86482,
+  "audit_cells_masked" : 0,
+  "results" : [ {
+    "split" : "dev",
+    "id" : "S01-1",
+    "direct_ms" : 2.416729,
+    "gateway_ms" : 9.300913,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 170
+  }, {
+    "split" : "dev",
+    "id" : "S01-2",
+    "direct_ms" : 2.601299,
+    "gateway_ms" : 9.831078,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 282
+  }, {
+    "split" : "dev",
+    "id" : "S01-3",
+    "direct_ms" : 2.820246,
+    "gateway_ms" : 7.545592,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 170
+  }, {
+    "split" : "dev",
+    "id" : "S01-4",
+    "direct_ms" : 2.623068,
+    "gateway_ms" : 7.890818,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 282
+  }, {
+    "split" : "holdout",
+    "id" : "S02-1",
+    "direct_ms" : 2.068239,
+    "gateway_ms" : 8.505415,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 236
+  }, {
+    "split" : "holdout",
+    "id" : "S02-2",
+    "direct_ms" : 1.648044,
+    "gateway_ms" : 8.410586,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 394
+  }, {
+    "split" : "holdout",
+    "id" : "S02-3",
+    "direct_ms" : 1.785323,
+    "gateway_ms" : 6.595007,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 78
+  }, {
+    "split" : "holdout",
+    "id" : "S02-4",
+    "direct_ms" : 1.634698,
+    "gateway_ms" : 8.153216,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 154
+  }, {
+    "split" : "dev",
+    "id" : "S03-1",
+    "direct_ms" : 2.239783,
+    "gateway_ms" : 9.655374,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 184
+  }, {
+    "split" : "dev",
+    "id" : "S03-2",
+    "direct_ms" : 1.878429,
+    "gateway_ms" : 8.335459,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 288
+  }, {
+    "split" : "dev",
+    "id" : "S03-3",
+    "direct_ms" : 2.847933,
+    "gateway_ms" : 9.285699,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 172
+  }, {
+    "split" : "dev",
+    "id" : "S03-4",
+    "direct_ms" : 3.110812,
+    "gateway_ms" : 7.457326,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 300
+  }, {
+    "split" : "holdout",
+    "id" : "S04-1",
+    "direct_ms" : 1.640651,
+    "gateway_ms" : 6.949315,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 53
+  }, {
+    "split" : "holdout",
+    "id" : "S04-2",
+    "direct_ms" : 1.508472,
+    "gateway_ms" : 7.009612,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 52
+  }, {
+    "split" : "holdout",
+    "id" : "S04-3",
+    "direct_ms" : 1.453246,
+    "gateway_ms" : 11.709282,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 52
+  }, {
+    "split" : "holdout",
+    "id" : "S04-4",
+    "direct_ms" : 1.387297,
+    "gateway_ms" : 8.506462,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 53
+  }, {
+    "split" : "dev",
+    "id" : "S05-1",
+    "direct_ms" : 3.245428,
+    "gateway_ms" : 8.060683,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 200
+  }, {
+    "split" : "dev",
+    "id" : "S05-2",
+    "direct_ms" : 3.811079,
+    "gateway_ms" : 11.853128,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "dev",
+    "id" : "S05-3",
+    "direct_ms" : 3.284129,
+    "gateway_ms" : 9.893093,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 200
+  }, {
+    "split" : "dev",
+    "id" : "S05-4",
+    "direct_ms" : 3.646306,
+    "gateway_ms" : 8.99807,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "dev",
+    "id" : "S06-1",
+    "direct_ms" : 16.689467,
+    "gateway_ms" : 23.975943,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "S06-2",
+    "direct_ms" : 12.830168,
+    "gateway_ms" : 19.755026,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 30
+  }, {
+    "split" : "dev",
+    "id" : "S06-3",
+    "direct_ms" : 13.502416,
+    "gateway_ms" : 17.1203,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 30
+  }, {
+    "split" : "dev",
+    "id" : "S06-4",
+    "direct_ms" : 10.685529,
+    "gateway_ms" : 17.86225,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "S07-1",
+    "direct_ms" : 12.64766,
+    "gateway_ms" : 20.528973,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "holdout",
+    "id" : "S07-2",
+    "direct_ms" : 12.501569,
+    "gateway_ms" : 17.312645,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "holdout",
+    "id" : "S07-3",
+    "direct_ms" : 11.369048,
+    "gateway_ms" : 20.44222,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "holdout",
+    "id" : "S07-4",
+    "direct_ms" : 17.551324,
+    "gateway_ms" : 23.957847,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "dev",
+    "id" : "S08-1",
+    "direct_ms" : 4.273103,
+    "gateway_ms" : 10.349945,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 62
+  }, {
+    "split" : "dev",
+    "id" : "S08-2",
+    "direct_ms" : 4.801339,
+    "gateway_ms" : 10.74869,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 62
+  }, {
+    "split" : "dev",
+    "id" : "S08-3",
+    "direct_ms" : 5.82427,
+    "gateway_ms" : 11.624602,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 62
+  }, {
+    "split" : "dev",
+    "id" : "S08-4",
+    "direct_ms" : 8.40089,
+    "gateway_ms" : 14.949702,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 62
+  }, {
+    "split" : "holdout",
+    "id" : "S09-1",
+    "direct_ms" : 10.87178,
+    "gateway_ms" : 16.95096,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "S09-2",
+    "direct_ms" : 10.807052,
+    "gateway_ms" : 17.578126,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "S09-3",
+    "direct_ms" : 10.971727,
+    "gateway_ms" : 18.955138,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "S09-4",
+    "direct_ms" : 11.383377,
+    "gateway_ms" : 20.018078,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "S10-1",
+    "direct_ms" : 7.408246,
+    "gateway_ms" : 19.23834,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 33
+  }, {
+    "split" : "dev",
+    "id" : "S10-2",
+    "direct_ms" : 11.807838,
+    "gateway_ms" : 13.850109,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 33
+  }, {
+    "split" : "dev",
+    "id" : "S10-3",
+    "direct_ms" : 7.098296,
+    "gateway_ms" : 21.135428,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 33
+  }, {
+    "split" : "dev",
+    "id" : "S10-4",
+    "direct_ms" : 6.411133,
+    "gateway_ms" : 12.839362,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 33
+  }, {
+    "split" : "dev",
+    "id" : "S11-1",
+    "direct_ms" : 13.873961,
+    "gateway_ms" : 19.704097,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 124
+  }, {
+    "split" : "dev",
+    "id" : "S11-2",
+    "direct_ms" : 14.967352,
+    "gateway_ms" : 22.195279,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 124
+  }, {
+    "split" : "dev",
+    "id" : "S11-3",
+    "direct_ms" : 14.005033,
+    "gateway_ms" : 21.121952,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 124
+  }, {
+    "split" : "dev",
+    "id" : "S11-4",
+    "direct_ms" : 13.590411,
+    "gateway_ms" : 20.078749,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 124
+  }, {
+    "split" : "holdout",
+    "id" : "S12-1",
+    "direct_ms" : 11.844586,
+    "gateway_ms" : 16.776492,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 104
+  }, {
+    "split" : "holdout",
+    "id" : "S12-2",
+    "direct_ms" : 11.081576,
+    "gateway_ms" : 15.910121,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 104
+  }, {
+    "split" : "holdout",
+    "id" : "S12-3",
+    "direct_ms" : 11.05997,
+    "gateway_ms" : 21.538794,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 104
+  }, {
+    "split" : "holdout",
+    "id" : "S12-4",
+    "direct_ms" : 10.737777,
+    "gateway_ms" : 21.398928,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 104
+  }, {
+    "split" : "dev",
+    "id" : "S13-1",
+    "direct_ms" : 6.091448,
+    "gateway_ms" : 14.299551,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 142
+  }, {
+    "split" : "dev",
+    "id" : "S13-2",
+    "direct_ms" : 4.795768,
+    "gateway_ms" : 12.107392,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 142
+  }, {
+    "split" : "dev",
+    "id" : "S13-3",
+    "direct_ms" : 5.458805,
+    "gateway_ms" : 8.926836,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 142
+  }, {
+    "split" : "dev",
+    "id" : "S13-4",
+    "direct_ms" : 3.264621,
+    "gateway_ms" : 9.030629,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 142
+  }, {
+    "split" : "holdout",
+    "id" : "S14-1",
+    "direct_ms" : 11.08517,
+    "gateway_ms" : 16.766085,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "holdout",
+    "id" : "S14-2",
+    "direct_ms" : 11.311457,
+    "gateway_ms" : 17.655194,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "holdout",
+    "id" : "S14-3",
+    "direct_ms" : 11.403161,
+    "gateway_ms" : 16.270025,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "holdout",
+    "id" : "S14-4",
+    "direct_ms" : 11.403768,
+    "gateway_ms" : 17.228437,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "dev",
+    "id" : "S15-1",
+    "direct_ms" : 10.978306,
+    "gateway_ms" : 16.196404,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 160
+  }, {
+    "split" : "dev",
+    "id" : "S15-2",
+    "direct_ms" : 11.019496,
+    "gateway_ms" : 18.436401,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 160
+  }, {
+    "split" : "dev",
+    "id" : "S15-3",
+    "direct_ms" : 11.018954,
+    "gateway_ms" : 16.073295,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 160
+  }, {
+    "split" : "dev",
+    "id" : "S15-4",
+    "direct_ms" : 10.897208,
+    "gateway_ms" : 15.12804,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 160
+  }, {
+    "split" : "dev",
+    "id" : "S16-1",
+    "direct_ms" : 11.269648,
+    "gateway_ms" : 17.658864,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1346
+  }, {
+    "split" : "dev",
+    "id" : "S16-2",
+    "direct_ms" : 10.659463,
+    "gateway_ms" : 18.8847,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1490
+  }, {
+    "split" : "dev",
+    "id" : "S16-3",
+    "direct_ms" : 11.849696,
+    "gateway_ms" : 17.227868,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1490
+  }, {
+    "split" : "dev",
+    "id" : "S16-4",
+    "direct_ms" : 14.203568,
+    "gateway_ms" : 18.194849,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1345
+  }, {
+    "split" : "holdout",
+    "id" : "S17-1",
+    "direct_ms" : 12.100057,
+    "gateway_ms" : 19.784987,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 308
+  }, {
+    "split" : "holdout",
+    "id" : "S17-2",
+    "direct_ms" : 11.995636,
+    "gateway_ms" : 18.2759,
+    "rows" : 7,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 359
+  }, {
+    "split" : "holdout",
+    "id" : "S17-3",
+    "direct_ms" : 12.882508,
+    "gateway_ms" : 18.431449,
+    "rows" : 7,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 359
+  }, {
+    "split" : "holdout",
+    "id" : "S17-4",
+    "direct_ms" : 11.412931,
+    "gateway_ms" : 16.200669,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 206
+  }, {
+    "split" : "dev",
+    "id" : "S18-1",
+    "direct_ms" : 3.855277,
+    "gateway_ms" : 8.257131,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1402
+  }, {
+    "split" : "dev",
+    "id" : "S18-2",
+    "direct_ms" : 3.218091,
+    "gateway_ms" : 9.080947,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1567
+  }, {
+    "split" : "dev",
+    "id" : "S18-3",
+    "direct_ms" : 3.225674,
+    "gateway_ms" : 8.461353,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1559
+  }, {
+    "split" : "dev",
+    "id" : "S18-4",
+    "direct_ms" : 3.313924,
+    "gateway_ms" : 7.644896,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1402
+  }, {
+    "split" : "holdout",
+    "id" : "S19-1",
+    "direct_ms" : 2.345392,
+    "gateway_ms" : 8.608923,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 158
+  }, {
+    "split" : "holdout",
+    "id" : "S19-2",
+    "direct_ms" : 2.571117,
+    "gateway_ms" : 6.716328,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 316
+  }, {
+    "split" : "holdout",
+    "id" : "S19-3",
+    "direct_ms" : 2.412801,
+    "gateway_ms" : 7.683629,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 211
+  }, {
+    "split" : "holdout",
+    "id" : "S19-4",
+    "direct_ms" : 2.045383,
+    "gateway_ms" : 6.700308,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 106
+  }, {
+    "split" : "dev",
+    "id" : "S20-1",
+    "direct_ms" : 3.526451,
+    "gateway_ms" : 8.290309,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1152
+  }, {
+    "split" : "dev",
+    "id" : "S20-2",
+    "direct_ms" : 2.923336,
+    "gateway_ms" : 16.214547,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1273
+  }, {
+    "split" : "dev",
+    "id" : "S20-3",
+    "direct_ms" : 3.337606,
+    "gateway_ms" : 8.903236,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1274
+  }, {
+    "split" : "dev",
+    "id" : "S20-4",
+    "direct_ms" : 2.957951,
+    "gateway_ms" : 10.031619,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1151
+  }, {
+    "split" : "dev",
+    "id" : "S21-1",
+    "direct_ms" : 13.484749,
+    "gateway_ms" : 19.246674,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 157
+  }, {
+    "split" : "dev",
+    "id" : "S21-2",
+    "direct_ms" : 11.689992,
+    "gateway_ms" : 20.064732,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 158
+  }, {
+    "split" : "dev",
+    "id" : "S21-3",
+    "direct_ms" : 10.983617,
+    "gateway_ms" : 15.92842,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 157
+  }, {
+    "split" : "dev",
+    "id" : "S21-4",
+    "direct_ms" : 10.425549,
+    "gateway_ms" : 19.169244,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 156
+  }, {
+    "split" : "holdout",
+    "id" : "S22-1",
+    "direct_ms" : 11.648264,
+    "gateway_ms" : 17.433055,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "holdout",
+    "id" : "S22-2",
+    "direct_ms" : 11.79254,
+    "gateway_ms" : 24.386012,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "holdout",
+    "id" : "S22-3",
+    "direct_ms" : 11.676828,
+    "gateway_ms" : 21.920211,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "holdout",
+    "id" : "S22-4",
+    "direct_ms" : 16.496701,
+    "gateway_ms" : 17.049737,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 332
+  }, {
+    "split" : "dev",
+    "id" : "S23-1",
+    "direct_ms" : 6.32874,
+    "gateway_ms" : 13.68441,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 308
+  }, {
+    "split" : "dev",
+    "id" : "S23-2",
+    "direct_ms" : 6.189375,
+    "gateway_ms" : 10.544367,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 307
+  }, {
+    "split" : "dev",
+    "id" : "S23-3",
+    "direct_ms" : 5.537574,
+    "gateway_ms" : 21.022673,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 306
+  }, {
+    "split" : "dev",
+    "id" : "S23-4",
+    "direct_ms" : 5.905996,
+    "gateway_ms" : 11.051536,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 307
+  }, {
+    "split" : "holdout",
+    "id" : "S24-1",
+    "direct_ms" : 2.364136,
+    "gateway_ms" : 9.892268,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 56
+  }, {
+    "split" : "holdout",
+    "id" : "S24-2",
+    "direct_ms" : 1.90239,
+    "gateway_ms" : 6.772069,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 156
+  }, {
+    "split" : "holdout",
+    "id" : "S24-3",
+    "direct_ms" : 1.78567,
+    "gateway_ms" : 6.072815,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 156
+  }, {
+    "split" : "holdout",
+    "id" : "S24-4",
+    "direct_ms" : 1.815902,
+    "gateway_ms" : 6.055066,
+    "rows" : 4,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 207
+  }, {
+    "split" : "dev",
+    "id" : "J01-1",
+    "direct_ms" : 23.452842,
+    "gateway_ms" : 26.545966,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 132
+  }, {
+    "split" : "dev",
+    "id" : "J01-2",
+    "direct_ms" : 8.18301,
+    "gateway_ms" : 15.908896,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 141
+  }, {
+    "split" : "dev",
+    "id" : "J01-3",
+    "direct_ms" : 6.889458,
+    "gateway_ms" : 14.073607,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 66
+  }, {
+    "split" : "dev",
+    "id" : "J01-4",
+    "direct_ms" : 11.985076,
+    "gateway_ms" : 17.354195,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 65
+  }, {
+    "split" : "holdout",
+    "id" : "J02-1",
+    "direct_ms" : 19.394738,
+    "gateway_ms" : 24.541351,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 215
+  }, {
+    "split" : "holdout",
+    "id" : "J02-2",
+    "direct_ms" : 18.306285,
+    "gateway_ms" : 25.26634,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 358
+  }, {
+    "split" : "holdout",
+    "id" : "J02-3",
+    "direct_ms" : 22.833417,
+    "gateway_ms" : 33.794658,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 358
+  }, {
+    "split" : "holdout",
+    "id" : "J02-4",
+    "direct_ms" : 22.105882,
+    "gateway_ms" : 33.251469,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 215
+  }, {
+    "split" : "dev",
+    "id" : "J03-1",
+    "direct_ms" : 21.881535,
+    "gateway_ms" : 31.947273,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 159
+  }, {
+    "split" : "dev",
+    "id" : "J03-2",
+    "direct_ms" : 22.748576,
+    "gateway_ms" : 32.233315,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 158
+  }, {
+    "split" : "dev",
+    "id" : "J03-3",
+    "direct_ms" : 22.840578,
+    "gateway_ms" : 28.378771,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 264
+  }, {
+    "split" : "dev",
+    "id" : "J03-4",
+    "direct_ms" : 19.360036,
+    "gateway_ms" : 29.088885,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "holdout",
+    "id" : "J04-1",
+    "direct_ms" : 4.195788,
+    "gateway_ms" : 7.248822,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 100
+  }, {
+    "split" : "holdout",
+    "id" : "J04-2",
+    "direct_ms" : 2.222568,
+    "gateway_ms" : 6.428455,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 149
+  }, {
+    "split" : "holdout",
+    "id" : "J04-3",
+    "direct_ms" : 2.166903,
+    "gateway_ms" : 6.09284,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 149
+  }, {
+    "split" : "holdout",
+    "id" : "J04-4",
+    "direct_ms" : 1.961912,
+    "gateway_ms" : 8.087204,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 100
+  }, {
+    "split" : "dev",
+    "id" : "J05-1",
+    "direct_ms" : 12.502754,
+    "gateway_ms" : 16.723008,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 106
+  }, {
+    "split" : "dev",
+    "id" : "J05-2",
+    "direct_ms" : 11.669332,
+    "gateway_ms" : 16.921667,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 167
+  }, {
+    "split" : "dev",
+    "id" : "J05-3",
+    "direct_ms" : 11.646326,
+    "gateway_ms" : 16.365331,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 115
+  }, {
+    "split" : "dev",
+    "id" : "J05-4",
+    "direct_ms" : 10.930406,
+    "gateway_ms" : 15.866387,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 164
+  }, {
+    "split" : "dev",
+    "id" : "J06-1",
+    "direct_ms" : 18.471466,
+    "gateway_ms" : 20.180919,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "J06-2",
+    "direct_ms" : 5.73241,
+    "gateway_ms" : 11.950203,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "J06-3",
+    "direct_ms" : 7.617355,
+    "gateway_ms" : 10.782121,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "J06-4",
+    "direct_ms" : 8.722223,
+    "gateway_ms" : 12.61749,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "J07-1",
+    "direct_ms" : 11.578053,
+    "gateway_ms" : 14.132495,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "J07-2",
+    "direct_ms" : 12.388449,
+    "gateway_ms" : 16.623394,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "J07-3",
+    "direct_ms" : 10.102234,
+    "gateway_ms" : 15.212625,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "J07-4",
+    "direct_ms" : 9.629077,
+    "gateway_ms" : 18.324028,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "J08-1",
+    "direct_ms" : 21.73706,
+    "gateway_ms" : 23.268723,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 31
+  }, {
+    "split" : "dev",
+    "id" : "J08-2",
+    "direct_ms" : 20.742008,
+    "gateway_ms" : 25.653768,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 31
+  }, {
+    "split" : "dev",
+    "id" : "J08-3",
+    "direct_ms" : 20.460019,
+    "gateway_ms" : 35.578643,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 31
+  }, {
+    "split" : "dev",
+    "id" : "J08-4",
+    "direct_ms" : 19.143978,
+    "gateway_ms" : 25.109251,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 30
+  }, {
+    "split" : "holdout",
+    "id" : "J09-1",
+    "direct_ms" : 4.723849,
+    "gateway_ms" : 8.789041,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 48
+  }, {
+    "split" : "holdout",
+    "id" : "J09-2",
+    "direct_ms" : 7.799641,
+    "gateway_ms" : 13.894532,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 49
+  }, {
+    "split" : "holdout",
+    "id" : "J09-3",
+    "direct_ms" : 7.998732,
+    "gateway_ms" : 12.059544,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 49
+  }, {
+    "split" : "holdout",
+    "id" : "J09-4",
+    "direct_ms" : 3.384982,
+    "gateway_ms" : 9.758484,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 47
+  }, {
+    "split" : "dev",
+    "id" : "J10-1",
+    "direct_ms" : 11.01738,
+    "gateway_ms" : 13.429594,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 25
+  }, {
+    "split" : "dev",
+    "id" : "J10-2",
+    "direct_ms" : 15.754283,
+    "gateway_ms" : 24.97434,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 26
+  }, {
+    "split" : "dev",
+    "id" : "J10-3",
+    "direct_ms" : 5.589372,
+    "gateway_ms" : 8.452245,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 25
+  }, {
+    "split" : "dev",
+    "id" : "J10-4",
+    "direct_ms" : 30.026781,
+    "gateway_ms" : 31.39725,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 26
+  }, {
+    "split" : "holdout",
+    "id" : "J11-1",
+    "direct_ms" : 17.903688,
+    "gateway_ms" : 24.280457,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 98
+  }, {
+    "split" : "holdout",
+    "id" : "J11-2",
+    "direct_ms" : 17.715432,
+    "gateway_ms" : 21.256041,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 98
+  }, {
+    "split" : "holdout",
+    "id" : "J11-3",
+    "direct_ms" : 16.613963,
+    "gateway_ms" : 21.258751,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 98
+  }, {
+    "split" : "holdout",
+    "id" : "J11-4",
+    "direct_ms" : 17.08115,
+    "gateway_ms" : 21.216297,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 98
+  }, {
+    "split" : "dev",
+    "id" : "J12-1",
+    "direct_ms" : 16.412151,
+    "gateway_ms" : 20.922205,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 113
+  }, {
+    "split" : "dev",
+    "id" : "J12-2",
+    "direct_ms" : 10.19418,
+    "gateway_ms" : 15.172732,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "dev",
+    "id" : "J12-3",
+    "direct_ms" : 7.716242,
+    "gateway_ms" : 12.899229,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 113
+  }, {
+    "split" : "dev",
+    "id" : "J12-4",
+    "direct_ms" : 7.261308,
+    "gateway_ms" : 11.53399,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "dev",
+    "id" : "J13-1",
+    "direct_ms" : 16.239901,
+    "gateway_ms" : 19.976926,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 96
+  }, {
+    "split" : "dev",
+    "id" : "J13-2",
+    "direct_ms" : 17.713477,
+    "gateway_ms" : 21.995278,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 97
+  }, {
+    "split" : "dev",
+    "id" : "J13-3",
+    "direct_ms" : 17.621193,
+    "gateway_ms" : 21.967149,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 96
+  }, {
+    "split" : "dev",
+    "id" : "J13-4",
+    "direct_ms" : 15.881929,
+    "gateway_ms" : 20.86439,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 96
+  }, {
+    "split" : "holdout",
+    "id" : "J14-1",
+    "direct_ms" : 12.269401,
+    "gateway_ms" : 17.722967,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 281
+  }, {
+    "split" : "holdout",
+    "id" : "J14-2",
+    "direct_ms" : 12.109969,
+    "gateway_ms" : 16.898162,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 281
+  }, {
+    "split" : "holdout",
+    "id" : "J14-3",
+    "direct_ms" : 11.745432,
+    "gateway_ms" : 15.867475,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 281
+  }, {
+    "split" : "holdout",
+    "id" : "J14-4",
+    "direct_ms" : 12.663969,
+    "gateway_ms" : 16.831071,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 281
+  }, {
+    "split" : "dev",
+    "id" : "J15-1",
+    "direct_ms" : 26.180594,
+    "gateway_ms" : 25.147218,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1538
+  }, {
+    "split" : "dev",
+    "id" : "J15-2",
+    "direct_ms" : 10.027542,
+    "gateway_ms" : 16.28155,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1681
+  }, {
+    "split" : "dev",
+    "id" : "J15-3",
+    "direct_ms" : 9.061011,
+    "gateway_ms" : 13.343453,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1679
+  }, {
+    "split" : "dev",
+    "id" : "J15-4",
+    "direct_ms" : 7.377509,
+    "gateway_ms" : 10.905207,
+    "rows" : 26,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1395
+  }, {
+    "split" : "holdout",
+    "id" : "J16-1",
+    "direct_ms" : 100.972088,
+    "gateway_ms" : 130.696594,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 629
+  }, {
+    "split" : "holdout",
+    "id" : "J16-2",
+    "direct_ms" : 118.911834,
+    "gateway_ms" : 112.445876,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 626
+  }, {
+    "split" : "holdout",
+    "id" : "J16-3",
+    "direct_ms" : 142.886592,
+    "gateway_ms" : 119.842973,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 614
+  }, {
+    "split" : "holdout",
+    "id" : "J16-4",
+    "direct_ms" : 101.671575,
+    "gateway_ms" : 107.031157,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 622
+  }, {
+    "split" : "dev",
+    "id" : "J17-1",
+    "direct_ms" : 3.806678,
+    "gateway_ms" : 8.38555,
+    "rows" : 21,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 863
+  }, {
+    "split" : "dev",
+    "id" : "J17-2",
+    "direct_ms" : 6.480439,
+    "gateway_ms" : 9.754156,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1281
+  }, {
+    "split" : "dev",
+    "id" : "J17-3",
+    "direct_ms" : 7.78702,
+    "gateway_ms" : 11.540846,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1297
+  }, {
+    "split" : "dev",
+    "id" : "J17-4",
+    "direct_ms" : 4.504028,
+    "gateway_ms" : 10.065618,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1151
+  }, {
+    "split" : "holdout",
+    "id" : "J18-1",
+    "direct_ms" : 14.41751,
+    "gateway_ms" : 16.076043,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 602
+  }, {
+    "split" : "holdout",
+    "id" : "J18-2",
+    "direct_ms" : 13.012647,
+    "gateway_ms" : 21.34316,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 602
+  }, {
+    "split" : "holdout",
+    "id" : "J18-3",
+    "direct_ms" : 10.61181,
+    "gateway_ms" : 14.11989,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 602
+  }, {
+    "split" : "holdout",
+    "id" : "J18-4",
+    "direct_ms" : 13.54444,
+    "gateway_ms" : 14.783389,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 602
+  }, {
+    "split" : "dev",
+    "id" : "J19-1",
+    "direct_ms" : 29.280816,
+    "gateway_ms" : 31.395506,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 2079
+  }, {
+    "split" : "dev",
+    "id" : "J19-2",
+    "direct_ms" : 35.046296,
+    "gateway_ms" : 35.127714,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 2012
+  }, {
+    "split" : "dev",
+    "id" : "J19-3",
+    "direct_ms" : 24.609234,
+    "gateway_ms" : 27.187174,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 2012
+  }, {
+    "split" : "dev",
+    "id" : "J19-4",
+    "direct_ms" : 34.065922,
+    "gateway_ms" : 37.095789,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 2079
+  }, {
+    "split" : "dev",
+    "id" : "J20-1",
+    "direct_ms" : 17.086425,
+    "gateway_ms" : 17.092893,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 158
+  }, {
+    "split" : "dev",
+    "id" : "J20-2",
+    "direct_ms" : 6.515421,
+    "gateway_ms" : 10.029385,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 105
+  }, {
+    "split" : "dev",
+    "id" : "J20-3",
+    "direct_ms" : 5.545787,
+    "gateway_ms" : 8.728103,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "dev",
+    "id" : "J20-4",
+    "direct_ms" : 4.470488,
+    "gateway_ms" : 7.724757,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 53
+  }, {
+    "split" : "holdout",
+    "id" : "J21-1",
+    "direct_ms" : 17.878611,
+    "gateway_ms" : 22.593287,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 170
+  }, {
+    "split" : "holdout",
+    "id" : "J21-2",
+    "direct_ms" : 18.933222,
+    "gateway_ms" : 23.023397,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 149
+  }, {
+    "split" : "holdout",
+    "id" : "J21-3",
+    "direct_ms" : 18.688433,
+    "gateway_ms" : 22.963933,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 155
+  }, {
+    "split" : "holdout",
+    "id" : "J21-4",
+    "direct_ms" : 18.894537,
+    "gateway_ms" : 23.120629,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 167
+  }, {
+    "split" : "dev",
+    "id" : "J22-1",
+    "direct_ms" : 11.032379,
+    "gateway_ms" : 12.780609,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 176
+  }, {
+    "split" : "dev",
+    "id" : "J22-2",
+    "direct_ms" : 10.870921,
+    "gateway_ms" : 13.395815,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 179
+  }, {
+    "split" : "dev",
+    "id" : "J22-3",
+    "direct_ms" : 8.68342,
+    "gateway_ms" : 16.633693,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 179
+  }, {
+    "split" : "dev",
+    "id" : "J22-4",
+    "direct_ms" : 8.116451,
+    "gateway_ms" : 11.321663,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 185
+  }, {
+    "split" : "holdout",
+    "id" : "J23-1",
+    "direct_ms" : 3.32398,
+    "gateway_ms" : 6.334929,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 372
+  }, {
+    "split" : "holdout",
+    "id" : "J23-2",
+    "direct_ms" : 2.758044,
+    "gateway_ms" : 6.156888,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 372
+  }, {
+    "split" : "holdout",
+    "id" : "J23-3",
+    "direct_ms" : 2.752171,
+    "gateway_ms" : 5.991599,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 372
+  }, {
+    "split" : "holdout",
+    "id" : "J23-4",
+    "direct_ms" : 2.857424,
+    "gateway_ms" : 9.022524,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 374
+  }, {
+    "split" : "dev",
+    "id" : "J24-1",
+    "direct_ms" : 6.500984,
+    "gateway_ms" : 7.768484,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 343
+  }, {
+    "split" : "dev",
+    "id" : "J24-2",
+    "direct_ms" : 3.430526,
+    "gateway_ms" : 7.459698,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 67
+  }, {
+    "split" : "dev",
+    "id" : "J24-3",
+    "direct_ms" : 4.834331,
+    "gateway_ms" : 8.672676,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 144
+  }, {
+    "split" : "dev",
+    "id" : "J24-4",
+    "direct_ms" : 3.062359,
+    "gateway_ms" : 6.315179,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 67
+  }, {
+    "split" : "dev",
+    "id" : "M01-1",
+    "direct_ms" : 39.357478,
+    "gateway_ms" : 34.902719,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 121
+  }, {
+    "split" : "dev",
+    "id" : "M01-2",
+    "direct_ms" : 28.535293,
+    "gateway_ms" : 30.81439,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 188
+  }, {
+    "split" : "dev",
+    "id" : "M01-3",
+    "direct_ms" : 27.317134,
+    "gateway_ms" : 31.713279,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 125
+  }, {
+    "split" : "dev",
+    "id" : "M01-4",
+    "direct_ms" : 26.854423,
+    "gateway_ms" : 31.25505,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 180
+  }, {
+    "split" : "holdout",
+    "id" : "M02-1",
+    "direct_ms" : 21.956182,
+    "gateway_ms" : 25.708345,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 167
+  }, {
+    "split" : "holdout",
+    "id" : "M02-2",
+    "direct_ms" : 21.197647,
+    "gateway_ms" : 25.352136,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 164
+  }, {
+    "split" : "holdout",
+    "id" : "M02-3",
+    "direct_ms" : 21.140394,
+    "gateway_ms" : 33.304852,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 272
+  }, {
+    "split" : "holdout",
+    "id" : "M02-4",
+    "direct_ms" : 21.331723,
+    "gateway_ms" : 26.348567,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 273
+  }, {
+    "split" : "dev",
+    "id" : "M03-1",
+    "direct_ms" : 3.853414,
+    "gateway_ms" : 5.65811,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 155
+  }, {
+    "split" : "dev",
+    "id" : "M03-2",
+    "direct_ms" : 2.166246,
+    "gateway_ms" : 5.208678,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 257
+  }, {
+    "split" : "dev",
+    "id" : "M03-3",
+    "direct_ms" : 1.534194,
+    "gateway_ms" : 4.628425,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 155
+  }, {
+    "split" : "dev",
+    "id" : "M03-4",
+    "direct_ms" : 1.600958,
+    "gateway_ms" : 5.571417,
+    "rows" : 5,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 257
+  }, {
+    "split" : "dev",
+    "id" : "M04-1",
+    "direct_ms" : 18.564288,
+    "gateway_ms" : 17.320672,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 36
+  }, {
+    "split" : "dev",
+    "id" : "M04-2",
+    "direct_ms" : 5.975041,
+    "gateway_ms" : 14.999361,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 36
+  }, {
+    "split" : "dev",
+    "id" : "M04-3",
+    "direct_ms" : 5.112099,
+    "gateway_ms" : 10.602735,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 36
+  }, {
+    "split" : "dev",
+    "id" : "M04-4",
+    "direct_ms" : 4.655755,
+    "gateway_ms" : 7.656688,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 35
+  }, {
+    "split" : "holdout",
+    "id" : "M05-1",
+    "direct_ms" : 9.83678,
+    "gateway_ms" : 12.111974,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "M05-2",
+    "direct_ms" : 7.940837,
+    "gateway_ms" : 11.02307,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "M05-3",
+    "direct_ms" : 7.0843,
+    "gateway_ms" : 10.303722,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "holdout",
+    "id" : "M05-4",
+    "direct_ms" : 8.402682,
+    "gateway_ms" : 11.195936,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 29
+  }, {
+    "split" : "dev",
+    "id" : "M06-1",
+    "direct_ms" : 7.020184,
+    "gateway_ms" : 8.497513,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 32
+  }, {
+    "split" : "dev",
+    "id" : "M06-2",
+    "direct_ms" : 2.794392,
+    "gateway_ms" : 5.194745,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 31
+  }, {
+    "split" : "dev",
+    "id" : "M06-3",
+    "direct_ms" : 4.753147,
+    "gateway_ms" : 6.55839,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 32
+  }, {
+    "split" : "dev",
+    "id" : "M06-4",
+    "direct_ms" : 5.569781,
+    "gateway_ms" : 8.461178,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 32
+  }, {
+    "split" : "dev",
+    "id" : "M07-1",
+    "direct_ms" : 12.77519,
+    "gateway_ms" : 16.259131,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "dev",
+    "id" : "M07-2",
+    "direct_ms" : 13.091759,
+    "gateway_ms" : 17.134438,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 104
+  }, {
+    "split" : "dev",
+    "id" : "M07-3",
+    "direct_ms" : 12.65823,
+    "gateway_ms" : 16.66866,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 53
+  }, {
+    "split" : "dev",
+    "id" : "M07-4",
+    "direct_ms" : 12.223052,
+    "gateway_ms" : 16.483146,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 52
+  }, {
+    "split" : "holdout",
+    "id" : "M08-1",
+    "direct_ms" : 24.527907,
+    "gateway_ms" : 23.830267,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "holdout",
+    "id" : "M08-2",
+    "direct_ms" : 9.595257,
+    "gateway_ms" : 14.053477,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "holdout",
+    "id" : "M08-3",
+    "direct_ms" : 7.324695,
+    "gateway_ms" : 12.592182,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "holdout",
+    "id" : "M08-4",
+    "direct_ms" : 6.407407,
+    "gateway_ms" : 15.141558,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 112
+  }, {
+    "split" : "dev",
+    "id" : "M09-1",
+    "direct_ms" : 12.189765,
+    "gateway_ms" : 15.624392,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 110
+  }, {
+    "split" : "dev",
+    "id" : "M09-2",
+    "direct_ms" : 12.365464,
+    "gateway_ms" : 15.767141,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 110
+  }, {
+    "split" : "dev",
+    "id" : "M09-3",
+    "direct_ms" : 12.476215,
+    "gateway_ms" : 15.638723,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 110
+  }, {
+    "split" : "dev",
+    "id" : "M09-4",
+    "direct_ms" : 11.919587,
+    "gateway_ms" : 15.661386,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 110
+  }, {
+    "split" : "dev",
+    "id" : "M10-1",
+    "direct_ms" : 10.286321,
+    "gateway_ms" : 12.29437,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "dev",
+    "id" : "M10-2",
+    "direct_ms" : 9.208974,
+    "gateway_ms" : 15.140491,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "dev",
+    "id" : "M10-3",
+    "direct_ms" : 10.649209,
+    "gateway_ms" : 13.87735,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "dev",
+    "id" : "M10-4",
+    "direct_ms" : 9.441418,
+    "gateway_ms" : 13.30196,
+    "rows" : 2,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 102
+  }, {
+    "split" : "holdout",
+    "id" : "M11-1",
+    "direct_ms" : 12.874217,
+    "gateway_ms" : 16.117514,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1439
+  }, {
+    "split" : "holdout",
+    "id" : "M11-2",
+    "direct_ms" : 6.625925,
+    "gateway_ms" : 10.139101,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1420
+  }, {
+    "split" : "holdout",
+    "id" : "M11-3",
+    "direct_ms" : 5.363863,
+    "gateway_ms" : 10.575902,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1414
+  }, {
+    "split" : "holdout",
+    "id" : "M11-4",
+    "direct_ms" : 4.435597,
+    "gateway_ms" : 7.879893,
+    "rows" : 30,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1408
+  }, {
+    "split" : "dev",
+    "id" : "M12-1",
+    "direct_ms" : 100.818138,
+    "gateway_ms" : 107.943712,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 625
+  }, {
+    "split" : "dev",
+    "id" : "M12-2",
+    "direct_ms" : 96.583285,
+    "gateway_ms" : 101.763658,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 614
+  }, {
+    "split" : "dev",
+    "id" : "M12-3",
+    "direct_ms" : 97.185234,
+    "gateway_ms" : 99.788808,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 629
+  }, {
+    "split" : "dev",
+    "id" : "M12-4",
+    "direct_ms" : 96.067707,
+    "gateway_ms" : 105.09009,
+    "rows" : 12,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 614
+  }, {
+    "split" : "dev",
+    "id" : "M13-1",
+    "direct_ms" : 8.799672,
+    "gateway_ms" : 11.380946,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1157
+  }, {
+    "split" : "dev",
+    "id" : "M13-2",
+    "direct_ms" : 6.920259,
+    "gateway_ms" : 10.441769,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1285
+  }, {
+    "split" : "dev",
+    "id" : "M13-3",
+    "direct_ms" : 7.727272,
+    "gateway_ms" : 10.486945,
+    "rows" : 31,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1296
+  }, {
+    "split" : "dev",
+    "id" : "M13-4",
+    "direct_ms" : 6.406781,
+    "gateway_ms" : 9.144424,
+    "rows" : 28,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 1159
+  }, {
+    "split" : "dev",
+    "id" : "M14-1",
+    "direct_ms" : 6.139977,
+    "gateway_ms" : 8.75155,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 53
+  }, {
+    "split" : "dev",
+    "id" : "M14-2",
+    "direct_ms" : 5.313547,
+    "gateway_ms" : 7.877236,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "dev",
+    "id" : "M14-3",
+    "direct_ms" : 5.025645,
+    "gateway_ms" : 7.881953,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 54
+  }, {
+    "split" : "dev",
+    "id" : "M14-4",
+    "direct_ms" : 16.836094,
+    "gateway_ms" : 17.652737,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 158
+  }, {
+    "split" : "holdout",
+    "id" : "M15-1",
+    "direct_ms" : 5.142753,
+    "gateway_ms" : 8.042019,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 402
+  }, {
+    "split" : "holdout",
+    "id" : "M15-2",
+    "direct_ms" : 4.648244,
+    "gateway_ms" : 7.394854,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 402
+  }, {
+    "split" : "holdout",
+    "id" : "M15-3",
+    "direct_ms" : 4.735981,
+    "gateway_ms" : 7.048213,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 402
+  }, {
+    "split" : "holdout",
+    "id" : "M15-4",
+    "direct_ms" : 4.473916,
+    "gateway_ms" : 8.061016,
+    "rows" : 6,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 404
+  }, {
+    "split" : "holdout",
+    "id" : "M16-1",
+    "direct_ms" : 11.520936,
+    "gateway_ms" : 13.002456,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 178
+  }, {
+    "split" : "holdout",
+    "id" : "M16-2",
+    "direct_ms" : 11.896889,
+    "gateway_ms" : 14.045016,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 179
+  }, {
+    "split" : "holdout",
+    "id" : "M16-3",
+    "direct_ms" : 10.59076,
+    "gateway_ms" : 12.790794,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 179
+  }, {
+    "split" : "holdout",
+    "id" : "M16-4",
+    "direct_ms" : 14.547454,
+    "gateway_ms" : 10.993978,
+    "rows" : 3,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 188
+  }, {
+    "split" : "dev",
+    "id" : "P01-1",
+    "direct_ms" : 13.015063,
+    "gateway_ms" : 17.397806,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 257
+  }, {
+    "split" : "dev",
+    "id" : "P01-2",
+    "direct_ms" : 11.740548,
+    "gateway_ms" : 22.025122,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "dev",
+    "id" : "P01-3",
+    "direct_ms" : 11.815624,
+    "gateway_ms" : 16.308961,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "dev",
+    "id" : "P01-4",
+    "direct_ms" : 13.021457,
+    "gateway_ms" : 19.003394,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 257
+  }, {
+    "split" : "dev",
+    "id" : "P03-1",
+    "direct_ms" : 17.074322,
+    "gateway_ms" : 18.850433,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "dev",
+    "id" : "P03-2",
+    "direct_ms" : 7.28405,
+    "gateway_ms" : 11.283693,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "dev",
+    "id" : "P03-3",
+    "direct_ms" : 5.963552,
+    "gateway_ms" : 9.536497,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 256
+  }, {
+    "split" : "dev",
+    "id" : "P03-4",
+    "direct_ms" : 5.263269,
+    "gateway_ms" : 8.947681,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 257
+  }, {
+    "split" : "dev",
+    "id" : "P05-1",
+    "direct_ms" : 9.524083,
+    "gateway_ms" : 13.053027,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 64
+  }, {
+    "split" : "dev",
+    "id" : "P05-2",
+    "direct_ms" : 9.226459,
+    "gateway_ms" : 13.152385,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 65
+  }, {
+    "split" : "dev",
+    "id" : "P05-3",
+    "direct_ms" : 9.365634,
+    "gateway_ms" : 13.395371,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 65
+  }, {
+    "split" : "dev",
+    "id" : "P05-4",
+    "direct_ms" : 9.70355,
+    "gateway_ms" : 13.471355,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 64
+  }, {
+    "split" : "dev",
+    "id" : "P08-1",
+    "direct_ms" : 2.288851,
+    "gateway_ms" : 5.3068,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 27
+  }, {
+    "split" : "dev",
+    "id" : "P08-2",
+    "direct_ms" : 1.93328,
+    "gateway_ms" : 5.372658,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 27
+  }, {
+    "split" : "dev",
+    "id" : "P08-3",
+    "direct_ms" : 2.073232,
+    "gateway_ms" : 4.98437,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 27
+  }, {
+    "split" : "dev",
+    "id" : "P08-4",
+    "direct_ms" : 1.927519,
+    "gateway_ms" : 5.067182,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 27
+  }, {
+    "split" : "dev",
+    "id" : "P13-1",
+    "direct_ms" : 11.737347,
+    "gateway_ms" : 13.088557,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 70
+  }, {
+    "split" : "dev",
+    "id" : "P13-2",
+    "direct_ms" : 9.432966,
+    "gateway_ms" : 13.305153,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 70
+  }, {
+    "split" : "dev",
+    "id" : "P13-3",
+    "direct_ms" : 10.108611,
+    "gateway_ms" : 12.667108,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 70
+  }, {
+    "split" : "dev",
+    "id" : "P13-4",
+    "direct_ms" : 9.290821,
+    "gateway_ms" : 12.658466,
+    "rows" : 1,
+    "masked_columns" : 0,
+    "identical" : true,
+    "direct_json_bytes" : 70
+  } ]
+}

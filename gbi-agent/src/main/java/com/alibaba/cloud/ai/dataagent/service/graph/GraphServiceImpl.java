@@ -54,10 +54,13 @@ public class GraphServiceImpl implements GraphService {
 
 	private final MultiTurnContextManager multiTurnContextManager;
 
+	private final com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties modeProperties;
+
 	public GraphServiceImpl(StateGraph stateGraph, ExecutorService executorService,
 			MultiTurnContextManager multiTurnContextManager,
-			com.alibaba.cloud.ai.dataagent.service.hitl.GbiHitlProperties hitlProperties, javax.sql.DataSource dataSource)
-			throws GraphStateException {
+			com.alibaba.cloud.ai.dataagent.service.hitl.GbiHitlProperties hitlProperties, javax.sql.DataSource dataSource,
+			com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties modeProperties) throws GraphStateException {
+		this.modeProperties = modeProperties;
 		CompileConfig.Builder config = CompileConfig.builder().interruptBefore(HUMAN_FEEDBACK_NODE);
 		if ("mysql".equalsIgnoreCase(hitlProperties.getCheckpoint())) {
 			// paused plan reviews live in the meta database: a threadId can be resumed after a restart or on another
@@ -138,6 +141,9 @@ public class GraphServiceImpl implements GraphService {
 			log.warn("StreamContext already cleaned for threadId: {}, skipping stream start", threadId);
 			return;
 		}
+		String modeName = StringUtils.hasText(graphRequest.getMode()) ? graphRequest.getMode()
+				: modeProperties.getDefaultMode();
+		int maxSqlRetries = modeProperties.resolve(modeName).getMaxSqlRetries(); // fails fast on an unknown mode
 		String multiTurnContext = multiTurnContextManager.buildContext(threadId);
 		multiTurnContextManager.beginTurn(threadId, query);
 		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(Map.ofEntries(Map.entry(IS_ONLY_NL2SQL, nl2sqlOnly),
@@ -146,7 +152,8 @@ public class GraphServiceImpl implements GraphService {
 				// a new question in the same thread starts with a fresh review / repair / python budget
 				Map.entry(HUMAN_REPLAN_COUNT, 0), Map.entry(HUMAN_FEEDBACK_DATA, Map.of()),
 				Map.entry(PLAN_REPAIR_COUNT, 0), Map.entry(HUMAN_REJECT_REASONS, java.util.List.of()),
-				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false)),
+				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false), Map.entry(GBI_MODE, modeName),
+				Map.entry(GBI_MAX_SQL_RETRIES, maxSqlRetries)),
 				RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
 	}

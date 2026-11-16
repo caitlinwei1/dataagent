@@ -53,8 +53,14 @@ public class SemanticConsistencyNode implements NodeAction {
 
 	private final Nl2SqlService nl2SqlService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.mode.GbiModeProperties modes;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
+		// GBI Turbo: skip the LLM check; the deterministic SQL guard in SqlExecuteNode still runs
+		if (!modes.resolve(state.value(GBI_MODE, modes.getDefaultMode())).isSemanticCheck()) {
+			return Map.of(SEMANTIC_CONSISTENCY_NODE_OUTPUT, true);
+		}
 
 		// Get necessary input parameters
 		String evidence = StateUtil.getStringValue(state, EVIDENCE);

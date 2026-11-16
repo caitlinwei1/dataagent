@@ -1,0 +1,249 @@
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.17}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.25}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.28}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.36}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.38}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.38}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.39}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.48}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "standalone_query", "error": false, "complete": false, "_t": 2.58}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "\": \"查询", "error": false, "complete": false, "_t": 2.61}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "202", "error": false, "complete": false, "_t": 2.74}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "6年2月华东地区", "error": false, "complete": false, "_t": 2.89}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "各店铺的成功退款金额\"}", "error": false, "complete": false, "_t": 2.98}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 2.98}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2026年2月华东地区各店铺的成功退款金额\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 退款金额, 说明: 只统计退款成功的单子；申请中/被拒绝的不算。；公式：SUM(trd_refund.refund_amount)；过滤：trd_refund.refund_status ...\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: SUCCESS, 说明: 退款状态取值，对应 trd_refund.refund_status = 'SUCCESS', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 华东, 说明: 大区取值，对应 dim_region.big_region = '华东', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 退款后金额, 说明: 实付金额扣除退款成功金额。退款按退款成功时间 refunded_at 归属。；公式：实付金额 - SUM(trd_refund.refund_amount WHERE...\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: REJECTED, 说明: 退款状态取值，对应 trd_refund.refund_status = 'REJECTED', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 华东中心仓, 说明: 仓库取值，对应 wms_warehouse.name = '华东中心仓', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: RETURN_REFUND, 说明: 退款类型取值，对应 trd_refund.refund_type = 'RETURN_REFUND', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: REFUND, 说明: 售后类型取值，对应 trd_aftersale.aftersale_type = 'REFUND', 同义词: \n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 3.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 4.91}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 5.0}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.04}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询", "error": false, "complete": false, "_t": 5.13}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年2", "error": false, "complete": false, "_t": 5.26}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月（>= '20", "error": false, "complete": false, "_t": 5.41}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26-02", "error": false, "complete": false, "_t": 5.5}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-01' AND", "error": false, "complete": false, "_t": 5.61}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " < '2026", "error": false, "complete": false, "_t": 5.75}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-03-0", "error": false, "complete": false, "_t": 5.86}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1'）期间", "error": false, "complete": false, "_t": 5.92}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，按华东大", "error": false, "complete": false, "_t": 6.03}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "区（店铺归属，", "error": false, "complete": false, "_t": 6.14}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "即 dim_region.big", "error": false, "complete": false, "_t": 6.21}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_region = '华东'", "error": false, "complete": false, "_t": 6.34}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）分组的各", "error": false, "complete": false, "_t": 6.46}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "店铺的成功退款金额总", "error": false, "complete": false, "_t": 6.56}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "和；成功退款指", "error": false, "complete": false, "_t": 6.63}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " trd_refund", "error": false, "complete": false, "_t": 6.79}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ".refund_status = 'SUCCESS", "error": false, "complete": false, "_t": 6.89}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "'，金额为 SUM(tr", "error": false, "complete": false, "_t": 7.05}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "d_refund.refund_amount", "error": false, "complete": false, "_t": 7.11}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ")\",\n  \"expanded", "error": false, "complete": false, "_t": 7.26}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_queries\": [\n    \"统计", "error": false, "complete": false, "_t": 7.38}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年2", "error": false, "complete": false, "_t": 7.48}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月内，华东大", "error": false, "complete": false, "_t": 7.64}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "区下每个店铺发生的", "error": false, "complete": false, "_t": 7.73}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "退款成功订单的", "error": false, "complete": false, "_t": 7.81}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "退款金额合计\",\n", "error": false, "complete": false, "_t": 7.93}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "    \"请列出", "error": false, "complete": false, "_t": 7.99}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2026年2", "error": false, "complete": false, "_t": 8.12}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月（从202", "error": false, "complete": false, "_t": 8.25}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "6-02-0", "error": false, "complete": false, "_t": 8.41}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1到2026", "error": false, "complete": false, "_t": 8.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-02-2", "error": false, "complete": false, "_t": 8.63}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "9）所有属于", "error": false, "complete": false, "_t": 8.72}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华东大区的店铺，", "error": false, "complete": false, "_t": 8.88}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "及其在该期间", "error": false, "complete": false, "_t": 8.94}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "内退款状态为SUCCESS", "error": false, "complete": false, "_t": 9.0}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的退款金额总", "error": false, "complete": false, "_t": 9.16}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "和\",\n    \"20", "error": false, "complete": false, "_t": 9.27}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "26年2月，", "error": false, "complete": false, "_t": 9.38}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "华东大区各", "error": false, "complete": false, "_t": 9.49}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "店铺的退款成功", "error": false, "complete": false, "_t": 9.6}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "金额（仅含", "error": false, "complete": false, "_t": 9.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " refund_status = 'SUCCESS", "error": false, "complete": false, "_t": 9.77}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "' 的记录）分别是", "error": false, "complete": false, "_t": 9.88}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "多少？\"\n  ]\n}", "error": false, "complete": false, "_t": 9.97}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 9.97}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 12.08}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: trd_refund, dim_region, fin_settlement_item, dim_shop, trd_refund_item, fin_settlement, trd_return_logistics, trd_aftersale, trd_order, trd_aftersale_reason\n", "error": false, "complete": false, "_t": 12.08}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 12.08}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 12.1}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 12.1}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 12.1}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 14.11}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "trd_ref", "error": false, "complete": false, "_t": 14.18}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "und\", \"", "error": false, "complete": false, "_t": 14.26}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "dim_shop", "error": false, "complete": false, "_t": 14.36}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"dim_region\"]", "error": false, "complete": false, "_t": 14.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 14.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 14.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 14.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 14.41}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 16.02}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 16.05}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 16.07}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 16.15}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n【", "error": false, "complete": false, "_t": 16.31}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "语种类型】：《", "error": false, "complete": false, "_t": 16.42}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "中文》  \n【需求", "error": false, "complete": false, "_t": 16.51}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "内容】：查询", "error": false, "complete": false, "_t": 16.58}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "2026", "error": false, "complete": false, "_t": 16.73}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "年2月（>=", "error": false, "complete": false, "_t": 16.81}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2026-", "error": false, "complete": false, "_t": 16.95}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "02-01'", "error": false, "complete": false, "_t": 17.09}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " AND < '202", "error": false, "complete": false, "_t": 17.21}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "6-03-0", "error": false, "complete": false, "_t": 17.34}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1'）期间，", "error": false, "complete": false, "_t": 17.48}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "按华东大区（店铺", "error": false, "complete": false, "_t": 17.57}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "归属，即 dim", "error": false, "complete": false, "_t": 17.7}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_region.big_region = '华东", "error": false, "complete": false, "_t": 17.78}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "'）分组的", "error": false, "complete": false, "_t": 17.89}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "各店铺的成功退款", "error": false, "complete": false, "_t": 18.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "金额总和；成功", "error": false, "complete": false, "_t": 18.12}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "退款指 trd_refund", "error": false, "complete": false, "_t": 18.22}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".refund_status =", "error": false, "complete": false, "_t": 18.33}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 'SUCCESS'，金额", "error": false, "complete": false, "_t": 18.43}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "为 SUM(trd", "error": false, "complete": false, "_t": 18.56}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_refund.refund_amount)", "error": false, "complete": false, "_t": 18.66}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n\n**分析依据**：", "error": false, "complete": false, "_t": 18.81}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n- ✅ **时间", "error": false, "complete": false, "_t": 18.88}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "范围**：明确", "error": false, "complete": false, "_t": 18.99}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "给出 `>= '2", "error": false, "complete": false, "_t": 19.15}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "026-02", "error": false, "complete": false, "_t": 19.25}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "-01' AND <", "error": false, "complete": false, "_t": 19.39}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " '2026-", "error": false, "complete": false, "_t": 19.56}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "03-01'", "error": false, "complete": false, "_t": 19.65}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`，且【", "error": false, "complete": false, "_t": 19.69}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "参考信息】强调", "error": false, "complete": false, "_t": 19.81}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“必须照抄”，", "error": false, "complete": false, "_t": 19.94}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "Schema 中 `trd", "error": false, "complete": false, "_t": 20.05}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_refund` 表含", "error": false, "complete": false, "_t": 20.19}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `refunded_at`", "error": false, "complete": false, "_t": 20.27}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "（退款成功时间），", "error": false, "complete": false, "_t": 20.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "符合【业务规则】中", "error": false, "complete": false, "_t": 20.56}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "“退款按 refunded", "error": false, "complete": false, "_t": 20.58}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_at 归属", "error": false, "complete": false, "_t": 20.69}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "”的要求（非", "error": false, "complete": false, "_t": 20.82}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " created_time/updated_time）。", "error": false, "complete": false, "_t": 20.93}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n- ✅ **成功", "error": false, "complete": false, "_t": 21.04}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "退款定义**：【", "error": false, "complete": false, "_t": 21.15}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "业务术语表】", "error": false, "complete": false, "_t": 21.24}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "明确定义“", "error": false, "complete": false, "_t": 21.35}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "退款金额”需", "error": false, "complete": false, "_t": 21.41}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "满足 `refund_status", "error": false, "complete": false, "_t": 21.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " = 'SUCCESS'`，", "error": false, "complete": false, "_t": 21.65}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "且公式为 `", "error": false, "complete": false, "_t": 21.74}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "SUM(trd_refund.ref", "error": false, "complete": false, "_t": 21.89}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "und_amount)`，与查询", "error": false, "complete": false, "_t": 22.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "完全一致。  \n-", "error": false, "complete": false, "_t": 22.14}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **华东大", "error": false, "complete": false, "_t": 22.27}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "区归属**：查询", "error": false, "complete": false, "_t": 22.34}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "明确要求“店铺归属”，", "error": false, "complete": false, "_t": 22.45}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【业务规则】规定", "error": false, "complete": false, "_t": 22.6}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "此时应通过 `dim", "error": false, "complete": false, "_t": 22.66}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_shop.region_id →", "error": false, "complete": false, "_t": 22.8}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " dim_region.id` 关", "error": false, "complete": false, "_t": 22.86}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "联，并用 `dim", "error": false, "complete": false, "_t": 23.02}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_region.big_region = '华东", "error": false, "complete": false, "_t": 23.13}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "'` 过", "error": false, "complete": false, "_t": 23.22}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "滤——该路径", "error": false, "complete": false, "_t": 23.32}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "在 Schema 中完整", "error": false, "complete": false, "_t": 23.35}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "存在（`dim", "error": false, "complete": false, "_t": 23.48}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_shop.region_id`", "error": false, "complete": false, "_t": 23.59}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 外键指向 `", "error": false, "complete": false, "_t": 23.71}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "dim_region.id`，", "error": false, "complete": false, "_t": 23.82}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`dim_region.big_region`", "error": false, "complete": false, "_t": 23.92}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 字段存在）。", "error": false, "complete": false, "_t": 24.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "  \n- ✅ **按", "error": false, "complete": false, "_t": 24.16}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "店铺分组**：`", "error": false, "complete": false, "_t": 24.27}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "dim_shop` 表含", "error": false, "complete": false, "_t": 24.44}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " `shop_code`/", "error": false, "complete": false, "_t": 24.51}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "`name`", "error": false, "complete": false, "_t": 24.6}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 等可标识", "error": false, "complete": false, "_t": 24.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "店铺的字段，`", "error": false, "complete": false, "_t": 24.84}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "trd_refund` ", "error": false, "complete": false, "_t": 24.93}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "通过 `order_id`", "error": false, "complete": false, "_t": 25.09}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 可关联至 `", "error": false, "complete": false, "_t": 25.15}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "trd_order`，再", "error": false, "complete": false, "_t": 25.26}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "经外键 `tr", "error": false, "complete": false, "_t": 25.42}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order.shop_id = dim", "error": false, "complete": false, "_t": 25.53}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_shop.id`", "error": false, "complete": false, "_t": 25.57}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 完成店铺归属", "error": false, "complete": false, "_t": 25.7}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "链路（Schema", "error": false, "complete": false, "_t": 25.8}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 中 `trd_order", "error": false, "complete": false, "_t": 25.94}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".shop_id=dim_shop.id", "error": false, "complete": false, "_t": 26.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "` 已列出", "error": false, "complete": false, "_t": 26.08}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）。  \n-", "error": false, "complete": false, "_t": 26.23}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " ✅ **聚合指标", "error": false, "complete": false, "_t": 26.3}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "**：`SUM(trd", "error": false, "complete": false, "_t": 26.45}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_refund.refund_amount)`", "error": false, "complete": false, "_t": 26.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " 直接对应", "error": false, "complete": false, "_t": 26.65}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "字段，无歧", "error": false, "complete": false, "_t": 26.74}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "义。  \n\n所有", "error": false, "complete": false, "_t": 26.83}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "核心要素（时间", "error": false, "complete": false, "_t": 26.91}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "、状态过滤、区域", "error": false, "complete": false, "_t": 27.02}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "维度、店铺粒", "error": false, "complete": false, "_t": 27.13}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "度、聚合逻辑", "error": false, "complete": false, "_t": 27.2}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "）均能在 Schema 和", "error": false, "complete": false, "_t": 27.34}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": " Evidence 中精准定位并", "error": false, "complete": false, "_t": 27.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "闭环映射，无需", "error": false, "complete": false, "_t": 27.51}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "额外澄清。", "error": false, "complete": false, "_t": 27.54}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 27.54}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 27.55}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 27.57}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SELECT", "error": false, "complete": false, "_t": 29.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " \n    s", "error": false, "complete": false, "_t": 29.46}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`id`", "error": false, "complete": false, "_t": 29.55}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AS `shop", "error": false, "complete": false, "_t": 29.64}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id`,\n    s.`", "error": false, "complete": false, "_t": 29.79}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "name` AS `shop_name", "error": false, "complete": false, "_t": 29.9}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`,\n    SUM(r", "error": false, "complete": false, "_t": 30.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`refund_amount`) AS `", "error": false, "complete": false, "_t": 30.13}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "total_refund_amount`\n", "error": false, "complete": false, "_t": 30.23}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "FROM `trd_ref", "error": false, "complete": false, "_t": 30.36}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "und` r\nJOIN `", "error": false, "complete": false, "_t": 30.47}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "trd_order` o", "error": false, "complete": false, "_t": 30.59}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " ON r.`order", "error": false, "complete": false, "_t": 30.67}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = o.`id", "error": false, "complete": false, "_t": 30.82}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`\nJOIN `dim_shop", "error": false, "complete": false, "_t": 30.9}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` s ON o.`", "error": false, "complete": false, "_t": 31.06}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "shop_id` = s.`", "error": false, "complete": false, "_t": 31.13}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id`\nJOIN `dim", "error": false, "complete": false, "_t": 31.29}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_region` reg ON s.`", "error": false, "complete": false, "_t": 31.4}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "region_id` = reg.`", "error": false, "complete": false, "_t": 31.55}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id`\nWHERE r", "error": false, "complete": false, "_t": 31.63}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`refund_status` = '", "error": false, "complete": false, "_t": 31.77}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "SUCCESS'\n    AND r.`", "error": false, "complete": false, "_t": 31.88}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "refunded_at` >=", "error": false, "complete": false, "_t": 32.01}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2026-", "error": false, "complete": false, "_t": 32.12}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "02-01'", "error": false, "complete": false, "_t": 32.21}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " AND r.`ref", "error": false, "complete": false, "_t": 32.36}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "unded_at` < '2", "error": false, "complete": false, "_t": 32.48}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "026-03", "error": false, "complete": false, "_t": 32.61}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "-01'\n    AND", "error": false, "complete": false, "_t": 32.77}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " reg.`big_region` =", "error": false, "complete": false, "_t": 32.87}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '华东'\nGROUP BY s", "error": false, "complete": false, "_t": 33.03}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`id`, s", "error": false, "complete": false, "_t": 33.09}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": ".`name`;", "error": false, "complete": false, "_t": 33.11}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 33.12}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 33.12}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 34.5}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 34.5}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 34.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 34.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "SELECT \n    s.`id` AS `shop_id`,\n    s.`name` AS `shop_name`,\n    SUM(r.`refund_amount`) AS `total_refund_amount`\nFROM `trd_refund` r\nJOIN `trd_order` o ON r.`order_id` = o.`id`\nJOIN `dim_shop` s ON o.`shop_id` = s.`id`\nJOIN `dim_region` reg ON s.`region_id` = reg.`id`\nWHERE r.`refund_status` = 'SUCCESS'\n    AND r.`refunded_at` >= '2026-02-01' AND r.`refunded_at` < '2026-03-01'\n    AND reg.`big_region` = '华东'\nGROUP BY s.`id`, s.`name`;\n", "error": false, "complete": false, "_t": 34.52}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 36.46}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 36.46}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"shop_id\",\"shop_name\",\"total_refund_amount\"],\"data\":[{\"shop_id\":\"2\",\"shop_name\":\"天猫数码专营店\",\"total_refund_amount\":\"2628.87\"},{\"shop_id\":\"7\",\"shop_name\":\"抖音官方直播间\",\"total_refund_amount\":\"10534.11\"},{\"shop_id\":\"10\",\"shop_name\":\"自营商城总店\",\"total_refund_amount\":\"8949.69\"},{\"shop_id\":\"1\",\"shop_name\":\"天猫旗舰店\",\"total_refund_amount\":\"3424.71\"},{\"shop_id\":\"3\",\"shop_name\":\"天猫家居店\",\"total_refund_amount\":\"4040.52\"}],\"errorMsg\":null},\"displayStyle\":{\"type\":\"bar\",\"title\":\"华东大区各店铺成功退款金额\",\"x\":\"shop_name\",\"y\":[\"total_refund_amount\"]}}", "error": false, "complete": false, "_t": 36.46}
+{"agentId": "5", "threadId": "mix-nocases-J24-1-54d62a", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 36.48}

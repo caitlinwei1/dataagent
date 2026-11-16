@@ -2,12 +2,15 @@
 datasource (read-only account) -> agent -> 86 tables -> logical relations -> 312 business terms
 -> semantic model -> schema init -> publish.
 
-Usage: python3 scripts/setup_agent.py [--api http://localhost:8065] [--type mysql|postgresql] [--skip-knowledge]
+Usage: python3 scripts/setup_agent.py [--api http://localhost:8065] [--type mysql|postgresql|mysql-gateway] [--skip-knowledge]
+--type mysql-gateway registers the hybrid deployment: the datasource stores only the gateway URL (--gateway) and the
+shared secret (env GATEWAY_SECRET); the database address and password stay in the gateway (scripts/gateway.sh).
 Prints the agent id.
 """
 import argparse
 import json
 import os
+import urllib.parse
 import urllib.request
 
 import yaml
@@ -52,7 +55,8 @@ def import_knowledge(api, aid):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--api", default="http://localhost:8065")
-    ap.add_argument("--type", default="mysql", choices=["mysql", "postgresql"])
+    ap.add_argument("--type", default="mysql", choices=["mysql", "postgresql", "mysql-gateway"])
+    ap.add_argument("--gateway", default="http://127.0.0.1:8070", help="gateway base URL for --type mysql-gateway")
     ap.add_argument("--name", default="电商经营分析")
     ap.add_argument("--db", default="gbi_ecommerce", help="MySQL database (gbi_ecommerce_partial for the comment ablation)")
     ap.add_argument("--skip-knowledge", action="store_true")
@@ -74,6 +78,12 @@ def main():
                   username="gbi_reader", password="gbi_reader_local",
                   connectionUrl=f"jdbc:mysql://127.0.0.1:13306/{a.db}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true",
                   status="active", description="电商经营分析 86 表（只读账号）")
+    elif a.type == "mysql-gateway":
+        gw = urllib.parse.urlparse(a.gateway)
+        ds = dict(name="gbi_ecommerce (经本地网关)", type="mysql-gateway", databaseName="gbi_ecommerce",
+                  host=gw.hostname, port=gw.port or 443, username="gateway",  # the gateway's address, not the DB's
+                  connectionUrl=a.gateway, password=os.environ["GATEWAY_SECRET"], status="active",
+                  description="混合部署：服务在云、数据在地。云端只存网关地址和签名密钥")
     else:
         ds = dict(name=f"gbi_ecommerce (PostgreSQL, 只读)", type="postgresql", host="127.0.0.1", port=15432, databaseName="postgres",
                   username="gbi_reader", password="gbi_reader_local",
