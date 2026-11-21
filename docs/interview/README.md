@@ -6,7 +6,7 @@
 
 ## 怎么用
 
-1. 先背 [00 架构一页纸](00-architecture.md)，能 2 分钟讲完一次请求从入口到报告。
+1. 先背 [00 架构一页纸](00-architecture.md)：第 0 节是"业务和数据从哪来 → agent 为什么这么设计"（以宝尊为原型），然后能 2 分钟讲完一次请求从入口到报告。
 2. 每条讲稿先背"一句话讲法"，再看 bad case 表，最后过一遍追问。
 3. 打开代码对着看：每条第 3 节列了文件和方法，至少把 `TableRecallService.rank/fuse`、`SqlGuard.check`、`HumanFeedbackNode.decide`、`DockerCodePoolExecutorService.createHostConfig/currentRunOnly`、`ReportAssembler.assemble` 这 5 处读一遍。
 4. 看 [99 缺口表](99-gaps.md)，知道哪些话不能说满。
@@ -25,6 +25,7 @@
 | 07 | 320 题评测集 + 三项指标 | [07-eval-and-metrics.md](07-eval-and-metrics.md) | 13 道错题按口径分类 |
 | 08 | 多数据源 / Turbo·Mix / 混合部署 | [08-datasources-modes-hybrid.md](08-datasources-modes-hybrid.md) | 思考开关没发出去（108 s）；ThreadLocal 换线程丢失 |
 | 09 | RuoYi 网关、鉴权、数据权限 | [09-ruoyi-security.md](09-ruoyi-security.md) | 召回后过滤仍被证据绕过；`switchIfEmpty` 坑 |
+| 10 | 落到宝尊：七个业务难点的真实运行结果 | [10-baozun-scenario.md](10-baozun-scenario.md) | 收入口径取错月份；预售按尾款归属；计划与校验锁死 |
 | 99 | 缺口表 | [99-gaps.md](99-gaps.md) | — |
 
 ## 1 分钟自我介绍版

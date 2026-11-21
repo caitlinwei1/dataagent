@@ -1,0 +1,41 @@
+{
+ "id": "B4",
+ "question": "2026年10月15日华东区域仓数码家电的可用库存一共多少件？",
+ "thread": "baozun-B4-426cb1",
+ "seconds": 112.2,
+ "sql_attempts": 10,
+ "error_classes": [
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION",
+  "TABLE_SELECTION"
+ ],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select sum(`available_qty`) from `wms_inventory_snapshot` as `wms_inventory_snapshot` join `wms_warehouse` as `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` as `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` as `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+  "select sum(`wms_inventory_snapshot`.`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_category` on `prd_sku`.`category_id` = `prd_category`.`id` where `wms_warehouse`.`name` = '华东区域仓' and `prd_category`.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';"
+ ],
+ "final_sql": null,
+ "result": null,
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "SUM(i.available_qty)\n23",
+ "wrong": "SUM(i.on_hand_qty-i.locked_qty)\n1642"
+}

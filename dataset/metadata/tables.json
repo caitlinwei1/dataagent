@@ -237,6 +237,20 @@
     "enum": null
    },
    {
+    "name": "platform_status",
+    "type": "s",
+    "comment": "平台原始订单状态（各平台编码不同，见业务知识“平台订单状态”）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
+    "name": "platform_order_no",
+    "type": "s",
+    "comment": "平台订单号（各平台格式不同）",
+    "kind": "extra",
+    "enum": null
+   },
+   {
     "name": "created_by",
     "type": "s",
     "comment": "创建人",
@@ -3764,7 +3778,7 @@
  {
   "name": "prd_brand",
   "domain": "商品",
-  "comment": "品牌",
+  "comment": "品牌：即品牌客户，一个品牌在多个平台开官方旗舰店，由我方运营",
   "ablate": false,
   "primary_key": "id",
   "columns": [
@@ -3785,7 +3799,7 @@
    {
     "name": "is_own",
     "type": "t",
-    "comment": "是否自有品牌",
+    "comment": "是否自有品牌（品牌管理模式：我方持有该品牌中国区经营权）",
     "kind": "core",
     "enum": null
    },
@@ -3793,6 +3807,20 @@
     "name": "country",
     "type": "s",
     "comment": "品牌国家",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "coop_mode",
+    "type": "s",
+    "comment": "合作模式：DISTRIBUTION经销（我方买断货品、承担库存）/TP代运营（货权在品牌方，我方按GMV收服务费）/BRAND_MGMT品牌管理",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "service_fee_rate",
+    "type": "r",
+    "comment": "代运营服务费率（仅TP模式，按支付GMV抽佣）",
     "kind": "core",
     "enum": null
    },
@@ -8997,7 +9025,7 @@
    {
     "name": "net_amount",
     "type": "d",
-    "comment": "实际结算金额",
+    "comment": "实际结算金额（平台打款的货款，扣佣金后）",
     "kind": "core",
     "enum": null
    },
@@ -9005,6 +9033,27 @@
     "name": "settled_at",
     "type": "ts",
     "comment": "结算时间",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "coop_mode",
+    "type": "s",
+    "comment": "结算时品牌的合作模式：DISTRIBUTION/TP/BRAND_MGMT",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "service_fee",
+    "type": "d",
+    "comment": "我方应收代运营服务费（仅TP模式=应结算总额×服务费率，其余为0）",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "revenue_amount",
+    "type": "d",
+    "comment": "我方确认收入：经销和品牌管理=实际结算货款，代运营=服务费（货款归品牌方）",
     "kind": "core",
     "enum": null
    },
@@ -9568,7 +9617,7 @@
  {
   "name": "dim_shop",
   "domain": "财务结算与维表",
-  "comment": "店铺维表",
+  "comment": "店铺维表：每个店铺是某个品牌在某个平台的官方旗舰店",
   "ablate": false,
   "primary_key": "id",
   "columns": [
@@ -9596,7 +9645,7 @@
    {
     "name": "region_id",
     "type": "b",
-    "comment": "运营归属区域ID",
+    "comment": "运营归属区域ID（负责该店的运营中心所在区域）",
     "kind": "core",
     "enum": null
    },
@@ -9604,6 +9653,13 @@
     "name": "opened_at",
     "type": "dt",
     "comment": "开店日期",
+    "kind": "core",
+    "enum": null
+   },
+   {
+    "name": "brand_id",
+    "type": "b",
+    "comment": "所属品牌（品牌客户）ID",
     "kind": "core",
     "enum": null
    },
@@ -9682,6 +9738,12 @@
     "table": "dim_shop",
     "column": "region_id",
     "ref_table": "dim_region",
+    "ref_column": "id"
+   },
+   {
+    "table": "dim_shop",
+    "column": "brand_id",
+    "ref_table": "prd_brand",
     "ref_column": "id"
    }
   ]

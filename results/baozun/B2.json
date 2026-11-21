@@ -1,0 +1,61 @@
+{
+ "id": "B2",
+ "question": "2026年3月我们公司在各个品牌上的收入分别是多少？",
+ "thread": "baozun-B2-d52b52",
+ "seconds": 45.5,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `b`.`name` as `brand_name`, sum(`s`.`revenue_amount`) as `revenue_amount` from `fin_settlement` as `s` inner join `dim_shop` as `d` on `s`.`shop_id` = `d`.`id` inner join `prd_brand` as `b` on `d`.`brand_id` = `b`.`id` where `s`.`settled_at` >= '2026-03-01' and `s`.`settled_at` < '2026-04-01' group by `b`.`name`;"
+ ],
+ "final_sql": "select `b`.`name` as `brand_name`, sum(`s`.`revenue_amount`) as `revenue_amount` from `fin_settlement` as `s` inner join `dim_shop` as `d` on `s`.`shop_id` = `d`.`id` inner join `prd_brand` as `b` on `d`.`brand_id` = `b`.`id` where `s`.`settled_at` >= '2026-03-01' and `s`.`settled_at` < '2026-04-01' group by `b`.`name`;",
+ "result": {
+  "column": [
+   "brand_name",
+   "revenue_amount"
+  ],
+  "data": [
+   {
+    "revenue_amount": "27574.10",
+    "brand_name": "曜石"
+   },
+   {
+    "revenue_amount": "26032.04",
+    "brand_name": "栖木"
+   },
+   {
+    "revenue_amount": "7685.81",
+    "brand_name": "青岚"
+   },
+   {
+    "revenue_amount": "14197.29",
+    "brand_name": "禾川"
+   },
+   {
+    "revenue_amount": "243826.37",
+    "brand_name": "星屿"
+   },
+   {
+    "revenue_amount": "5843.55",
+    "brand_name": "朵朵熊"
+   },
+   {
+    "revenue_amount": "82151.50",
+    "brand_name": "北纬"
+   },
+   {
+    "revenue_amount": "3693.05",
+    "brand_name": "澄野"
+   }
+  ],
+  "errorMsg": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "name\tcoop_mode\trevenue\n星屿\tDISTRIBUTION\t342502.64\n北纬\tBRAND_MGMT\t103541.68\n曜石\tTP\t40358.83\n栖木\tDISTRIBUTION\t34650.30\n禾川\tDISTRIBUTION\t21710.21\n青岚\tTP\t10792.31\n朵朵熊\tTP\t7725.99\n澄野\tTP\t4033.79",
+ "wrong": "name\tSUM(o.pay_amount)\n青岚\t131372.28\n星屿\t372285.48\n朵朵熊\t105141.75\n禾川\t22817.86\n澄野\t55755.27\n北纬\t102552.34\n曜石\t663415.85\n栖木\t35993.90"
+}
