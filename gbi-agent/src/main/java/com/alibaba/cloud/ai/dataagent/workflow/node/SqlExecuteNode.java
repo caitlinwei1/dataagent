@@ -92,7 +92,14 @@ public class SqlExecuteNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.security.RowPermissionRewriter rowPermissionRewriter;
 
+	private final com.alibaba.cloud.ai.dataagent.service.schema.recall.SchemaExpansionService schemaExpansionService;
+
+	private final com.alibaba.cloud.ai.dataagent.service.sql.freshness.DataFreshnessService dataFreshnessService;
+
 	private static final int SAMPLE_DATA_NUMBER = 20;
+
+	/** Schema expansions per step: the first adds the direct neighbours, the second reaches one hop further. */
+	private static final int MAX_SCHEMA_EXPANSIONS = 2;
 
 	private static final int MAX_PERMISSION_DENIALS = 2;
 
@@ -148,7 +155,8 @@ public class SqlExecuteNode implements NodeAction {
 			log.info("data_permission exec user={} scope={} filtered={} sql={}", permission.userName(),
 					permission.describe(), filteredTables, executedSql);
 		}
-		return executeSqlQuery(state, currentStep, sqlQuery, executedSql, filteredTables, dbConfig, agentId);
+		return executeSqlQuery(state, currentStep, sqlQuery, executedSql, filteredTables, dbConfig, agentId,
+				guard.tables(), permission);
 	}
 
 	/**
@@ -225,7 +233,8 @@ public class SqlExecuteNode implements NodeAction {
 	 */
 	@SuppressWarnings("unchecked")
 	private Map<String, Object> executeSqlQuery(OverAllState state, Integer currentStep, String sqlQuery,
-			String executedSql, java.util.List<String> filteredTables, DbConfigBO dbConfig, Long agentId) {
+			String executedSql, java.util.List<String> filteredTables, DbConfigBO dbConfig, Long agentId,
+			java.util.Collection<String> sqlTables, com.alibaba.cloud.ai.dataagent.security.DataPermission permission) {
 		// Execute business logic first - actual SQL execution
 		DbQueryParameter dbQueryParameter = new DbQueryParameter();
 		dbQueryParameter.setSql(executedSql);
@@ -249,6 +258,13 @@ public class SqlExecuteNode implements NodeAction {
 			try {
 				// Execute SQL query and get results immediately
 				ResultSetBO resultSetBO = dbAccessor.executeSqlAndReturnObject(dbConfig, dbQueryParameter);
+				// B7: an empty result over a T+1 table queried past its latest date gets an explicit note
+				String freshnessNote = null;
+				if (resultSetBO.getData() == null || resultSetBO.getData().isEmpty()) {
+					freshnessNote = dataFreshnessService.explainEmpty(executedSql, sqlTables, dbAccessor, dbConfig)
+						.orElse(null);
+					resultSetBO.setNote(freshnessNote);
+				}
 				// 调用大模型获取图表配置信息并填充到ResultSetBO中
 				DisplayStyleBO displayStyleBO = enrichResultSetWithChartConfig(state, resultSetBO);
 				resultBO.setResultSet(resultSetBO);
@@ -263,6 +279,9 @@ public class SqlExecuteNode implements NodeAction {
 				emitter.next(ChatResponseUtil.createPureResponse(TextType.RESULT_SET.getStartSign()));
 				emitter.next(ChatResponseUtil.createPureResponse(strResultJson));
 				emitter.next(ChatResponseUtil.createPureResponse(TextType.RESULT_SET.getEndSign()));
+				if (freshnessNote != null) {
+					emitter.next(ChatResponseUtil.createResponse(freshnessNote));
+				}
 
 				// Update step results with the query output
 				Map<String, String> existingResults = StateUtil.getObjectValue(state, SQL_EXECUTE_NODE_OUTPUT,
@@ -283,7 +302,11 @@ public class SqlExecuteNode implements NodeAction {
 				// Reset sql generate count retry times when sql execute success
 				result.putAll(Map.of(SQL_EXECUTE_NODE_OUTPUT, updatedResults, SQL_REGENERATE_REASON,
 						SqlRetryDto.empty(), SQL_RESULT_LIST_MEMORY, resultSetBO.getData(), PLAN_CURRENT_STEP,
-						currentStep + 1, SQL_GENERATE_COUNT, 0));
+						currentStep + 1, SQL_GENERATE_COUNT, 0, Constant.SEMANTIC_REJECT_COUNT, 0,
+						Constant.SQL_REPEAT_COUNT, 0, Constant.SQL_SCHEMA_EXPANDED, 0));
+				if (freshnessNote != null) {
+					result.put(Constant.GBI_FRESHNESS_NOTE, freshnessNote);
+				}
 			}
 			catch (Exception e) {
 				com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClass errorClass = com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClassifier
@@ -292,6 +315,29 @@ public class SqlExecuteNode implements NodeAction {
 						+ (nl2sqlProperties.isRepairHints()
 								? com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClassifier.repairHint(e) : "");
 				log.error("SQL execution failed class={} - SQL as follows: \n {} \n ", errorClass, sqlQuery, e);
+				// B4: an unknown column / table usually means the table that has it was never recalled; add the
+				// foreign-key neighbours of the SQL's tables so the regeneration can see it
+				int expansions = state.value(Constant.SQL_SCHEMA_EXPANDED, 0);
+				if (errorClass == com.alibaba.cloud.ai.dataagent.service.sql.guard.SqlErrorClass.TABLE_SELECTION
+						&& nl2sqlProperties.isSchemaExpandOnTableError() && expansions < MAX_SCHEMA_EXPANSIONS) {
+					try {
+						var schema = StateUtil.getObjectValue(state, TABLE_RELATION_OUTPUT,
+								com.alibaba.cloud.ai.dataagent.dto.schema.SchemaDTO.class,
+								(com.alibaba.cloud.ai.dataagent.dto.schema.SchemaDTO) null);
+						var expansion = schemaExpansionService.expand(agentId, schema, sqlTables, permission);
+						if (expansion.isPresent()) {
+							result.put(TABLE_RELATION_OUTPUT, expansion.get().schema());
+							result.put(Constant.SQL_SCHEMA_EXPANDED, expansions + 1);
+							errorMessage += "\n已沿外键补充可能相关的表：" + String.join(", ", expansion.get().added())
+									+ "。请先在这些表里找报错的字段（例如字段可能在关联表上，需要多关联一张表），不要再猜不存在的字段。";
+							emitter.next(ChatResponseUtil
+								.createResponse("选表错误：已沿外键补充表 " + String.join(", ", expansion.get().added())));
+						}
+					}
+					catch (Exception ex) {
+						log.warn("schema expansion failed: {}", ex.getMessage());
+					}
+				}
 				result.put(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(errorMessage));
 				emitter.next(ChatResponseUtil.createResponse("SQL执行失败: " + errorMessage));
 			}

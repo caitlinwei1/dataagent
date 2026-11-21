@@ -589,7 +589,7 @@
    "确认收入",
    "我们赚了多少"
   ],
-  "description": "按合作模式不同：经销(DISTRIBUTION)和品牌管理(BRAND_MGMT)确认结算货款 net_amount；代运营(TP)只确认服务费 service_fee，货款归品牌方。不能直接用 GMV 或 pay_amount 当收入。；公式：SUM(fin_settlement.revenue_amount)；涉及：fin_settlement, prd_brand, dim_shop",
+  "description": "按合作模式不同：经销(DISTRIBUTION)和品牌管理(BRAND_MGMT)确认结算货款 net_amount；代运营(TP)只确认服务费 service_fee，货款归品牌方。不能直接用 GMV 或 pay_amount 当收入。按月统计时用业务月 fin_settlement.month_key（如 3 月 = '2026-03'），不要用 settled_at 卡日期：3 月的账在 4 月初结算。；公式：SUM(fin_settlement.revenue_amount)；涉及：fin_settlement, prd_brand, dim_shop",
   "tables": [
    "fin_settlement",
    "prd_brand",
@@ -618,7 +618,7 @@
    "618 GMV",
    "大促成交"
   ],
-  "description": "预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。；公式：普通订单按 trd_order.paid_at 归属；预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）归属，金额计全款；涉及：trd_order, trd_presale_order",
+  "description": "预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。；公式：金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）；涉及：trd_order, trd_presale_order",
   "tables": [
    "trd_order",
    "trd_presale_order"
@@ -643,7 +643,7 @@
    "分类",
    "商品分类"
   ],
-  "description": "prd_category 三级树；“一级类目/大类”需沿 parent_id 向上取 level=1。",
+  "description": "prd_category 三级树；prd_spu.category_id 指向三级类目（prd_sku 没有类目字段，要经 prd_sku.spu_id → prd_spu）。问“数码家电”“服饰”这类一级类目时，要 c3.parent_id → c2、c2.parent_id → c1 两次向上关联再按 c1.name 过滤；直接写 spu.category_id = 一级类目 id 会得到空结果。",
   "tables": []
  },
  {

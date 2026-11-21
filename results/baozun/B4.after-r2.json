@@ -1,0 +1,40 @@
+{
+ "id": "B4",
+ "question": "2026年10月15日华东区域仓数码家电的可用库存一共多少件？",
+ "thread": "baozun-B4-e21ef6",
+ "seconds": 82.0,
+ "sql_attempts": 4,
+ "error_classes": [
+  "TABLE_SELECTION"
+ ],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select sum(`available_qty`) from `wms_inventory_snapshot` as `s` join `wms_warehouse` as `w` on `s`.`warehouse_id` = `w`.`id` join `prd_sku` as `sku` on `s`.`sku_id` = `sku`.`id` join `prd_category` as `c` on `sku`.`category_id` = `c`.`id` where `w`.`name` = '华东区域仓' and `c`.`name` = '数码家电' and `s`.`snapshot_date` >= '2026-10-15' and `s`.`snapshot_date` < '2026-10-16';",
+  "select sum(`s`.`available_qty`) from `wms_inventory_snapshot` as `s` join `wms_warehouse` as `w` on `s`.`warehouse_id` = `w`.`id` join `prd_sku` as `sku` on `s`.`sku_id` = `sku`.`id` join `prd_spu` as `spu` on `sku`.`spu_id` = `spu`.`id` join `prd_category` as `c` on `spu`.`category_id` = `c`.`id` where `w`.`name` = '华东区域仓' and `c`.`name` = '数码家电' and `s`.`snapshot_date` >= '2026-10-15' and `s`.`snapshot_date` < '2026-10-16';"
+ ],
+ "final_sql": "select sum(`s`.`available_qty`) from `wms_inventory_snapshot` as `s` join `wms_warehouse` as `w` on `s`.`warehouse_id` = `w`.`id` join `prd_sku` as `sku` on `s`.`sku_id` = `sku`.`id` join `prd_spu` as `spu` on `sku`.`spu_id` = `spu`.`id` join `prd_category` as `c` on `spu`.`category_id` = `c`.`id` where `w`.`name` = '华东区域仓' and `c`.`name` = '数码家电' and `s`.`snapshot_date` >= '2026-10-15' and `s`.`snapshot_date` < '2026-10-16';",
+ "result": {
+  "column": [
+   "sum(s.available_qty)"
+  ],
+  "data": [
+   {
+    "sum(s.available_qty)": ""
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "选表错误：已沿外键补充表 prd_spu, trd_daily_sku_sales, wms_stockout_record, wms_inventory, wms_transfer, prd_price_history\nSQL执行失败: SQL执行失败[TABLE_SELECTION/选表]：Unknown column 'sk",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"
+ ],
+ "gold": "SUM(i.available_qty)\n23",
+ "wrong": "SUM(i.on_hand_qty-i.locked_qty)\n1642"
+}

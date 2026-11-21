@@ -172,6 +172,11 @@ public class DataAgentConfiguration implements DisposableBean {
 			keyStrategyHashMap.put(PYTHON_FALLBACK_MODE, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(GBI_DATA_PERMISSION, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(GBI_PERMISSION_DENIALS, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(SEMANTIC_REJECT_COUNT, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(SQL_SCHEMA_EXPANDED, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(SQL_REPEAT_COUNT, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(SQL_REPLAN_COUNT, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(GBI_FRESHNESS_NOTE, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_EXECUTE_NODE_OUTPUT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_GENERATE_NODE_OUTPUT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_ANALYSIS_NODE_OUTPUT, KeyStrategy.REPLACE);
@@ -250,7 +255,7 @@ public class DataAgentConfiguration implements DisposableBean {
 			// sql generate and sql execute node
 			.addConditionalEdges(SQL_GENERATE_NODE, nodeBeanUtil.getEdgeBeanAsync(SqlGenerateDispatcher.class),
 					Map.of(SQL_GENERATE_NODE, SQL_GENERATE_NODE, END, END, SEMANTIC_CONSISTENCY_NODE,
-							SEMANTIC_CONSISTENCY_NODE))
+							SEMANTIC_CONSISTENCY_NODE, PLANNER_NODE, PLANNER_NODE))
 			.addConditionalEdges(SEMANTIC_CONSISTENCY_NODE, edge_async(new SemanticConsistenceDispatcher()),
 					Map.of(SQL_GENERATE_NODE, SQL_GENERATE_NODE, SQL_EXECUTE_NODE, SQL_EXECUTE_NODE))
 			.addConditionalEdges(SQL_EXECUTE_NODE, edge_async(new SQLExecutorDispatcher()),

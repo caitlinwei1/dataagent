@@ -1,0 +1,220 @@
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "正在进行意图识别...\n", "error": false, "complete": false, "_t": 0.03}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 1.18}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "classification\": \"", "error": false, "complete": false, "_t": 1.26}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "《可能的数据", "error": false, "complete": false, "_t": 1.31}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "分析请求》", "error": false, "complete": false, "_t": 1.38}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "JSON", "text": "\"}", "error": false, "complete": false, "_t": 1.39}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "IntentRecognitionNode", "textType": "TEXT", "text": "\n意图识别完成！\n", "error": false, "complete": false, "_t": 1.4}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在查询重写以更好召回evidence...\n", "error": false, "complete": false, "_t": 1.4}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "{\"", "error": false, "complete": false, "_t": 2.62}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "stand", "error": false, "complete": false, "_t": 2.65}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "alone_query\":", "error": false, "complete": false, "_t": 2.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": " \"查询2", "error": false, "complete": false, "_t": 2.83}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "025年双1", "error": false, "complete": false, "_t": 2.96}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "1期间（10月", "error": false, "complete": false, "_t": 3.09}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "31日到11", "error": false, "complete": false, "_t": 3.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "月11日）各", "error": false, "complete": false, "_t": 3.36}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "JSON", "text": "品牌的GMV\"}", "error": false, "complete": false, "_t": 3.38}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "\n查询重写完成！\n", "error": false, "complete": false, "_t": 3.38}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "重写后查询：\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "查询2025年双11期间（10月31日到11月11日）各品牌的GMV\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "正在获取证据...", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "已找到 8 条相关证据文档，如下是文档的部分信息\n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据1: 业务名词: 2025双11, 说明: 营销活动取值，对应 mkt_activity.name = '2025双11', 同义词: \n", "error": false, "complete": false, "_t": 4.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据2: 业务名词: 双11, 说明: 大促名称取值，对应 dim_date.promo_name = '双11', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据3: 业务名词: 大促GMV, 说明: 预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按...\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据4: 业务名词: 2026双11, 说明: 营销活动取值，对应 mkt_activity.name = '2026双11', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据5: 业务名词: 大促, 说明: dim_date.promo_name 非空的日期；活动明细见 mkt_activity。, 同义词: 双11,618,年货节,促销期\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据6: 业务名词: 2024双11, 说明: 营销活动取值，对应 mkt_activity.name = '2024双11', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据7: 业务名词: 2025年货节, 说明: 营销活动取值，对应 mkt_activity.name = '2025年货节', 同义词: \n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "EvidenceRecallNode", "textType": "TEXT", "text": "证据8: 业务名词: 我方收入, 说明: 按合作模式不同：经销(DISTRIBUTION)和品牌管理(BRAND_MGMT)确认结算货款 net_amount；代运营(TP)只确认服务费 service_fee...\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "正在进行问题增强...\n", "error": false, "complete": false, "_t": 4.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "{\n", "error": false, "complete": false, "_t": 5.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"canonical", "error": false, "complete": false, "_t": 5.41}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_query\": \"", "error": false, "complete": false, "_t": 5.46}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "查询", "error": false, "complete": false, "_t": 5.55}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025年双", "error": false, "complete": false, "_t": 5.68}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "11营销活动", "error": false, "complete": false, "_t": 5.76}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（mkt_activity", "error": false, "complete": false, "_t": 5.86}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": ".name = '202", "error": false, "complete": false, "_t": 5.96}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5双11'", "error": false, "complete": false, "_t": 6.13}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "）期间，即2", "error": false, "complete": false, "_t": 6.21}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "025年10", "error": false, "complete": false, "_t": 6.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月31日0", "error": false, "complete": false, "_t": 6.45}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "0:00:0", "error": false, "complete": false, "_t": 6.61}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "0至2025", "error": false, "complete": false, "_t": 6.71}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "年11月11", "error": false, "complete": false, "_t": 6.82}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "日23:5", "error": false, "complete": false, "_t": 6.95}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "9:59内", "error": false, "complete": false, "_t": 7.06}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，各品牌的大", "error": false, "complete": false, "_t": 7.11}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "促GMV（", "error": false, "complete": false, "_t": 7.2}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "普通订单按tr", "error": false, "complete": false, "_t": 7.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "d_order.paid_at", "error": false, "complete": false, "_t": 7.44}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "归属，预售订单按", "error": false, "complete": false, "_t": 7.55}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "trd_presale", "error": false, "complete": false, "_t": 7.67}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "_order.balance_paid_at", "error": false, "complete": false, "_t": 7.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "归属，金额计", "error": false, "complete": false, "_t": 7.77}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "全款）\",\n", "error": false, "complete": false, "_t": 7.93}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  \"expanded_queries\": [\n", "error": false, "complete": false, "_t": 8.03}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "    \"统计在", "error": false, "complete": false, "_t": 8.12}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025双", "error": false, "complete": false, "_t": 8.25}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "11活动期间（2", "error": false, "complete": false, "_t": 8.36}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "025-", "error": false, "complete": false, "_t": 8.45}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "10-31至", "error": false, "complete": false, "_t": 8.58}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025-1", "error": false, "complete": false, "_t": 8.76}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1-11），", "error": false, "complete": false, "_t": 8.82}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "按品牌维度汇总", "error": false, "complete": false, "_t": 8.91}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的大促成交额", "error": false, "complete": false, "_t": 9.0}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "（含预售尾", "error": false, "complete": false, "_t": 9.11}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "款支付归属）\",\n   ", "error": false, "complete": false, "_t": 9.22}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": " \"请列出202", "error": false, "complete": false, "_t": 9.38}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5年双11", "error": false, "complete": false, "_t": 9.46}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "大促（活动", "error": false, "complete": false, "_t": 9.53}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "名：20", "error": false, "complete": false, "_t": 9.64}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "25双11）", "error": false, "complete": false, "_t": 9.73}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "从10月", "error": false, "complete": false, "_t": 9.86}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "31日到11", "error": false, "complete": false, "_t": 10.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "月11日期", "error": false, "complete": false, "_t": 10.08}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "间，每个品牌的GMV", "error": false, "complete": false, "_t": 10.21}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "数据，需正确", "error": false, "complete": false, "_t": 10.32}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "处理预售订单的", "error": false, "complete": false, "_t": 10.4}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "尾款支付时间", "error": false, "complete": false, "_t": 10.47}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "归属\",\n    \"计算", "error": false, "complete": false, "_t": 10.6}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025双1", "error": false, "complete": false, "_t": 10.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1活动周期（", "error": false, "complete": false, "_t": 10.76}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "2025", "error": false, "complete": false, "_t": 10.9}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "-10-31", "error": false, "complete": false, "_t": 11.0}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "至202", "error": false, "complete": false, "_t": 11.11}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "5-11-1", "error": false, "complete": false, "_t": 11.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "1）内，各品牌", "error": false, "complete": false, "_t": 11.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "的大促GMV", "error": false, "complete": false, "_t": 11.5}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "，要求预售订单以", "error": false, "complete": false, "_t": 11.53}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "balance_paid_at为准", "error": false, "complete": false, "_t": 11.66}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "、普通订单以", "error": false, "complete": false, "_t": 11.71}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "paid_at为准，", "error": false, "complete": false, "_t": 11.84}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "金额为订单全款\"\n", "error": false, "complete": false, "_t": 12.0}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "JSON", "text": "  ]\n}", "error": false, "complete": false, "_t": 12.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "QueryEnhanceNode", "textType": "TEXT", "text": "\n问题增强完成！\n", "error": false, "complete": false, "_t": 12.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "开始初步召回Schema信息...\n", "error": false, "complete": false, "_t": 14.41}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步表信息召回完成，数量: 10，表名: mkt_activity, trd_order, trd_daily_shop_sales, trd_order_promotion, trd_presale_order, dim_shop, dim_date, fin_settlement_item, mkt_activity_sku, prd_brand\n", "error": false, "complete": false, "_t": 14.41}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SchemaRecallNode", "textType": "TEXT", "text": "初步Schema信息召回完成.\n", "error": false, "complete": false, "_t": 14.41}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始构建初始Schema...\n", "error": false, "complete": false, "_t": 14.43}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "初始Schema构建完成.\n", "error": false, "complete": false, "_t": 14.43}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "正在选择合适的数据表...\n\n", "error": false, "complete": false, "_t": 14.43}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "[\"", "error": false, "complete": false, "_t": 16.82}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "mkt_activity", "error": false, "complete": false, "_t": 16.88}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"tr", "error": false, "complete": false, "_t": 16.97}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "d_order\",", "error": false, "complete": false, "_t": 17.08}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": " \"trd_presale_order", "error": false, "complete": false, "_t": 17.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"dim_shop", "error": false, "complete": false, "_t": 17.3}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\", \"prd_brand", "error": false, "complete": false, "_t": 17.32}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "JSON", "text": "\"]", "error": false, "complete": false, "_t": 17.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "\n\n选择数据表完成。\n", "error": false, "complete": false, "_t": 17.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "开始处理Schema选择...\n", "error": false, "complete": false, "_t": 17.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "TableRelationNode", "textType": "TEXT", "text": "Schema选择处理完成.\n", "error": false, "complete": false, "_t": 17.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "正在进行可行性评估...\n", "error": false, "complete": false, "_t": 17.37}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【", "error": false, "complete": false, "_t": 19.8}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "需求", "error": false, "complete": false, "_t": 19.83}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "类型", "error": false, "complete": false, "_t": 19.86}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：", "error": false, "complete": false, "_t": 19.93}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "《数据分析》  \n", "error": false, "complete": false, "_t": 20.04}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【语种类型", "error": false, "complete": false, "_t": 20.13}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "】：《中文》  \n", "error": false, "complete": false, "_t": 20.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "【需求内容】", "error": false, "complete": false, "_t": 20.38}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "：查询2025", "error": false, "complete": false, "_t": 20.46}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "年双11营销", "error": false, "complete": false, "_t": 20.59}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "活动（mkt_activity", "error": false, "complete": false, "_t": 20.7}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": ".name = '202", "error": false, "complete": false, "_t": 20.85}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "5双11'）", "error": false, "complete": false, "_t": 20.97}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "期间，即2", "error": false, "complete": false, "_t": 21.05}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "025年1", "error": false, "complete": false, "_t": 21.16}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "0月31日0", "error": false, "complete": false, "_t": 21.29}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "0:00:", "error": false, "complete": false, "_t": 21.43}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "00至202", "error": false, "complete": false, "_t": 21.54}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "5年11月1", "error": false, "complete": false, "_t": 21.67}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "1日23:5", "error": false, "complete": false, "_t": 21.8}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "9:59内", "error": false, "complete": false, "_t": 21.91}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，各品牌的大", "error": false, "complete": false, "_t": 22.0}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "促GMV（", "error": false, "complete": false, "_t": 22.09}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "普通订单按tr", "error": false, "complete": false, "_t": 22.19}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "d_order.paid_at归属", "error": false, "complete": false, "_t": 22.26}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，预售订单按", "error": false, "complete": false, "_t": 22.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "trd_presale", "error": false, "complete": false, "_t": 22.52}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "_order.balance_paid_at归属", "error": false, "complete": false, "_t": 22.59}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "，金额计全款）", "error": false, "complete": false, "_t": 22.69}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "FeasibilityAssessmentNode", "textType": "TEXT", "text": "可行性评估完成！\n", "error": false, "complete": false, "_t": 22.69}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "PlannerNode", "textType": "JSON", "text": "{\n  \"thought_process\" : \"根据问题生成SQL\",\n  \"execution_plan\" : [ {\n    \"step\" : 1,\n    \"tool_to_use\" : \"SQL_GENERATE_NODE\",\n    \"tool_parameters\" : {\n      \"instruction\" : \"SQL生成\"\n    }\n  } ]\n}", "error": false, "complete": false, "_t": 22.7}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "开始生成SQL...\n", "error": false, "complete": false, "_t": 22.75}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "select", "error": false, "complete": false, "_t": 25.44}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " \n", "error": false, "complete": false, "_t": 25.47}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "   ", "error": false, "complete": false, "_t": 25.5}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `b", "error": false, "complete": false, "_t": 25.58}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`name` as `", "error": false, "complete": false, "_t": 25.68}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "brand_name`,\n   ", "error": false, "complete": false, "_t": 25.81}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " sum(case \n        when `", "error": false, "complete": false, "_t": 25.91}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`.`is_presale`", "error": false, "complete": false, "_t": 26.07}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = 1 then `p", "error": false, "complete": false, "_t": 26.18}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`balance_amount`", "error": false, "complete": false, "_t": 26.3}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " + `p`.`deposit", "error": false, "complete": false, "_t": 26.36}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_amount`\n        else", "error": false, "complete": false, "_t": 26.44}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`pay", "error": false, "complete": false, "_t": 26.58}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_amount`\n    end) as", "error": false, "complete": false, "_t": 26.69}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `gmv`\nfrom", "error": false, "complete": false, "_t": 26.86}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `trd_order` `", "error": false, "complete": false, "_t": 26.93}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "o`\nleft join", "error": false, "complete": false, "_t": 27.01}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `trd_pres", "error": false, "complete": false, "_t": 27.1}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "ale_order` `p`", "error": false, "complete": false, "_t": 27.26}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " on `o`.`id", "error": false, "complete": false, "_t": 27.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "` = `p`.`order", "error": false, "complete": false, "_t": 27.48}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` and `p", "error": false, "complete": false, "_t": 27.59}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`is_deleted` = ", "error": false, "complete": false, "_t": 27.74}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0\ninner join `dim", "error": false, "complete": false, "_t": 27.85}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_shop` `s` on", "error": false, "complete": false, "_t": 27.99}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`shop", "error": false, "complete": false, "_t": 28.07}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_id` = `s`.`", "error": false, "complete": false, "_t": 28.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "id`\ninner join `prd", "error": false, "complete": false, "_t": 28.33}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_brand` `b` on", "error": false, "complete": false, "_t": 28.49}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `s`.`brand_id`", "error": false, "complete": false, "_t": 28.6}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " = `b`.`id`\n", "error": false, "complete": false, "_t": 28.71}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "where `o`.`", "error": false, "complete": false, "_t": 28.82}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "is_deleted` = 0", "error": false, "complete": false, "_t": 28.93}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "\n  and (\n", "error": false, "complete": false, "_t": 29.02}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "    (`o`.`is", "error": false, "complete": false, "_t": 29.18}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "_presale` = 0", "error": false, "complete": false, "_t": 29.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " and `o`.`", "error": false, "complete": false, "_t": 29.4}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "paid_at` >= '2", "error": false, "complete": false, "_t": 29.5}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "025-1", "error": false, "complete": false, "_t": 29.61}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "0-31 ", "error": false, "complete": false, "_t": 29.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00:00:", "error": false, "complete": false, "_t": 29.88}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00' and", "error": false, "complete": false, "_t": 29.94}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " `o`.`paid_at`", "error": false, "complete": false, "_t": 30.09}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " < '20", "error": false, "complete": false, "_t": 30.16}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "25-11-", "error": false, "complete": false, "_t": 30.29}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "12 00:", "error": false, "complete": false, "_t": 30.44}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00:00')\n", "error": false, "complete": false, "_t": 30.56}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "    or \n    (`o", "error": false, "complete": false, "_t": 30.71}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`is_presale` =", "error": false, "complete": false, "_t": 30.82}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " 1 and `p", "error": false, "complete": false, "_t": 30.95}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`balance_paid_at` >=", "error": false, "complete": false, "_t": 31.06}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2025-", "error": false, "complete": false, "_t": 31.19}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "10-31 ", "error": false, "complete": false, "_t": 31.33}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00:00:", "error": false, "complete": false, "_t": 31.49}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00' and `p", "error": false, "complete": false, "_t": 31.62}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`.`balance_paid_at` <", "error": false, "complete": false, "_t": 31.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " '2025-", "error": false, "complete": false, "_t": 31.86}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "11-12 ", "error": false, "complete": false, "_t": 31.99}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00:00:", "error": false, "complete": false, "_t": 32.24}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "00')\n  )\ngroup", "error": false, "complete": false, "_t": 32.25}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": " by `b`.`name", "error": false, "complete": false, "_t": 32.32}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "SQL", "text": "`;", "error": false, "complete": false, "_t": 32.34}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlGenerateNode", "textType": "TEXT", "text": "SQL生成完成，准备执行\n", "error": false, "complete": false, "_t": 32.35}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "开始语义一致性校验\n", "error": false, "complete": false, "_t": 32.37}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "通过", "error": false, "complete": false, "_t": 34.54}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SemanticConsistencyNode", "textType": "TEXT", "text": "语义一致性校验完成\n", "error": false, "complete": false, "_t": 34.54}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "开始执行SQL...\n", "error": false, "complete": false, "_t": 34.58}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL查询：\n", "error": false, "complete": false, "_t": 34.59}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "SQL", "text": "select \n    `b`.`name` as `brand_name`,\n    sum(case \n        when `o`.`is_presale` = 1 then `p`.`balance_amount` + `p`.`deposit_amount`\n        else `o`.`pay_amount`\n    end) as `gmv`\nfrom `trd_order` `o`\nleft join `trd_presale_order` `p` on `o`.`id` = `p`.`order_id` and `p`.`is_deleted` = 0\ninner join `dim_shop` `s` on `o`.`shop_id` = `s`.`id`\ninner join `prd_brand` `b` on `s`.`brand_id` = `b`.`id`\nwhere `o`.`is_deleted` = 0\n  and (\n    (`o`.`is_presale` = 0 and `o`.`paid_at` >= '2025-10-31 00:00:00' and `o`.`paid_at` < '2025-11-12 00:00:00')\n    or \n    (`o`.`is_presale` = 1 and `p`.`balance_paid_at` >= '2025-10-31 00:00:00' and `p`.`balance_paid_at` < '2025-11-12 00:00:00')\n  )\ngroup by `b`.`name`;\n", "error": false, "complete": false, "_t": 34.59}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "执行SQL完成\n", "error": false, "complete": false, "_t": 36.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "TEXT", "text": "SQL查询结果：\n", "error": false, "complete": false, "_t": 36.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": "SqlExecuteNode", "textType": "RESULT_SET", "text": "{\"resultSet\":{\"column\":[\"brand_name\",\"gmv\"],\"data\":[{\"gmv\":\"105059.22\",\"brand_name\":\"澄野\"},{\"gmv\":\"159881.38\",\"brand_name\":\"青岚\"},{\"gmv\":\"146077.48\",\"brand_name\":\"北纬\"},{\"gmv\":\"38971.93\",\"brand_name\":\"栖木\"},{\"gmv\":\"873706.96\",\"brand_name\":\"曜石\"},{\"gmv\":\"140871.59\",\"brand_name\":\"朵朵熊\"},{\"gmv\":\"26676.38\",\"brand_name\":\"禾川\"},{\"gmv\":\"554466.62\",\"brand_name\":\"星屿\"}],\"errorMsg\":null,\"note\":null},\"displayStyle\":{\"type\":\"bar\",\"title\":\"2025双11各品牌GMV\",\"x\":\"brand_name\",\"y\":[\"gmv\"]}}", "error": false, "complete": false, "_t": 36.72}
+{"agentId": "5", "threadId": "baozun-B5-cddb3b", "nodeName": null, "textType": "TEXT", "text": null, "error": false, "complete": true, "_t": 36.75}

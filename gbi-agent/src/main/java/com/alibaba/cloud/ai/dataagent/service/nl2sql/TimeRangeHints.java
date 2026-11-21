@@ -38,6 +38,7 @@ public final class TimeRangeHints {
 		String text = String.join("\n", texts == null ? new String[0] : texts);
 		Map<String, String> out = new LinkedHashMap<>();
 		YearMonth anchor = null;
+		java.util.List<YearMonth> months = new java.util.ArrayList<>();
 		String masked = text;
 
 		Matcher m = RANGE.matcher(text);
@@ -60,6 +61,7 @@ public final class TimeRangeHints {
 			YearMonth ym = YearMonth.of(Integer.parseInt(m.group(1)), Integer.parseInt(m.group(2)));
 			out.put(m.group(), range(ym.atDay(1), ym.plusMonths(1).atDay(1)));
 			anchor = ym;
+			months.add(ym);
 		}
 		m = QUARTER.matcher(masked);
 		while (m.find()) {
@@ -106,6 +108,15 @@ public final class TimeRangeHints {
 		StringBuilder sb = new StringBuilder(
 				"【时间口径】以下日期范围由系统按日历精确计算，SQL 必须照抄，使用 >= 起始 AND < 结束 的半开区间，不要自己推算月末日期：\n");
 		out.forEach((k, v) -> sb.append("- ").append(k).append("：").append(v).append('\n'));
+		if (!months.isEmpty()) {
+			// B2: monthly tables (settlement, targets, budgets) carry the business month in month_key; the
+			// settlement of March is made in early April, so a settled_at range for March returns February's books
+			sb.append("- 按月记账的表（有 month_key 业务月字段，如结算、目标、预算）：用 month_key = '")
+				.append(months.get(0))
+				.append("' 取这个月，不要用结算时间 settled_at 或创建时间去卡日期范围（")
+				.append(months.get(0).getMonthValue())
+				.append(" 月的账在下个月初才结算）\n");
+		}
 		return sb.toString();
 	}
 

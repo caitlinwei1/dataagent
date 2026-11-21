@@ -152,6 +152,24 @@ public final class Constant {
 	// 当前问题里 SQL 因数据权限被拦的次数；达到上限就不再让模型重写（换个写法也绕不过权限，只是浪费调用）
 	public static final String GBI_PERMISSION_DENIALS = "GBI_PERMISSION_DENIALS";
 
+	/** Semantic-check rejections of the current SQL step; bounded so a flip-flopping judge cannot burn every retry. */
+	public static final String SEMANTIC_REJECT_COUNT = "SEMANTIC_REJECT_COUNT";
+
+	/** Tables already added to the schema after a table-selection error in this step (expand once per step). */
+	public static final String SQL_SCHEMA_EXPANDED = "SQL_SCHEMA_EXPANDED";
+
+	/** Previous SQL of this step, to spot a model that keeps writing the same failing SQL. */
+	public static final String SQL_REPEAT_COUNT = "SQL_REPEAT_COUNT";
+
+	/** Deterministic data-freshness notes (T+1 tables queried past their latest date). */
+	public static final String GBI_FRESHNESS_NOTE = "GBI_FRESHNESS_NOTE";
+
+	/** SqlGenerateNode output asking the graph to go back to the planner and rewrite the failing step. */
+	public static final String SQL_REPLAN = "__SQL_REPLAN__";
+
+	/** Planner rewrites triggered by a failing SQL step in this question. */
+	public static final String SQL_REPLAN_COUNT = "SQL_REPLAN_COUNT";
+
 	// If code execution succeeds, output code running result; if fails, output error
 	// information
 	public static final String PYTHON_EXECUTE_NODE_OUTPUT = "PYTHON_EXECUTE_NODE_OUTPUT";

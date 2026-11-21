@@ -68,14 +68,17 @@ INSERT INTO sys_dept (dept_id, parent_id, ancestors, dept_name, order_num) VALUE
  (105, 101, '0,100,101', '华东区域仓', 3),
  (106, 101, '0,100,101', '上海前置仓', 4),
  (107, 102, '0,100,102', '华北店群',   1),
- (108, 102, '0,100,102', '华北仓群',   2);
+ (108, 102, '0,100,102', '华北仓群',   2),
+ (109, 100, '0,100',     '青岚品牌组', 3);
 
 -- bindings come from the dataset: dim_shop / wms_warehouse joined to dim_region.big_region
 INSERT INTO gbi_dept_data (dept_id, dim, dim_value) VALUES
  (103, 'shop', '1'), (103, 'shop', '2'), (103, 'shop', '3'), (103, 'shop', '7'), (103, 'shop', '10'),
  (104, 'warehouse', '1'), (105, 'warehouse', '3'), (106, 'warehouse', '7'),
  (107, 'shop', '4'), (107, 'shop', '11'),
- (108, 'warehouse', '4'), (108, 'warehouse', '8');
+ (108, 'warehouse', '4'), (108, 'warehouse', '8'),
+ -- brand team (dataset v2: dim_shop.brand_id = 3 青岚 -> shops 4 天猫, 5 京东); the brand is the isolation unit
+ (109, 'shop', '4'), (109, 'shop', '5');
 
 INSERT INTO sys_role (role_id, role_name, role_key, data_scope) VALUES
  (1, '超级管理员',   'admin',     '1'),
@@ -83,7 +86,8 @@ INSERT INTO sys_role (role_id, role_name, role_key, data_scope) VALUES
  (3, '仓库主管',     'wh_mgr',    '3'),
  (4, '财务分析',     'finance',   '1'),
  (5, '店铺运营',     'shop_ops',  '2'),
- (6, '外部审计',     'auditor',   '5');
+ (6, '外部审计',     'auditor',   '5'),
+ (7, '品牌运营',     'brand_ops', '3');
 
 INSERT INTO sys_role_perm (role_id, perms) VALUES
  (1, '*:*:*'),
@@ -91,7 +95,8 @@ INSERT INTO sys_role_perm (role_id, perms) VALUES
  (3, 'gbi:query'),
  (4, 'gbi:query'), (4, 'gbi:report'),
  (5, 'gbi:query'),
- (6, 'gbi:query');
+ (6, 'gbi:query'),
+ (7, 'gbi:query'), (7, 'gbi:report');
 
 INSERT INTO gbi_role_table (role_id, table_pattern) VALUES
  (1, '*'),
@@ -99,7 +104,8 @@ INSERT INTO gbi_role_table (role_id, table_pattern) VALUES
  (3, 'wms_*'), (3, 'tms_*'), (3, 'oms_*'), (3, 'scm_*'), (3, 'prd_*'), (3, 'dim_*'),
  (4, 'fin_*'), (4, 'trd_*'), (4, 'dim_*'),
  (5, 'trd_*'), (5, 'prd_*'), (5, 'mkt_*'), (5, 'usr_*'), (5, 'dim_*'),
- (6, '*');
+ (6, '*'),
+ (7, 'trd_*'), (7, 'prd_*'), (7, 'mkt_*'), (7, 'usr_*'), (7, 'dim_*');
 
 -- shop_ops (custom scope): both regions' shop groups
 INSERT INTO sys_role_dept (role_id, dept_id) VALUES (5, 103), (5, 107);
@@ -110,6 +116,7 @@ INSERT INTO sys_user (user_id, dept_id, user_name, nick_name, password) VALUES
  (3, 106, 'sh_wh',    '上海前置仓主管','$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O'),
  (4, 100, 'finance',  '财务分析',     '$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O'),
  (5, 103, 'shop_ops', '店铺运营',     '$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O'),
- (6, 100, 'auditor',  '外部审计',     '$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O');
+ (6, 100, 'auditor',  '外部审计',     '$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O'),
+ (7, 109, 'qinglan_ops','青岚品牌运营','$2a$10$OpBRPSZpGYjF3szYn6bZKOH3dI0qsp.tRcxVmZPTakNY1.DNaSM.O');
 
-INSERT INTO sys_user_role (user_id, role_id) VALUES (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6);
+INSERT INTO sys_user_role (user_id, role_id) VALUES (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7);

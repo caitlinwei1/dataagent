@@ -28,7 +28,7 @@
 | 口径在经销 / 代运营下不同（"收入"、GMV） | 业务术语和指标口径要单独召回，写进证据 | 01、10 |
 | 平台原始状态码、编码异构 | 枚举值召回 + 列样例；跨平台统计用统一字段 | 01、10 |
 | 品牌是隔离单位 | 数据权限在 SQL 层强制改写 + 表白名单 + 只读账号 | 04、09 |
-| 时效不同（订单实时、投放 T+1、结算按月） | 问"今天的投放"要说明还没有数据，不能编 | 10（缺口） |
+| 时效不同（订单实时、投放 T+1、结算按月） | 问"今天的投放"要说明还没有数据，不能编：空结果时查 T+1 表的最新日期并说明 | 10（B7） |
 | 报告给品牌方看，数字要能追溯 | 系统附证据、先算好合计；conversationId 串起计划、SQL、修复 | 06、07 |
 | 归因要跨仓储、履约、营销 | 规划 → 多步 SQL → Python → 报告，规划可人工审核 | 02、03、05 |
 
@@ -50,7 +50,7 @@
 4. **选表**：`SchemaRecallNode` 调 `TableRecallService`，7 路召回 + RRF 融合取前 K 张表 → `TableRelationNode` 补外键关系 → 可行性评估（不是数据分析问题或需要澄清就结束）。
 5. **规划**：`PlannerNode` 让 LLM 输出 JSON 执行计划（每步用 SQL 还是 Python）→ `PlanExecutorNode` 校验计划结构，开了人工审核就停在 `HumanFeedbackNode` 前，等人确认/修改/驳回，之后按 threadId 恢复。
 6. **逐步执行计划**：`PlanExecutorNode` 是"调度器"，按当前步骤分派：
-   - SQL 步：`SqlGenerateNode`（Qwen 生成）→ `SemanticConsistencyNode`（LLM 检查是否回答了问题）→ `SqlExecuteNode`（**JSqlParser 守卫** → 只读执行 → 失败按"选表/方言/执行"分类，带原因回到生成，最多 10 次）。
+   - SQL 步：`SqlGenerateNode`（Qwen 生成）→ `SemanticConsistencyNode`（LLM 检查是否回答了问题，每步最多驳回 2 次）→ `SqlExecuteNode`（**JSqlParser 守卫** → 数据权限改写 → 只读执行 → 失败按"选表/方言/执行"分类，带原因回到生成；选表错误时沿外键补表）。同一步卡住（失败 4 次、同一条 SQL 重复、或校验连续驳回）时**回到规划器重写这一步**，每问最多 1 次，之后最多 10 次。
    - Python 步：`PythonGenerateNode` → `PythonExecuteNode`（Docker 容器池，1 核/500MiB/60s/无网络）→ 失败回去重写，5 次后**显式降级** → `PythonAnalyzeNode`。
    - 每步结束回到 `PlanExecutorNode` 取下一步。
 7. **出报告**：`ReportGeneratorNode` 写 Markdown（内嵌 ECharts JSON），报告前系统先算好合计（`ResultTotals`）；开放接口再由 `ReportAssembler` 附上**系统生成的证据附录**、校验图表、做数字溯源（`NumberTrace`），返回 `status / issues`。
@@ -69,8 +69,9 @@ flowchart TD
   PE -->|开启审核| HF[HumanFeedbackNode<br/>interruptBefore 暂停]
   HF -->|驳回 ≤3 次| PL
   HF -->|确认/修改| PE
-  PE -->|SQL 步| SG[SqlGenerateNode] --> SC[SemanticConsistencyNode] -->|不一致| SG
-  SC --> SX[SqlExecuteNode<br/>守卫 · 只读 · 错误分类] -->|失败, 带原因| SG
+  PE -->|SQL 步| SG[SqlGenerateNode] --> SC[SemanticConsistencyNode<br/>每步最多驳回 2 次] -->|不一致| SG
+  SG -->|同一步卡住: 失败 4 次 / 同一 SQL 重复 / 驳回 2 次| PL
+  SC --> SX[SqlExecuteNode<br/>守卫 · 权限改写 · 只读 · 错误分类<br/>选表错误补表 · 空结果时效说明] -->|失败, 带原因| SG
   SX --> PE
   PE -->|Python 步| PG[PythonGenerateNode] --> PX[PythonExecuteNode<br/>Docker 池] -->|失败 <5| PG
   PX -->|成功 / 第 5 次失败降级| PA[PythonAnalyzeNode] --> PE

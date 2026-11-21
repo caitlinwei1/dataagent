@@ -38,7 +38,9 @@ def stream(query, thread, nl2sql_only, timeout=900, api=None):
                   humanFeedback="false")
     events, t0, first = [], time.time(), None
     try:
-        with requests.get(api or API, params=params, stream=True, timeout=timeout) as r:
+        tok = os.environ.get("GBI_TOKEN")  # set when going through the gateway (SECURITY=on)
+        headers = {"Authorization": "Bearer " + tok} if tok else {}
+        with requests.get(api or API, params=params, headers=headers, stream=True, timeout=timeout) as r:
             for line in r.iter_lines(decode_unicode=True):
                 if line and line.startswith("data:"):
                     try:

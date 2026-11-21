@@ -74,6 +74,9 @@ public class PlannerNode implements NodeAction {
 
 		// 检查是否为修复模式
 		String validationError = StateUtil.getStringValue(state, PLAN_VALIDATION_ERROR, null);
+		if (validationError != null && validationError.isBlank()) {
+			validationError = null;
+		}
 		if (validationError != null) {
 			log.info("Regenerating plan with user feedback: {}", validationError);
 		}
@@ -114,9 +117,9 @@ public class PlannerNode implements NodeAction {
 
 		String previousPlan = StateUtil.getStringValue(state, PLANNER_NODE_OUTPUT, "");
 		return String.format(
-				"IMPORTANT: User rejected previous plan with feedback: \"%s\"\n\n" + "Original question: %s\n\n"
-						+ "Previous rejected plan:\n%s\n\n"
-						+ "CRITICAL: Generate new plan incorporating user feedback (\"%s\")",
+				"IMPORTANT: The previous plan must be revised. Feedback (from the reviewer or from execution): \"%s\"\n\n"
+						+ "Original question: %s\n\n" + "Previous plan:\n%s\n\n"
+						+ "CRITICAL: Generate a new plan that addresses this feedback (\"%s\")",
 				validationError, input, previousPlan, validationError);
 	}
 

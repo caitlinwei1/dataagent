@@ -16,6 +16,7 @@
 package com.alibaba.cloud.ai.dataagent.workflow.node;
 
 import com.alibaba.cloud.ai.dataagent.util.FluxUtil;
+import com.alibaba.cloud.ai.dataagent.util.ChatResponseUtil;
 import com.alibaba.cloud.ai.dataagent.util.StateUtil;
 import com.alibaba.cloud.ai.dataagent.dto.datasource.SqlRetryDto;
 import com.alibaba.cloud.ai.dataagent.dto.prompt.SemanticConsistencyDTO;
@@ -53,8 +54,25 @@ public class SemanticConsistencyNode implements NodeAction {
 
 	private final Nl2SqlService nl2SqlService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
+
+		// B5: the LLM judge is not stable (measured: 9 rejections in 10 with contradicting reasons, one inventing a
+		// "2025 calendar year" condition), so it gets a bounded number of vetoes per step. In a multi-step plan the
+		// second veto first sends the step back to the planner (SqlGenerateNode.replanIfStuck); only when that budget
+		// is used, or in nl2sql-only mode, does the SQL go on to the deterministic checks (guard, then the database).
+		int rejects = state.value(SEMANTIC_REJECT_COUNT, 0);
+		int maxRejects = nl2sqlProperties.getMaxSemanticRejects();
+		if (maxRejects > 0 && rejects >= maxRejects) {
+			log.warn("semantic_check bypass after {} rejections in this step", rejects);
+			Flux<ChatResponse> note = Flux.just(ChatResponseUtil.createResponse(
+					"语义一致性校验在本步骤已驳回 " + rejects + " 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"));
+			Flux<GraphResponse<StreamingOutput>> bypass = FluxUtil.createStreamingGeneratorWithMessages(
+					this.getClass(), state, v -> Map.of(SEMANTIC_CONSISTENCY_NODE_OUTPUT, true), note);
+			return Map.of(SEMANTIC_CONSISTENCY_NODE_OUTPUT, bypass);
+		}
 
 		// Get necessary input parameters
 		String evidence = StateUtil.getStringValue(state, EVIDENCE);
@@ -78,7 +96,10 @@ public class SemanticConsistencyNode implements NodeAction {
 		Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(this.getClass(),
 				state, "开始语义一致性校验", "语义一致性校验完成", validationResult -> {
 					boolean isPassed = !validationResult.startsWith("不通过");
-					Map<String, Object> result = buildValidationResult(isPassed, validationResult);
+					Map<String, Object> result = new java.util.HashMap<>(buildValidationResult(isPassed, validationResult));
+					if (!isPassed) {
+						result.put(SEMANTIC_REJECT_COUNT, rejects + 1);
+					}
 					log.info("[{}] Semantic consistency validation result: {}, passed: {}",
 							this.getClass().getSimpleName(), validationResult, isPassed);
 					return result;

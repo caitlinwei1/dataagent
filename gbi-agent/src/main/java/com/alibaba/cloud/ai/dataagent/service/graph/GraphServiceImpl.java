@@ -161,7 +161,9 @@ public class GraphServiceImpl implements GraphService {
 				Map.entry(HUMAN_REPLAN_COUNT, 0), Map.entry(HUMAN_FEEDBACK_DATA, Map.of()),
 				Map.entry(PLAN_REPAIR_COUNT, 0), Map.entry(HUMAN_REJECT_REASONS, java.util.List.of()),
 				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false),
-				Map.entry(GBI_PERMISSION_DENIALS, 0)));
+				Map.entry(GBI_PERMISSION_DENIALS, 0), Map.entry(SEMANTIC_REJECT_COUNT, 0),
+				Map.entry(SQL_REPEAT_COUNT, 0), Map.entry(SQL_REPLAN_COUNT, 0), Map.entry(SQL_SCHEMA_EXPANDED, 0),
+				Map.entry(GBI_FRESHNESS_NOTE, ""), Map.entry(PLAN_VALIDATION_ERROR, "")));
 		putDataPermission(input);
 		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(input, RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);

@@ -62,10 +62,18 @@ public class SqlGenerateNode implements NodeAction {
 
 	private final DataAgentProperties properties;
 
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 		// 判断是否达到最大尝试次数
 		int count = state.value(SQL_GENERATE_COUNT, 0);
+		SqlRetryDto pendingRetry = StateUtil.getObjectValue(state, SQL_REGENERATE_REASON, SqlRetryDto.class,
+				SqlRetryDto.empty());
+		Map<String, Object> replan = replanIfStuck(state, count, pendingRetry);
+		if (replan != null) {
+			return replan;
+		}
 		if (count >= properties.getMaxSqlRetryCount()) {
 			ExecutionStep executionStep = PlanProcessUtil.getCurrentExecutionStep(state);
 			String sqlGenerateOutput = String.format("步骤[%d]中，SQL次数生成超限，最大尝试次数：%d，已尝试次数:%d，该步骤内容: \n %s",
@@ -122,6 +130,12 @@ public class SqlGenerateNode implements NodeAction {
 				state, v -> {
 					String sql = nl2SqlService.sqlTrim(sqlCollector.toString());
 					result.put(SQL_GENERATE_OUTPUT, sql);
+					// B4/B6: the same failing SQL written again means more retries will not help
+					if (retryDto.sqlExecuteFail() || retryDto.semanticFail()) {
+						String previous = StateUtil.getStringValue(state, SQL_GENERATE_OUTPUT, "");
+						int repeats = state.value(SQL_REPEAT_COUNT, 0);
+						result.put(SQL_REPEAT_COUNT, normalize(previous).equals(normalize(sql)) ? repeats + 1 : 0);
+					}
 					return result;
 				}, displayFlux);
 
@@ -150,6 +164,63 @@ public class SqlGenerateNode implements NodeAction {
 
 	private Flux<String> handleGenerateSql(OverAllState state, String executionDescription) {
 		return handleRetryGenerateSql(state, null, null, executionDescription);
+	}
+
+	/**
+	 * B6: a step whose SQL keeps failing usually has an instruction that cannot be answered as written (e.g. the plan
+	 * asks for a join the schema does not have, and the semantic check holds the SQL to the plan). Retrying the same
+	 * instruction ten times cannot fix that, so after {@code gbi.nl2sql.replan-after-sql-failures} failures, or the same
+	 * failing SQL twice, go back to the planner with the reason and let it rewrite the step. Bounded by
+	 * {@code max-sql-replans}; after that the old behaviour (retry until the global limit, then END) applies.
+	 */
+	private Map<String, Object> replanIfStuck(OverAllState state, int count, SqlRetryDto retry) {
+		int threshold = nl2sqlProperties.getReplanAfterSqlFailures();
+		// nl2sql-only mode has a fixed one-step plan: there is nothing for the planner to rewrite
+		if (threshold <= 0 || Boolean.TRUE.equals(state.value(IS_ONLY_NL2SQL, false))
+				|| (!retry.sqlExecuteFail() && !retry.semanticFail())) {
+			return null;
+		}
+		int repeats = state.value(SQL_REPEAT_COUNT, 0);
+		int replans = state.value(SQL_REPLAN_COUNT, 0);
+		int semanticRejects = state.value(SEMANTIC_REJECT_COUNT, 0);
+		int maxRejects = nl2sqlProperties.getMaxSemanticRejects();
+		// the judge rejecting the step repeatedly is the same signal as repeated execution failures: the step's
+		// instruction is probably not answerable as written (B6: it asked for a join the schema does not have)
+		boolean judgeStuck = maxRejects > 0 && semanticRejects >= maxRejects;
+		if ((count < threshold && repeats < 1 && !judgeStuck) || replans >= nl2sqlProperties.getMaxSqlReplans()) {
+			return null;
+		}
+		ExecutionStep step = PlanProcessUtil.getCurrentExecutionStep(state);
+		String reason = retry.reason() == null ? "" : retry.reason();
+		if (reason.length() > 600) {
+			reason = reason.substring(0, 600) + "...";
+		}
+		String feedback = String.format(
+				"第%d步的SQL已失败%d次%s，这一步按现在的写法做不出来。最后一次失败原因：%s\n"
+						+ "请只重写第%d步及依赖它的后续步骤：换一种可行的取数方式（例如拆成几条各自能执行的SQL，再在Python步骤里对比、合并），"
+						+ "不要要求schema里不存在的表关联。前%d步已经执行完成，原样保留、步骤编号不变。",
+				step.getStep(), count,
+				repeats > 0 ? "（模型连续写出同一条失败的SQL）" : judgeStuck ? "（语义校验连续驳回）" : "", reason, step.getStep(),
+				step.getStep() - 1);
+		log.warn("sql_replan step={} attempts={} repeats={} replans={} reason={}", step.getStep(), count, repeats,
+				replans, reason);
+		Map<String, Object> out = new HashMap<>();
+		out.put(SQL_GENERATE_OUTPUT, SQL_REPLAN);
+		out.put(SQL_GENERATE_COUNT, 0);
+		out.put(SQL_REPEAT_COUNT, 0);
+		out.put(SEMANTIC_REJECT_COUNT, 0);
+		out.put(SQL_REPLAN_COUNT, replans + 1);
+		out.put(SQL_REGENERATE_REASON, SqlRetryDto.empty());
+		out.put(PLAN_VALIDATION_ERROR, feedback);
+		Flux<ChatResponse> preFlux = Flux
+			.just(ChatResponseUtil.createResponse("步骤[" + step.getStep() + "]的SQL连续失败，回到规划器重写这一步：" + reason));
+		Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(
+				this.getClass(), state, "正在回退到规划...", "已提交重新规划", v -> out, preFlux);
+		return Map.of(SQL_GENERATE_OUTPUT, generator);
+	}
+
+	private static String normalize(String sql) {
+		return sql == null ? "" : sql.replaceAll("\\s+", " ").trim().toLowerCase(java.util.Locale.ROOT);
 	}
 
 }
