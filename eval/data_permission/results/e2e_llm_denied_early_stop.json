@@ -1,0 +1,22 @@
+{
+  "seconds": 54.3,
+  "nodes": [
+    "EvidenceRecallNode",
+    "FeasibilityAssessmentNode",
+    "IntentRecognitionNode",
+    "PlannerNode",
+    "QueryEnhanceNode",
+    "SchemaRecallNode",
+    "SemanticConsistencyNode",
+    "SqlExecuteNode",
+    "SqlGenerateNode",
+    "TableRelationNode"
+  ],
+  "recalled_tables": "dim_shop",
+  "sql": [],
+  "permission_notes": [
+    "当前用户无权查询表：trd_daily_shop_sales"
+  ],
+  "result_sets": [],
+  "tail": "' AND `trd_daily_shop_sales`.`date` < '2026-04-01' GROUP BY `dim_shop`.`name` ORDER BY `dim_shop`.`name`;\nSQL守卫拦截[PERMISSION/权限]：当前用户无权查询表：trd_daily_shop_sales，请只用有权限的表。连续 2 次需要无权限的数据，停止重试：这个问题超出了你的数据权限，请联系管理员授权\n正在进行重试评估...\n步骤[1]中，SQL次数生成超限，最大尝试次数：10，已尝试次数:10，该步骤内容: \n 从 trd_daily_shop_sales 表中查询 2026年3月（>= '2026-03-01' AND < '2026-04-01'）各店铺的GMV总和，并通过 shop_id 关联 dim_shop 表获取店铺名称，结果按店铺名称排序\n重试评估完成！\n"
+}

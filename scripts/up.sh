@@ -8,7 +8,8 @@
 #
 # Needs docker, JDK 17 + Maven, python3 with pyyaml + requests, and DASHSCOPE_API_KEY in the environment.
 # Optional: CHAT_MODEL (default qwen-plus), EMBED_MODEL (default qwen3.7-text-embedding),
-#           MODEL_PROXY=host:port if outbound HTTPS from the JVM must go through a proxy.
+#           MODEL_PROXY=host:port if outbound HTTPS from the JVM must go through a proxy,
+#           SECURITY=on (+ GBI_JWT_SECRET, GBI_GATEWAY_SIGN_SECRET) for step 9: gateway, auth service, data permission.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 : "${DASHSCOPE_API_KEY:?export DASHSCOPE_API_KEY first}"
@@ -90,6 +91,41 @@ if curl -s $API/api/agent/list | grep -q '"电商经营分析"'; then
   echo "agent 电商经营分析 already registered"
 else
   python3 scripts/setup_agent.py --api $API
+fi
+
+if [ "${SECURITY:-off}" = on ]; then
+  # Microservice mode (RuoYi-Cloud layout): gbi-gateway :8080 is the only entry, gbi-auth :9200 issues tokens,
+  # gbi-agent accepts only gateway-signed requests. Steps 7-8 above ran unauthenticated against :8065 on purpose
+  # (bootstrap); from here on the agent needs the gateway.
+  step "9 security: redis, gbi_system, gbi-auth, gbi-gateway, backend with the security profile"
+  : "${GBI_JWT_SECRET:?export GBI_JWT_SECRET (64+ bytes) for SECURITY=on}"
+  : "${GBI_GATEWAY_SIGN_SECRET:?export GBI_GATEWAY_SIGN_SECRET for SECURITY=on}"
+  docker start da-redis >/dev/null 2>&1 || docker run -d --name da-redis -p 6379:6379 redis:7 >/dev/null
+  docker exec da-meta mysql -uroot -proot -N -e "select 1 from information_schema.schemata where schema_name='gbi_system'" \
+    2>/dev/null | grep -q 1 || docker exec -i da-meta mysql --default-character-set=utf8mb4 -uroot -proot < ruoyi/sql/gbi_system.sql
+  if [ ! -f run/gbi-auth.jar ] || [ ! -f run/gbi-gateway.jar ]; then
+    (cd ruoyi && mvn -B -q -DskipTests package)
+    cp ruoyi/gbi-auth/target/gbi-auth-1.0.0-SNAPSHOT.jar run/gbi-auth.jar
+    cp ruoyi/gbi-gateway/target/gbi-gateway-1.0.0-SNAPSHOT.jar run/gbi-gateway.jar
+  fi
+  for svc in auth:9200 gateway:8080; do
+    name=${svc%%:*}; port=${svc##*:}
+    curl -sf localhost:$port/actuator/health >/dev/null || \
+      setsid nohup java -jar run/gbi-$name.jar > results/gbi-$name.log 2>&1 < /dev/null &
+  done
+  if ! curl -s -o /dev/null -w '%{http_code}' $API/api/agent/list | grep -q 401; then
+    pkill -f run/gbi-agent.jar || true
+    while curl -sf $API/echo/ok >/dev/null; do sleep 1; done
+    : >> "$LOG"
+    setsid nohup java -jar run/gbi-agent.jar --spring.profiles.active=milvus,security \
+      --spring.ai.alibaba.data-agent.code-executor.code-pool-executor=docker \
+      --spring.ai.alibaba.data-agent.code-executor.image-name=gbi-python-sandbox:0.1 >> "$LOG" 2>&1 < /dev/null &
+  fi
+  until curl -sf localhost:9200/actuator/health >/dev/null && curl -sf localhost:8080/actuator/health >/dev/null \
+    && curl -sf $API/echo/ok >/dev/null; do sleep 2; done
+  API=http://localhost:8080
+  echo "gateway :8080 -> auth :9200 / agent :8065 (direct calls to :8065 now get 401)"
+  echo "login: curl -s -XPOST $API/auth/login -H 'Content-Type: application/json' -d '{\"username\":\"east_ops\",\"password\":\"Gbi@2026\"}'"
 fi
 
 cat <<EOF

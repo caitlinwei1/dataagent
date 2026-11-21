@@ -146,6 +146,12 @@ public final class Constant {
 	// 标记是否进入Python执行失败的降级模式（超过最大重试次数后触发）
 	public static final String PYTHON_FALLBACK_MODE = "PYTHON_FALLBACK_MODE";
 
+	// 发起问数的用户及其数据权限（表级 + 行级），由网关签名头解析而来；未开启鉴权时不存在，表示不限制
+	public static final String GBI_DATA_PERMISSION = "GBI_DATA_PERMISSION";
+
+	// 当前问题里 SQL 因数据权限被拦的次数；达到上限就不再让模型重写（换个写法也绕不过权限，只是浪费调用）
+	public static final String GBI_PERMISSION_DENIALS = "GBI_PERMISSION_DENIALS";
+
 	// If code execution succeeds, output code running result; if fails, output error
 	// information
 	public static final String PYTHON_EXECUTE_NODE_OUTPUT = "PYTHON_EXECUTE_NODE_OUTPUT";
