@@ -4,7 +4,7 @@
 
 参考工程固定为 [spring-ai-alibaba/DataAgent @ b297203](https://github.com/spring-ai-alibaba/DataAgent/tree/b297203eecb2c2d6db45c2f5c0e15f1db4784d32)，不使用该提交之后的功能。从上游借用的是：工程结构、图的状态字段、节点连线和容器配置。下面这些都是自己做的：数据集和 schema、召回、SQL 守卫、人工审核的改造、沙箱修复、评测集和报告接口。
 
-**面试准备**：简历每一条怎么做、为什么这么做、指标是多少，都整理在 [docs/resume-map.md](docs/resume-map.md)。每一步的设计说明在 [docs/design/](docs/design/)。
+**面试准备**：讲稿（架构一页纸、逐条 bad case 与追问、缺口表）在 [docs/interview/](docs/interview/README.md)。简历每一条怎么做、为什么这么做、指标是多少，都整理在 [docs/resume-map.md](docs/resume-map.md)。每一步的设计说明在 [docs/design/](docs/design/)。
 
 ## 链路
 
