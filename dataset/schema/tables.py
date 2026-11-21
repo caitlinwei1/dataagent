@@ -242,11 +242,13 @@ T("prd_category", "商品类目，三级树形", [
     "level t 层级1/2/3",
     "name s 类目名称",
 ], domain=D)
-T("prd_brand", "品牌", [
+T("prd_brand", "品牌：即品牌客户，一个品牌在多个平台开官方旗舰店，由我方运营", [
     "id id 品牌ID",
     "name s 品牌名称",
-    "is_own t 是否自有品牌",
+    "is_own t 是否自有品牌（品牌管理模式：我方持有该品牌中国区经营权）",
     "country s 品牌国家",
+    "coop_mode s 合作模式：DISTRIBUTION经销（我方买断货品、承担库存）/TP代运营（货权在品牌方，我方按GMV收服务费）/BRAND_MGMT品牌管理",
+    "service_fee_rate r 代运营服务费率（仅TP模式，按支付GMV抽佣）",
 ], domain=D)
 T("prd_price_history", "SKU价格变更历史", [
     "id id 记录ID",
@@ -570,8 +572,11 @@ T("fin_settlement", "店铺结算单（按月）", [
     "month_key s 结算月份YYYY-MM",
     "gross_amount d 应结算总额",
     "commission d 平台佣金",
-    "net_amount d 实际结算金额",
+    "net_amount d 实际结算金额（平台打款的货款，扣佣金后）",
     "settled_at ts 结算时间",
+    "coop_mode s 结算时品牌的合作模式：DISTRIBUTION/TP/BRAND_MGMT",
+    "service_fee d 我方应收代运营服务费（仅TP模式=应结算总额×服务费率，其余为0）",
+    "revenue_amount d 我方确认收入：经销和品牌管理=实际结算货款，代运营=服务费（货款归品牌方）",
 ], domain=D)
 T("fin_settlement_item", "结算明细：按订单", [
     "id id 明细ID",
@@ -602,12 +607,13 @@ T("dim_region", "区域维表：大区-省", [
     "big_region s 大区：华东/华北/华南/华中/西南/西北/东北",
     "province s 省份",
 ], domain=D)
-T("dim_shop", "店铺维表", [
+T("dim_shop", "店铺维表：每个店铺是某个品牌在某个平台的官方旗舰店", [
     "id id 店铺ID",
     "name s 店铺名称",
     "platform_id b 所属平台ID ->dim_platform.id",
-    "region_id b 运营归属区域ID ->dim_region.id",
+    "region_id b 运营归属区域ID（负责该店的运营中心所在区域） ->dim_region.id",
     "opened_at dt 开店日期",
+    "brand_id b 所属品牌（品牌客户）ID ->prd_brand.id",
 ], domain=D)
 T("dim_store", "线下门店维表", [
     "id id 门店ID",

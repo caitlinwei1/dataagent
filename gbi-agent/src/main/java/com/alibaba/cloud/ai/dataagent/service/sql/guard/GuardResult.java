@@ -17,6 +17,11 @@ public record GuardResult(boolean passed, SqlCheck failedCheck, String message, 
 		return new GuardResult(false, check, message, tables, List.of());
 	}
 
+	/** Table / row data permission, decided outside the guard (it needs the caller, the guard does not). */
+	public static GuardResult permissionDenied(String message, Set<String> tables) {
+		return new GuardResult(false, SqlCheck.PERMISSION, message, tables, List.of());
+	}
+
 	public SqlErrorClass errorClass() {
 		return failedCheck == null ? null : failedCheck.errorClass();
 	}

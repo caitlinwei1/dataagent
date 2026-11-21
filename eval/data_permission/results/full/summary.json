@@ -1,0 +1,138 @@
+{
+  "cases": 1684,
+  "gold": {
+    "total": 1656,
+    "verdicts": {
+      "ok_match": 1276,
+      "ok_block": 380
+    },
+    "should_block": 380,
+    "blocked": 380,
+    "may_run": 1276,
+    "matched_scoped_truth": 1276,
+    "may_run_with_row_filter": 768,
+    "row_filter_changed_result": 711,
+    "false_block": 0,
+    "leak_or_wrong": 0,
+    "by_user": {
+      "admin": {
+        "ok_match": 276
+      },
+      "east_ops": {
+        "ok_match": 276
+      },
+      "sh_wh": {
+        "ok_block": 232,
+        "ok_match": 44
+      },
+      "finance": {
+        "ok_match": 172,
+        "ok_block": 104
+      },
+      "shop_ops": {
+        "ok_match": 232,
+        "ok_block": 44
+      },
+      "auditor": {
+        "ok_match": 276
+      }
+    }
+  },
+  "attack": {
+    "total": 28,
+    "verdicts": {
+      "ok_block": 13,
+      "ok_match": 15
+    },
+    "should_block": 12,
+    "blocked": 12,
+    "may_run": 16,
+    "matched_scoped_truth": 15,
+    "may_run_with_row_filter": 15,
+    "row_filter_changed_result": 15,
+    "false_block": 0,
+    "leak_or_wrong": 0,
+    "by_user": {
+      "sh_wh": {
+        "ok_block": 10,
+        "ok_match": 2
+      },
+      "shop_ops": {
+        "ok_block": 2,
+        "ok_match": 1
+      },
+      "east_ops": {
+        "ok_match": 11,
+        "ok_block": 1
+      },
+      "auditor": {
+        "ok_match": 1
+      }
+    }
+  },
+  "http": {
+    "total": 11,
+    "ok": 11,
+    "checks": [
+      {
+        "id": "H01 无令牌",
+        "ok": true,
+        "detail": "expect 401"
+      },
+      {
+        "id": "H02 乱写令牌",
+        "ok": true,
+        "detail": "expect 401"
+      },
+      {
+        "id": "H03 篡改令牌载荷",
+        "ok": true,
+        "detail": "user_id 2 -> 1, signature unchanged"
+      },
+      {
+        "id": "H04 经网关伪造身份头",
+        "ok": true,
+        "detail": "east_ops（全部表；shop=[1, 10, 2, 3, 7]；warehouse=[1, 3, 7]）"
+      },
+      {
+        "id": "H05 绕过网关直连 agent",
+        "ok": true,
+        "detail": "status 401"
+      },
+      {
+        "id": "H06 直连 agent 不带任何头",
+        "ok": true,
+        "detail": "status 401"
+      },
+      {
+        "id": "H07 无报告权限调报告接口",
+        "ok": true,
+        "detail": "status 403"
+      },
+      {
+        "id": "H08 非管理员删智能体",
+        "ok": true,
+        "detail": "status 403"
+      },
+      {
+        "id": "H09 非管理员读模型配置（含 API Key）",
+        "ok": true,
+        "detail": "status 403"
+      },
+      {
+        "id": "H10 注销后旧令牌",
+        "ok": true,
+        "detail": "expect 401"
+      },
+      {
+        "id": "H11 读别人的报告（未知 threadId）",
+        "ok": true,
+        "detail": "status 403"
+      }
+    ]
+  },
+  "preview_latency_ms": {
+    "p50": 14.7,
+    "p95": 48.0
+  }
+}

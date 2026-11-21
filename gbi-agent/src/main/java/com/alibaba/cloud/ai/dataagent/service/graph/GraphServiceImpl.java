@@ -54,10 +54,12 @@ public class GraphServiceImpl implements GraphService {
 
 	private final MultiTurnContextManager multiTurnContextManager;
 
+	private final com.alibaba.cloud.ai.dataagent.security.ThreadOwnerRegistry threadOwners;
+
 	public GraphServiceImpl(StateGraph stateGraph, ExecutorService executorService,
 			MultiTurnContextManager multiTurnContextManager,
-			com.alibaba.cloud.ai.dataagent.service.hitl.GbiHitlProperties hitlProperties, javax.sql.DataSource dataSource)
-			throws GraphStateException {
+			com.alibaba.cloud.ai.dataagent.service.hitl.GbiHitlProperties hitlProperties, javax.sql.DataSource dataSource,
+			com.alibaba.cloud.ai.dataagent.security.ThreadOwnerRegistry threadOwners) throws GraphStateException {
 		CompileConfig.Builder config = CompileConfig.builder().interruptBefore(HUMAN_FEEDBACK_NODE);
 		if ("mysql".equalsIgnoreCase(hitlProperties.getCheckpoint())) {
 			// paused plan reviews live in the meta database: a threadId can be resumed after a restart or on another
@@ -74,6 +76,7 @@ public class GraphServiceImpl implements GraphService {
 		this.compiledGraph = stateGraph.compile(config.build());
 		this.executor = executorService;
 		this.multiTurnContextManager = multiTurnContextManager;
+		this.threadOwners = threadOwners;
 	}
 
 	@Override
@@ -91,6 +94,17 @@ public class GraphServiceImpl implements GraphService {
 			graphRequest.setThreadId(UUID.randomUUID().toString());
 		}
 		String threadId = graphRequest.getThreadId();
+		// 先校验会话归属，再碰 StreamContext：否则别人拿着 threadId 就能把自己的 sink 挂到他人的会话上
+		com.alibaba.cloud.ai.dataagent.security.CurrentUser user = com.alibaba.cloud.ai.dataagent.security.CurrentUser
+			.get();
+		if (user != null) {
+			if (StringUtils.hasText(graphRequest.getHumanFeedbackContent())) {
+				threadOwners.requireOwner(threadId, user);
+			}
+			else {
+				threadOwners.claim(threadId, user);
+			}
+		}
 		// 创建或获取 StreamContext
 		StreamContext context = streamContextMap.computeIfAbsent(threadId, k -> new StreamContext());
 		context.setSink(sink);
@@ -140,14 +154,18 @@ public class GraphServiceImpl implements GraphService {
 		}
 		String multiTurnContext = multiTurnContextManager.buildContext(threadId);
 		multiTurnContextManager.beginTurn(threadId, query);
-		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(Map.ofEntries(Map.entry(IS_ONLY_NL2SQL, nl2sqlOnly),
+		Map<String, Object> input = new HashMap<>(Map.ofEntries(Map.entry(IS_ONLY_NL2SQL, nl2sqlOnly),
 				Map.entry(INPUT_KEY, query), Map.entry(AGENT_ID, agentId),
 				Map.entry(HUMAN_REVIEW_ENABLED, humanReviewEnabled), Map.entry(MULTI_TURN_CONTEXT, multiTurnContext),
 				// a new question in the same thread starts with a fresh review / repair / python budget
 				Map.entry(HUMAN_REPLAN_COUNT, 0), Map.entry(HUMAN_FEEDBACK_DATA, Map.of()),
 				Map.entry(PLAN_REPAIR_COUNT, 0), Map.entry(HUMAN_REJECT_REASONS, java.util.List.of()),
-				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false)),
-				RunnableConfig.builder().threadId(threadId).build());
+				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false),
+				Map.entry(GBI_PERMISSION_DENIALS, 0), Map.entry(SEMANTIC_REJECT_COUNT, 0),
+				Map.entry(SQL_REPEAT_COUNT, 0), Map.entry(SQL_REPLAN_COUNT, 0), Map.entry(SQL_SCHEMA_EXPANDED, 0),
+				Map.entry(GBI_FRESHNESS_NOTE, ""), Map.entry(PLAN_VALIDATION_ERROR, "")));
+		putDataPermission(input);
+		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(input, RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
 	}
 
@@ -177,6 +195,8 @@ public class GraphServiceImpl implements GraphService {
 		Map<String, Object> stateUpdate = new HashMap<>();
 		stateUpdate.put(HUMAN_FEEDBACK_DATA, feedbackData);
 		stateUpdate.put(MULTI_TURN_CONTEXT, multiTurnContextManager.buildContext(threadId));
+		// re-read on resume: a permission revoked while the plan waited for review applies to the rest of the run
+		putDataPermission(stateUpdate);
 
 		RunnableConfig baseConfig = RunnableConfig.builder().threadId(threadId).build();
 		RunnableConfig updatedConfig;
@@ -192,6 +212,15 @@ public class GraphServiceImpl implements GraphService {
 
 		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(null, resumeConfig);
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
+	}
+
+	/** The caller's table / row permission goes into the graph state, where SchemaRecall and SqlExecute read it. */
+	private static void putDataPermission(Map<String, Object> state) {
+		com.alibaba.cloud.ai.dataagent.security.CurrentUser user = com.alibaba.cloud.ai.dataagent.security.CurrentUser
+			.get();
+		if (user != null) {
+			state.put(GBI_DATA_PERMISSION, user.permission().toState());
+		}
 	}
 
 	/**

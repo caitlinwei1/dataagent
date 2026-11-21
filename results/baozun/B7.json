@@ -1,0 +1,28 @@
+{
+ "id": "B7",
+ "question": "今天（2026年10月31日）各投放渠道的花费分别是多少？",
+ "thread": "baozun-B7-08428c",
+ "seconds": 43.2,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `mkt_channel`.`name` as `channel_name`, sum(`mkt_ad_spend`.`spend`) as `total_spend` from `mkt_ad_spend` inner join `mkt_channel` on `mkt_ad_spend`.`channel_id` = `mkt_channel`.`id` where `mkt_ad_spend`.`stat_date` >= '2026-10-31' and `mkt_ad_spend`.`stat_date` < '2026-11-01' group by `mkt_channel`.`name`;"
+ ],
+ "final_sql": "select `mkt_channel`.`name` as `channel_name`, sum(`mkt_ad_spend`.`spend`) as `total_spend` from `mkt_ad_spend` inner join `mkt_channel` on `mkt_ad_spend`.`channel_id` = `mkt_channel`.`id` where `mkt_ad_spend`.`stat_date` >= '2026-10-31' and `mkt_ad_spend`.`stat_date` < '2026-11-01' group by `mkt_channel`.`name`;",
+ "result": {
+  "column": [
+   "channel_name",
+   "total_spend"
+  ],
+  "data": [],
+  "errorMsg": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "latest_ad_date\n2026-10-30",
+ "wrong": null
+}

@@ -16,7 +16,9 @@ public enum SqlCheck {
 	WHITELIST(SqlErrorClass.TABLE_SELECTION),
 
 	/** Qualified columns exist in the recalled schema. */
-	COLUMN(SqlErrorClass.TABLE_SELECTION);
+	COLUMN(SqlErrorClass.TABLE_SELECTION),
+	/** The caller's data permission: a table outside their grants, or a statement the row filter cannot be added to. */
+	PERMISSION(SqlErrorClass.PERMISSION);
 
 	private final SqlErrorClass errorClass;
 

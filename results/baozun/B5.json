@@ -1,0 +1,23 @@
+{
+ "id": "B5",
+ "question": "2025年双11期间（10月31日到11月11日）各品牌的GMV是多少？",
+ "thread": "baozun-B5-fd364f",
+ "seconds": 242.3,
+ "sql_attempts": 10,
+ "error_classes": [
+  "COLUMN"
+ ],
+ "guard_blocks": 1,
+ "sql_executed": [
+  "SELECT \n    `b`.`name` AS `brand_name`,\n    SUM(`o`.`total_amount` + `o`.`freight_amount`) AS `gmv`\nFROM `trd_order` `o`\nINNER JOIN `dim_shop` `s` ON `o`.`shop_id` = `s`.`id`\nINNER JOIN `prd_brand` `b` ON `s`.`brand_id` = `b`.`id`\nLEFT JOIN `trd_presale_order` `p` ON `o`.`id` = `p`.`order_id` AND (`p`.`is_deleted` IS NULL OR `p`.`is_deleted` = 0)\nINNER JOIN `trd_order_promotion` `op` ON `o`.`id` = `op`.`order_id`\nINNER JOIN `mkt_activity` `a` ON `op`.`activity_id` = `a`.`id`\nWHERE `o`.`is_deleted` = 0\n    AND `s`.`is_deleted` = 0\n    AND `b`.`is_deleted` = 0\n    AND `a`.`name` = '2025双11'\n    AND `a`.`is_deleted` = 0\n    AND (\n        (`o`.`is_presale` = 0 AND `o`.`paid_at` >= '2025-10-31 00:00:00' AND `o`.`paid_at` <= '2025-11-11 23:59:59')\n        OR \n        (`o`.`is_presale` = 1 AND `p`.`balance_paid_at` >= '2025-10-31 00:00:00' AND `p`.`balance_paid_at` <= '2025-11-11 23:59:59')\n    )\n    AND (\n        (`o`.`is_presale` = 0 AND `o`.`paid_at` >= '2025-01-01' AND `o`.`paid_at` < '2026-01-01')\n        OR \n        (`o`.`is_presale` = 1 AND `p`.`balance_paid_at` >= '2025-01-01' AND `p`.`balance_paid_at` < '2026-01-01')\n    )\nGROUP BY `b`.`name`;"
+ ],
+ "final_sql": null,
+ "result": null,
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "name\tgmv\n曜石\t956004.20\n星屿\t598290.23\n青岚\t175967.55\n北纬\t159867.23\n朵朵熊\t153830.32\n澄野\t115123.14\n栖木\t42583.91\n禾川\t29548.26",
+ "wrong": "name\tgmv\n曜石\t852227.60\n星屿\t543172.32\n青岚\t159350.25\n北纬\t145041.56\n朵朵熊\t133506.66\n澄野\t98870.87\n栖木\t40227.31\n禾川\t26077.43"
+}

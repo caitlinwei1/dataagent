@@ -1,0 +1,33 @@
+{
+ "id": "B5",
+ "question": "2025年双11期间（10月31日到11月11日）各品牌的GMV是多少？",
+ "thread": "baozun-B5-8e418c",
+ "seconds": 95.9,
+ "sql_attempts": 3,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "SELECT \n    `prd_brand`.`name` AS `brand_name`,\n    SUM(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) AS `gmv`\nFROM `trd_order`\nJOIN `dim_shop` ON `trd_order`.`shop_id` = `dim_shop`.`id`\nJOIN `prd_brand` ON `dim_shop`.`brand_id` = `prd_brand`.`id`\nINNER JOIN `trd_presale_order` ON `trd_order`.`id` = `trd_presale_order`.`order_id` AND `trd_presale_order`.`is_deleted` = 0\nJOIN `trd_order_promotion` ON `trd_order`.`id` = `trd_order_promotion`.`order_id`\nJOIN `mkt_activity` ON `trd_order_promotion`.`activity_id` = `mkt_activity`.`id`\nWHERE `mkt_activity`.`name` = '2025双11'\n    AND `trd_order`.`is_deleted` = 0\n    AND (`trd_order`.`order_status` = 'COMPLETED' OR `trd_order`.`order_status` = 'SHIPPED')\n    AND (\n        (`trd_order`.`is_presale` = 0 AND `trd_order`.`paid_at` >= '2025-10-31 00:00:00' AND `trd_order`.`paid_at` < '2025-11-12 00:00:00')\n        OR\n        (`trd_order`.`is_presale` = 1 AND `trd_presale_order`.`balance_paid_at` >= '2025-10-31 00:00:00' AND `trd_presale_order`.`balance_paid_at` < '2025-11-12 00:00:00')\n    )\nGROUP BY `prd_brand`.`name`;"
+ ],
+ "final_sql": "SELECT \n    `prd_brand`.`name` AS `brand_name`,\n    SUM(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) AS `gmv`\nFROM `trd_order`\nJOIN `dim_shop` ON `trd_order`.`shop_id` = `dim_shop`.`id`\nJOIN `prd_brand` ON `dim_shop`.`brand_id` = `prd_brand`.`id`\nINNER JOIN `trd_presale_order` ON `trd_order`.`id` = `trd_presale_order`.`order_id` AND `trd_presale_order`.`is_deleted` = 0\nJOIN `trd_order_promotion` ON `trd_order`.`id` = `trd_order_promotion`.`order_id`\nJOIN `mkt_activity` ON `trd_order_promotion`.`activity_id` = `mkt_activity`.`id`\nWHERE `mkt_activity`.`name` = '2025双11'\n    AND `trd_order`.`is_deleted` = 0\n    AND (`trd_order`.`order_status` = 'COMPLETED' OR `trd_order`.`order_status` = 'SHIPPED')\n    AND (\n        (`trd_order`.`is_presale` = 0 AND `trd_order`.`paid_at` >= '2025-10-31 00:00:00' AND `trd_order`.`paid_at` < '2025-11-12 00:00:00')\n        OR\n        (`trd_order`.`is_presale` = 1 AND `trd_presale_order`.`balance_paid_at` >= '2025-10-31 00:00:00' AND `trd_presale_order`.`balance_paid_at` < '2025-11-12 00:00:00')\n    )\nGROUP BY `prd_brand`.`name`;",
+ "result": {
+  "column": [
+   "brand_name",
+   "gmv"
+  ],
+  "data": [],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"
+ ],
+ "gold": "name\tgmv\n曜石\t956004.20\n星屿\t598290.23\n青岚\t175967.55\n北纬\t159867.23\n朵朵熊\t153830.32\n澄野\t115123.14\n栖木\t42583.91\n禾川\t29548.26",
+ "wrong": "name\tgmv\n曜石\t852227.60\n星屿\t543172.32\n青岚\t159350.25\n北纬\t145041.56\n朵朵熊\t133506.66\n澄野\t98870.87\n栖木\t40227.31\n禾川\t26077.43"
+}

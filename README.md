@@ -4,7 +4,7 @@
 
 参考工程固定为 [spring-ai-alibaba/DataAgent @ b297203](https://github.com/spring-ai-alibaba/DataAgent/tree/b297203eecb2c2d6db45c2f5c0e15f1db4784d32)，不使用该提交之后的功能。从上游借用的是：工程结构、图的状态字段、节点连线和容器配置。下面这些都是自己做的：数据集和 schema、召回、SQL 守卫、人工审核的改造、沙箱修复、评测集和报告接口。
 
-**面试准备**：简历每一条怎么做、为什么这么做、指标是多少，都整理在 [docs/resume-map.md](docs/resume-map.md)。每一步的设计说明在 [docs/design/](docs/design/)。
+**面试准备**：讲稿（架构一页纸、逐条 bad case 与追问、缺口表）在 [docs/interview/](docs/interview/README.md)。简历每一条怎么做、为什么这么做、指标是多少，都整理在 [docs/resume-map.md](docs/resume-map.md)。每一步的设计说明在 [docs/design/](docs/design/)。
 
 ## 链路
 
@@ -40,6 +40,16 @@ scripts/up.sh                       # 每一步都可重入；第一次运行要
 
 `up.sh` 会依次起好：元数据库、示例数据源（MySQL :13306 / PostgreSQL）、Milvus、Python 沙箱镜像、`gbi_ecommerce` 数据集、后端 :8065、模型注册、“电商经营分析”智能体。如果 JVM 访问外网要走代理，设置 `MODEL_PROXY=host:port`。
 
+微服务模式（RuoYi-Cloud 结构）：网关 :8080、认证中心 :9200、Redis，后端只接受网关签名过的请求。
+
+```bash
+export GBI_JWT_SECRET=<64 字节以上> GBI_GATEWAY_SIGN_SECRET=<任意密钥>
+SECURITY=on scripts/up.sh           # 在上面 8 步之后加第 9 步；演示账号见 ruoyi/sql/gbi_system.sql，密码 Gbi@2026
+TOKEN=$(curl -s -XPOST localhost:8080/auth/login -H 'Content-Type: application/json' \
+  -d '{"username":"east_ops","password":"Gbi@2026"}' | jq -r .accessToken)
+curl -s localhost:8080/api/data-permission/me -H "Authorization: Bearer $TOKEN" | jq .describe
+```
+
 生成一份报告：
 
 ```bash
@@ -73,6 +83,7 @@ curl -s localhost:8065/openapi/v1/reports -H 'Content-Type: application/json' \
 | 6 沙箱 | 9 个真实 Docker 用例 | CPU 1.99 → 1.00 核；内存 1000 → 500 MiB；进程数不限 → 64；跨任务输出泄漏 7/8 → 0/12 | [step6](docs/design/step6-sandbox.md) |
 | 7 问数 | 320 题（dev 192 / holdout 128）；**实际跑了 40 题配对样本** | SQL 执行成功率 86.7% → 100%；首次即成功 76.7% → 90%；EX 50.0% → 56.7%；多步完成率 60% → 60%。holdout 目标 EX ≥ 85%，**差距大** | [step7](docs/design/step7-nl2sql-eval.md)、[eval/nl2sql](eval/nl2sql/README.md) |
 | 8 报告 | 40 个任务；**实际跑了 8 题样本** | 完成 3/8；平均耗时 5.0 分钟，人工估算 64.3 分钟（人工是估算值）；“报告自己算错数”修复后 R07 由错变对 | [step8](docs/design/step8-reports.md)、[eval/report](eval/report/README.md) |
+| 网关 + 鉴权 + 数据权限 | 276 条标准 SQL × 6 个用户；28 条攻击；11 项接口检查；真实模型 6 题 | 该拦的 380/380；行级结果和物理隔离副本一致 1,276/1,276（其中 711 条确实被过滤改变）；误拦 0；攻击 0 泄露；网关 P50 +0.98 ms / P99 +3.75 ms | [设计](docs/design/security-ruoyi-gateway-data-permission.md)、[eval/data_permission](eval/data_permission/README.md) |
 
 第 7、8 步只跑了样本，原因是 qwen3.8-flash 的免费额度用完了；之后的运行都换成了 qwen-plus。完整评测各需一条命令，都支持断点续跑：
 

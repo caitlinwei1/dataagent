@@ -53,6 +53,10 @@ public class SqlGenerateDispatcher implements EdgeAction {
 		String sqlGenerateOutput = (String) optional.get();
 		log.info("SQL 生成结果: {}", sqlGenerateOutput);
 
+		if (SQL_REPLAN.equals(sqlGenerateOutput)) {
+			log.info("SQL 步骤连续失败，回到规划器重写该步骤");
+			return PLANNER_NODE;
+		}
 		if (END.equals(sqlGenerateOutput)) {
 			log.info("检测到流程结束标志: {}", END);
 			return END;

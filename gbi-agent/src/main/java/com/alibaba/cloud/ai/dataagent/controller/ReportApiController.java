@@ -48,6 +48,8 @@ public class ReportApiController {
 
 	private final GraphService graphService;
 
+	private final com.alibaba.cloud.ai.dataagent.security.ThreadOwnerRegistry threadOwners;
+
 	/** Most recent reports by threadId (in memory; the chat history keeps the full stream). */
 	private final Map<String, GbiReport> reports = Collections.synchronizedMap(new LinkedHashMap<>(16, 0.75f, true) {
 		@Override
@@ -107,6 +109,7 @@ public class ReportApiController {
 	@GetMapping(value = "/{threadId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "按会话 ID 查询报告")
 	public ResponseEntity<GbiReport> get(@Parameter(description = "会话 ID") @PathVariable String threadId) {
+		requireOwner(threadId);
 		GbiReport r = reports.get(threadId);
 		return r == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(r);
 	}
@@ -114,8 +117,17 @@ public class ReportApiController {
 	@GetMapping(value = "/{threadId}/markdown", produces = "text/markdown;charset=UTF-8")
 	@Operation(summary = "下载报告 Markdown（含数据证据附录）")
 	public ResponseEntity<String> markdown(@PathVariable String threadId) {
+		requireOwner(threadId);
 		GbiReport r = reports.get(threadId);
 		return r == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(r.markdown());
+	}
+
+	/** A report is readable only by whoever asked for it (no-op when security is off). */
+	private void requireOwner(String threadId) {
+		var user = com.alibaba.cloud.ai.dataagent.security.CurrentUser.get();
+		if (user != null) {
+			threadOwners.requireOwner(threadId, user);
+		}
 	}
 
 }

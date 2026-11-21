@@ -581,6 +581,50 @@
   ]
  },
  {
+  "type": "metric",
+  "term": "我方收入",
+  "synonyms": [
+   "营收",
+   "公司收入",
+   "确认收入",
+   "我们赚了多少"
+  ],
+  "description": "按合作模式不同：经销(DISTRIBUTION)和品牌管理(BRAND_MGMT)确认结算货款 net_amount；代运营(TP)只确认服务费 service_fee，货款归品牌方。不能直接用 GMV 或 pay_amount 当收入。按月统计时用业务月 fin_settlement.month_key（如 3 月 = '2026-03'），不要用 settled_at 卡日期：3 月的账在 4 月初结算。；公式：SUM(fin_settlement.revenue_amount)；涉及：fin_settlement, prd_brand, dim_shop",
+  "tables": [
+   "fin_settlement",
+   "prd_brand",
+   "dim_shop"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "代运营服务费",
+  "synonyms": [
+   "服务费",
+   "佣金收入",
+   "代运营佣金"
+  ],
+  "description": "只有代运营模式的品牌有服务费；注意与平台佣金 fin_settlement.commission（平台向店铺收取）区分。；公式：SUM(fin_settlement.service_fee)，或 支付GMV × prd_brand.service_fee_rate；过滤：prd_brand.coop_mode = 'TP'；涉及：fin_settlement, prd_brand",
+  "tables": [
+   "fin_settlement",
+   "prd_brand"
+  ]
+ },
+ {
+  "type": "metric",
+  "term": "大促GMV",
+  "synonyms": [
+   "双11 GMV",
+   "618 GMV",
+   "大促成交"
+  ],
+  "description": "预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。；公式：金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）；涉及：trd_order, trd_presale_order",
+  "tables": [
+   "trd_order",
+   "trd_presale_order"
+  ]
+ },
+ {
   "type": "dimension",
   "term": "大区",
   "synonyms": [
@@ -599,7 +643,7 @@
    "分类",
    "商品分类"
   ],
-  "description": "prd_category 三级树；“一级类目/大类”需沿 parent_id 向上取 level=1。",
+  "description": "prd_category 三级树；prd_spu.category_id 指向三级类目（prd_sku 没有类目字段，要经 prd_sku.spu_id → prd_spu）。问“数码家电”“服饰”这类一级类目时，要 c3.parent_id → c2、c2.parent_id → c1 两次向上关联再按 c1.name 过滤；直接写 spu.category_id = 一级类目 id 会得到空结果。",
   "tables": []
  },
  {
@@ -650,6 +694,59 @@
   "term": "上周 / 上月 / 同比 / 环比",
   "synonyms": [],
   "description": "上周为自然周（周一至周日）；同比为去年同期，环比为上一个相同长度周期。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "品牌",
+  "synonyms": [
+   "品牌客户",
+   "客户",
+   "品牌方"
+  ],
+  "description": "prd_brand；每个店铺属于一个品牌（dim_shop.brand_id），按品牌看销售时用 dim_shop.brand_id 关联，按商品看时用 prd_spu.brand_id。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "合作模式",
+  "synonyms": [
+   "经销",
+   "代运营",
+   "TP",
+   "品牌管理",
+   "业务模式"
+  ],
+  "description": "prd_brand.coop_mode：DISTRIBUTION 经销 / TP 代运营 / BRAND_MGMT 品牌管理。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "平台订单状态",
+  "synonyms": [
+   "平台状态",
+   "原始状态"
+  ],
+  "description": "trd_order.platform_status 是各平台原始编码（天猫 TRADE_FINISHED、京东 FINISHED_L、抖音 5 都表示已完成）；跨平台统计一律用统一状态 trd_order.order_status。",
+  "tables": []
+ },
+ {
+  "type": "dimension",
+  "term": "数据时效",
+  "synonyms": [
+   "今天",
+   "实时",
+   "截至目前",
+   "T+1"
+  ],
+  "description": "订单、支付、退款、库存是近实时（当天可查）；投放花费 mkt_ad_spend 和店铺流量 mkt_traffic_daily 是 T+1，当天没有数据；店铺日汇总 trd_daily_shop_sales、SKU 日汇总是 T+1 离线计算；结算 fin_settlement 按月，次月 10 日结算。问“今天的投放/ROI/UV”时应说明数据尚未产出，不能用 0 或估算代替。",
+  "tables": []
+ },
+ {
+  "type": "abbreviation",
+  "term": "TP",
+  "synonyms": [],
+  "description": "品牌电商代运营（Tmall Partner），见 合作模式",
   "tables": []
  },
  {
@@ -1846,135 +1943,135 @@
  },
  {
   "type": "enum_value",
-  "term": "京东华南店",
+  "term": "北纬品牌官方商城",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '京东华南店'",
+  "description": "店铺取值，对应 dim_shop.name = '北纬品牌官方商城'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "京东华南店"
+  "value": "北纬品牌官方商城"
  },
  {
   "type": "enum_value",
-  "term": "京东自营旗舰店",
+  "term": "北纬天猫官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '京东自营旗舰店'",
+  "description": "店铺取值，对应 dim_shop.name = '北纬天猫官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "京东自营旗舰店"
+  "value": "北纬天猫官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "京东西南店",
+  "term": "星屿抖音官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '京东西南店'",
+  "description": "店铺取值，对应 dim_shop.name = '星屿抖音官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "京东西南店"
+  "value": "星屿抖音官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "天猫家居店",
+  "term": "曜石京东官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫家居店'",
+  "description": "店铺取值，对应 dim_shop.name = '曜石京东官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "天猫家居店"
+  "value": "曜石京东官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "天猫数码专营店",
+  "term": "曜石天猫官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫数码专营店'",
+  "description": "店铺取值，对应 dim_shop.name = '曜石天猫官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "天猫数码专营店"
+  "value": "曜石天猫官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "天猫旗舰店",
+  "term": "朵朵熊京东官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '天猫旗舰店'",
+  "description": "店铺取值，对应 dim_shop.name = '朵朵熊京东官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "天猫旗舰店"
+  "value": "朵朵熊京东官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "抖音东北店",
+  "term": "朵朵熊天猫官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音东北店'",
+  "description": "店铺取值，对应 dim_shop.name = '朵朵熊天猫官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "抖音东北店"
+  "value": "朵朵熊天猫官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "抖音华中店",
+  "term": "栖木天猫官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音华中店'",
+  "description": "店铺取值，对应 dim_shop.name = '栖木天猫官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "抖音华中店"
+  "value": "栖木天猫官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "抖音官方直播间",
+  "term": "澄野抖音官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '抖音官方直播间'",
+  "description": "店铺取值，对应 dim_shop.name = '澄野抖音官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "抖音官方直播间"
+  "value": "澄野抖音官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "自营商城华北店",
+  "term": "禾川京东官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '自营商城华北店'",
+  "description": "店铺取值，对应 dim_shop.name = '禾川京东官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "自营商城华北店"
+  "value": "禾川京东官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "自营商城总店",
+  "term": "青岚天猫官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '自营商城总店'",
+  "description": "店铺取值，对应 dim_shop.name = '青岚天猫官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "自营商城总店"
+  "value": "青岚天猫官方旗舰店"
  },
  {
   "type": "enum_value",
-  "term": "自营商城西北店",
+  "term": "青岚抖音官方旗舰店",
   "synonyms": [],
-  "description": "店铺取值，对应 dim_shop.name = '自营商城西北店'",
+  "description": "店铺取值，对应 dim_shop.name = '青岚抖音官方旗舰店'",
   "tables": [
    "dim_shop"
   ],
   "column": "dim_shop.name",
-  "value": "自营商城西北店"
+  "value": "青岚抖音官方旗舰店"
  },
  {
   "type": "enum_value",
@@ -2978,344 +3075,91 @@
  },
  {
   "type": "enum_value",
-  "term": "品牌A27",
+  "term": "北纬",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌A27'",
+  "description": "品牌取值，对应 prd_brand.name = '北纬'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌A27"
+  "value": "北纬"
  },
  {
   "type": "enum_value",
-  "term": "品牌B28",
+  "term": "星屿",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌B28'",
+  "description": "品牌取值，对应 prd_brand.name = '星屿'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌B28"
+  "value": "星屿"
  },
  {
   "type": "enum_value",
-  "term": "品牌C29",
+  "term": "曜石",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌C29'",
+  "description": "品牌取值，对应 prd_brand.name = '曜石'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌C29"
+  "value": "曜石"
  },
  {
   "type": "enum_value",
-  "term": "品牌D30",
+  "term": "朵朵熊",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌D30'",
+  "description": "品牌取值，对应 prd_brand.name = '朵朵熊'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌D30"
+  "value": "朵朵熊"
  },
  {
   "type": "enum_value",
-  "term": "品牌G7",
+  "term": "栖木",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌G7'",
+  "description": "品牌取值，对应 prd_brand.name = '栖木'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌G7"
+  "value": "栖木"
  },
  {
   "type": "enum_value",
-  "term": "品牌H8",
+  "term": "澄野",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌H8'",
+  "description": "品牌取值，对应 prd_brand.name = '澄野'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌H8"
+  "value": "澄野"
  },
  {
   "type": "enum_value",
-  "term": "品牌I9",
+  "term": "禾川",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌I9'",
+  "description": "品牌取值，对应 prd_brand.name = '禾川'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌I9"
+  "value": "禾川"
  },
  {
   "type": "enum_value",
-  "term": "品牌J10",
+  "term": "青岚",
   "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌J10'",
+  "description": "品牌取值，对应 prd_brand.name = '青岚'",
   "tables": [
    "prd_brand"
   ],
   "column": "prd_brand.name",
-  "value": "品牌J10"
- },
- {
-  "type": "enum_value",
-  "term": "品牌K11",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌K11'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌K11"
- },
- {
-  "type": "enum_value",
-  "term": "品牌L12",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌L12'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌L12"
- },
- {
-  "type": "enum_value",
-  "term": "品牌M13",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌M13'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌M13"
- },
- {
-  "type": "enum_value",
-  "term": "品牌N14",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌N14'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌N14"
- },
- {
-  "type": "enum_value",
-  "term": "品牌O15",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌O15'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌O15"
- },
- {
-  "type": "enum_value",
-  "term": "品牌P16",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌P16'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌P16"
- },
- {
-  "type": "enum_value",
-  "term": "品牌Q17",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌Q17'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌Q17"
- },
- {
-  "type": "enum_value",
-  "term": "品牌R18",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌R18'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌R18"
- },
- {
-  "type": "enum_value",
-  "term": "品牌S19",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌S19'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌S19"
- },
- {
-  "type": "enum_value",
-  "term": "品牌T20",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌T20'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌T20"
- },
- {
-  "type": "enum_value",
-  "term": "品牌U21",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌U21'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌U21"
- },
- {
-  "type": "enum_value",
-  "term": "品牌V22",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌V22'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌V22"
- },
- {
-  "type": "enum_value",
-  "term": "品牌W23",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌W23'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌W23"
- },
- {
-  "type": "enum_value",
-  "term": "品牌X24",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌X24'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌X24"
- },
- {
-  "type": "enum_value",
-  "term": "品牌Y25",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌Y25'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌Y25"
- },
- {
-  "type": "enum_value",
-  "term": "品牌Z26",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '品牌Z26'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "品牌Z26"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌A1",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌A1'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌A1"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌B2",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌B2'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌B2"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌C3",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌C3'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌C3"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌D4",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌D4'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌D4"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌E5",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌E5'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌E5"
- },
- {
-  "type": "enum_value",
-  "term": "自有品牌F6",
-  "synonyms": [],
-  "description": "品牌取值，对应 prd_brand.name = '自有品牌F6'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.name",
-  "value": "自有品牌F6"
- },
- {
-  "type": "enum_value",
-  "term": "A",
-  "synonyms": [],
-  "description": "品牌等级取值，对应 prd_brand.level = 'A'",
-  "tables": [
-   "prd_brand"
-  ],
-  "column": "prd_brand.level",
-  "value": "A"
+  "value": "青岚"
  },
  {
   "type": "enum_value",

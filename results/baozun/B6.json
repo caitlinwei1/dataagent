@@ -1,0 +1,41 @@
+{
+ "id": "B6",
+ "question": "曜石品牌在华东的销售额，2026年10月12日到18日这一周比前一周下降了多少？分析一下原因。",
+ "thread": "baozun-B6-0df4c7",
+ "seconds": 292.3,
+ "sql_attempts": 12,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "SELECT SUM(`t`.`paid_amount`) AS `total_paid_amount`\nFROM `trd_daily_shop_sales` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `b`.`name` = '曜石'\n  AND `r`.`big_region` = '华东'\n  AND `t`.`stat_date` >= '2026-10-12'\n  AND `t`.`stat_date` < '2026-10-19';",
+  "SELECT SUM(`t`.`paid_amount`) AS `total_paid_amount`\nFROM `trd_daily_shop_sales` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `b`.`name` = '曜石'\n  AND `r`.`big_region` = '华东'\n  AND `t`.`stat_date` >= '2026-10-05'\n  AND `t`.`stat_date` < '2026-10-12';"
+ ],
+ "final_sql": "SELECT SUM(`t`.`paid_amount`) AS `total_paid_amount`\nFROM `trd_daily_shop_sales` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `b`.`name` = '曜石'\n  AND `r`.`big_region` = '华东'\n  AND `t`.`stat_date` >= '2026-10-05'\n  AND `t`.`stat_date` < '2026-10-12';",
+ "result": {
+  "column": [
+   "total_paid_amount"
+  ],
+  "data": [
+   {
+    "total_paid_amount": "172718.25"
+   }
+  ],
+  "errorMsg": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "PYTHON_GENERATE_NODE",
+  "REPORT_GENERATOR_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "wk\tSUM(o.pay_amount)\n前一周\t172718.25\n本周\t62444.73",
+ "wrong": null
+}

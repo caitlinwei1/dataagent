@@ -38,6 +38,9 @@ public final class ResultSetBO implements Cloneable {
 
 	private String errorMsg;
 
+	/** Deterministic note for the reader, e.g. data freshness ("T+1, latest 2026-10-30"). */
+	private String note;
+
 	@Override
 	public ResultSetBO clone() {
 		return ResultSetBO.builder()

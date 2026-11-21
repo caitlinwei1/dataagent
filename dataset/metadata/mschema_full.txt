@@ -31,6 +31,8 @@
 (close_reason:VARCHAR, 关闭原因：STOCKOUT/TIMEOUT/FRAUD/USER),
 (delivery_type:VARCHAR, 配送方式：EXPRESS/SAME_DAY/PICKUP),
 (expected_delivery_date:DATE, 预计送达日期),
+(platform_status:VARCHAR, 平台原始订单状态（各平台编码不同，见业务知识“平台订单状态”）),
+(platform_order_no:VARCHAR, 平台订单号（各平台格式不同）),
 (created_by:VARCHAR, 创建人),
 (created_time:DATETIME, 记录创建时间),
 (updated_time:DATETIME, 记录更新时间),
@@ -519,12 +521,14 @@
 (updated_time:DATETIME, 记录更新时间),
 (is_deleted:TINYINT, 逻辑删除标记 1已删除0正常)
 ]
-# Table: prd_brand, 品牌
+# Table: prd_brand, 品牌：即品牌客户，一个品牌在多个平台开官方旗舰店，由我方运营
 [
 (id:BIGINT, Primary Key, 品牌ID),
 (name:VARCHAR, 品牌名称),
-(is_own:TINYINT, 是否自有品牌),
+(is_own:TINYINT, 是否自有品牌（品牌管理模式：我方持有该品牌中国区经营权）),
 (country:VARCHAR, 品牌国家),
+(coop_mode:VARCHAR, 合作模式：DISTRIBUTION经销（我方买断货品、承担库存）/TP代运营（货权在品牌方，我方按GMV收服务费）/BRAND_MGMT品牌管理),
+(service_fee_rate:DECIMAL, 代运营服务费率（仅TP模式，按支付GMV抽佣）),
 (english_name:VARCHAR, 英文名),
 (logo:VARCHAR, Logo URL),
 (level:VARCHAR, 品牌等级：S/A/B/C),
@@ -1254,8 +1258,11 @@
 (month_key:VARCHAR, 结算月份YYYY-MM),
 (gross_amount:DECIMAL, 应结算总额),
 (commission:DECIMAL, 平台佣金),
-(net_amount:DECIMAL, 实际结算金额),
+(net_amount:DECIMAL, 实际结算金额（平台打款的货款，扣佣金后）),
 (settled_at:DATETIME, 结算时间),
+(coop_mode:VARCHAR, 结算时品牌的合作模式：DISTRIBUTION/TP/BRAND_MGMT),
+(service_fee:DECIMAL, 我方应收代运营服务费（仅TP模式=应结算总额×服务费率，其余为0）),
+(revenue_amount:DECIMAL, 我方确认收入：经销和品牌管理=实际结算货款，代运营=服务费（货款归品牌方）),
 (settlement_no:VARCHAR, 结算单号),
 (refund_deduct:DECIMAL, 退款扣减),
 (freight_income:DECIMAL, 运费收入),
@@ -1334,13 +1341,14 @@
 (created_time:DATETIME, 记录创建时间),
 (updated_time:DATETIME, 记录更新时间)
 ]
-# Table: dim_shop, 店铺维表
+# Table: dim_shop, 店铺维表：每个店铺是某个品牌在某个平台的官方旗舰店
 [
 (id:BIGINT, Primary Key, 店铺ID),
 (name:VARCHAR, 店铺名称),
 (platform_id:BIGINT, 所属平台ID),
-(region_id:BIGINT, 运营归属区域ID),
+(region_id:BIGINT, 运营归属区域ID（负责该店的运营中心所在区域）),
 (opened_at:DATE, 开店日期),
+(brand_id:BIGINT, 所属品牌（品牌客户）ID),
 (shop_code:VARCHAR, 店铺编码),
 (shop_type:VARCHAR, 店铺类型：FLAGSHIP/SPECIALTY/DIRECT),
 (manager:VARCHAR, 店长),
@@ -1529,5 +1537,6 @@ fin_sales_target.shop_id=dim_shop.id
 fin_exchange_rate.currency_code=dim_currency.code
 dim_shop.platform_id=dim_platform.id
 dim_shop.region_id=dim_region.id
+dim_shop.brand_id=prd_brand.id
 dim_store.shop_id=dim_shop.id
 dim_store.region_id=dim_region.id

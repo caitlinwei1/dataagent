@@ -33,6 +33,8 @@ CREATE TABLE `trd_order` (
   `close_reason` VARCHAR(64) COMMENT '关闭原因：STOCKOUT/TIMEOUT/FRAUD/USER',
   `delivery_type` VARCHAR(64) COMMENT '配送方式：EXPRESS/SAME_DAY/PICKUP',
   `expected_delivery_date` DATE COMMENT '预计送达日期',
+  `platform_status` VARCHAR(64) COMMENT '平台原始订单状态（各平台编码不同，见业务知识“平台订单状态”）',
+  `platform_order_no` VARCHAR(64) COMMENT '平台订单号（各平台格式不同）',
   `created_by` VARCHAR(64) COMMENT '创建人',
   `created_time` DATETIME COMMENT '记录创建时间',
   `updated_time` DATETIME COMMENT '记录更新时间',
@@ -627,8 +629,10 @@ DROP TABLE IF EXISTS `prd_brand`;
 CREATE TABLE `prd_brand` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '品牌ID',
   `name` VARCHAR(64) COMMENT '品牌名称',
-  `is_own` TINYINT COMMENT '是否自有品牌',
+  `is_own` TINYINT COMMENT '是否自有品牌（品牌管理模式：我方持有该品牌中国区经营权）',
   `country` VARCHAR(64) COMMENT '品牌国家',
+  `coop_mode` VARCHAR(64) COMMENT '合作模式：DISTRIBUTION经销（我方买断货品、承担库存）/TP代运营（货权在品牌方，我方按GMV收服务费）/BRAND_MGMT品牌管理',
+  `service_fee_rate` DECIMAL(12,6) COMMENT '代运营服务费率（仅TP模式，按支付GMV抽佣）',
   `english_name` VARCHAR(64) COMMENT '英文名',
   `logo` VARCHAR(255) COMMENT 'Logo URL',
   `level` VARCHAR(64) COMMENT '品牌等级：S/A/B/C',
@@ -639,7 +643,7 @@ CREATE TABLE `prd_brand` (
   `updated_time` DATETIME COMMENT '记录更新时间',
   `is_deleted` TINYINT COMMENT '逻辑删除标记 1已删除0正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='品牌';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='品牌：即品牌客户，一个品牌在多个平台开官方旗舰店，由我方运营';
 
 DROP TABLE IF EXISTS `prd_price_history`;
 CREATE TABLE `prd_price_history` (
@@ -1521,8 +1525,11 @@ CREATE TABLE `fin_settlement` (
   `month_key` VARCHAR(64) COMMENT '结算月份YYYY-MM',
   `gross_amount` DECIMAL(14,2) COMMENT '应结算总额',
   `commission` DECIMAL(14,2) COMMENT '平台佣金',
-  `net_amount` DECIMAL(14,2) COMMENT '实际结算金额',
+  `net_amount` DECIMAL(14,2) COMMENT '实际结算金额（平台打款的货款，扣佣金后）',
   `settled_at` DATETIME COMMENT '结算时间',
+  `coop_mode` VARCHAR(64) COMMENT '结算时品牌的合作模式：DISTRIBUTION/TP/BRAND_MGMT',
+  `service_fee` DECIMAL(14,2) COMMENT '我方应收代运营服务费（仅TP模式=应结算总额×服务费率，其余为0）',
+  `revenue_amount` DECIMAL(14,2) COMMENT '我方确认收入：经销和品牌管理=实际结算货款，代运营=服务费（货款归品牌方）',
   `settlement_no` VARCHAR(64) COMMENT '结算单号',
   `refund_deduct` DECIMAL(14,2) COMMENT '退款扣减',
   `freight_income` DECIMAL(14,2) COMMENT '运费收入',
@@ -1625,8 +1632,9 @@ CREATE TABLE `dim_shop` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '店铺ID',
   `name` VARCHAR(64) COMMENT '店铺名称',
   `platform_id` BIGINT COMMENT '所属平台ID',
-  `region_id` BIGINT COMMENT '运营归属区域ID',
+  `region_id` BIGINT COMMENT '运营归属区域ID（负责该店的运营中心所在区域）',
   `opened_at` DATE COMMENT '开店日期',
+  `brand_id` BIGINT COMMENT '所属品牌（品牌客户）ID',
   `shop_code` VARCHAR(64) COMMENT '店铺编码',
   `shop_type` VARCHAR(64) COMMENT '店铺类型：FLAGSHIP/SPECIALTY/DIRECT',
   `manager` VARCHAR(64) COMMENT '店长',
@@ -1637,8 +1645,9 @@ CREATE TABLE `dim_shop` (
   `updated_time` DATETIME COMMENT '记录更新时间',
   PRIMARY KEY (`id`),
   KEY `idx_platform_id` (`platform_id`),
-  KEY `idx_region_id` (`region_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='店铺维表';
+  KEY `idx_region_id` (`region_id`),
+  KEY `idx_brand_id` (`brand_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='店铺维表：每个店铺是某个品牌在某个平台的官方旗舰店';
 
 DROP TABLE IF EXISTS `dim_store`;
 CREATE TABLE `dim_store` (

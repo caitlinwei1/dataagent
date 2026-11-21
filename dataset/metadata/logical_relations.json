@@ -744,6 +744,12 @@
   "ref_column": "id"
  },
  {
+  "table": "dim_shop",
+  "column": "brand_id",
+  "ref_table": "prd_brand",
+  "ref_column": "id"
+ },
+ {
   "table": "dim_store",
   "column": "shop_id",
   "ref_table": "dim_shop",

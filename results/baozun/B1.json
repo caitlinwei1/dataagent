@@ -1,0 +1,77 @@
+{
+ "id": "B1",
+ "question": "2026年3月各店铺的GMV分别是多少？",
+ "thread": "baozun-B1-d4cb21",
+ "seconds": 39.6,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `shop_id`, sum(`gmv`) as `gmv` from `trd_daily_shop_sales` where `stat_date` >= '2026-03-01' and `stat_date` < '2026-04-01' group by `shop_id`;"
+ ],
+ "final_sql": "select `shop_id`, sum(`gmv`) as `gmv` from `trd_daily_shop_sales` where `stat_date` >= '2026-03-01' and `stat_date` < '2026-04-01' group by `shop_id`;",
+ "result": {
+  "column": [
+   "shop_id",
+   "gmv"
+  ],
+  "data": [
+   {
+    "shop_id": "1",
+    "gmv": "353336.04"
+   },
+   {
+    "shop_id": "2",
+    "gmv": "333104.64"
+   },
+   {
+    "shop_id": "3",
+    "gmv": "37394.03"
+   },
+   {
+    "shop_id": "4",
+    "gmv": "53712.89"
+   },
+   {
+    "shop_id": "5",
+    "gmv": "84141.09"
+   },
+   {
+    "shop_id": "6",
+    "gmv": "23744.09"
+   },
+   {
+    "shop_id": "7",
+    "gmv": "377206.90"
+   },
+   {
+    "shop_id": "8",
+    "gmv": "60279.53"
+   },
+   {
+    "shop_id": "9",
+    "gmv": "53541.18"
+   },
+   {
+    "shop_id": "10",
+    "gmv": "59712.79"
+   },
+   {
+    "shop_id": "11",
+    "gmv": "49341.55"
+   },
+   {
+    "shop_id": "12",
+    "gmv": "58787.56"
+   }
+  ],
+  "errorMsg": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "gold": "name\tgmv\n青岚抖音官方旗舰店\t84141.09\n青岚天猫官方旗舰店\t53712.89",
+ "wrong": null
+}

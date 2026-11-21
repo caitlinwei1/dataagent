@@ -51,7 +51,7 @@ def lit(v):
 
 
 ID_RANGES = {"shop_id": 12, "warehouse_id": 8, "alternative_warehouse_id": 8, "carrier_id": 5, "supplier_id": 25,
-             "platform_id": 4, "member_id": 8000, "brand_id": 30}
+             "platform_id": 4, "member_id": 8000, "brand_id": 8}
 TEXT_POOL = ["系统", "张伟", "王芳", "李娜", "刘洋", "陈静", "运营一组", "运营二组", None]
 
 
@@ -182,16 +182,24 @@ def region_id_of(prov):
     return prov_region[prov][0]
 
 
-SHOPS = [  # name, platform, province
-    ("天猫旗舰店", 1, "浙江"), ("天猫数码专营店", 1, "上海"), ("天猫家居店", 1, "江苏"),
-    ("京东自营旗舰店", 2, "北京"), ("京东华南店", 2, "广东"), ("京东西南店", 2, "四川"),
-    ("抖音官方直播间", 3, "浙江"), ("抖音华中店", 3, "湖北"), ("抖音东北店", 3, "辽宁"),
-    ("自营商城总店", 4, "上海"), ("自营商城华北店", 4, "天津"), ("自营商城西北店", 4, "陕西"),
+# Brand e-commerce operator (代运营) model: every shop is one brand client's official store on one platform.
+# Brand names are invented; the business model follows public descriptions of brand e-commerce service partners.
+BRANDS = [  # name, L1 category, coop_mode, service_fee_rate, country, is_own
+    ("曜石", "数码家电", "TP", "0.06", "中国", False), ("星屿", "数码家电", "DISTRIBUTION", None, "中国", False),
+    ("青岚", "美妆个护", "TP", "0.08", "法国", False), ("栖木", "家居日用", "DISTRIBUTION", None, "日本", False),
+    ("禾川", "食品生鲜", "DISTRIBUTION", None, "中国", False), ("朵朵熊", "母婴玩具", "TP", "0.07", "美国", False),
+    ("北纬", "服饰鞋包", "BRAND_MGMT", None, "美国", True), ("澄野", "服饰鞋包", "TP", "0.07", "意大利", False),
 ]
-t = tbl("dim_shop", "id name platform_id region_id opened_at")
+SHOPS = [  # name, platform, province (运营中心), brand_id
+    ("曜石天猫官方旗舰店", 1, "浙江", 1), ("曜石京东官方旗舰店", 2, "上海", 1), ("栖木天猫官方旗舰店", 1, "江苏", 4),
+    ("青岚天猫官方旗舰店", 1, "北京", 3), ("青岚抖音官方旗舰店", 3, "广东", 3), ("禾川京东官方旗舰店", 2, "四川", 5),
+    ("星屿抖音官方旗舰店", 3, "浙江", 2), ("朵朵熊天猫官方旗舰店", 1, "湖北", 6), ("朵朵熊京东官方旗舰店", 2, "辽宁", 6),
+    ("北纬品牌官方商城", 4, "上海", 7), ("北纬天猫官方旗舰店", 1, "天津", 7), ("澄野抖音官方旗舰店", 3, "陕西", 8),
+]
+t = tbl("dim_shop", "id name platform_id region_id opened_at brand_id")
 shop_big = {}
-for i, (n, p, prov) in enumerate(SHOPS, 1):
-    t.add(i, n, p, region_id_of(prov), date(2021, 1, 1) + timedelta(days=R.randrange(900)))
+for i, (n, p, prov, b) in enumerate(SHOPS, 1):
+    t.add(i, n, p, region_id_of(prov), date(2021, 1, 1) + timedelta(days=R.randrange(900)), b)
     shop_big[i] = prov_region[prov][1]
 t = tbl("dim_store", "id name shop_id region_id")
 for i in range(1, 21):
@@ -239,12 +247,12 @@ for n1, l2s in L1.items():
             t.add(cid, c2, 3, n2 + suffix)
             leaf.append((cid, n1, c1))
 l1_ids = {n: i for i, n in [(r[2], r[1]) for r in leaf]}
-t = tbl("prd_brand", "id name is_own country")
-brands = []
-for i in range(1, 31):
-    own = i <= 6
-    t.add(i, ("自有品牌" if own else "品牌") + chr(64 + (i % 26 or 26)) + str(i), own, "中国" if own or i % 3 else R.choice(["日本", "美国", "法国", "韩国"]))
+t = tbl("prd_brand", "id name is_own country coop_mode service_fee_rate")
+brands, BRANDS_OF_L1 = [], {}
+for i, (n, l1n, mode, rate, ctry, own) in enumerate(BRANDS, 1):
+    t.add(i, n, own, ctry, mode, Decimal(rate) if rate else None)
     brands.append(i)
+    BRANDS_OF_L1.setdefault(l1n, []).append(i)
 t = tbl("prd_series", "id brand_id name")
 for i in range(1, 51):
     t.add(i, R.choice(brands), f"系列{i}")
@@ -258,7 +266,7 @@ for spu in range(1, 401):
     lo, hi = PRICE[l1n]
     base = R.uniform(lo, hi) ** 1 if R.random() < 0.3 else R.uniform(lo, (lo + hi) / 2.5)
     launch = date(2022, 1, 1) + timedelta(days=R.randrange(1500))
-    b_ = R.choice(brands)
+    b_ = R.choice(BRANDS_OF_L1[l1n])
     spu_t.add(spu, f"{l1n[:2]}商品{spu}", c, b_, R.randrange(1, 51), launch, x=dict(spu_status="ON_SALE"))
     SPU_NAME[spu], SPU_CAT[spu], SPU_BRAND[spu] = f"{l1n[:2]}商品{spu}", c, b_
     for v in range(R.randint(1, 5)):
@@ -266,9 +274,11 @@ for spu in range(1, 401):
         price = money(base * R.uniform(0.9, 1.2))
         status = "ON_SALE" if R.random() < 0.88 else "OFF_SALE"
         sku_t.add(skuid, spu, f"SKU{skuid:05d}", R.choice(["黑色", "白色", "蓝色", "红色", "标准装", "大号", "小号"]) + f"/{v + 1}", price, status)
-        SKUS.append(dict(id=skuid, spu=spu, price=price, l1=l1n, l1id=l1id, status=status, pop=R.paretovariate(1.3), launch=launch))
+        SKUS.append(dict(id=skuid, spu=spu, price=price, l1=l1n, l1id=l1id, status=status, pop=R.paretovariate(1.3), launch=launch, brand=b_))
 ON_SALE = [s for s in SKUS if s["status"] == "ON_SALE"]
 SKU_W = [s["pop"] for s in ON_SALE]
+BRAND_SKUS = {b: [s for s in ON_SALE if s["brand"] == b] for b in brands}
+BRAND_SKU_W = {b: [s["pop"] for s in v] for b, v in BRAND_SKUS.items()}
 t = tbl("prd_price_history", "id sku_id old_price new_price changed_at")
 for i in range(1, 2501):
     s = R.choice(SKUS)
@@ -400,7 +410,9 @@ for d in daterange(START, END):
         k += 1
         sp = money(R.uniform(3000, 9000) * boost)
         imp = int(float(sp) * R.uniform(80, 140))
-        t.add(k, d, ch, sp, imp, int(imp * R.uniform(0.01, 0.03)))
+        clicks = int(imp * R.uniform(0.01, 0.03))
+        if d < END:  # 投放数据 T+1：数据截止日（视为“今天”）当天的投放还没回传
+            t.add(k, d, ch, sp, imp, clicks)
 t = tbl("mkt_live_session", "id shop_id anchor start_at duration_min viewers")
 for i in range(1, 301):
     t.add(i, R.choice([7, 8, 9]), R.choice(["主播小A", "主播小B", "主播小C", "主播小D"]), rand_dt(START + timedelta(days=R.randrange(DAYS))), R.randint(60, 300), R.randint(2000, 80000))
@@ -444,6 +456,18 @@ def day_weight(d):
     if d.month == 2:
         w *= 0.8
     return w
+
+
+# 大促预售：定金阶段下单付定金，尾款阶段付尾款。trd_order.paid_at 记的是定金支付时间。
+PRESALE = []  # (deposit_from, deposit_to, balance_start)
+for y in (2025, 2026):
+    PRESALE.append((date(y, 5, 20), date(y, 5, 31), datetime(y, 6, 1, 0, 0)))
+    PRESALE.append((date(y, 10, 20), date(y, 10, 30), datetime(y, 10, 31, 20, 0)))
+PRESALE = [p for p in PRESALE if p[2].date() <= END]
+
+
+def presale_of(d):
+    return next((p for p in PRESALE if p[0] <= d <= p[1]), None)
 
 
 ALL_DAYS = list(daterange(START, END))
@@ -528,7 +552,26 @@ def order_extra(row):
                 is_first_order=int(meta.get("first", False)), invoice_flag=int(meta.get("invoice", False)),
                 risk_level="HIGH" if meta.get("risk") else "LOW",
                 close_reason="STOCKOUT" if status == "CLOSED" else ("TIMEOUT" if status == "CANCELLED" else None),
-                expected_delivery_date=meta.get("promised"), delivery_type="EXPRESS")
+                expected_delivery_date=meta.get("promised"), delivery_type="EXPRESS",
+                platform_status=PLATFORM_STATUS[SHOPS[row[3] - 1][1]][status], platform_order_no=platform_order_no(row))
+
+
+# Each platform exposes its own order-status codes and order-number format (simulated after the public
+# open-platform conventions); order_status is the unified status our middle platform maps them to.
+PLATFORM_STATUS = {
+    1: {"CREATED": "WAIT_BUYER_PAY", "PAID": "WAIT_SELLER_SEND_GOODS", "SHIPPED": "WAIT_BUYER_CONFIRM_GOODS",
+        "COMPLETED": "TRADE_FINISHED", "CANCELLED": "TRADE_CLOSED_BY_TAOBAO", "CLOSED": "TRADE_CLOSED"},
+    2: {"CREATED": "WAIT_PAY", "PAID": "WAIT_SELLER_STOCK_OUT", "SHIPPED": "WAIT_GOODS_RECEIVE_CONFIRM",
+        "COMPLETED": "FINISHED_L", "CANCELLED": "TRADE_CANCELED", "CLOSED": "TRADE_CANCELED"},
+    3: {"CREATED": "1", "PAID": "2", "SHIPPED": "3", "COMPLETED": "5", "CANCELLED": "4", "CLOSED": "4"},
+    4: {"CREATED": "created", "PAID": "paid", "SHIPPED": "shipped", "COMPLETED": "finished", "CANCELLED": "cancelled", "CLOSED": "closed"},
+}
+
+
+def platform_order_no(row):
+    oid, p = row[0], SHOPS[row[3] - 1][1]
+    return {1: f"{3 * 10**17 + oid * 7919:018d}", 2: f"{2 * 10**11 + oid * 131:012d}",
+            3: f"{6 * 10**18 + oid * 104729:019d}", 4: f"BW{row[11]:%y%m%d}{oid:06d}"}[p]
 
 
 oid_base = 0
@@ -547,8 +590,9 @@ for d in order_days:
     created = rand_dt(d)
     n_items = R.choices([1, 2, 3, 4], weights=[55, 28, 12, 5])[0]
     skus = []
+    sb = SHOPS[shop - 1][3]
     for _ in range(n_items):
-        s = R.choices(ON_SALE, weights=SKU_W)[0]
+        s = R.choices(BRAND_SKUS[sb], weights=BRAND_SKU_W[sb])[0]
         if s not in skus:
             skus.append(s)
     lines, total = [], Decimal(0)
@@ -630,10 +674,17 @@ for d in order_days:
     if R.random() < 0.01:
         TAG.add(nid("tag"), oid, "HIGH_RISK")
         ORDER_META.setdefault(oid, {})["risk"] = True
-    if R.random() < 0.03:
+    ship_base = paid
+    ps = presale_of(d)
+    if ps and R.random() < 0.45:
         O_row[14] = 1
         dep = money(float(pay) * 0.2)
-        PRE.add(nid("pre"), oid, dep, pay - dep, paid + timedelta(days=R.randint(3, 10)))
+        # most balances are paid in the first hours of the balance window; 00:00-01:00 crosses into the next day
+        bal = ps[2] + timedelta(minutes=int(R.choices([R.uniform(0, 90), R.uniform(90, 600), R.uniform(600, 4000)], weights=[55, 30, 15])[0]))
+        PRE.add(nid("pre"), oid, dep, pay - dep, bal,
+                x=dict(deposit_paid_at=paid, balance_start_at=ps[2], balance_end_at=ps[2] + timedelta(days=3),
+                       deposit_expand=money(float(dep) * 0.5), status="BALANCE_PAID"))
+        ship_base = bal
     PTS.add(nid("pts"), m["id"], int(pay), "ORDER", paid)
     if R.random() < 0.2:
         INV.add(nid("inv"), oid, R.choice(["NORMAL", "NORMAL", "VAT"]), pay, paid + timedelta(days=R.randint(1, 15)))
@@ -653,7 +704,7 @@ for d in order_days:
     if stockout:
         _, so_s, so_q, _ = next(((a, s, q, p) for a, s, q, p in item_ids if (not planted or s["l1"] == "数码家电")), item_ids[0])
         so_sku = so_s
-        SO.add(nid("so"), oid, so_s["id"], wh, so_q, paid + timedelta(minutes=R.randint(5, 120)))
+        SO.add(nid("so"), oid, so_s["id"], wh, so_q, ship_base + timedelta(minutes=R.randint(5, 120)))
     sdr = sd(d, shop)
     sdr[0] += total + freight
     sdr[1] += pay
@@ -679,7 +730,7 @@ for d in order_days:
     if stockout and (planted or R.random() < 0.8):
         # cancelled for stockout -> full refund
         asid = nid("as")
-        t0 = paid + timedelta(hours=R.randint(2, 30))
+        t0 = ship_base + timedelta(hours=R.randint(2, 30))
         AS.add(asid, oid, "REFUND", "STOCKOUT", "CLOSED", t0, t0 + timedelta(hours=R.randint(1, 24)))
         rid2 = nid("rf")
         RF.add(rid2, oid, asid, "REFUND_ONLY", "STOCKOUT", "SUCCESS", pay, t0, t0 + timedelta(hours=R.randint(1, 24)))
@@ -697,9 +748,9 @@ for d in order_days:
 
     fid = nid("fo")
     sla = SLA[(wh, pbig)]
-    fo_alloc, fo_prom = paid + timedelta(minutes=R.randint(1, 30)), paid + timedelta(hours=sla)
+    fo_alloc, fo_prom = ship_base + timedelta(minutes=R.randint(1, 30)), ship_base + timedelta(hours=sla)
     ORDER_META.setdefault(oid, {})["promised"] = fo_prom.date()
-    pick = paid + timedelta(hours=R.uniform(2, 30))
+    pick = ship_base + timedelta(hours=R.uniform(2, 30))
     obid = nid("ob")
     OB.add(obid, fid, wh, pick, pick + timedelta(hours=R.uniform(0.5, 4)), x=dict(status="SHIPPED"))
     for _, s, q, _ in item_ids:
@@ -720,7 +771,7 @@ for d in order_days:
     for node, frac, city in (("PICKED_UP", 0, wcity), ("IN_TRANSIT", 0.4, wcity), ("OUT_FOR_DELIVERY", 0.9, CITY[prov]), ("DELIVERED", 1.0, CITY[prov])):
         TR.add(nid("tr"), shid, node, city, shipped + (delivered - shipped) * frac)
     OSL.add(nid("osl"), oid, "PAID", "SHIPPED", shipped, "SYSTEM")
-    late = delivered > paid + timedelta(hours=sla)
+    late = delivered > ship_base + timedelta(hours=sla)
     if R.random() < 0.025 and (late or R.random() < 0.3):
         CMP.add(nid("cmp"), oid, "LOGISTICS" if late else R.choice(["QUALITY", "SERVICE", "PRICE"]), R.randint(1, 3), delivered, delivered + timedelta(hours=R.randint(2, 72)))
     # refund / aftersale after delivery
@@ -808,10 +859,12 @@ for d in ALL_DAYS:
         for ch in range(1, 6):
             k += 1
             uv = int((buyers + 1) * R.uniform(8, 25) * [0.3, 0.15, 0.1, 0.15, 0.3][ch - 1])
-            t.add(k, d, shop, ch, int(uv * R.uniform(2.5, 5)), uv)
+            pv = int(uv * R.uniform(2.5, 5))
+            if d < END:  # 流量报表 T+1
+                t.add(k, d, shop, ch, pv, uv)
 
 # settlements
-t = tbl("fin_settlement", "id shop_id month_key gross_amount commission net_amount settled_at")
+t = tbl("fin_settlement", "id shop_id month_key gross_amount commission net_amount settled_at coop_mode service_fee revenue_amount")
 k = 0
 for (shop, mk), (gross, orders) in sorted(settle.items()):
     k += 1
@@ -819,7 +872,10 @@ for (shop, mk), (gross, orders) in sorted(settle.items()):
     com = money(gross * rate)
     y, mo = map(int, mk.split("-"))
     nxt = date(y + (mo == 12), mo % 12 + 1, 10)
-    t.add(k, shop, mk, gross, com, gross - com, datetime.combine(nxt, datetime.min.time()) if nxt <= END else None)
+    _, _, mode, fee_rate, _, _ = BRANDS[SHOPS[shop - 1][3] - 1]
+    fee = money(gross * Decimal(fee_rate)) if mode == "TP" else Decimal("0.00")
+    t.add(k, shop, mk, gross, com, gross - com, datetime.combine(nxt, datetime.min.time()) if nxt <= END else None,
+          mode, fee, fee if mode == "TP" else gross - com)
     for oid, amt in orders:
         SETI.add(nid("seti"), k, oid, amt)
 t = tbl("fin_platform_fee", "id platform_id category_id commission_rate")

@@ -34,6 +34,8 @@ CREATE TABLE trd_order (
   close_reason VARCHAR(64),
   delivery_type VARCHAR(64),
   expected_delivery_date DATE,
+  platform_status VARCHAR(64),
+  platform_order_no VARCHAR(64),
   created_by VARCHAR(64),
   created_time TIMESTAMP,
   updated_time TIMESTAMP,
@@ -74,6 +76,8 @@ COMMENT ON COLUMN trd_order.risk_level IS '风控等级：LOW/MEDIUM/HIGH';
 COMMENT ON COLUMN trd_order.close_reason IS '关闭原因：STOCKOUT/TIMEOUT/FRAUD/USER';
 COMMENT ON COLUMN trd_order.delivery_type IS '配送方式：EXPRESS/SAME_DAY/PICKUP';
 COMMENT ON COLUMN trd_order.expected_delivery_date IS '预计送达日期';
+COMMENT ON COLUMN trd_order.platform_status IS '平台原始订单状态（各平台编码不同，见业务知识“平台订单状态”）';
+COMMENT ON COLUMN trd_order.platform_order_no IS '平台订单号（各平台格式不同）';
 COMMENT ON COLUMN trd_order.created_by IS '创建人';
 COMMENT ON COLUMN trd_order.created_time IS '记录创建时间';
 COMMENT ON COLUMN trd_order.updated_time IS '记录更新时间';
@@ -922,6 +926,8 @@ CREATE TABLE prd_brand (
   name VARCHAR(64),
   is_own SMALLINT,
   country VARCHAR(64),
+  coop_mode VARCHAR(64),
+  service_fee_rate NUMERIC(12,6),
   english_name VARCHAR(64),
   logo VARCHAR(255),
   level VARCHAR(64),
@@ -933,11 +939,13 @@ CREATE TABLE prd_brand (
   is_deleted SMALLINT,
   PRIMARY KEY (id)
 );
-COMMENT ON TABLE prd_brand IS '品牌';
+COMMENT ON TABLE prd_brand IS '品牌：即品牌客户，一个品牌在多个平台开官方旗舰店，由我方运营';
 COMMENT ON COLUMN prd_brand.id IS '品牌ID';
 COMMENT ON COLUMN prd_brand.name IS '品牌名称';
-COMMENT ON COLUMN prd_brand.is_own IS '是否自有品牌';
+COMMENT ON COLUMN prd_brand.is_own IS '是否自有品牌（品牌管理模式：我方持有该品牌中国区经营权）';
 COMMENT ON COLUMN prd_brand.country IS '品牌国家';
+COMMENT ON COLUMN prd_brand.coop_mode IS '合作模式：DISTRIBUTION经销（我方买断货品、承担库存）/TP代运营（货权在品牌方，我方按GMV收服务费）/BRAND_MGMT品牌管理';
+COMMENT ON COLUMN prd_brand.service_fee_rate IS '代运营服务费率（仅TP模式，按支付GMV抽佣）';
 COMMENT ON COLUMN prd_brand.english_name IS '英文名';
 COMMENT ON COLUMN prd_brand.logo IS 'Logo URL';
 COMMENT ON COLUMN prd_brand.level IS '品牌等级：S/A/B/C';
@@ -2183,6 +2191,9 @@ CREATE TABLE fin_settlement (
   commission NUMERIC(14,2),
   net_amount NUMERIC(14,2),
   settled_at TIMESTAMP,
+  coop_mode VARCHAR(64),
+  service_fee NUMERIC(14,2),
+  revenue_amount NUMERIC(14,2),
   settlement_no VARCHAR(64),
   refund_deduct NUMERIC(14,2),
   freight_income NUMERIC(14,2),
@@ -2202,8 +2213,11 @@ COMMENT ON COLUMN fin_settlement.shop_id IS '店铺ID';
 COMMENT ON COLUMN fin_settlement.month_key IS '结算月份YYYY-MM';
 COMMENT ON COLUMN fin_settlement.gross_amount IS '应结算总额';
 COMMENT ON COLUMN fin_settlement.commission IS '平台佣金';
-COMMENT ON COLUMN fin_settlement.net_amount IS '实际结算金额';
+COMMENT ON COLUMN fin_settlement.net_amount IS '实际结算金额（平台打款的货款，扣佣金后）';
 COMMENT ON COLUMN fin_settlement.settled_at IS '结算时间';
+COMMENT ON COLUMN fin_settlement.coop_mode IS '结算时品牌的合作模式：DISTRIBUTION/TP/BRAND_MGMT';
+COMMENT ON COLUMN fin_settlement.service_fee IS '我方应收代运营服务费（仅TP模式=应结算总额×服务费率，其余为0）';
+COMMENT ON COLUMN fin_settlement.revenue_amount IS '我方确认收入：经销和品牌管理=实际结算货款，代运营=服务费（货款归品牌方）';
 COMMENT ON COLUMN fin_settlement.settlement_no IS '结算单号';
 COMMENT ON COLUMN fin_settlement.refund_deduct IS '退款扣减';
 COMMENT ON COLUMN fin_settlement.freight_income IS '运费收入';
@@ -2337,6 +2351,7 @@ CREATE TABLE dim_shop (
   platform_id BIGINT,
   region_id BIGINT,
   opened_at DATE,
+  brand_id BIGINT,
   shop_code VARCHAR(64),
   shop_type VARCHAR(64),
   manager VARCHAR(64),
@@ -2349,12 +2364,14 @@ CREATE TABLE dim_shop (
 );
 CREATE INDEX idx_dim_shop_platform_id ON dim_shop (platform_id);
 CREATE INDEX idx_dim_shop_region_id ON dim_shop (region_id);
-COMMENT ON TABLE dim_shop IS '店铺维表';
+CREATE INDEX idx_dim_shop_brand_id ON dim_shop (brand_id);
+COMMENT ON TABLE dim_shop IS '店铺维表：每个店铺是某个品牌在某个平台的官方旗舰店';
 COMMENT ON COLUMN dim_shop.id IS '店铺ID';
 COMMENT ON COLUMN dim_shop.name IS '店铺名称';
 COMMENT ON COLUMN dim_shop.platform_id IS '所属平台ID';
-COMMENT ON COLUMN dim_shop.region_id IS '运营归属区域ID';
+COMMENT ON COLUMN dim_shop.region_id IS '运营归属区域ID（负责该店的运营中心所在区域）';
 COMMENT ON COLUMN dim_shop.opened_at IS '开店日期';
+COMMENT ON COLUMN dim_shop.brand_id IS '所属品牌（品牌客户）ID';
 COMMENT ON COLUMN dim_shop.shop_code IS '店铺编码';
 COMMENT ON COLUMN dim_shop.shop_type IS '店铺类型：FLAGSHIP/SPECIALTY/DIRECT';
 COMMENT ON COLUMN dim_shop.manager IS '店长';
