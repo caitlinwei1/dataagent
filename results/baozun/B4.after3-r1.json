@@ -1,0 +1,37 @@
+{
+ "id": "B4",
+ "question": "2026年10月15日华东区域仓数码家电的可用库存一共多少件？",
+ "thread": "baozun-B4-ca4872",
+ "seconds": 87.7,
+ "sql_attempts": 3,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select sum(`available_qty`) from `wms_inventory_snapshot` as `i` join `wms_warehouse` as `w` on `i`.`warehouse_id` = `w`.`id` join `prd_sku` as `s` on `i`.`sku_id` = `s`.`id` join `prd_spu` as `p` on `s`.`spu_id` = `p`.`id` join `prd_category` as `c3` on `p`.`category_id` = `c3`.`id` join `prd_category` as `c2` on `c3`.`parent_id` = `c2`.`id` join `prd_category` as `c1` on `c2`.`parent_id` = `c1`.`id` where `i`.`snapshot_date` >= '2026-10-15' and `i`.`snapshot_date` < '2026-10-16' and `w`.`name` = '华东区域仓' and `c1`.`name` = '数码家电';"
+ ],
+ "final_sql": "select sum(`available_qty`) from `wms_inventory_snapshot` as `i` join `wms_warehouse` as `w` on `i`.`warehouse_id` = `w`.`id` join `prd_sku` as `s` on `i`.`sku_id` = `s`.`id` join `prd_spu` as `p` on `s`.`spu_id` = `p`.`id` join `prd_category` as `c3` on `p`.`category_id` = `c3`.`id` join `prd_category` as `c2` on `c3`.`parent_id` = `c2`.`id` join `prd_category` as `c1` on `c2`.`parent_id` = `c1`.`id` where `i`.`snapshot_date` >= '2026-10-15' and `i`.`snapshot_date` < '2026-10-16' and `w`.`name` = '华东区域仓' and `c1`.`name` = '数码家电';",
+ "result": {
+  "column": [
+   "sum(available_qty)"
+  ],
+  "data": [
+   {
+    "sum(available_qty)": "23"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": null,
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：prd_spu\n开始处理Schema选择...\nSchema选择处理完成.",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"
+ ],
+ "gold": "SUM(i.available_qty)\n23",
+ "wrong": "SUM(i.on_hand_qty-i.locked_qty)\n1642"
+}

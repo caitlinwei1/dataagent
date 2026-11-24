@@ -16,6 +16,7 @@
 package com.alibaba.cloud.ai.dataagent.dto.schema;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,6 +33,13 @@ public class SchemaDTO {
 	private List<TableDTO> table;
 
 	private List<String> foreignKeys;
+
+	/**
+	 * Tables the fine-selection model asked for, including ones that were not in the recalled schema (those are
+	 * dropped by the selection filter). Read once by the join-path completion right after selection; not persisted.
+	 */
+	@JsonIgnore
+	private List<String> requestedTables;
 
 	@Override
 	public String toString() {

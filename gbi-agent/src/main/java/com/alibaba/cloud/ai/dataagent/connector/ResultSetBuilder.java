@@ -38,14 +38,24 @@ public class ResultSetBuilder {
 		for (int i = 1; i <= columnsCount; i++) {
 			rowHead[i - 1] = data.getColumnLabel(i);
 		}
+		uniqueLabels(rowHead, i -> {
+			try {
+				return data.getTableName(i + 1);
+			}
+			catch (SQLException e) {
+				return null;
+			}
+		});
 
 		List<Map<String, String>> resultSetData = Lists.newArrayList();
 		int count = 0;
 
 		while (rs.next() && count < SqlExecutor.RESULT_SET_LIMIT) {
 			Map<String, String> kv = new HashMap<>();
-			for (String h : rowHead) {
-				kv.put(h, rs.getString(h) == null ? "" : rs.getString(h));
+			for (int i = 0; i < rowHead.length; i++) {
+				// by index: by label, duplicate labels all read the first column
+				String v = rs.getString(i + 1);
+				kv.put(rowHead[i], v == null ? "" : v);
 			}
 			resultSetData.add(kv);
 			count++;
@@ -59,6 +69,33 @@ public class ResultSetBuilder {
 		resultSetBO.setData(cleanedData);
 
 		return resultSetBO;
+	}
+
+	/**
+	 * B6: {@code SELECT shop.name, brand.name, warehouse.name} gives three columns labelled {@code name}; keyed by
+	 * label, the row map kept one of them and the warehouse name never reached Python or the report. Repeated labels
+	 * become {@code table.label} (or {@code label_2}, {@code label_3} when the driver reports no table).
+	 */
+	static void uniqueLabels(String[] head, java.util.function.IntFunction<String> tableOf) {
+		Map<String, Integer> seen = new HashMap<>();
+		for (String h : head) {
+			seen.merge(h, 1, Integer::sum);
+		}
+		java.util.Set<String> used = new java.util.HashSet<>();
+		Map<String, Integer> n = new HashMap<>();
+		for (int i = 0; i < head.length; i++) {
+			String h = head[i];
+			if (seen.get(h) == 1) {
+				used.add(h);
+				continue;
+			}
+			String t = tableOf.apply(i);
+			String label = t != null && !t.isBlank() ? t + "." + h : h;
+			while (!used.add(label)) {
+				label = h + "_" + n.merge(h, 1, Integer::sum);
+			}
+			head[i] = label;
+		}
 	}
 
 	private static List<String> cleanColumnNames(List<String> columnNames) {

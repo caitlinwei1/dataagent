@@ -160,7 +160,7 @@ T("trd_daily_shop_sales", "店铺日销售汇总（T+1离线计算）", [
     "stat_date dt 统计日期 ->dim_date.date_key",
     "shop_id b 店铺ID ->dim_shop.id",
     "gmv d GMV：当日支付订单的商品总额+运费，不扣优惠、不扣退款",
-    "paid_amount d 实付金额：当日支付订单的实付合计",
+    "paid_amount d 实付金额：当日支付订单的实付合计（含支付后被关闭的订单，如缺货关单；不是“销售额”口径）",
     "refund_amount d 当日退款成功金额",
     "net_sales d 退款后金额=实付金额-退款金额",
     "order_cnt i 支付订单数",

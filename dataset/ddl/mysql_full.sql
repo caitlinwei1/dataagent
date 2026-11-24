@@ -395,7 +395,7 @@ CREATE TABLE `trd_daily_shop_sales` (
   `stat_date` DATE COMMENT '统计日期',
   `shop_id` BIGINT COMMENT '店铺ID',
   `gmv` DECIMAL(14,2) COMMENT 'GMV：当日支付订单的商品总额+运费，不扣优惠、不扣退款',
-  `paid_amount` DECIMAL(14,2) COMMENT '实付金额：当日支付订单的实付合计',
+  `paid_amount` DECIMAL(14,2) COMMENT '实付金额：当日支付订单的实付合计（含支付后被关闭的订单，如缺货关单；不是“销售额”口径）',
   `refund_amount` DECIMAL(14,2) COMMENT '当日退款成功金额',
   `net_sales` DECIMAL(14,2) COMMENT '退款后金额=实付金额-退款金额',
   `order_cnt` INT COMMENT '支付订单数',

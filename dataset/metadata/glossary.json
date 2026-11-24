@@ -8,7 +8,7 @@
    "交易额",
    "流水"
   ],
-  "description": "已支付订单的商品原价总额加运费，不扣优惠、不扣退款。按天看可直接用 trd_daily_shop_sales.gmv。；公式：SUM(trd_order.total_amount + trd_order.freight_amount)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.gmv",
+  "description": "已支付订单的商品原价总额加运费，不扣优惠、不扣退款。不按 order_status 过滤：支付后被关闭或退款的订单也计入 GMV（与“销售额”不同）。按天看可直接用 trd_daily_shop_sales.gmv。；公式：SUM(trd_order.total_amount + trd_order.freight_amount)；过滤：trd_order.paid_at IS NOT NULL；涉及：trd_order, trd_daily_shop_sales.gmv",
   "tables": [
    "trd_order",
    "trd_daily_shop_sales"
@@ -37,7 +37,7 @@
    "销售收入",
    "卖了多少钱"
   ],
-  "description": "未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。；公式：默认等同实付金额 SUM(trd_order.pay_amount)；按商品/类目统计时用 SUM(trd_order_item.pay_share)；过滤：trd_order.paid_at IS NOT NULL AND trd_order.order_status NOT IN ('CANCELLED','CLOSED')；涉及：trd_order, trd_order_item, trd_daily_sku_sales.sales_amount",
+  "description": "未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。必须排除取消/关闭订单，所以按店铺/品牌看销售额要用 trd_order 明细；trd_daily_shop_sales.paid_amount 含支付后被关闭（如缺货关单）的订单，不能当销售额。；公式：默认等同实付金额 SUM(trd_order.pay_amount)；按商品/类目统计时用 SUM(trd_order_item.pay_share)；过滤：trd_order.paid_at IS NOT NULL AND trd_order.order_status NOT IN ('CANCELLED','CLOSED')；涉及：trd_order, trd_order_item, trd_daily_sku_sales.sales_amount",
   "tables": [
    "trd_order",
    "trd_order_item",
@@ -616,9 +616,13 @@
   "synonyms": [
    "双11 GMV",
    "618 GMV",
-   "大促成交"
+   "大促成交",
+   "双11期间",
+   "618期间",
+   "大促期间",
+   "年货节期间"
   ],
-  "description": "预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。；公式：金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）；涉及：trd_order, trd_presale_order",
+  "description": "预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。大促期间按日期范围过滤，不要再关联 mkt_activity / trd_order_promotion 筛订单（活动表是单平台的活动记录，预售单不挂活动）。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。；公式：金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款；不按 order_status 过滤，支付后关闭/退款的订单也计入）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）；涉及：trd_order, trd_presale_order",
   "tables": [
    "trd_order",
    "trd_presale_order"
@@ -1241,7 +1245,7 @@
   "type": "enum_value",
   "term": "个人护理",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '个人护理'",
+  "description": "商品类目取值，对应 prd_category.name = '个人护理'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '个人护理')",
   "tables": [
    "prd_category"
   ],
@@ -1252,7 +1256,7 @@
   "type": "enum_value",
   "term": "个人护理基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '个人护理基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '个人护理基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1263,7 +1267,7 @@
   "type": "enum_value",
   "term": "个人护理精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '个人护理精选'",
+  "description": "商品类目取值，对应 prd_category.name = '个人护理精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1274,7 +1278,7 @@
   "type": "enum_value",
   "term": "休闲零食",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食'",
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '休闲零食')",
   "tables": [
    "prd_category"
   ],
@@ -1285,7 +1289,7 @@
   "type": "enum_value",
   "term": "休闲零食基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1296,7 +1300,7 @@
   "type": "enum_value",
   "term": "休闲零食精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '休闲零食精选'",
+  "description": "商品类目取值，对应 prd_category.name = '休闲零食精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1307,7 +1311,7 @@
   "type": "enum_value",
   "term": "厨具",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具'",
+  "description": "商品类目取值，对应 prd_category.name = '厨具'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '厨具')",
   "tables": [
    "prd_category"
   ],
@@ -1318,7 +1322,7 @@
   "type": "enum_value",
   "term": "厨具基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '厨具基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1329,7 +1333,7 @@
   "type": "enum_value",
   "term": "厨具精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '厨具精选'",
+  "description": "商品类目取值，对应 prd_category.name = '厨具精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1340,7 +1344,7 @@
   "type": "enum_value",
   "term": "女装",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装'",
+  "description": "商品类目取值，对应 prd_category.name = '女装'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '女装')",
   "tables": [
    "prd_category"
   ],
@@ -1351,7 +1355,7 @@
   "type": "enum_value",
   "term": "女装基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '女装基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1362,7 +1366,7 @@
   "type": "enum_value",
   "term": "女装精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '女装精选'",
+  "description": "商品类目取值，对应 prd_category.name = '女装精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1373,7 +1377,7 @@
   "type": "enum_value",
   "term": "奶粉辅食",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食'",
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '奶粉辅食')",
   "tables": [
    "prd_category"
   ],
@@ -1384,7 +1388,7 @@
   "type": "enum_value",
   "term": "奶粉辅食基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1395,7 +1399,7 @@
   "type": "enum_value",
   "term": "奶粉辅食精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食精选'",
+  "description": "商品类目取值，对应 prd_category.name = '奶粉辅食精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1406,7 +1410,7 @@
   "type": "enum_value",
   "term": "家居日用",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '家居日用'",
+  "description": "商品类目取值，对应 prd_category.name = '家居日用'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '家居日用')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -1417,7 +1421,7 @@
   "type": "enum_value",
   "term": "家纺",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '家纺'",
+  "description": "商品类目取值，对应 prd_category.name = '家纺'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '家纺')",
   "tables": [
    "prd_category"
   ],
@@ -1428,7 +1432,7 @@
   "type": "enum_value",
   "term": "家纺基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '家纺基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '家纺基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1439,7 +1443,7 @@
   "type": "enum_value",
   "term": "家纺精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '家纺精选'",
+  "description": "商品类目取值，对应 prd_category.name = '家纺精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1450,7 +1454,7 @@
   "type": "enum_value",
   "term": "彩妆",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '彩妆'",
+  "description": "商品类目取值，对应 prd_category.name = '彩妆'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '彩妆')",
   "tables": [
    "prd_category"
   ],
@@ -1461,7 +1465,7 @@
   "type": "enum_value",
   "term": "彩妆基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '彩妆基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '彩妆基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1472,7 +1476,7 @@
   "type": "enum_value",
   "term": "彩妆精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '彩妆精选'",
+  "description": "商品类目取值，对应 prd_category.name = '彩妆精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1483,7 +1487,7 @@
   "type": "enum_value",
   "term": "手机通讯",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '手机通讯'",
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '手机通讯')",
   "tables": [
    "prd_category"
   ],
@@ -1494,7 +1498,7 @@
   "type": "enum_value",
   "term": "手机通讯基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '手机通讯基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1505,7 +1509,7 @@
   "type": "enum_value",
   "term": "手机通讯精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '手机通讯精选'",
+  "description": "商品类目取值，对应 prd_category.name = '手机通讯精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1516,7 +1520,7 @@
   "type": "enum_value",
   "term": "护肤",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '护肤'",
+  "description": "商品类目取值，对应 prd_category.name = '护肤'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '护肤')",
   "tables": [
    "prd_category"
   ],
@@ -1527,7 +1531,7 @@
   "type": "enum_value",
   "term": "护肤基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '护肤基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '护肤基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1538,7 +1542,7 @@
   "type": "enum_value",
   "term": "护肤精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '护肤精选'",
+  "description": "商品类目取值，对应 prd_category.name = '护肤精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1549,7 +1553,7 @@
   "type": "enum_value",
   "term": "收纳清洁",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁'",
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '收纳清洁')",
   "tables": [
    "prd_category"
   ],
@@ -1560,7 +1564,7 @@
   "type": "enum_value",
   "term": "收纳清洁基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1571,7 +1575,7 @@
   "type": "enum_value",
   "term": "收纳清洁精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '收纳清洁精选'",
+  "description": "商品类目取值，对应 prd_category.name = '收纳清洁精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1582,7 +1586,7 @@
   "type": "enum_value",
   "term": "数码家电",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '数码家电'",
+  "description": "商品类目取值，对应 prd_category.name = '数码家电'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '数码家电')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -1593,7 +1597,7 @@
   "type": "enum_value",
   "term": "智能家电",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '智能家电'",
+  "description": "商品类目取值，对应 prd_category.name = '智能家电'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '智能家电')",
   "tables": [
    "prd_category"
   ],
@@ -1604,7 +1608,7 @@
   "type": "enum_value",
   "term": "智能家电基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '智能家电基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '智能家电基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1615,7 +1619,7 @@
   "type": "enum_value",
   "term": "智能家电精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '智能家电精选'",
+  "description": "商品类目取值，对应 prd_category.name = '智能家电精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1626,7 +1630,7 @@
   "type": "enum_value",
   "term": "服饰鞋包",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '服饰鞋包'",
+  "description": "商品类目取值，对应 prd_category.name = '服饰鞋包'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '服饰鞋包')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -1637,7 +1641,7 @@
   "type": "enum_value",
   "term": "母婴玩具",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '母婴玩具'",
+  "description": "商品类目取值，对应 prd_category.name = '母婴玩具'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '母婴玩具')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -1648,7 +1652,7 @@
   "type": "enum_value",
   "term": "玩具",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '玩具')",
   "tables": [
    "prd_category"
   ],
@@ -1659,7 +1663,7 @@
   "type": "enum_value",
   "term": "玩具基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1670,7 +1674,7 @@
   "type": "enum_value",
   "term": "玩具精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '玩具精选'",
+  "description": "商品类目取值，对应 prd_category.name = '玩具精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1681,7 +1685,7 @@
   "type": "enum_value",
   "term": "生鲜水果",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '生鲜水果'",
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '生鲜水果')",
   "tables": [
    "prd_category"
   ],
@@ -1692,7 +1696,7 @@
   "type": "enum_value",
   "term": "生鲜水果基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '生鲜水果基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1703,7 +1707,7 @@
   "type": "enum_value",
   "term": "生鲜水果精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '生鲜水果精选'",
+  "description": "商品类目取值，对应 prd_category.name = '生鲜水果精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1714,7 +1718,7 @@
   "type": "enum_value",
   "term": "电脑办公",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '电脑办公'",
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '电脑办公')",
   "tables": [
    "prd_category"
   ],
@@ -1725,7 +1729,7 @@
   "type": "enum_value",
   "term": "电脑办公基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '电脑办公基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1736,7 +1740,7 @@
   "type": "enum_value",
   "term": "电脑办公精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '电脑办公精选'",
+  "description": "商品类目取值，对应 prd_category.name = '电脑办公精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1747,7 +1751,7 @@
   "type": "enum_value",
   "term": "男装",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装'",
+  "description": "商品类目取值，对应 prd_category.name = '男装'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '男装')",
   "tables": [
    "prd_category"
   ],
@@ -1758,7 +1762,7 @@
   "type": "enum_value",
   "term": "男装基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '男装基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1769,7 +1773,7 @@
   "type": "enum_value",
   "term": "男装精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '男装精选'",
+  "description": "商品类目取值，对应 prd_category.name = '男装精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1780,7 +1784,7 @@
   "type": "enum_value",
   "term": "童装",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '童装'",
+  "description": "商品类目取值，对应 prd_category.name = '童装'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '童装')",
   "tables": [
    "prd_category"
   ],
@@ -1791,7 +1795,7 @@
   "type": "enum_value",
   "term": "童装基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '童装基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '童装基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1802,7 +1806,7 @@
   "type": "enum_value",
   "term": "童装精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '童装精选'",
+  "description": "商品类目取值，对应 prd_category.name = '童装精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1813,7 +1817,7 @@
   "type": "enum_value",
   "term": "箱包",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '箱包'",
+  "description": "商品类目取值，对应 prd_category.name = '箱包'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '箱包')",
   "tables": [
    "prd_category"
   ],
@@ -1824,7 +1828,7 @@
   "type": "enum_value",
   "term": "箱包基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '箱包基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '箱包基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1835,7 +1839,7 @@
   "type": "enum_value",
   "term": "箱包精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '箱包精选'",
+  "description": "商品类目取值，对应 prd_category.name = '箱包精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1846,7 +1850,7 @@
   "type": "enum_value",
   "term": "粮油调味",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '粮油调味'",
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味'（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '粮油调味')",
   "tables": [
    "prd_category"
   ],
@@ -1857,7 +1861,7 @@
   "type": "enum_value",
   "term": "粮油调味基础款",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '粮油调味基础款'",
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味基础款'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1868,7 +1872,7 @@
   "type": "enum_value",
   "term": "粮油调味精选",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '粮油调味精选'",
+  "description": "商品类目取值，对应 prd_category.name = '粮油调味精选'（三级类目，prd_spu.category_id 直接指向它）",
   "tables": [
    "prd_category"
   ],
@@ -1879,7 +1883,7 @@
   "type": "enum_value",
   "term": "美妆个护",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '美妆个护'",
+  "description": "商品类目取值，对应 prd_category.name = '美妆个护'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '美妆个护')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -1890,7 +1894,7 @@
   "type": "enum_value",
   "term": "食品生鲜",
   "synonyms": [],
-  "description": "商品类目取值，对应 prd_category.name = '食品生鲜'",
+  "description": "商品类目取值，对应 prd_category.name = '食品生鲜'（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN (SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '食品生鲜')；直接写 category_id = 一级类目 id 会得到空结果",
   "tables": [
    "prd_category"
   ],
@@ -2747,7 +2751,7 @@
   "type": "enum_value",
   "term": "2024双11",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2024双11'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2024双11'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2758,7 +2762,7 @@
   "type": "enum_value",
   "term": "2025618",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2025618'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2025618'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2769,7 +2773,7 @@
   "type": "enum_value",
   "term": "2025双11",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2025双11'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2025双11'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2780,7 +2784,7 @@
   "type": "enum_value",
   "term": "2025年货节",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2025年货节'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2025年货节'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2791,7 +2795,7 @@
   "type": "enum_value",
   "term": "2026618",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2026618'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2026618'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2802,7 +2806,7 @@
   "type": "enum_value",
   "term": "2026双11",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2026双11'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2026双11'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2813,7 +2817,7 @@
   "type": "enum_value",
   "term": "2026年货节",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '2026年货节'",
+  "description": "营销活动取值，对应 mkt_activity.name = '2026年货节'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2824,7 +2828,7 @@
   "type": "enum_value",
   "term": "限时秒杀1",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀1'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀1'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2835,7 +2839,7 @@
   "type": "enum_value",
   "term": "限时秒杀10",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀10'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀10'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2846,7 +2850,7 @@
   "type": "enum_value",
   "term": "限时秒杀11",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀11'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀11'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2857,7 +2861,7 @@
   "type": "enum_value",
   "term": "限时秒杀12",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀12'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀12'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2868,7 +2872,7 @@
   "type": "enum_value",
   "term": "限时秒杀2",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀2'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀2'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2879,7 +2883,7 @@
   "type": "enum_value",
   "term": "限时秒杀3",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀3'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀3'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2890,7 +2894,7 @@
   "type": "enum_value",
   "term": "限时秒杀4",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀4'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀4'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2901,7 +2905,7 @@
   "type": "enum_value",
   "term": "限时秒杀5",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀5'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀5'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2912,7 +2916,7 @@
   "type": "enum_value",
   "term": "限时秒杀6",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀6'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀6'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2923,7 +2927,7 @@
   "type": "enum_value",
   "term": "限时秒杀7",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀7'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀7'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2934,7 +2938,7 @@
   "type": "enum_value",
   "term": "限时秒杀8",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀8'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀8'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],
@@ -2945,7 +2949,7 @@
   "type": "enum_value",
   "term": "限时秒杀9",
   "synonyms": [],
-  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀9'",
+  "description": "营销活动取值，对应 mkt_activity.name = '限时秒杀9'。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段",
   "tables": [
    "mkt_activity"
   ],

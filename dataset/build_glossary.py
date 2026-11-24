@@ -58,6 +58,25 @@ def mysql(sql):
     return [line.split("\t") for line in out.strip().split("\n") if line]
 
 
+CATEGORY_PATH = {
+    1: "（一级类目）。prd_spu.category_id 指向三级类目，按一级类目过滤要向上关联两次：prd_spu.category_id IN "
+       "(SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id "
+       "JOIN prd_category c1 ON c2.parent_id = c1.id WHERE c1.name = '{v}')；直接写 category_id = 一级类目 id 会得到空结果",
+    2: "（二级类目）。prd_spu.category_id 指向三级类目，按二级类目过滤：prd_spu.category_id IN "
+       "(SELECT c3.id FROM prd_category c3 JOIN prd_category c2 ON c3.parent_id = c2.id WHERE c2.name = '{v}')",
+    3: "（三级类目，prd_spu.category_id 直接指向它）",
+}
+
+
+def enum_note(table, col, value, levels):
+    """B4/B5: an enum value says where it lives; some values also need to say how (not) to filter on them."""
+    if (table, col) == ("prd_category", "name") and value in levels:
+        return CATEGORY_PATH[levels[value]].format(v=value)
+    if (table, col) == ("mkt_activity", "name"):
+        return "。单平台的一条活动记录，只关联用了该活动优惠的订单，不代表大促时间段"
+    return ""
+
+
 def main():
     spec = yaml.safe_load(open(os.path.join(HERE, "metadata", "business_terms.yaml")))
     terms = []
@@ -71,6 +90,7 @@ def main():
         terms.append(dict(type="dimension", term=str(d["term"]), synonyms=[str(x) for x in d.get("synonyms", [])], description=d["description"], tables=[]))
     for k, v in spec["abbreviations"].items():
         terms.append(dict(type="abbreviation", term=k, synonyms=[], description=v, tables=[]))
+    levels = {r[0]: int(r[1]) for r in mysql("SELECT name, level FROM prd_category")}
     for table, col, label, what in ENUM_SOURCES:
         sel = f"SELECT DISTINCT {col}" + (f", {label}" if label else "") + f" FROM {table} WHERE {col} IS NOT NULL ORDER BY 1"
         for row in mysql(sel):
@@ -78,7 +98,8 @@ def main():
             name = row[1] if label else value
             syn = [value] if label and value != name else []
             terms.append(dict(type="enum_value", term=name, synonyms=syn,
-                              description=f"{what}取值，对应 {table}.{col} = '{value}'", tables=[table],
+                              description=f"{what}取值，对应 {table}.{col} = '{value}'" + enum_note(table, col, value, levels),
+                              tables=[table],
                               column=f"{table}.{col}", value=value))
     seen, uniq = set(), []
     for t in terms:

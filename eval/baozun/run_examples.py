@@ -32,7 +32,7 @@ def mysql(sql):
 
 def notes(events):
     """Messages the new fixes emit (replan, semantic bypass, schema expansion, freshness), for the doc."""
-    keys = ("回到规划器", "不再由模型把关", "沿外键补充表", "数据时效提示")
+    keys = ("回到规划器", "不再由模型把关", "沿外键补充表", "沿外键补齐关联路径", "数据时效提示")
     out = []
     for seg in R.segments(events):
         for k in keys:

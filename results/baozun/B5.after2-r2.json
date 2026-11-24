@@ -1,0 +1,66 @@
+{
+ "id": "B5",
+ "question": "2025年双11期间（10月31日到11月11日）各品牌的GMV是多少？",
+ "thread": "baozun-B5-459e14",
+ "seconds": 47.1,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `dim_shop`.`brand_id`, sum(`trd_daily_shop_sales`.`gmv`) as `gmv` from `trd_daily_shop_sales` inner join `dim_shop` on `trd_daily_shop_sales`.`shop_id` = `dim_shop`.`id` inner join `dim_date` on `trd_daily_shop_sales`.`stat_date` = `dim_date`.`date_key` where `trd_daily_shop_sales`.`stat_date` >= '2025-10-31' and `trd_daily_shop_sales`.`stat_date` < '2025-11-12' group by `dim_shop`.`brand_id`;"
+ ],
+ "final_sql": "select `dim_shop`.`brand_id`, sum(`trd_daily_shop_sales`.`gmv`) as `gmv` from `trd_daily_shop_sales` inner join `dim_shop` on `trd_daily_shop_sales`.`shop_id` = `dim_shop`.`id` inner join `dim_date` on `trd_daily_shop_sales`.`stat_date` = `dim_date`.`date_key` where `trd_daily_shop_sales`.`stat_date` >= '2025-10-31' and `trd_daily_shop_sales`.`stat_date` < '2025-11-12' group by `dim_shop`.`brand_id`;",
+ "result": {
+  "column": [
+   "brand_id",
+   "gmv"
+  ],
+  "data": [
+   {
+    "gmv": "852227.60",
+    "brand_id": "1"
+   },
+   {
+    "gmv": "40227.31",
+    "brand_id": "4"
+   },
+   {
+    "gmv": "159350.25",
+    "brand_id": "3"
+   },
+   {
+    "gmv": "26077.43",
+    "brand_id": "5"
+   },
+   {
+    "gmv": "546109.96",
+    "brand_id": "2"
+   },
+   {
+    "gmv": "133447.35",
+    "brand_id": "6"
+   },
+   {
+    "gmv": "145041.56",
+    "brand_id": "7"
+   },
+   {
+    "gmv": "98870.87",
+    "brand_id": "8"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": null,
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：trd_daily_shop_sales\n开始处理Schema选择...\nSchema选择处理完成."
+ ],
+ "gold": "name\tgmv\n曜石\t956004.20\n星屿\t598290.23\n青岚\t175967.55\n北纬\t159867.23\n朵朵熊\t153830.32\n澄野\t115123.14\n栖木\t42583.91\n禾川\t29548.26",
+ "wrong": "name\tgmv\n曜石\t852227.60\n星屿\t543172.32\n青岚\t159350.25\n北纬\t145041.56\n朵朵熊\t133506.66\n澄野\t98870.87\n栖木\t40227.31\n禾川\t26077.43"
+}
