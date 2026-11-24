@@ -9,7 +9,7 @@ metrics:
     formula: SUM(trd_order.total_amount + trd_order.freight_amount)
     filter: trd_order.paid_at IS NOT NULL
     tables: [trd_order, trd_daily_shop_sales.gmv]
-    description: 已支付订单的商品原价总额加运费，不扣优惠、不扣退款。按天看可直接用 trd_daily_shop_sales.gmv。
+    description: 已支付订单的商品原价总额加运费，不扣优惠、不扣退款。不按 order_status 过滤：支付后被关闭或退款的订单也计入 GMV（与“销售额”不同）。按天看可直接用 trd_daily_shop_sales.gmv。
 
   - term: 实付金额
     synonyms: [支付金额, 成交金额, 实收金额, 付款金额]
@@ -23,7 +23,7 @@ metrics:
     formula: 默认等同实付金额 SUM(trd_order.pay_amount)；按商品/类目统计时用 SUM(trd_order_item.pay_share)
     filter: trd_order.paid_at IS NOT NULL AND trd_order.order_status NOT IN ('CANCELLED','CLOSED')
     tables: [trd_order, trd_order_item, trd_daily_sku_sales.sales_amount]
-    description: 未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。
+    description: 未说明口径时按实付金额计；按商品维度时不含运费（运费不分摊到明细）。回答中需注明“按实付口径”。必须排除取消/关闭订单，所以按店铺/品牌看销售额要用 trd_order 明细；trd_daily_shop_sales.paid_amount 含支付后被关闭（如缺货关单）的订单，不能当销售额。
 
   - term: 退款后金额
     synonyms: [净销售额, 净销售, 退款后销售额, 净收入]
@@ -262,10 +262,10 @@ metrics:
     description: 只有代运营模式的品牌有服务费；注意与平台佣金 fin_settlement.commission（平台向店铺收取）区分。
 
   - term: 大促GMV
-    synonyms: [双11 GMV, 618 GMV, 大促成交]
-    formula: 金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）
+    synonyms: [双11 GMV, 618 GMV, 大促成交, 双11期间, 618期间, 大促期间, 年货节期间]
+    formula: 金额同 GMV：SUM(trd_order.total_amount + trd_order.freight_amount)（不扣优惠，不要用 pay_amount 或 定金+尾款；不按 order_status 过滤，支付后关闭/退款的订单也计入）；时间归属：普通订单按 trd_order.paid_at，预售订单（is_presale=1）按 trd_presale_order.balance_paid_at（尾款支付时间）
     tables: [trd_order, trd_presale_order]
-    description: 预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。
+    description: 预售订单的 trd_order.paid_at 是定金支付时间，落在大促开始前；直接按 paid_at 过滤会漏掉预售单。大促期间按日期范围过滤，不要再关联 mkt_activity / trd_order_promotion 筛订单（活动表是单平台的活动记录，预售单不挂活动）。trd_daily_shop_sales 按下单日汇总，同样把预售单算在定金阶段。尾款在 00:00 后支付的会跨到下一天。
 
 dimensions:
   - term: 大区

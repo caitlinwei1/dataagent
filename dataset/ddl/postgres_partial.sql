@@ -599,7 +599,7 @@ COMMENT ON COLUMN trd_daily_shop_sales.id IS '记录ID';
 COMMENT ON COLUMN trd_daily_shop_sales.stat_date IS '统计日期';
 COMMENT ON COLUMN trd_daily_shop_sales.shop_id IS '店铺ID';
 COMMENT ON COLUMN trd_daily_shop_sales.gmv IS 'GMV：当日支付订单的商品总额+运费，不扣优惠、不扣退款';
-COMMENT ON COLUMN trd_daily_shop_sales.paid_amount IS '实付金额：当日支付订单的实付合计';
+COMMENT ON COLUMN trd_daily_shop_sales.paid_amount IS '实付金额：当日支付订单的实付合计（含支付后被关闭的订单，如缺货关单；不是“销售额”口径）';
 COMMENT ON COLUMN trd_daily_shop_sales.refund_amount IS '当日退款成功金额';
 COMMENT ON COLUMN trd_daily_shop_sales.net_sales IS '退款后金额=实付金额-退款金额';
 COMMENT ON COLUMN trd_daily_shop_sales.order_cnt IS '支付订单数';

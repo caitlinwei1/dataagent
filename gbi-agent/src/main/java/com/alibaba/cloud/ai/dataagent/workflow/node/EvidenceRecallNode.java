@@ -61,6 +61,8 @@ public class EvidenceRecallNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
 
+	private final com.alibaba.cloud.ai.dataagent.service.business.BusinessKnowledgeService businessKnowledgeService;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 
@@ -166,6 +168,12 @@ public class EvidenceRecallNode implements NodeAction {
 			.stream()
 			.toList();
 
+		// GBI (B5/B6): metric / dimension terms named literally in the question go first, so a definition such as
+		// 销售额 (excludes closed orders) or GMV (no status filter) cannot be pushed out of the top-k by enum values
+		if (nl2sqlProperties.isLiteralTermEvidence()) {
+			businessTermDocuments = withLiteralTerms(agentId, standaloneQuery, businessTermDocuments);
+		}
+
 		// 获取智能体知识文档
 		List<Document> agentKnowledgeDocuments = vectorStoreService
 			.getDocumentsForAgent(agentId, standaloneQuery, DocumentMetadataConstant.AGENT_KNOWLEDGE)
@@ -184,6 +192,83 @@ public class EvidenceRecallNode implements NodeAction {
 				agentId, businessTermDocuments.size(), agentKnowledgeDocuments.size(), allDocuments.size());
 
 		return new DocumentRetrievalResult(businessTermDocuments, agentKnowledgeDocuments, allDocuments);
+	}
+
+	/** Most literal-hit terms put ahead of the vector hits; enough for the metric + dimension of one question. */
+	static final int MAX_LITERAL_TERMS = 4;
+
+	private static final java.util.regex.Pattern ENUM_TERM = java.util.regex.Pattern.compile("取值，对应 ");
+
+	private List<Document> withLiteralTerms(String agentId, String query, List<Document> vectorDocs) {
+		try {
+			List<com.alibaba.cloud.ai.dataagent.vo.BusinessKnowledgeVO> all = businessKnowledgeService
+				.getKnowledge(Long.valueOf(agentId));
+			List<Document> literal = literalTermDocuments(query, all);
+			if (literal.isEmpty()) {
+				return vectorDocs;
+			}
+			java.util.Set<String> seen = new java.util.HashSet<>();
+			List<Document> out = new ArrayList<>();
+			for (Document d : literal) {
+				if (seen.add(d.getText())) {
+					out.add(d);
+				}
+			}
+			for (Document d : vectorDocs) {
+				if (seen.add(d.getText())) {
+					out.add(d);
+				}
+			}
+			log.info("literal_term_evidence agent={} terms={}", agentId,
+					literal.stream().map(d -> d.getMetadata().get("term")).toList());
+			return out;
+		}
+		catch (Exception e) {
+			log.warn("literal term evidence failed: {}", e.getMessage());
+			return vectorDocs;
+		}
+	}
+
+	/**
+	 * Non-enum terms whose name or a synonym (2+ chars) occurs in the query, longest match first. Text format is the
+	 * one the vector documents use, so downstream prompts see no difference.
+	 */
+	static List<Document> literalTermDocuments(String query,
+			List<com.alibaba.cloud.ai.dataagent.vo.BusinessKnowledgeVO> terms) {
+		String q = query == null ? "" : query.toLowerCase(java.util.Locale.ROOT);
+		record Hit(com.alibaba.cloud.ai.dataagent.vo.BusinessKnowledgeVO k, int len) {
+		}
+		List<Hit> hits = new ArrayList<>();
+		for (var k : terms) {
+			String desc = k.getDescription() == null ? "" : k.getDescription();
+			if (Boolean.FALSE.equals(k.getIsRecall()) || ENUM_TERM.matcher(desc).find() || k.getBusinessTerm() == null) {
+				continue;
+			}
+			List<String> names = new ArrayList<>(List.of(k.getBusinessTerm()));
+			if (k.getSynonyms() != null) {
+				for (String syn : k.getSynonyms().split("[,，]")) {
+					if (!syn.isBlank()) {
+						names.add(syn.trim());
+					}
+				}
+			}
+			int best = names.stream()
+				.filter(n -> n.length() >= 2 && q.contains(n.toLowerCase(java.util.Locale.ROOT)))
+				.mapToInt(String::length)
+				.max()
+				.orElse(0);
+			if (best > 0) {
+				hits.add(new Hit(k, best));
+			}
+		}
+		hits.sort(java.util.Comparator.comparingInt(Hit::len).reversed());
+		return hits.stream().limit(MAX_LITERAL_TERMS).map(h -> {
+			var k = h.k();
+			String text = String.format("业务名词: %s, 说明: %s, 同义词: %s", k.getBusinessTerm(),
+					java.util.Optional.ofNullable(k.getDescription()).orElse("无"),
+					java.util.Optional.ofNullable(k.getSynonyms()).orElse("无"));
+			return new Document(text, Map.of("term", k.getBusinessTerm(), "literal", true));
+		}).toList();
 	}
 
 	// 构建证据内容，输出格式

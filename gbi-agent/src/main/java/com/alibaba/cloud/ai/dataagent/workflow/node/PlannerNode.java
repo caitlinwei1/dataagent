@@ -37,6 +37,7 @@ import reactor.core.publisher.Flux;
 
 import java.util.Map;
 
+import static com.alibaba.cloud.ai.dataagent.constant.Constant.INPUT_KEY;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.*;
 
 /**
@@ -48,6 +49,8 @@ import static com.alibaba.cloud.ai.dataagent.constant.Constant.*;
 public class PlannerNode implements NodeAction {
 
 	private final LlmService llmService;
+
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
 
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
@@ -91,6 +94,10 @@ public class PlannerNode implements NodeAction {
 
 		// 构建用户提示
 		String userPrompt = buildUserPrompt(canonicalQuery, validationError, state);
+		// GBI (B6): attribution questions follow a fixed breakdown instead of planner-chosen dimensions
+		if (nl2sqlProperties.isAttributionQuestion(StateUtil.getStringValue(state, INPUT_KEY, ""))) {
+			userPrompt = userPrompt + "\n\n" + nl2sqlProperties.getAttributionGuide();
+		}
 		String evidence = StateUtil.getStringValue(state, EVIDENCE);
 
 		// 构建模板参数

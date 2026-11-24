@@ -26,6 +26,7 @@
 | 08 | 多数据源 / Turbo·Mix / 混合部署 | [08-datasources-modes-hybrid.md](08-datasources-modes-hybrid.md) | 思考开关没发出去（108 s）；ThreadLocal 换线程丢失 |
 | 09 | RuoYi 网关、鉴权、数据权限 | [09-ruoyi-security.md](09-ruoyi-security.md) | 召回后过滤仍被证据绕过；`switchIfEmpty` 坑 |
 | 10 | 落到宝尊：七个业务难点，问题在哪、方案对比、修复前后 | [10-baozun-scenario.md](10-baozun-scenario.md) | 收入口径取错月份（已修）；校验无上限（已修流程）；计划与校验锁死（已修流程，归因质量未修） |
+| 11 | B4/B5/B6 跑完但答案错：逐节点根因 | [11-b4-b6-root-cause.md](11-b4-b6-root-cause.md) | 精选静默丢表；枚举值被当过滤条件；汇总表口径藏住根因；重名列互相覆盖 |
 | 99 | 缺口表 | [99-gaps.md](99-gaps.md) | — |
 
 ## 1 分钟自我介绍版

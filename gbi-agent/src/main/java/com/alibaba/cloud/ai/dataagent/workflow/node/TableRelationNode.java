@@ -90,6 +90,10 @@ public class TableRelationNode implements NodeAction {
 
 	private final AgentDatasourceService agentDatasourceService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.schema.recall.SchemaExpansionService schemaExpansionService;
+
+	private final com.alibaba.cloud.ai.dataagent.service.nl2sql.GbiNl2sqlProperties nl2sqlProperties;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 
@@ -111,13 +115,15 @@ public class TableRelationNode implements NodeAction {
 				logicalForeignKeys);
 
 		Map<String, Object> resultMap = new HashMap<>();
+		List<String> joinAdded = new java.util.concurrent.CopyOnWriteArrayList<>();
 		// 将 DB_DIALECT_TYPE 添加到 resultMap，确保它在 generator 完成时被写入 state
 		resultMap.put(DB_DIALECT_TYPE, agentDbConfig.getDialectType());
 		resultMap.put(TABLE_RELATION_RETRY_COUNT, 0);
 		resultMap.put(TABLE_RELATION_EXCEPTION_OUTPUT, "");
 
 		Flux<ChatResponse> schemaFlux = processSchemaSelection(initialSchema, canonicalQuery, evidence, state,
-				agentDbConfig, result -> {
+				agentDbConfig, selected -> {
+					SchemaDTO result = completeJoinPaths(Long.valueOf(agentIdStr), selected, state, joinAdded);
 					log.info("[{}] Schema processing result: {}", this.getClass().getSimpleName(), result);
 					resultMap.put(TABLE_RELATION_OUTPUT, result);
 
@@ -140,6 +146,9 @@ public class TableRelationNode implements NodeAction {
 			emitter.complete();
 		});
 		Flux<ChatResponse> displayFlux = preFlux.concatWith(schemaFlux).concatWith(Flux.create(emitter -> {
+			if (!joinAdded.isEmpty()) {
+				emitter.next(ChatResponseUtil.createResponse("已沿外键补齐关联路径上的表：" + String.join(", ", joinAdded)));
+			}
 			emitter.next(ChatResponseUtil.createResponse("开始处理Schema选择..."));
 			emitter.next(ChatResponseUtil.createResponse("Schema选择处理完成."));
 			emitter.complete();
@@ -156,6 +165,36 @@ public class TableRelationNode implements NodeAction {
 		// subsequent nodes
 		return Map.of(TABLE_RELATION_OUTPUT, generator, DB_DIALECT_TYPE, agentDbConfig.getDialectType(),
 				TABLE_RELATION_RETRY_COUNT, 0, TABLE_RELATION_EXCEPTION_OUTPUT, "");
+	}
+
+	/**
+	 * B4 / B6: the tables the model selected must be joinable before any plan or SQL is written. Loads tables the
+	 * model asked for that the recall missed, and the bridge tables on the shortest foreign-key path between selected
+	 * tables. Deterministic, no LLM call; see {@code SchemaExpansionService#completeJoinPaths}.
+	 */
+	private SchemaDTO completeJoinPaths(Long agentId, SchemaDTO selected, OverAllState state, List<String> added) {
+		if (!nl2sqlProperties.isJoinPathCompletion() || selected == null) {
+			return selected;
+		}
+		try {
+			var permission = com.alibaba.cloud.ai.dataagent.security.DataPermission
+				.fromState(state.value(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_DATA_PERMISSION).orElse(null));
+			List<String> requested = new ArrayList<>(
+					selected.getRequestedTables() == null ? List.of() : selected.getRequestedTables());
+			if (nl2sqlProperties.isAttributionQuestion(StateUtil.getStringValue(state,
+					com.alibaba.cloud.ai.dataagent.constant.Constant.INPUT_KEY, ""))) {
+				requested.addAll(nl2sqlProperties.getAttributionTables());
+			}
+			var out = schemaExpansionService.completeJoinPaths(agentId, selected, requested, permission);
+			if (out.isPresent()) {
+				added.addAll(out.get().added());
+				return out.get().schema();
+			}
+		}
+		catch (Exception e) {
+			log.warn("join path completion failed: {}", e.getMessage());
+		}
+		return selected;
 	}
 
 	/** Builds initial schema from column and table documents. */

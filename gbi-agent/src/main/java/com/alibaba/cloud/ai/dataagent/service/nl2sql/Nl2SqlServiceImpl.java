@@ -30,6 +30,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import reactor.core.publisher.Flux;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -159,6 +160,9 @@ public class Nl2SqlServiceImpl implements Nl2SqlService {
 					}
 					if (tableList != null && !tableList.isEmpty()) {
 						selectedTables.addAll(tableList.stream().map(String::toLowerCase).collect(Collectors.toSet()));
+						// keep the full request: tables the model names but the recall missed would otherwise be
+						// dropped silently by the filter below (B4: prd_sku / prd_category)
+						schemaDTO.setRequestedTables(new ArrayList<>(selectedTables));
 						if (schemaDTO.getTable() != null) {
 							int originalTableCount = schemaDTO.getTable().size();
 							schemaDTO.getTable()

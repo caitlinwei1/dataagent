@@ -1,0 +1,42 @@
+{
+ "id": "B6",
+ "question": "曜石品牌在华东的销售额，2026年10月12日到18日这一周比前一周下降了多少？分析一下原因。",
+ "thread": "baozun-B6-9c29d0",
+ "seconds": 222.7,
+ "sql_attempts": 2,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "SELECT SUM(`t`.`pay_amount`) \nFROM `trd_order` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `t`.`paid_at` IS NOT NULL \n  AND `t`.`order_status` NOT IN ('CANCELLED', 'CLOSED') \n  AND `t`.`paid_at` >= '2026-10-12' \n  AND `t`.`paid_at` < '2026-10-19' \n  AND `b`.`name` = '曜石' \n  AND `r`.`big_region` = '华东';",
+  "SELECT SUM(`t`.`pay_amount`) AS `sales_amount`\nFROM `trd_order` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `t`.`paid_at` IS NOT NULL\n  AND `t`.`order_status` NOT IN ('CANCELLED', 'CLOSED')\n  AND `b`.`name` = '曜石'\n  AND `r`.`big_region` = '华东'\n  AND `t`.`paid_at` >= '2026-10-05'\n  AND `t`.`paid_at` < '2026-10-12';"
+ ],
+ "final_sql": "SELECT SUM(`t`.`pay_amount`) AS `sales_amount`\nFROM `trd_order` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `t`.`paid_at` IS NOT NULL\n  AND `t`.`order_status` NOT IN ('CANCELLED', 'CLOSED')\n  AND `b`.`name` = '曜石'\n  AND `r`.`big_region` = '华东'\n  AND `t`.`paid_at` >= '2026-10-05'\n  AND `t`.`paid_at` < '2026-10-12';",
+ "result": {
+  "column": [
+   "sales_amount"
+  ],
+  "data": [
+   {
+    "sales_amount": "172718.25"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE",
+  "SQL_GENERATE_NODE",
+  "PYTHON_GENERATE_NODE",
+  "REPORT_GENERATOR_NODE"
+ ],
+ "report": "",
+ "errors": [
+  "Error in stream processing: 200 OK from POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions, but response failed with cause: io.netty.channel.unix.Errors$NativeIoException: recvAddress(..) failed: Connection reset by peer"
+ ],
+ "user": null,
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：prd_brand\n开始处理Schema选择...\nSchema选择处理完成."
+ ],
+ "gold": "wk\tSUM(o.pay_amount)\n前一周\t172718.25\n本周\t62444.73",
+ "wrong": null
+}
