@@ -4,371 +4,371 @@
   "gold_false_positives" : 0,
   "false_positive_cases" : [ ],
   "example_wrong_sql" : [ {
-    "violations" : [ "[我方收入] 数据来源不对，应来自 fin_settlement.revenue_amount。收入要用结算表 fin_settlement.revenue_amount，按 month_key='YYYY-MM' 过滤（不要按 settled_at）" ],
     "caught" : true,
-    "id" : "B2/wrong_sql"
+    "id" : "B2/wrong_sql",
+    "violations" : [ "[我方收入] 数据来源不对，应来自 fin_settlement.revenue_amount。收入要用结算表 fin_settlement.revenue_amount，按 month_key='YYYY-MM' 过滤（不要按 settled_at）" ]
   }, {
-    "violations" : [ "[已完成订单（跨平台）] 对 trd_order.platform_status 加了口径不允许的过滤条件。跨平台用统一状态 order_status = 'COMPLETED'，不要按平台原始状态 platform_status 过滤" ],
     "caught" : true,
-    "id" : "B3/wrong_sql"
+    "id" : "B3/wrong_sql",
+    "violations" : [ "[已完成订单（跨平台）] 对 trd_order.platform_status 加了口径不允许的过滤条件。跨平台用统一状态 order_status = 'COMPLETED'，不要按平台原始状态 platform_status 过滤" ]
   }, {
-    "violations" : [ "[可用库存（历史日期）] 用了不符合口径的字段 wms_inventory.on_hand_qty。问的是历史某一天：用日快照 wms_inventory_snapshot.available_qty 并按 snapshot_date 过滤，不要用实时表 wms_inventory", "[可用库存（历史日期）] 用了不符合口径的字段 wms_inventory.locked_qty。问的是历史某一天：用日快照 wms_inventory_snapshot.available_qty 并按 snapshot_date 过滤，不要用实时表 wms_inventory" ],
     "caught" : true,
-    "id" : "B4/wrong_sql"
+    "id" : "B4/wrong_sql",
+    "violations" : [ "[可用库存（历史日期）] 用了不符合口径的字段 wms_inventory.on_hand_qty。问的是历史某一天：用日快照 wms_inventory_snapshot.available_qty 并按 snapshot_date 过滤，不要用实时表 wms_inventory", "[可用库存（历史日期）] 用了不符合口径的字段 wms_inventory.locked_qty。问的是历史某一天：用日快照 wms_inventory_snapshot.available_qty 并按 snapshot_date 过滤，不要用实时表 wms_inventory" ]
   }, {
-    "violations" : [ "[大促GMV] 数据来源不对，应来自 trd_presale_order.balance_paid_at。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ],
     "caught" : true,
-    "id" : "B5/wrong_sql"
+    "id" : "B5/wrong_sql",
+    "violations" : [ "[大促GMV] 数据来源不对，应来自 trd_presale_order.balance_paid_at。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ]
   }, {
-    "violations" : [ "[销售额/青岚合同口径] 缺少口径要求的 1.13。青岚合同口径：销售额 = SUM(pay_amount) / 1.13（不含税），并排除 order_status IN ('CANCELLED','CLOSED')" ],
     "caught" : true,
-    "id" : "B8/wrong_sql"
+    "id" : "B8/wrong_sql",
+    "violations" : [ "[销售额/青岚合同口径] 缺少口径要求的 1.13。青岚合同口径：销售额 = SUM(pay_amount) / 1.13（不含税），并排除 order_status IN ('CANCELLED','CLOSED')" ]
   }, {
-    "violations" : [ "[销售额/财务确认口径] 数据来源不对，应来自 trd_daily_shop_sales.net_sales 或 trd_refund.refund_amount。财务口径的销售额是退款后净额：用 trd_daily_shop_sales.net_sales，或 实付 - 成功退款（trd_refund.refund_status='SUCCESS'）" ],
     "caught" : true,
-    "id" : "B9/wrong_sql"
+    "id" : "B9/wrong_sql",
+    "violations" : [ "[销售额/财务确认口径] 数据来源不对，应来自 trd_daily_shop_sales.net_sales 或 trd_refund.refund_amount。财务口径的销售额是退款后净额：用 trd_daily_shop_sales.net_sales，或 实付 - 成功退款（trd_refund.refund_status='SUCCESS'）" ]
   } ],
   "recorded_executed_sql" : 68,
   "recorded_flagged" : 17,
   "recorded" : [ {
-    "violations" : [ ],
     "run" : "B1.after.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B10.pr13.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B2.after.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[我方收入] 对 fin_settlement.settled_at 加了口径不允许的过滤条件。收入要用结算表 fin_settlement.revenue_amount，按 month_key='YYYY-MM' 过滤（不要按 settled_at）" ],
     "run" : "B2.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[我方收入] 对 fin_settlement.settled_at 加了口径不允许的过滤条件。收入要用结算表 fin_settlement.revenue_amount，按 month_key='YYYY-MM' 过滤（不要按 settled_at）" ]
   }, {
-    "violations" : [ ],
     "run" : "B3.after.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B3.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after-r1.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after-r2.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after-r2.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after2-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after2-r2.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.after3-r2.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 3
+    "sql_index" : 3,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 4
+    "sql_index" : 4,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 5
+    "sql_index" : 5,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 6
+    "sql_index" : 6,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 7
+    "sql_index" : 7,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 8
+    "sql_index" : 8,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B4.json",
     "flagged" : false,
-    "sql_index" : 9
+    "sql_index" : 9,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B5.after-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。GMV 不按订单状态过滤（支付后关闭/退款的订单也计入），去掉 order_status 条件，只保留 paid_at 非空和时间范围", "[大促GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ],
     "run" : "B5.after-r2.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。GMV 不按订单状态过滤（支付后关闭/退款的订单也计入），去掉 order_status 条件，只保留 paid_at 非空和时间范围", "[大促GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ]
   }, {
-    "violations" : [ "[GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。GMV 不按订单状态过滤（支付后关闭/退款的订单也计入），去掉 order_status 条件，只保留 paid_at 非空和时间范围", "[大促GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ],
     "run" : "B5.after-r3.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。GMV 不按订单状态过滤（支付后关闭/退款的订单也计入），去掉 order_status 条件，只保留 paid_at 非空和时间范围", "[大促GMV] 对 trd_order.order_status 加了口径不允许的过滤条件。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ]
   }, {
-    "violations" : [ "[大促GMV] 数据来源不对，应来自 trd_presale_order.balance_paid_at。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ],
     "run" : "B5.after2-r1.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[大促GMV] 数据来源不对，应来自 trd_presale_order.balance_paid_at。大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤" ]
   }, {
-    "violations" : [ ],
     "run" : "B5.after2-r2.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B5.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B5.after3-r2.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B5.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r1.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r1.json",
     "flagged" : true,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after-r1.json",
     "flagged" : false,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after-r1.json",
     "flagged" : false,
-    "sql_index" : 3
+    "sql_index" : 3,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r2.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after-r2.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r2.json",
     "flagged" : true,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after-r3.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r3.json",
     "flagged" : true,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r3.json",
     "flagged" : true,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r3.json",
     "flagged" : true,
-    "sql_index" : 3
+    "sql_index" : 3,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r3.json",
     "flagged" : true,
-    "sql_index" : 4
+    "sql_index" : 4,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径", "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after-r3.json",
     "flagged" : false,
-    "sql_index" : 5
+    "sql_index" : 5,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.after-r3.json",
     "flagged" : true,
-    "sql_index" : 6
+    "sql_index" : 6,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.gmv。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after2-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after2-r1.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 3
+    "sql_index" : 3,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 4
+    "sql_index" : 4,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after3-r1.json",
     "flagged" : false,
-    "sql_index" : 5
+    "sql_index" : 5,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after4.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after4.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after4.json",
     "flagged" : false,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after5.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after5.json",
     "flagged" : false,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after5.json",
     "flagged" : false,
-    "sql_index" : 2
+    "sql_index" : 2,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B6.after5.json",
     "flagged" : false,
-    "sql_index" : 3
+    "sql_index" : 3,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ],
     "run" : "B6.json",
     "flagged" : true,
-    "sql_index" : 1
+    "sql_index" : 1,
+    "violations" : [ "[销售额] 用了不符合口径的字段 trd_daily_shop_sales.paid_amount。销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径" ]
   }, {
-    "violations" : [ ],
     "run" : "B7.after.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ ],
     "run" : "B7.json",
     "flagged" : false,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ ]
   }, {
-    "violations" : [ "[销售额/青岚合同口径] 缺少口径要求的 1.13。青岚合同口径：销售额 = SUM(pay_amount) / 1.13（不含税），并排除 order_status IN ('CANCELLED','CLOSED')" ],
     "run" : "B8.pr13.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[销售额/青岚合同口径] 缺少口径要求的 1.13。青岚合同口径：销售额 = SUM(pay_amount) / 1.13（不含税），并排除 order_status IN ('CANCELLED','CLOSED')" ]
   }, {
-    "violations" : [ "[销售额/财务确认口径] 数据来源不对，应来自 trd_daily_shop_sales.net_sales 或 trd_refund.refund_amount。财务口径的销售额是退款后净额：用 trd_daily_shop_sales.net_sales，或 实付 - 成功退款（trd_refund.refund_status='SUCCESS'）" ],
     "run" : "B9.pr13.json",
     "flagged" : true,
-    "sql_index" : 0
+    "sql_index" : 0,
+    "violations" : [ "[销售额/财务确认口径] 数据来源不对，应来自 trd_daily_shop_sales.net_sales 或 trd_refund.refund_amount。财务口径的销售额是退款后净额：用 trd_daily_shop_sales.net_sales，或 实付 - 成功退款（trd_refund.refund_status='SUCCESS'）" ]
   } ]
 }

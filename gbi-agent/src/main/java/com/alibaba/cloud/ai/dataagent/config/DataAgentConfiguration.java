@@ -259,7 +259,7 @@ public class DataAgentConfiguration implements DisposableBean {
 			// sql generate and sql execute node
 			.addConditionalEdges(SQL_GENERATE_NODE, nodeBeanUtil.getEdgeBeanAsync(SqlGenerateDispatcher.class),
 					Map.of(SQL_GENERATE_NODE, SQL_GENERATE_NODE, END, END, SEMANTIC_CONSISTENCY_NODE,
-							SEMANTIC_CONSISTENCY_NODE, PLANNER_NODE, PLANNER_NODE))
+							SEMANTIC_CONSISTENCY_NODE, PLANNER_NODE, PLANNER_NODE, PLAN_EXECUTOR_NODE, PLAN_EXECUTOR_NODE))
 			.addConditionalEdges(SEMANTIC_CONSISTENCY_NODE, edge_async(new SemanticConsistenceDispatcher()),
 					Map.of(SQL_GENERATE_NODE, SQL_GENERATE_NODE, SQL_EXECUTE_NODE, SQL_EXECUTE_NODE))
 			.addConditionalEdges(SQL_EXECUTE_NODE, edge_async(new SQLExecutorDispatcher()),

@@ -156,14 +156,18 @@ B6 after5：第 3 步（按仓库汇总缺货）的 Python 失败降级了，报
 | B2 | 收入口径 | 已解决（10） | ✓ 8 个品牌全对 | 合约 `我方收入` 兜底 |
 | B3 | 多平台状态码 | 对 | ✓ | 合约 `已完成订单` 兜底 |
 | B4 | 表多且相似 | 4/4 = 23（11） | ✓ 23 | 关联路径补齐（未变） |
-| B5 | 大促预售归属 | 第二版修复后对（11） | ✓ 8 个品牌全对（r1）；r2 见 `B5.sem-r2` | 合约 `GMV` / `大促GMV` |
-| B6 | 多步归因 | 环比 3/4、仓库 1/3，after5 编造仓库 | **r1：环比 -63.84% ✓、缺货关单 23 单 / 76,637.57 ✓、华东区域仓 ✓**；r2 见 `B6.sem-r2` | 合约证据（含适用范围）+ 台账 |
+| B5 | 大促预售归属 | 第二版修复后对（11） | ✓ 2/2 轮 8 个品牌全对（r2 输出 brand_id 不是品牌名） | 合约 `GMV` / `大促GMV` |
+| B6 | 多步归因 | 环比 3/4、仓库 1/3，after5 编造仓库 | **r1：三项全对**（-63.84%、缺货关单 23 单 / 76,637.57、华东区域仓）；**r2：无报告**（见下）；**r3：环比、关单对，仓库那步 Python 没出结果，报告写"受阻、待确认"，没编仓库名**；**r4（加了受阻继续后的版本）：三项全对**，页脚标出 2 个结果里没有的店铺全名 → 4 轮里 2 轮全对、1 轮仓库"受阻"不编、1 轮无报告（已修流程） | 合约证据（含适用范围）+ 台账 |
 | B7 | 数据时效 | 已解决（10） | ✓ | 时效提示（未变） |
 | B8 | 品牌合同口径（新） | 131,372.28 ✗ | **116,258.65 ✓** | 合约变体（品牌从权限推出） |
 | B9 | 角色口径（新） | 实付 ✗ | **退款后净额 ✓** | 合约变体（角色） |
 | B10 | 汇总对账（新） | 无提示 | **提示 55.1% 来自关单** | 对账 |
 
 **诚实说明**：B1~B10 都是开发时用过的例子（B6 的"适用范围"就是看了回放才加的），这张表说明"这些 bad case 修掉了"，不是准确率。泛化的证据是离线那组数字（330 条标准 SQL 0 误报）；320 题的 holdout 还没用这一版跑。
+
+**B6 r2 为什么没报告**：计划第 3 步写成"用第 2 步输出的 order_id"，模型把它写成 `IN (/* 步骤2输出的 order_id */)` 这种占位注释，Druid 拒绝带注释的 SQL，10 次都一样；重规划额度第 1 步已用掉，于是整轮 END，用户什么也拿不到。这和口径无关，是跨步传值的老问题。处理：多步计划里某个 SQL 步骤用完重试次数后，**不再结束整轮，而是把这一步记成"受阻"继续执行**，报告按台账写"该步受阻"（`SqlGenerateNode.skipBlockedStep`，`SqlStepBlockedTest`）。跨步传值本身没修。
+
+**r3 暴露的两个漏洞（没修，面试时主动说）**：① 出处核对跳过了代码块，报告里 ECharts 饼图写了 `warehouse_id = 6/7/8` 的数，正文说仓库待确认，图里却有数；② 第 5 步 Python 输出的是"未找到相关数据"这种文字，台账按"有分析结论"记成已完成，应该识别成"未定"。
 
 ## 回放中踩的坑（面试可讲）
 
@@ -198,4 +202,4 @@ B6 after5：第 3 步（按仓库汇总缺货）的 Python 失败降级了，报
 | `service/semantic/SummaryReconciler` | 换表对账、关单占比 |
 | `service/report/EvidenceLedger` | 步骤状态、prompt 规则、出处核对（金额、计数、仓库/店铺名）、页脚 |
 | `EvidenceRecallNode` / `SqlExecuteNode` / `ReportGeneratorNode` / `GraphServiceImpl` | 接入点；开关 `gbi.nl2sql.metric-check / reconcile / report-ledger` |
-| 测试 | `MetricRuleCheckerTest`、`SummaryReconcilerTest`、`EvidenceLedgerTest`、`MetricRuleOfflineEvalTest`（全量 212 个测试通过） |
+| 测试 | `MetricRuleCheckerTest`、`SummaryReconcilerTest`、`EvidenceLedgerTest`、`MetricRuleOfflineEvalTest`、`SqlStepBlockedTest`（全量 213 个测试通过） |

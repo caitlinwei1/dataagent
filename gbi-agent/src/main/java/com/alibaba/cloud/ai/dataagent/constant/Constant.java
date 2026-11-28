@@ -179,6 +179,9 @@ public final class Constant {
 	/** SqlGenerateNode output asking the graph to go back to the planner and rewrite the failing step. */
 	public static final String SQL_REPLAN = "__SQL_REPLAN__";
 
+	/** SQL step gave up after the retry limit; the plan continues with the step marked blocked. */
+	public static final String SQL_STEP_BLOCKED = "__SQL_STEP_BLOCKED__";
+
 	/** Planner rewrites triggered by a failing SQL step in this question. */
 	public static final String SQL_REPLAN_COUNT = "SQL_REPLAN_COUNT";
 
