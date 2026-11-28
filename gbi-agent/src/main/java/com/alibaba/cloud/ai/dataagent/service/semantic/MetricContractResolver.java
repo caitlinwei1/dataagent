@@ -74,14 +74,19 @@ public final class MetricContractResolver {
 					break;
 				}
 			}
+			String scope = m.scope() == null ? "" : "适用范围：" + m.scope();
 			if (chosen != null) {
-				out.add(new Resolved(m.name(), chosen.name(), reason, chosen.definition(), chosen.rules()));
+				out.add(new Resolved(m.name(), chosen.name(), reason, join(chosen.definition(), scope), chosen.rules()));
 			}
 			else {
-				out.add(new Resolved(m.name(), null, null, m.definition(), m.rules()));
+				out.add(new Resolved(m.name(), null, null, join(m.definition(), scope), m.rules()));
 			}
 		}
 		return out;
+	}
+
+	private static String join(String definition, String scope) {
+		return scope.isEmpty() ? definition : definition + scope;
 	}
 
 	/** Rules by metric name, for re-resolving what the state carries (the state holds names, not compiled rules). */
@@ -154,7 +159,8 @@ public final class MetricContractResolver {
 		if (resolved.isEmpty()) {
 			return "";
 		}
-		StringBuilder sb = new StringBuilder("【指标口径】以下口径由语义层按问题和你的身份解析，SQL 执行前会按它检查，必须遵守：\n");
+		StringBuilder sb = new StringBuilder(
+				"【指标口径】以下口径由语义层按问题和你的身份解析，计算这些指标的 SQL 执行前会按它检查，必须遵守（注意各自的适用范围）：\n");
 		for (Resolved r : resolved) {
 			sb.append("- ").append(r.describe()).append("\n");
 		}

@@ -88,7 +88,7 @@ class MetricRuleOfflineEvalTest {
 			for (Path f : files.filter(x -> x.toString().endsWith(".json") && !x.toString().contains(".sem-")).sorted().toList()) {
 				JsonNode n = M.readTree(f.toFile());
 				String q = n.path("question").asText();
-				var resolved = R.resolve(q, Set.of(), null);
+				var resolved = resolveAs(q, n.path("user").asText(""));
 				int i = 0;
 				for (JsonNode s : n.path("sql_executed")) {
 					var v = MetricRuleChecker.check(s.asText(), q, resolved);

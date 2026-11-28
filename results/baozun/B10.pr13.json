@@ -1,0 +1,88 @@
+{
+ "id": "B10",
+ "question": "从店铺日销售汇总看，曜石品牌华东店铺2026年10月12日到18日每天的实付金额是多少？",
+ "thread": "baozun-B10-123a27",
+ "seconds": 46.5,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `t`.`stat_date`, `t`.`paid_amount` from `trd_daily_shop_sales` as `t` join `dim_shop` as `s` on `t`.`shop_id` = `s`.`id` join `prd_brand` as `b` on `s`.`brand_id` = `b`.`id` join `dim_region` as `r` on `s`.`region_id` = `r`.`id` where `b`.`name` = '曜石' and `r`.`big_region` = '华东' and `t`.`stat_date` >= '2026-10-12' and `t`.`stat_date` < '2026-10-19';"
+ ],
+ "final_sql": "select `t`.`stat_date`, `t`.`paid_amount` from `trd_daily_shop_sales` as `t` join `dim_shop` as `s` on `t`.`shop_id` = `s`.`id` join `prd_brand` as `b` on `s`.`brand_id` = `b`.`id` join `dim_region` as `r` on `s`.`region_id` = `r`.`id` where `b`.`name` = '曜石' and `r`.`big_region` = '华东' and `t`.`stat_date` >= '2026-10-12' and `t`.`stat_date` < '2026-10-19';",
+ "result": {
+  "column": [
+   "stat_date",
+   "paid_amount"
+  ],
+  "data": [
+   {
+    "stat_date": "2026-10-12",
+    "paid_amount": "6745.23"
+   },
+   {
+    "stat_date": "2026-10-12",
+    "paid_amount": "2043.19"
+   },
+   {
+    "stat_date": "2026-10-13",
+    "paid_amount": "7349.72"
+   },
+   {
+    "stat_date": "2026-10-13",
+    "paid_amount": "19206.90"
+   },
+   {
+    "stat_date": "2026-10-14",
+    "paid_amount": "0.00"
+   },
+   {
+    "stat_date": "2026-10-14",
+    "paid_amount": "4161.47"
+   },
+   {
+    "stat_date": "2026-10-15",
+    "paid_amount": "8504.05"
+   },
+   {
+    "stat_date": "2026-10-15",
+    "paid_amount": "14445.61"
+   },
+   {
+    "stat_date": "2026-10-16",
+    "paid_amount": "16456.34"
+   },
+   {
+    "stat_date": "2026-10-16",
+    "paid_amount": "18556.00"
+   },
+   {
+    "stat_date": "2026-10-17",
+    "paid_amount": "0.00"
+   },
+   {
+    "stat_date": "2026-10-17",
+    "paid_amount": "19722.19"
+   },
+   {
+    "stat_date": "2026-10-18",
+    "paid_amount": "16746.24"
+   },
+   {
+    "stat_date": "2026-10-18",
+    "paid_amount": "5145.36"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [],
+ "gold": "stat_date\tpaid_amount\n2026-10-12\t8788.42\n2026-10-13\t26556.62\n2026-10-14\t4161.47\n2026-10-15\t22949.66\n2026-10-16\t35012.34\n2026-10-17\t19722.19\n2026-10-18\t21891.60",
+ "wrong": null
+}

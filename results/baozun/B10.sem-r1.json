@@ -1,0 +1,60 @@
+{
+ "id": "B10",
+ "question": "从店铺日销售汇总看，曜石品牌华东店铺2026年10月12日到18日每天的实付金额是多少？",
+ "thread": "baozun-B10-aa7fff",
+ "seconds": 49.3,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `t`.`stat_date`, sum(`t`.`paid_amount`) as `paid_amount`\nfrom `trd_daily_shop_sales` as `t`\njoin `dim_shop` as `s` on `t`.`shop_id` = `s`.`id`\njoin `prd_brand` as `b` on `s`.`brand_id` = `b`.`id`\njoin `dim_region` as `r` on `s`.`region_id` = `r`.`id`\nwhere `b`.`name` = '曜石' and `r`.`big_region` = '华东' and `t`.`stat_date` >= '2026-10-12' and `t`.`stat_date` < '2026-10-19'\ngroup by `t`.`stat_date`\norder by `t`.`stat_date`;"
+ ],
+ "final_sql": "select `t`.`stat_date`, sum(`t`.`paid_amount`) as `paid_amount`\nfrom `trd_daily_shop_sales` as `t`\njoin `dim_shop` as `s` on `t`.`shop_id` = `s`.`id`\njoin `prd_brand` as `b` on `s`.`brand_id` = `b`.`id`\njoin `dim_region` as `r` on `s`.`region_id` = `r`.`id`\nwhere `b`.`name` = '曜石' and `r`.`big_region` = '华东' and `t`.`stat_date` >= '2026-10-12' and `t`.`stat_date` < '2026-10-19'\ngroup by `t`.`stat_date`\norder by `t`.`stat_date`;",
+ "result": {
+  "column": [
+   "stat_date",
+   "paid_amount"
+  ],
+  "data": [
+   {
+    "stat_date": "2026-10-12",
+    "paid_amount": "8788.42"
+   },
+   {
+    "stat_date": "2026-10-13",
+    "paid_amount": "26556.62"
+   },
+   {
+    "stat_date": "2026-10-14",
+    "paid_amount": "4161.47"
+   },
+   {
+    "stat_date": "2026-10-15",
+    "paid_amount": "22949.66"
+   },
+   {
+    "stat_date": "2026-10-16",
+    "paid_amount": "35012.34"
+   },
+   {
+    "stat_date": "2026-10-17",
+    "paid_amount": "19722.19"
+   },
+   {
+    "stat_date": "2026-10-18",
+    "paid_amount": "21891.60"
+   }
+  ],
+  "errorMsg": null,
+  "note": "【对账】本步用了汇总表 trd_daily_shop_sales，已按同口径从订单明细重算；paid_amount 合计 139,082.30 中，支付后被取消/关闭的订单贡献 76,637.57（55.1%）。汇总表按支付日汇总全部已支付订单，包含支付后被取消/关闭（多为缺货关单）的订单；“销售额”口径要排除这些订单。"
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [],
+ "gold": "stat_date\tpaid_amount\n2026-10-12\t8788.42\n2026-10-13\t26556.62\n2026-10-14\t4161.47\n2026-10-15\t22949.66\n2026-10-16\t35012.34\n2026-10-17\t19722.19\n2026-10-18\t21891.60",
+ "wrong": null
+}

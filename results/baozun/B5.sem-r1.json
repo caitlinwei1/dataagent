@@ -1,0 +1,67 @@
+{
+ "id": "B5",
+ "question": "2025年双11期间（10月31日到11月11日）各品牌的GMV是多少？",
+ "thread": "baozun-B5-e7a5fe",
+ "seconds": 90.0,
+ "sql_attempts": 3,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select \n    `b`.`name` as `brand_name`,\n    sum(`o`.`total_amount` + `o`.`freight_amount`) as `gmv`\nfrom `trd_order` `o`\ninner join `dim_shop` `s` on `o`.`shop_id` = `s`.`id`\ninner join `prd_brand` `b` on `s`.`brand_id` = `b`.`id`\nleft join `trd_presale_order` `p` on `o`.`id` = `p`.`order_id` and `p`.`is_deleted` = 0\ninner join `dim_date` `d` on (\n    case \n        when `o`.`is_presale` = 1 then date(`p`.`balance_paid_at`)\n        else date(`o`.`paid_at`)\n    end\n) = `d`.`date_key`\nwhere `d`.`promo_name` = '双11' \n    and `d`.`date_key` >= '2025-01-01' \n    and `d`.`date_key` < '2026-01-01'\n    and `o`.`paid_at` is not null\n    and `o`.`is_deleted` = 0\n    and (`o`.`is_presale` = 0 or (`o`.`is_presale` = 1 and `p`.`id` is not null))\ngroup by `b`.`name`;"
+ ],
+ "final_sql": "select \n    `b`.`name` as `brand_name`,\n    sum(`o`.`total_amount` + `o`.`freight_amount`) as `gmv`\nfrom `trd_order` `o`\ninner join `dim_shop` `s` on `o`.`shop_id` = `s`.`id`\ninner join `prd_brand` `b` on `s`.`brand_id` = `b`.`id`\nleft join `trd_presale_order` `p` on `o`.`id` = `p`.`order_id` and `p`.`is_deleted` = 0\ninner join `dim_date` `d` on (\n    case \n        when `o`.`is_presale` = 1 then date(`p`.`balance_paid_at`)\n        else date(`o`.`paid_at`)\n    end\n) = `d`.`date_key`\nwhere `d`.`promo_name` = '双11' \n    and `d`.`date_key` >= '2025-01-01' \n    and `d`.`date_key` < '2026-01-01'\n    and `o`.`paid_at` is not null\n    and `o`.`is_deleted` = 0\n    and (`o`.`is_presale` = 0 or (`o`.`is_presale` = 1 and `p`.`id` is not null))\ngroup by `b`.`name`;",
+ "result": {
+  "column": [
+   "brand_name",
+   "gmv"
+  ],
+  "data": [
+   {
+    "gmv": "115123.14",
+    "brand_name": "澄野"
+   },
+   {
+    "gmv": "175967.55",
+    "brand_name": "青岚"
+   },
+   {
+    "gmv": "159867.23",
+    "brand_name": "北纬"
+   },
+   {
+    "gmv": "42583.91",
+    "brand_name": "栖木"
+   },
+   {
+    "gmv": "956004.20",
+    "brand_name": "曜石"
+   },
+   {
+    "gmv": "153830.32",
+    "brand_name": "朵朵熊"
+   },
+   {
+    "gmv": "29548.26",
+    "brand_name": "禾川"
+   },
+   {
+    "gmv": "598290.23",
+    "brand_name": "星屿"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：trd_daily_shop_sales\n开始处理Schema选择...\nSchema选择处理完成.",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"
+ ],
+ "gold": "name\tgmv\n曜石\t956004.20\n星屿\t598290.23\n青岚\t175967.55\n北纬\t159867.23\n朵朵熊\t153830.32\n澄野\t115123.14\n栖木\t42583.91\n禾川\t29548.26",
+ "wrong": "name\tgmv\n曜石\t852227.60\n星屿\t543172.32\n青岚\t159350.25\n北纬\t145041.56\n朵朵熊\t133506.66\n澄野\t98870.87\n栖木\t40227.31\n禾川\t26077.43"
+}

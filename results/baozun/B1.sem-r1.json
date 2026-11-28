@@ -1,0 +1,43 @@
+{
+ "id": "B1",
+ "question": "2026年3月各店铺的GMV分别是多少？",
+ "thread": "baozun-B1-e3d079",
+ "seconds": 38.4,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `dim_shop`.`id`, `dim_shop`.`name`, sum(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) as `gmv` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` where `trd_order`.`paid_at` >= '2026-03-01' and `trd_order`.`paid_at` < '2026-04-01' group by `dim_shop`.`id`, `dim_shop`.`name`;"
+ ],
+ "final_sql": "select `dim_shop`.`id`, `dim_shop`.`name`, sum(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) as `gmv` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` where `trd_order`.`paid_at` >= '2026-03-01' and `trd_order`.`paid_at` < '2026-04-01' group by `dim_shop`.`id`, `dim_shop`.`name`;",
+ "result": {
+  "column": [
+   "id",
+   "name",
+   "gmv"
+  ],
+  "data": [
+   {
+    "gmv": "53712.89",
+    "name": "青岚天猫官方旗舰店",
+    "id": "4"
+   },
+   {
+    "gmv": "84141.09",
+    "name": "青岚抖音官方旗舰店",
+    "id": "5"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "qinglan_ops",
+ "notes": [],
+ "gold": "name\tgmv\n青岚抖音官方旗舰店\t84141.09\n青岚天猫官方旗舰店\t53712.89",
+ "wrong": null
+}

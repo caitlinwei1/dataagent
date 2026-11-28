@@ -16,6 +16,8 @@
 #   fix               模型按提示重写一次仍不满足时，由系统确定性补上的条件：{table, where}，{t} 换成该表在 SQL 里的别名
 #                     （只用于“漏了某个条件”这类能机械补齐的规则；用错表、用错字段不自动改）
 #
+# scope：口径的适用范围（写进证据，防止模型把指标的过滤条件套到诊断步骤上）。
+#
 # variants：按品牌合同 / 角色覆盖口径。从上到下第一个匹配的生效，整体替换 definition 和 rules。
 #   when.brand  品牌名：问题里只提到这一个品牌，或登录用户的数据权限只覆盖这个品牌的店
 #   when.role   RuoYi 角色 key（finance、brand_ops ...）
@@ -36,6 +38,7 @@ metrics:
   - name: 销售额
     triggers: [销售额, 营业额, 销售收入, 卖了多少钱]
     definition: "实付金额 SUM(trd_order.pay_amount)，只算已支付订单，必须排除取消/关闭订单（order_status NOT IN ('CANCELLED','CLOSED')）；按商品/类目统计时用 trd_order_item.pay_share 并关联 trd_order 排除取消/关闭。不能用日汇总表 trd_daily_shop_sales.paid_amount（含支付后被关闭的订单）。"
+    scope: "这个排除条件只用于算“销售额”这个数本身。分析下降原因时，按订单状态拆分、查退款、查缺货的步骤不要排除取消/关闭订单，否则支付后因缺货被关闭的订单会被一起过滤掉，根因就看不到了。"
     rules:
       - forbid_sources: [trd_daily_shop_sales.paid_amount, trd_daily_shop_sales.gmv]
         hint: "销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径"

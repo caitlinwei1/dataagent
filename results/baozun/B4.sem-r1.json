@@ -1,0 +1,36 @@
+{
+ "id": "B4",
+ "question": "2026年10月15日华东区域仓数码家电的可用库存一共多少件？",
+ "thread": "baozun-B4-b7e529",
+ "seconds": 42.2,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select sum(`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_spu` on `prd_sku`.`spu_id` = `prd_spu`.`id` join `prd_category` c3 on `prd_spu`.`category_id` = c3.`id` join `prd_category` c2 on c3.`parent_id` = c2.`id` join `prd_category` c1 on c2.`parent_id` = c1.`id` where `wms_warehouse`.`name` = '华东区域仓' and c1.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';"
+ ],
+ "final_sql": "select sum(`available_qty`) from `wms_inventory_snapshot` join `wms_warehouse` on `wms_inventory_snapshot`.`warehouse_id` = `wms_warehouse`.`id` join `prd_sku` on `wms_inventory_snapshot`.`sku_id` = `prd_sku`.`id` join `prd_spu` on `prd_sku`.`spu_id` = `prd_spu`.`id` join `prd_category` c3 on `prd_spu`.`category_id` = c3.`id` join `prd_category` c2 on c3.`parent_id` = c2.`id` join `prd_category` c1 on c2.`parent_id` = c1.`id` where `wms_warehouse`.`name` = '华东区域仓' and c1.`name` = '数码家电' and `wms_inventory_snapshot`.`snapshot_date` >= '2026-10-15' and `wms_inventory_snapshot`.`snapshot_date` < '2026-10-16';",
+ "result": {
+  "column": [
+   "sum(available_qty)"
+  ],
+  "data": [
+   {
+    "sum(available_qty)": "23"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：prd_sku\n开始处理Schema选择...\nSchema选择处理完成."
+ ],
+ "gold": "SUM(i.available_qty)\n23",
+ "wrong": "SUM(i.on_hand_qty-i.locked_qty)\n1642"
+}

@@ -1,0 +1,34 @@
+{
+ "id": "B7",
+ "question": "今天（2026年10月31日）各投放渠道的花费分别是多少？",
+ "thread": "baozun-B7-39324b",
+ "seconds": 40.6,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `channel_id`, sum(`spend`) as `total_spend` from `mkt_ad_spend` where `stat_date` >= '2026-10-31' and `stat_date` < '2026-11-01' group by `channel_id`;"
+ ],
+ "final_sql": "select `channel_id`, sum(`spend`) as `total_spend` from `mkt_ad_spend` where `stat_date` >= '2026-10-31' and `stat_date` < '2026-11-01' group by `channel_id`;",
+ "result": {
+  "column": [
+   "channel_id",
+   "total_spend"
+  ],
+  "data": [],
+  "errorMsg": null,
+  "note": "数据时效提示：查询结果为空，不代表实际为 0。mkt_ad_spend 最新数据日期 2026-10-30（T+1 回传，当天数据次日才有），查询的日期超出了已有数据的范围。"
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "end\"],\"data\":[],\"errorMsg\":null,\"note\":\"数据时效提示：查询结果为空，不代表实际为 0。mkt_ad_spend 最新数据日期 2026-10-30（T+1 回传，当天数据次日才有），查询的日期超出了已有数据的范围。\"},\"displayStyle\":{\"type\":\"table\",\"title\":\"各流量渠道投放花费总和\",\"x\":null,\"y\":null",
+  "数据时效提示：查询结果为空，不代表实际为 0。mkt_ad_spend 最新数据日期 2026-10-30（T+1 回传，当天数据次日才有），查询的日期超出了已有数据的范围。"
+ ],
+ "gold": "latest_ad_date\n2026-10-30",
+ "wrong": null
+}

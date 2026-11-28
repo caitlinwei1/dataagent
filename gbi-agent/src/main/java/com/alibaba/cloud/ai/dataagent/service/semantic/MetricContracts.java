@@ -30,7 +30,7 @@ public final class MetricContracts {
 	}
 
 	public record Metric(String name, List<String> triggers, Pattern questionPattern, String definition,
-			List<Rule> rules, List<Variant> variants) {
+			String scope, List<Rule> rules, List<Variant> variants) {
 	}
 
 	public record Brand(String name, List<String> shops) {
@@ -97,7 +97,7 @@ public final class MetricContracts {
 						str(v.get("definition")), rules(v.get("rules"))));
 			}
 			metrics.add(new Metric(str(x.get("name")), strings(x.get("triggers")), pattern(x.get("question_pattern")),
-					str(x.get("definition")), rules(x.get("rules")), variants));
+					str(x.get("definition")), str(x.get("scope")), rules(x.get("rules")), variants));
 		}
 		List<Brand> brands = new ArrayList<>();
 		for (Map<String, Object> b : maps(m.get("brands"))) {
