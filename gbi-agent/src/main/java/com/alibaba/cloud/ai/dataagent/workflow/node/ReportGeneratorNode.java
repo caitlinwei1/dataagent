@@ -63,11 +63,15 @@ public class ReportGeneratorNode implements NodeAction {
 
 	private final UserPromptService promptConfigService;
 
-	public ReportGeneratorNode(LlmService llmService, UserPromptService promptConfigService) {
+	private final com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer semanticLayer;
+
+	public ReportGeneratorNode(LlmService llmService, UserPromptService promptConfigService,
+			com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer semanticLayer) {
 		this.llmService = llmService;
 		this.converter = new BeanOutputConverter<>(new ParameterizedTypeReference<>() {
 		});
 		this.promptConfigService = promptConfigService;
+		this.semanticLayer = semanticLayer;
 	}
 
 	@Override
@@ -99,8 +103,15 @@ public class ReportGeneratorNode implements NodeAction {
 		}
 
 		// Generate report streaming flux
-		Flux<ChatResponse> reportGenerationFlux = generateReport(userInput, plan, executionResults,
-				summaryAndRecommendations, agentId);
+		Flux<ChatResponse> reportGenerationFlux;
+		if (semanticLayer.properties().isReportLedger()) {
+			reportGenerationFlux = generateTracedReport(state, userInput, plan, executionResults,
+					summaryAndRecommendations, agentId);
+		}
+		else {
+			reportGenerationFlux = generateReport(userInput, plan, executionResults, summaryAndRecommendations,
+					agentId);
+		}
 
 		TextType reportTextType = TextType.MARK_DOWN;
 
@@ -158,6 +169,63 @@ public class ReportGeneratorNode implements NodeAction {
 				analysisStepsAndData, summaryAndRecommendations, optimizationConfigs);
 		log.debug("Report Node Prompt: \n {} \n", reportPrompt);
 		return llmService.callUser(reportPrompt);
+	}
+
+	/**
+	 * Evidence-ledger report: the writer sees each step's status (done / zero rows / blocked) and the rules for each;
+	 * after writing, numbers, counts and warehouse / shop names are traced against the step results, one rewrite is
+	 * asked for when something has no source, and whatever is still untraced is listed under the report.
+	 */
+	@SuppressWarnings("unchecked")
+	private Flux<ChatResponse> generateTracedReport(OverAllState state, String userInput, Plan plan,
+			HashMap<String, String> executionResults, String summaryAndRecommendations, Long agentId) {
+		List<String> tools = plan.getExecutionPlan().stream().map(ExecutionStep::getToolToUse).toList();
+		var ledger = com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.build(tools, executionResults);
+		List<String> contracts = semanticLayer
+			.fromState(state.value(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_METRIC_CONTRACTS).orElse(null))
+			.stream()
+			.map(r -> r.metric() + "：" + (r.variant() == null ? "通用口径" : r.variant() + "（" + r.reason() + "）"))
+			.toList();
+		Map<String, String> recon = StateUtil.getObjectValue(state,
+				com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_RECON_NOTES, Map.class, new HashMap<>());
+		List<String> reconNotes = new java.util.ArrayList<>(new java.util.TreeMap<>(recon).values());
+
+		String userRequirementsAndPlan = buildUserRequirementsAndPlan(userInput, plan);
+		String analysisStepsAndData = buildAnalysisStepsAndData(plan, executionResults)
+				+ com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.promptBlock(ledger, contracts, reconNotes);
+		List<UserPromptConfig> optimizationConfigs = promptConfigService.getOptimizationConfigs("report-generator",
+				agentId);
+		String reportPrompt = PromptHelper.buildReportGeneratorPromptWithOptimization(userRequirementsAndPlan,
+				analysisStepsAndData, summaryAndRecommendations, optimizationConfigs);
+
+		var resultSets = com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.resultSets(executionResults);
+		var resultTexts = com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.resultTexts(executionResults);
+		String question = StateUtil.getStringValue(state, INPUT_KEY, userInput);
+
+		return collect(llmService.callUser(reportPrompt)).flatMapMany(first -> {
+			List<String> untraced = com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.untraced(first,
+					question, resultSets, resultTexts);
+			log.info("report_ledger pass=1 untraced={} items={}", untraced.size(), untraced);
+			if (untraced.isEmpty()) {
+				return Flux.just(ChatResponseUtil.createPureResponse(first + com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger
+					.footer(ledger, contracts, reconNotes, untraced)));
+			}
+			String rewrite = reportPrompt + "\n\n## 上一版报告\n" + first
+					+ "\n\n## 核对结果\n上一版报告里这些内容在执行结果中找不到出处：" + String.join("、", untraced)
+					+ "\n请输出修改后的完整报告：删除这些内容，或改成执行结果里真实存在的数字/名称；对应步骤受阻或无数据时，按证据台账写“受阻”或“未定”。只输出报告正文。";
+			return collect(llmService.callUser(rewrite)).flatMapMany(second -> {
+				List<String> left = com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger.untraced(second,
+						question, resultSets, resultTexts);
+				log.info("report_ledger pass=2 untraced={} items={} first={}", left.size(), left, untraced);
+				return Flux.just(ChatResponseUtil.createPureResponse(second + com.alibaba.cloud.ai.dataagent.service.report.EvidenceLedger
+					.footer(ledger, contracts, reconNotes, left)));
+			});
+		});
+	}
+
+	private static reactor.core.publisher.Mono<String> collect(Flux<ChatResponse> flux) {
+		return flux.map(ChatResponseUtil::getText).reduce(new StringBuilder(), StringBuilder::append)
+			.map(StringBuilder::toString);
 	}
 
 	/**

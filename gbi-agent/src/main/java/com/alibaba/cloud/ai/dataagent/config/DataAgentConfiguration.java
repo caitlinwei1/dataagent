@@ -177,6 +177,10 @@ public class DataAgentConfiguration implements DisposableBean {
 			keyStrategyHashMap.put(SQL_REPEAT_COUNT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(SQL_REPLAN_COUNT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(GBI_FRESHNESS_NOTE, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(GBI_USER_ROLES, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(GBI_METRIC_CONTRACTS, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(GBI_METRIC_REJECTS, KeyStrategy.REPLACE);
+			keyStrategyHashMap.put(GBI_RECON_NOTES, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_EXECUTE_NODE_OUTPUT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_GENERATE_NODE_OUTPUT, KeyStrategy.REPLACE);
 			keyStrategyHashMap.put(PYTHON_ANALYSIS_NODE_OUTPUT, KeyStrategy.REPLACE);

@@ -164,6 +164,18 @@ public final class Constant {
 	/** Deterministic data-freshness notes (T+1 tables queried past their latest date). */
 	public static final String GBI_FRESHNESS_NOTE = "GBI_FRESHNESS_NOTE";
 
+	/** RuoYi role keys of the caller (finance, brand_ops ...), for role-specific metric definitions. */
+	public static final String GBI_USER_ROLES = "GBI_USER_ROLES";
+
+	/** Metric definitions resolved for this question and user (semantic layer): list of {metric, variant, reason, definition}. */
+	public static final String GBI_METRIC_CONTRACTS = "GBI_METRIC_CONTRACTS";
+
+	/** Metric-rule rejections of the current SQL step. */
+	public static final String GBI_METRIC_REJECTS = "GBI_METRIC_REJECTS";
+
+	/** Summary-vs-detail reconciliation notes, per step ("step_N" -> note). */
+	public static final String GBI_RECON_NOTES = "GBI_RECON_NOTES";
+
 	/** SqlGenerateNode output asking the graph to go back to the planner and rewrite the failing step. */
 	public static final String SQL_REPLAN = "__SQL_REPLAN__";
 

@@ -1,0 +1,127 @@
+# 指标口径合约：语义层的最小可执行版本。
+#
+# 术语表（dataset/metadata/business_terms.yaml）告诉模型"口径是什么"，模型可以不听；这里把其中最容易出错的口径写成
+# SQL 执行前的确定性检查（MetricRuleChecker），再加上"同一个指标，不同品牌合同 / 不同角色默认口径不同"的解析
+# （MetricContractResolver）。只收录有 bad case 或业务上真有分歧的指标，不追求覆盖全部 44 个。
+#
+# rules 是规则列表，每条规则的字段（全部可选）：
+#   question_pattern  只在问题匹配这个正则时检查（例如问的是某一天的库存）
+#   when_aggregates   SQL 在聚合函数里用到其中任一列时才检查；不写 = 总是检查
+#   forbid_sources    SQL 任何位置引用了这些列 -> 违规（用错表 / 用错字段）
+#   forbid_filters    WHERE / JOIN ON / HAVING 里对这些列加了条件 -> 违规（多加过滤）
+#   require_mention   这些列必须出现在条件或 GROUP BY 里（例如销售额必须处理 order_status）
+#   require_any_source  至少引用其中一列（例如收入必须来自结算表）
+#   require_literal   SQL 里必须出现这些字面量（例如不含税口径的 1.13）
+#   hint              违规时给模型的重写提示
+#   fix               模型按提示重写一次仍不满足时，由系统确定性补上的条件：{table, where}，{t} 换成该表在 SQL 里的别名
+#                     （只用于“漏了某个条件”这类能机械补齐的规则；用错表、用错字段不自动改）
+#
+# variants：按品牌合同 / 角色覆盖口径。从上到下第一个匹配的生效，整体替换 definition 和 rules。
+#   when.brand  品牌名：问题里只提到这一个品牌，或登录用户的数据权限只覆盖这个品牌的店
+#   when.role   RuoYi 角色 key（finance、brand_ops ...）
+
+brands:
+  - name: 青岚
+    shops: ["4", "5"]
+  - name: 曜石
+    shops: ["1", "2"]
+  - name: 星屿
+    shops: []
+  - name: 栖木
+    shops: []
+  - name: 禾川
+    shops: []
+
+metrics:
+  - name: 销售额
+    triggers: [销售额, 营业额, 销售收入, 卖了多少钱]
+    definition: "实付金额 SUM(trd_order.pay_amount)，只算已支付订单，必须排除取消/关闭订单（order_status NOT IN ('CANCELLED','CLOSED')）；按商品/类目统计时用 trd_order_item.pay_share 并关联 trd_order 排除取消/关闭。不能用日汇总表 trd_daily_shop_sales.paid_amount（含支付后被关闭的订单）。"
+    rules:
+      - forbid_sources: [trd_daily_shop_sales.paid_amount, trd_daily_shop_sales.gmv]
+        hint: "销售额要从订单明细 trd_order 计算并排除取消/关闭订单；日汇总表的 paid_amount 含支付后被关闭（缺货关单）的订单，不是销售额口径"
+      - when_aggregates: [trd_order.pay_amount, trd_order_item.pay_share]
+        require_mention: [trd_order.order_status]
+        hint: "销售额必须处理订单状态：WHERE 里排除 order_status IN ('CANCELLED','CLOSED')，或按 order_status 分组展示"
+        fix: {table: trd_order, where: "{t}.order_status NOT IN ('CANCELLED','CLOSED')"}
+    variants:
+      - name: 青岚合同口径
+        when: {brand: 青岚}
+        definition: "青岚品牌合同约定按不含税销售额考核：SUM(trd_order.pay_amount) / 1.13（增值税 13%），只算已支付订单，排除取消/关闭订单。"
+        rules:
+          - forbid_sources: [trd_daily_shop_sales.paid_amount, trd_daily_shop_sales.gmv, trd_daily_shop_sales.net_sales]
+            hint: "青岚合同口径的销售额要从 trd_order 计算：SUM(pay_amount) / 1.13，排除取消/关闭订单"
+          - when_aggregates: [trd_order.pay_amount]
+            require_mention: [trd_order.order_status]
+            require_literal: ["1.13"]
+            hint: "青岚合同口径：销售额 = SUM(pay_amount) / 1.13（不含税），并排除 order_status IN ('CANCELLED','CLOSED')"
+      - name: 财务确认口径
+        when: {role: finance}
+        definition: "财务看的销售额 = 退款后净额：实付金额减去退款成功金额（按退款成功时间归属）；按天按店铺可直接用 trd_daily_shop_sales.net_sales。"
+        rules:
+          - require_any_source: [trd_daily_shop_sales.net_sales, trd_refund.refund_amount]
+            hint: "财务口径的销售额是退款后净额：用 trd_daily_shop_sales.net_sales，或 实付 - 成功退款（trd_refund.refund_status='SUCCESS'）"
+
+  - name: GMV
+    triggers: [GMV, 成交总额, 商品交易总额, 交易额]
+    definition: "已支付订单 SUM(trd_order.total_amount + trd_order.freight_amount)，不扣优惠、不扣退款；不按 order_status 过滤，支付后关闭/退款的订单也计入。"
+    rules:
+      - when_aggregates: [trd_order.total_amount]
+        forbid_filters: [trd_order.order_status]
+        hint: "GMV 不按订单状态过滤（支付后关闭/退款的订单也计入），去掉 order_status 条件，只保留 paid_at 非空和时间范围"
+
+  - name: 大促GMV
+    triggers: [双11期间, 双11 GMV, 618期间, 大促期间, 年货节期间]
+    definition: "金额同 GMV；时间归属：预售订单按尾款支付时间 trd_presale_order.balance_paid_at，普通订单按 paid_at。"
+    rules:
+      - when_aggregates: [trd_order.total_amount]
+        require_any_source: [trd_presale_order.balance_paid_at]
+        forbid_filters: [trd_order.order_status]
+        hint: "大促期间的 GMV：LEFT JOIN trd_presale_order，按 COALESCE(balance_paid_at, paid_at) 落在大促时间段过滤；不按 order_status 过滤"
+
+  - name: 我方收入
+    triggers: [收入, 营收, 确认收入, 我们赚了多少]
+    definition: "SUM(fin_settlement.revenue_amount)，按业务月 month_key 归属；代运营品牌只确认服务费。不能用 GMV 或实付金额当收入。"
+    rules:
+      - require_any_source: [fin_settlement.revenue_amount]
+        forbid_filters: [fin_settlement.settled_at]
+        hint: "收入要用结算表 fin_settlement.revenue_amount，按 month_key='YYYY-MM' 过滤（不要按 settled_at）"
+
+  - name: 退款金额
+    triggers: [退款金额, 退款额, 退了多少钱]
+    definition: "SUM(trd_refund.refund_amount)，只算 refund_status='SUCCESS'，按 refunded_at 归属。"
+    rules:
+      - when_aggregates: [trd_refund.refund_amount]
+        require_mention: [trd_refund.refund_status]
+        hint: "退款金额只统计退款成功：加 refund_status = 'SUCCESS'"
+        fix: {table: trd_refund, where: "{t}.refund_status = 'SUCCESS'"}
+
+  - name: 可用库存（历史日期）
+    triggers: [可用库存, 可售库存, 可卖库存]
+    question_pattern: "\\d{1,2}月\\d{1,2}日|\\d{4}-\\d{2}-\\d{2}"
+    definition: "问某一天的可用库存用日快照 wms_inventory_snapshot.available_qty（按 snapshot_date）；实时表 wms_inventory 只有当前时点。"
+    rules:
+      - forbid_sources: [wms_inventory.on_hand_qty, wms_inventory.locked_qty, wms_inventory.available_qty]
+        hint: "问的是历史某一天：用日快照 wms_inventory_snapshot.available_qty 并按 snapshot_date 过滤，不要用实时表 wms_inventory"
+
+  - name: 已完成订单（跨平台）
+    triggers: [已完成]
+    definition: "跨平台统计用统一状态 trd_order.order_status='COMPLETED'；platform_status 是各平台原始状态码，不能跨平台过滤。"
+    rules:
+      - forbid_filters: [trd_order.platform_status]
+        hint: "跨平台用统一状态 order_status = 'COMPLETED'，不要按平台原始状态 platform_status 过滤"
+
+# 汇总表与明细对账：SQL 用到汇总表时，把汇总表换成"同口径的明细重算"再跑一遍，比较数字；
+# 同时算出汇总里来自取消/关闭订单的部分，占比超过阈值就提示（B6 的根因就藏在这里）。
+reconcile:
+  - table: trd_daily_shop_sales
+    detail: >-
+      SELECT DATE(o.paid_at) AS stat_date, o.shop_id AS shop_id,
+      SUM(o.total_amount + o.freight_amount) AS gmv, SUM(o.pay_amount) AS paid_amount,
+      COUNT(*) AS order_cnt, COUNT(DISTINCT o.member_id) AS buyer_cnt,
+      SUM(o.discount_amount) AS discount_amount, SUM(o.freight_amount) AS freight_amount
+      FROM trd_order o WHERE o.paid_at IS NOT NULL {extra} GROUP BY DATE(o.paid_at), o.shop_id
+    closed_filter: "AND o.order_status IN ('CANCELLED','CLOSED')"
+    columns: [gmv, paid_amount, order_cnt, buyer_cnt, discount_amount, freight_amount]
+    closed_share_threshold: 0.05
+    mismatch_threshold: 0.005
+    explain: "汇总表按支付日汇总全部已支付订单，包含支付后被取消/关闭（多为缺货关单）的订单；“销售额”口径要排除这些订单"
