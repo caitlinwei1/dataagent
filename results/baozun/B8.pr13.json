@@ -1,0 +1,38 @@
+{
+ "id": "B8",
+ "question": "2026年3月我们品牌的销售额是多少？",
+ "thread": "baozun-B8-d3bbb8",
+ "seconds": 49.7,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `prd_brand`.`id`, `prd_brand`.`name`, sum(`trd_order`.`pay_amount`) as `sales_amount` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` inner join `prd_brand` on `dim_shop`.`brand_id` = `prd_brand`.`id` where `trd_order`.`paid_at` >= '2026-03-01' and `trd_order`.`paid_at` < '2026-04-01' and `trd_order`.`paid_at` is not null and `trd_order`.`order_status` not in ('CANCELLED', 'CLOSED') group by `prd_brand`.`id`, `prd_brand`.`name`;"
+ ],
+ "final_sql": "select `prd_brand`.`id`, `prd_brand`.`name`, sum(`trd_order`.`pay_amount`) as `sales_amount` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` inner join `prd_brand` on `dim_shop`.`brand_id` = `prd_brand`.`id` where `trd_order`.`paid_at` >= '2026-03-01' and `trd_order`.`paid_at` < '2026-04-01' and `trd_order`.`paid_at` is not null and `trd_order`.`order_status` not in ('CANCELLED', 'CLOSED') group by `prd_brand`.`id`, `prd_brand`.`name`;",
+ "result": {
+  "column": [
+   "id",
+   "name",
+   "sales_amount"
+  ],
+  "data": [
+   {
+    "name": "青岚",
+    "sales_amount": "131372.28",
+    "id": "3"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "qinglan_ops",
+ "notes": [],
+ "gold": "sales_ex_tax\n116258.65",
+ "wrong": "sales\n131372.28"
+}

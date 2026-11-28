@@ -63,6 +63,8 @@ public class EvidenceRecallNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.business.BusinessKnowledgeService businessKnowledgeService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer semanticLayer;
+
 	@Override
 	public Map<String, Object> apply(OverAllState state) throws Exception {
 
@@ -101,6 +103,29 @@ public class EvidenceRecallNode implements NodeAction {
 						Object ev = resultMap.get(EVIDENCE);
 						String base = ev == null || "无".equals(ev) ? "" : ev.toString();
 						resultMap.put(EVIDENCE, timeHints + (base.isEmpty() ? "" : "\n" + base));
+					}
+					// semantic layer: the metric definitions of this question, resolved for this user's brand / role,
+					// go first in the evidence; SqlExecuteNode checks the SQL against the same resolution
+					try {
+						var resolved = semanticLayer.resolve(question,
+								com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer
+									.roles(state.value(GBI_USER_ROLES).orElse(null)),
+								com.alibaba.cloud.ai.dataagent.security.DataPermission
+									.fromState(state.value(GBI_DATA_PERMISSION).orElse(null)));
+						if (!resolved.isEmpty()) {
+							Object ev = resultMap.get(EVIDENCE);
+							String base = ev == null || "无".equals(ev) ? "" : ev.toString();
+							resultMap.put(EVIDENCE,
+									com.alibaba.cloud.ai.dataagent.service.semantic.MetricContractResolver
+										.evidenceBlock(resolved) + (base.isEmpty() ? "" : "\n" + base));
+							log.info("metric_contracts question={} resolved={}", question,
+									resolved.stream().map(r -> r.metric() + "/" + r.variant()).toList());
+						}
+						resultMap.put(GBI_METRIC_CONTRACTS,
+								com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer.toState(resolved));
+					}
+					catch (Exception e) {
+						log.warn("metric contract resolution failed: {}", e.getMessage());
 					}
 					return resultMap;
 				});

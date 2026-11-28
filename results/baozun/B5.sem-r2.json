@@ -1,0 +1,64 @@
+{
+ "id": "B5",
+ "question": "2025年双11期间（10月31日到11月11日）各品牌的GMV是多少？",
+ "thread": "baozun-B5-fd0a9c",
+ "seconds": 51.4,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "SELECT \n    `dim_shop`.`brand_id`,\n    SUM(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) AS `gmv`\nFROM \n    `trd_order`\nINNER JOIN \n    `dim_shop` ON `trd_order`.`shop_id` = `dim_shop`.`id`\nLEFT JOIN \n    `trd_presale_order` ON `trd_order`.`id` = `trd_presale_order`.`order_id`\nWHERE \n    (\n        (`trd_order`.`is_presale` = 0 AND `trd_order`.`paid_at` >= '2025-10-31' AND `trd_order`.`paid_at` < '2025-11-12') \n        OR \n        (`trd_order`.`is_presale` = 1 AND `trd_presale_order`.`balance_paid_at` >= '2025-10-31' AND `trd_presale_order`.`balance_paid_at` < '2025-11-12')\n    )\n    AND `trd_order`.`is_deleted` = 0\nGROUP BY \n    `dim_shop`.`brand_id`;"
+ ],
+ "final_sql": "SELECT \n    `dim_shop`.`brand_id`,\n    SUM(`trd_order`.`total_amount` + `trd_order`.`freight_amount`) AS `gmv`\nFROM \n    `trd_order`\nINNER JOIN \n    `dim_shop` ON `trd_order`.`shop_id` = `dim_shop`.`id`\nLEFT JOIN \n    `trd_presale_order` ON `trd_order`.`id` = `trd_presale_order`.`order_id`\nWHERE \n    (\n        (`trd_order`.`is_presale` = 0 AND `trd_order`.`paid_at` >= '2025-10-31' AND `trd_order`.`paid_at` < '2025-11-12') \n        OR \n        (`trd_order`.`is_presale` = 1 AND `trd_presale_order`.`balance_paid_at` >= '2025-10-31' AND `trd_presale_order`.`balance_paid_at` < '2025-11-12')\n    )\n    AND `trd_order`.`is_deleted` = 0\nGROUP BY \n    `dim_shop`.`brand_id`;",
+ "result": {
+  "column": [
+   "brand_id",
+   "gmv"
+  ],
+  "data": [
+   {
+    "gmv": "115123.14",
+    "brand_id": "8"
+   },
+   {
+    "gmv": "175967.55",
+    "brand_id": "3"
+   },
+   {
+    "gmv": "159867.23",
+    "brand_id": "7"
+   },
+   {
+    "gmv": "42583.91",
+    "brand_id": "4"
+   },
+   {
+    "gmv": "956004.20",
+    "brand_id": "1"
+   },
+   {
+    "gmv": "153830.32",
+    "brand_id": "6"
+   },
+   {
+    "gmv": "29548.26",
+    "brand_id": "5"
+   },
+   {
+    "gmv": "598290.23",
+    "brand_id": "2"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [],
+ "gold": "name\tgmv\n曜石\t956004.20\n星屿\t598290.23\n青岚\t175967.55\n北纬\t159867.23\n朵朵熊\t153830.32\n澄野\t115123.14\n栖木\t42583.91\n禾川\t29548.26",
+ "wrong": "name\tgmv\n曜石\t852227.60\n星屿\t543172.32\n青岚\t159350.25\n北纬\t145041.56\n朵朵熊\t133506.66\n澄野\t98870.87\n栖木\t40227.31\n禾川\t26077.43"
+}

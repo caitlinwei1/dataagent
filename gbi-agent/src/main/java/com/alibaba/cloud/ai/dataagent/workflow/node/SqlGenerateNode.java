@@ -40,6 +40,7 @@ import reactor.core.publisher.Flux;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.alibaba.cloud.ai.dataagent.constant.Constant;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.*;
 import static com.alibaba.cloud.ai.dataagent.util.PlanProcessUtil.getCurrentExecutionStepInstruction;
 
@@ -80,6 +81,10 @@ public class SqlGenerateNode implements NodeAction {
 					executionStep.getStep(), properties.getMaxSqlRetryCount(), count,
 					executionStep.getToolParameters().getInstruction());
 			log.error("SQL generation failed, reason: {}", sqlGenerateOutput);
+			Map<String, Object> skip = skipBlockedStep(state, executionStep, count, pendingRetry);
+			if (skip != null) {
+				return skip;
+			}
 			Flux<ChatResponse> preFlux = Flux.just(ChatResponseUtil.createResponse(sqlGenerateOutput));
 			Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(
 					this.getClass(), state, "正在进行重试评估...", "重试评估完成！",
@@ -164,6 +169,44 @@ public class SqlGenerateNode implements NodeAction {
 
 	private Flux<String> handleGenerateSql(OverAllState state, String executionDescription) {
 		return handleRetryGenerateSql(state, null, null, executionDescription);
+	}
+
+	/**
+	 * A multi-step plan whose SQL step still fails after the retry limit (and the replan budget) used to END the graph
+	 * with no answer at all (B6 sem-r2: step 3 referred to "step 2's order ids" as a placeholder comment, 10 attempts).
+	 * With the report ledger on, the step is recorded as blocked and the plan goes on: the report says which step is
+	 * 受阻 instead of the user getting nothing, and the ledger forbids numbers for that step.
+	 */
+	private Map<String, Object> skipBlockedStep(OverAllState state, ExecutionStep step, int count, SqlRetryDto last) {
+		if (!nl2sqlProperties.isReportLedger()) {
+			return null;
+		}
+		int total = PlanProcessUtil.getPlan(state).getExecutionPlan().size();
+		if (total < 2) {
+			return null;
+		}
+		String reason = last == null || last.reason() == null ? "" : last.reason();
+		if (reason.length() > 200) {
+			reason = reason.substring(0, 200) + "…";
+		}
+		String note = "【降级】第 " + step.getStep() + " 步的 SQL 尝试 " + count + " 次仍未成功"
+				+ (reason.isEmpty() ? "" : "（最后一次错误：" + reason + "）") + "，这一步没有结果";
+		Map<String, String> results = new java.util.HashMap<>(StateUtil.getObjectValue(state,
+				Constant.SQL_EXECUTE_NODE_OUTPUT, Map.class, new java.util.HashMap<>()));
+		int current = PlanProcessUtil.getCurrentStepNumber(state);
+		results = PlanProcessUtil.addStepResult(results, current, note);
+		log.warn("sql_step_blocked step={} attempts={} -> continue plan with the step marked blocked", step.getStep(),
+				count);
+		Map<String, Object> out = new java.util.HashMap<>();
+		out.put(SQL_GENERATE_OUTPUT, Constant.SQL_STEP_BLOCKED);
+		out.put(Constant.SQL_EXECUTE_NODE_OUTPUT, results);
+		out.put(Constant.PLAN_CURRENT_STEP, current + 1);
+		out.put(SQL_GENERATE_COUNT, 0);
+		out.put(SQL_REGENERATE_REASON, SqlRetryDto.empty());
+		out.put(Constant.SEMANTIC_REJECT_COUNT, 0);
+		out.put(Constant.SQL_REPEAT_COUNT, 0);
+		out.put(Constant.GBI_METRIC_REJECTS, 0);
+		return out;
 	}
 
 	/**

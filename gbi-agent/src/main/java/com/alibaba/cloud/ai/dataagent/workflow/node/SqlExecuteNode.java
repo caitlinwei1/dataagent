@@ -15,6 +15,7 @@
  */
 package com.alibaba.cloud.ai.dataagent.workflow.node;
 
+import static com.alibaba.cloud.ai.dataagent.constant.Constant.INPUT_KEY;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.PLAN_CURRENT_STEP;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_EXECUTE_NODE_OUTPUT;
 import static com.alibaba.cloud.ai.dataagent.constant.Constant.SQL_GENERATE_COUNT;
@@ -96,6 +97,8 @@ public class SqlExecuteNode implements NodeAction {
 
 	private final com.alibaba.cloud.ai.dataagent.service.sql.freshness.DataFreshnessService dataFreshnessService;
 
+	private final com.alibaba.cloud.ai.dataagent.service.semantic.SemanticLayer semanticLayer;
+
 	private static final int SAMPLE_DATA_NUMBER = 20;
 
 	/** Schema expansions per step: the first adds the direct neighbours, the second reaches one hop further. */
@@ -129,6 +132,45 @@ public class SqlExecuteNode implements NodeAction {
 			return blocked(state, sqlQuery, guard);
 		}
 
+		// semantic layer: the metric rules of this question (resolved for this user) are checked on the SQL before it
+		// runs. A violation goes back to SQL generation with the rule's hint, at most maxMetricRejects times per step;
+		// after that the SQL runs and the violation is kept for the report's evidence ledger.
+		String metricNote = null;
+		if (nl2sqlProperties.isMetricCheck()) {
+			var resolved = semanticLayer.fromState(state.value(Constant.GBI_METRIC_CONTRACTS).orElse(null));
+			var violations = com.alibaba.cloud.ai.dataagent.service.semantic.MetricRuleChecker.check(sqlQuery,
+					StateUtil.getStringValue(state, INPUT_KEY, ""), resolved);
+			if (!violations.isEmpty()) {
+				String feedback = "口径校验未通过：" + String.join("；",
+						violations.stream().map(com.alibaba.cloud.ai.dataagent.service.semantic.MetricRuleChecker.Violation::describe).toList());
+				int rejects = state.value(Constant.GBI_METRIC_REJECTS, 0);
+				log.info("metric_check step={} rejects={} violations={}", currentStep, rejects, feedback);
+				// the model already had the hint once and still misses a condition the contract can add mechanically:
+				// add it (the DSL idea, scoped to "a required filter is missing"), re-check, and run the repaired SQL
+				var fixed = rejects >= 1
+						? com.alibaba.cloud.ai.dataagent.service.semantic.MetricRuleChecker.autoFix(sqlQuery, violations)
+						: java.util.Optional.<String>empty();
+				if (fixed.isPresent() && com.alibaba.cloud.ai.dataagent.service.semantic.MetricRuleChecker
+					.check(fixed.get(), StateUtil.getStringValue(state, INPUT_KEY, ""), resolved)
+					.isEmpty()) {
+					log.info("metric_check step={} auto_fixed sql={}", currentStep, fixed.get());
+					metricNote = "系统已按口径合约自动补上条件（模型重写后仍遗漏）：" + feedback;
+					sqlQuery = fixed.get();
+					var reguard = guard(state, sqlQuery, dbConfig, agentId);
+					if (!reguard.passed()) {
+						return blocked(state, sqlQuery, reguard);
+					}
+					guard = reguard;
+				}
+				else if (rejects < nl2sqlProperties.getMaxMetricRejects()) {
+					return metricBlocked(state, sqlQuery, feedback, rejects + 1);
+				}
+				else {
+					metricNote = feedback + "（已重写 " + rejects + " 次仍未满足，按当前 SQL 执行，结果口径待确认）";
+				}
+			}
+		}
+
 		// data permission: table grants, then the row filter is written into the SQL that actually runs. The model's
 		// SQL stays as it was in the state, so a regeneration or the next turn never sees (and copies) the filters.
 		String executedSql = sqlQuery;
@@ -156,7 +198,37 @@ public class SqlExecuteNode implements NodeAction {
 					permission.describe(), filteredTables, executedSql);
 		}
 		return executeSqlQuery(state, currentStep, sqlQuery, executedSql, filteredTables, dbConfig, agentId,
-				guard.tables(), permission);
+				guard.tables(), permission, metricNote);
+	}
+
+	private Map<String, Object> metricBlocked(OverAllState state, String sqlQuery, String feedback, int rejects) {
+		Map<String, Object> result = new HashMap<>(Map.of(SQL_REGENERATE_REASON, SqlRetryDto.sqlExecute(feedback),
+				Constant.GBI_METRIC_REJECTS, rejects));
+		Flux<ChatResponse> displayFlux = Flux.just(ChatResponseUtil.createResponse("执行SQL前口径校验："),
+				ChatResponseUtil.createPureResponse(TextType.SQL.getStartSign()),
+				ChatResponseUtil.createResponse(sqlQuery),
+				ChatResponseUtil.createPureResponse(TextType.SQL.getEndSign()),
+				ChatResponseUtil.createResponse(feedback + "，将重新生成SQL"));
+		Flux<GraphResponse<StreamingOutput>> generator = FluxUtil.createStreamingGeneratorWithMessages(this.getClass(),
+				state, v -> result, displayFlux);
+		return Map.of(SQL_EXECUTE_NODE_OUTPUT, generator);
+	}
+
+	/** Runs a SQL with the caller's row permission, for the reconciliation; null on any failure. */
+	private java.util.List<Map<String, String>> runQuietly(String sql, DbConfigBO dbConfig, Accessor accessor,
+			com.alibaba.cloud.ai.dataagent.security.DataPermission permission) {
+		try {
+			String exec = permission == null ? sql : rowPermissionRewriter.rewrite(sql, permission).sql();
+			DbQueryParameter p = new DbQueryParameter();
+			p.setSql(exec);
+			p.setSchema(dbConfig.getSchema());
+			ResultSetBO rs = accessor.executeSqlAndReturnObject(dbConfig, p);
+			return rs.getData() == null ? java.util.List.of() : rs.getData();
+		}
+		catch (Exception e) {
+			log.info("reconcile query failed: {}", e.getMessage());
+			return null;
+		}
 	}
 
 	/**
@@ -234,7 +306,8 @@ public class SqlExecuteNode implements NodeAction {
 	@SuppressWarnings("unchecked")
 	private Map<String, Object> executeSqlQuery(OverAllState state, Integer currentStep, String sqlQuery,
 			String executedSql, java.util.List<String> filteredTables, DbConfigBO dbConfig, Long agentId,
-			java.util.Collection<String> sqlTables, com.alibaba.cloud.ai.dataagent.security.DataPermission permission) {
+			java.util.Collection<String> sqlTables, com.alibaba.cloud.ai.dataagent.security.DataPermission permission,
+			String metricNote) {
 		// Execute business logic first - actual SQL execution
 		DbQueryParameter dbQueryParameter = new DbQueryParameter();
 		dbQueryParameter.setSql(executedSql);
@@ -265,6 +338,26 @@ public class SqlExecuteNode implements NodeAction {
 						.orElse(null);
 					resultSetBO.setNote(freshnessNote);
 				}
+				// summary-vs-detail reconciliation: a SQL that read a summary table is re-run on the detail table
+				String reconNote = null;
+				if (nl2sqlProperties.isReconcile() && resultSetBO.getData() != null && !resultSetBO.getData().isEmpty()) {
+					try {
+						reconNote = com.alibaba.cloud.ai.dataagent.service.semantic.SummaryReconciler
+							.reconcile(sqlQuery, resultSetBO.getData(), semanticLayer.contracts().reconciles(),
+									s -> runQuietly(s, dbConfig, dbAccessor, permission))
+							.map(com.alibaba.cloud.ai.dataagent.service.semantic.SummaryReconciler.Outcome::note)
+							.orElse(null);
+					}
+					catch (Exception ex) {
+						log.warn("reconcile failed: {}", ex.getMessage());
+					}
+				}
+				String extraNote = java.util.stream.Stream.of(metricNote == null ? null : "【口径】" + metricNote, reconNote)
+					.filter(java.util.Objects::nonNull)
+					.collect(java.util.stream.Collectors.joining("\n"));
+				if (!extraNote.isEmpty()) {
+					resultSetBO.setNote(resultSetBO.getNote() == null ? extraNote : resultSetBO.getNote() + "\n" + extraNote);
+				}
 				// 调用大模型获取图表配置信息并填充到ResultSetBO中
 				DisplayStyleBO displayStyleBO = enrichResultSetWithChartConfig(state, resultSetBO);
 				resultBO.setResultSet(resultSetBO);
@@ -281,6 +374,9 @@ public class SqlExecuteNode implements NodeAction {
 				emitter.next(ChatResponseUtil.createPureResponse(TextType.RESULT_SET.getEndSign()));
 				if (freshnessNote != null) {
 					emitter.next(ChatResponseUtil.createResponse(freshnessNote));
+				}
+				if (!extraNote.isEmpty()) {
+					emitter.next(ChatResponseUtil.createResponse(extraNote));
 				}
 
 				// Update step results with the query output
@@ -304,6 +400,13 @@ public class SqlExecuteNode implements NodeAction {
 						SqlRetryDto.empty(), SQL_RESULT_LIST_MEMORY, resultSetBO.getData(), PLAN_CURRENT_STEP,
 						currentStep + 1, SQL_GENERATE_COUNT, 0, Constant.SEMANTIC_REJECT_COUNT, 0,
 						Constant.SQL_REPEAT_COUNT, 0, Constant.SQL_SCHEMA_EXPANDED, 0));
+				result.put(Constant.GBI_METRIC_REJECTS, 0);
+				if (reconNote != null) {
+					Map<String, String> notes = new HashMap<>(StateUtil.getObjectValue(state, Constant.GBI_RECON_NOTES,
+							Map.class, new HashMap<>()));
+					notes.put("step_" + currentStep, reconNote);
+					result.put(Constant.GBI_RECON_NOTES, notes);
+				}
 				if (freshnessNote != null) {
 					result.put(Constant.GBI_FRESHNESS_NOTE, freshnessNote);
 				}

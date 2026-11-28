@@ -1,0 +1,80 @@
+{
+ "id": "B9",
+ "question": "2026年3月各店铺的销售额分别是多少？",
+ "thread": "baozun-B9-38606b",
+ "seconds": 34.2,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `shop_id`, sum(`net_sales`) as `sales_amount` from `trd_daily_shop_sales` where `stat_date` >= '2026-03-01' and `stat_date` < '2026-04-01' group by `shop_id`;"
+ ],
+ "final_sql": "select `shop_id`, sum(`net_sales`) as `sales_amount` from `trd_daily_shop_sales` where `stat_date` >= '2026-03-01' and `stat_date` < '2026-04-01' group by `shop_id`;",
+ "result": {
+  "column": [
+   "shop_id",
+   "sales_amount"
+  ],
+  "data": [
+   {
+    "shop_id": "1",
+    "sales_amount": "331625.47"
+   },
+   {
+    "shop_id": "2",
+    "sales_amount": "298814.51"
+   },
+   {
+    "shop_id": "3",
+    "sales_amount": "34224.42"
+   },
+   {
+    "shop_id": "4",
+    "sales_amount": "47878.68"
+   },
+   {
+    "shop_id": "5",
+    "sales_amount": "75029.42"
+   },
+   {
+    "shop_id": "6",
+    "sales_amount": "21617.32"
+   },
+   {
+    "shop_id": "7",
+    "sales_amount": "339935.58"
+   },
+   {
+    "shop_id": "8",
+    "sales_amount": "55472.84"
+   },
+   {
+    "shop_id": "9",
+    "sales_amount": "45565.97"
+   },
+   {
+    "shop_id": "10",
+    "sales_amount": "51361.09"
+   },
+   {
+    "shop_id": "11",
+    "sales_amount": "44177.77"
+   },
+   {
+    "shop_id": "12",
+    "sales_amount": "48735.71"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "finance",
+ "notes": [],
+ "gold": "name\tnet_sales\n星屿抖音官方旗舰店\t339935.58\n曜石天猫官方旗舰店\t331625.47\n曜石京东官方旗舰店\t298814.51\n青岚抖音官方旗舰店\t75029.42\n朵朵熊天猫官方旗舰店\t55472.84\n北纬品牌官方商城\t51361.09\n澄野抖音官方旗舰店\t48735.71\n青岚天猫官方旗舰店\t47878.68\n朵朵熊京东官方旗舰店\t45565.97\n北纬天猫官方旗舰店\t44177.77\n栖木天猫官方旗舰店\t34224.42\n禾川京东官方旗舰店\t21617.32",
+ "wrong": "name\tSUM(o.pay_amount)\n星屿抖音官方旗舰店\t372285.48\n曜石天猫官方旗舰店\t346032.48\n曜石京东官方旗舰店\t317383.37\n青岚抖音官方旗舰店\t79140.91\n朵朵熊天猫官方旗舰店\t58226.38\n北纬品牌官方商城\t56027.05\n澄野抖音官方旗舰店\t55755.27\n青岚天猫官方旗舰店\t52231.37\n朵朵熊京东官方旗舰店\t46915.37\n北纬天猫官方旗舰店\t46525.29\n栖木天猫官方旗舰店\t35993.90\n禾川京东官方旗舰店\t22817.86"
+}

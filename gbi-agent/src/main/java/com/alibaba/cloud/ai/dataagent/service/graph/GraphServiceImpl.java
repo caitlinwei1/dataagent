@@ -163,7 +163,9 @@ public class GraphServiceImpl implements GraphService {
 				Map.entry(PYTHON_TRIES_COUNT, 0), Map.entry(PYTHON_FALLBACK_MODE, false),
 				Map.entry(GBI_PERMISSION_DENIALS, 0), Map.entry(SEMANTIC_REJECT_COUNT, 0),
 				Map.entry(SQL_REPEAT_COUNT, 0), Map.entry(SQL_REPLAN_COUNT, 0), Map.entry(SQL_SCHEMA_EXPANDED, 0),
-				Map.entry(GBI_FRESHNESS_NOTE, ""), Map.entry(PLAN_VALIDATION_ERROR, "")));
+				Map.entry(GBI_FRESHNESS_NOTE, ""), Map.entry(PLAN_VALIDATION_ERROR, ""),
+				Map.entry(GBI_METRIC_CONTRACTS, java.util.List.of()), Map.entry(GBI_METRIC_REJECTS, 0),
+				Map.entry(GBI_RECON_NOTES, Map.of())));
 		putDataPermission(input);
 		Flux<NodeOutput> nodeOutputFlux = compiledGraph.stream(input, RunnableConfig.builder().threadId(threadId).build());
 		subscribeToFlux(context, nodeOutputFlux, graphRequest, agentId, threadId);
@@ -220,6 +222,8 @@ public class GraphServiceImpl implements GraphService {
 			.get();
 		if (user != null) {
 			state.put(GBI_DATA_PERMISSION, user.permission().toState());
+			state.put(com.alibaba.cloud.ai.dataagent.constant.Constant.GBI_USER_ROLES,
+					new java.util.ArrayList<>(user.roles() == null ? java.util.Set.<String>of() : user.roles()));
 		}
 	}
 

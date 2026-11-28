@@ -82,4 +82,22 @@ public class GbiNl2sqlProperties {
 			"mkt_ad_spend", "stat_date", "mkt_traffic_daily", "stat_date", "trd_daily_shop_sales", "stat_date",
 			"trd_daily_sku_sales", "stat_date"));
 
+	/**
+	 * Semantic layer: the metric contracts file (definitions, SQL rules, brand / role variants, summary-table
+	 * reconciliation). Empty = off.
+	 */
+	private String metricContracts = "classpath:gbi/metric-contracts.yml";
+
+	/** Check each SQL against the rules of the metrics in the question before it runs. */
+	private boolean metricCheck = true;
+
+	/** Metric-rule rejections per SQL step; after that the SQL runs and the violation is noted in the report. */
+	private int maxMetricRejects = 2;
+
+	/** Re-run SQL that read a summary table against the detail table and note disagreement / closed-order share. */
+	private boolean reconcile = true;
+
+	/** Report: evidence ledger in the prompt, trace numbers / names after writing, one rewrite, footer. */
+	private boolean reportLedger = true;
+
 }

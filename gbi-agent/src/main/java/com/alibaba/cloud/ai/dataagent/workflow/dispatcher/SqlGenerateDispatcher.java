@@ -57,6 +57,10 @@ public class SqlGenerateDispatcher implements EdgeAction {
 			log.info("SQL 步骤连续失败，回到规划器重写该步骤");
 			return PLANNER_NODE;
 		}
+		if (SQL_STEP_BLOCKED.equals(sqlGenerateOutput)) {
+			log.info("SQL 步骤受阻，标记后继续执行计划");
+			return PLAN_EXECUTOR_NODE;
+		}
 		if (END.equals(sqlGenerateOutput)) {
 			log.info("检测到流程结束标志: {}", END);
 			return END;

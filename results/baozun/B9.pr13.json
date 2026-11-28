@@ -1,0 +1,80 @@
+{
+ "id": "B9",
+ "question": "2026年3月各店铺的销售额分别是多少？",
+ "thread": "baozun-B9-b82b4a",
+ "seconds": 38.7,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `s`.`name` as `shop_name`, sum(`o`.`pay_amount`) as `sales_amount` from `trd_order` as `o` inner join `dim_shop` as `s` on `o`.`shop_id` = `s`.`id` where `o`.`paid_at` >= '2026-03-01' and `o`.`paid_at` < '2026-04-01' and `o`.`paid_at` is not null and `o`.`order_status` not in ('CANCELLED', 'CLOSED') group by `s`.`name`;"
+ ],
+ "final_sql": "select `s`.`name` as `shop_name`, sum(`o`.`pay_amount`) as `sales_amount` from `trd_order` as `o` inner join `dim_shop` as `s` on `o`.`shop_id` = `s`.`id` where `o`.`paid_at` >= '2026-03-01' and `o`.`paid_at` < '2026-04-01' and `o`.`paid_at` is not null and `o`.`order_status` not in ('CANCELLED', 'CLOSED') group by `s`.`name`;",
+ "result": {
+  "column": [
+   "shop_name",
+   "sales_amount"
+  ],
+  "data": [
+   {
+    "sales_amount": "52231.37",
+    "shop_name": "青岚天猫官方旗舰店"
+   },
+   {
+    "sales_amount": "372285.48",
+    "shop_name": "星屿抖音官方旗舰店"
+   },
+   {
+    "sales_amount": "58226.38",
+    "shop_name": "朵朵熊天猫官方旗舰店"
+   },
+   {
+    "sales_amount": "22817.86",
+    "shop_name": "禾川京东官方旗舰店"
+   },
+   {
+    "sales_amount": "55755.27",
+    "shop_name": "澄野抖音官方旗舰店"
+   },
+   {
+    "sales_amount": "46525.29",
+    "shop_name": "北纬天猫官方旗舰店"
+   },
+   {
+    "sales_amount": "317383.37",
+    "shop_name": "曜石京东官方旗舰店"
+   },
+   {
+    "sales_amount": "46915.37",
+    "shop_name": "朵朵熊京东官方旗舰店"
+   },
+   {
+    "sales_amount": "346032.48",
+    "shop_name": "曜石天猫官方旗舰店"
+   },
+   {
+    "sales_amount": "56027.05",
+    "shop_name": "北纬品牌官方商城"
+   },
+   {
+    "sales_amount": "79140.91",
+    "shop_name": "青岚抖音官方旗舰店"
+   },
+   {
+    "sales_amount": "35993.90",
+    "shop_name": "栖木天猫官方旗舰店"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "finance",
+ "notes": [],
+ "gold": "name\tnet_sales\n星屿抖音官方旗舰店\t339935.58\n曜石天猫官方旗舰店\t331625.47\n曜石京东官方旗舰店\t298814.51\n青岚抖音官方旗舰店\t75029.42\n朵朵熊天猫官方旗舰店\t55472.84\n北纬品牌官方商城\t51361.09\n澄野抖音官方旗舰店\t48735.71\n青岚天猫官方旗舰店\t47878.68\n朵朵熊京东官方旗舰店\t45565.97\n北纬天猫官方旗舰店\t44177.77\n栖木天猫官方旗舰店\t34224.42\n禾川京东官方旗舰店\t21617.32",
+ "wrong": "name\tSUM(o.pay_amount)\n星屿抖音官方旗舰店\t372285.48\n曜石天猫官方旗舰店\t346032.48\n曜石京东官方旗舰店\t317383.37\n青岚抖音官方旗舰店\t79140.91\n朵朵熊天猫官方旗舰店\t58226.38\n北纬品牌官方商城\t56027.05\n澄野抖音官方旗舰店\t55755.27\n青岚天猫官方旗舰店\t52231.37\n朵朵熊京东官方旗舰店\t46915.37\n北纬天猫官方旗舰店\t46525.29\n栖木天猫官方旗舰店\t35993.90\n禾川京东官方旗舰店\t22817.86"
+}

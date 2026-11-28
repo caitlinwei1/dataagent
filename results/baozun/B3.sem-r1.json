@@ -1,0 +1,48 @@
+{
+ "id": "B3",
+ "question": "2026年3月各平台已完成的订单分别有多少单？",
+ "thread": "baozun-B3-22810f",
+ "seconds": 44.9,
+ "sql_attempts": 1,
+ "error_classes": [],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "select `dim_platform`.`name` as `platform`, count(distinct `trd_order`.`id`) as `order_count` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` inner join `dim_platform` on `dim_shop`.`platform_id` = `dim_platform`.`id` where `trd_order`.`order_status` = 'COMPLETED' and `trd_order`.`paid_at` is not null and `trd_order`.`created_at` >= '2026-03-01' and `trd_order`.`created_at` < '2026-04-01' group by `dim_platform`.`name`;"
+ ],
+ "final_sql": "select `dim_platform`.`name` as `platform`, count(distinct `trd_order`.`id`) as `order_count` from `trd_order` inner join `dim_shop` on `trd_order`.`shop_id` = `dim_shop`.`id` inner join `dim_platform` on `dim_shop`.`platform_id` = `dim_platform`.`id` where `trd_order`.`order_status` = 'COMPLETED' and `trd_order`.`paid_at` is not null and `trd_order`.`created_at` >= '2026-03-01' and `trd_order`.`created_at` < '2026-04-01' group by `dim_platform`.`name`;",
+ "result": {
+  "column": [
+   "platform",
+   "order_count"
+  ],
+  "data": [
+   {
+    "order_count": "359",
+    "platform": "京东"
+   },
+   {
+    "order_count": "597",
+    "platform": "天猫"
+   },
+   {
+    "order_count": "329",
+    "platform": "抖音"
+   },
+   {
+    "order_count": "117",
+    "platform": "自营商城"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": [
+  "SQL_GENERATE_NODE"
+ ],
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [],
+ "gold": "name\tcnt\n天猫\t597\n京东\t359\n抖音\t329\n自营商城\t117",
+ "wrong": "name\tCOUNT(*)\n天猫\t597"
+}

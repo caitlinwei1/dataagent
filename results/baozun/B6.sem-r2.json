@@ -1,0 +1,535 @@
+{
+ "id": "B6",
+ "question": "曜石品牌在华东的销售额，2026年10月12日到18日这一周比前一周下降了多少？分析一下原因。",
+ "thread": "baozun-B6-a8a75a",
+ "seconds": 388.4,
+ "sql_attempts": 15,
+ "error_classes": [
+  "DIALECT",
+  "DIALECT",
+  "DIALECT",
+  "DIALECT",
+  "DIALECT",
+  "DIALECT",
+  "DIALECT",
+  "DIALECT"
+ ],
+ "guard_blocks": 0,
+ "sql_executed": [
+  "SELECT \n    CASE \n        WHEN `t`.`paid_at` >= '2026-10-12' AND `t`.`paid_at` < '2026-10-19' THEN 'current_period'\n        WHEN `t`.`paid_at` >= '2026-10-05' AND `t`.`paid_at` < '2026-10-12' THEN 'previous_period'\n        ELSE NULL \n    END AS `period`,\n    `t`.`order_status`,\n    COUNT(*) AS `order_count`,\n    SUM(`t`.`pay_amount`) AS `pay_amount_sum`\nFROM `trd_order` AS `t`\nJOIN `dim_shop` AS `s` ON `t`.`shop_id` = `s`.`id`\nJOIN `prd_brand` AS `b` ON `s`.`brand_id` = `b`.`id`\nJOIN `dim_region` AS `r` ON `s`.`region_id` = `r`.`id`\nWHERE `t`.`paid_at` IS NOT NULL\n    AND `b`.`name` = '曜石'\n    AND `r`.`big_region` = '华东'\n    AND (\n        (`t`.`paid_at` >= '2026-10-12' AND `t`.`paid_at` < '2026-10-19') \n        OR \n        (`t`.`paid_at` >= '2026-10-05' AND `t`.`paid_at` < '2026-10-12')\n    )\nGROUP BY `period`, `t`.`order_status`;",
+  "SELECT `order_id`, `reason_code` FROM `trd_refund` WHERE `refund_status` = 'SUCCESS' AND ((`refunded_at` >= '2026-10-12' AND `refunded_at` < '2026-10-19') OR (`refunded_at` >= '2026-10-05' AND `refunded_at` < '2026-10-12'));",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id` AND b.`name` = '曜石'\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id` AND r.`big_region` = '华东'\nWHERE b.`id` IS NOT NULL\n  AND r.`id` IS NOT NULL\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+  "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;"
+ ],
+ "final_sql": "SELECT \n    CASE \n        WHEN t2.`refunded_at` >= '2026-10-12' AND t2.`refunded_at` < '2026-10-19' THEN '本期'\n        WHEN t2.`refunded_at` >= '2026-10-05' AND t2.`refunded_at` < '2026-10-12' THEN '上期'\n        ELSE '其他'\n    END AS `period`,\n    t2.`reason_code`,\n    COUNT(*) AS `refund_count`,\n    SUM(t2.`refund_amount`) AS `refund_amount_sum`\nFROM (\n    SELECT `order_id`, `reason_code`, `refund_amount`, `refunded_at`\n    FROM `trd_refund`\n    WHERE `order_id` IN (/* 步骤2输出的所有 order_id，此处为占位符，实际执行时由上游注入 */)\n      AND `refunded_at` IS NOT NULL\n      AND `refund_status` = 'SUCCESS'\n) t2\nINNER JOIN `trd_order` t1 ON t2.`order_id` = t1.`id`\nLEFT JOIN `dim_shop` s ON t1.`shop_id` = s.`id`\nLEFT JOIN `prd_brand` b ON s.`brand_id` = b.`id`\nLEFT JOIN `dim_region` r ON s.`region_id` = r.`id`\nWHERE b.`name` = '曜石'\n  AND r.`big_region` = '华东'\nGROUP BY `period`, t2.`reason_code`;",
+ "result": {
+  "column": [
+   "order_id",
+   "reason_code"
+  ],
+  "data": [
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "39559"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "39683"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39755"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "39787"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39808"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39817"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39821"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39841"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "39844"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39858"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39868"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39869"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "39875"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "39886"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "39904"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39935"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39936"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39949"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39956"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "39962"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "39986"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "39989"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "39999"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40007"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40011"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40020"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40021"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40036"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "40042"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40043"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40044"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "40065"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40096"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40099"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40105"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40106"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "40114"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40137"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40148"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40152"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40156"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40162"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40163"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40168"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40227"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40231"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40236"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40262"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "40270"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40277"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40285"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40290"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40291"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40294"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40300"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40306"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40307"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40312"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40320"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40327"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40329"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40330"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40340"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40357"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40360"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40363"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40369"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40384"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40391"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40398"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40403"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40409"
+   },
+   {
+    "reason_code": "QUALITY",
+    "order_id": "40420"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40428"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40432"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40462"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40468"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "40480"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40484"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40504"
+   },
+   {
+    "reason_code": "NO_REASON",
+    "order_id": "40506"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40526"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40535"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "40543"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "40546"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40564"
+   },
+   {
+    "reason_code": "WRONG_ITEM",
+    "order_id": "40572"
+   },
+   {
+    "reason_code": "DAMAGED",
+    "order_id": "40623"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40624"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40665"
+   },
+   {
+    "reason_code": "LATE_DELIVERY",
+    "order_id": "40700"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40742"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40753"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40762"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40772"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40776"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40780"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40782"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40785"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40786"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40808"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40813"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40821"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40847"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40864"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40875"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40883"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40887"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40914"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40915"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40916"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40917"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40920"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40930"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40933"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40960"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40989"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "40994"
+   },
+   {
+    "reason_code": "STOCKOUT",
+    "order_id": "41012"
+   }
+  ],
+  "errorMsg": null,
+  "note": null
+ },
+ "plan_tools": null,
+ "report": "",
+ "errors": [],
+ "user": "admin",
+ "notes": [
+  "选择数据表完成。\n已沿外键补齐关联路径上的表：prd_brand, wms_warehouse\n开始处理Schema选择...\nSchema选择处理完成.",
+  "正在回退到规划...\n步骤[2]的SQL连续失败，回到规划器重写这一步：不通过。[逻辑错误：时间范围判断使用了 `t2.paid_at`（订单支付时间），但指令要求的是“与步骤1相同范围”，而步骤1是销售额分析，其时间口径是 `trd_order.paid_at` 的两期区间；但退款数据本身应以退款成功时间 `refunded_at` 或申请时间 `applied_a",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。",
+  "语义一致性校验在本步骤已驳回 2 次，不再由模型把关，交给 SQL 守卫和数据库执行做确定性校验。"
+ ],
+ "gold": "wk\tSUM(o.pay_amount)\n前一周\t172718.25\n本周\t62444.73",
+ "wrong": null
+}
